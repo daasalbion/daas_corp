@@ -89,22 +89,68 @@ class SubscriptionServices
         return $responseParams;
     }
 
+    private function _getFormatoCorto($nro_largo) {
+
+        //Verificamos que el nro recibido este en formato largo
+        //Ejemplo: 502 40009752
+        if(strlen($nro_largo) == 11 && substr($nro_largo, 0, 3) == '502') {//esta en formato largo
+            return   substr($nro_largo, 3);
+        }
+
+        return $nro_largo;
+    }
+
     /**
      * @param GetUserServicesRequestParams $requestParams
      * @return GetUserServicesResponseParams
      */
     public function getUserServices(GetUserServicesRequestParams $requestParams) {
 
+        $front = Zend_Controller_Front::getInstance();
+        $bootstrap = $front->getParam("bootstrap");
+
+
+
+        $logger = $bootstrap->getResource('Logger');
+
         $this->_validateParams($requestParams, 'GetUserServicesRequestParams');
+
+        $logger->info('despues de validar parametros...');
+        /*
+         * select infopromos.costo_usd,alias, promocion,alias,numero,'SALIR' || numero as unsusbribednum  from promosuscripcion.suscriptos  suscrip
+join info_promociones  infopromos ON (infopromos.id_promocion=suscrip.id_promocion and infopromos.id_carrier=suscrip.id_carrier)
+where  suscrip.cel='0984100058' -- and suscrip.id_carrier=2
+         */
+
+
+        $options = $bootstrap->getOptions();
+
+        $db = Zend_Db::factory(new Zend_Config($options['resources']['db']));
+        $db->getConnection();
+
+        $logger->info('despues de conectar');
+
+        $sql = "select ip.costo_usd,alias, promocion,alias,numero, alias  from promosuscripcion.suscriptos  S
+        join info_promociones  ip ON (ip.id_promocion=S.id_promocion and ip.id_carrier=S.id_carrier)
+        where  S.cel=? "; //and  numero = ?
+        $phoneSinPais = $this->_getFormatoCorto($requestParams->phonenumber);
+
+        $rs = $db->fetchAll($sql, array($phoneSinPais));
+
+        $logger->info('rs:[' . print_r($rs, true) . ']');
+
+        $servicios=array();
+        foreach($rs as $fila)
+         {
+         $servicio = new Service($fila{'costo_usd'},$fila{'alias'},$fila{'promocion'},$fila{'alias'},$fila{'numero'},'SALIR '.$fila{'alias'});
+         $servicios[]=$servicio;
+         }
 
         $responseParams = new GetUserServicesResponseParams(
             'GetUserServicesRequest recibido',
             $requestParams->transactionid,
             print_r($requestParams, true),
-            array(
-                new Service(0.97, 'Servicio1', 'Descripcion Servicio1', 'SERVICIO1', '4550', '4550'),
-                new Service(1.95, 'Servicio2', 'Descripcion Servicio2', 'SERVICIO2', '35500', '35500')
-            )
+            $servicios
         );
 
         return $responseParams;
@@ -117,6 +163,9 @@ class SubscriptionServices
     public function getAvailableServices(GetAvailableServicesRequestParams $requestParams) {
 
         $this->_validateParams($requestParams, 'GetAvailableServicesRequestParams');
+
+
+
 
         $responseParams = new GetAvailableServicesResponseParams(
             'GetAvailableServicesRequest recibido',
@@ -199,7 +248,7 @@ class SubscriptionServices
                 'SubscribeToServiceRequestParams' => array(PHONENUMBER, SERVICENAME, TRANSACTION_ID),
                 'UnSubscribeToServiceRequestParams' => array(PHONENUMBER, SERVICENAME, TRANSACTION_ID),
                 'UnSubscribeUserRequestParams' => array(PHONENUMBER, TRANSACTION_ID),
-                'GetUserServicesRequestParams' => array(PHONENUMBER, SERVICENAME, TRANSACTION_ID),
+                'GetUserServicesRequestParams' => array(PHONENUMBER, SHORTCODE_NUMBER, TRANSACTION_ID),
                 'GetAvailableServicesRequestParams' => array(PHONENUMBER, SERVICENAME, TRANSACTION_ID),
                 'RequestUserServiceRequestParams' => array(PHONENUMBER, SERVICENAME, TRANSACTION_ID),
                 'BlackListUserRequestParams' => array(PHONENUMBER, TRANSACTION_ID),
