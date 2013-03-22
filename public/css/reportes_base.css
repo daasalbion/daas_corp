@@ -1,0 +1,139 @@
+body {
+    background: none repeat scroll 0 0 #FFFFFF;
+    background: url("../img/report_background_pattern_2.gif") repeat-x scroll;
+    border: 0 none;
+    font-size: 90%;
+    margin: 0;
+    /*min-width: 900px;*/
+    padding: 0;
+    width: 100%;
+}
+a {
+    text-decoration: none;
+    font-family: Arial;
+}
+a:link, a:active, a:visited, a:hover {
+    color: #ffffff;
+    font-weight: bold;
+}
+.invisible_link {
+    float: left;
+    text-indent: -9999px;
+}
+
+#header {
+
+    clear: both;
+    float: left;
+    width: 100%;
+}
+#header_main {
+
+    height: 74px;
+    background: url("../img/report_background_pattern.gif") repeat-x scroll;
+    border-bottom: 8px solid #373737;
+}
+#header_logo {
+    /*position: fixed;
+    left: 0;
+    top: 0;*/
+    float: left;
+    width: 162px;
+    height: 40px;
+    margin-left: 5%;
+    margin-top: 20px;
+    background: transparent url("../img/logo_entermovil.png") no-repeat;
+}
+#header_logo a.invisible_link {
+    display: block;
+    width: 385px;
+    height: 45px;
+}
+
+#user_info {
+    /*position: fixed;
+    right: 0;*/
+    float: left;
+    margin-right: 5%;
+    margin-top: 35px;
+    margin-left: 40px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 12px;
+}
+#logout_link {
+    /*float: right;*/
+    display: block;
+    font-size: 12px;
+    text-align: left;
+    /*margin-right: 5%;
+    margin-top: 25px;*/
+}
+#header_menu {
+    height: 22px;
+}
+ul.horizontal_list {
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    height: 22px;
+    margin-left: 5%;
+}
+ul.horizontal_list li {
+    float: left;
+
+}
+ul.horizontal_list a {
+    float: left;
+    display: block;
+    text-decoration: none;
+    display: block;
+    color: #000000;
+    font-size:  12px;
+    width: 132px;
+    height: 22px;
+    text-align: center;
+    background: url("../img/background_menu_button.png") no-repeat;
+
+}
+ul.horizontal_list a:hover {
+    color: #ffffff;
+    background: url("../img/background_menu_button_hover.png") no-repeat;
+}
+ul.horizontal_list li span.vertical_line {
+    float: left;
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-weight: bold;
+    
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.colmask {
+    clear: both;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    /*width: 100%;*/
+
+}
+.col1 {
+    float: left;
+    overflow: hidden;
+    padding: 0 0 1em;
+    position: relative;
+    
+}
+
+#footer {
+    
+    clear: both;
+    float: left;
+    width: 100%;
+    
+}
+

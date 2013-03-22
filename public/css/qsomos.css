@@ -1,0 +1,57 @@
+#menu li#menu_qsomos {
+    background-image: url('../img/menu-flecha-hover.png');
+}
+
+#bloque_contenido h1 {
+    display: block;
+    float: left;
+    color: red;
+    width: 647px;
+    height: 59px;
+    border-bottom: 1px dotted #424242;
+    background-image: url('../img/titulo-qsomos.png');
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#bloque_contenido p {
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+    float: left;
+    margin: 0;
+    margin-left: 55px;
+    margin-bottom: 13px;
+    width: 435px;
+    color: #232323;
+    text-align: left;
+}
+
+#bloque_contenido p.institucional {
+    color: #484848;
+    font-weight: bold;
+    font-size:  12px;
+    margin-bottom: 0;
+    height: 23px;
+}
+
+#bloque_contenido p.institucional a {
+    color: #ff0000;
+}
+#bloque_contenido p.institucional a:link,
+#bloque_contenido p.institucional a:visited,
+#bloque_contenido p.institucional a:hover {
+    text-decoration: none;
+}
+
+#bloque_contenido p.institucional img {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    margin-right: 5px;
+    vertical-align: middle;
+}

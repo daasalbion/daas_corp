@@ -1,0 +1,64 @@
+<?php
+    echo $this->doctype();
+    echo "\n";
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<?php echo $this->headTitle() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headLink() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headStyle() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headScript() ?>
+	<?php echo "\n" ?>
+
+    <link rel="shortcut icon" href="/favicon.ico"  type="image/x-icon" />
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34516205-1']);
+        _gaq.push(['_setDomainName', 'entermovil.com.py']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+</head>
+<body>
+	<div id="wrapper">
+        <div id="main">
+            <div id="header">
+                <?php if(isset($this->layout()->mostrar_busqueda)): ?>
+                <!--<div id="search">
+                    <form id="search_form" action="#" method="post" onsubmit="return false;">
+                        <input id="query" name="query" value="" placeholder="Nro. de Línea:" />
+                        <input class="form_submit" type="image" src="/img/search_button.png" value="Buscar" />
+                    </form>
+                </div>-->
+                <?php endif; ?>
+
+                <!--<ul id="menu">
+                    <li id="menu_qsomos"><a href="/QSomos"><img src="/img/menu-q-somos.png" alt="Q'Somos" width="110" height="30"></a></li>
+                    <li id="menu_qcreamos"><a href="/QCreamos"><img src="/img/menu-q-creamos.png" alt="Q'Creamos" width="110" height="30"></a></li>
+                    <li id="menu_home"><a href="/"><img src="/img/menu-home.png" alt="Home" width="110" height="30"></a></li>
+                </ul>-->
+
+            </div>
+            <div id="bloque_contenido">
+                <?php echo $this->layout()->content; ?>
+            </div>
+        </div>
+        <div id="footer">
+            <!--<a href="/acceso">Contacto | Acceso</a>-->
+            <span>Powered by Entermovil - www.entermovil.com.py &copy; 2012 | As Py</span>
+        </div>
+	</div>
+</body>
+</html>

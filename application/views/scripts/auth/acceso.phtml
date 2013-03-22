@@ -1,0 +1,41 @@
+<?php
+    echo $this->doctype();
+    echo "\n";
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<?php echo $this->headTitle() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headLink() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headStyle() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headScript() ?>
+	<?php echo "\n" ?>
+
+    <link rel="shortcut icon" href="/favicon.ico"  type="image/x-icon" />
+
+</head>
+<body>
+	<div id="header">
+        <div id="header_main">
+            <div id="header_logo"><a href="/reportes" class="invisible_link">ENTERMOVIL.com.py</a></div>
+        </div>
+	</div>
+    <div class="colmask fullpage">
+        <div class="col1" style="padding-top: 20px;">
+            <form id="form_login" method="post" action="/login">
+                <label for="login_user">Usuario</label>
+                <input type="text" id="login_user" name="login_user" value="" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="login_pass">Contraseña</label>
+                <input type="password" id="login_pass" name="login_pass" value="" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="Ingresar" id="submitbutton" name="submitbutton" />
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

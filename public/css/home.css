@@ -1,0 +1,512 @@
+a:active {
+    outline: none;
+}
+
+:focus {
+    -moz-outline-style: none;
+}
+
+#menu li#menu_home {
+    background-image: url('../img/menu-flecha-hover.png');
+}
+
+#bloque_telefono {
+    float: left;
+    width: 210px;
+    height: 431px;
+
+    position: relative;
+    top: -27px;
+    background-image: url("../img/telefono.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#bloque_pantalla {
+    float: left;
+    width: 172px;
+    height: 287px;
+    /*background-color: #000000;*/
+    margin-left: 19px;
+    margin-top: 46px;
+    padding: 0;
+}
+
+#bloque_pantalla img {
+    border: none;
+}
+
+#bloque_portafolio {
+    float: left;
+    width: 172px;
+    height: 287px;
+    background-image: url("../img/telefono-portafolio-contenidos.jpg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#bloque_categoria_musica_alias_tono {
+    float: left;
+    width: 172px;
+    height: 287px;
+    background-image: url("../img/telefono-alias-tono.jpg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#bloque_categoria_imagenes_alias_mascota {
+    float: left;
+    width: 172px;
+    height: 287px;
+    background-image: url("../img/telefono-alias-mascota.jpg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#bloque_categoria_apps_alias_siglas {
+    float: left;
+    width: 172px;
+    height: 287px;
+    background-image: url("../img/telefono-alias-siglas.jpg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#bloque_categoria_musica_alias_tono a {
+    display: block;
+    width: 83px;
+    height: 23px;
+    float: left;
+    position: relative;
+    top: 241px;
+    left: 44px;
+}
+
+#bloque_categoria_imagenes_alias_mascota a {
+    display: block;
+    width: 83px;
+    height: 23px;
+    float: left;
+    position: relative;
+    top: 241px;
+    left: 44px;
+}
+
+#bloque_categoria_apps_alias_siglas a {
+    display: block;
+    width: 83px;
+    height: 23px;
+    float: left;
+    /*position: relative;
+    top: 185px;
+    left: 44px;*/
+    margin-top: 3px;
+    margin-left: 31px;
+}
+
+#form_siglas {
+    float: left;
+    width: 147px;
+    height: 55px;
+    position: relative;
+    top: 148px;
+    left: 13px;
+}
+
+#form_siglas_iniciales {
+    width: 147px;
+    height: 28px;
+    background-color: #FFFFFF;
+    border: none;
+    margin-bottom: 3px;
+    
+}
+
+#bloque_categoria_musica_alias_tono img {
+    border: none;
+}
+
+#bloque_categoria_imagenes_alias_mascota img {
+    border: none;
+}
+
+#bloque_categoria_apps_alias_siglas img {
+    border: none;
+}
+
+#bloque_categoria_musica_alias_tono_player {
+    float: left;
+    width: 172px;
+    height: 287px;
+    background-image: url("../img/telefono-alias-tono-player-sin-barra.jpg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#bloque_categoria_imagenes_alias_mascota_player {
+    float: left;
+    width: 172px;
+    height: 287px;
+    background-image: url("../img/telefono-alias-mascota-player.jpg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#bloque_categoria_apps_alias_siglas_player {
+    float: left;
+    width: 172px;
+    height: 287px;
+    /*background-image: url("../img/telefono-alias-mascota-player.jpg");
+    background-repeat: no-repeat;*/
+    background-color: transparent;
+}
+
+#myFlash {
+    float: left;
+    position: relative;
+    top: 0px;
+    left: -30px;
+}
+
+#telefono_titulo_tono {
+    clear: both;
+    float: left;
+    position: relative;
+    top: 161px;
+    left: 34px;
+    width: 100px;
+    height: 15px;
+
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 14px;
+    color: #353535;
+}
+
+#telefono_titulo_mascota {
+    clear: both;
+    float: left;
+    position: relative;
+    top: 2px;
+    left: 34px;
+    width: 100px;
+    height: 15px;
+
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 14px;
+    color: #353535;
+}
+
+#telefono_tipo_tono {
+    clear: both;
+    float: left;
+    position: relative;
+    top: 182px;
+    left: 16px;
+
+    height: 15px;
+
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 13px;
+    color: #353535;
+}
+
+#telefono_tipo_mascota {
+    clear: both;
+    float: left;
+    position: relative;
+    top: 22px;
+    left: 10px;
+
+    height: 15px;
+
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 13px;
+    color: #353535;
+}
+
+#telefono_player_play_pause {
+    clear: both;
+    display: block;
+    width: 29px;
+    height: 19px;
+    float: left;
+    position: relative;
+    top: 207px;
+    left: 70px;
+    background-image: url("../img/boton-play.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    text-indent: -9999px;
+}
+
+
+#previewMascota {
+    float: left;
+    width: 172px;
+    height: 184px;
+    background-color: transparent;
+}
+
+#previewSiglas {
+    float: left;
+    width: 172px;
+    height: 287px;
+    background-image: url("../img/telefono-alias-siglas-player.jpg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+#previewSiglas span {
+    float: left;
+    width: 172px;
+    text-align: center;
+    font-family: Verdana, Arial;
+    font-size: 1px;
+    font-weight: bold;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.imagen_link {
+    border: none;
+    text-decoration: none;
+}
+
+#bloque_flechas_tonos {
+    position: relative;
+    top: 218px;
+    left: 0px;
+}
+
+#bloque_flechas_mascotas {
+    position: relative;
+    top: 54px;
+    left: 0px;
+}
+
+#bloque_flechas_siglas {
+    position: relative;
+    top: -19px;
+    left: 0px;
+}
+
+.bloque_flechas {
+    float: left;
+    width: 172px;
+    height: 19px;
+    background-color: transparent;
+    background-image: url("../img/fondo_anterior_siguiente.png");
+    background-repeat: no-repeat;
+
+}
+
+.oculto {
+    visibility: hidden;
+}
+
+
+
+a.flecha {
+
+    display: block;
+    width: 54px;
+    height: 11px;
+    text-indent: -9999px;
+    outline: none;
+    margin-top: 4px;
+}
+
+a.flecha:active, a.flecha:link, a.flecha:visited, a.flecha:hover {
+    text-decoration: none;
+}
+
+.flecha_izquierda {
+    float: left;
+    background-image: url("../img/anterior.png");
+    margin-left: 9px;
+}
+.flecha_derecha {
+    float: right;
+    background-image: url("../img/siguiente.png");
+    margin-right: 9px;
+}
+
+#bloque_categorias {
+    float: left;
+    width: 200px;
+    height: 350px;
+
+    margin-top: 15px;
+}
+
+#bloque_categorias h1 {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 149px;
+    height: 64px;
+    margin-left: 25px;
+    background-image: url("../img/titulo-elige-tu-categoria.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    text-indent: -9999px;
+}
+
+.bloque_categoria {
+    float: left;
+    width: 136px;
+    height: 26px;
+
+    margin-left: 25px;
+    margin-bottom: 5px;
+}
+
+.bloque_categoria select {
+    float: left;
+    width: 94px;
+    height: 21px;
+    margin-top: 2px;
+    text-align: right;
+    /*background-color: #EA882C;*/
+}
+
+.bloque_categoria img {
+    float: left;
+    margin-left: 5px;
+}
+
+
+
+.ultima_categoria {
+    margin-bottom: 0;
+}
+
+#bloque_banner {
+    float: left;
+    width: 190px;
+    height: 115px;
+
+}
+
+.banner_cesta_regalos {
+    background-image: url("../img/banner_cesta_regalos.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+.banner_regalo_movil {
+    background-image: url("../img/banner_regalo_movil.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+#bloque_navegacion {
+    float: left;
+    width: 130px;
+    height: 15px;
+    margin-top: 2px;
+    margin-left: 10px;
+    font-size:  12px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+#linea_vertical {
+    position: relative;
+    left: 185px;
+    width: 1px;
+    height: 248px;
+    border-left: 1px dotted black;
+}
+
+#bloque_suscripcion {
+    float: left;
+    width: 260px;
+    height: 340px;
+
+}
+
+#bloque_suscripcion h1 {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 214px;
+    height: 96px;
+
+    background-image: url("../img/titulo-suscribite.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    text-indent: -9999px;
+
+    margin-top: 40px;
+}
+
+#bloque_suscripcion p {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 200px;
+    height: 77px;
+    text-align: left;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: normal;
+    color: #353535;
+    position: relative;
+    top: -38px;
+    left: 55px;
+}
+
+#form_suscripcion {
+    float: left;
+    position: relative;
+    top: -30px;
+    left: 8px;
+    width: 240px;
+    height: 135px;
+}
+
+#form_suscripcion .item_formulario {
+    float: left;
+    width: 239px;
+    height: 38px;
+    background-image: url("../img/campo-texto-formulario.gif");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin-bottom: 10px;
+    color: #737373;
+
+}
+
+#form_suscripcion input[type=text] {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    height: 30px;
+    margin-top: 5px;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+#form_suscripcion input[type=image] {
+    float: left;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.columna {
+    width: 300px;
+    float: left;
+    height: 420px;
+    border: 1px solid black;
+}

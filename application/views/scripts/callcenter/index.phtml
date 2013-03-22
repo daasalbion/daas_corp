@@ -1,0 +1,49 @@
+<div id="bloque_titulo">
+
+    <div id="search">
+        <form id="search_form" action="/callcenter/buscar" method="post">
+            <input id="query" name="q" value="" maxlength="10" placeholder="Nro. de Línea:" />
+            <input class="form_submit" type="image" src="/img/search_button.png" value="Buscar" />
+        </form>
+    </div>
+
+    <div id="nro_de_linea"></div>
+
+    <h1 class="titulo_derecha"><a href="/SalirCallCenter">SALIR</a></h1>
+</div>
+<div id="bloque_acceso">
+    <h2 class="subtitulo">Servicios Activos</h2>
+    <div class="bloque_servicio_activo">
+        <span class="numero_corto_servicio celda_titulo">Número</span>
+        <span class="titulo_servicio celda_titulo" title="Imágenes Divertidas">Alias</span>
+        <span class="fecha_alta celda_titulo" style="color: #000000; text-align: left;">Alta</span>
+    </div>
+
+    <div id="bloque_servicios">
+        <div class="bloque_servicio_activo" data-template="data-template">
+            <span class="numero_corto_servicio">{{numero}}</span>
+            <span class="titulo_servicio" title="{{descripcion}}">{{alias}}</span>
+            <span class="fecha_alta">{{alta}}</span>
+            <a id="link_cancelar_{{id_promocion}}" href="cancelar,{{cel}},{{id_promocion}}" class="link_cancelar">Cancelar</a>
+        </div>
+    </div>
+
+
+</div>
+<div id="bloque_contacto">
+    <h2 class="subtitulo">Histórico de Servicios</h2>
+    <div class="bloque_servicio_activo">
+        <span class="titulo_fecha celda_titulo" style="color: #000000; text-align: left;">Fecha</span>
+        <span class="titulo_servicio celda_titulo">Servicio</span>
+        <span class="titulo_accion celda_titulo" title="Imágenes Divertidas">Accion</span>
+    </div>
+
+    <div id="bloque_historial">
+        <div class="bloque_historico" data-template="data-template">
+            <span class="titulo_fecha">{{fecha_hora}}</span>
+            <span class="titulo_servicio">{{servicio}}</span>
+            <span class="titulo_accion">{{accion}}</span>
+        </div>
+    </div>
+
+</div>

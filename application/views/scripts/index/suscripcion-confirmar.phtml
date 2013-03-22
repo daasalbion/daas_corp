@@ -1,0 +1,11 @@
+<form action="/index/suscripcion" method="post">
+
+    <h3><?php echo $this->servicio ?> - <?php echo $this->descripcion ?></h3>
+    <h3><?php echo $this->cel ?></h3>
+    <h2>Ingresá el PIN que recibiste</h2>
+    <input type="text" name="pin" id="pin" value="" maxlength="4">
+    <h3>Validá tu suscripción</h3>
+    <input type="hidden" name="id_solicitud" value="<?php echo $this->solicitud ?>">
+    <input type="submit" name="validar" value="VALIDAR SUSCRIPCIÓN">
+</form>
+

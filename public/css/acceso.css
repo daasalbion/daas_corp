@@ -1,0 +1,46 @@
+.col1 {
+    margin-left: 65px;
+}
+#menu_access {
+    background-position: 0 -45px;
+}
+
+#block_main_title {
+    width: 124px;
+
+}
+
+#form_login {
+    float: left;
+    height: 206px;
+    margin-top: 15px;
+    width: 300px;
+}
+#form_login input[type=text], #form_login input[type=password] {
+    float: left;
+    width: 244px;
+    height: 24px;
+    border: 1px solid #6d6d6c;
+    margin-right: 9px;
+    margin-bottom: 8px;
+}
+#form_login label {
+    float: left;
+    width: 78px;
+    height: 26px;
+    display: block;
+    color: #000000;
+    font-weight: bold;
+    font-family: Arial;
+}
+#form_login input[type=submit] {
+    float: left;
+    width: 100px;
+    height: 34px;
+
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+    margin-top: 5px;
+}

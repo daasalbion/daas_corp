@@ -1,0 +1,100 @@
+<div id="bloque_telefono">
+    <div id="bloque_pantalla">
+        <div id="bloque_portafolio"></div>
+        <div id="bloque_categoria_musica_alias_tono" class="nivel_categoria">
+            <a href="javascript:ingresar('TONO')"><img src="/img/telefono-alias-tono-boton-ingresar.png" width="83" height="23"/></a>
+        </div>
+        <div id="bloque_categoria_musica_alias_tono_player" class="nivel_sub_categoria">
+            <object class="playerpreview" id="myFlash" type="application/x-shockwave-flash" data="/swf/player_mp3_js.swf" width="1" height="1">
+                <param name="movie" value="/swf/player_mp3_js.swf" />
+                <param name="AllowScriptAccess" value="always" />
+                <param name="FlashVars" value="listener=myListener&amp;interval=500" />
+            </object>
+
+            <div id="telefono_titulo_tono">Tono <span>001</span></div>
+            <div id="telefono_tipo_tono">Ringtone para <span>llamadas</span></div>
+
+            <a id="telefono_player_play_pause" href="javascript:play_pause()">*</a>
+
+            <div class="bloque_flechas" id="bloque_flechas_tonos">
+                <a class="flecha_izquierda flecha" href="javascript:anterior('TONO')">&lt;</a>
+                <a class="flecha_derecha flecha" href="javascript:siguiente('TONO')">&gt;</a>
+            </div>
+        </div>
+        <div id="bloque_categoria_imagenes_alias_mascota" class="nivel_categoria">
+            <a href="javascript:ingresar('MASCOTA')"><img src="/img/telefono-alias-tono-boton-ingresar.png" width="83" height="23"/></a>
+        </div>
+        <div id="bloque_categoria_imagenes_alias_mascota_player" class="nivel_sub_categoria">
+
+            <div id="previewMascota"></div>
+
+            <div id="telefono_titulo_mascota">Mascota <span>001</span></div>
+            <div id="telefono_tipo_mascota">Tiernos <span>fondos de pantalla</span></div>
+
+            <div class="bloque_flechas" id="bloque_flechas_mascotas">
+                <a class="flecha flecha_izquierda" href="javascript:anterior('MASCOTA')">&lt;</a>
+                <a class="flecha flecha_derecha" href="javascript:siguiente('MASCOTA')">&gt;</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div id="bloque_categorias">
+    <h1>Elige tu categoria</h1>
+
+    <div class="bloque_categoria">
+        <select name="categoria_tonos" id="categoria_tonos">
+            <option value="CATEGORIA_TONOS" selected="selected" style="font-weight: bold;">Músicas</option>
+            <option value="ALIAS_TONO">TONO</option>
+        </select>
+        <img src="/img/icono_tono.png" alt="Tonos">
+    </div>
+    <div class="bloque_categoria">
+        <select name="categoria_apps" id="categoria_apps">
+            <option value="CATEGORIA_APPS" selected="selected" style="font-weight: bold;">Apps</option>
+            <option value="ALIAS_SIGLAS">SIGLAS</option>
+        </select>
+        <img src="/img/icono_apps.png" alt="Apps">
+    </div>
+    <div class="bloque_categoria">
+        <select name="categoria_video" id="categoria_video">
+            <option value="1" selected="selected" style="font-weight: bold;">Videos</option>
+        </select>
+        <img src="/img/icono_video.png" alt="Videos">
+    </div>
+    <div class="bloque_categoria">
+        <select name="categoria_fotos" id="categoria_fotos">
+            <option value="CATEGORIA_FOTOS" selected="selected" style="font-weight: bold;">Imágenes</option>
+            <option value="ALIAS_MASCOTA">MASCOTA</option>
+        </select>
+        <img src="/img/icono_foto.png" alt="Fotos">
+    </div>
+
+    <div class="bloque_categoria ultima_categoria">
+        <select name="categoria_varios" id="categoria_varios">
+            <option value="1" selected="selected" style="font-weight: bold;">SMS</option>
+        </select>
+        <img src="/img/icono_arandela.png" alt="Fotos">
+    </div>
+
+    <div id="bloque_banner">
+    </div>
+
+    <!--<div id="bloque_navegacion">
+        <img src="/img/triangulito.png" alt="Volver">
+        <span style="color: #ff0000;">Volver</span> / <span style="color: #127d00;">Avanzar</span>
+        <img src="/img/rectangulito.gif" alt="Avanzar">
+    </div>-->
+
+    <div id="linea_vertical"></div>
+</div>
+<div id="bloque_suscripcion">
+    <h1>Suscribite</h1>
+    <p>Elegí una <strong>Categoría</strong>, ingresá el número de tu celular + el <strong>"ALIAS"</strong> del producto que más te gusta y divertite ya!</p>
+    <form id="form_suscripcion" action="#" method="post" onsubmit="return false;">
+        <div class="item_formulario"><input type="text" name="cel" id="cel" placeholder="Cel:" /></div>
+        <div class="item_formulario"><input type="text" name="alias" id="alias" placeholder="Alias:" /></div>
+        <input type="image" src="/img/boton-confirmar.png" value="Confirmar">
+    </form>
+</div>
