@@ -1,5 +1,7 @@
 <?php
 
+
+
 class ReportesController extends Zend_Controller_Action
 {
 
@@ -329,7 +331,6 @@ class ReportesController extends Zend_Controller_Action
         $this->view->rango_seleccion = $this->rango_seleccion;
 
 
-
         //array para verificar alias que no se existian anteriormente
         $servicios = array(
 
@@ -346,7 +347,21 @@ class ReportesController extends Zend_Controller_Action
             'ORAR' => 'TELEFUTURO',
 
         );
+        $servicios_accion = array(
 
+            'CUERNOS' => array('ALTA' => 0 ,'BAJA' => 0 ),
+            'INGLES' => array('ALTA' => 0 ,'BAJA' => 0 ),
+            'SALUD' => array('ALTA' => 0 ,'BAJA' => 0 ),
+            'PAREJA' => array('ALTA' => 0 ,'BAJA' => 0 ),
+            'SANTO' => array('ALTA' => 0 ,'BAJA' => 0 ),
+
+            'USA' => array('ALTA' => 0 ,'BAJA' => 0 ),
+            'VENADO' => array('ALTA' => 0 ,'BAJA' => 0 ),
+            'VIDA' => array('ALTA' => 0 ,'BAJA' => 0 ),
+            'SEXO' => array('ALTA' => 0 ,'BAJA' => 0 ),
+            'ORAR' => array('ALTA' => 0 ,'BAJA' => 0 ),
+
+        );
 
         /*agregado*/
         $canales = array(
@@ -385,9 +400,9 @@ class ReportesController extends Zend_Controller_Action
             )
         );
 
-
         $filasPautas = $this->_cargarFilasPautas($fecha_seleccionada);
-
+        /*print_r($filasPautas);
+        exit;*/
 
         $filasCobrosPautas = $this->_cargarFilasCobrosPautas($anho, $mes);
         //$this->log->info("filasCobrosPautas:[" . print_r($filasCobrosPautas, true) . ']');
@@ -396,20 +411,35 @@ class ReportesController extends Zend_Controller_Action
 
         $columna_suscriptos_ya_utilizada = array();
 
+
         foreach($filasPautas as $fila) {
 
             //agregado
 
+            if( !isset($canales[$fila['canal']]['datos'][$fila['alias']])){
+                $canales[$fila['canal']]['datos'][$fila['alias']] = array(
+                    'ALTA_HOY' => 0,
+                    'BAJA_HOY' => 0,
+                    'COBROS_HOY' => $filasCobrosPautas[$fila['id_promocion']]['total_cobros_hoy'],
+                    'NETO_HOY' => $filasCobrosPautas[$fila['id_promocion']]['total_neto_gs_hoy'],
+                    'ALTA' => 0,
+                    'BAJA' => 0,
+                    'COBROS' => $filasCobrosPautas[$fila['id_promocion']]['total_cobros'],
+                    'NETO' => $filasCobrosPautas[$fila['id_promocion']]['total_neto_gs'],
+                    'SUSCRIPTOS' => 0
+                );
+            }
 
-            if( !isset($canales[$fila['canal']]['datos'][$fila['alias']] ) ) {
+             //if( !isset($canales[$fila['canal']]['datos'][$fila['alias']][$fila['accion']] ) ) {
 
-                if( isset( $servicios[ $fila[ 'alias' ] ] ) ){
+                if( isset( $servicios_accion[ $fila[ 'alias' ]][$fila[ 'accion' ] ] ) ){
+                    //entra una vez y se unsetea
 
-                    unset( $servicios[ $fila[ 'alias' ] ] );
+                    unset( $servicios[ $fila[ 'alias' ]]);
+                    unset( $servicios_accion[$fila[ 'alias' ]][$fila[ 'accion' ]]);
 
 
-
-                    $canales[$fila['canal']]['datos'][$fila['alias']] = array(
+                    /*$canales[$fila['canal']]['datos'][$fila['alias']] = array(
                         'ALTA_HOY' => 0,
                         'BAJA_HOY' => 0,
                         'COBROS_HOY' => $filasCobrosPautas[$fila['id_promocion']]['total_cobros_hoy'],
@@ -419,7 +449,7 @@ class ReportesController extends Zend_Controller_Action
                         'COBROS' => $filasCobrosPautas[$fila['id_promocion']]['total_cobros'],
                         'NETO' => $filasCobrosPautas[$fila['id_promocion']]['total_neto_gs'],
                         'SUSCRIPTOS' => 0
-                    );
+                    );*/
 
                     $canales[$fila['canal']]['totales']['TOTAL_COBROS_HOY'] += $filasCobrosPautas[$fila['id_promocion']]['total_cobros_hoy'];
                     $canales[$fila['canal']]['totales']['TOTAL_NETO_HOY'] += $filasCobrosPautas[$fila['id_promocion']]['total_neto_gs_hoy'];
@@ -442,7 +472,7 @@ class ReportesController extends Zend_Controller_Action
                     }
                 }
 
-            }
+            //}
 
         }
 
@@ -464,10 +494,344 @@ class ReportesController extends Zend_Controller_Action
 
         }
 
-        //$this->log->info("CANALES:[" . print_r($canales, true) . ']');
         $this->view->canales = $canales;
 
     }
+    /*
+     * MODIFICADO POR DAAS
+     * */
+    //traigo las horas de las pautas tambien
+    private function _cargarFilasInformePautasDetallado( $fecha ){
+        global $db;
+        $datos = array();
+        $config = new Zend_Config(array(
+            'database' => array(
+                'adapter' => 'Pdo_Pgsql',
+                'params'  => array(
+                    'host'     => 'localhost',
+                    'username' => 'postgres',
+                    'password' => '',
+                    'dbname'   => 'postgres'
+                )
+            )
+        ));
+        $db = Zend_Db::factory($config->database);
+        $db->getConnection();
+
+        $sql = 'select servicio, fecha, fecha_hora, canal, pautas_encontradas, nro_pautas from (select * from reportepautas join pautas on servicio = alias)  as reportepautas  where fecha = ?';
+        $rs = $db->fetchAll( $sql, $fecha );
+        foreach( $rs as $fila ){
+
+            $datos[] = (array)$fila;
+
+        }
+        return $datos;
+    }
+    private function _cargarFilasInformePautas( $fecha ){
+
+        global $db;
+        $datos = array();
+        $anho = (int)(substr( $fecha, 0, 4 ));
+        $mes = (int)(substr( $fecha, 5, 2 ));
+
+        $config = new Zend_Config(array(
+            'database' => array(
+                'adapter' => 'Pdo_Pgsql',
+                'params'  => array(
+                    'host'     => 'localhost',
+                    'username' => 'postgres',
+                    'password' => '',
+                    'dbname'   => 'postgres'
+                )
+            )
+        ));
+        $db = Zend_Db::factory($config->database);
+        $db->getConnection();
+
+
+
+        $sql = 'select alias, fecha, canal, pautas_encontradas, nro_pautas, (SELECT SUM(pautas_encontradas)
+                FROM pautas RP where EXTRACT(YEAR from fecha) = '.$anho.' AND EXTRACT(MONTH from fecha) = ' .$mes. '
+                AND RP.alias = RT.alias)::integer as pautas_emitidas_mes, (SELECT SUM(nro_pautas)
+                FROM pautas RP where EXTRACT(YEAR from fecha) = '.$anho.' AND EXTRACT(MONTH from fecha) = ' .$mes. '
+                AND RP.alias = RT.alias)::integer as pautas_a_emitir_mes from pautas RT where fecha = ?';
+
+        /*$sql = 'select alias, fecha, canal, pautas_encontradas, nro_pautas, (SELECT SUM(pautas_encontradas)
+        FROM pautas RP where EXTRACT(YEAR from fecha) = '.$anho.' AND EXTRACT(MONTH from fecha) =' .$mes. ' AND RP.alias = RT.alias
+        )::integer as pautas_emitidas_mes from pautas RT where fecha = ?';*/
+
+        $rs = $db->fetchAll( $sql, $fecha );
+
+        foreach( $rs as $fila ){
+
+            $datos[] = (array)$fila;
+
+        }
+        return $datos;
+    }
+
+    /*
+     *  Funcion que trae el informe de las pautas
+     * */
+    public function informePautasAction(){
+
+        $this->view->headScript()->appendFile('http://code.jquery.com/ui/1.10.0/jquery-ui.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css');
+        $this->view->headScript()->appendFile('/js/reportes_informe_pautas.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('/css/informe_pautas.css', 'screen');
+
+        $this->view->headTitle()->append('Reporte Pautas');
+
+        $fecha_seleccionada = $this->_getParam('fecha', null);
+        if(!is_null($fecha_seleccionada)) {
+
+            list($anho, $mes, $dia) = explode('-', $fecha_seleccionada);
+            $mes = (int)$mes;
+            $dia = (int)$dia;
+        } else {
+
+            $fecha_seleccionada = date("Y-m-d", mktime(0, 0, 0, date("m"),date("d")-1,date("Y")));
+        }
+        $this->view->fecha = $fecha_seleccionada;
+        /*$this->_setupRangoSeleccion($anho, $mes);
+
+        $this->view->nombre_mes = $this->meses[$mes-1];
+
+        // Te da la cantidad de dias del mes y anho
+        $this->view->cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+
+
+        $this->view->anho = $anho;
+        $this->view->mes = $mes;
+
+        $this->view->dia_hoy = date('j');
+
+        $this->view->dias_semana = $this->dias_semana;
+
+        $this->view->nombres_dias_del_mes = $this->cargarNombresDiasDelMes($anho, $mes);
+
+        $this->view->rango_seleccion = $this->rango_seleccion;*/
+
+        $canales = array(
+            'SNT'=>array(
+                'descripcion' => 'Reporte Canal 9 - SNT',
+                'fecha' => '',
+                'servicio' => '',
+                'css_titulo' => "fondo_titulo_SNT"
+            ),
+            'TELEFUTURO' => array(
+                'descripcion' => 'Reporte Canal 4 - Telefuturo',
+                'datos' => array(),
+                'servicio' => '',
+                'css_titulo' => 'fondo_titulo_TELEFUTURO'
+
+            )
+        );
+        //obtengo los datos de la base de datos (tabla pautas)
+        $datos_BD_pautas = $this->_cargarFilasInformePautas( $fecha_seleccionada );
+        $canales_uno  = array();
+        foreach( $datos_BD_pautas as $fila ){
+
+            $canales_uno[$fila['canal']]['datos'][$fila['alias']]['servicio'] = $fila['alias'];
+            $canales_uno[$fila['canal']]['datos'][$fila['alias']]['fecha'] = $fila['fecha'];
+            $canales_uno[$fila['canal']]['datos'][$fila['alias']]['pautas_encontradas'] = $fila['pautas_encontradas'];
+            $canales_uno[$fila['canal']]['datos'][$fila['alias']]['nro_pautas'] = $fila['nro_pautas'];
+            $canales_uno[$fila['canal']]['datos'][$fila['alias']]['pautas_emitidas_mes'] = $fila['pautas_emitidas_mes'];
+            $canales_uno[$fila['canal']]['datos'][$fila['alias']]['pautas_a_emitir_mes'] = $fila['pautas_a_emitir_mes'];
+            $canales_uno[$fila['canal']]['css_titulo'] = 'fondo_titulo_'.$fila['canal'];
+            $canales_uno[$fila['canal']]['descripcion'] = 'Reporte Canal - '.$fila['canal'];
+
+        }
+
+        $canales_dos  = array();
+        $datos_BD_reportepautas = $this->_cargarFilasInformePautasDetallado( $fecha_seleccionada );
+        foreach ( $datos_BD_reportepautas as $fila ){
+
+            $canales_dos[$fila['canal']]['servicio'] = $fila['servicio'];
+            $canales_dos[$fila['canal']]['datos'][] = $fila['fecha_hora'];
+            $canales_dos[$fila['canal']]['css_titulo'] = 'fondo_titulo_'.$fila['canal'];
+            $canales_dos[$fila['canal']]['descripcion'] = 'Reporte Canal - '.$fila['canal'];
+        }
+        $this->view->canales = $canales_uno;
+        //$this->view->canales_dos = $canales_dos;
+
+    }
+    private function _cargarAliasMostrar(){
+
+        global $db;
+        $alias = array();
+
+        //se incluye el php que contiene los metodos
+        require_once( "Google_Spreadsheet.php" );
+
+        $config = new Zend_Config(array(
+            'database' => array(
+                'adapter' => 'Pdo_Pgsql',
+                'params'  => array(
+                    'host'     => 'localhost',
+                    'username' => 'postgres',
+                    'password' => '',
+                    'dbname'   => 'postgres'
+                )
+            )
+        ));
+        $db = Zend_Db::factory($config->database);
+        $db->getConnection();
+        //traemos los datos de los contenidos que vamos a cargar para mirar
+        $sql = 'select nombre_alias from contenidoalias';
+
+        $rs = $db->fetchAll( $sql );
+
+        foreach( $rs as $fila ){
+
+            $alias[] = (array)$fila;
+
+        }
+
+        return $alias;
+    }
+    private function _cargarFilasInformeContenidosBD( $alias ){
+
+        global $db;
+        $datos = array();
+
+        //se incluye el php que contiene los metodos
+        //require_once( "Google_Spreadsheet.php" );
+
+        $config = new Zend_Config(array(
+            'database' => array(
+                'adapter' => 'Pdo_Pgsql',
+                'params'  => array(
+                    'host'     => 'localhost',
+                    'username' => 'postgres',
+                    'password' => '',
+                    'dbname'   => 'postgres'
+                )
+            )
+        ));
+        $db = Zend_Db::factory($config->database);
+        $db->getConnection();
+        //traemos los datos de los contenidos que vamos a COMPARAR
+        $sql = 'select * from stockcontenidos where alias = ?';
+
+        $rs = $db->fetchAll( $sql, $alias );
+
+        foreach( $rs as $fila ){
+
+            $datos[] = (array)$fila;
+
+        }
+        return $datos;
+    }
+
+    private function _cargarFilasInformeContenidos( $alias, $ss ){
+
+        global $db;
+        $datos = array();
+
+        //se incluye el php que contiene los metodos
+        //require_once( "Google_Spreadsheet.php" );
+
+        $config = new Zend_Config(array(
+            'database' => array(
+                'adapter' => 'Pdo_Pgsql',
+                'params'  => array(
+                    'host'     => 'localhost',
+                    'username' => 'postgres',
+                    'password' => '',
+                    'dbname'   => 'postgres'
+                )
+            )
+        ));
+        $db = Zend_Db::factory($config->database);
+        $db->getConnection();
+        //traemos los datos de los contenidos que vamos a cargar para mirar
+        $sql = 'select * from contenidoalias where nombre_alias = ?';
+
+        $rs = $db->fetchAll( $sql, $alias );
+
+        foreach( $rs as $fila ){
+
+            $datos[] = (array)$fila;
+
+        }
+
+        //el documento a leer
+        foreach( $datos as $servicio ){
+
+            //archivo a leer le pongo en una variable porque no le gusta sino
+            $archivo = $servicio['archivo_alias'];
+            $ss->useSpreadsheet( "$archivo" );
+            //la hoja a leer
+            $hoja = $servicio['hoja_alias'];
+            $ss->useWorksheet( "$hoja" );
+            //Se obtiene el contenido de la hoja por filas y se le asigna al ahora arreglo $rows
+            $rows = $ss->getRows();
+            //Se valida si el arreglo tiene datos antes de intentar imprimirlo.
+            if( empty( $rows ) ){
+
+                echo "El arreglo esta vacio\n";
+            }
+            else{
+
+                $fp = fopen('ejemplo.txt', 'w');
+
+                foreach( $rows as $indice=>$fila ) {
+
+                    foreach( $fila as $clave=>$valor ){
+                        //guardo las filas en archivo txt
+                        $guardar =  $valor . "\n";
+                        //echo $guardar;
+                        fwrite( $fp, $guardar );
+                    }
+                }
+                fclose($fp);
+            }
+        }
+
+        return $rows;
+    }
+    //obtener los datos de los contenidos que se pasan como parametro
+    public function informeContenidosAction(){
+
+        $this->view->headScript()->appendFile('http://code.jquery.com/ui/1.10.0/jquery-ui.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css');
+        //MODIFICAR
+        $this->view->headScript()->appendFile('/js/reportes_informe_contenidos.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('/css/informe_contenidos.css', 'screen');
+
+        $this->view->headTitle()->append('Informe Contenidos');
+        $alias_contenidos = array();
+        /*CARGO LOS ALIAS PARA FILTRAR*/
+        $this->view->alias = $this->_cargarAliasMostrar();
+
+        /*me logeo una vez nomas*/
+        $username = "soporte2@entermovil.com.py";
+        $password = "derlis360";
+
+        //Se crea objeto de la clase Google_Spreadsheet para acceder
+        $ss = new Google_Spreadsheet( $username,$password );
+
+        //SI ALIAS SELECCIONADO ES NULO
+        $alias_seleccionado = $this->_getParam('alias', null);
+
+        if( is_null( $alias_seleccionado ) ) {
+            //SE MUESTRA POR DEFECTO EL PRIMER ALIAS CARGADO
+            $alias_seleccionado = 'PAREJA';//MODIFICFAR DESPUES PARA QUE SEA EL PRIMER ELEMENTO DEL ARRAY ALIAS
+
+        }
+        else{
+            //SINO SE PASA COMO PARAMETRO EL ALIAS REQUERIDO Y SE CARGA
+            //$this->view->nombre_alias = $alias_seleccionado;
+
+        }
+        $this->view->nombre_alias = $alias_seleccionado;
+        $alias_contenidos = $this->_cargarFilasInformeContenidos($alias_seleccionado, $ss);
+        $this->view->contenidos = $alias_contenidos;
+        $alias_contenidos_BD = $this->_cargarFilasInformeContenidosBD( $alias_seleccionado );
+        $this->view->contenidosBD = $alias_contenidos_BD;
+
+    }//FIN INFORMECONTENIDOSACTION
 
     private function cargarNombresDiasDelMes($anho, $mes) {
 
