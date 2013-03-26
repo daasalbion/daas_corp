@@ -1,0 +1,732 @@
+2013-03-22T17:59:11-03:00 INFO - [127.0.0.1]: Operadora:[tigo] Pais:[guatemala] Accion:[SuscribeToService]
+2013-03-22T17:59:11-03:00 ERR - [127.0.0.1]: Accion-No-Soportada:[SuscribeToService]
+2013-03-22T17:59:34-03:00 INFO - [127.0.0.1]: Operadora:[tigo] Pais:[guatemala] Accion:[SubscribeToService]
+2013-03-22T17:59:34-03:00 INFO - [127.0.0.1]: Forward:[tigo-guatemala-servicios]
+2013-03-22T17:59:34-03:00 INFO - [127.0.0.1]: WebservicesController -> Request
+2013-03-22T17:59:34-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T17:59:34-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T17:59:34-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T17:59:34-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T17:59:34-03:00 INFO - [127.0.0.1]: Solicitud WSDL
+2013-03-22T17:59:34-03:00 INFO - [127.0.0.1]: Solicitud WSDL
+2013-03-22T18:08:53-03:00 INFO - [127.0.0.1]: Operadora:[tigo] Pais:[guatemala] Accion:[SubscribeToService]
+2013-03-22T18:08:53-03:00 INFO - [127.0.0.1]: Forward:[tigo-guatemala-servicios]
+2013-03-22T18:08:53-03:00 INFO - [127.0.0.1]: WebservicesController -> Request
+2013-03-22T18:08:53-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:08:53-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:08:53-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:08:53-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:08:53-03:00 INFO - [127.0.0.1]: Solicitud WSDL
+2013-03-22T18:08:53-03:00 INFO - [127.0.0.1]: Solicitud WSDL
+2013-03-22T18:10:03-03:00 INFO - [127.0.0.1]: Operadora:[tigo] Pais:[guatemala] Accion:[SubscribeToService]
+2013-03-22T18:10:03-03:00 INFO - [127.0.0.1]: Forward:[tigo-guatemala-servicios]
+2013-03-22T18:10:03-03:00 INFO - [127.0.0.1]: WebservicesController -> Request
+2013-03-22T18:10:03-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:10:03-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:10:03-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:10:03-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:10:04-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:10:04-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:10:04-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:10:04-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:10:04-03:00 ERR - [127.0.0.1]: Parametro:[shortcodenumber] no recibido
+2013-03-22T18:10:04-03:00 ERR - [127.0.0.1]: Parametro:[shortcodenumber] no recibido
+2013-03-22T18:10:53-03:00 INFO - [127.0.0.1]: Operadora:[tigo] Pais:[guatemala] Accion:[SubscribeToService]
+2013-03-22T18:10:53-03:00 INFO - [127.0.0.1]: Forward:[tigo-guatemala-servicios]
+2013-03-22T18:10:53-03:00 INFO - [127.0.0.1]: WebservicesController -> Request
+2013-03-22T18:10:53-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:10:53-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:10:53-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:10:53-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:10:53-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:10:53-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:10:53-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:10:53-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:10:53-03:00 ERR - [127.0.0.1]: Parametro:[shortcodenumber] no recibido
+2013-03-22T18:10:53-03:00 ERR - [127.0.0.1]: Parametro:[shortcodenumber] no recibido
+2013-03-22T18:10:58-03:00 INFO - [127.0.0.1]: Operadora:[tigo] Pais:[guatemala] Accion:[SubscribeToService]
+2013-03-22T18:10:58-03:00 INFO - [127.0.0.1]: Forward:[tigo-guatemala-servicios]
+2013-03-22T18:10:58-03:00 INFO - [127.0.0.1]: WebservicesController -> Request
+2013-03-22T18:10:58-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:10:58-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:10:58-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:10:58-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:10:58-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:10:58-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:10:58-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:10:58-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:10:58-03:00 ERR - [127.0.0.1]: Parametro:[shortcodenumber] no recibido
+2013-03-22T18:10:58-03:00 ERR - [127.0.0.1]: Parametro:[shortcodenumber] no recibido
+2013-03-22T18:12:44-03:00 INFO - [127.0.0.1]: Operadora:[tigo] Pais:[guatemala] Accion:[SubscribeToService]
+2013-03-22T18:12:44-03:00 INFO - [127.0.0.1]: Forward:[tigo-guatemala-servicios]
+2013-03-22T18:12:44-03:00 INFO - [127.0.0.1]: WebservicesController -> Request
+2013-03-22T18:12:44-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:12:44-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:12:44-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:12:44-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:12:44-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:12:44-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:12:44-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:12:44-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:12:50-03:00 INFO - [127.0.0.1]: Operadora:[tigo] Pais:[guatemala] Accion:[SubscribeToService]
+2013-03-22T18:12:50-03:00 INFO - [127.0.0.1]: Forward:[tigo-guatemala-servicios]
+2013-03-22T18:12:50-03:00 INFO - [127.0.0.1]: WebservicesController -> Request
+2013-03-22T18:12:50-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:12:50-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:12:50-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:12:50-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:12:50-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:12:50-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:12:50-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:12:50-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:15:18-03:00 INFO - [127.0.0.1]: Operadora:[tigo] Pais:[guatemala] Accion:[SubscribeToService]
+2013-03-22T18:15:18-03:00 INFO - [127.0.0.1]: Forward:[tigo-guatemala-servicios]
+2013-03-22T18:15:18-03:00 INFO - [127.0.0.1]: WebservicesController -> Request
+2013-03-22T18:15:18-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:15:18-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:15:18-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:15:18-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:15:19-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:15:19-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:15:19-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:15:19-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: Operadora:[tigo] Pais:[guatemala] Accion:[SubscribeToService]
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: Forward:[tigo-guatemala-servicios]
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: WebservicesController -> Request
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: Clase:[GetUserServicesRequestParams]
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => shortcodenumber
+    [2] => transactionid
+)
+]
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: despues de validar parametros...
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: despues de validar parametros...
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: despues de conectar
+2013-03-22T18:18:45-03:00 INFO - [127.0.0.1]: despues de conectar
+2013-03-22T18:18:46-03:00 INFO - [127.0.0.1]: rs:[Array
+(
+    [0] => Array
+        (
+            [costo_usd] => 0
+            [alias] => SANTO
+            [promocion] => 6767_SANTO
+            [numero] => 6767
+        )
+
+    [1] => Array
+        (
+            [costo_usd] => 0
+            [alias] => ORAR
+            [promocion] => 6767_ORAR
+            [numero] => 6767
+        )
+
+)
+]
+2013-03-22T18:18:46-03:00 INFO - [127.0.0.1]: rs:[Array
+(
+    [0] => Array
+        (
+            [costo_usd] => 0
+            [alias] => SANTO
+            [promocion] => 6767_SANTO
+            [numero] => 6767
+        )
+
+    [1] => Array
+        (
+            [costo_usd] => 0
+            [alias] => ORAR
+            [promocion] => 6767_ORAR
+            [numero] => 6767
+        )
+
+)
+]
+2013-03-22T19:18:37-03:00 INFO - [127.0.0.1]: Operadora:[tigo] Pais:[guatemala] Accion:[SubscribeToService]
+2013-03-22T19:18:37-03:00 INFO - [127.0.0.1]: Forward:[tigo-guatemala-servicios]
+2013-03-22T19:18:37-03:00 INFO - [127.0.0.1]: WebservicesController -> Request
+2013-03-22T19:18:37-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T19:18:37-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios Servicio:[SubscribeToService]
+2013-03-22T19:18:37-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T19:18:37-03:00 INFO - [127.0.0.1]: Tigo-Guatemala-Servicios WSDL:[http://www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService?wsdl]
+2013-03-22T19:18:38-03:00 INFO - [127.0.0.1]: Clase:[GetAvailableServicesRequestParams]
+2013-03-22T19:18:38-03:00 INFO - [127.0.0.1]: Clase:[GetAvailableServicesRequestParams]
+2013-03-22T19:18:38-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => servicename
+    [2] => transactionid
+)
+]
+2013-03-22T19:18:38-03:00 INFO - [127.0.0.1]: ParametrosObligatorios:[Array
+(
+    [0] => phonenumber
+    [1] => servicename
+    [2] => transactionid
+)
+]
+2013-03-22T19:18:38-03:00 ERR - [127.0.0.1]: Parametro:[servicename] no recibido
+2013-03-22T19:18:38-03:00 ERR - [127.0.0.1]: Parametro:[servicename] no recibido
+2013-03-22T19:18:38-03:00 INFO - [127.0.0.1]: despues de validar parametros...
+2013-03-22T19:18:38-03:00 INFO - [127.0.0.1]: despues de validar parametros...
+2013-03-22T19:18:38-03:00 INFO - [127.0.0.1]: despues de conectar
+2013-03-22T19:18:38-03:00 INFO - [127.0.0.1]: despues de conectar
+2013-03-22T19:18:38-03:00 INFO - [127.0.0.1]: rs:[Array
+(
+    [0] => Array
+        (
+            [costo_usd] => 0
+            [alias] => MASCOTA
+            [promocion] => 35500_MASCOTA
+            [numero] => 35500
+        )
+
+    [1] => Array
+        (
+            [costo_usd] => 0
+            [alias] => TONO
+            [promocion] => 35500_TONO
+            [numero] => 35500
+        )
+
+    [2] => Array
+        (
+            [costo_usd] => 0
+            [alias] => BB
+            [promocion] => 35500_BB
+            [numero] => 35500
+        )
+
+    [3] => Array
+        (
+            [costo_usd] => 0
+            [alias] => APODO
+            [promocion] => 35500_APODO
+            [numero] => 35500
+        )
+
+    [4] => Array
+        (
+            [costo_usd] => 0
+            [alias] => SIGLAS
+            [promocion] => 35500_SIGLAS
+            [numero] => 35500
+        )
+
+    [5] => Array
+        (
+            [costo_usd] => 0
+            [alias] => BL
+            [promocion] => 35500_BL
+            [numero] => 35500
+        )
+
+    [6] => Array
+        (
+            [costo_usd] => 0
+            [alias] => DIVER
+            [promocion] => 35500_DIVER
+            [numero] => 35500
+        )
+
+    [7] => Array
+        (
+            [costo_usd] => 0
+            [alias] => POSTAL
+            [promocion] => 35500_POSTAL
+            [numero] => 35500
+        )
+
+    [8] => Array
+        (
+            [costo_usd] => 0
+            [alias] => PY
+            [promocion] => 6767_PY
+            [numero] => 6767
+        )
+
+    [9] => Array
+        (
+            [costo_usd] => 0
+            [alias] => ALEGRIA
+            [promocion] => 6767_ALEGRIA
+            [numero] => 6767
+        )
+
+    [10] => Array
+        (
+            [costo_usd] => 0
+            [alias] => MUNDO
+            [promocion] => 6767_MUNDO
+            [numero] => 6767
+        )
+
+    [11] => Array
+        (
+            [costo_usd] => 0
+            [alias] => INGLES
+            [promocion] => 6767_INGLES
+            [numero] => 6767
+        )
+
+    [12] => Array
+        (
+            [costo_usd] => 0
+            [alias] => CIENCIA
+            [promocion] => 6767_CIENCIA
+            [numero] => 6767
+        )
+
+    [13] => Array
+        (
+            [costo_usd] => 0
+            [alias] => OK
+            [promocion] => 6767_OK
+            [numero] => 6767
+        )
+
+    [14] => Array
+        (
+            [costo_usd] => 0
+            [alias] => USA
+            [promocion] => 6767_USA
+            [numero] => 6767
+        )
+
+    [15] => Array
+        (
+            [costo_usd] => 0
+            [alias] => CUERNOS
+            [promocion] => 6767_CUERNOS
+            [numero] => 6767
+        )
+
+    [16] => Array
+        (
+            [costo_usd] => 0
+            [alias] => VENADO
+            [promocion] => 6767_VENADO
+            [numero] => 6767
+        )
+
+    [17] => Array
+        (
+            [costo_usd] => 0
+            [alias] => PAIS
+            [promocion] => 6767_PAIS
+            [numero] => 6767
+        )
+
+    [18] => Array
+        (
+            [costo_usd] => 0
+            [alias] => PARAGUAY
+            [promocion] => 6767_PARAGUAY
+            [numero] => 6767
+        )
+
+    [19] => Array
+        (
+            [costo_usd] => 0
+            [alias] => SALUD
+            [promocion] => 6767_SALUD
+            [numero] => 6767
+        )
+
+    [20] => Array
+        (
+            [costo_usd] => 0
+            [alias] => VIDA
+            [promocion] => 6767_VIDA
+            [numero] => 6767
+        )
+
+    [21] => Array
+        (
+            [costo_usd] => 0
+            [alias] => SABER
+            [promocion] => 6767_SABER
+            [numero] => 6767
+        )
+
+    [22] => Array
+        (
+            [costo_usd] => 0
+            [alias] => CONOCER
+            [promocion] => 6767_CONOCER
+            [numero] => 6767
+        )
+
+    [23] => Array
+        (
+            [costo_usd] => 0
+            [alias] => SEXO
+            [promocion] => 6767_SEXO
+            [numero] => 6767
+        )
+
+    [24] => Array
+        (
+            [costo_usd] => 0
+            [alias] => PAREJA
+            [promocion] => 6767_PAREJA
+            [numero] => 6767
+        )
+
+    [25] => Array
+        (
+            [costo_usd] => 0
+            [alias] => EXITO
+            [promocion] => 6767_EXITO
+            [numero] => 6767
+        )
+
+    [26] => Array
+        (
+            [costo_usd] => 0
+            [alias] => GANAR
+            [promocion] => 6767_GANAR
+            [numero] => 6767
+        )
+
+    [27] => Array
+        (
+            [costo_usd] => 0
+            [alias] => ASTRO
+            [promocion] => 6767_ASTRO
+            [numero] => 6767
+        )
+
+    [28] => Array
+        (
+            [costo_usd] => 0
+            [alias] => SIGNO
+            [promocion] => 6767_SIGNO
+            [numero] => 6767
+        )
+
+)
+]
+2013-03-22T19:18:38-03:00 INFO - [127.0.0.1]: rs:[Array
+(
+    [0] => Array
+        (
+            [costo_usd] => 0
+            [alias] => MASCOTA
+            [promocion] => 35500_MASCOTA
+            [numero] => 35500
+        )
+
+    [1] => Array
+        (
+            [costo_usd] => 0
+            [alias] => TONO
+            [promocion] => 35500_TONO
+            [numero] => 35500
+        )
+
+    [2] => Array
+        (
+            [costo_usd] => 0
+            [alias] => BB
+            [promocion] => 35500_BB
+            [numero] => 35500
+        )
+
+    [3] => Array
+        (
+            [costo_usd] => 0
+            [alias] => APODO
+            [promocion] => 35500_APODO
+            [numero] => 35500
+        )
+
+    [4] => Array
+        (
+            [costo_usd] => 0
+            [alias] => SIGLAS
+            [promocion] => 35500_SIGLAS
+            [numero] => 35500
+        )
+
+    [5] => Array
+        (
+            [costo_usd] => 0
+            [alias] => BL
+            [promocion] => 35500_BL
+            [numero] => 35500
+        )
+
+    [6] => Array
+        (
+            [costo_usd] => 0
+            [alias] => DIVER
+            [promocion] => 35500_DIVER
+            [numero] => 35500
+        )
+
+    [7] => Array
+        (
+            [costo_usd] => 0
+            [alias] => POSTAL
+            [promocion] => 35500_POSTAL
+            [numero] => 35500
+        )
+
+    [8] => Array
+        (
+            [costo_usd] => 0
+            [alias] => PY
+            [promocion] => 6767_PY
+            [numero] => 6767
+        )
+
+    [9] => Array
+        (
+            [costo_usd] => 0
+            [alias] => ALEGRIA
+            [promocion] => 6767_ALEGRIA
+            [numero] => 6767
+        )
+
+    [10] => Array
+        (
+            [costo_usd] => 0
+            [alias] => MUNDO
+            [promocion] => 6767_MUNDO
+            [numero] => 6767
+        )
+
+    [11] => Array
+        (
+            [costo_usd] => 0
+            [alias] => INGLES
+            [promocion] => 6767_INGLES
+            [numero] => 6767
+        )
+
+    [12] => Array
+        (
+            [costo_usd] => 0
+            [alias] => CIENCIA
+            [promocion] => 6767_CIENCIA
+            [numero] => 6767
+        )
+
+    [13] => Array
+        (
+            [costo_usd] => 0
+            [alias] => OK
+            [promocion] => 6767_OK
+            [numero] => 6767
+        )
+
+    [14] => Array
+        (
+            [costo_usd] => 0
+            [alias] => USA
+            [promocion] => 6767_USA
+            [numero] => 6767
+        )
+
+    [15] => Array
+        (
+            [costo_usd] => 0
+            [alias] => CUERNOS
+            [promocion] => 6767_CUERNOS
+            [numero] => 6767
+        )
+
+    [16] => Array
+        (
+            [costo_usd] => 0
+            [alias] => VENADO
+            [promocion] => 6767_VENADO
+            [numero] => 6767
+        )
+
+    [17] => Array
+        (
+            [costo_usd] => 0
+            [alias] => PAIS
+            [promocion] => 6767_PAIS
+            [numero] => 6767
+        )
+
+    [18] => Array
+        (
+            [costo_usd] => 0
+            [alias] => PARAGUAY
+            [promocion] => 6767_PARAGUAY
+            [numero] => 6767
+        )
+
+    [19] => Array
+        (
+            [costo_usd] => 0
+            [alias] => SALUD
+            [promocion] => 6767_SALUD
+            [numero] => 6767
+        )
+
+    [20] => Array
+        (
+            [costo_usd] => 0
+            [alias] => VIDA
+            [promocion] => 6767_VIDA
+            [numero] => 6767
+        )
+
+    [21] => Array
+        (
+            [costo_usd] => 0
+            [alias] => SABER
+            [promocion] => 6767_SABER
+            [numero] => 6767
+        )
+
+    [22] => Array
+        (
+            [costo_usd] => 0
+            [alias] => CONOCER
+            [promocion] => 6767_CONOCER
+            [numero] => 6767
+        )
+
+    [23] => Array
+        (
+            [costo_usd] => 0
+            [alias] => SEXO
+            [promocion] => 6767_SEXO
+            [numero] => 6767
+        )
+
+    [24] => Array
+        (
+            [costo_usd] => 0
+            [alias] => PAREJA
+            [promocion] => 6767_PAREJA
+            [numero] => 6767
+        )
+
+    [25] => Array
+        (
+            [costo_usd] => 0
+            [alias] => EXITO
+            [promocion] => 6767_EXITO
+            [numero] => 6767
+        )
+
+    [26] => Array
+        (
+            [costo_usd] => 0
+            [alias] => GANAR
+            [promocion] => 6767_GANAR
+            [numero] => 6767
+        )
+
+    [27] => Array
+        (
+            [costo_usd] => 0
+            [alias] => ASTRO
+            [promocion] => 6767_ASTRO
+            [numero] => 6767
+        )
+
+    [28] => Array
+        (
+            [costo_usd] => 0
+            [alias] => SIGNO
+            [promocion] => 6767_SIGNO
+            [numero] => 6767
+        )
+
+)
+]
