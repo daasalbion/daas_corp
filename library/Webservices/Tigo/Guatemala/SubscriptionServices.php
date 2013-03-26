@@ -199,7 +199,7 @@ class SubscriptionServices
                 'SubscribeToServiceRequestParams' => array(PHONENUMBER, SERVICENAME, TRANSACTION_ID),
                 'UnSubscribeToServiceRequestParams' => array(PHONENUMBER, SERVICENAME, TRANSACTION_ID),
                 'UnSubscribeUserRequestParams' => array(PHONENUMBER, TRANSACTION_ID),
-                'GetUserServicesRequestParams' => array(PHONENUMBER, SERVICENAME, TRANSACTION_ID),
+                'GetUserServicesRequestParams' => array(PHONENUMBER, SHORTCODE_NUMBER, TRANSACTION_ID),
                 'GetAvailableServicesRequestParams' => array(PHONENUMBER, SERVICENAME, TRANSACTION_ID),
                 'RequestUserServiceRequestParams' => array(PHONENUMBER, SERVICENAME, TRANSACTION_ID),
                 'BlackListUserRequestParams' => array(PHONENUMBER, TRANSACTION_ID),
