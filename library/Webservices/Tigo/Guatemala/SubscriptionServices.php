@@ -334,6 +334,37 @@ class SubscriptionServices
 
     }
 
+    private function _estaSuscripto($phone,$alias,$shortcodenumber)
+    {
+        $front = Zend_Controller_Front::getInstance();
+        $bootstrap = $front->getParam("bootstrap");
+        $logger = $bootstrap->getResource('Logger');
+
+        $options = $bootstrap->getOptions();
+
+        $db = Zend_Db::factory(new Zend_Config($options['resources']['db']));
+        $db->getConnection();
+
+        $sql = "select cel from promosuscripcion.suscriptos S
+                join info_promociones ip on (S.id_promocion=ip.id_promocion and S.id_carrier=5 AND S.cel= ? and ip.alias=?  and S.id_carrier=ip.id_carrier)";
+
+        if($shortcodenumber)
+         {
+         $logger->info('Posee shortcodenumber');
+         $sql .=" where ip.numero= ?";
+         $rs = $db->fetchAll($sql, array($phone,$alias,$shortcodenumber));
+         $logger->info('CONSULTA con shortcodenumber realizada');
+         }
+        else
+         $rs = $db->fetchAll($sql, array($phone,$alias));
+
+        $existe=false;
+        if($rs)
+         $existe=true;
+
+     return $existe;
+    }
+
     private function _getFormatoCorto($nro_largo) {
 
         //Verificamos que el nro recibido este en formato largo
@@ -358,19 +389,10 @@ class SubscriptionServices
 
         $this->_validateParams($requestParams, 'GetUserServicesRequestParams');
 
-        $logger->info('despues de validar parametros...');
-        /*
-         * select infopromos.costo_usd,alias, promocion,alias,numero,'SALIR' || numero as unsusbribednum  from promosuscripcion.suscriptos  suscrip
-join info_promociones  infopromos ON (infopromos.id_promocion=suscrip.id_promocion and infopromos.id_carrier=suscrip.id_carrier)
-where  suscrip.cel='0984100058' -- and suscrip.id_carrier=2
-         */
-
         $options = $bootstrap->getOptions();
 
         $db = Zend_Db::factory(new Zend_Config($options['resources']['db']));
         $db->getConnection();
-
-        $logger->info('despues de conectar');
 
         $sql = "select ip.costo_usd,alias, promocion,alias,numero, alias  from promosuscripcion.suscriptos  S
         join info_promociones  ip ON (ip.id_promocion=S.id_promocion and ip.id_carrier=S.id_carrier)
@@ -491,19 +513,151 @@ where  suscrip.cel='0984100058' -- and suscrip.id_carrier=2
      */
     public function requestUserService(RequestUserServiceRequestParams $requestParams) {
 
+        /*
+          1. si ya se le envio y cobro todos los mensajes del dia: se reenvian todos sin volver a cobrar (confirmar)
+          2. se envia (o reenvia) e intenta  cobrar todos los no cobrados.
+         */
+
+        $front = Zend_Controller_Front::getInstance();
+        $bootstrap = $front->getParam("bootstrap");
+        $logger = $bootstrap->getResource('Logger');
         $this->_validateParams($requestParams, 'RequestUserServiceRequestParams');
 
-        //si todavia no se envio, enviar
+        $options = $bootstrap->getOptions();
 
-        //si ya envio volver a enviar
+        $db = Zend_Db::factory(new Zend_Config($options['resources']['db']));
+        $db->getConnection();
+
+        $phoneSinPais = $this->_getFormatoCorto($requestParams->phonenumber);
+        $logger->info('cel:[' . $phoneSinPais . '] alias:[' . $requestParams->servicename . ']');
+
+        $existeSuscripcion = $this->_estaSuscripto($phoneSinPais,$requestParams->servicename,$requestParams->shortcodenumber);
+
+        if($existeSuscripcion)
+        {
+          //obtengo el id de la promocion de acuerdo a los parametros de entrada
+          $sql="select id_promocion,numero from info_promociones
+              where id_promocion=(select id_promocion from promosuscripcion.suscriptos where cel= ? and id_carrier=5)
+              and id_carrier=5 and alias=?";
+             //--and numero = '4550' //si pasa el shortcodenumber
+
+          if($requestParams->shortcodenumber)
+            {
+            $sql .=" and numero= ?";
+            $rs = $db->fetchAll($sql, array($phoneSinPais,$requestParams->servicename,$requestParams->shortcodenumber));
+            }
+          else
+            {
+            $rs = $db->fetchAll($sql, array($phoneSinPais,$requestParams->servicename));
+            }
+          $idPromocion= $rs[0]['id_promocion'];
+          $numero=$rs[0]['numero'];
+          $logger->info('id promo = '.$idPromocion);
+          $logger->info('numero = '.$numero);
+/*
+          //cuenta la cantidad de mensajes que se envio hoy (estado 4 = envio de mensaje ok) y se cobro
+           $sql2 ="select count(*)::integer as total from promosuscripcion.tigo_guatemala_billingcheck where id_carrier = 5 and estado = 4
+                   and ts_proximo_chequeo::date = current_date and cel = ? and id_promocion = ? ";
+
+           $rs2 = $db->fetchAll($sql2, array($phoneSinPais,$idPromocion));
+
+           $envios_hoy=$rs2[0]['total'];
+           $logger->info('enviados hoy = '.$envios_hoy);
+
+           $sql3="select envios from promosuscripcion.envios_x_dia where id_carrier=5 and id_promocion = ? and dia = extract(dow from current_date)::integer";
+
+           $rs3=  $db->fetchAll($sql3, array($idPromocion));
+           $max_envios_hoy=$rs3[0]['envios'];
+           $logger->info('max envios hoy = '.$max_envios_hoy);
+
+           //1. si ya se le envio y cobro los 2: se reenvia los 2 sin volver a cobrar (confirmar)
+            if($enviados_hoy = $max_envios_hoy)
+            {
+            try {
+                for($i=0;$i<$max_envios_hoy;$i++)
+                 {
+                 $status = $db->insert('promosuscripcion.tigo_guatemala_billingcheck', array('id_carrier' => 5,'id_promocion' =>$idPromocion,'numero'=>$numero,'cel'=>$phoneSinPais,'estado'=>7,'ts_local'=>'now()','cantidad_chequeos'=>0,'ts_proximo_chequeo'=>'now()'));
+                 $logger->info('status:[' . $status . ']');
+                 }
+                } catch(Zend_Db_Exception $e) {
+                    $logger->err($e);
+                }
+            }
+            else if($enviados_hoy < $max_envios_hoy)
+            {
+            $a_enviar= $max_envios_hoy - $enviados_hoy;
+
+            }
+*/
+            //controla q no se intente reenviar un men con los mismos parametros con diferencia de al menos 3 minutos (ts_local)
+          /*  $sql2="select *,(hora_actual - hora_ts_local ) as dif_hora, (minuto_actual - minuto_ts_local) as dif_min from
+                  (select ts_local, (select extract(hour from ts_local)) as hora_ts_local, (select extract(minute from ts_local)) as minuto_ts_local,
+                  (select extract(hour from timestamp 'now()')) as hora_actual, (select extract(minute from timestamp 'now()')) as minuto_actual
+                  from promosuscripcion.tigo_guatemala_reenvios
+                  where id_carrier=5 and id_promocion= ? and cel=? and ts_local::date=current_date) S2
+                  where (hora_actual - hora_ts_local) =0 and (minuto_actual - minuto_ts_local) < 3";
+           */
+            if($requestParams->shortcodenumber)
+             {
+             $sql2="select coalesce((EXTRACT(epoch FROM (current_timestamp -
+                   (select ts_local from  promosuscripcion.tigo_guatemala_reenvios where id_carrier=5 and id_promocion= ? and cel=? and numero=?
+                   and ts_local::date=current_date limit 1))::interval)/60)::integer,-1) as dif_minutos";
+
+             $rs2 = $db->fetchAll($sql2, array($idPromocion,$phoneSinPais,$requestParams->shortcodenumber));
+             }
+            else
+             {
+             $sql2="select coalesce((EXTRACT(epoch FROM (current_timestamp -
+                   (select ts_local from  promosuscripcion.tigo_guatemala_reenvios where id_carrier=5 and id_promocion= ? and cel=?
+                   and ts_local::date=current_date limit 1))::interval)/60)::integer,-1) as dif_minutos";
+
+             $rs2 = $db->fetchRow($sql2, array($idPromocion,$phoneSinPais));
+             }
+
+            $logger->info('Extrae minutos:[' . print_r($rs2, true) . ']');
+
+            if($rs2['dif_minutos'] != -1)
+             {
+             if( $rs2['dif_minutos'] < 5)
+              {
+                  $responseParams = new RequestUserServiceResponseParams(
+                      'ERROR',
+                      $requestParams->transactionid,
+                      'Ya realizo un intento de reenvio hace menos de 5 minutos, espere unos minutos y luego intente nuevamente'
+                  );
+              }
+
+             return $responseParams;
+             }
 
 
+           // id_carrier, id_promocion, numero, cel, monto, estado, id_contenido, tipo_contenido
+            try {
+                $logger->info('PREPARANDO PARA INSERCION EN promosuscripcion.tigo_guatemala_reenvios');
+                $status = $db->insert('promosuscripcion.tigo_guatemala_reenvios', array('id_carrier' => 5,'id_promocion' =>$idPromocion,'numero'=>$numero,'cel'=>$phoneSinPais,'estado'=>0,'ts_local'=>'now()'));
+                $logger->info('status:[' . $status . ']');
+                $logger->info('INSERCION EXITOSA ....');
 
-        $responseParams = new RequestUserServiceResponseParams(
-            'RequestUserServiceRequest recibido',
-            $requestParams->transactionid,
-            sprintf('En breve recibira el siguiente contenido correspondiente al Servicio %s del %s', $requestParams->servicename, $requestParams->shortcodenumber)
-        );
+            } catch(Zend_Db_Exception $e) {
+                $logger->err($e);
+            }
+
+          $responseParams = new RequestUserServiceResponseParams(
+                'Exito',
+                $requestParams->transactionid,
+                sprintf('En breve recibira el siguiente contenido correspondiente al Servicio %s del %s', $requestParams->servicename, $requestParams->shortcodenumber)
+          );
+        }
+        else
+        {
+            $responseParams = new RequestUserServiceResponseParams(
+                'ERROR',
+                $requestParams->transactionid,
+                sprintf('Usted no se encuentra suscripto al Servicio %s del %s', $requestParams->servicename, $requestParams->shortcodenumber)
+            );
+        }
+
+
 
         return $responseParams;
     }
