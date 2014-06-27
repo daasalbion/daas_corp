@@ -1,0 +1,60 @@
+<div id="bloque_mes">
+    Mes Seleccionado:&nbsp;
+    <select id="mes" name="mes">
+        <?php foreach($this->rango_seleccion as $rango): ?>
+            <option value="<?php echo $rango['anho'].'-'.($rango['mes']<10? '0'.$rango['mes'] : $rango['mes']) ?>"<?php echo ($rango['selected'] == 'selected' ? ' selected="selected"' : '') ?>><?php echo $rango['descripcion'] ?></option>
+        <?php endforeach; ?>
+    </select>
+    <input type="hidden" id="id_proveedor" name="id_proveedor" value="<?php echo $this->id_proveedor?>">
+</div>
+<?php if( !is_null( $this->datos ) ):?>
+    <?php foreach($this->datos as $proveedor => $datos_proveedor): ?>
+
+            <table class="tabla_pautas">
+                <thead>
+                    <tr>
+                        <th colspan="6" class="ultima_celda fondo_naranja_ultima borde_derecha" style="height: 25px; border-bottom: none;"><?php echo $proveedor?></th>
+                    </tr>
+                    <tr>
+                        <th class="fondo_naranja alias">Carrier</th>
+                        <th class="fondo_naranja alias">% Proveedor</th>
+                        <th class="fondo_naranja alias">Cantidad</th>
+                        <th class="fondo_naranja alias">Total Bruto</th>
+                        <th class="fondo_naranja alias">Total Neto</th>
+                        <th class="fondo_naranja alias borde_derecha ultima_celda">Monto Proveedor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach( $datos_proveedor['datos'] as $tipo => $datos_tipo ):?>
+                        <tr>
+                            <td class="alias"><?php echo $this->carriers[$datos_tipo['id_carrier']]?></td>
+                            <td class="numero"><?php echo $datos_tipo['porcentaje_proveedor']?></td>
+                            <td class="numero"><?php echo $this->numero($datos_tipo['cantidad'])?></td>
+                            <td class="numero"><?php echo $this->numero($datos_tipo['monto_neto_enter'])?></td>
+                            <td class="numero"><?php echo $this->numero($datos_tipo['monto_proveedor_rbt'])?></td>
+                            <td class="numero borde_derecha ultima_celda"><?php echo $this->numero($datos_tipo['neto_final_enter'])?></td>
+                        </tr>
+                    <?php endforeach;?>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="alias celda_vacia"></td>
+                        <td class="fondo_naranja alias">Total</td>
+                        <td class="fondo_naranja numero"><?php echo $this->numero($datos_proveedor['totales']['cantidad'])?></td>
+                        <td class="fondo_naranja numero"><?php echo $this->numero($datos_proveedor['totales']['monto_neto_enter'])?></td>
+                        <td class="fondo_naranja numero"><?php echo $this->numero($datos_proveedor['totales']['monto_proveedor_rbt'])?></td>
+                        <td class="fondo_naranja numero ultima_celda"><?php echo $this->numero($datos_proveedor['totales']['neto_final_enter'])?></td>
+                    </tr>
+                </tfoot>
+            </table>
+    <?php endforeach;?>
+<?php else: ?>
+    <div class="bloque_mensaje">
+        <p>No existen datos para este mes y proveedor</p>
+    </div>
+
+<?php endif; ?>
+
+
+
+

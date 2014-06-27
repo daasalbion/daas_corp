@@ -1,0 +1,26 @@
+<div style="width: <?php echo $this->ua['ancho_tabla'] .'px'?>; background: #ffffff">
+
+    <table id="navegador" align="center" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td><img class="menu" src="/<?php echo $this->ua['borde_arriba'] ?>" alt="NAVEGADOR" /></td>
+        </tr>
+    </table>
+
+    <table id="tabla_suscripcion" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" border="0" cellspacing="2" cellpadding="5" align="center" bgcolor = "white">
+        <tbody>
+            <?php foreach( $this->sms as $indice=>$parrafo ):?>
+
+                <tr><td style="text-align: left"><p><?php echo $parrafo['mensaje']?></p></td></tr>
+            <?php endforeach;?>
+            <tr>
+                <td><a href="/wap/alta-suscripto/id-p/<?php echo $this->suscripto['id_promocion']?>/id-c/<?php echo $this->suscripto['id_carrier']?>/cel/<?php echo $this->suscripto['cel']?>"><input type="button" name="confirmar" value="Confirmar Suscripcion"></a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table id="borde_abajo" align="center" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td><img class="menu" src="/<?php echo $this->ua['borde_abajo'] ?>" alt="BORDE_ABAJO"></td>
+        </tr>
+    </table>
+</div>

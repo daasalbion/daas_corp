@@ -1,0 +1,71 @@
+<div style="width: <?php echo $this->ua['ancho_tabla'] .'px'?>; background: #ffffff">
+
+    <table id="navegador" align="center" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" cellspacing="0" cellpadding="0" border="0">
+
+        <tr>
+            <td><img class="menu" src="/<?php echo $this->ua['navigator_layer1'] ?>" alt="NAVEGADOR"></td>
+            <td><a class="menu" href="/waptwo/categorias"><img class="menu" src="/<?php echo $this->ua['navigator_layer2'] ?>" alt="NAVEGADOR_HOME"></a></td>
+            <td><a class="menu" href="/waptwo/videos"><img class="menu" src="/<?php echo ($this->id_categoria == 3) ? $this->ua['navigator_layer3_v'] : $this->ua['navigator_layer3']?>" alt="NAVEGADOR_VIDEOS"></a></td>
+            <td><a class="menu" href="/waptwo/imagenes"><img class="menu" src="/<?php echo ($this->id_categoria == 1) ? $this->ua['navigator_layer4_v'] : $this->ua['navigator_layer4'] ?>" alt="NAVEGADOR_IMAGENES"></a></td>
+            <td><a class="menu" href="/waptwo/audios"><img class="menu" src="/<?php echo ($this->id_categoria == 2) ? $this->ua['navigator_layer5_v'] : $this->ua['navigator_layer5'] ?>" alt="NAVEGADOR_AUDIOS"></a></td>
+            <td><img class="menu" src="/<?php echo $this->ua['navigator_layer6'] ?>" alt="NAVEGADOR"></td>
+        </tr>
+    </table>
+
+    <table width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" border="0" cellspacing="0" cellpadding="1" id="tabla_contenidos" align="center" bgcolor="white">
+
+        <tr style="height: 5px"></tr>
+        <tr id="titulo">
+            <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+            <td bgcolor = "#9acd32" colspan="3" align="center"><font color="blue" face="arial" size="1"><?php echo strtoupper($this->subtitulo) ?></font></td>
+            <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+        </tr>
+        <tr style="height: 2px"></tr>
+        <?php if( $this->id_categoria == 1 ){ ?>
+
+            <?php foreach( $this->paginator as $fila => $contenidos ):?>
+                <tr>
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                    <?php foreach( $contenidos as $indice => $contenido ):?>
+                        <td style="width:<?php echo $this->ua['ancho_imagen']?>px;"><a href="/waptwo/descargar/origen/4/id-p/<?php echo $contenido['id_promocion']?>/id-c/<?php echo $contenido['id_contenido']?>/id/<?php echo $contenido['categoria']?>"><img src=" <?php echo $contenido['path']?>"></a></td>
+                    <?php endforeach;?>
+                    <?php if( $indice < 2 ):?>
+                        <?php for( $i = $indice; $i < 2 ; $i++ ):?>
+                            <td style="width:<?php echo $this->ua['ancho_imagen']?>px;"></td>
+                        <?php endfor; ?>
+                    <?php endif; ?>
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                </tr>
+
+            <?php endforeach;?>
+
+        <?php }else{ ?>
+
+            <?php foreach($this->paginator as $contenido):?>
+
+                <tr id="texto">
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                    <td colspan="3"><font color="blue" face="arial" size="1"><?php echo $contenido['nombre_contenido']?></font></td>
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                </tr>
+                <tr id="texto">
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                    <td colspan="3"><a style="color: #ff0000" href="/waptwo/descargar/origen/4/id-p/<?php echo $contenido['id_promocion']?>/id-c/<?php echo $contenido['id_contenido']?>/id/<?php echo $contenido['categoria']?>"><font color="red" face="arial" size="1">Descargar</font></a></td>
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                </tr>
+            <?php endforeach;?>
+        <?php } ?>
+<!--        <tr STYLE="height: 10px">
+            <td colspan="6"><img src="<?php /*echo ( $this->controller->obtenerBanner( 1 ) ); */?>"></td>
+        </tr>-->
+    </table>
+
+    <?php echo ($this->paginator->getTotalItemCount() > $this->paginator->getItemCountPerPage())? $this->paginationControl($this->paginator,'Sliding','wap/paginacion.phtml'):"";?>
+
+    <table id="borde_abajo" align="center" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td><img class="menu" src="/<?php echo $this->ua['borde_abajo'] ?>" alt="BORDE_ABAJO"></td>
+        </tr>
+    </table>
+</div>
+

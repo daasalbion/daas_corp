@@ -1,0 +1,61 @@
+
+<div id="bloque_mes">
+    Servicio:&nbsp;
+    <select name="id_promocion" id="id_promocion">
+        <?php foreach($this->promociones as $promocion): ?>
+        <option value="<?php echo $promocion['id_promocion'] ?>"<?php echo (isset($this->id_promocion_seleccionado) && $this->id_promocion_seleccionado == $promocion['id_promocion']) ? ' selected="selected"' : '' ?>><?php echo $promocion['promocion'] ?></option>
+        <?php endforeach; ?>
+    </select>&nbsp;&nbsp;
+
+    <p>Dia Seleccionado: <input type="text" id="datepicker" value="<?php echo (isset($this->fecha)) ? $this->fecha : date('Y-m-d') ?>" />
+
+    Desde: <input type="text" id="timeFrom" class="timeRange" style="min-width: 100px" value="<?php echo (isset($this->hrdesde)) ? $this->hrdesde : date('H:i') ?>">
+    Hasta: <input type="text" id="timeTo" class="timeRange"style="min-width: 100px" value="<?php echo (isset($this->hrdesde)) ? $this->hrhasta : date('H:i') ?>">
+    </p>
+    <input type="button" id="cargar_suscriptos" value="Cargar" >
+</div>
+<?php if(isset($this->id_promocion_seleccionado)): ?>
+
+<table id="tabla_suscriptos" class="tabla_reporte">
+    <thead>
+        <tr>
+            <th colspan="20" class="borde_arriba borde_derecha" style="font-size:16px; height: 25px; border-bottom: none;">Mes: <?php echo $this->nombre_mes ?> / Año: <?php echo $this->anho ?></th>
+        </tr>
+        <tr>
+            <th class="fondo_naranja borde_arriba" style="min-width: 50px; width: 100px;">Dia</th>
+            <th class="fondo_naranja borde_arriba" style="min-width: 50px; width: 100px;">Hora</th>
+            <th colspan="5" class="fondo_naranja borde_arriba"  style="min-width: 50px; width: 100px;">ALTAS</th>
+            <th colspan="5" class="fondo_naranja borde_arriba" style="min-width: 50px; width: 100px;">BAJAS</th>
+            <th colspan="5" class="fondo_naranja totales borde_arriba borde_derecha" style="min-width: 50px; width: 100px;">NETO</th>
+        </tr>
+
+    </thead>
+    <tfoot>
+
+    </tfoot>
+
+    <tbody>
+        <?php foreach($this->datos['datos'] as $filaClave=>$filaValor): ?>
+            <tr>
+                <td class="descripcion_cobro" style="font-size:12px;"><?php echo $this->datos['dia'] ?></td>
+                <td class="descripcion_cobro" style="font-size:12px;"><?php echo $filaClave ?></td>
+                <td colspan="5" class="descripcion_cobro" style="font-size:12px;"><?php echo $filaValor['ALTA'] ?></td>
+                <td colspan="5" class="descripcion_cobro" style="font-size:12px;"><?php echo $filaValor['BAJA'] ?></td>
+                <td colspan="5" class="borde_derecha descripcion_cobro" style="font-size:12px;"><?php echo $filaValor['NETO'] ?></td>
+            </tr>
+        <?php endforeach ?>
+
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan = "3" align="right" style="font-size:14px" class="fondo_naranja">TOTALES</td>
+            <td colspan = "4" class="fondo_naranja descripcion_cobro" style="font-size:14px"><?php echo $this->datos['TOTAL_ALTA'] ?></td>
+            <td colspan = "5" class="fondo_naranja descripcion_cobro" style="font-size:14px"><?php echo $this->datos['TOTAL_BAJA'] ?></td>
+            <td colspan = "5" class="fondo_naranja descripcion_cobro borde_derecha" style="font-size:14px"><?php echo $this->numero($this->datos['TOTAL_ALTA'] - $this->datos['TOTAL_BAJA']) ?></td>
+
+        </tr>
+    </tfoot>
+</table>
+
+<?php endif; ?>

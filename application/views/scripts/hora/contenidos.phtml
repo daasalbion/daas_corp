@@ -1,0 +1,99 @@
+<div style="width: <?php echo $this->ua['ancho_tabla'] .'px'?>; background: #ffffff; margin-bottom: 100px">
+
+
+    <?php if($this->ua['ancho'] >= 240){ ?>
+
+        <table id="tabla_contenidos" align="center" width="<?php echo ($this->ua['ancho_tabla']) . 'px'?>" cellspacing="3" cellpadding="0" border="0" bgcolor="white">
+
+            <thead>
+
+                <tr style="height: 20px">
+
+                    <td style="width:40px;"></td>
+                    <td id="titulo" bgcolor = "#9acd32" colspan="3" align="center"><font color="black" face="arial" size="1">HORA PARAGUAYA</font></td>
+                    <td style="width:40px;"></td>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr style="height: 20px">
+
+                    <td style="width:40px;"></td>
+                    <td id="titulo" bgcolor = "#adff2f" colspan="3" align="center"><font color="black" face="arial" size="1">DESCARGA GRATIS LOS AUDIOS DEL PROGRAMA</font></td>
+                    <td style="width:40px;"></td>
+                </tr>
+                <tr style="height: 20px">
+
+                    <td style="width:40px;"></td>
+                    <td id="titulo" bgcolor = "#7fffd4" colspan="3" align="center"><font color="black" face="arial" size="1">TODOS LOS AUDIOS</font></td>
+                    <td style="width:40px;"></td>
+                </tr>
+                <?php foreach($this->paginator as $contenido):?>
+
+                    <tr id="contenidos" style="height: 20px">
+
+                        <td style="width:40px;"></td>
+                        <td colspan="3" align="center"><font color="black" face="arial" size="1"><?php echo $contenido['nombre_contenido']?></font></td>
+                        <td style="width:40px;"></td>
+                    </tr>
+                    <tr>
+
+                        <td style="width:40px;"></td>
+                        <td colspan="3"><a href=""><font color="blue" face="arial" size="1">Descargar</font></a></td>
+                        <td style="width:40px;"></td>
+                    </tr>
+
+                <?php endforeach; ?>
+            </tbody>
+
+        </table>
+        <?php echo ($this->paginator->getTotalItemCount() > $this->paginator->getItemCountPerPage())? $this->paginationControl($this->paginator,'Sliding','hora/paginacion.phtml'):"";?>
+        <div style="margin-bottom: 10px"><a style="color: #ff0000" href="/hora/home"><font color="red" face="arial" size="1">Volver</font></a></div>
+    <?php }?>
+
+    <?php if($this->ua['ancho'] < 240){ ?>
+        <table id="tabla_contenidos_chico" align="center" width="<?php echo ($this->ua['ancho_tabla']) . 'px'?>" cellspacing="3" cellpadding="0" border="0" bgcolor="white">
+
+                <tr style="height: 10px">
+
+                    <td style="width:15px;"></td>
+                    <td id="chico" bgcolor = "#9acd32" colspan="3" align="center">HORA PARAGUAYA</td>
+                    <td style="width:15px;"></td>
+                </tr>
+
+                <tr style="height: 10px">
+
+                    <td style="width:15px;"></td>
+                    <td id="chico" bgcolor = "#adff2f" colspan="3" align="center">DESCARGA GRATIS LOS AUDIOS DEL PROGRAMA</td>
+                    <td style="width:15px;"></td>
+                </tr>
+                <tr style="height: 10px">
+
+                    <td style="width:15px;"></td>
+                    <td id="chico" bgcolor = "#7fffd4" colspan="3" align="center">TODOS LOS AUDIOS</td>
+                    <td style="width:15px;"></td>
+                </tr>
+                <?php foreach($this->paginator as $contenido):?>
+
+                    <tr id="contenidos_chico" style="height: 10px">
+
+                        <td style="width:15px;"></td>
+                        <td id="chico" colspan="3" align="center"><?php echo $contenido['nombre_contenido']?></td>
+                        <td style="width:15px;"></td>
+                    </tr>
+                    <tr>
+
+                        <td style="width:15px;"></td>
+                        <td colspan="3"><a id="chico" href="">Descargar</a></td>
+                        <td style="width:15px;"></td>
+                    </tr>
+
+                <?php endforeach; ?>
+
+        </table>
+        <?php echo ($this->paginator->getTotalItemCount() > $this->paginator->getItemCountPerPage())? $this->paginationControl($this->paginator,'Sliding','hora/paginacion-chico.phtml'):"";?>
+        <div style="margin-bottom: 10px"><a id="chico" style="color: #ff0000" href="/hora/home">Volver</a></div>
+    <?php } ?>
+
+<div>
+

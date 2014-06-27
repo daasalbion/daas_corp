@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title><?php echo $this->titulo ?></title>
+    <style>
+        <!--
+        table, td, tr, th{
+            border: solid 1px black;
+        }
+        p { color:#009900;
+            font-family:"comic sans ms",sans-serif; }
+
+        h2 { color:#660000; font-size:12pt;
+
+        -->
+    </style>
+
+</head>
+<body>
+<h1><?php echo $this->encabezado ?></h1>
+<h2>Cantidad de Mensajes: <?php echo $this->cantidad_de_mensajes ?></h2>
+<h2><a href="<?php echo $this->url_fecha_anterior ?>"> <<-- Fecha Anterior <?php echo $this->fecha_anterior ?></a> | Fecha Seleccionada: <?php echo $this->fecha_seleccionada ?> | <a href="<?php echo $this->url_fecha_siguiente ?>"> Fecha Siguiente <?php echo $this->fecha_siguiente ?></a></h2>
+<table>
+    <thead>
+    <tr>
+        <th>Número</th>
+        <th>Mensaje</th>
+        <th>Hora</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($this->mensajes as $orden => $mensaje): ?>
+    <tr>
+        <td><?php echo $mensaje['cel'] ?></td>
+        <td><?php echo $mensaje['sms'] ?></td>
+        <td><?php echo $mensaje['ts_local'] ?></td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+</body>
+</html>

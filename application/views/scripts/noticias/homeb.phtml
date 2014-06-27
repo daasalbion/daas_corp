@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1"/>
+    <meta name="HandheldFriendly" content="true" />
+
+    <script src="http://10.0.2.8/jquerymobile/demos/js/jquery.js"></script>
+
+    <title>ENTERMOVIL</title>
+
+    <style type="text/css">
+        #navegador ul{
+            list-style-type: none;
+            text-align: center;
+        }
+        #navegador li{
+            display: inline;
+            text-align: center;
+            margin: 0 10px 0 0;
+        }
+        #navegador li a {
+            padding: 2px 7px 2px 7px;
+            color: #666;
+            background-color: #eeeeee;
+            border: 1px solid #ccc;
+            text-decoration: none;
+        }
+        a{
+            text-decoration: none;
+            color: yellow;
+        }
+        #navegador li a:hover{
+            background-color: #333333;
+            color: #ffffff;
+        }
+        div{
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        #navegador{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .mensaje{
+            text-align: left;
+            margin-bottom: 2px;
+            margin-top: 2px;
+        }
+        .mensaje tr{
+            font-size: 12px;
+        }
+        #input-button{
+            font-size: 20px;
+        }
+    </style>
+</head>
+    <body style="background-color: orange; width: <?php echo $this->ua['ancho_tabla'] .'px'?>">
+
+        <div style="background-color: orange; width: <?php echo $this->ua['ancho_tabla'] .'px'?>">
+
+            <table style="background-color: #000000; color: #ffffff; width: <?php echo $this->ua['ancho_tabla'] .'px'?>">
+                <thead>
+                    <tr>
+                        <td><a href="/noticias/logout">Salir</a></td>
+                        <td>Hoy</td>
+                        <td><a href="/noticias/textob">Nuevo</a></td>
+                    </tr>
+                </thead>
+            </table>
+
+            <?php foreach($this->sms as $indice):?>
+                <table class="mensaje" cellspacing="0" cellpadding="4" style="background-color: white; width: <?php echo $this->ua['ancho_tabla'] .'px'?>">
+
+                    <tr>
+                        <td colspan="3"><p><b><?php echo $indice['mensaje']?></b></p></td>
+                    </tr>
+                    <tr>
+                        <td><p><?php echo $indice['fecha']?></p></td>
+                        <td><a href="/noticias/textob/id/<?php echo $indice['id_mensaje_periodico']?>"><p style="color: blue">Modificar</p></a></td>
+                    </tr>
+                </table>
+            <?php endforeach;?>
+        </div>
+
+    </body>
+</html>

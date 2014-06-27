@@ -1,0 +1,16 @@
+<?php
+echo $this->paginationControl($this->paginator,
+    'Sliding',
+    'wap/paginacion.phtml');
+?>
+<table>
+    <tr>
+        <td>Nombre Alias</td>
+    </tr>
+    <?php foreach($this->paginator as $producto): ?>
+        <tr>
+            <td><?php echo $producto['alias']; ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+

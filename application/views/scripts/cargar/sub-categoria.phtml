@@ -1,0 +1,23 @@
+<center>
+    <h1>CATEGORIAS - WAP</h1>
+</center>
+<div id="bloque_alias">
+    <p>SERVICIO: <?php echo $this->servicio ?></p>
+    <p>Id-Promocion: <?php echo $this->id_promocion?></p>
+    <p>Categoria Padre: <?php echo $this->categoria_padre?></p>
+
+    <form action="/cargar/sub-categoria" method="post">
+        <div id="nueva-categoria">
+            Nueva Sub Categoria: &nbsp;
+            <input type="text" name="nombre_categoria" id="nombre_categoria">
+            Descripcion:
+            <input type="text" name="descripcion" id="descripcion">
+            <input type="hidden" name="id_categoria_padre" id="id_categoria_padre" value="<?php echo $this->id_categoria_padre ?>">
+            <input type="hidden" name="ultimo_hijo" id="ultimo_hijo" value="<?php echo $this->ultimo_hijo ?>">
+            <input type="hidden" name="estado" id="estado" value="<?php echo '1' ?>">
+            <input type="hidden" name="id_promocion" id="id_promocion" value="<?php echo $this->id_promocion ?>">
+            <input type="hidden" name="actualizar" id="actualizar" value="<?php echo $this->actualizar ?>">
+            <input type="submit" value="crear">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+<div>
+
+    <div data-role="header">
+        <a href="/noticias/logout" data-icon="delete" data-ajax="false">Salir</a>
+        <h1>Hoy</h1>
+        <a href="/noticias/texto" data-icon="check" data-ajax="false" data-theme="b">Nuevo</a>
+    </div>
+    <div id="mensajes" data-role="content">
+        <ul data-role="listview" id="tweets" data-inset="false" data-split-icon="edit" data-split-theme="a">
+            <?php foreach($this->sms as $indice):?>
+
+                    <li>
+                        <a style="text-align: left" href="#" data-ajax="false"><p><b><?php echo $indice['mensaje']?></b></p>
+                        <p><?php echo $indice['fecha']?></p></a>
+                        <a href="/noticias/texto/id/<?php echo $indice['id_mensaje_periodico']?>" data-ajax="false">
+                            <p>Modificar</p>
+                        </a>
+                    </li>
+            <?php endforeach;?>
+        </ul>
+    </div>
+    <div data-role="footer" class="ui-bar" data-position="fixed">
+        <a href="/noticias/mensajes" data-role="button" data-icon="plus" data-ajax="false">Mensajes Anteriores</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).on('pageinit', function(){
+
+        $("a").click(function (event) {
+            event.preventDefault();
+            window.location = $(this).attr("href");
+        });
+
+    });
+
+</script>

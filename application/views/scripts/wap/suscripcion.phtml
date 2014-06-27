@@ -1,0 +1,47 @@
+<div style="width: <?php echo $this->ua['ancho_tabla'] .'px'?>; background: #ffffff">
+
+    <table id="navegador" align="center" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td><img class="menu" src="/<?php echo $this->ua['borde_arriba'] ?>" alt="NAVEGADOR" /></td>
+        </tr>
+    </table>
+
+    <table id="tabla_suscripcion" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" border="0" cellspacing="2" cellpadding="5" align="center" bgcolor = "white">
+        <tbody>
+        <?php foreach( $this->sms as $indice=>$parrafo ):?>
+
+            <tr id="texto">
+                <td style="text-align: center">
+                    <h3>
+                        <font><?php echo $parrafo['mensaje']?></font>
+                    </h3>
+                </td>
+            </tr>
+        <?php endforeach;?>
+        <!--<tr>
+                <td><a href="/wap/alta-suscripto/id-p/<?php /*echo $this->suscripto['id_promocion']*/?>/id-c/<?php /*echo $this->suscripto['id_carrier']*/?>/cel/<?php /*echo $this->suscripto['cel']*/?>"><input type="button" name="confirmar" value="Confirmar Suscripcion"></a></td>
+            </tr>-->
+        <tr id="texto">
+            <td>
+                <form action="<?php echo $this->url_action ?>" method="post">
+                    <input type="hidden" name="id_promocion" value="<?php echo $this->suscripto['id_promocion']?>"/>
+                    <input type="hidden" name="id_carrier" value="<?php echo $this->suscripto['id_carrier']?>"/>
+                    <input type="hidden" name="cel" value="<?php echo $this->suscripto['cel']?>"/>
+
+                    <?php if(isset($this->suscripto['id_activacion'])): ?>
+                        <input type="hidden" name="id_activacion" value="<?php echo $this->suscripto['id_activacion']?>"/>
+                    <?php endif; ?>
+
+                    <input type="submit" name="confirmar" value="Confirmar Suscripcion" />
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table id="borde_abajo" align="center" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td><img class="menu" src="/<?php echo $this->ua['borde_abajo'] ?>" alt="BORDE_ABAJO"></td>
+        </tr>
+    </table>
+</div>

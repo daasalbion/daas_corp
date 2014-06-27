@@ -1,0 +1,115 @@
+<?php
+    echo $this->doctype();
+    echo "\n";
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<?php echo $this->headTitle() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headLink() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headStyle() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headScript() ?>
+	<?php echo "\n" ?>
+
+    <link rel="shortcut icon" href="/favicon.ico"  type="image/x-icon" />
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34516205-1']);
+        _gaq.push(['_setDomainName', 'entermovil.com.py']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+
+    <div id="header">
+        <div id="header_main">
+            <div id="header_logo"><a href="/reportes" class="invisible_link">ENTERMOVIL.com.py</a></div>
+
+            <div id="user_info">
+                <a id="logout_link" href="/reportes/salir" title="Salir">Cerrar Sesión</a>
+                <span id="info_usuario"><?php echo $this->infoSesion()->usuario() ?></span>
+            </div>
+        </div>
+        <div id="header_menu">
+            <ul class="horizontal_list">
+
+                <?php if($this->infoSesion()->accesoPermitido('resumen-cobros')): ?>
+                <li><a id="link_reportes_resumen" href="/reportes/resumen-cobros">Resumen</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('pautas')): ?>
+                <li><a id="link_reportes_pautas" href="/reportes/pautas">Control TV</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('USSD')): ?>
+                    <li><a id="link_reportes_ussd" href="/reportes/ussd">Control USSD</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('cobros-por-carrier')): ?>
+                <li><a id="link_reportes_cobros" href="/reportes/cobros-por-carrier">Cobros</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('suscriptos')): ?>
+                <li><a id="link_reportes_suscriptos" href="/reportes/suscriptos">Suscriptos</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('suscriptos-por-hora')): ?>
+                <li><a id="link_reportes_suscriptos_por_hora" href="/reportes/suscriptos-por-hora">Suscriptos x Hora</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('suscriptos-por-minuto')): ?>
+                <li><a id="link_reportes_suscriptos_por_minuto" href="/reportes/suscriptos-por-minuto">Suscriptos x Minuto</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('contenidos')): ?>
+                <li><a id="link_reportes_contenidos" href="/reportes/contenidos">Stock Contenidos</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('informe-pautas')): ?>
+                <li><a id="link_reportes_informe_pautas" href="/reportes/informe-pautas">Reporte Pautas</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('wap')): ?>
+                    <li><a id="link_reportes_wap" href="/reportes/wap">Reporte Wap</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('suscriptos-x-tipo')): ?>
+                    <li><a id="link_reportes_suscriptos_x_tipo" href="/reportes/suscriptos-x-tipo">Suscriptos YA</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('cobros-por-tipo')): ?>
+                    <li><a id="link_reportes_cobros_por_tipo" href="/reportes/cobros-por-tipo">Reporte MES-YA</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('backtones')): ?>
+                    <li><a id="link_reportes_backtones" href="/reportes/backtones">Reporte Backtones</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('proveedores-contenidos')): ?>
+                    <li><a id="link_reportes_proveedores_contenidos" href="/reportes/proveedores-contenidos">Proveedores Contenidos</a></li>
+                <?php endif; ?>
+            </ul>
+
+        </div>
+	</div>
+    <div class="colmask fullpage">
+
+        <?php echo $this->layout()->content; ?>
+
+    </div>
+    
+</body>
+</html>

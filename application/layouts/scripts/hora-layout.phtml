@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta name="HandheldFriendly" content="true" />
+
+    <title>ENTERMOVIL</title>
+    <style type="text/css">
+        body{
+            background-color: #1d2225;
+            font-family:arial-narrow;
+            font-size:large;
+            color:#000000;
+            margin: 0px;
+        }
+        div{
+
+            font-family:arial;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+        }
+        a:link{
+            text-decoration:underline;
+            font-family:arial-narrow;
+            color: blue;
+            font-size: 15px;
+        }
+        a:visited{
+            text-decoration:underline;
+            color:#2700EE;
+            font-family:arial-narrow;
+            font-size:large;
+            font-weight:bold;
+        }
+        td{
+            text-align: center;
+        }
+        tr{
+            line-height: 57%;
+        }
+        .navegacion{
+
+            font-family: arial-narrow;
+            color: #000000;
+        }
+        table{
+            margin-bottom: 0;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        #logo {
+            background-color: #1d2225;
+            margin-top: 5px;
+            text-align: center;
+        }
+        #tabla_contenidos{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        #titulo{
+            font-family:arial-narrow;
+            font-weight:bold;
+        }
+
+        #chico{
+            font-size: 5px;
+        }
+        #chico_a{
+            font-size: 5px;
+            color: #ff0000;
+        }
+        td.subtitulo{
+            text-align: center;
+            font-weight: bold;
+        }
+        #paginacion{
+            font-size: 10px;
+            font-family: arial;
+        }
+        #tabla_suscripcion tr{
+            line-height: 100%;
+            font-family: arial;
+            font-size: 10px;
+            color: #808080;
+            font-weight: bold;
+        }
+        #tabla_suscripcion a{
+
+            font-family: arial;
+            font-size: 10px;
+            color: royalblue;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        #contenidos{
+            line-height: 120%;
+        }
+        #volver{
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="logo">
+        <img src="/<?php echo $this->ua['imagen_logo'] ?>" alt="ENTERMOVIL">
+    </div>
+    <?php echo $this->layout()->content; ?>
+</body>
+</html>

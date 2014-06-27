@@ -1,0 +1,25 @@
+<div style="width:<?php echo $this->ua['ancho_tabla'] .'px'?> ">
+
+        <!-- Previous page link -->
+        <?php if (isset($this->previous)): ?>
+            <a id="paginacion" href="<?php echo $this->url(array('page' => $this->previous)); ?>">&lt; Anterior</a> |
+        <?php else: ?>
+            <span id="paginacion" class="disabled">&lt; Anterior</span> |
+        <?php endif; ?>
+        <!-- Numbered page links -->
+        <?php foreach ($this->pagesInRange as $page): ?>
+            <?php if ($page != $this->current): ?>
+                <a id="paginacion" href="<?php echo $this->url(array('page' => $page)); ?>"><?= $page; ?><td><?php echo $page; ?></td></a>
+            <?php else: ?>
+                <?= $page; ?>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        <!-- Next page link -->
+        <?php if (isset($this->next)): ?>
+            | <a id="paginacion" href="<?php echo $this->url(array('page' => $this->next)); ?>">Siguiente &gt;</a>
+        <?php else: ?>
+            | <span id="paginacion" class="disabled">Siguiente &gt;</span>
+        <?php endif; ?>
+
+</div>
+

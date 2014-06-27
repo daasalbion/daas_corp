@@ -1,0 +1,264 @@
+<div id="contenidos_imagenes" style="width: <?php echo $this->ua['ancho_tabla'] .'px'?>; background: #ffffff">
+
+<table id="navegador" align="center" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" cellspacing="0" cellpadding="0" border="0">
+
+    <tr>
+        <td><img class="menu" src="/<?php echo $this->ua['navigator_layer1'] ?>" alt="NAVEGADOR" /></td>
+        <td><a class="menu" href="/waptwo/categorias"><img class="menu" src="/<?php echo $this->ua['navigator_layer2'] ?>" alt="NAVEGADOR_HOME" /></a></td>
+        <td><a class="menu" href="/waptwo/videos"><img class="menu" src="/<?php echo $this->ua['navigator_layer3'] ?>" alt="NAVEGADOR_VIDEOS" /></a></td>
+        <td><a class="menu" href="/waptwo/imagenes"><img class="menu" src="/<?php echo $this->ua['navigator_layer4_v'] ?>" alt="NAVEGADOR_IMAGENES" /></a></td>
+        <td><a class="menu" href="/waptwo/audios"><img class="menu" src="/<?php echo $this->ua['navigator_layer5'] ?>" alt="NAVEGADOR_AUDIOS" /></a></td>
+        <td><img class="menu" src="/<?php echo $this->ua['navigator_layer6'] ?>" alt="NAVEGADOR"/></td>
+    </tr>
+    <tr style="height: 2px"></tr>
+</table>
+
+<?php if( $this->configuracion['tipo'] == '2' ){ ?>
+
+    <?php if($this->ua['ancho'] >= 240){ ?>
+
+        <table width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" border="0" cellspacing="0" cellpadding="1" id="principal" align="center" bgcolor="white">
+
+            <?php foreach ( $this->contenidos as $id_categoria=>$subcategorias ):?>
+
+                <tr style="height: 5px"></tr>
+                <tr style="height: 30px">
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                    <td id="titulo" bgcolor = "#9acd32" colspan="3" align="center"><font color="black" face="arial" size="1"><?php echo strtoupper($subcategorias['nombre_categoria'])?></font></td>
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                </tr>
+                <tr style="height: 5px"></tr>
+                <?php if( isset( $subcategorias['hijos'] ) ){ ?>
+
+                    <?php foreach($subcategorias['hijos'] as $tercernivel):?>
+
+                        <?php if(isset($tercernivel['preview'])){ ?>
+                            <tr id="texto">
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                                <td bgcolor = "#9acd32" colspan="3" align="left"><font color="blue" face="arial" size="1"><?php echo strtoupper ( $tercernivel['nombre_categoria'] )?> /</font><a style="color: #ff0000" href="/waptwo/contenidos/idp/<?php echo $this->id_categoria?>/id/<?php echo $tercernivel['id_categoria']?>"></font><font color="red" face="arial" size="1"> Ver Más</a></td>
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                            </tr>
+                            <tr style="height: 2px"></tr>
+
+                            <tr>
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+
+                                <?php foreach( $tercernivel['preview'] as $indice=>$imagen ):?>
+
+                                    <td style="width:<?php echo $this->ua['ancho_imagen']?>px;">
+                                        <a href="/waptwo/descargar/origen/1/id-p/<?php echo $imagen['id_promocion']?>/id-c/<?php echo $imagen['id_contenido']?>/id/<?php echo $imagen['id_categoria']?>">
+                                            <img src="<?php echo $imagen['path']?>">
+                                        </a>
+                                    </td>
+                                <?php endforeach;?>
+                                <?php if( $indice < 2 ):?>
+
+                                    <?php for( $i = $indice; $i < 2 ; $i++ ):?>
+
+                                        <td style="width:<?php echo $this->ua['ancho_imagen']?>px;"></td>
+                                    <?php endfor; ?>
+                                <?php endif; ?>
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                            </tr>
+                            <tr style="height: 5px"></tr>
+                        <?php } ?>
+
+                    <?php endforeach;?>
+                <?php }else{ ?>
+                    <tr id="texto">
+                        <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                        <td colspan="3"><font color="red" face="arial" size="1">No existen contenidos</font></td>
+                        <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                    </tr>
+
+                <?php } ?>
+
+            <?php endforeach;?>
+            <tr style="height: 10px">
+            </tr>
+        </table>
+    <?php }?>
+    <?php if($this->ua['ancho'] < 240){ ?>
+
+        <table width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" border="0" cellspacing="0" cellpadding="1" id="principal" align="center" bgcolor="white">
+
+            <?php foreach ( $this->contenidos as $id_categoria=>$subcategorias ):?>
+
+                <tr style="height: 5px"></tr>
+                <tr style="height: 15px">
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                    <td id="chico" bgcolor = "#9acd32" colspan="3" align="center"><font color="black" face="arial" size="1"><?php echo strtoupper($subcategorias['nombre_categoria'])?></font></td>
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                </tr>
+                <tr style="height: 5px"></tr>
+                <?php if( isset( $subcategorias['hijos'] ) ){ ?>
+
+                    <?php foreach($subcategorias['hijos'] as $tercernivel):?>
+
+                        <?php if(isset($tercernivel['preview'])){ ?>
+                            <tr>
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                                <td id="chico" class="subtitulo" bgcolor = "#9acd32" colspan="3" align="left"><font color="blue" face="arial" size="1"><?php echo $tercernivel['nombre_categoria']?> /</font><a id="chico" style="color: #ff0000" href="/wap/contenidos/idp/<?php echo $this->id_categoria?>/id/<?php echo $tercernivel['id_categoria']?>"></font><font color="red" face="arial" size="1"> Ver Más</a></td>
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                            </tr>
+                            <tr style="height: 2px"></tr>
+
+                            <tr>
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+
+                                <?php foreach( $tercernivel['preview'] as $indice=>$imagen ):?>
+
+                                    <td>
+                                        <a href="/waptwo/descargar/origen/1/id-p/<?php echo $imagen['id_promocion']?>/id-c/<?php echo $imagen['id_contenido']?>/id/<?php echo $imagen['id_categoria']?>">
+                                            <img src="<?php echo $imagen['path']?>">
+                                        </a>
+                                    </td>
+                                <?php endforeach;?>
+
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                            </tr>
+                            <tr style="height: 5px"></tr>
+                        <?php } ?>
+
+                    <?php endforeach;?>
+                <?php }else{ ?>
+                    <tr>
+                        <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                        <td id="chico" colspan="2"><font color="red" face="arial" size="1">No existen contenidos</font></td>
+                        <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                    </tr>
+
+                <?php } ?>
+
+            <?php endforeach;?>
+            <tr style="height: 10px">
+            </tr>
+        </table>
+    <?php }?>
+<?php }else if( $this->configuracion['tipo'] == '3' ){ ?>
+
+    <?php $contador = 0; ?>
+    <?php if($this->ua['ancho'] >= 240){ ?>
+
+        <table width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" border="0" cellspacing="0" cellpadding="1" id="principal" align="center" bgcolor="white">
+
+            <?php foreach ( $this->contenidos as $id_categoria=>$subcategorias ):?>
+
+                <tr style="height: 5px"></tr>
+                <tr style="height: 30px">
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                    <td id="titulo" bgcolor = "#9acd32" colspan="3" align="center"><font color="black" face="arial" size="1"><?php echo strtoupper($subcategorias['nombre_categoria'])?></font></td>
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                </tr>
+                <tr style="height: 5px"></tr>
+                <?php if( isset( $subcategorias['hijos'] ) ){ ?>
+
+                    <?php foreach( $subcategorias['hijos'] as $tercernivel ):?>
+
+                        <?php if( isset( $tercernivel['preview'] ) ){ ?>
+                            <tr>
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                                <td class="subtitulo" bgcolor = "#9acd32" colspan="3" align="left"><font color="blue" face="arial" size="1"><?php echo $tercernivel['nombre_categoria']?> /</font><a style="color: #ff0000" href="/wap/contenidos/idp/<?php echo $this->id_categoria?>/id/<?php echo $tercernivel['id_categoria']?>"></font><font color="red" face="arial" size="1"> Ver Más</a></td>
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                            </tr>
+                            <tr style="height: 2px"></tr>
+
+                            <?php if( $contador < 1 ){ ?>
+                                <?php $contador++; ?>
+                                <tr>
+                                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                                    <?php foreach( $tercernivel['preview'] as $indice=>$imagen ):?>
+
+                                        <td>
+                                            <a href="/waptwo/descargar/origen/1/id-p/<?php echo $imagen['id_promocion']?>/id-c/<?php echo $imagen['id_contenido']?>/id/<?php echo $imagen['id_categoria']?>">
+                                                <img src="<?php echo $imagen['path']?>">
+                                            </a>
+                                        </td>
+                                    <?php endforeach;?>
+                                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                                </tr>
+                            <?php } ?>
+                            <tr style="height: 5px"></tr>
+                        <?php } ?>
+
+                    <?php endforeach;?>
+                <?php }else{ ?>
+                    <tr>
+                        <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                        <td colspan="3"><font color="red" face="arial" size="1">No existen contenidos</font></td>
+                        <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                    </tr>
+                <?php } ?>
+
+            <?php endforeach;?>
+            <tr style="height: 10px">
+            </tr>
+        </table>
+    <?php }?>
+
+<?php }else if( $this->configuracion['tipo'] == '1' ){ ?>
+
+    <?php if($this->ua['ancho'] >= 240){ ?>
+
+        <table width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" border="0" cellspacing="0" cellpadding="1" id="principal" align="center" bgcolor="white">
+
+            <?php foreach ( $this->contenidos as $id_categoria=>$subcategorias ):?>
+
+                <tr style="height: 5px"></tr>
+                <tr>
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                    <td id="titulo" bgcolor = "#9acd32" colspan="3" align="center"><font color="black" face="arial" size="1"><?php echo strtoupper($subcategorias['nombre_categoria'])?></font></td>
+                    <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                </tr>
+                <tr style="height: 5px"></tr>
+                <?php if( isset( $subcategorias['hijos'] ) ){ ?>
+
+                    <?php foreach( $subcategorias['hijos'] as $tercernivel ):?>
+
+                        <?php if( isset( $tercernivel['preview'] ) ){ ?>
+                            <tr>
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                                <td id="subtitulo" bgcolor = "#9acd32" colspan="3" align="left"><font color="blue" face="arial" size="1"><?php echo $tercernivel['nombre_categoria']?> /</font><a style="color: #ff0000" href="/wap/contenidos/idp/<?php echo $this->id_categoria?>/id/<?php echo $tercernivel['id_categoria']?>"></font><font color="red" face="arial" size="1"> Ver Más</a></td>
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                            </tr>
+                            <tr style="height: 2px"></tr>
+
+                        <?php }else{ ?>
+
+                            <tr>
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                                <td id="subtitulo" bgcolor = "#9acd32" colspan="3" align="left"><font color="blue" face="arial" size="1"><?php echo $tercernivel['nombre_categoria']?></font></td>
+                                <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                            </tr>
+                        <?php } ?>
+
+                        <tr style="height: 5px"></tr>
+
+                    <?php endforeach;?>
+                <?php }else{ ?>
+                    <tr>
+                        <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                        <td colspan="3"><font color="red" face="arial" size="1">No existen contenidos</font></td>
+                        <td style="width:<?php echo $this->ua['ancho_costado']?>px;"></td>
+                    </tr>
+                <?php } ?>
+
+            <?php endforeach;?>
+            <tr style="height: 10px">
+            </tr>
+        </table>
+    <?php }?>
+<?php  } ?>
+<?php if( $this->configuracion['banner'] == 1 ){ ?>
+    <table id="banner" align="center" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" cellspacing="0" cellpadding="0" border="0">
+        <tr style="height: 10px">
+            <td colspan="6"><img src="<?php echo ( $this->controller->obtenerBanner( 1, $this->id_categoria ) ); ?>"></td>
+        </tr>
+    </table>
+<?php } ?>
+<table id="borde_abajo" align="center" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+        <td><img class="menu" src="/<?php echo $this->ua['borde_abajo'] ?>" alt="BORDE_ABAJO"></td>
+    </tr>
+</table>
+</div>

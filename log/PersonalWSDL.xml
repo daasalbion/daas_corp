@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<definitions name="Service" targetNamespace="urn:CdagNotificationService" 
+	xmlns:tns="urn:CdagNotificationService" 
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:soanotifications="urn:CdagNotificationService" 
+	xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/" 
+	xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/" 
+	xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns="http://schemas.xmlsoap.org/wsdl/"> 
+	<types> 
+		<schema targetNamespace="urn:CdagNotificationService" 
+		xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+		xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soanotifications="urn:CdagNotificationService" 
+		xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+		<import namespace="http://schemas.xmlsoap.org/soap/encoding/"/> 
+		<complexType name="notification"> 
+			<sequence> 
+				<element name="tid" type="xsd:string" minOccurs="1" maxOccurs="1"/> 
+				<element name="tipoEvento" type="xsd:int" minOccurs="1" maxOccurs="1"/> 
+				<element name="datoEvento" type="xsd:string" minOccurs="1" maxOccurs="1"/> 
+			</sequence> 
+		</complexType> 
+		<!-- operation request element --> 
+		<element name="NotificarEvento"> 
+			<complexType> 
+				<sequence> 
+					<element name="user" type="xsd:string" minOccurs="1" maxOccurs="1"/> 
+					<element name="password" type="xsd:string" minOccurs="1" maxOccurs="1"/> 
+					<element name="notifications" type="soanotifications:notification" minOccurs="1" maxOccurs="unbounded"/> 
+				</sequence> 
+			</complexType> 
+		</element> 
+		<!-- operation response element --> 
+		<element name="NotificarEventoResponse"> 
+		<complexType> 
+		<sequence> 
+		</sequence> 
+		</complexType> 
+		</element> 
+		</schema>
+	</types> 
+	
+	<message name="NotificarEventoRequest"> 
+		<part name="parameters" element="soanotifications:NotificarEvento"/> 
+	</message> 
+	<message name="NotificarEventoResponse"> 
+		<part name="parameters" element="soanotifications:NotificarEventoResponse"/> 
+	</message>
+	
+	
+	<portType name="ServicePortType"> 
+		<operation name="NotificarEvento"> 
+		<documentation>Service definition of function soanotifications__NotificarEvento
+		</documentation>
+		<element name="user" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+		<input message="tns:NotificarEventoRequest"/> 
+		<output message="tns:NotificarEventoResponse"/>
+		</operation> 
+	</portType> 
+	
+	<binding name="Service" type="tns:ServicePortType"> 
+		<SOAP:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/> <operation name="NotificarEvento"> 
+		<SOAP:operation soapAction=""/> <input> <SOAP:body parts="parameters" use="literal"/> 
+		</input> 
+		<output> 
+		<SOAP:body parts="parameters" use="literal"/> 
+		</output> 
+		</operation> 
+	</binding> 
+	<service name="Service"> 
+		<documentation>gSOAP 2.7.10 generated service definition</documentation> 
+		<port name="Service" binding="tns:Service"> 
+		<SOAP:address location="http://localhost/wsnotifications/notificationswsserver.php"/> </port> 
+	</service> 
+</definitions>

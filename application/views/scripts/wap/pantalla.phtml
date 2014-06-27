@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>ENTERMOVIL</title>
+    <script type="text/javascript">
+
+        var tarea = setTimeout(CheckResolution, 300);
+        var ancho = 0;
+
+        function CheckResolution() {
+            ancho = screen.width;
+            clearTimeout(tarea);
+            alert('Ancho:[' + ancho + ']');
+        }
+
+
+    </script>
+</head>
+<body>
+
+<h1>
+    <script type="text/javascript">
+
+        document.write(ancho);
+
+
+    </script>
+</h1>
+
+</body>
+</html>
+

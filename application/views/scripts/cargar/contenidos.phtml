@@ -1,0 +1,98 @@
+<center>
+    <div id="titulo" class="page-header">
+        <h2>CONTENIDOS - WAP</h2>
+    </div>
+</center>
+<?php if(isset($this->contenidos)){?>
+
+    <div id="bloque_alias">
+
+        <p>SERVICIO: <?php echo $this->servicio ?></p>
+        <p>Id-Promocion: <?php echo $this->id_promocion?></p>
+        <p>Categoria: <?php echo $this->nombre_categoria?></p>
+
+        <form action="/cargar/nuevo-contenido" method="post" enctype="multipart/form-data" onsubmit="return validar()">
+
+            <div id="nuevo-contenido">
+
+                Nombre Contenido: &nbsp;
+                <input type="text" name="nombre_contenido" id="nombre_contenido">
+                Descripcion:
+                <input type="text" name="descripcion" id="descripcion">
+                <input type="hidden" name="estado" id="estado" value="<?php echo '1' ?>">
+                <input type="hidden" name="id_promocion" id="id_promocion" value="<?php echo $this->id_promocion ?>">
+                <input type="hidden" name="id_categoria" id="id_categoria" value="<?php echo $this->id_categoria ?>">
+                Nivel:
+                <input size="5" id="nivel" name="nivel" onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');" type="text"><br>
+                Archivo:
+                <input type=file size=15 id="userFile" name="userFile"><br>
+                <input type="submit" value="cargar">
+            </div>
+        </form>
+    </div>
+    <?php if(!empty($this->contenidos)){?>
+
+        <table id="contenidos_cargados">
+
+            <tr>
+                <th colspan="4" class="ultima_celda centrar">Contenidos Cargados</th>
+            </tr>
+            <tr>
+                <th class="centrar">Categoria</th>
+                <th class="centrar">Nombre Contenido</th>
+                <th class="centrar">Formato</th>
+                <th class="ultima_celda centrar">Nivel</th>
+            </tr>
+            <?php foreach($this->contenidos as $indice=>$contenido):?>
+
+                <tr>
+                    <td class="centrar"><?php echo $contenido['categoria']?></td>
+                    <td class="centrar"><?php echo $contenido['nombre_contenido']?></td>
+                    <td class="centrar"><?php echo $contenido['tipo']?></td>
+                    <td class="ultima_celda"><?php echo $contenido['nivel']?></td>
+                </tr>
+            <?php endforeach;?>
+        </table>
+    <?php }else{ ?>
+
+        <div style="margin-left: 40px">
+
+            <h2>No existe contenido cargado en esta categoria</h2>
+        </div>
+    <?php } ?>
+
+<!--Del home a contenidos-->
+<?php } else{ ?>
+
+    <div id="bloque_alias">
+
+        <p>SERVICIO: <?php echo $this->servicio ?></p>
+        <p>Id-Promocion: <?php echo $this->id_promocion?></p>
+    </div>
+<?php } ?>
+
+<script type="text/javascript">
+
+    function validar() {
+
+        archivo = document.getElementById("userFile").value;
+        nombre_contenido = document.getElementById("nombre_contenido").value;
+        nivel = document.getElementById("nivel").value;
+
+        if( nivel == null || nivel.length == 0 || /^\s+$/.test(nivel) ) {
+
+            return false;
+
+        }else if( nombre_contenido == null || nombre_contenido.length == 0 || /^\s+$/.test(nombre_contenido) ){
+
+            return false;
+
+        }else if( archivo == null || archivo.length == 0 ){
+
+            return false;
+
+        }
+
+        return true;
+    }
+</script>

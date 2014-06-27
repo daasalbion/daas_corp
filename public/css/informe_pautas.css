@@ -1,0 +1,124 @@
+#link_reportes_informe_pautas {
+    color: #000000;
+    text-decoration:underline;
+}
+.tabla_pautas
+{
+    /*font-family: cursive;*/
+    /*border-top:1px solid black;*/
+    margin-top: 60px;
+    /*width: 110%;*/
+}
+
+.tabla_informe_pautas {
+    border-collapse:collapse;
+    margin-top: 15px;
+    margin-left: 40px;
+    margin-bottom: 14px;
+    font-family: Arial;
+
+    font-size: 13px;
+    clear: left;
+    float: left;
+    width: 71%;
+}
+.tabla_informe_pautas_cargar {
+    border-collapse:collapse;
+    margin-top: 15px;
+    margin-left: 40px;
+    margin-bottom: 14px;
+    font-family: Arial;
+
+    font-size: 13px;
+    clear: left;
+    float: left;
+    width: 95%;
+}
+
+th, td {
+    border-left:1px solid black;
+    border-top:1px solid black;
+    border-bottom: 1px solid black;
+}
+
+th.ultima_celda, td.ultima_celda {
+    border-right:1px solid black;
+
+}
+.fondo_naranja {
+    background-color: #ffd548;
+}
+.fondo_naranja_ultima {
+    background-color: #ffd548;
+}
+.fondo_titulo_TELEFUTURO{
+    background-color: #87ceeb;
+}
+.fondo_titulo_SNT{
+    background-color: yellow;
+}
+.alias {
+    min-width: 100px;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+.plantilla {
+    min-width: 100px;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+.numero {
+    text-align: right;
+    padding-right: 4px;
+    height: 20px;
+}
+.centrar{
+    text-align: center;
+}
+#bloque_alias {
+    margin-top: 20px;
+    margin-left: 40px;
+    font-weight: bold;
+    font-family: Arial;
+}
+#bloque_mes {
+    margin-top: 20px;
+    margin-left: 40px;
+    font-weight: bold;
+    font-family: Arial;
+}
+#bloque_fecha {
+    margin-top: 20px;
+    margin-left: 40px;
+    font-weight: bold;
+    font-family: Arial;
+}
+#bloque_alias select {
+    background-color: #ffd548;
+    border: 1px solid #ffd548;
+
+    width: 164px;
+    font-family: Arial;
+}
+input{
+
+    width: 91px;
+}
+#cargar_pautas{
+
+    margin-left: 195px;
+    width: 100px;
+}
+#cargar_bd{
+
+    width: 80px;
+}
+#form_cargar_pautas input[type=image] {
+
+    float: right;
+    /*border: none;*/
+    padding: 0;
+    margin: 0;
+}

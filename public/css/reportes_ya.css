@@ -1,0 +1,113 @@
+#link_reportes_ya{
+    color: #000000;
+    text-decoration:underline;
+}
+#bloque_promocion {
+    margin-top: 20px;
+    /*margin-left: 3%;*/
+    margin-left: 40px;
+    font-weight: bold;
+    font-family: Arial;
+}
+#bloque_promocion select {
+    background-color: #ffd548;
+    border: 1px solid #ffd548;
+    width: 170px;
+    font-family: Arial;
+}
+.tabla_pautas
+{
+    /*border-top:1px solid black;*/
+    font-size: 10px;
+    font-family: Arial;
+    margin-top: 15px;
+    clear: left;
+    float: left;
+    /*width: 110%;*/
+}
+.tabla_contenidos
+{
+    /*border-top:1px solid black;*/
+    font-size: 10px;
+    font-family: Arial;
+    margin-top: 15px;
+    clear: left;
+    float: left;
+    /*width: 110%;*/
+}
+
+.celda_vacia{
+    border: none;
+}
+table {
+    border-collapse:collapse;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 14px;
+    font-family: Arial;
+    /*width: 110%;*/
+}
+.totales{
+    margin-left: 40px;
+}
+th, td {
+    border-left:1px solid black;
+    border-top:1px solid black;
+    border-bottom: 1px solid black;
+}
+
+th.ultima_celda, td.ultima_celda {
+    border-right:1px solid black;
+}
+
+.fondo_naranja {
+    background-color: #ffd548;
+}
+
+.fondo_naranja_ultima {
+    background-color: #ffd548;
+}
+
+.fondo_rojo {
+    background-color: #ff0000;
+}
+
+.alias {
+    min-width: 100px;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+.titulo {
+    min-width: 100px;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 120%;
+}
+.nombre_contenido {
+    min-width: 280px;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+.numero {
+    text-align: center;
+    padding-right: 4px;
+    height: 20px;
+}
+.centrar{
+    text-align: center;
+}
+#boton_pautas {
+    margin-top: 0px;
+    text-align: right;
+    font-weight: bold;
+}
+.columna{
+    background-color: yellow;
+}
+.servicio th{
+
+    width: 70%;
+}

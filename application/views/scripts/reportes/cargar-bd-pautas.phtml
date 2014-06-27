@@ -1,0 +1,59 @@
+<form id="form_cargar_pautas" action="/reportes/cargar-bd-pautas" method="post">
+<div id="bloque_alias">
+
+    Alias:&nbsp;
+    <select id="alias" name="alias">
+        <?php foreach($this->alias as $vector=>$alias): ?>
+        <option value="<?php echo $alias['nombre_alias'] ?>"<?php echo ( $alias['nombre_alias'] == $this->nombre_alias ? ' selected="selected"': '') ?>><?php $alias['nombre_alias'] == $this->nombre_alias ? $alias_canal= $alias['canal']: '';echo $alias['nombre_alias'] .' (' .$alias['canal'].')'?></option>
+        <?php endforeach; ?>
+    </select>
+
+    Dia: <input type="text" id="datepicker" name="fecha" value="<?php echo (isset($this->fecha)) ? $this->fecha : date("Y-m-d"); ?>">
+
+        <input type="number" name="deltax" id="deltax" placeholder="deltax:">
+        <input type="number" name="deltay" id="deltay" placeholder="deltay:">
+        <input type="number" name="nropautas" id="nropautas" placeholder="nropautas:">
+        <input type="number" name="duracion" id="duracion" placeholder="duracion:">
+        <input type="submit" id="cargar_bd" value="Cargar">
+
+</div>
+</form>
+
+<?php print_r($this->alias_mostrar)?>
+<table class="tabla_informe_pautas_cargar">
+    <thead>
+    <tr>
+        <th colspan ="8" class="ultima_celda fondo_naranja_ultima">Datos Guardados</th>
+    </tr>
+    <tr>
+        <th class="fondo_naranja alias">Alias </th>
+        <th class="fondo_naranja alias">Fecha</th>
+        <th class="fondo_naranja altas_bajas">Path Plantilla</th>
+        <th class="fondo_naranja altas_bajas">Canal</th>
+        <th class="fondo_naranja altas_bajas">DeltaX</th>
+        <th class="fondo_naranja altas_bajas">DeltaY</th>
+        <th class="fondo_naranja altas_bajas">Nro Pautas</th>
+        <th class="ultima_celda fondo_naranja_ultima alias">Duracion</th>
+    </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($this->programacion as $indice=>$programacion):?>
+            <tr>
+                <th class="fondo_naranja alias"><?php echo $programacion['alias']?></th>
+                <th class="alias"><?php echo $programacion['fecha']?></th>
+                <th class="alias"><?php echo $programacion['path_plantilla']?></th>
+                <th class="altas_bajas"><?php echo $programacion['canal']?></th>
+                <th class="altas_bajas"><?php echo $programacion['deltax']?></th>
+                <th class="altas_bajas"><?php echo $programacion['deltay']?></th>
+                <th class="altas_bajas"><?php echo $programacion['nro_pautas']?></th>
+                <th class="altas_bajas"><?php echo $programacion['duracion']?></th>
+                <th class="ultima_celda fondo_naranja_ultima alias"><a id="link_reportes_informe_cargar_bd_pautas" href="/reportes/eliminar-pauta/alias/<?php echo $programacion['alias']?>/fecha/<?php echo $programacion['fecha']?>/canal/<?php echo $programacion['canal']?>"><input type="button" id="borrar" name="eliminar" value="borrar"></a></th>
+            </tr>
+        <?php endforeach;?>
+    </tbody>
+</table>
+<div id="bloque_alias">
+
+    <?php echo $this->mensaje ?>
+
+</div>

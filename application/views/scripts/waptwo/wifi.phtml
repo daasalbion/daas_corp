@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>ENTERMOVIL</title>
+</head>
+<body>
+
+<table width="<?php echo $this->formato['ancho'] ?>" border="0" cellspacing="0" cellpadding="0" id="principal" align="center">
+
+    <tr>
+        <td valign="center"><h2 style="color: black; text-align: center; padding: 0;">Acceso Restringido</h2></td>
+    </tr>
+    <?php /*print_r($this->info_usuario)*/?>
+    <tr>
+        <td valign="center">
+            <h4 style="color: black; text-align: center; margin: 0;">Si desea suscribirse al portal wap</h4>
+            <h4 style="color: black; text-align: center; margin: 0;">Favor enviar <?php echo $this->info_usuario['alias']?> al <?php echo $this->info_usuario['numero']?></h4>
+            <h4 style="color: black; text-align: center; margin: 0;">Costo de suscripcion: <?php
+                if( $this->info_usuario['costo_gs'] != '0' ){
+
+                    echo $this->info_usuario['costo_gs']*(1+$this->info_usuario['iva']) .' '. $this->info_usuario['moneda'].  'iva incluido</h4>';
+                }else{
+
+                    echo $this->info_usuario['costo_usd']*(1+$this->info_usuario['iva']) .' '. $this->info_usuario['moneda']. 'iva incluido</h4>';
+                }?>
+            <hr/>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>
+

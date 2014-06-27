@@ -1,0 +1,41 @@
+<div style="width: <?php echo $this->ua['ancho_tabla'] .'px'?>; background: #ffffff">
+
+    <table id="navegador" align="center" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td><img class="menu" src="/<?php echo $this->ua['borde_arriba'] ?>" alt="NAVEGADOR" /></td>
+        </tr>
+    </table>
+    <table id="tabla_suscripcion" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" border="0" cellspacing="2" cellpadding="5" align="center" bgcolor = "white">
+        <tr>
+            <td valign="center"><h2 style="color: black; text-align: center; padding: 0;">Acceso Restringido</h2></td>
+        </tr>
+        <tr>
+            <td valign="center">
+                <h4 style="color: black; text-align: center; margin: 0;">Si desea suscribirse al portal wap</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4 style="color: black; text-align: center; margin: 0;">Favor enviar <?php echo $this->info_usuario['alias']?> al <?php echo $this->info_usuario['numero']?></h4>
+            </td>
+        </tr>
+        <tr>
+           <td>
+               <h4 style="color: black; text-align: center; margin: 0;">Costo de suscripcion: <?php
+                if( $this->info_usuario['costo_gs'] != '0' ){
+
+                    echo $this->info_usuario['costo_gs']*(1+$this->info_usuario['iva']) .' '. $this->info_usuario['moneda'].  'iva incluido</h4>';
+                }else{
+
+                    echo substr($this->info_usuario['costo_usd']*(1+$this->info_usuario['iva']),0,strlen($this->info_usuario['costo_usd']*(1+$this->info_usuario['iva']))-2) .' '. $this->info_usuario['moneda']. ' iva incluido</h4>';
+                }?>
+           </td>
+        </tr>
+    </table>
+    <table id="borde_abajo" align="center" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td><img class="menu" src="/<?php echo $this->ua['borde_abajo'] ?>" alt="BORDE_ABAJO"></td>
+        </tr>
+    </table>
+</div>
+

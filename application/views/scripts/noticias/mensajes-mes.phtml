@@ -1,0 +1,32 @@
+<div>
+    <div data-role="header" data-position="fixed">
+        <a href="/noticias/mensajes-anho/anho/<?php echo $this->anho ?>" data-icon="delete" data-ajax="false">Volver</a>
+        <h1><?php echo $this->mes?></h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" data-autodividers="false" data-inset="true">
+            <?php foreach($this->sms as $mensaje):?>
+
+                <li><a data-ajax="false" href="/noticias/mensajes-dia/anho/<?php echo $mensaje['anho']?>/mes/<?php echo $mensaje['mes']?>/dia/<?php echo $mensaje['dia']?>"><?php echo $mensaje['dia_semana'].', '. $mensaje['dia']?> </a><span class="ui-li-count"><?php echo $mensaje['cantidad']?></span></li>
+
+            <?php endforeach;?>
+        </ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <a href="/noticias/logout" data-icon="delete" data-ajax="false" style="float: left;">Salir</a>
+        <a href="/noticias/home" data-role="button" data-icon="home" data-ajax="false" data-theme="e" style="float: right;">Inicio</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).on('pageinit', function(){
+
+        $("a").click(function (event) {
+            event.preventDefault();
+            window.location = $(this).attr("href");
+        });
+
+    });
+
+</script>

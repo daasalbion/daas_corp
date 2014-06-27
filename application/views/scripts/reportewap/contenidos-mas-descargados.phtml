@@ -1,0 +1,13 @@
+<div id="bloque_mes">
+
+        Carriers:&nbsp;
+        <select id="id_pais" name="id_pais">
+            <?php foreach($this->paises as $pais): ?>
+                <option value="<?php echo $pais['id_pais'] ?>" <?php echo ( $pais['id_pais']== $this->id_pais) ? 'selected=selected' . 'value='.$this->id_pais :''?>><?php echo $pais['nombre'] ?></option>
+            <?php endforeach; ?>
+        </select>
+
+    Dia Seleccionado:&nbsp;
+    <input type="text" id="datepicker" value="<?php echo (isset($this->fecha)) ? $this->fecha : date('Y-m-d') ?>" />
+    <input type="button" id="cargar_resumen" value="Cargar">
+</div>

@@ -1,0 +1,58 @@
+<!--<div id="bloque_mes">
+    Mes Seleccionado:&nbsp;
+    <select id="mes" name="mes">
+        <?php /*foreach($this->rango_seleccion as $rango): */?>
+        <option value="<?php /*echo $rango['anho'].'-'.($rango['mes']<10? '0'.$rango['mes'] : $rango['mes']) */?>"<?php /*echo ($rango['selected'] == 'selected' ? ' selected="selected"' : '') */?>><?php /*echo $rango['descripcion'] */?></option>
+        <?php /*endforeach; */?>
+    </select>
+</div>-->
+
+<?php foreach( $this->datos as $proveedor => $estructura ):?>
+
+    <table class="tabla_pautas">
+        <thead>
+            <tr>
+               <th class="fondo_naranja alias ultima_celda" colspan="6"><?php echo $proveedor ?></th>
+            </tr>
+            <tr>
+                <th class="fondo_naranja alias nombre_contenido">Nombre del Tono</th>
+                <th class="fondo_naranja alias">Duracion</th>
+                <th class="fondo_naranja alias">Tarifa</th>
+                <th class="fondo_naranja alias">Cantidad</th>
+                <th class="fondo_naranja alias">Total Neto Enter</th>
+                <th class="fondo_naranja alias">Total Proveedor</th>
+                <th class="fondo_naranja alias borde_derecha ultima_celda">Total Final Enter</th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach( $estructura['datos'] as  $tipo => $datos_tipo ): ?>
+                <tr>
+                    <td class="alias"><?php echo $datos_tipo['tone_name']?></td>
+                    <td class="alias"><?php echo $datos_tipo['descripcion']?></td>
+                    <td class="numero"><?php echo $datos_tipo['costo_usd']?></td>
+                    <td class="numero"><?php echo $this->numero($datos_tipo['cantidad'])?></td>
+                    <td class="numero"><?php echo $this->numero($datos_tipo['neto_entermovil'])?></td>
+                    <td class="numero"><?php echo $this->numero($datos_tipo['neto_proveedor'])?></td>
+                    <td class="numero borde_derecha ultima_celda"><?php echo $this->numero($datos_tipo['neto_enter_final'])?></td>
+                </tr>
+        <?php endforeach;?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="alias celda_vacia"></td>
+                <td class="alias celda_vacia"></td>
+                <td class="fondo_naranja alias">Total</td>
+                <td class="fondo_naranja numero"><?php echo $this->numero($estructura['totales']['cantidad'])?></td>
+                <td class="fondo_naranja numero"><?php echo $this->numero($estructura['totales']['neto_entermovil'])?></td>
+                <td class="fondo_naranja numero"><?php echo $this->numero($estructura['totales']['neto_proveedor'])?></td>
+                <td class="fondo_naranja numero ultima_celda"><?php echo $this->numero($estructura['totales']['neto_enter_final'])?></td>
+            </tr>
+        </tfoot>
+    </table>
+<?php endforeach; ?>
+
+
+
+
+
+

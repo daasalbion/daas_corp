@@ -1,0 +1,265 @@
+#link_reportes_backtones {
+    color: #000000;
+    text-decoration:underline;
+}
+table, tr, td, th, thead, tfoot, tbody {
+    margin:0;
+    padding: 0;
+    border: none;
+}
+.tabla_reporte {
+    font-family: Arial;
+    font-size: 10px;
+    border-spacing: 0px;
+    /*margin-left: 3%;*/
+    margin-top: 20px;
+    float: left;
+}
+.tabla_pautas
+{
+    /*border-top:1px solid black;*/
+    font-size: 10px;
+    font-family: Arial;
+    margin-top: 15px;
+    clear: left;
+    float: left;
+    /*width: 110%;*/
+}
+
+.tabla_reporte th, .tabla_reporte td {
+    border: 1px solid #333333;
+    border-right: none;
+    border-top: none;
+}
+
+.tabla_reporte th.borde_arriba {
+    border-top: 1px solid #333333;
+}
+
+.tabla_reporte th.borde_derecha {
+    border-right: 1px solid #333333;
+}
+
+.fondo_naranja {
+    background-color: #ffd548;
+}
+
+.dia_actual {
+    background-color: #fff835;
+}
+
+.nro_dia {
+    min-width: 65px;
+    width: 65px;
+    background-color: #ffd548;
+    font-weight: bold;
+    height: 20px;
+}
+
+.domingo {
+    background-color: #BBCCFF;
+}
+
+.totales {
+    min-width: 80px;
+    width: 80px;
+}
+
+.porcentaje {
+    min-width: 60px;
+    width: 60px;
+}
+
+.carrier {
+    min-width: 80px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alias {
+    min-width: 70px;
+    width: 70px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.tigo {
+    color: #0066bb;
+
+}
+
+.personal  {
+    color: #9400d3;
+}
+
+.suscriptos {
+    min-width: 50px;
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.descripcion_cobro {
+    min-width: 90px;
+    width: 90px;
+    text-align: right;
+    padding-right: 3px;
+}
+
+.celda_cliente {
+    background-color: #ffdead;
+}
+
+.celda_vacia {
+    empty-cells:hide;
+    border: medium none;
+}
+
+td.celda_total, th.celda_total {
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.separador {
+    background-color: #b0b0ae;
+}
+
+.separador_misma_promocion {
+    background-color: #FFFFFF;
+}
+
+.celda_separador {
+    height: 5px;
+}
+
+.numero {
+    text-align: right;
+    padding-right: 2px;
+    height: 20px;
+
+}
+
+td.dia_semana {
+    font-weight: bold;
+    font-size:  8px;
+    text-align: center;
+}
+
+td.dia_envio {
+    background-color: #79eb74;
+}
+
+.numero_porcentaje {
+    text-align: center;
+    font-size:  14px;
+    height: 20px;
+    font-weight: bold;
+}
+
+.monto_gs {
+    text-align: right;
+    padding-right: 2px;
+    height: 20px;
+}
+
+#bloque_mes {
+    margin-top: 20px;
+    font-weight: bold;
+    font-family: Arial;
+    /*width: 350px;*/
+    float: left;
+    margin-left: 40px;
+}
+#bloque_mes select {
+    background-color: #ffd548;
+    border: 1px solid #ffd548;
+    
+    width: 150px;
+    font-family: Arial;
+}
+
+#bloque_instructivo {
+    margin-top: 10px;
+    width: 600px;
+    float: right;
+    height: 70px;
+    font-family: Arial;
+}
+
+#bloque_instructivo h3 {
+    margin: 0;
+    padding: 0;
+}
+
+#bloque_instructivo p {
+    font-size:  10px;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2px;
+}
+
+#bloque_instructivo p:last-child {
+    font-weight: bold;
+}
+
+table {
+    border-collapse:collapse;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 14px;
+    font-family: Arial;
+    /*width: 110%;*/
+}
+th, td {
+    border-left:1px solid black;
+    border-top:1px solid black;
+    border-bottom: 1px solid black;
+}
+
+th.ultima_celda, td.ultima_celda {
+    border-right:1px solid black;
+
+}
+.fondo_naranja {
+    background-color: #ffd548;
+}
+.fondo_naranja_ultima {
+    background-color: #ffd548;
+}
+.alias {
+    min-width: 100px;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    height: 20px;
+}
+.altas_bajas {
+    min-width: 70px;
+    width: 70px;
+    text-align: center;
+    font-weight: bold;
+}
+.numero {
+    text-align: right;
+    padding-right: 4px;
+    height: 20px;
+}
+.centrar{
+    text-align: center;
+}
+.nombre_contenido {
+    font-weight: bold;
+    min-width: 280px;
+    text-align: center;
+    width: 100px;
+}
+.bloque_mensaje{
+    margin-top: 60px;
+    text-align: left;
+    font-weight: bold;
+    min-width: 600px;
+    width: 100px;
+    font-family: Arial;
+    margin-left: 40px;
+}

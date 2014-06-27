@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1"/>
+        <meta name="HandheldFriendly" content="true" />
+
+        <script src="http://10.0.2.8/jquerymobile/demos/js/jquery.js"></script>
+
+        <title>ENTERMOVIL</title>
+
+        <style type="text/css">
+            #navegador ul{
+                list-style-type: none;
+                text-align: center;
+            }
+            #navegador li{
+                display: inline;
+                text-align: center;
+                margin: 0 10px 0 0;
+            }
+            #navegador li a {
+                padding: 2px 7px 2px 7px;
+                color: #666;
+                background-color: #eeeeee;
+                border: 1px solid #ccc;
+                text-decoration: none;
+            }
+            a{
+                text-decoration: none;
+            }
+            #navegador li a:hover{
+                background-color: #333333;
+                color: #ffffff;
+            }
+            div{
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            #navegador{
+                margin-left: auto;
+                margin-right: auto;
+            }
+            textarea {
+                resize: none;
+                max-height: 100px;
+            }
+
+        </style>
+
+    </head>
+    <body style="background-color: orange; width: <?php echo $this->ua['ancho_tabla'] .'px'?>">
+    <div style="background-color: orange; width: <?php echo $this->ua['ancho_tabla'] .'px'?>">
+            <form action="/noticias/<?php if(!isset($this->sms)){ echo 'insertar';}else{ echo 'modificar-mensaje';}?>"  class="tweetform" method="post" onsubmit="return valida()">
+                <span class="m2-auth-token"><input name="authenticity_token" type="hidden" value="f4af13cce3c368e58787" /></span>
+
+                <table id="tweettable" style="width: <?php echo $this->ua['ancho_tabla'] .'px'?>">
+
+                    <tr><td colspan="3"><h1>Nuevo Mensaje</h1></td></tr>
+                    <tr>
+                        <td class="camera tweet-btn-container js-visible "><a href="/noticias/homeb">Cancelar</a></td>
+                        <td class="counter js-visible"><span id="contador" style="color: white"><?php if(isset($this->sms)){ echo $this->caracteres;}else{ echo 150;}?></span></td>
+                         <td class="tweet-btn-container">
+                             <?php if(!isset($this->sms)){?>
+                                <span class="w-button-common submit w-button-default"><input name="commit" type="submit" value="Enviar"/></span>
+                             <?php }else{ ?>
+                                 <input name = "id_mensaje" type="hidden" id="id_mensaje" value="<?php echo $this->id_sms?>">
+                                 <span><input id="modificar-button" type="submit" value="Actualizar" data-inline="true" data-icon="check" data-iconpos="right" data-mini="true" data-theme="e" data-ajax="false"></span>
+                             <?php } ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div class="tweet_box">
+                                <textarea name="mensaje" wrap=physical cols="50" rows="10" maxlength="150" id="comment"><?php if(isset($this->sms)){ echo $this->sms;}?></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php if(isset($this->sms)){?>
+                        <tr>
+                            <td colspan="3" style="text-align: center; width: 10%">
+                                <span><a href="/noticias/eliminar-mensaje/id/<?php echo $this->id_sms?>"><input id="delete-button" type="button" value="Eliminar" data-inline="true" data-icon="delete" data-iconpos="right" data-mini="true" data-theme="a" data-ajax="false"></a></span>
+                            </td>
+                        </tr>
+                    <?php }?>
+                </table>
+            </form>
+        </div>
+
+        <script type="text/javascript">
+
+            var max_chars = 150;
+            var diff = true;
+            var chars;
+
+            $(document).ready(function(){
+
+                $('#max').html(max_chars);
+
+                $('#comment').keyup(function() {
+
+                    chars = $(this).val().length;
+                    diff = max_chars - chars;
+                    $('#contador').html(diff);
+
+                    if (diff < 0){
+
+                        alert("Ha excedido el limite de caracteres");
+                    }
+                });
+            });
+            function valida(){
+
+                if(diff < 0 || diff == true || chars == 0){
+
+                    return false;
+                }
+                else{
+
+                    return true;
+                }
+            }
+        </script>
+    </body>
+</html>

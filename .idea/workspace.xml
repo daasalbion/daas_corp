@@ -1,114 +1,982 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="RequestUserService terminado">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/Tragamoneda-Masking.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/borde_titulo_tvchat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/fondo_encabezado_tvchat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/fondo_tvchat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/logo_afortunado.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/logo_jugar_derecha.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/logo_jugar_izquierda.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/luces_tvchat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tira_fondo_titulo_tvchat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tira_fondo_tvchat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tira_fondo_tvchat_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tira_tvchat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/titulo_tvchat.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamoneda_masking.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamonedas_linea_ganadora.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamonedas_luces_horizontales.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamonedas_luces_verticales.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamonedas_numero_ganador.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamonedas_tiras.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamonedas_titulo.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat_titulo_tragamonedas.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/JuegosController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/daas-marquee.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/daas-marquee.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/demo2.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/hijo.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/hijo.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/index.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/inicializar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery.tinysort.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/juegos.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/marquee-manager.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/Webservices/Personal/Paraguay/notification.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/ok.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/ok.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/reset.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/ruleta.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/ruleta2.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/setup.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/tragamonedas.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/tvchat.child.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/tvchat.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/tvchat.manager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/tvchat.marquee.manager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/tvchat.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/tvchat.utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/tvchat.wheel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/tvchat_demo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/tvchat_dinamic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/utils.js" />
-      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\log\webservices_2013-03-22.log" afterPath="" />
-      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\log\webservices_2013-03-23.log" afterPath="" />
-      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\log\webservices_2013-03-25.log" afterPath="" />
-      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\log\www.entermovil.com.py_2013-03-22.log" afterPath="" />
-      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\log\www.entermovil.com.py_2013-03-23.log" afterPath="" />
-      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\log\www.entermovil.com.py_2013-03-25.log" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/.htaccess" afterPath="$PROJECT_DIR$/public/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/AuthController.php" afterPath="$PROJECT_DIR$/application/controllers/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/Bootstrap.php" afterPath="$PROJECT_DIR$/application/Bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/CallcenterController.php" afterPath="$PROJECT_DIR$/application/controllers/CallcenterController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ErrorController.php" afterPath="$PROJECT_DIR$/application/controllers/ErrorController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/EventoController.php" afterPath="$PROJECT_DIR$/application/controllers/EventoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/IndexController.php" afterPath="$PROJECT_DIR$/application/controllers/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/forms/Login.php" afterPath="$PROJECT_DIR$/application/forms/Login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/MailController.php" afterPath="$PROJECT_DIR$/application/controllers/MailController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/MobileController.php" afterPath="$PROJECT_DIR$/application/controllers/MobileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ReportesController.php" afterPath="$PROJECT_DIR$/application/controllers/ReportesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/SubscriptionServices.php" afterPath="$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/SubscriptionServices.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/WebservicesController.php" afterPath="$PROJECT_DIR$/application/controllers/WebservicesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/auth/acceso.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/auth/acceso.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/configs/application.ini" afterPath="$PROJECT_DIR$/application/configs/application.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/base.css" afterPath="$PROJECT_DIR$/public/css/base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/callcenter.css" afterPath="$PROJECT_DIR$/public/css/callcenter.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/callcenter.js" afterPath="$PROJECT_DIR$/public/js/callcenter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/reportes/cobros-por-carrier.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/cobros-por-carrier.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/error/error.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/error/error.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/callcenter/index.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/callcenter/index.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery-1.7.js" afterPath="$PROJECT_DIR$/public/js/jquery-1.7.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery-1.7.min.js" afterPath="$PROJECT_DIR$/public/js/jquery-1.7.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery-1.8.0.js" afterPath="$PROJECT_DIR$/public/js/jquery-1.8.0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery-1.8.0.min.js" afterPath="$PROJECT_DIR$/public/js/jquery-1.8.0.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/jquery-ui.css" afterPath="$PROJECT_DIR$/public/css/jquery-ui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery-ui.js" afterPath="$PROJECT_DIR$/public/js/jquery-ui.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery.form.js" afterPath="$PROJECT_DIR$/public/js/jquery.form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery.placeholder.js" afterPath="$PROJECT_DIR$/public/js/jquery.placeholder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery.placeholder.min.js" afterPath="$PROJECT_DIR$/public/js/jquery.placeholder.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/jquery.timeentry.css" afterPath="$PROJECT_DIR$/public/css/jquery.timeentry.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery.timeentry.js" afterPath="$PROJECT_DIR$/public/js/jquery.timeentry.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" afterPath="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/modernizr-2.0.6.js" afterPath="$PROJECT_DIR$/public/js/modernizr-2.0.6.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/reportes/pautas.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/pautas.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/layouts/scripts/reporte-layout.phtml" afterPath="$PROJECT_DIR$/application/layouts/scripts/reporte-layout.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_base.css" afterPath="$PROJECT_DIR$/public/css/reportes_base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_cobros.css" afterPath="$PROJECT_DIR$/public/css/reportes_cobros.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_contenidos.css" afterPath="$PROJECT_DIR$/public/css/reportes_contenidos.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_pautas.css" afterPath="$PROJECT_DIR$/public/css/reportes_pautas.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_resumen.css" afterPath="$PROJECT_DIR$/public/css/reportes_resumen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/reportes_resumen.js" afterPath="$PROJECT_DIR$/public/js/reportes_resumen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_suscriptos.css" afterPath="$PROJECT_DIR$/public/css/reportes_suscriptos.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_suscriptos_por_hora.css" afterPath="$PROJECT_DIR$/public/css/reportes_suscriptos_por_hora.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_suscriptos_x_minuto.css" afterPath="$PROJECT_DIR$/public/css/reportes_suscriptos_x_minuto.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/reportes/resumen-cobros.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/resumen-cobros.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/tempo.js" afterPath="$PROJECT_DIR$/public/js/tempo.js" />
+    <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="actualizando proyecto&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/--------_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/--O_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/--o--o_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test/03.3gp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/0384_Auto-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test/03_1.mp4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/glyphish-icons/09-chat2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/glyphish-icons/100-coffee.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/glyphish-icons/18-envelope.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/glyphish-icons/19-gear.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/glyphish-icons/21-skull.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/glyphish-icons/30-key.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/glyphish-icons/34-coffee.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/3550_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/3550_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/4646_Motos-10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/glyphish-icons/88-beermug.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/A-B_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/ABC_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/ABC_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/ABC_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/AG_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/AG_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/AG_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/AG_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/AG_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/AIDA_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/AIDA_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/AIDA_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/AIDA_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/ALDO_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/ALDO_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/ALDO_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/ALDO_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/ALDO_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/Abcd_Auto-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/Auto-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/Auto-3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/Auto-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/Auto-7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/BBBB_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/BBBB_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/BBBB_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/BBBB_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/BBBB_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/CAPITULO_1_-_AVANCE_PABLO_01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/CAPITULO_1_-_AVANCE_PABLO_02_.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/CAPITULO_1_-_AVANCE_PABLO_03.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/CAP_1-AVANCE_MAMA_DE_PABLO.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews/CAP_13_IMAGEN_PABLO_01_OK.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/CAP_13_IMAGEN_PABLO_01_OK.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/CAP_38_-_AVANCE_PABLO_01_12.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/Cele_Auto-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/Coprgtb.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/DAAS_Auto-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/DANY_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/DANY_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/DGIL_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/DGIL_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/DGIL_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/DGIL_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/DGIL_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/DVX_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/DVX_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/DVX_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/DVX_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/DVX_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/EG_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/EG_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/FDOC_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/FDOC_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/FDOC_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/FDOC_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/FDOC_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/FO_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/Feli_Motos-6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/GUI_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/GUI_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/GUI_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/GUI_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/GUI_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/HOLA_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/HOLA_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/Hhjj_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/ImagenAArchivo_con_shadow.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/J-B_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/J-B_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/J-B_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/J-B_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/J-B_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/JAM_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/Jjgm_Auto-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/Kdkd_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/LogoAfortunadoAnimado.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/LogoJugarDerechaAnimado.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/LogoJugarIzquierdaAnimado.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/Mimi_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/Motos-10.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/Motos-6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/Motos-9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/Oooo_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/Oooo_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/PV_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/PV_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/PV_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/PV_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/PV_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/RENE_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/RENE_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/RENE_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/RENE_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/RENE_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/SIGLAS-48.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/TQMQ_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/TQMQ_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/Tribal_Cross_by_WebGrillo.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/Tribal_Cross_by_WebGrillo.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/XXXX_Auto-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/XXXX_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/Zend_v1.11.11.tgz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/aaaa_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/aaaa_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ajax-loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/css/themes/default/images/ajax-loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/images/ajax-loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/album-af.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/album-ag.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/album-bb.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/album-bk.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/album-hc.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/album-k.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/album-mg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/album-ok.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/album-p.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/album-rh.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/album-ws.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/album-xx.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/aldf_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-114x114.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-144x144.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-57x57.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-72x72.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/apple.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/asfo_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/bg-pattern.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/bike.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/blackberry_10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/bmw-thumb.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/bmw.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/borde-abajo-tabla-w1024x64px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/borde-abajo-tabla-w1024x64px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/borde-arriba-tabla-w1024x64px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/borde-arriba-tabla-w1024x64px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/borde_abajo_tabla.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/borde_abajo_tabla.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w120px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w1274px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w134px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w164px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w206px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w224px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w300px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w338px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w450px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/borde_abajo_tabla_w455x46px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/borde_abajo_tabla_w455x46px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w506px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w600px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w750px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w84px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_abajo_tabla_w960px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w120px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w1274px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w134px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w164px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w206px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w224px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w300px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w338px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w450px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w506px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w600px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w750px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w84px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/borde_arriba_tabla_w960px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/buenosaires.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/capetown.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/cesa_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/cesa_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/chat_derecha.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/chat_izquierda.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/corazones_00.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/corazones_00.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/daas_Auto-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/daas_Auto-3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/daas_Auto-7.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/daas_Motos-9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/daas_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/de.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/e_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/encabaezado_tvchat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/encabezado_tvchat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/fi.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/firefox-logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/firefox_os.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/fsdf_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/fsdf_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/fsdf_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/fsdf_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/fsdf_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/galaxy_express.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/gb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/gf.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/gggg_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/img/glyphicons-halflings-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/img/glyphicons-halflings.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/hola_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/hola_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/css/themes/default/images/icons-18-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/images/icons-18-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/css/themes/default/images/icons-18-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/images/icons-18-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/css/themes/default/images/icons-36-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/images/icons-36-black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/css/themes/default/images/icons-36-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/images/icons-36-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/imagen1_w63x63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/imagen1_w63x63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/imagen2_w63x63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/imagen2_w63x63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/imagen3_w63x63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/imagen3_w63x63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/imagen_auto1_clasicos_w63x63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/imagen_auto1_clasicos_w63x63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/imagen_auto2_clasicos_w63x63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/imagen_auto2_clasicos_w63x63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/imagen_auto3_clasicos_w63x63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/imagen_auto3_clasicos_w63x63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/imagen_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/imagen_w35px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/imagen_w47px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/imagen_w63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/imagen_w95px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_13_AVANCE_PABLO_01_21.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_15_AVANCE_PABLO_01_27.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_15_AVANCE_PABLO_02_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_16_AVANCE_PABLO_01_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_16_AVANCE_PABLO_02_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_18_AVANCE_EL_CHILI_15.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_18_AVANCE_PABLO_27.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_19_AVANCE_PABLO_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_20_AVANCE_PABLO_24.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_21_-_AVANCE_MAMA_DE_PABLO_9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_21_-_AVANCE__PABLO_9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_22_-_AVANCE_MAMA_DE_PABLO_6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_22_-_AVANCE_PATRICIA_ESPOSA_DE_PABLO_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_25_-_AVANCE_PABLO_01_15.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_26_-_AVANCE_MARCOS_HERBER_24.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_26_-_AVANCE_PABLO_01_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_27_-_AVANCE_PABLO_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_28_-_AVANCE_PABLO_01_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_29_-_AVANCE_PABLO_01_6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_30_-_AVANCE_PABLO_01_9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_31_-_AVANCE___PABLO_01_12.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_32_-_AVANCE__PABLO_01_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_33-_AVANCE__PABLO_01_3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_33-_AVANCE__PABLO_02_6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_34_-_AVANCE_PABLO_01_21.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_34_-_AVANCE_PABLO_02_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_35_-_AVANCE_PABLO_01_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_35_-_AVANCE_PABLO_02_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_36_-_AVANCE_PABLO_01_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_36_-_AVANCE_PABLO_02_0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-previews-videos/promociones/77/previews_seleccionados/imagen_w_63x63_px_CAP_37_-_AVANCE__PABLO__27.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/images.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/images.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/jajs_Auto-4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/css/jqm_demo-icons-hd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/css/jqm_demo-icons-sd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/jquery-logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/jquery.mobile-1.3.1.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/landrover-thumb.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/landrover.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/layer-grande-w1024x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/layer-grande-w1024x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/logo_entermovil_240x140.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/logo_entermovil_240x140.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/logo_entermovil_240x140.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/logo_entermovil_240x140.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/logo_entermovil_w1024px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/logo_entermovil_w1024px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w-4px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w120px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w1318px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w136px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w166px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w208px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w232px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w310px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w348px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w464px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w522px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w620px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w774px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w82px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/logo_escobar_w992px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/logo_jugar_izquierda_animado.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/luces.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/lumia_800.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/marcoSombraFondosoca_SIGLAS-28.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/marcosoca_SIGLAS-28.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/mari_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/mari_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/mari_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/mari_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/mari_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigator-layer-1-w132x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigator-layer-1-w132x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigator-layer-2-visited-w197x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigator-layer-2-visited-w197x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigator-layer-2-w197x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigator-layer-2-w197x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigator-layer-3-visited-w192x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigator-layer-3-visited-w192x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigator-layer-3-w192x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigator-layer-3-w192x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigator-layer-4-visited-w192x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigator-layer-4-visited-w192x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigator-layer-4-w192x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigator-layer-4-w192x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigator-layer-5-visited-w193x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigator-layer-5-visited-w193x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigator-layer-5-w193x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigator-layer-5-w193x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigator-layer-6-w119x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigator-layer-6-w119x121px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigator_layer.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigator_layer.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w115px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w14px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w152px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w16px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w19px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w25px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w27px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w36px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w41px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w53px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w61px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w72px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w89px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer1_w9px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w100px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w118px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w148px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w17px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w189px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w24px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w251px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w26px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w32px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w41px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w44px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w59px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w66px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_visited_w89px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w100px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w118px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w148px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w17px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w189px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w24px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w251px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w26px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w32px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w41px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w44px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w59px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w66px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer2_w89px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w112px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w140px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w16px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w179px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w22px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w238px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w25px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w31px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w38px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w42px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w56px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w84px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_visited_w94px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w112px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w140px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w16px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w179px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w22px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w238px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w25px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w31px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w38px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w42px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w56px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w84px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer3_w94px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w112px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w140px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w16px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w179px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w22px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w238px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w25px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w31px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w38px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w42px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w56px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w84px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_visited_w94px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w112px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w140px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w16px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w179px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w22px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w238px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w25px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w31px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w38px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w42px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w56px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w84px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer4_w94px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w100px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w125px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w14px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w160px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w20px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w212px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w22px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w27px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w34px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w37px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w50px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w56px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w75px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_visited_w84px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w100px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w125px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w14px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w160px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w20px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w212px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w22px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w27px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w34px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w37px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w50px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w56px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w75px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer5_w84px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w108px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w12px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w138px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w183px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w18px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w20px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w24px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w30px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w32px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w43px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w49px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w65px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w73px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/navigator_layer6_w86px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigatorlayer06.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigatorlayer06.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigatorlayer1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigatorlayer1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigatorlayer2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigatorlayer2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigatorlayer3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigatorlayer3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigatorlayer4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigatorlayer4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigatorlayer5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigatorlayer5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/navigatorlayer6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/navigatorlayer6.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/newyork.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/nexus_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/paris.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/pca_SIGLAS-14.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/pca_SIGLAS-17.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/pca_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/pca_SIGLAS-28.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/pca_SIGLAS-46.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/phone_galaxy3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/phone_iphone5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/phone_lumia920.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/phone_onex.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/photo-landscape.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/photo-portrait.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/photo-run.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/pppp_SIGLAS-22.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/mobile/cache/que_pachoo_w120px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/mobile/cache/que_pachoo_w120px.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/mobile/cache/que_pachoo_w128px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/mobile/que_pachoo_w1920px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/mobile/cache/que_pachoo_w240px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/mobile/cache/que_pachoo_w240px.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/mobile/cache/que_pachoo_w320px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/mobile/cache/que_pachoo_w90px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/mobile/cache/que_pachoo_w96px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/mobile/cache/que_pachoo_w96px.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/mobile/cache/que_pachoo_wpx.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/seoul.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/sombrafondosoca_SIGLAS-28.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/startup.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/sydney.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/tesla-thumb.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/tesla.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/tizen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat_conductora.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat_detalle_derecha.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/us.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/videos.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/videos.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w0px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w106px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w126px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w158px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w18px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w202px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w25px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w268px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w28px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w35px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w43px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w47px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w71px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_nuevo_w95px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/cache/videos_w63px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/wap-logo-entermovil-w1024x188px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/wap-logo-entermovil-w1024x188px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/wap_logo_entermovil.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/wap_logo_entermovil.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/wap_logo_entermovil_w455x84px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/wap_logo_entermovil_w455x84px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes/wap_logo_escobar_w1024x189px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/wap-imagenes-colombia/wap_logo_escobar_w1024x189px.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/AudioController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/CargarController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/forms/CargarPautas.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/backbone-require/js/collections/CategoriesCollection.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/backbone-require/js/models/CategoryModel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/backbone-require/js/views/CategoryView.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/GameController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/HoraController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/helpers/InfoSesionCargar.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/NoticiasController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/Webservices/Personal/Paraguay/NotificarEvento.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/Webservices/Personal/Paraguay/NotificarEventoResponse.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/PersonalWSDL.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/RadioController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/img/glyphish-icons/Read me first - license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/ReporteWapController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/TvchatController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/UtilidadesController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/Webservices/Personal/Paraguay/WSNotificationsHandler.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/WapController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/WaptwoController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/activacion.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/activacion.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/mobile/alta-level-3.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/mobile/alta-wml.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/aps.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/aps.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/arbol.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/popups/arrow.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/audios.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/audios.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/autocomplete/autocomplete-remote.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/listviews/autodividers-linkbar-demo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/listviews/autodividers-linkbar.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/listviews/autodividers-linkbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/listviews/autodividers-linkbar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/listviews/autodividers-selector.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/backbone-require/backbone-require.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/backbone-require/js/libs/backbone.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/backtones-detalle-por-proveedor.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/backtones-detalles.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/backtones-totales.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/backtones.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/banner.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/banner.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/cargar/banners-cargados.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/fixed-toolbars/bars-fixed-forms.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/fixed-toolbars/bars-fullscreen.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/index/bases-y-condiciones.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bases_y_condiciones.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/css/bootstrap-responsive.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/css/bootstrap-responsive.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/css/bootstrap-theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/css/bootstrap-theme.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/swipe/buenosaires.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/swipe/capetown.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/cargar/cargar-banners.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/cargar-bd-pautas.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/cargar-layout.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/cargar/categorias.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/categorias.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/categorias.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/cobros-por-carrier-nuevo.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/cobros-por-carrier-viejo.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/cobros-por-carrier.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/cobros-por-tipo.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/cobros-viejo.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/cobros.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/cobros2.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/tables/columntoggle-refresh.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/connect.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/cargar/contenidos-cargados.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/contenidos-mas-descargados.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/contenidos-nuevo.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/contenidos-wap.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/cargar/contenidos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/hora/contenidos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/contenidos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/contenidos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/contenidos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/controls-in-header-footer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/selects/custom-selects.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/navigation/demo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/utilidades/desktop.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/desktop.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/desktop.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/utilidades/deteccion-javascript.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/dialog/dialog-alt.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/dialog/dialog-buttons.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/dialog/dialog-corners.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/dialog/dialog-noclosebtn.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/dialog/dialog-overlay.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/dialog/dialog-rightclosebtn.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/dialog/dialog-success.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/dialog/dialog-with-select.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/dialog/dialog.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/disabling-a-button-does-not-work.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/dom-ready-not-working.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/collapsibles/dynamic-collapsible.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/controlgroups/dynamic-controlgroup.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/popups/dynamic-popup.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/effects.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/tables/financial-grouped-columns.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/tables/financial-grouped-reflow.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/fondos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/fondos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/fixed-toolbars/footer-persist-a.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/fixed-toolbars/footer-persist-b.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/fixed-toolbars/footer-persist-c.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/fixed-toolbars/footer-persist-d.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/footer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/forms/form-disabled.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/forms/form-fieldcontain.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/forms/form-gallery.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/forms/form-hide-label.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/forms/form-label-hidden.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/global-nav.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/global-nav.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/js/globalnav.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/grids/grid-buttons.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/grids/grid-custom.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/listviews/grid-listview-demo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/listviews/grid-listview.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/listviews/grid-listview.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/js/h2widget.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/he.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/header.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/cargar/home.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/hora/home.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/home.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/homeb.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/hora-layout.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/how-can-i-stop-auto-enhancement-of-a-block-of-elements.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/how-can-i-stop-auto-enhancement-of-elements.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/how-configure-phonegap-cordova.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/how-do-i-control-page-titles.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/how-do-i-load-a-page.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/how-do-i-scroll-to-a-position.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/how-do-i-use-touch-mouse-events.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/how-does-theming-work.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/i-descargar.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/iDescargar.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/imagenes.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/imagenes.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/js/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/backbone-require/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/intro/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/accordions/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/autocomplete/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/buttons/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/checkbox/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/collapsibles/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/controlgroups/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/dialog/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/fixed-toolbars/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/footers/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/forms/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/grids/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/headers/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/icons/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/links/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/listviews/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/loader/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/navbar/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/navigation/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/pages/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/panels/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/popup/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/radiobuttons/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/selects/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/sliders/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/table-column-toggle/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/table-reflow/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/textinputs/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/transitions/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/js/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/mobile/cache/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/audio/index.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/game/index.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/index.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/index.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/indexCss.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/informe-contenidos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/informe-pautas.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/informe-pautas.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/informe_pautas.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/injected-content-is-not-enhanced.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/insertar.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/jmobile.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/css/jqm-demos.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/js/jqm-demos.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery-2.1.0.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/backbone-require/js/libs/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/js/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery.marquee.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery.marquee.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/jquery.mobile-1.3.1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/css/themes/default/jquery.mobile-1.3.1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/jquery.mobile-1.3.1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/js/jquery.mobile-1.3.1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/jquery.mobile-1.3.1.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/css/themes/default/jquery.mobile-1.3.1.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/jquery.mobile-1.3.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/js/jquery.mobile-1.3.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/jquery.mobile-1.3.1.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/js/jquery.mobile-1.3.1.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/popups/jquery.mobile.popup.arrow.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/jquery.mobile.structure-1.3.1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/css/themes/default/jquery.mobile.structure-1.3.1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/jquery.mobile.structure-1.3.1.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/css/themes/default/jquery.mobile.structure-1.3.1.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/jquery.mobile.theme-1.3.1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/css/themes/default/jquery.mobile.theme-1.3.1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/jquery.mobile.theme-1.3.1.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/css/themes/default/jquery.mobile.theme-1.3.1.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/backbone-require/js/libs/jquerymobile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/radio/lista_mensajes.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/radio/listado.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/backbone-require/js/libs/lodash.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/cargar/login.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/login.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/loginb.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/popup/map.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/marquee.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/mensaje-error.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/mensaje-error.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/mensajes-anho.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/mensajes-dia.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/mensajes-mes.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/mensajes.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/mobile-layout-level-0.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/mobile-layout-level-1.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/mobile-layout-level-2.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/mobile-layout-level-3.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/mobile-layout-level-4.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/mobile-layout-level-wml.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/backbone-require/js/mobile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/backbone-require/js/routers/mobileRouter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/modificar.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/tables/movie-list-toggle-options.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/tables/movie-list.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/pages/multipage-template.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/my-html-5-inputs-look-different-in-browsers.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/my-range-search-input-type-is-being-changed.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/nav-examples.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/nav-faq.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/nav-widgets.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/swipe/newyork.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/no-suscripto.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/no-suscripto.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/game/no-usuario.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/no-usuario.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/no-usuario.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/noticias-layout.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/cargar/nuevo-contenido.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/nuevo.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/pages/page-template.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/transitions/page-transitions-dialog.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/transitions/page-transitions-page.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/hora/paginacion-chico.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/game/paginacion.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/hora/paginacion.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/paginacion.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/paginacion.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/game/pagination.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/pagination.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/pagination.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/panels/panel-fixed.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/panels/panel-styling.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/panels/panel-swipe-open.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/pantalla.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/swipe/paris.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/pass-query-params-to-page.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/pass-via-the-hash-to-page.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/pautas.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/phMagick.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/tables/phone-compare.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/popup/popup-examples.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/popup/popup-examples.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/popup/popup-iframes.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/popup/popup-images.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/popups/popup.arrow.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/cargar/previews-disponibles.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/promo.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/index/promo.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/proveedores-contenidos.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/proveedores-contenidos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/proveedores_contenidos.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/cargar/prueba.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/question-template.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/sliders/rangeslider.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/tables/reflow-refresh.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/reporte-backtones.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/reporte-wap-layout.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/reportes_backtones.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/reportes_backtones.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/reportes_backtones_detalle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/reportes_backtones_totales.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/reportes_cobros_por_tipo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/reportes_informe_contenidos.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/reportes_informe_contenidos.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/reportes_informe_pautas.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/reportes_informe_pautas_cargar_bd_pautas.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/reportes_proveedores_contenidos.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/reportes_suscriptos_x_tipo.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/reportes_ussd.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/reportes_ussd.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/reportes_wap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/reportes_wap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/reportes_ya.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/backbone-require/js/libs/require.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/resumen-cobros-mexico.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/resumen-cobros-mexico.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/resumen-cobros.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/intro/rwd.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/scripts-and-styles-not-loading.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/search-results.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/search.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/search.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/swipe/seoul.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/game/siglas-preview.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/siglas-preview.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/siglas-preview.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/bootstrap/css/signin.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/slider/slider.tooltip.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/slider/slider.tooltip.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/sometimes-custom-select-shows-as-dialog-popup.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/cargar/sub-categoria.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/game/suscripcion-anterior.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/suscripcion-anterior.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/game/suscripcion.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/suscripcion.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/suscripcion.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/suscriptos-por-hora.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/suscriptos-por-minuto.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/suscriptos-viejo.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/suscriptos-x-tipo.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/suscriptos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/swipe/swipe-list.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/swipe/swipe-page.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/swipe/swipe-page.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/swipe/swipe-page.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/widgets/sliders/switch.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/swipe/sydney.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/tail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/texto.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/noticias/textob.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/the-application-cache-is-not-working.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/examples/slider/tooltip.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/fondospersonalizados/cache/touch.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/triggering-create-on-injected-content-does-not-work.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/updating-the-value-of-enhanced-form-elements-does-not-work.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/ussd.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportewap/ussd.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/utilidades-layout.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/game/videos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/videos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/videos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/_assets/js/view-source.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/wap-layout.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/cargar/wap-preview-cargar.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/cargar/wap-preview.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/game/wap-suscripcion.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/wap-suscripcion.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/wap.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/layouts/scripts/waptwo-layout.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquerymobile/demos/faq/why-is-only-the-first-page-loaded.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/audio/wifi.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/wap/wifi.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/waptwo/wifi.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wrapperJQueryMarquee.js" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\google21c33b01ba2362a2.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\TONO_01.mp3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\TONO_02.mp3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\TONO_04.mp3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\TONO_05.mp3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\TONO_06.mp3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\TONO_07.mp3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\TONO_09.mp3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\TONO_10.mp3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\TONO_11.mp3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\TONO_12.mp3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\TONO_14.mp3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\TONO_15.mp3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\player_mp3_js.swf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\swf\player_mp3_mini.swf" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="www.entermovil.com.py.iws" />
@@ -132,15 +1000,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="demo1.phtml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="demo1.phtml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="41" selection-start="2505" selection-end="2505" vertical-scroll-proportion="0.42938933" vertical-offset="557" max-vertical-offset="1632">
+            <state line="41" column="57" selection-start="2039" selection-end="2039" vertical-scroll-proportion="-11.115385" vertical-offset="408" max-vertical-offset="1632">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#3;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#4;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inicializar.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/inicializar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="16" selection-start="275" selection-end="285" vertical-scroll-proportion="-0.09058615" vertical-offset="306" max-vertical-offset="1054">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -212,8 +1089,8 @@
         <option value="$PROJECT_DIR$/public/js/tvchat.child.js" />
         <option value="$PROJECT_DIR$/public/js/tvchat.marquee.manager.js" />
         <option value="$PROJECT_DIR$/public/js/tvchat.wheel.js" />
-        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml" />
         <option value="$PROJECT_DIR$/public/css/tvchat.css" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml" />
       </list>
     </option>
   </component>
@@ -379,19 +1256,25 @@
       <created>1363978569231</created>
       <updated>1363978569231</updated>
     </task>
+    <task id="LOCAL-00001" summary="actualizando proyecto">
+      <created>1403881931012</created>
+      <updated>1403881931012</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27072757" sideWeight="0.4941435" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25075528" sideWeight="0.39898133" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18731117" sideWeight="0.0" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25075528" sideWeight="0.60101867" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25075528" sideWeight="0.60101867" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33490565" sideWeight="0.0" order="7" side_tool="true" content_ui="tabs" />
@@ -403,7 +1286,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -427,7 +1309,8 @@
     <MESSAGE value="cambio en el archivo application.ini" />
     <MESSAGE value="servicios implementados, falta implementar RequestUserService solamente" />
     <MESSAGE value="RequestUserService terminado" />
-    <option name="LAST_COMMIT_MESSAGE" value="RequestUserService terminado" />
+    <MESSAGE value="actualizando proyecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="actualizando proyecto" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -611,11 +1494,6 @@
         <state line="5" column="42" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.1539855" vertical-offset="0" max-vertical-offset="552" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/inicializar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/Bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="4" selection-start="74" selection-end="303" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="595" />
@@ -674,12 +1552,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="41" selection-start="2505" selection-end="2505" vertical-scroll-proportion="0.42938933" vertical-offset="557" max-vertical-offset="1632">
+        <state line="41" column="57" selection-start="2039" selection-end="2039" vertical-scroll-proportion="-11.115385" vertical-offset="408" max-vertical-offset="1632">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#2;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#3;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/inicializar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="16" selection-start="275" selection-end="285" vertical-scroll-proportion="-0.09058615" vertical-offset="306" max-vertical-offset="1054">
+          <folding />
         </state>
       </provider>
     </entry>

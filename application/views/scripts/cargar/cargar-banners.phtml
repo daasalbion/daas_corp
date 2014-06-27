@@ -1,0 +1,112 @@
+<center>
+    <div class="page-header" id="titulo">
+        <h2>BANNERS - WAP</h2></br>
+    </div>
+</center>
+<div id="bloque_alias">
+
+    <p>SERVICIO: <?php echo $this->servicio ?></p>
+    <p>Id-Promocion: <?php echo $this->id_promocion?></p>
+    <?php if( !isset( $this->nombre ) ){ ?>
+
+        <form action="/cargar/nuevo-banner" method="post" enctype="multipart/form-data" onsubmit="return validar()">
+
+            <div id="nuevo-contenido">
+
+                Nombre Banner: &nbsp;
+                <input type="text" name="nombre" id="nombre">
+                Descripcion:
+                <input type="text" name="descripcion" id="descripcion">
+                <input type="hidden" name="id_promocion" id="id_promocion" value="<?php echo $this->id_promocion ?>">
+                Nivel:
+                <input size="5" id="nivel" name="nivel" onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');" type="text">
+                Orden:
+                <input size="5" id="orden" name="orden" onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');" type="text"><br>
+                Archivo:
+                <input type=file size=15 id="userFile" name="userFile"><br>
+                <input type="submit" value="cargar">
+            </div>
+        </form>
+    <?php }else{ ?>
+
+        <form action="/cargar/modificar-banner" method="post" enctype="multipart/form-data" onsubmit="return validar()">
+
+            <div id="nuevo-contenido">
+
+                Nombre Banner: &nbsp;
+                <input type="text" name="nombre" id="nombre" value="<?php echo $this->nombre?>">
+                Descripcion:
+                <input type="text" name="descripcion" id="descripcion" value="<?php echo $this->descripcion?>">
+                <input type="hidden" name="id_promocion" id="id_promocion" value="<?php echo $this->id_promocion ?>">
+                <input type="hidden" name="id_banner" id="id_banner" value="<?php echo $this->id_banner ?>">
+                Nivel:
+                <input size="5" id="nivel" name="nivel" value="<?php echo $this->nivel?>" onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');" type="text">
+                Orden:
+                <input size="5" id="orden" name="orden" value="<?php echo $this->orden?>" onkeyup="var no_digito = /\D/g; this.value = this.value.replace(no_digito , '');" type="text"><br>
+                <input type="submit" value="Modificar">
+            </div>
+        </form>
+    <?php } ?>
+</div>
+<?php if(!empty($this->contenidos)){?>
+
+    <table id="contenidos_cargados">
+
+        <tr>
+            <th colspan="3" class="ultima_celda centrar">Banners Cargados</th>
+        </tr>
+        <tr>
+            <th class="centrar">Nombre</th>
+            <th class="centrar">Orden</th>
+            <th class="ultima_celda centrar">Nivel</th>
+        </tr>
+        <?php foreach($this->contenidos as $indice=>$contenido):?>
+
+            <tr>
+                <td class="centrar"><?php echo $contenido['nombre']?></td>
+                <td class="centrar"><?php echo $contenido['orden']?></td>
+                <td class="centrar"><?php echo $contenido['nivel']?></td>
+                <td class ="centrar boton"><a href="/cargar/cargar-banners/id-p/<?php echo $this->id_promocion?>/id/<?php echo $contenido['id']?>"><input type="button" size="3" value="modificar"></a></td>
+                <td class ="ultima_celda boton"><a href="/cargar/eliminar-banner/id-p/<?php echo $this->id_promocion?>/id/<?php echo $contenido['id']?>"><input type="button" size="3" value="eliminar"></a></td>
+            </tr>
+
+        <?php endforeach;?>
+    </table>
+<!--    <div id="modificar" class="modal fade">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Modificar Banner</h3>
+        </div>
+        <div class="modal-body">
+            <p><input value="<?php /*echo $contenido['nombre']*/?>"></p>
+            <p><input value=""></p>
+            <p><input value=""></p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-primary">Save changes</button>
+        </div>
+    </div>-->
+
+<?php }else{ ?>
+
+    <div style="margin-left: 40px">
+
+        <h2>No existen banneres cargados para esta promocion</h2>
+    </div>
+<?php } ?>
+<script type="text/javascript">
+
+    function validar() {
+
+        nombre_categoria = document.getElementById("nombre_categoria").value;
+
+        if( nombre_categoria == null || nombre_categoria.length == 0 || /^\s+$/.test(nombre_categoria) ){
+
+            return false;
+        }
+
+        return true;
+    }
+
+</script>

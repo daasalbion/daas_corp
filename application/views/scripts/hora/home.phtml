@@ -1,0 +1,114 @@
+<div style="width: <?php echo $this->ua['ancho_tabla'] .'px'?>; background: #ffffff">
+
+
+    <?php if($this->ua['ancho'] >= 240){ ?>
+        <table id="tabla_contenidos" align="center" width="<?php echo ($this->ua['ancho_tabla']) . 'px'?>" cellspacing="3" cellpadding="2" border="0" bgcolor="white">
+            <thead>
+                <tr style="height: 20px">
+                    <td style="width:40px;"></td>
+
+                    <td id="titulo" bgcolor = "#9acd32" colspan="3" align="center"><font color="black" face="arial" size="1">HORA PARAGUAYA</font></td>
+
+                    <td style="width:40px;"></td>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr style="height: 20px">
+                    <td style="width:40px;"></td>
+
+                    <td id="titulo" bgcolor = "#adff2f" colspan="3" align="center"><font color="black" face="arial" size="1">DESCARGA GRATIS LOS AUDIOS DEL PROGRAMA</font></td>
+
+                    <td style="width:40px;"></td>
+                </tr>
+                <tr style="height: 20px">
+                    <td style="width:40px;"></td>
+
+                    <td id="titulo" bgcolor = "#7fffd4" colspan="3" align="center"><font color="black" face="arial" size="1">AUDIOS NUEVOS</font></td>
+
+                    <td style="width:40px;"></td>
+                </tr>
+                <?php foreach($this->contenidos['nuevos'] as $indice):?>
+                    <tr id="contenidos" style="height: 20px">
+                        <td style="width:40px;"></td>
+
+                        <td colspan="3" align="center"><font color="black" face="arial" size="1"><?php echo $indice['nombre_contenido']?></font></td>
+
+                        <td style="width:40px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:40px;"></td>
+                        <td colspan="3"><a href=""><font color="blue" face="arial" size="1">Descargar</font></a></td>
+                        <td style="width:40px;"></td>
+                    </tr>
+                <?php endforeach; ?>
+                <tr style="height: 20px">
+                    <td style="width:40px;"></td>
+
+                    <td id="titulo" bgcolor = "#adff2f" colspan="3" align="center"><font color="black" face="arial" size="1">AUDIOS ANTERIORES - </font><a style="color: #ff0000" href="/hora/contenidos"><font color="red" face="arial" size="1">Ver Más</font></a></td>
+
+                    <td style="width:40px;"></td>
+                </tr>
+
+                <tr style="height: 20px"></tr>
+            </tbody>
+
+        </table>
+    <?php }?>
+
+    <?php if($this->ua['ancho'] < 240){ ?>
+        <table id="tabla_contenidos" align="center" width="<?php echo ($this->ua['ancho_tabla']) . 'px'?>" cellspacing="3" cellpadding="0" border="0" bgcolor="white">
+
+            <table id="tabla_contenidos_chico" align="center" width="<?php echo ($this->ua['ancho_tabla']) . 'px'?>" cellspacing="3" cellpadding="0" border="0" bgcolor="white">
+
+                <tr style="height: 10px">
+
+                    <td style="width:15px;"></td>
+                    <td id="chico" bgcolor = "#9acd32" colspan="3" align="center">HORA PARAGUAYA</td>
+                    <td style="width:15px;"></td>
+                </tr>
+
+                <tr style="height: 10px">
+
+                    <td style="width:15px;"></td>
+                    <td id="chico" bgcolor = "#adff2f" colspan="3" align="center">DESCARGA GRATIS LOS AUDIOS DEL PROGRAMA</td>
+                    <td style="width:15px;"></td>
+                </tr>
+                <tr style="height: 10px">
+
+                    <td style="width:15px;"></td>
+                    <td id="chico" bgcolor = "#7fffd4" colspan="3" align="center">AUDIOS NUEVOS</td>
+                    <td style="width:15px;"></td>
+                </tr>
+                <?php foreach($this->contenidos['nuevos'] as $indice):?>
+                    <tr id="contenidos_chico" style="height: 10px">
+                        <td style="width:15px;"></td>
+
+                        <td id="chico" colspan="3" align="center"><?php echo $indice['nombre_contenido']?></td>
+
+                        <td style="width:15px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:15px;"></td>
+                        <td colspan="3"><a id="chico" href="">Descargar</a></td>
+                        <td style="width:15px;"></td>
+                    </tr>
+                <?php endforeach; ?>
+                <tr style="height: 10px">
+                    <td style="width:15px;"></td>
+
+                    <td id="chico" bgcolor = "#adff2f" colspan="3" align="center">AUDIOS ANTERIORES - <a id="chico" style="color: #ff0000" href="/hora/contenidos">Ver Más</a></td>
+
+                    <td style="width:15px;"></td>
+                </tr>
+
+                <tr style="height: 10px"></tr>
+            </table>
+
+
+        </table>
+
+    <?php } ?>
+
+<div>
+

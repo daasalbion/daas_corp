@@ -1,0 +1,66 @@
+<div id="bloque_mes">
+    <!--<input type="hidden" id="fecha" name="fecha" value="<?php /*echo $this->anho.'-'.$this->mes */?>">-->
+    Mes Seleccionado:&nbsp;
+    <select id="fecha" name="fecha">
+        <?php foreach($this->rango_seleccion as $rango): ?>
+            <option value="<?php echo $rango['anho'].'-'.($rango['mes']<10? '0'.$rango['mes'] : $rango['mes']) ?>"<?php echo ($rango['selected'] == 'selected' ? ' selected="selected"' : '') ?>><?php echo $rango['descripcion'] ?></option>
+        <?php endforeach; ?>
+    </select>
+    Carrier Seleccionado:&nbsp;
+    <select id="id_carrier" name="id_carrier">
+        <?php foreach($this->carriers as $nombre_carrier => $id_carrier): ?>
+             <option value="<?php echo $id_carrier ?>"<?php echo ( $id_carrier == $this->id_carrier ? ' selected="selected"' : '') ?>><?php echo $nombre_carrier ?></option>
+        <?php endforeach; ?>
+    </select>
+
+</div>
+<?php if( !is_null( $this->datos ) ):?>
+    <table class="tabla_pautas">
+        <thead>
+            <tr>
+                <th class="fondo_naranja alias">Proveedor</th>
+                <th class="fondo_naranja alias">Cantidad</th>
+                <th class="fondo_naranja alias">Total Neto Enter</th>
+                <th class="fondo_naranja alias">% Proveedor</th>
+                <th class="fondo_naranja alias">Total Proveedor</th>
+                <th class="fondo_naranja alias borde_derecha ultima_celda">Total Final Enter</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach( $this->datos['proveedores'] as $proveedor => $estructura_proveedor ): ?>
+
+                <tr>
+                    <td class="alias"><a style="color: blue;text-decoration: underline" href="/reportes/backtones-detalle-por-proveedor/id-proveedor/<?php echo $estructura_proveedor['id_proveedor']?>/fecha/<?php echo $this->anho.'-'.$this->mes ?>"><?php echo $estructura_proveedor['artist_name']?></a></td>
+                    <td class="numero"><?php echo $this->numero($estructura_proveedor['cantidad'])?></td>
+                    <td class="numero"><?php echo $this->numero($estructura_proveedor['monto_neto_enter'])?></td>
+                    <td class="numero"><?php echo $estructura_proveedor['porcentaje_proveedor']?></td>
+                    <td class="numero"><?php echo $this->numero($estructura_proveedor['monto_proveedor_rbt'])?></td>
+                    <td class="numero borde_derecha ultima_celda"><?php echo $this->numero($estructura_proveedor['neto_final_enter'])?></td>
+                    <td class="numero borde_derecha ultima_celda"><a style="color: blue" href="/reportes/backtones-detalles/carrier/<?php echo $estructura_proveedor['id_carrier']?>/fecha/<?php echo $this->anho .'-'. $this->mes?>/id-proveedor/<?php echo $estructura_proveedor['id_proveedor']?>">Detalles</a></td>
+                </tr>
+             <?php endforeach;?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="fondo_naranja alias">Total</td>
+                <td class="fondo_naranja numero"><?php echo $this->numero($this->datos['totales']['cantidad'])?></td>
+                <td class="fondo_naranja numero"><?php echo $this->numero($this->datos['totales']['monto_neto_enter'])?></td>
+                <td class="fondo_naranja numero"></td>
+                <td class="fondo_naranja numero"><?php echo $this->numero($this->datos['totales']['monto_proveedor_rbt'])?></td>
+                <td class="fondo_naranja numero ultima_celda"><?php echo $this->numero($this->datos['totales']['neto_final_enter'])?></td>
+            </tr>
+        </tfoot>
+    </table>
+<?php else: ?>
+    <div class="bloque_mensaje">
+        <p>No existen datos para este mes y carrier</p>
+    </div>
+
+<?php endif; ?>
+
+
+
+
+
+
+

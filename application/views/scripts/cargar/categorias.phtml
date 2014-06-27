@@ -1,0 +1,57 @@
+<center>
+    <div class="page-header" id="titulo">
+        <h2>Wap - Categorias</h2></br>
+        <a href="/cargar/wap-preview-cargar/id-p/<?php echo $this->id_promocion?>/l/1"><input class="btn btn-lg btn-primary" type="button" value="Generar-Preview"></a>
+    </div>
+</center>
+<div id="bloque_alias">
+    <p>SERVICIO: <?php echo $this->servicio ?></p>
+    <p>Id-Promocion: <?php echo $this->id_promocion?></p>
+
+    <?php if(!isset($this->nombre_categoria)){ ?>
+        <form action="/cargar/nueva-categoria" method="post" onsubmit="return validar()">
+            <div id="nueva-categoria">
+                Nueva Categoria: &nbsp;
+                <input type="text" name="nombre_categoria" id="nombre_categoria">
+                Descripcion:
+                <input type="text" name="descripcion" id="descripcion">
+                <input type="hidden" name="id_categoria_padre" id="id_categoria_padre" value="<?php echo '0' ?>">
+                <input type="hidden" name="ultimo_hijo" id="ultimo_hijo" value="<?php echo 'false' ?>">
+                <input type="hidden" name="estado" id="estado" value="<?php echo '1' ?>">
+                <input type="hidden" name="id_promocion" id="id_promocion" value="<?php echo $this->id_promocion ?>">
+                <input type="submit" value="crear">
+            </div>
+        </form>
+        <div id="mensaje">
+            <?php echo isset($this->mensaje)? $this->mensaje: ''?>
+        </div>
+
+    <?php }else{ ?>
+
+        <form action="/cargar/modificar-categoria" method="post">
+            <div id="modificar-categoria">
+                Modificar Categoria: &nbsp;
+                <input type="text" name="nombre_categoria" id="nombre_categoria" value="<?php echo $this->nombre_categoria?>">
+                Descripcion:
+                <input type="text" size="40" name="descripcion" id="descripcion" value="<?php echo $this->descripcion?>">
+                <input type="hidden" name="id_categoria" id="id_categoria" value="<?php echo $this->id_categoria ?>">
+                <input type="hidden" name="id_promocion" id="id_promocion" value="<?php echo $this->id_promocion ?>">
+                <input type="submit" value="Modificar">
+            </div>
+        </form>
+    <?php } ?>
+</div>
+<script type="text/javascript">
+
+    function validar() {
+
+        nombre_categoria = document.getElementById("nombre_categoria").value;
+
+        if( nombre_categoria == null || nombre_categoria.length == 0 || /^\s+$/.test(nombre_categoria) ){
+
+            return false;
+        }
+
+        return true;
+    }
+</script>

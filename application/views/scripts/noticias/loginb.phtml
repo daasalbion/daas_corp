@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1"/>
+    <meta name="HandheldFriendly" content="true" />
+
+    <script src="http://10.0.2.8/jquerymobile/demos/js/jquery.js"></script>
+
+    <title>ENTERMOVIL</title>
+
+    <style type="text/css">
+        #navegador ul{
+            list-style-type: none;
+            text-align: center;
+        }
+        #navegador li{
+            display: inline;
+            text-align: center;
+            margin: 0 10px 0 0;
+        }
+        #navegador li a {
+            padding: 2px 7px 2px 7px;
+            color: #666;
+            background-color: #eeeeee;
+            border: 1px solid #ccc;
+            text-decoration: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #navegador li a:hover{
+            background-color: #333333;
+            color: #ffffff;
+        }
+        div{
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        #navegador{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        textarea {
+            resize: none;
+            max-height: 100px;
+        }
+    </style>
+</head>
+    <body style="background-color: orange; width: <?php echo $this->ua['ancho_tabla'] .'px'?>">
+        <center>
+            <section id="login" data-role="page">
+                <header data-role="header">
+                    <h1>TwitterSMS</h1>
+                </header>
+                <article data-role="content" data-ajax="false">
+                    <form name="form1" method="post" action="/noticias/login" data-ajax="false">
+                        <div data-role="fieldcontain" class="ui-hide-label">
+                            <br><label for="txtuser">Usuario:</label></br>
+                            <input type="text" name="login_user" id="login_user" value="" placeholder="Nombre" />
+                        </div>
+                        <div data-role="fieldcontain" class="ui-hide-label">
+                            <br><label for="txtpassword">Contraseña:</label></br>
+                            <input type="password" name="login_pass" id="login_pass" value="" placeholder="Contraseña" />
+                        </div>
+                        <div>
+                            <input type="submit" name="Submit" value="Ingresar" id="submitbutton" data-ajax="false">
+                        </div>
+                    </form>
+                </article>
+            </section>
+        </center>
+    <body>
+</html>

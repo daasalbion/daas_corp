@@ -1,0 +1,135 @@
+<script type="text/javascript">
+
+    $(document).bind('pageinit', function() {
+
+        chars = $('#mensaje').val().length;
+        diff = max_chars - chars;
+        $('#contador').html(diff);
+
+        $('#formEnviarMensaje').on('submit', function(e) {
+            var $this = $(this);
+
+            e.preventDefault();
+
+            $.mobile.showPageLoadingMsg();
+
+            if(valida()) {
+
+                $.post($this.attr('action'), $this.serialize(), function (response){
+
+                    $.mobile.hidePageLoadingMsg();
+
+                    if(response.status == 'OK') {
+
+                        //alert('Mensaje Enviado');
+                        window.location.href = '/noticias/home';
+
+                    } else {
+
+                        alert(response.message);
+                    }
+
+                }, 'json');
+
+            } else {
+
+                alert("Mensaje Vacío");
+                $.mobile.hidePageLoadingMsg();
+            }
+
+            return false;
+        });
+
+    });
+
+</script>
+
+
+<div style="background-color: orange">
+
+    <div data-role="header">
+        <a href="/noticias/home" data-icon="delete" data-ajax="false">Cancelar</a>
+        <h1>Mensaje</h1>
+    </div>
+    <?php if($this->disponible == true){ ?>
+        <div data-role="content">
+            <form id="<?php echo $this->nombre_form; ?>" name="form1" action="/noticias/<?php if(!isset($this->sms)){ echo 'enviar-mensaje';}else{ echo 'modificar-mensaje';}?>" method="post" data-ajax="false">
+                <table>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: right; width: 10%"><span id="contador" style="color: white">150</span></td>
+                        <td style="text-align: right; width: 10%">
+                            <?php if(!isset($this->sms)){?>
+                                <span><input id="input-button" type="submit" value="Enviar" data-inline="true" data-icon="check" data-iconpos="right" data-mini="true" data-theme="e" data-ajax="false"></span>
+                            <?php }else{ ?>
+                                <input name = "id_mensaje" type="hidden" id="id_mensaje" value="<?php echo $this->id_sms?>">
+                                <span><input id="modificar-button" type="submit" value="Actualizar" data-inline="true" data-icon="check" data-iconpos="right" data-mini="true" data-theme="e" data-ajax="false"></span>
+                            <?php } ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div class="tweet_box">
+                                <textarea name="mensaje" wrap=physical cols="100" rows="150" maxlength="150" id="mensaje"><?php if(isset($this->sms)){ echo $this->sms;}?></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php if(isset($this->sms)){?>
+                        <td colspan="3" style="text-align: center; width: 10%">
+                            <span><a href="/noticias/eliminar-mensaje/id/<?php echo $this->id_sms?>"><input id="delete-button" type="button" value="Eliminar" data-inline="true" data-icon="delete" data-iconpos="right" data-mini="true" data-theme="a" data-ajax="false"></a></span>
+                        </td>
+                    <?php }?>
+                </table>
+            </form>
+        </div>
+    <?php }else{?>
+        <div>
+            <a href="/noticias/home" data-icon="delete" data-ajax="false">Cancelar</a>
+            <h1>Mensaje</h1>
+        </div>
+    <?php } ?>
+
+</div>
+
+<script type="text/javascript">
+
+    var max_chars = 150;
+    var diff = true;
+    var chars;
+
+    function valida(){
+
+        if(diff < 0 || diff == true || chars == 0){
+
+            return false;
+        }
+        else{
+
+            return true;
+        }
+    }
+
+    $(document).on('pageinit', function(){
+
+        $("a").click(function (event) {
+            event.preventDefault();
+            window.location = $(this).attr("href");
+        });
+
+        $('#max').html(max_chars);
+
+        $('#mensaje').keyup(function() {
+
+            chars = $(this).val().length;
+            diff = max_chars - chars;
+            $('#contador').html(diff);
+            if (diff < 0){
+
+                alert("Ha excedido el limite de caracteres");
+            }
+        });
+
+    });
+
+</script>
+

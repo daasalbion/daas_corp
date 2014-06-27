@@ -1,0 +1,271 @@
+<?php
+    echo $this->doctype();
+    echo "\n";
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <?php /*echo $this->headTitle() */?>
+        <?php /*echo "\n" */?>
+        <?php /*echo $this->headLink() */?>
+        <?php /*echo "\n" */?>
+        <?php /*echo $this->headStyle() */?>
+        <?php /*echo "\n" */?>
+        <?php /*echo $this->headScript() */?>
+        <?php /*echo "\n" */?>
+
+        <link rel="shortcut icon" href="/favicon.ico"  type="image/x-icon" />
+
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-34516205-1']);
+            _gaq.push(['_setDomainName', 'entermovil.com.py']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>-->
+
+        <!-- Bootstrap core CSS -->
+        <!--<link href="http://www.entermovil.com.py/bootstrap/css/bootstrap.css" rel="stylesheet">-->
+        <!--<script type="text/javascript" src="http://www.entermovil.com.py/js/jquery-1.7.min.js"></script>-->
+        <!--<script src="http://www.entermovil.com.py/js/jquery-1.8.0.min.js"></script>
+        <script src="http://www.entermovil.com.py/bootstrap/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="http://www.entermovil.com.py/bootstrap/css/bootstrap.css">!-->
+
+        <script src="http://www.entermovil.com.py/js/jquery-1.8.0.min.js"></script>
+        <script src="http://www.entermovil.com.py/bootstrap-3.0.0/dist/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="http://www.entermovil.com.py/bootstrap-3.0.0/dist/css/bootstrap.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+        <style>
+
+            #bloque_alias {
+
+                font-family: Arial;
+                font-weight: bold;
+                margin-left: 40px;
+                margin-top: 20px;
+            }
+            #contenidos-intermedio{
+                font-family: Arial;
+                font-weight: bold;
+                margin-left: 40px;
+                margin-top: 20px;
+            }
+            #bloque_alias select {
+
+                background-color: #ffd548;
+                border: 1px solid #ffd548;
+                width: 150px;
+                font-family: Arial;
+            }
+            #categorias{
+
+                font-family: arial;
+                border-collapse: collapse;
+                font-family: Arial;
+                font-weight: bold;
+                margin-left: 40px;
+            }
+            #contenidos_cargados{
+
+                font-family: arial;
+                border-collapse: collapse;
+                font-weight: bold;
+                margin-left: 40px;
+                text-align: center;
+                width: 60%;
+
+            }
+            #contenidos_cargados th{
+
+                border-left:1px solid black;
+                border-top:1px solid black;
+                border-bottom: 1px solid black;
+            }
+            #contenidos_cargados td{
+
+                border-left:1px solid black;
+                border-top:1px solid black;
+                border-bottom: 1px solid black;
+            }
+            #categorias th {
+
+                border-left:1px solid black;
+                border-top:1px solid black;
+                border-bottom: 1px solid black;
+                font-family: arial;
+                text-align: left;
+            }
+            #categorias td {
+
+                border-left:1px solid black;
+                border-top:1px solid black;
+                border-bottom: 1px solid black;
+                font-family: arial;
+                text-align: left;
+            }
+
+            th.ultima_celda, td.ultima_celda {
+
+                border-right:1px solid black;
+            }
+            #bloque_alias {
+
+                font-family: Arial;
+                font-weight: bold;
+                margin-left: 40px;
+                margin-top: 20px;
+            }
+            #nuevo-contenido{
+                font-family: Arial;
+                font-weight: bold;
+                /*margin-left: 40px;*/
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            #nueva-categoria{
+
+                font-family: Arial;
+                font-weight: bold;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            #modificar-categoria{
+
+                font-family: Arial;
+                font-weight: bold;
+                margin-left: 40px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            a{
+                color: #000000;
+                text-decoration: none;
+            }
+
+            #tabla_contenidos_categorias{
+
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            #tabla_contenidos_videos{
+
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            #tabla_contenidos_audios{
+
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            #tabla_contenidos_imagenes{
+
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            #header{
+                margin-top: 10px;
+                margin-left: 40px;
+            }
+            #mensaje{
+
+                margin-left: 40px;
+            }
+            #wap-preview{
+
+                background-color: #000000;
+                margin-left: 20px;
+            }
+            #titulo{
+
+                margin-left: 40px;
+            }
+            .centrar{
+
+                text-align: center;
+            }
+            .contenido{
+
+                margin-bottom: 20px;
+            }
+            .categoria_padre{
+
+                background-color:  #428BCA;
+                color: white;
+            }
+            .boton{
+
+                width: 10px;
+            }
+
+            #navlist li
+            {
+                display: inline;
+                list-style-type: none;
+                padding-right: 20px;
+                font-family: Arial;
+                font-weight: bold;
+                margin-left: 40px;
+                margin-top: 20px;
+            }
+            k{
+                font-size: 20px;
+                color: #ff0000;
+            }
+
+            .hidden{
+
+                display:none;
+            }
+
+            .visible{
+
+                display:block;
+            }
+            .dropdown_ancho{
+
+                width: 20px;
+            }
+            .nivel{
+
+                background-color: #ffff00;
+            }
+            .boton-accion{
+
+                font-size: 10px;
+            }
+
+        </style>
+
+        <title>ENTERMOVIL</title>
+    </head>
+    <body>
+        <div>
+            <div id="header">
+                <div id="header_main">
+
+                    <div id="user_info">
+                        <a id="logout_link" href="/cargar/logout" title="Salir">Cerrar Sesión</a>
+                        <span id="info_usuario"><?php echo $this->infoSesionCargar()->usuario() ?></span>
+                    </div>
+                </div>
+                <!--<ul class="nav nav-tabs">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Messages</a></li>
+                </ul>-->
+            </div>
+            <div class="contenido">
+                <?php echo $this->layout()->content; ?>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<?php
+echo $this->doctype();
+echo "\n";
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta content='height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes; target-densitydpi=device-dpi' name='viewport'/>
+        <meta name="HandheldFriendly" content="true" />
+        <?php echo $this->headScript() ?>
+        <?php echo "\n" ?>
+        <script type="text/javascript">
+            $(document).ready(  function(){
+                var destino = $('#destino').val();
+                //alert(screen.width + " x " + screen.height)
+                window.location = '/utilidades/deteccion-javascript/destino/' + destino +'/ancho/'+screen.width+'/alto/'+screen.height;
+            });
+        </script>
+        <style type="text/css">
+            div{
+                margin-right: auto;
+                margin-left: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bloque_contenido">
+            <?php echo $this->layout()->content; ?>
+        </div>
+    </body>
+</html>

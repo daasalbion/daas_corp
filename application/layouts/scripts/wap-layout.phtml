@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic l.l//EN"
+    "http://www.w3.org/TR/xhtml1-basic/xhtml1-basicll.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta content='height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes; target-densitydpi=device-dpi' name='viewport'/>
+        <meta name="HandheldFriendly" content="true" />
+        <!--<meta name ="viewport" content="target-desnsitydpi=device-dpi"/>-->
+
+        <title>ENTERMOVIL</title>
+        <style type="text/css">
+
+            body{
+
+                background-color: #1d2225;
+                font-family:arial-narrow;
+                font-size:large;
+                color:#000000;
+                margin: 0px;
+            }
+            div{
+
+                font-family:arial-narrow;
+                font-size:large;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            a:link{
+
+                text-decoration:underline;
+                font-family:arial-narrow;
+                color: blue;
+                font-size: 15px;
+            }
+            a:visited{
+
+                text-decoration:underline;
+                color:#2700EE;
+                font-family:arial-narrow;
+                font-size:large;
+                font-weight:bold;
+            }
+            a.menu {
+
+                text-decoration: none;
+                display: block;
+            }
+            img.menu{
+
+                text-decoration: none;
+                display: block;
+                margin: 0px;
+                padding: 0px;
+                border-width: 0px;
+                /*border: 5;*/
+            }
+            img{
+
+                position: relative;
+            }
+            td{
+
+                text-align: center;
+            }
+            tr{
+
+                line-height: <?php echo $this->ua['tamanho_separacion'] ?>%; /*era 57*/
+            }
+            .navegacion{
+
+                font-family: arial-narrow;
+                color: #000000;
+            }
+            table{
+
+                margin-bottom: 0;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            #logo {
+
+                background-color: #1d2225;
+                margin-top: 5px;
+                text-align: center;
+            }
+            #nuevo{
+
+                text-align: center;
+                background-color: #ffffff;
+                margin-top: 0px;
+                height: 10px;
+            }
+            #iniciales{
+
+                text-align: right;
+            }
+            #iniciales_menor{
+
+                text-align: right;
+                width: 50px;
+            }
+            #navegador{
+
+                margin-bottom: 0px;
+                border-spacing: 0px;
+                border-collapse: collapse;
+                border: 0px;
+            }
+            #tabla_contenidos{
+
+                margin-top: 0px;
+                margin-bottom: 0;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            #tabla_contenidos_audio a{
+
+                text-decoration:underline;
+                color:#ff0000;
+                font-family:arial-narrow;
+            }
+            #tabla_contenidos_audio tr{
+
+                line-height: <?php echo $this->ua['tamanho_separacion'] ?>%; /*era 100*/
+            }
+            #titulo{
+
+                font-family:arial-narrow;
+                font-weight:bold;
+                height: <?php echo $this->ua['alto_titulo'] ?>px;
+            }
+            #titulo font{
+
+                font-size: <?php echo $this->ua['tamanho_titulo'] ?>%;
+            }
+            #texto font{
+
+                font-size:<?php echo $this->ua['tamanho_textos']?>%;
+            }
+            #borde_abajo{
+
+                margin-bottom: 0px;
+                background-color: #1d2225;
+            }
+            #banner{
+
+                margin-bottom: 0px;
+                background-color: #ffffff;
+            }
+            #chico{
+
+                font-size: 5px;
+            }
+            #chico_a{
+
+                font-size: 5px;
+                color: #ff0000;
+            }
+            td.subtitulo{
+
+                text-align: center;
+                font-weight: bold;
+                font-size: <?php echo $this->ua['tamanho_subtitulo'] ?>%;
+            }
+            #subtitulo font{
+                text-align: center;
+                font-weight: bold;
+                font-size: <?php echo $this->ua['tamanho_subtitulo'] ?>%;
+            }
+            #paginacio_control{
+
+                background-color: white;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 15px;
+                margin-bottom: 5px;
+            }
+            #paginacion{
+
+                font-size: 10px;
+                font-family: arial;
+            }
+            #tabla_suscripcion tr{
+
+                line-height: 100%;
+                font-family: arial;
+                font-size: 10px;
+                color: #808080;
+                font-weight: bold;
+            }
+            #tabla_suscripcion a{
+
+                font-family: arial;
+                font-size: 10px;
+                color: royalblue;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #tabla_suscripcion input{
+
+                font-family: arial;
+            }
+            #form_siglas_iniciales{
+
+                font-size: <?php echo $this->ua['tamanho_separacion'] ?>%;
+            }
+            #confirmar{
+
+                font-size: <?php echo $this->ua['tamanho_separacion'] ?>%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="logo">
+            <img src="/<?php echo $this->ua['imagen_logo'] ?>" alt="ENTERMOVIL">
+        </div>
+        <?php echo $this->layout()->content; ?>
+    </body>
+</html>

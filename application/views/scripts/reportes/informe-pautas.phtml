@@ -1,0 +1,49 @@
+<div id="bloque_mes">
+
+    <p>
+        Dia Seleccionado: <input type="text" id="datepicker" value="<?php echo (isset($this->fecha)) ? $this->fecha : date("Y-m-d", mktime(0, 0, 0, date("m"),date("d")-1,date("Y"))) ?>" />
+        <input type="button" id="cargar_informe_pautas" value="Cargar" >
+        <a id="link_reportes_informe_cargar_bd_pautas" href="/reportes/cargar-bd-pautas"><input type="button" id="cargar_pautas" value="Cargar BD" ></a>
+    </p>
+
+</div>
+
+<?php foreach($this->canales as $canal): ?>
+
+    <table class="tabla_informe_pautas">
+        <thead>
+        <tr>
+            <th colspan ="6" class="ultima_celda fondo_naranja_ultima  <?php echo $canal['css_titulo'] ?>"><?php echo $canal['descripcion'] ?></th>
+        </tr>
+        <!--Modifique-->
+        <tr>
+            <th class="fondo_naranja alias"></th>
+            <th colspan="3"class="fondo_naranja alias">Por dia</th>
+            <th colspan="2" class="ultima_celda fondo_naranja_ultima alias">Por mes</th>
+        </tr>
+        <tr>
+            <th class="fondo_naranja alias">Alias </th>
+            <th class="fondo_naranja alias">Fecha</th>
+            <th class="fondo_naranja alias">Spots Pautados</th>
+            <th class="fondo_naranja alias">Spots Emitidos</th>
+            <th class="fondo_naranja alias">Total Pautados</th>
+            <th class="ultima_celda fondo_naranja_ultima alias">Total Emitidos</th>
+        </tr>
+        </thead>
+        <tbody>
+
+            <?php foreach($canal['datos'] as $datos): ?>
+
+                <tr>
+                    <td align="center"><?php echo $datos['servicio']?></td>
+                    <td class="numero"><?php echo $datos['fecha']?></td>
+                    <td class="numero"><?php echo $datos['nro_pautas'] ?></td>
+                    <td class="numero"><?php echo $datos['pautas_encontradas']?></td>
+                    <td class="numero"><?php echo $datos['pautas_a_emitir_mes'] ?></td>
+                    <td class="ultima_celda numero"><?php echo $datos['pautas_emitidas_mes']?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endforeach; ?>
+

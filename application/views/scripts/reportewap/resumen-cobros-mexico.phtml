@@ -1,0 +1,64 @@
+<div id="bloque_mes">
+
+    País:&nbsp;<?php echo $this->nombre_pais ?>&nbsp;&nbsp;
+
+    Dia Seleccionado:&nbsp;
+    <input type="text" id="datepicker" value="<?php echo (isset($this->fecha)) ? $this->fecha : date('Y-m-d') ?>" />
+    <input type="button" id="cargar_resumen" value="Cargar">
+</div>
+
+<?php $Total_hoy = array(
+
+    'Total_Cobros_Hoy' => 0,
+    'Total_Total_Hoy' => 0,
+    'Total_Neto_Hoy' => 0,
+);
+$total_foot = array(
+
+    'Total_Foot_Cobros_Hoy' => 0,
+    'Total_Foot_Total_Hoy' => 0,
+    'Total_Foot_Neto_Hoy' => 0,
+)
+?>
+
+
+<table id="tabla_resumen_<?php echo $this->nombre_carrier[$carrier_numero['id_carrier']] ?>_<?php echo $carrier_numero['numero'] ?>" class="tabla_reporte">
+    <thead>
+        <tr>
+            <th  class=" <?php echo "carrier " . strtolower($this->nombre_carrier[$carrier_numero['id_carrier']]) . " borde_arriba" . " borde_derecha" ?> " colspan="10"  style="height: 20px; border-bottom: none; width: 400px"><?php echo $this->nombre_carrier[$carrier_numero['id_carrier']] ?></th>
+        </tr>
+        <tr>
+            <th rowspan="2" class="fondo_naranja borde_arriba">Numero</th>
+            <th rowspan="2" class="fondo_naranja borde_arriba">Alias</th>
+
+            <th rowspan="2" class="fondo_naranja borde_arriba">Suscriptos</th>
+            <th rowspan="2" class="fondo_naranja borde_arriba" style="width: 50px;">Precio</th>
+
+            <th colspan="3" style="font-size: 12px; font-weight: bold;" class="borde_arriba"><?php echo $this->fecha?></th>
+            <th colspan="3" style="font-size: 12px; font-weight: bold;" class="borde_arriba borde_derecha">Mes</th>
+
+            <!--<th style="width: 50px;" class="sin_bordes">&nbsp;</th>-->
+
+        </tr>
+
+        <tr>
+            <th class="fondo_naranja" style="width: 70px;">Cobros Día</th>
+            <th class="fondo_naranja" style="width: 100px;">Total Día</th>
+            <th class="fondo_naranja" style="width: 100px;">Neto Hoy</th>
+
+            <th class="fondo_naranja" style="width: 70px;">Cobros Mes</th>
+            <th class="fondo_naranja" style="width: 100px;">Total Mes</th>
+            <th class="fondo_naranja borde_derecha" style="width: 100px;">Neto Enter</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+
+    </tbody>
+
+    <tfoot>
+
+    </tfoot>
+</table>

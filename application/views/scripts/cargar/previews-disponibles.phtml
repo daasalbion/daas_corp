@@ -1,0 +1,94 @@
+<center>
+    <div id="titulo" class="page-header">
+        <h3>CONTENIDOS - WAP</h3>
+    </div>
+</center>
+<?php if(isset($this->contenidos)){?>
+
+    <?php if(!empty($this->contenidos)){?>
+
+        <div id="bloque_alias">
+            <p>Nombre Categoria: <?php echo strtoupper($this->nombre_categoria)?></p>
+        </div>
+
+        <table id="contenidos_cargados">
+
+            <tr>
+                <th colspan="2" class="ultima_celda centrar">Contenidos Cargados</th>
+            </tr>
+            <tr>
+                <th class="centrar">Imagen</th>
+                <th class="centrar ultima_celda">Nombre Contenido</th>
+            </tr>
+            <?php foreach($this->contenidos as $path_contenido=>$contenido):?>
+
+                <tr>
+                    <td class="centrar"><img src="<?php echo $contenido?>"></td>
+                    <td class="centrar"><?php echo basename($contenido)?></td>
+                    <td class="ultima_celda"><a data-toggle="modal" data-path="<?php echo $path_contenido?>" data-id-c="<?php echo $this->id_contenido ?>" data-id-p="<?php echo $this->id_promocion?>" data-l = "<?php echo $this->nivel?>" title="Asignar" class="asignarPreview btn btn-primary" href="#asignarPreview"><span class="glyphicon glyphicon-check"></span></a></td>
+                </tr>
+            <?php endforeach;?>
+        </table>
+
+    <?php }else{ ?>
+
+        <div style="margin-left: 40px">
+
+            <h2>No existe contenido cargado en esta categoria</h2>
+        </div>
+    <?php } ?>
+
+<!--Del home a contenidos-->
+<?php }?>
+
+<div class="modal" id="asignarPreview">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">×</button>
+                <h3>Asignar Preview</h3>
+            </div>
+            <form action="/cargar/previews-disponibles" method="post" enctype="multipart/form-data" onsubmit="return validar()">
+                <div class="modal-body">
+                    <p>¿Esta seguro que desea este preview a este contenido?</p>
+                    <input type="hidden" name="path" id="path" value=""/>
+                    <input type="hidden" name="id_promocion" id="id_promocion" value=""/>
+                    <input type="hidden" name="id_contenido" id="id_contenido" value=""/>
+                    <input type="hidden" name="nivel" id="nivel" value=""/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" id="confirmar" class="btn btn-primary">Confirmar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $(document).ready(  function(){
+
+        var path;
+        var id_promocion;
+        var id_contenido;
+        var nivel;
+
+        $('.asignarPreview').click(function(){
+
+            path = $(this).data('path');
+            $(".modal-body #path").val( path );
+            id_contenido = $(this).data('id-c');
+            $(".modal-body #id_contenido").val( id_contenido );
+            id_promocion = $(this).data('id-p');
+            $(".modal-body #id_promocion").val( id_promocion );
+            nivel = $(this).data('l');
+            $(".modal-body #nivel").val( nivel );
+        });
+/*        $('#confirmar').click(function(){
+
+            var url;
+            url = '/cargar/previews-disponibles/id-p/' + id_promocion + '/id-c/' + id_categoria + '/id/' + id_contenido + '/l/' +nivel;
+            window.location = url;
+        });*/
+    });
+</script>

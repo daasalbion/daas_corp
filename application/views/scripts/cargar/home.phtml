@@ -1,0 +1,54 @@
+<center>
+    <div id="titulo" class="page-header">
+        <h2>Cargar Datos  - Wap</h2>
+    </div>
+    <!--<table id="contenidos_cargados">
+        <form action="/cargar/home" id="setear-alias" method="post">
+            <tr id="bloque_alias">
+                <td>Servicio: </td>
+                <td class="ultima_celda">
+                    <select id="servicio" name="servicio">
+                        <?php /*foreach($this->promociones as $nombre_promocion=>$id_promocion): */?>
+                        <option value="<?php /*echo $id_promocion*/?>" <?php /*echo ($this->servicio == $nombre_promocion ? 'selected ="selected"' : '' )*/?>><?php /*echo $nombre_promocion*/?></option>
+                        <?php /*endforeach; */?>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="ultima_celda" colspan="2" style="text-align: center">
+                    <input type="submit" name="categorias" value="Categorias">
+                </td>
+            </tr>
+            <tr>
+                <td class="ultima_celda" colspan="2" style="text-align: center">
+                    <input type="submit" name="contenidos" value="Contenidos">
+                </td>
+            </tr>
+        </form>
+    </table>-->
+
+    <div class="container">
+
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <form action="/cargar/home" id="setear-alias" method="post">
+                Servicio:&nbsp;
+                <select id="servicio" name="servicio">
+                    <?php foreach($this->promociones as $nombre_promocion=>$id_promocion): ?>
+                        <option value="<?php echo $id_promocion?>" <?php echo ($this->servicio == $nombre_promocion ? 'selected ="selected"' : '' )?>><?php echo $nombre_promocion?></option>
+                    <?php endforeach; ?>
+                </select>
+                <p>
+                    <input class="btn btn-lg btn-primary" type="submit" name="categorias" value="Preview">
+                </p>
+                <p>
+                    <input  class="btn btn-lg btn-primary" type="submit" name="contenidos" value="Categorias">
+                </p>
+            </form>
+        </div>
+
+    </div>
+
+</center>
+
+

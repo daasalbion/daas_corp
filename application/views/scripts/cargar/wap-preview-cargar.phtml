@@ -1,0 +1,669 @@
+<center>
+    <h2>Wap - Preview</h2></br>
+</center>
+
+    <div id="navcontainer">
+        <ul id="navlist">
+            <li>SERVICIO: <?php echo $this->servicio ?></li>
+            <li><?php if( isset( $this->nivel ) ){
+                    echo "<k style='margin-left: 10px'>Nivel Seleccionado: ". $this->nivel . "</k>";
+                }?></li>
+            <li>
+                <!-- Single button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Nivel: <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <?php foreach( $this->niveles as $indice=>$vector_nivel ):?>
+                            <li><a href="/cargar/wap-preview-cargar/id-p/<?php echo $this->id_promocion?>/l/<?php echo $vector_nivel['nivel']?>"><?php echo $vector_nivel['nivel']?></a></li>
+                        <?php endforeach;?>
+                    </ul>
+                </div>
+            </li>
+
+            <li><a href="/cargar/wap-preview-cargar/id-p/<?php echo $this->id_promocion?>/l/<?php echo $this->siguiente_nivel?>"><button type="button" class="btn btn-default">Siguiente Nivel</button></a></li>
+
+            <li>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Sincronizacion: <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <?php foreach( $this->promociones as $indice=>$vector_nivel ):?>
+                            <li><a href="/cargar/sincronizar/id-promocion-1/<?php echo $this->id_promocion?>/id-promocion-2/<?php echo $vector_nivel?>"><?php echo $vector_nivel?></a></li>
+                        <?php endforeach;?>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+<?php if( !empty( $this->contenidos ) ){ ?>
+
+    <div id="wap-preview" style="height:auto;position:relative;">
+
+        <table id="tabla_contenidos_categorias" width="300" border="0" align="left" cellpadding="3" cellspacing="0" bgcolor="white">
+
+            <tr>
+                <td colspan="6">
+                    <h3>Categorias</h3>
+                </td>
+            </tr>
+            <tr style="height: 5px"></tr>
+            <tr style="height: 20px">
+                <td style="width:40px;"></td>
+                <td id="titulo" bgcolor = "#9acd32" colspan="3" align="center"><font color="black" face="arial" size="1">LO NUEVO EN IMAGENES</font></td>
+                <td style="width:40px;"></td>
+            </tr>
+            <?php if(isset($this->contenidos['1'])){?>
+
+                <?php foreach($this->contenidos['1'] as $niveles):?>
+
+                    <tr>
+                        <td style="width:40px;"></td>
+                        <?php foreach($niveles as $nivel):?>
+
+                            <td <?php echo ( $nivel['nivel'] < $this->nivel )? 'class="nivel"':''?>><a href="#"><img src="<?php echo $nivel['path']?>"></a></td>
+                        <?php endforeach;?>
+                        <td style="width:20px;"></td>
+                    </tr>
+
+                <?php endforeach;?>
+
+            <?php }else{ ?>
+
+                <tr style="height: 20px">
+                    <td style="width:40px;"></td>
+                    <td colspan="3" align="center" ><font color="red" face="arial" size="1">No existen contenidos</font></td>
+                    <td style="width:20px;"></td>
+                </tr>
+            <?php } ?>
+            <tr style="height: 20px">
+                <td style="width:40px;"></td>
+                <td id="titulo" bgcolor = "orange" colspan="3" align="center" ><font color="red" face="arial" size="1" >LO ULTIMO EN AUDIO</font></td>
+                <td style="width:20px;"></td>
+            </tr>
+            <?php if( isset($this->contenidos['2'] ) ){ ?>
+
+                <?php foreach( $this->contenidos['2'] as $niveles=>$nivel ):?>
+
+                    <tr>
+                        <td style="width:40px;"></td>
+                        <td <?php echo ( $nivel['nivel'] < $this->nivel )? 'class="nivel"':''?> colspan="3"><a href="#"><font color="blue" face="arial" size="1"><?php echo $nivel['nombre_contenido']?></font></a></td>
+                        <td style="width:20px;"></td>
+                    </tr>
+                <?php endforeach;?>
+
+            <?php }else{ ?>
+
+                <tr style="height: 20px">
+                    <td style="width:40px;"></td>
+                    <td colspan="3" align="center" ><font color="red" face="arial" size="1">No existen contenidos</font></td>
+                    <td style="width:20px;"></td>
+                </tr>
+            <?php } ?>
+            <?php if( $this->id_promocion == 72 || $this->id_promocion == 58 ): ?>
+                <tr style="height: 20px">
+                    <td style="width:40px;"></td>
+                    <td id="titulo" bgcolor = "#9acd32" colspan="3" align="center" ><font color="black" face="arial" size="1" >PONELE TUS INICIALES A TU CEL</font></td>
+                    <td style="width:20px;"></td>
+                </tr>
+                <tr>
+                    <td style="width:40px;"></td>
+                    <td colspan="3"><font color="blue" face="arial" size="1">INGRESE LAS INICIALES DE SU NOMBRE Y APELLIDO</font></td>
+                    <td style="width:20px;"></td>
+                </tr>
+                <tr>
+                    <td style="width:40px;"></td>
+                    <td colspan="3"><font color="blue" face="arial" size="1">Puede ingresar hasta 4 caracteres</font></td>
+                    <td style="width:20px;"></td>
+                </tr>
+                <tr>
+                    <td style="width:40px;"></td>
+                    <td colspan="2"><form><input type="number" name="inicales" id="iniciales" size="10"></form></td>
+                    <td><input type="button" value="OK"></td>
+                    <td style="width:20px;"></td>
+                </tr>
+                <tr style="height: 10px"></tr>
+            <?php else: ?>
+                <tr style="height: 20px">
+                    <td style="width:40px;"></td>
+                    <td id="titulo" bgcolor = "orange" colspan="3" align="center" ><font color="red" face="arial" size="1" >ULTIMOS VIDEOS</font></td>
+                    <td style="width:20px;"></td>
+                </tr>
+                <?php if( isset($this->contenidos['3'] ) ){ ?>
+
+                    <?php foreach($this->contenidos['3'] as $niveles):?>
+
+                        <tr>
+                            <td style="width:40px;"></td>
+                            <?php foreach($niveles as $nivel):?>
+
+                                <td <?php echo ( $nivel['nivel'] < $this->nivel )? 'class="nivel"':''?>><a href="#"><img src="<?php echo $nivel['descripcion']?>"></a></td>
+                            <?php endforeach;?>
+                            <td style="width:20px;"></td>
+                        </tr>
+
+                    <?php endforeach;?>
+
+                <?php } ?>
+            <?php endif; ?>
+            <?php $banners = $this->controller->obtenerBanner( $this->id_promocion, $this->nivel, 0 );?>
+            <?php foreach ( $banners as $indice=>$banner ):?>
+                <tr style="height: 10px">
+                    <td colspan="5"><img src="<?php echo $banner ?>"></td>
+                </tr>
+                <tr style="height: 5px"></tr>
+            <?php endforeach;?>
+            <tr>
+                <td colspan="5">
+                    <a data-toggle="modal" data-id="0" title="Agregar Banner" class="open-addBannerDialog btn btn-primary boton-accion" href="#addBannerDialog">Agregar Banner</a>
+                    <a title="Editar Banners" class="btn btn-primary boton-accion" href="/cargar/banners-cargados/id-p/<?php echo $this->id_promocion?>/id-c/<?php echo '0'?>/l/<?php echo $this->nivel?>"><span class="glyphicon glyphicon-list"></span></a>
+                </td>
+            </tr>
+        </table>
+
+        <table id="tabla_contenidos_videos" width="300" border="0" align="left" cellpadding="3" cellspacing="0" bgcolor="white" style="margin-right: 5px;">
+
+            <tr>
+                <td colspan="6"><h3><a id="mostrar_videos">Videos</a> <a data-toggle="modal" data-nombre_categoria="" data-id_promocion="<?php echo $this->id_promocion?>" data-id_categoria="3" data-ultimo_hijo="false" data-id_categoria_padre="0" data-nivel="<?php echo $this->nivel?>" title="Nueva Sub-Categoria" class="open-nuevaCategoriaDialog btn btn-primary boton-accion" href="#nuevaCategoria"><span class="glyphicon glyphicon-plus"></span></a></h3></td>
+            </tr>
+
+            <?php foreach ( $this->contenidos_video as $id_categoria=>$contenidos ):?>
+
+                <tr style="height: 20px">
+                    <td style="width:20px;"></td>
+                    <td id="titulo" bgcolor = "#9acd32" colspan="3" align="center"><font color="black" face="arial" size="1"><?php echo strtoupper( $contenidos['nombre_categoria'] )?> <a data-toggle="modal" data-nombre_categoria="<?php echo $contenidos['nombre_categoria']?>" data-id_promocion="<?php echo $contenidos['id_promocion']?>" data-id_categoria="<?php echo $contenidos['id_categoria']?>" data-ultimo_hijo="<?php echo $contenidos['ultimo_hijo']?>" data-id_categoria_padre="<?php echo $contenidos['id_categoria_padre']?>" data-nivel="<?php echo $this->nivel?>" title="Nueva Sub-Categoria" class="open-nuevaCategoriaDialog btn btn-primary boton-accion" href="#nuevaCategoria"><span class="glyphicon glyphicon-plus"></span></a> <a data-toggle="modal" data-nombre-categoria="<?php echo $contenidos['nombre_categoria']?>" data-id-promocion="<?php echo $contenidos['id_promocion']?>" data-id-categoria="<?php echo $contenidos['id_categoria']?>" data-nivel="<?php echo $this->nivel?>" title="Editar Categoria" class="open-modificarCategoriaDialog btn btn-primary boton-accion" href="#modificarCategoria"><span class="glyphicon glyphicon-edit"></span></a></font></td>
+                    <td style="width:20px;"></td>
+                </tr>
+                <tr style="height: 5px"></tr>
+                <?php if(isset($contenidos['hijos'])){?>
+
+                    <?php foreach ( $contenidos['hijos'] as $indice => $contenido ):?>
+
+                        <?php if(isset($contenido['preview'])){?>
+
+                            <tr>
+                                <td style="width:20px;"></td>
+                                <td class="subtitulo" style="text-align: center" bgcolor = "#9acd32" colspan="3" align="left"><font color="blue" face="arial" size="1"><?php echo $contenido['nombre_categoria']?>  </font><a id="hola" data-toggle="modal" data-id="<?php echo $contenido['id_categoria']?>" title="Agregar contenido" class="open-addContenidoDialog btn btn-primary boton-accion" href="#addContenidoDialog"><span class="glyphicon glyphicon-plus-sign"></span></a> <a title="Lista Contenidos" class="open-addContenidoDialog btn btn-primary boton-accion" href="/cargar/contenidos-cargados/id-p/<?php echo $this->id_promocion?>/id/<?php echo $contenido['id_categoria']?>/l/<?php echo $this->nivel?>"><span class="glyphicon glyphicon-list"></span></a> <a data-toggle="modal" data-nombre-categoria="<?php echo $contenido['nombre_categoria']?>" data-id-promocion="<?php echo $contenido['id_promocion']?>" data-id-categoria="<?php echo $contenido['id_categoria']?>" data-nivel="<?php echo $this->nivel?>" title="Editar Categoria" class="open-modificarCategoriaDialog btn btn-primary boton-accion" href="#modificarCategoria"><span class="glyphicon glyphicon-edit"></span></td>
+                                <td style="width:20px;"></td>
+                            </tr>
+                            <?php foreach( $contenido['preview'] as $segundo_indice=>$datos ):?>
+                                <tr>
+                                    <td style="width:20px;"></td>
+                                    <td <?php echo ( $datos['nivel'] < $this->nivel )? 'class="nivel"':''?> style="text-align: left">
+                                        <a href="#">
+                                            <img src="<?php echo $datos['descripcion']?>">
+                                        </a>
+                                    </td>
+                                    <td <?php echo ( $datos['nivel'] < $this->nivel )? 'class="nivel"':''?> colspan="2"><a href="/cargar/previews-disponibles/id-promocion/<?php echo $datos['id_promocion']?>/id-contenido/<?php echo $datos['id_contenido']?>/nivel/<?php echo $this->nivel ?>"><font color="blue" face="arial" size="1"><?php echo $datos['nombre_contenido']?></font></a></td>
+                                    <td style="width:20px;"></td>
+                                </tr>
+                            <?php endforeach;?>
+                        <?php }else{ ?>
+
+                            <tr>
+                                <td style="width:20px;"></td>
+                                <td class="subtitulo" style="text-align: center" bgcolor = "#9acd32" colspan="3" align="left"><font color="blue" face="arial" size="1"><?php echo $contenido['nombre_categoria']?>  </font><a id="hola" data-toggle="modal" data-id="<?php echo $contenido['id_categoria']?>" title="Agregar contenido" class="open-addContenidoDialog btn btn-primary boton-accion" href="#addContenidoDialog"><span class="glyphicon glyphicon-plus-sign"></span></a> <a data-toggle="modal" data-nombre-categoria="<?php echo $contenido['nombre_categoria']?>" data-id-promocion="<?php echo $contenido['id_promocion']?>" data-id-categoria="<?php echo $contenido['id_categoria']?>" data-nivel="<?php echo $this->nivel?>" title="Editar Categoria" class="open-modificarCategoriaDialog btn btn-primary boton-accion" href="#modificarCategoria"><span class="glyphicon glyphicon-edit"></span></td>
+                                <td style="width:20px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:20px;"></td>
+                                <td colspan="3"><font color="red" face="arial" size="1">No existen contenidos</font></td>
+                                <td style="width:20px;"></td>
+                            </tr>
+                        <?php } ?>
+                    <?php endforeach;?>
+                <?php }else{ ?>
+
+                <?php } ?>
+            <?php endforeach;?>
+
+            <tr style="height: 10px"></tr>
+            <?php $banners = $this->controller->obtenerBanner( $this->id_promocion, $this->nivel, 3 );?>
+            <?php foreach ( $banners as $indice=>$banner ):?>
+                <tr style="height: 10px">
+                    <td colspan="5"><img src="<?php echo $banner ?>"></td>
+                </tr>
+                <tr style="height: 5px"></tr>
+            <?php endforeach;?>
+
+            <tr>
+                <td colspan="5">
+                    <a data-toggle="modal" data-id="3" title="Agregar Banner" class="open-addBannerDialog btn btn-primary boton-accion" href="#addBannerDialog">Agregar Banner</a>
+                    <a title="Editar Banners" class="btn btn-primary boton-accion" href="/cargar/banners-cargados/id-p/<?php echo $this->id_promocion?>/id-c/<?php echo '3'?>/l/<?php echo $this->nivel?>"><span class="glyphicon glyphicon-list"></span></a>
+                </td>
+            </tr>
+
+        </table>
+
+        <table id="tabla_contenidos_imagenes" width="300" border="0" align="left" cellpadding="1" cellspacing="0" bgcolor = "white">
+
+
+            <tr>
+                <td colspan="6"><h3><a id="mostrar_imagenes">Imagenes</a> <a data-toggle="modal" data-nombre_categoria="" data-id_promocion="<?php echo $this->id_promocion?>" data-id_categoria="1" data-ultimo_hijo="false" data-id_categoria_padre="0" data-nivel="<?php echo $this->nivel?>" title="Nueva Sub-Categoria" class="open-nuevaCategoriaDialog btn btn-primary boton-accion" href="#nuevaCategoria"><span class="glyphicon glyphicon-plus"></span></a></h3></td></h3></td>
+            </tr>
+            <tr style="height: 5px"></tr>
+            <?php foreach ( $this->contenidos_imagenes as $id_categoria=>$subcategorias ):?>
+
+                <tr style="height: 30px">
+                    <td style="width:20px;"></td>
+
+                    <td id="titulo" bgcolor = "#9acd32" colspan="3" align="center"><font color="black" face="arial" size="1"><?php echo strtoupper($subcategorias['nombre_categoria'])?></font> <a data-toggle="modal" data-nombre_categoria="<?php echo $subcategorias['nombre_categoria']?>" data-id_promocion="<?php echo $subcategorias['id_promocion']?>" data-id_categoria="<?php echo $subcategorias['id_categoria']?>" data-ultimo_hijo="<?php echo $subcategorias['ultimo_hijo']?>" data-id_categoria_padre="<?php echo $subcategorias['id_categoria_padre']?>" data-nivel="<?php echo $this->nivel?>" title="Nueva Sub-Categoria" class="open-nuevaCategoriaDialog btn btn-primary boton-accion" href="#nuevaCategoria"><span class="glyphicon glyphicon-plus"></span></a> <a data-toggle="modal" data-nombre-categoria="<?php echo $subcategorias['nombre_categoria']?>" data-id-promocion="<?php echo $subcategorias['id_promocion']?>" data-id-categoria="<?php echo $subcategorias['id_categoria']?>" data-nivel="<?php echo $this->nivel?>" title="Editar Categoria" class="open-modificarCategoriaDialog btn btn-primary boton-accion" href="#modificarCategoria"><span class="glyphicon glyphicon-edit"></span></td>
+
+                    <td class=" " style="width:20px;"></td>
+                </tr>
+
+                <?php if( isset( $subcategorias['hijos'] ) ){?>
+
+                    <tr style="height: 5px"></tr>
+                    <?php foreach($subcategorias['hijos'] as $tercernivel):?>
+
+                        <?php if(isset($tercernivel['preview'])){ ?>
+                            <tr>
+                                <td style="width:20px;"></td>
+                                <td class="subtitulo" bgcolor = "#9acd32" colspan="3" align="center"><font color="blue" face="arial" size="1"><?php echo $tercernivel['nombre_categoria']?> <a id="hola2" data-toggle="modal" data-id="<?php echo $tercernivel['id_categoria']?>" title="Agregar contenido" class="open-addContenidoDialog btn btn-primary boton-accion" href="#addContenidoDialog"><span class="glyphicon glyphicon-plus-sign"></span></a> <a title="Lista Contenidos" class="open-addContenidoDialog btn btn-primary boton-accion" href="/cargar/contenidos-cargados/id-p/<?php echo $this->id_promocion?>/id/<?php echo $tercernivel['id_categoria']?>/l/<?php echo $this->nivel?>"><span class="glyphicon glyphicon-list"></span></a> <a data-toggle="modal" data-nombre-categoria="<?php echo $tercernivel['nombre_categoria']?>" data-id-promocion="<?php echo $tercernivel['id_promocion']?>" data-id-categoria="<?php echo $tercernivel['id_categoria']?>" data-nivel="<?php echo $this->nivel?>" title="Editar Categoria" class="open-modificarCategoriaDialog btn btn-primary boton-accion" href="#modificarCategoria"><span class="glyphicon glyphicon-edit"></span></td>
+                                <td class=" " style="width:20px;"></td>
+                            </tr>
+                            <tr style="height: 2px"></tr>
+
+                            <tr>
+                                <td style="width:20px;"></td>
+
+                                <?php foreach( $tercernivel['preview'] as $indice=>$imagen ):?>
+
+                                    <td style="width:<?php echo $this->ua['ancho_imagen']?>px;" <?php echo ( $imagen['nivel'] < $this->nivel )? 'class="nivel"':''?> >
+                                        <a href="#">
+                                            <img src="<?php echo $imagen['path']?>">
+                                        </a>
+                                    </td>
+                                <?php endforeach;?>
+                                <?php if( $indice < 2 ):?>
+
+                                    <?php for( $i = $indice; $i < 2 ; $i++ ):?>
+
+                                        <td style="width:<?php echo $this->ua['ancho_imagen']?>px;"></td>
+                                    <?php endfor; ?>
+                                <?php endif; ?>
+
+                                <td style="width:20px;"></td>
+                            </tr>
+
+                        <?php }else{ ?>
+                            <tr>
+                                <td style="width:20px;"></td>
+                                <td class="subtitulo" bgcolor = "#9acd32" colspan="3" align="center"><font color="blue" face="arial" size="1"><?php echo $tercernivel['nombre_categoria']?></font> <a data-toggle="modal" data-id="<?php echo $tercernivel['id_categoria']?>" title="Agregar contenido" class="open-addContenidoDialog btn btn-primary boton-accion" href="#addContenidoDialog"><span class="glyphicon glyphicon-plus-sign"></span></a> <a data-toggle="modal" data-nombre-categoria="<?php echo $tercernivel['nombre_categoria']?>" data-id-promocion="<?php echo $tercernivel['id_promocion']?>" data-id-categoria="<?php echo $tercernivel['id_categoria']?>" data-nivel="<?php echo $this->nivel?>" title="Editar Categoria" class="open-modificarCategoriaDialog btn btn-primary boton-accion" href="#modificarCategoria"><span class="glyphicon glyphicon-edit"></span></td>
+                                <td class=" " style="width:20px;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width:20px;"></td>
+                                <td colspan="3"><font color="red" face="arial" size="1">No existen contenidos</font></td>
+                                <td class=" " style="width:20px;"></td>
+                            </tr>
+                        <?php } ?>
+                    <?php endforeach;?>
+
+                <?php }else{?>
+
+                    <tr>
+                        <td style="width:20px;"></td>
+                        <td colspan="3"><font color="red" face="arial" size="1">No existen contenidos</font></td>
+                        <td class=" " style="width:20px;"></td>
+                    </tr>
+                <?php } ?>
+                <?php endforeach;?>
+
+            <tr style="height: 10px"></tr>
+            <?php $banners = $this->controller->obtenerBanner( $this->id_promocion, $this->nivel, 1 );?>
+            <?php foreach ( $banners as $indice=>$banner ):?>
+                <tr style="height: 10px">
+                    <td colspan="5"><img src="<?php echo $banner ?>"></td>
+                </tr>
+                <tr style="height: 5px"></tr>
+            <?php endforeach;?>
+            <tr>
+                <td colspan="5">
+                    <a data-toggle="modal" data-id="1" title="Agregar Banner" class="open-addBannerDialog btn btn-primary boton-accion" href="#addBannerDialog">Agregar Banner</a>
+                    <a title="Editar Banners" class="btn btn-primary boton-accion" href="/cargar/banners-cargados/id-p/<?php echo $this->id_promocion?>/id-c/<?php echo '1'?>/l/<?php echo $this->nivel?>"><span class="glyphicon glyphicon-list"></span></a>
+                </td>
+            </tr>
+        </table>
+
+        <table id="tabla_contenidos_audios" width="300" border="0" align="left" cellpadding="0" cellspacing="0" bgcolor = "white">
+
+            <tr>
+                <td colspan="6"><h3><a id="mostrar_audios">Audios</a> <a data-toggle="modal" data-nombre_categoria="" data-id_promocion="<?php echo $this->id_promocion?>" data-id_categoria="2" data-ultimo_hijo="false" data-id_categoria_padre="0" data-nivel="<?php echo $this->nivel?>" title="Nueva Sub-Categoria" class="open-nuevaCategoriaDialog btn btn-primary boton-accion" href="#nuevaCategoria"><span class="glyphicon glyphicon-plus"></span></a></h3></td>
+            </tr>
+
+            <?php $this->id_categoria = '2';?>
+
+            <?php foreach($this->contenidos['categorias'][$this->id_categoria]['hijos'] as $subcategoria=>$subcategorias):?>
+
+                <?php if(isset($subcategorias['preview'])){ ?>
+
+                    <tr style="height: 5px"></tr>
+                    <tr style="height: 20px">
+                        <td style="width:20px;"></td>
+                        <td class="subtitulo" bgcolor = "#9acd32" colspan="3" align="center"><font color="black" face="arial" size="1"><?php echo strtoupper($subcategorias['nombre_categoria'])?> <a data-toggle="modal" data-id="<?php echo $subcategorias['id_categoria']?>" title="Agregar contenido" class="open-addContenidoDialog btn btn-primary boton-accion" href="#addContenidoDialog"><span class="glyphicon glyphicon-plus-sign"></span></a> <a title="Lista Contenidos" class="open-addContenidoDialog btn btn-primary boton-accion" href="/cargar/contenidos-cargados/id-p/<?php echo $this->id_promocion?>/id/<?php echo $subcategorias['id_categoria']?>/l/<?php echo $this->nivel?>"><span class="glyphicon glyphicon-list"></span></a> <a data-toggle="modal" data-nombre-categoria="<?php echo $subcategorias['nombre_categoria']?>" data-id-promocion="<?php echo $subcategorias['id_promocion']?>" data-id-categoria="<?php echo $subcategorias['id_categoria']?>" data-nivel="<?php echo $this->nivel?>" title="Editar Categoria" class="open-modificarCategoriaDialog btn btn-primary boton-accion" href="#modificarCategoria"><span class="glyphicon glyphicon-edit"></span></td>
+                        <td style="width:20px;"></td>
+                    </tr>
+
+                    <?php foreach($subcategorias['preview'] as $indice => $contenido ):?>
+
+                        <tr>
+                            <td style="width:20px;"></td>
+                            <td <?php echo ( $contenido['nivel'] < $this->nivel )? 'class="nivel"':''?> colspan="3"><a style="color: blue" href="#"><font color="blue" face="arial" size="1"><?php echo $contenido['nombre_contenido']?></font></a> <a data-toggle="modal" data-nombre_contenido="<?php echo $contenido['nombre_contenido']?>" data-id_promocion="<?php echo $contenido['id_promocion']?>" data-id_contenido="<?php echo $contenido['id_contenido']?>" data-nivel="<?php echo $this->nivel?>" title="Editar Contenido" class="open-modificarContenidoDialog btn btn-primary boton-accion" href="#modificarContenido"><span class="glyphicon glyphicon-edit"></span></td>
+                            <td style="width:20px;"></td>
+                        </tr>
+
+                    <?php endforeach;?>
+                    <tr style="height: 2px">
+                    </tr>
+                <?php }else{ ?>
+
+                    <tr style="height: 5px"></tr>
+                    <tr>
+                        <td style="width:20px;"></td>
+                        <td class="subtitulo" bgcolor = "#9acd32" colspan="3" align="center"><font color="black" face="arial" size="1"><?php echo strtoupper($subcategorias['nombre_categoria'])?> <a data-toggle="modal" data-id="<?php echo $subcategorias['id_categoria'] ?>" title="Agregar contenido" class="open-addContenidoDialog btn btn-primary boton-accion" href="#addContenidoDialog"><span class="glyphicon glyphicon-plus-sign"></span></a> <a data-toggle="modal" data-nombre-categoria="<?php echo $subcategorias['nombre_categoria']?>" data-id-promocion="<?php echo $subcategorias['id_promocion']?>" data-id-categoria="<?php echo $subcategorias['id_categoria']?>" data-nivel="<?php echo $this->nivel?>" title="Editar Categoria" class="open-modificarCategoriaDialog btn btn-primary boton-accion" href="#modificarCategoria"><span class="glyphicon glyphicon-edit"></span></td>
+                        <td class=" " style="width:20px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="width:20px;"></td>
+                        <td colspan="3"><font color="red" face="arial" size="1">No existen contenidos</font></td>
+                        <td class=" " style="width:20px;"></td>
+                    </tr>
+                <?php } ?>
+            <?php endforeach;?>
+
+            <tr style="height: 10px"></tr>
+            <?php $banners = $this->controller->obtenerBanner( $this->id_promocion, $this->nivel, 2 );?>
+            <?php foreach ( $banners as $indice=>$banner ):?>
+                <tr style="height: 10px">
+                    <td colspan="5"><img src="<?php echo $banner ?>"></td>
+                </tr>
+                <tr style="height: 5px"></tr>
+            <?php endforeach;?>
+            <tr>
+                <td colspan="5">
+                    <a data-toggle="modal" data-id="2" title="Agregar Banner" class="open-addBannerDialog btn btn-primary boton-accion" href="#addBannerDialog">Agregar Banner</a>
+                    <a title="Editar Banners" class="btn btn-primary boton-accion" href="/cargar/banners-cargados/id-p/<?php echo $this->id_promocion?>/id-c/<?php echo '2'?>/l/<?php echo $this->nivel?>"><span class="glyphicon glyphicon-list"></span></a>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="modal" id="addContenidoDialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">×</button>
+                    <h3>Agregar Contenido</h3>
+                </div>
+                <form action="/cargar/nuevo-contenido" method="post" enctype="multipart/form-data" onsubmit="return validar()">
+                    <div class="modal-body">
+                        <p>Nombre Contenido: <input type="text" name="nombre_contenido" id="nombre_contenido"></p><br>
+
+                        <input type="hidden" value="ninguna" name="descripcion" id="descripcion">
+                        <input type="hidden" name="estado" id="estado" value="<?php echo '1' ?>">
+                        <input type="hidden" name="id_promocion" id="id_promocion" value="<?php echo $this->id_promocion ?>">
+                        <input type="hidden" name="id_categoria" id="id_categoria" value=""/>
+                        <input size="5" id="nivel" name="nivel" value="<?php echo $this->nivel?> " type="hidden">
+                        <p>Archivo:</p>
+                        <input type=file size=15 id="userFile1" name="userFile1"><br>
+
+                        <input type="hidden" name="id_categoria" id="id_categoria" value=""/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Cargar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="addBannerDialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">×</button>
+                    <h3>Agregar Banner</h3>
+                </div>
+
+                <form action="/cargar/nuevo-banner" method="post" enctype="multipart/form-data" onsubmit="return validar()">
+
+                    <div class="modal-body">
+
+                        <p>Nombre Banner: <input type="text" name="nombre" id="nombre"></p>
+                        <input type="hidden"  value="ninguna" name="descripcion" id="descripcion">
+                        <input type="hidden" name="id_promocion" id="id_promocion" value="<?php echo $this->id_promocion ?>">
+                        <input size="5" id="nivel" name="nivel" value="<?php echo $this->nivel?>" type="hidden">
+                        <input size="5" id="orden" name="orden" type="hidden"><br>
+                        <p>Donde aparecerá: </p>
+                        <div id="bloque_alias">
+                            <label class="checkbox">
+                                <input id="aparece" name="aparece" type="checkbox" value="1">Banner solo para esta categoria
+                            </label>
+                            <!--<label class="checkbox">
+                                <input id="aparece" name="aparece" type="checkbox" value="0">Todas las categorias
+                            </label>-->
+                        </div>
+                        <p>Archivo:</p>
+                        <input type=file size=15 id="userFile" name="userFile"><br>
+                        <input type="hidden" name="id_categoria" id="id_categoria" value=""/>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button id="cargar-banner" type="submit" class="btn btn-primary">Cargar</button>
+                    </div>
+                </form>
+             </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modificarCategoria">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">×</button>
+                    <h3>Modificar Categoria</h3>
+                </div>
+
+                <form action="/cargar/modificar-categoria" method="post" enctype="multipart/form-data">
+
+                    <div class="modal-body">
+
+                        <p>Nombre Categoria: <input type="text" name="nombre-categoria" id="nombre-categoria" value=""/></p>
+                        <input type="hidden" name="id-categoria" id="id-categoria" value=""/>
+                        <input type="hidden" name="id-promocion" id="id-promocion" value=""/>
+                        <input type="hidden" name="nivel" id="nivel" value=""/>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button id="modificar-categoria" type="submit" class="btn btn-primary">Modificar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="nuevaCategoria">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">×</button>
+                    <h3>Nueva Sub-Categoria</h3>
+                </div>
+
+                <form action="/cargar/nueva-categoria" method="post" enctype="multipart/form-data">
+
+                    <div class="modal-body">
+
+                        <p>Nombre Categoria: <input type="text" name="nombre_categoria" id="nombre_categoria" value=""/></p>
+                        <input type="hidden" name="id_categoria" id="id_categoria" value=""/>
+                        <input type="hidden" name="id_promocion" id="id_promocion" value=""/>
+                        <input type="hidden" name="nivel" id="nivel" value=""/>
+                        <input type="hidden" name="id_categoria_padre" id="id_categoria_padre" value=""/>
+                        <input type="hidden" name="ultimo_hijo" id="ultimo_hijo" value="true"/>
+                        <input type="hidden" name="estado" id="estado" value="1"/>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button id="modificar-categoria" type="submit" class="btn btn-primary">Crear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modificarContenido">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">×</button>
+                    <h3>Modificar Contenido</h3>
+                </div>
+
+                <form action="/cargar/modificar-contenido" method="post" enctype="multipart/form-data">
+
+                    <div class="modal-body">
+
+                        <p>Nombre Contenido: <input type="text" name="nombre_contenido" id="nombre_contenido" value=""/></p>
+                        <input type="hidden" name="id_contenido" id="id_contenido" value=""/>
+                        <input type="hidden" name="id_promocion" id="id_promocion" value=""/>
+                        <input type="hidden" name="nivel" id="nivel" value=""/>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button id="modificar-categoria" type="submit" class="btn btn-primary">Modificar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php }else{ ?>
+
+    <!--<h1>No existen contenidos para esta promocion y nivel</h1>-->
+<?php } ?>
+
+<script type="text/javascript">
+
+    $(document).ready(  function(){
+
+        $('.open-addContenidoDialog').click(function(){
+
+            var id_categoria = $(this).data('id');
+            $(".modal-body #id_categoria").val( id_categoria );
+        });
+        $('.open-addBannerDialog').click(function(){
+
+            var id_categoria = $(this).data('id');
+            $(".modal-body #id_categoria").val( id_categoria );
+        });
+
+        $('.open-modificarCategoriaDialog').click(function(){
+
+            var nombre_categoria = $(this).data('nombre-categoria');
+            $(".modal-body #nombre-categoria").val( nombre_categoria );
+            var id_categoria = $(this).data('id-categoria');
+            $(".modal-body #id-categoria").val( id_categoria );
+            var id_promocion = $(this).data('id-promocion');
+            $(".modal-body #id-promocion").val( id_promocion );
+            var nivel = $(this).data('nivel');
+            $(".modal-body #nivel").val( nivel );
+        });
+        $('.open-modificarContenidoDialog').click(function(){
+
+            var nombre_contenido = $(this).data('nombre_contenido');
+            $(".modal-body #nombre_contenido").val( nombre_contenido );
+            var id_contenido = $(this).data('id_contenido');
+            $(".modal-body #id_contenido").val( id_contenido );
+            var id_promocion = $(this).data('id_promocion');
+            $(".modal-body #id_promocion").val( id_promocion );
+            var nivel = $(this).data('nivel');
+            $(".modal-body #nivel").val( nivel );
+        });
+
+        $('.open-nuevaCategoriaDialog').click(function(){
+
+            var nombre_categoria = $(this).data('nombre_categoria');
+            $(".modal-body #nombre_categoria").val( nombre_categoria );
+            var id_categoria = $(this).data('id_categoria');
+            $(".modal-body #id_categoria").val( id_categoria );
+            var id_promocion = $(this).data('id_promocion');
+            $(".modal-body #id_promocion").val( id_promocion );
+            var nivel = $(this).data('nivel');
+            $(".modal-body #nivel").val( nivel );
+            /*var ultimo_hijo = $(this).data('ultimo_hijo');
+            $(".modal-body #ultimo_hijo").val( ultimo_hijo );*/
+            var id_categoria_padre = $(this).data('id_categoria_padre');
+            $(".modal-body #id_categoria_padre").val( id_categoria_padre );
+        });
+
+        $('#addBannerDialog').submit(function(){
+
+            var nombre = $('#nombre').val();
+            var archivo = $('#userFile').val();
+
+            if(nombre.length == 0 ) {
+
+                alert("Debe completar el campo nombre");
+                return false;
+
+            }else if( archivo == '' ){
+
+                alert("Debe seleccionar un archivo");
+                return false;
+            }
+            else{
+
+                return true;
+            }
+        });
+        $('#addContenidoDialog').submit( function(){
+
+            var nombre = $('#nombre_contenido').val();
+            var archivo = $('#userFile1').val();
+
+            if(nombre.length == 0 ) {
+
+                alert("Debe completar el campo nombre");
+                return false;
+
+            }else if( archivo == '' ){
+
+                alert("Debe seleccionar un archivo");
+                return false;
+            }
+            else{
+
+                return true;
+            }
+        });
+
+        $('#mostrar_videos').click(function(){
+
+            $('#tabla_contenidos_videos tr:gt(0)').toggle();
+        });
+        $('#mostrar_imagenes').click(function(){
+
+            $('#tabla_contenidos_imagenes tr:gt(1)').toggle();
+        });
+        $('#mostrar_audios').click(function(){
+
+            $('#tabla_contenidos_audios tr:gt(1)').toggle();
+        });
+        $('#tabla_contenidos_videos tr:gt(0)').toggle(false);
+        $('#tabla_contenidos_imagenes tr:gt(1)').toggle(false);
+        $('#tabla_contenidos_audios tr:gt(1)').toggle(false);
+
+    });
+
+</script>
+

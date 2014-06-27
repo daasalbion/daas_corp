@@ -1,0 +1,35 @@
+<div>
+    <div data-role="header" data-position="fixed">
+        <a href="/noticias/mensajes-mes/anho/<?php echo $this->nro_anho ?>/mes/<?php echo $this->nro_mes ?>" data-icon="delete" data-ajax="false">Volver</a>
+        <h1><?php echo $this->mes?></h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" data-autodividers="false" data-inset="true">
+            <?php foreach($this->sms as $mensaje):?>
+
+                <li>
+                    <p><b><?php echo $mensaje['mensaje']?></b></p>
+                    <p><?php echo $mensaje['fecha']?></p>
+                </li>
+
+            <?php endforeach;?>
+        </ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <a href="/noticias/logout" data-icon="delete" data-ajax="false" style="float: left;">Salir</a>
+        <a href="/noticias/home" data-role="button" data-icon="home" data-ajax="false" data-theme="e" style="float: right;">Inicio</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).on('pageinit', function(){
+
+        $("a").click(function (event) {
+            event.preventDefault();
+            window.location = $(this).attr("href");
+        });
+
+    });
+
+</script>

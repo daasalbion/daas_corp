@@ -1,0 +1,65 @@
+<div id="bloque_promocion">
+    Promocion:&nbsp;
+    <select id="id-promocion" name="id-promocion">
+        <?php foreach($this->promociones as $promocion=>$id_promocion): ?>
+            <option value="<?php echo $id_promocion ?>"<?php echo ( $id_promocion == $this->promocion ? ' selected="selected"': '') ?>><?php echo $promocion?></option>
+        <?php endforeach; ?>
+    </select>
+</div>
+<div style="float: left">
+
+    <table class="tabla_pautas" align="left" >
+        <thead>
+            <tr>
+                <th class="fondo_naranja ultima_celda alias" colspan="4">Canales Activados X Canal</th>
+            </tr>
+            <tr>
+                <th class="fondo_naranja alias">Canal</th>
+                <th class="fondo_naranja alias nombre_contenido">Servicio</th>
+                <th class="fondo_naranja alias ultima_celda">Cantidad</th>
+            </tr>
+        </thead>
+        <?php foreach ( $this->contenidos_x_nivel as $indice => $datos ):?>
+            <tr >
+                <td class="numero">
+                    <?php echo $datos['tipo'] ?>
+                </td>
+                <td class="numero">
+                    <?php echo $datos['nombre_canal'] ?>
+                </td>
+                <td class="ultima_celda numero">
+                    <?php echo $this->numero($datos['cantidad']) ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <table class="tabla_pautas" align="left">
+        <tr>
+            <td class="celda_vacia alias nombre_contenido"></td>
+            <td class="fondo_naranja alias totales">Total</td>
+            <td class="ultima_celda alias numero"><?php echo $this->numero( $this->total_suscriptos ) ?></td>
+        </tr>
+    </table>
+</div>
+<div style="float: left">
+    <table class="tabla_pautas">
+
+        <thead>
+            <tr>
+                <th class="fondo_naranja ultima_celda alias" colspan="2">Canales Activados X Suscriptos</th>
+            </tr>
+            <tr>
+                <th class="fondo_naranja alias">Cantidad</th>
+                <th class="fondo_naranja alias ultima_celda">Suscriptos</th>
+            </tr>
+        </thead>
+        <?php foreach( $this->contenidos_x_opcion as $nivel=> $contenidos ):?>
+            <tr>
+                <td class="numero"><?php echo $contenidos['tipo'] ?></td>
+                <td class="ultima_celda numero"><?php echo $this->numero( $contenidos['suscriptos'] ) ?></td>
+            </tr>
+        <?php endforeach?>
+
+    </table>
+</div>
+

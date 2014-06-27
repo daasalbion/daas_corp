@@ -1,0 +1,72 @@
+<div id="bloque_mes">
+    Proveedor Seleccionado:&nbsp;
+    <select id="id_proveedor" name="id_proveedor">
+        <?php foreach($this->proveedores as $id_proveedor => $nombre_proveedor): ?>
+             <option value="<?php echo $id_proveedor ?>"<?php echo ( $id_proveedor == $this->id_proveedor ? ' selected="selected"' : '') ?>><?php echo $nombre_proveedor ?></option>
+        <?php endforeach; ?>
+    </select>
+    Mes Seleccionado:&nbsp;
+    <select id="mes" name="mes">
+        <?php foreach($this->rango_seleccion as $rango): ?>
+            <option value="<?php echo $rango['anho'].'-'.($rango['mes']<10? '0'.$rango['mes'] : $rango['mes']) ?>"<?php echo ($rango['selected'] == 'selected' ? ' selected="selected"' : '') ?>><?php echo $rango['descripcion'] ?></option>
+        <?php endforeach; ?>
+    </select>
+</div>
+<?php if( !is_null( $this->datos ) ):?>
+    <table class="tabla_pautas">
+        <thead>
+            <tr>
+                <th class="fondo_naranja alias">Proveedor</th>
+                <th class="fondo_naranja alias">Carrier</th>
+                <th class="fondo_naranja alias">Tarifa</th>
+                <th class="fondo_naranja alias">Cobros</th>
+                <th class="fondo_naranja alias">Total Bruto</th>
+                <th class="fondo_naranja alias">% Entermovil</th>
+                <th class="fondo_naranja alias">Total Neto</th>
+                <th class="fondo_naranja alias">% Proveedor</th>
+                <th class="fondo_naranja alias borde_derecha ultima_celda">Total Proveedor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach( $this->datos['datos'] as $tarifa => $estructura_proveedor ): ?>
+
+                <tr>
+                    <td class="alias"><?php echo $estructura_proveedor['nombre_proveedor']?></td>
+                    <td class="alias"><?php echo $this->carriers[$estructura_proveedor['id_carrier']]?></td>
+                    <td class="alias"><?php echo $estructura_proveedor['costo_gs']?></td>
+                    <td class="numero"><?php echo $this->numero($estructura_proveedor['total_cobros'])?></td>
+                    <td class="numero"><?php echo $this->numero($estructura_proveedor['total_bruto_gs'])?></td>
+                    <td class="numero"><?php echo $estructura_proveedor['porcentaje_proveedor']?></td>
+                    <td class="numero"><?php echo $estructura_proveedor['total_neto_enter_gs']?></td>
+                    <td class="numero"><?php echo $estructura_proveedor['revenue']?></td>
+                    <td class="numero borde_derecha ultima_celda"><?php echo $this->numero($estructura_proveedor['total_proveedor_gs'])?></td>
+                </tr>
+             <?php endforeach;?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="fondo_naranja alias"></td>
+                <td class="fondo_naranja alias"></td>
+                <td class="fondo_naranja alias">Totales</td>
+                <td class="fondo_naranja numero"><?php echo $this->numero($this->datos['totales']['total_cobros'])?></td>
+                <td class="fondo_naranja numero"><?php echo $this->numero($this->datos['totales']['total_bruto_gs'])?></td>
+                <td class="fondo_naranja alias"></td>
+                <td class="fondo_naranja numero"><?php echo $this->numero($this->datos['totales']['total_neto_enter_gs'])?></td>
+                <td class="fondo_naranja alias"></td>
+                <td class="fondo_naranja numero ultima_celda"><?php echo $this->numero($this->datos['totales']['total_proveedor_gs'])?></td>
+            </tr>
+        </tfoot>
+    </table>
+<?php else: ?>
+    <div class="bloque_mensaje">
+        <p>No existen datos para este proveedor y mes</p>
+    </div>
+
+<?php endif; ?>
+
+
+
+
+
+
+

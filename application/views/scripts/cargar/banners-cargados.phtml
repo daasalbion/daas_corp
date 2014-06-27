@@ -1,0 +1,102 @@
+<center>
+    <div class="page-header" id="titulo">
+        <h3>Wap - Banners</h3></br>
+    </div>
+</center>
+
+<?php if(!empty($this->contenidos)){?>
+
+    <table id="contenidos_cargados">
+
+        <tr>
+            <th colspan="5" class="ultima_celda centrar">Banners Cargados</th>
+        </tr>
+        <tr>
+            <th class="centrar">Imagen</th>
+            <th class="centrar">Orden</th>
+            <th class="centrar">Nombre</th>
+            <th class="centrar">Orden</th>
+            <th class="ultima_celda centrar">Nivel</th>
+        </tr>
+        <?php foreach($this->contenidos as $indice=>$contenido):?>
+            <?php /*print_r($this->contenidos);*/?>
+            <tr>
+                <td rowspan="2" class="centrar"><img src="<?php echo $contenido['path']?>"></td>
+                <?php if( $indice == '0' ){?>
+                    <td><a class="btn btn-primary" ><span class="glyphicon glyphicon-ban-circle"></span></a></td>
+                <?php }else{ ?>
+                    <td class="centrar"><a class="btn btn-primary" href="/cargar/modificar-banner/id-p/<?php echo $this->id_promocion?>/id-c/<?php echo $this->id_categoria?>/id/<?php echo $contenido['id']?>/l/<?php echo $contenido['nivel']?>/a/-1"><span class="glyphicon glyphicon-circle-arrow-up"></span></a></td>
+                <?php } ?>
+                <td rowspan="2" class="centrar"><?php echo $contenido['nombre']?></td>
+                <td rowspan="2" class="centrar"><?php echo $contenido['orden']?></td>
+                <td rowspan="2" class="centrar"><?php echo $contenido['nivel']?></td>
+                <td rowspan="2" class ="ultima_celda boton"><a href="#eliminarBanner" data-id-p="<?php echo $this->id_promocion?>" data-id-c="<?php echo $this->id_categoria?>" data-id="<?php echo $contenido['id']?>" data-l = "<?php echo $contenido['nivel']?>" class="eliminar btn btn-primary" title="Eliminar" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span></a></td>
+            </tr>
+            <tr>
+                <?php if( $indice == ( count($this->contenidos) -1 ) ){?>
+                    <td><a class="btn btn-primary" ><span class="glyphicon glyphicon-ban-circle"></span></a></td>
+                <?php }else{ ?>
+                    <td class="centrar"><a class="btn btn-primary" href="/cargar/modificar-banner/id-p/<?php echo $this->id_promocion?>/id-c/<?php echo $this->id_categoria?>/id/<?php echo $contenido['id']?>/l/<?php echo $contenido['nivel']?>/a/1"><span class="glyphicon glyphicon-circle-arrow-down"></span></a></td>
+                <?php } ?>
+            </tr>
+        <?php endforeach;?>
+    </table>
+    <div class="modal" id="eliminarBanner">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">×</button>
+                    <h3>Eliminar Banner</h3>
+                </div>
+                <div class="modal-body">
+                    <p>¿Esta seguro que desea elimnar el banner?</p>
+                    <input type="hidden" name="id_contenido" id="id_contenido" value=""/>
+                    <input type="hidden" name="id_categoria" id="id_categoria" value=""/>
+                    <input type="hidden" name="id_promocion" id="id_promocion" value=""/>
+                    <input type="hidden" name="nivel" id="nivel" value=""/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" id="confirmar" class="btn btn-primary">Aceptar</button>
+                </div>
+             </div>
+        </div>
+    </div>
+<?php }else{ ?>
+
+    <div style="margin-left: 40px">
+
+        <h2>No existen banners cargados para esta categoria y nivel</h2>
+    </div>
+<?php } ?>
+
+<script type="text/javascript">
+
+    $(document).ready(  function(){
+
+        var id_contenido;
+        var id_promocion;
+        var id_categoria;
+        var nivel;
+
+        $('.eliminar').click(function(){
+
+            id_contenido = $(this).data('id');
+            $(".modal-body #id_contenido").val( id_contenido );
+            id_categoria = $(this).data('id-c');
+            $(".modal-body #id_categoria").val( id_categoria );
+            id_promocion = $(this).data('id-p');
+            $(".modal-body #id_promocion").val( id_promocion );
+            nivel = $(this).data('l');
+            $(".modal-body #nivel").val( nivel );
+        });
+        $('#confirmar').click(function(){
+
+            var url;
+            url = '/cargar/eliminar-banner/id-p/' + id_promocion + '/id-c/' + id_categoria + '/id/' + id_contenido + '/l/' + nivel;
+
+            window.location = url;
+        });
+    });
+
+</script>

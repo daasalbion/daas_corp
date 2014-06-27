@@ -1,0 +1,66 @@
+<div id="bloque_promocion">
+    Promocion:&nbsp;
+    <select id="promocion" name="promocion">
+        <?php foreach($this->promociones as $promocion=>$id_promocion): ?>
+            <option value="<?php echo $id_promocion ?>"<?php echo ( $id_promocion == $this->promocion ? ' selected="selected"': '') ?>><?php echo $promocion?></option>
+        <?php endforeach; ?>
+    </select>
+    <a href="/reportes/contenidos-wap/id-promocion/<?php echo $this->promocion ?>"><input type="button" value="Stock Contenidos"></a>
+</div>
+<div style="float: left">
+    <?php foreach ( $this->suscriptos as $id_carrier => $datos_nivel ):?>
+        <table class="tabla_pautas" align="left" >
+            <tr>
+                <th class="fondo_naranja alias"><?php echo $id_carrier ?></th>
+                <th class="fondo_naranja alias">Nivel</th>
+                <th class="fondo_naranja alias ultima_celda">Suscriptos</th>
+            </tr>
+            <?php foreach ($datos_nivel as $nivel => $suscriptos ):?>
+                <tr>
+                    <td class="celda_vacia"></td>
+                    <td class="numero"><?php echo $this->numero($nivel) ?></td>
+                    <td class="ultima_celda numero"><?php echo $this->numero($suscriptos['suscriptos']) ?></td>
+                </tr>
+            <?php endforeach; ?>
+            <tr>
+                <td class="celda_vacia"></td>
+                <td class="fondo_naranja alias">Total</td>
+                <td class="ultima_celda numero"><?php echo $this->numero( $this->totales[$id_carrier] ) ?></td>
+            </tr>
+        </table>
+    <?php endforeach; ?>
+
+    <table class="tabla_pautas" align="left">
+        <tr>
+            <td class="celda_vacia alias"></td>
+            <td class="fondo_naranja alias totales">Total Suscriptos</td>
+            <td class="ultima_celda alias numero"><?php echo $this->numero( $this->total_general ) ?></td>
+        </tr>
+    </table>
+</div>
+<div style="float: left">
+
+    <table class="tabla_pautas">
+
+        <thead>
+            <tr>
+                <th class="fondo_naranja titulo ultima_celda" colspan="9"><?php ecc?></th>
+            </tr>
+            <tr>
+                <th class="fondo_naranja alias">Nivel</th>
+                <th class="fondo_naranja nombre_contenido">Nombre Contenido</th>
+                <th class="fondo_naranja alias">Categoria</th>
+                <th class="fondo_naranja alias ultima_celda">Descargas</th>
+            </tr>
+        </thead>
+        <?php foreach( $this->contenidos_mas_descargados as $nivel=> $contenidos ):?>
+            <tr>
+                <td class="numero"><?php echo $this->numero( $contenidos['nivel'] ) ?></td>
+                <td><?php echo $contenidos['nombre_contenido']?></td>
+                <td class="centrar"><?php echo $contenidos['tipo']?></td>
+                <td class="ultima_celda numero"><?php echo $this->numero( $contenidos['descargas'] ) ?></td>
+            </tr>
+        <?php endforeach?>
+
+    </table>
+</div>

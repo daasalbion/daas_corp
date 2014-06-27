@@ -1,0 +1,35 @@
+<?php foreach($this->numeros as $numero): ?>
+<table id="tabla_numero_<?php echo $numero ?>" class="tabla_reporte">
+    <thead>
+        <tr>
+            <th class="fondo_naranja borde_arriba totales"><?php echo $numero ?></th>
+            <th class="fondo_naranja borde_arriba totales">Productos</th>
+            <th class="fondo_naranja borde_arriba totales">Cargados</th>
+            <th class="fondo_naranja borde_arriba totales">Enviados</th>
+            <th class="fondo_naranja borde_arriba borde_derecha totales">Pendientes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($this->datos[$numero]['promociones'] as $promocion): ?>
+        <?php
+            $clase_css = '';
+            $valor = $this->datos[$numero]['datos_contenidos'][$promocion['alias']]['PENDIENTE'];
+            if($valor <= 10) {
+                $clase_css = ' fondo_rojo';
+            } elseif($valor <= 20){
+                $clase_css = ' fondo_amarillo';
+            }
+
+        ?>
+        <tr>
+            <th class="celda_vacia"></th>
+            <th class="alias<?php echo $clase_css ?>"><?php echo $promocion['alias'] ?></th>
+            <td class="numero<?php echo $clase_css ?>"><?php echo $this->datos[$numero]['datos_contenidos'][$promocion['alias']]['CARGADO'] ?></td>
+            <td class="numero<?php echo $clase_css ?>"><?php echo $this->datos[$numero]['datos_contenidos'][$promocion['alias']]['ENVIADO'] ?></td>
+            <td class="numero borde_derecha<?php echo $clase_css ?>"><?php echo $this->datos[$numero]['datos_contenidos'][$promocion['alias']]['PENDIENTE'] ?></td>
+        </tr>
+        <?php endforeach; ?>
+
+    </tbody>
+</table>
+<?php endforeach; ?>

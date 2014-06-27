@@ -1,0 +1,161 @@
+<center>
+    <div id="titulo" class="page-header">
+        <h3>CONTENIDOS - WAP</h3>
+    </div>
+</center>
+<?php if(isset($this->contenidos)){?>
+
+    <?php if(!empty($this->contenidos)){?>
+
+        <div id="bloque_alias">
+            <p>Nombre Categoria: <?php echo strtoupper($this->nombre_categoria)?></p>
+        </div>
+        <?php if($this->tipo != '1'){?>
+
+            <table id="contenidos_cargados">
+
+                <tr>
+                    <th colspan="4" class="ultima_celda centrar">Contenidos Cargados</th>
+                </tr>
+                <tr>
+                    <th class="centrar">Categoria</th>
+                    <th class="centrar">Nombre Contenido</th>
+                    <th class="centrar">Formato</th>
+                    <th class="ultima_celda centrar">Nivel</th>
+                </tr>
+                <?php foreach($this->contenidos as $indice=>$contenido):?>
+
+                    <tr>
+                        <td class="centrar"><?php echo $contenido?></td>
+                        <td class="centrar"><?php echo $contenido?></td>
+                        <td class="centrar"><?php echo $contenido?></td>
+                        <td class="centrar"><?php echo $contenido?></td>
+                        <td class="ultima_celda"><a data-toggle="modal" data-id_categoria="<?php echo $this->id_categoria?>" data-nombre_contenido="<?php echo $contenido['nombre_contenido']?>" data-id_promocion="<?php echo $contenido['id_promocion']?>" data-id_contenido="<?php echo $contenido['id_contenido']?>" data-nivel="<?php echo $contenido['nivel']?>" title="Editar Contenido" class="open-modificarContenidoDialog btn btn-primary boton-accion" href="#modificarContenido"><span class="glyphicon glyphicon-edit"></span></td>
+                    </tr>
+                <?php endforeach;?>
+            </table>
+        <?php }else{ ?>
+
+            <table id="contenidos_cargados">
+
+                <tr>
+                    <th colspan="4" class="ultima_celda centrar">Contenidos Cargados</th>
+                </tr>
+                <tr>
+                    <th class="centrar">Imagen</th>
+                    <th class="centrar">Nombre Contenido</th>
+                    <th class="centrar">Formato</th>
+                    <th class="ultima_celda centrar">Nivel</th>
+                </tr>
+                <?php foreach($this->contenidos as $indice=>$contenido):?>
+
+                    <tr>
+                        <td class="centrar"><img src="<?php echo $contenido['path']?>"></td>
+                        <td class="centrar"><?php echo $contenido['nombre_contenido']?></td>
+                        <td class="centrar"><?php echo $contenido['tipo']?></td>
+                        <td class="centrar"><?php echo $contenido['nivel']?></td>
+                        <td class="ultima_celda"><a data-toggle="modal" data-id-c = "<?php echo $this->id_categoria?>" data-id="<?php echo $contenido['id_contenido']?>" data-id-p="<?php echo $this->id_promocion?>" data-l = "<?php echo $contenido['nivel']?>" title="Eliminar" class="eliminar btn btn-primary" href="#eliminarContenido"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    </tr>
+                <?php endforeach;?>
+            </table>
+
+        <?php } ?>
+        <div class="modal" id="eliminarContenido">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">×</button>
+                        <h3>Eliminar Contenido</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Esta seguro que desea eliminar el contenido?</p>
+                        <input type="hidden" name="id_contenido" id="id_contenido" value=""/>
+                        <input type="hidden" name="id_categoria" id="id_categoria" value=""/>
+                        <input type="hidden" name="id_promocion" id="id_promocion" value=""/>
+                        <input type="hidden" name="nivel" id="nivel" value=""/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="button" id="confirmar" class="btn btn-primary">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php }else{ ?>
+
+        <div style="margin-left: 40px">
+
+            <h2>No existe contenido cargado en esta categoria</h2>
+        </div>
+    <?php } ?>
+    <div class="modal" id="modificarContenido">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">×</button>
+                    <h3>Modificar Contenido</h3>
+                </div>
+
+                <form action="/cargar/modificar-contenido2" method="post" enctype="multipart/form-data">
+
+                    <div class="modal-body">
+
+                        <p>Nombre Contenido: <input size ="25" type="text" name="nombre_contenido" id="nombre_contenido" value=""/></p>
+                        <input type="hidden" name="id_contenido" id="id_contenido" value=""/>
+                        <input type="hidden" name="id_promocion" id="id_promocion" value=""/>
+                        <input type="hidden" name="id_categoria" id="id_categoria" value=""/>
+                        <input type="hidden" name="nivel" id="nivel" value=""/>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button id="modificar-categoria" type="submit" class="btn btn-primary">Modificar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!--Del home a contenidos-->
+<?php }?>
+
+<script type="text/javascript">
+
+    $(document).ready(  function(){
+
+        var id_contenido;
+        var id_promocion;
+        var id_categoria;
+        var nivel;
+
+        $('.open-modificarContenidoDialog').click(function(){
+
+            var nombre_contenido = $(this).data('nombre_contenido');
+            $(".modal-body #nombre_contenido").val( nombre_contenido );
+            var id_contenido = $(this).data('id_contenido');
+            $(".modal-body #id_contenido").val( id_contenido );
+            var id_categoria = $(this).data('id_categoria');
+            $(".modal-body #id_categoria").val( id_categoria );
+            var id_promocion = $(this).data('id_promocion');
+            $(".modal-body #id_promocion").val( id_promocion );
+            var nivel = $(this).data('nivel');
+            $(".modal-body #nivel").val( nivel );
+        });
+        $('.eliminar').click(function(){
+
+            id_contenido = $(this).data('id');
+            $(".modal-body #id_contenido").val( id_contenido );
+            id_categoria = $(this).data('id-c');
+            $(".modal-body #id_categoria").val( id_categoria );
+            id_promocion = $(this).data('id-p');
+            $(".modal-body #id_promocion").val( id_promocion );
+            nivel = $(this).data('l');
+            $(".modal-body #nivel").val( nivel );
+        });
+        $('#confirmar').click(function(){
+
+            var url;
+            url = '/cargar/eliminar-contenido/id-p/' + id_promocion + '/id-c/' + id_categoria + '/id/' + id_contenido + '/l/' +nivel;
+            window.location = url;
+        });
+    });
+</script>

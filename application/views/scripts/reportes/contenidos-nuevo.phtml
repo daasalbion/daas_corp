@@ -1,0 +1,122 @@
+<?php foreach($this->numeros as $numero=>$tipos): ?>
+    <table id="tabla_numero_<?php echo $numero ?>" class="tabla_reporte">
+        <?php foreach( $tipos as $tipo=>$promociones ): ?>
+
+            <?php if( $tipo == 'Secuencial' || $tipo == 'Por Fecha' ): ?>
+
+                <thead>
+                    <tr>
+                        <th colspan="10" class="fondo_naranja borde_arriba borde_derecha totales"><?php echo $tipo ?></th>
+                    </tr>
+                    <tr>
+                        <th class="fondo_naranja borde_arriba totales"><?php echo $numero ?></th>
+                        <th class="fondo_naranja borde_arriba totales">Servicio</th>
+                        <th class="fondo_naranja borde_arriba totales">Carrier</th>
+                        <th class="fondo_naranja borde_arriba totales">Envios x Dia</th>
+                        <th class="fondo_naranja borde_arriba totales">Cargados</th>
+                        <th class="fondo_naranja borde_arriba totales">Enviados</th>
+                        <th class="fondo_naranja borde_arriba totales">Pendientes</th>
+                        <th class="fondo_naranja borde_arriba totales">Cantidad Receptores</th>
+                        <th class="fondo_naranja borde_arriba totales">Descripcion</th>
+                        <th class="fondo_naranja borde_arriba borde_derecha totales">Suscriptos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($promociones as $alias => $datos_promocion):?>
+
+                        <?php if( $this->contador_fondos < count($this->fondos) ){
+                            $fondo = $this->fondos[$this->contador_fondos];
+                            $this->contador_fondos++;
+                        }else{
+                            $this->contador_fondos = 0;
+                            $fondo = $this->fondos[$this->contador_fondos];
+                            $this->contador_fondos++;
+                        }?>
+
+                        <?php foreach($datos_promocion as $indice_promocion =>$promocion): ?>
+
+                            <?php
+                                $clase_css = '';
+                                $valor = $promocion['pendientes'];
+                                if($valor <= 10) {
+                                    $clase_css = ' fondo_rojo';
+                                } elseif($valor <= 20){
+                                    $clase_css = ' fondo_amarillo';
+                                }
+                            ?>
+                            <tr class="<?php echo $fondo?>">
+                                <th class="celda_vacia"></th>
+                                <th class="alias<?php echo $clase_css ?>"><?php echo $promocion['alias'] ?></th>
+                                <th class="alias<?php echo $clase_css ?>"><?php echo strtoupper( $promocion['descripcion'] ) ?></th>
+                                <td class="numero<?php echo $clase_css ?>"><?php echo $promocion['envios'] ?></td>
+                                <td class="numero<?php echo $clase_css ?>"><?php echo $promocion['cargados'] ?></td>
+                                <td class="numero<?php echo $clase_css ?>"><?php echo $promocion['enviados'] ?></td>
+                                <td class="numero<?php echo $clase_css ?>"><?php echo $promocion['pendientes'] ?></td>
+                                <td class="numero<?php echo $clase_css ?>"><?php echo $promocion['cantidad_receptores'] ?></td>
+                                <td class="numero<?php echo $clase_css ?>">Acabara en aprox. <?php echo $promocion['acabaran'] ?> dias</td>
+                                <td class="numero borde_derecha<?php echo $clase_css ?>"><?php echo $promocion['suscriptos'] ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </tbody>
+            <?php elseif( $tipo == 'Por Nivel' || $tipo == 'Por Canales' ):?>
+                <thead>
+                    <tr>
+                        <th colspan="11" class="fondo_naranja borde_arriba borde_derecha totales"><?php echo $tipo ?></th>
+                    </tr>
+                    <tr>
+                        <th class="fondo_naranja borde_arriba totales"><?php echo $numero ?></th>
+                        <th class="fondo_naranja borde_arriba totales">Servicio</th>
+                        <th class="fondo_naranja borde_arriba totales">Carrier</th>
+                        <th class="fondo_naranja borde_arriba totales">Envios x Dia</th>
+                        <th class="fondo_naranja borde_arriba totales"><?php echo ($tipo == 'Por Nivel')?'Nivel':'Canal'?></th>
+                        <th class="fondo_naranja borde_arriba totales">Cargados</th>
+                        <th class="fondo_naranja borde_arriba totales">Enviados</th>
+                        <th class="fondo_naranja borde_arriba totales">Pendientes</th>
+                        <th class="fondo_naranja borde_arriba totales">Cantidad Receptores</th>
+                        <th class="fondo_naranja borde_arriba totales">Descripcion</th>
+                        <th class="fondo_naranja borde_arriba borde_derecha totales">Suscriptos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($promociones as $alias => $datos_promocion):?>
+
+                        <?php if( $this->contador_fondos < count($this->fondos) ){
+                            $fondo = $this->fondos[$this->contador_fondos];
+                            $this->contador_fondos++;
+                        }else{
+                            $this->contador_fondos = 0;
+                            $fondo = $this->fondos[$this->contador_fondos];
+                            $this->contador_fondos++;
+                        }?>
+
+                        <?php foreach($datos_promocion as $indice_promocion =>$promocion): ?>
+                            <?php
+                            $clase_css = '';
+                            $valor = $promocion['pendientes'];
+                            if($valor <= 10) {
+                                $clase_css = ' fondo_rojo';
+                            } elseif($valor <= 20){
+                                $clase_css = ' fondo_amarillo';
+                            }
+                            ?>
+                            <tr class="<?php echo $fondo?>">
+                                <th class="celda_vacia"></th>
+                                <th class="alias<?php echo $clase_css ?>"><?php echo $promocion['alias'] ?></th>
+                                <th class="alias<?php echo $clase_css ?>"><?php echo strtoupper($promocion['descripcion']) ?></th>
+                                <th class="alias<?php echo $clase_css ?>"><?php echo $promocion['envios'] ?></th>
+                                <th class="alias<?php echo $clase_css ?>"><?php echo $promocion['nivel'] ?></th>
+                                <td class="numero<?php echo $clase_css ?>"><?php echo $promocion['cargados'] ?></td>
+                                <td class="numero<?php echo $clase_css ?>"><?php echo $promocion['enviados'] ?></td>
+                                <td class="numero<?php echo $clase_css ?>"><?php echo $promocion['pendientes'] ?></td>
+                                <td class="numero<?php echo $clase_css ?>"><?php echo $promocion['cantidad_receptores'] ?></td>
+                                <td class="numero<?php echo $clase_css ?>">Acabara en aprox. <?php echo $promocion['acabaran'] ?> dias</td>
+                                <td class="numero borde_derecha<?php echo $clase_css ?>"><?php echo $promocion['suscriptos'] ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endforeach;?>
+                </tbody>
+            <?php endif?>
+        <?php endforeach; ?>
+    </table>
+<?php endforeach; ?>

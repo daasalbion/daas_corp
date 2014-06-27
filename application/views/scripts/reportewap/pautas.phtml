@@ -1,0 +1,161 @@
+<div id="bloque_mes">
+
+    <p>
+        Dia Seleccionado: <input type="text" id="datepicker" value="<?php echo (isset($this->fecha)) ? $this->fecha : date('Y-m-d') ?>" />
+        <input type="button" id="boton_pautas" value="Cargar" >
+    </p>
+</div>
+
+<?php $totales = array(
+    'total_suscriptos' => 0,
+    'total_cobros_dia' => 0,
+    'total_altas_mes' => 0,
+    'total_bajas_mes' => 0,
+    'total_cobros_mes' => 0,
+    'total_neto_mes' => 0,
+    'total_altas' => 0,
+    'total_bajas' => 0,
+    'total_cobros' => 0,
+    'total_neto' => 0,
+); ?>
+
+<!--Comentar terminar despues-->
+<!--<?php print_r($this->canales) ?>-->
+
+<?php foreach($this->canales as $canal): ?>
+    <?php $totales_tabla = array(
+
+        'suscriptos' => 0,
+        'cobros_dia' => 0,
+        'altas_dia' => 0,
+        'bajas_dia' => 0,
+        'alta_mes' => 0,
+        'baja_mes' => 0,
+        'cobros_mes' => 0,
+        'neto_mes' => 0,
+    ); ?>
+<table class="tabla_pautas">
+        <thead>
+            <tr>
+                <th colspan ="9" class="ultima_celda fondo_naranja_ultima <?php echo $canal['css_titulo'] ?> "><?php echo $canal['descripcion'] ?></th>
+            </tr>
+            <!--Modifique-->
+            <tr>
+                <th class="fondo_naranja alias">Alias </th>
+                <th class="fondo_naranja alias">Suscriptos</th>
+                <th class="fondo_naranja altas_bajas">Cobros Dia</th>
+                <th class="fondo_naranja altas_bajas">Altas Dia</th>
+                <th class="fondo_naranja altas_bajas">Bajas Dia</th>
+                <!--<th class="fondo_naranja altas_bajas">Cobros Dia</th>
+                <th class="fondo_naranja alias">Neto Dia</th>-->
+                <th class="fondo_naranja altas_bajas">Altas Mes</th>
+                <th class="fondo_naranja altas_bajas">Bajas Mes</th>
+                <th class="fondo_naranja altas_bajas">Cobros Mes</th>
+                <th class="ultima_celda fondo_naranja_ultima alias">Neto Mes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($canal['datos'] as $alias => $datos_alias): ?>
+
+            <tr>
+                <td align="center"><?php echo $alias; ?></td>
+
+                <td class="numero"><?php echo $this->numero($datos_alias['SUSCRIPTOS']) ?></td>
+                <?php $totales_tabla['suscriptos'] += $datos_alias['SUSCRIPTOS']?>
+
+                <td class="numero columna"><?php echo $this->numero($datos_alias['COBROS_HOY']) ?></td>
+                <?php $totales_tabla['cobros_dia'] += $datos_alias['COBROS_HOY']?>
+
+                <td class="numero"><?php echo $this->numero($datos_alias['ALTA_HOY']) ?></td>
+                <?php $totales_tabla['altas_dia'] += $datos_alias['ALTA_HOY']?>
+
+                <td class="numero"><?php echo $this->numero($datos_alias['BAJA_HOY']) ?></td>
+                <?php $totales_tabla['bajas_dia'] += $datos_alias['BAJA_HOY']?>
+                <!--<td class="numero"><?php /*echo $this->numero($datos_alias['COBROS_HOY']) */?></td>
+                <td class="numero"><?php /*echo $this->numero($datos_alias['NETO_HOY']) */?> Gs.</td>-->
+
+                <td class="numero"><?php echo $this->numero($datos_alias['ALTA']) ?></td>
+                <?php $totales_tabla['alta_mes'] += $datos_alias['ALTA']?>
+
+                <td class="numero"><?php echo $this->numero($datos_alias['BAJA']) ?></td>
+                <?php $totales_tabla['baja_mes'] += $datos_alias['BAJA']?>
+
+                <td class="numero"><?php echo $this->numero($datos_alias['COBROS']) ?></td>
+                <?php $totales_tabla['cobros_mes'] += $datos_alias['COBROS']?>
+
+                <td class="ultima_celda numero"><?php echo $this->numero($datos_alias['NETO']) ?> Gs.</td>
+                <?php $totales_tabla['neto_mes'] += $datos_alias['NETO']?>
+
+            </tr>
+            <?php endforeach; ?>
+
+        </tbody>
+        <tfoot>
+                <th class="fondo_naranja numero centrar">Totales</th>
+                <th class="fondo_naranja numero"><?php echo  $this->numero($totales_tabla['suscriptos']) ?></th>
+                    <?php $totales['total_suscriptos'] = $totales['total_suscriptos'] + $totales_tabla['suscriptos']?>
+
+                <th class="fondo_naranja numero"><?php echo  $this->numero($totales_tabla['cobros_dia']) ?></th>
+                    <?php $totales['total_cobros_dia'] = $totales['total_cobros_dia'] + $totales_tabla['cobros_dia']?>
+
+                <th class="fondo_naranja numero"><?php echo  $this->numero($totales_tabla['altas_dia']) ?></th>
+                    <?php $totales['total_altas_mes'] = $totales['total_altas_mes'] + $totales_tabla['altas_dia'] ?>
+
+                <th class="fondo_naranja numero"><?php echo  $this->numero($totales_tabla['bajas_dia']) ?></th>
+                    <?php $totales['total_bajas_mes'] = $totales['total_bajas_mes'] + $totales_tabla['bajas_dia']?>
+
+                <!--<th class="fondo_naranja numero"><?php /*echo  $this->numero($canal['totales']['TOTAL_COBROS_HOY']) */?></th>
+                    <?php /*$totales['total_cobros_mes'] = $totales['total_cobros_mes'] + $canal['totales']['TOTAL_COBROS_HOY']*/?>
+
+                <th class="fondo_naranja numero"><?php /*echo  $this->numero($canal['totales']['TOTAL_NETO_HOY']) */?> Gs.</th>
+                    --><?php /*$totales['total_neto_mes'] = $totales['total_neto_mes'] + $canal['totales']['TOTAL_NETO_HOY']*/?>
+
+
+                <th class="fondo_naranja numero"><?php echo $this->numero($totales_tabla['alta_mes']) ?></th>
+                    <?php $totales['total_altas'] = $totales['total_altas'] + $totales_tabla['alta_mes']?>
+
+                <th class="fondo_naranja numero""><?php echo $this->numero($totales_tabla['baja_mes']) ?></th>
+                    <?php $totales['total_bajas'] = $totales['total_bajas'] + $totales_tabla['baja_mes']?>
+
+                <th class="fondo_naranja numero""><?php echo $this->numero($totales_tabla['cobros_mes']) ?></th>
+                    <?php $totales['total_cobros'] = $totales['total_cobros'] + $totales_tabla['cobros_mes']?>
+
+                <th class="ultima_celda fondo_naranja_ultima numero""><?php echo $this->numero($totales_tabla['neto_mes']) ?> Gs.</th>
+                    <?php $totales['total_neto'] = $totales['total_neto'] + $totales_tabla['neto_mes']?>
+        </tfoot>
+</table>
+<?php endforeach; ?>
+
+<table class="tabla_pautas">
+    <thead>
+        <tr>
+            <th rowspan="2" class="fondo_naranja alias">Totales</th>
+            <th class="fondo_naranja alias">Suscriptos</th>
+            <th class="fondo_naranja altas_bajas">Cobros Dia</th>
+            <th class="fondo_naranja altas_bajas">Altas Dia</th>
+            <th class="fondo_naranja altas_bajas">Bajas Dia</th>
+            <!--<th class="fondo_naranja altas_bajas">Cobros Dia</th>
+            <th class="fondo_naranja alias">Neto Dia</th>-->
+            <th class="fondo_naranja altas_bajas">Altas Mes</th>
+            <th class="fondo_naranja altas_bajas">Bajas Mes</th>
+            <th class="fondo_naranja altas_bajas">Cobros Mes</th>
+            <th class="ultima_celda fondo_naranja_ultima alias">Neto Mes</th>
+        </tr>
+
+        <tr>
+            <td class="numero"><?php echo $this->numero($totales["total_suscriptos"]) ?></td>
+            <td class="numero"><?php echo $this->numero($totales["total_cobros_dia"]) ?></td>
+            <td class="numero"><?php echo $this->numero($totales["total_altas_mes"]) ?></td>
+            <td class="numero"><?php echo $this->numero($totales["total_bajas_mes"]) ?></td>
+            <!--<td class="numero"><?php /*echo $this->numero($totales["total_cobros_mes"]) */?></td>
+            <td class="numero"><?php /*echo $this->numero($totales["total_neto_mes"]) */?> Gs.</td>-->
+
+            <td class="numero"><?php echo $this->numero($totales["total_altas"]) ?></td>
+            <td class="numero"><?php echo $this->numero($totales["total_bajas"]) ?></td>
+            <td class="numero"><?php echo $this->numero($totales["total_cobros"]) ?></td>
+            <td class="numero ultima_celda numero"><?php echo $this->numero($totales["total_neto"]) ?> Gs.</td>
+        </tr>
+    </thead>
+
+</table>
+

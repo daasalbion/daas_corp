@@ -1,0 +1,37 @@
+<div id="bloque_promocion">
+    Promocion:&nbsp;
+    <select id="id-promocion" name="id-promocion">
+        <?php foreach($this->promociones as $promocion=>$id_promocion): ?>
+            <option value="<?php echo $id_promocion ?>"<?php echo ( $id_promocion == $this->promocion ? ' selected="selected"': '') ?>><?php echo $promocion?></option>
+        <?php endforeach; ?>
+    </select>
+</div>
+<div style="float: left">
+    <?php /*print_r( $this->contenidos_x_nivel )*/?>
+    <?php /*foreach ( $this->contenidos_x_nivel as $id_carrier => $datos_nivel ):*/?>
+        <table class="tabla_pautas" align="left" >
+            <tr>
+                <td class="celda_vacia"></td>
+                <th class="fondo_naranja alias">Suscriptos</th>
+                <th class="fondo_naranja alias">Nivel</th>
+                <th class="fondo_naranja alias ultima_celda">Contenidos</th>
+            </tr>
+            <?php foreach ( $this->contenidos_x_nivel as $indice => $datos ):?>
+                <tr >
+                    <td class="celda_vacia"></td>
+                    <td class="numero <?php echo ( !isset( $datos['contenidos'] ) ) ? 'fondo_rojo': ''?>">
+                        <?php echo $this->numero($datos['suscriptos']) ?>
+                    </td>
+                    <td class="numero <?php echo ( !isset( $datos['contenidos'] ) ) ? 'fondo_rojo': ''?>">
+                        <?php echo $this->numero($datos['nivel']) ?>
+                    </td>
+                    <td class="ultima_celda numero <?php echo ( !isset( $datos['contenidos'] ) ) ? 'fondo_rojo': ''?>">
+                        <?php echo $this->numero($datos['contenidos']) ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    <?php /*endforeach; */?>
+
+</div>
+

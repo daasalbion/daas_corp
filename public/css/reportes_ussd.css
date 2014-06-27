@@ -1,0 +1,99 @@
+#link_reportes_ussd{
+    color: #000000;
+    text-decoration:underline;
+}
+#bloque_mes_viejo {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: Arial;
+    width: 350px;
+    float: left;
+}
+#bloque_mes {
+    margin-top: 20px;
+    /*margin-left: 3%;*/
+    margin-left: 40px;
+    font-weight: bold;
+    font-family: Arial;
+}
+#bloque_mes select {
+    background-color: #ffd548;
+    border: 1px solid #ffd548;
+
+    width: 150px;
+    font-family: Arial;
+}
+#bloque_mes select {
+    background-color: #ffd548;
+    border: 1px solid #ffd548;
+
+    width: 150px;
+    font-family: Arial;
+}
+.tabla_pautas
+{
+    /*border-top:1px solid black;*/
+    font-size: 10px;
+    font-family: Arial;
+    margin-top: 15px;
+    clear: left;
+    float: left;
+    /*width: 110%;*/
+}
+
+
+table {
+    border-collapse:collapse;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 14px;
+    font-family: Arial;
+    /*width: 110%;*/
+}
+
+th, td {
+    border-left:1px solid black;
+    border-top:1px solid black;
+    border-bottom: 1px solid black;
+}
+
+th.ultima_celda, td.ultima_celda {
+    border-right:1px solid black;
+
+}
+.fondo_naranja {
+    background-color: #ffd548;
+}
+.fondo_naranja_ultima {
+    background-color: #ffd548;
+}
+.fondo_titulo_USSD{
+    background-color: yellow;
+}
+.alias {
+    min-width: 100px;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+.altas_bajas {
+    min-width: 70px;
+    width: 70px;
+    text-align: center;
+    font-weight: bold;
+}
+.numero {
+    text-align: right;
+    padding-right: 4px;
+    height: 20px;
+}
+.centrar{
+    text-align: center;
+}
+#boton_pautas {
+     margin-top: 0px;
+     text-align: right;
+     font-weight: bold;
+ }

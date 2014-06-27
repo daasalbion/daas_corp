@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ENTERMOVIL</title>
+    <style type="text/css">
+        body{
+            background-color: #ffffff;
+            font-family:Arial;
+            font-size:large;
+            color:#000000;
+        }
+        div{
+            background-color: #FFFFFF;
+            font-family:Arial;
+            font-size:large;
+        }
+        a:link{
+            text-decoration:none;
+            font-family:Arial;
+            /*font-size:large*/
+            font-weight:bold;
+            font-size: 15px;
+        }
+        a:visited{
+            text-decoration:none;
+            color:#2700EE;
+            font-family:Arial;
+            font-size:large;
+            font-weight:bold;
+            font-size: 15px;
+        }
+        h1{
+            font-size: 25px;
+            text-align: center;
+        }
+        h2{
+            font-size: 20px;
+            text-align: left;
+        }
+        td{
+            /*text-align: left;*/
+            font-family:Arial;
+            font-size: 15px;
+        }
+        .navegacion{
+            font-family: Arial;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+<table align="center" width="300" cellspacing="20" cellpadding="3" border="0" bgcolor="#808080">
+    <tr>
+        <td>
+            <font color="#FFFFFF" face="arial, verdana, helvetica">
+                <h1>Entermovil</h1>
+            </font>
+        </td>
+    </tr>
+</table>
+<table width="<?php echo $this->ancho_tabla ?>" border="0" cellspacing="0" cellpadding="1" id="principal" align="center">
+
+    <thead>
+        <tr>
+            <td align="center"><h2 style="color: black; text-align: center; padding: 0;">Fondos</h2></td>
+        </tr>
+    </thead>
+
+    <?php foreach($this->contenidos as $contenido):?>
+        <tr>
+            <td align="center"><?php echo $contenido['nombre_contenido']?></td>
+        </tr>
+        <tr>
+            <td valign="center"><input type="image" src="<?php echo $contenido['path']?>" value="<?php $contenido['nombre_contenido']?>"></td>
+        </tr>
+    <?php endforeach; ?>
+
+</table>
+<table id="bloque_navegacion" align="center" width="100" cellspacing="5" cellpadding="10">
+    <tr>
+        <td><a class="navegacion" href="/wap/imagenes">Anterior</a></td>
+        <td><a class="navegacion" href="">Siguiente</a></td>
+    </tr>
+</table>
+</body>
+</html>
+

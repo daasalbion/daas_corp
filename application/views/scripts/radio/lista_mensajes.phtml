@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title><?php echo $this->titulo ?></title>
+</head>
+<body>
+<h1><?php echo $this->encabezado ?></h1>
+<table>
+    <thead>
+    <tr>
+        <th>Número</th>
+        <th>Mensaje</th>
+        <th>Hora</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($this->mensajes as $orden => $mensaje): ?>
+    <tr>
+        <td><?php echo $mensaje['cel'] ?></td>
+        <td><?php echo $mensaje['sms'] ?></td>
+        <td><?php echo $mensaje['ts_local'] ?></td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+</body>
+</html>

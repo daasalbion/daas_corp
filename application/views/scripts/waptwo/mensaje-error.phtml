@@ -1,0 +1,37 @@
+<div style="width: <?php echo $this->ua['ancho_tabla'] .'px'?>; background: #ffffff">
+
+    <table id="navegador" align="center" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td><img class="menu" src="/<?php echo $this->ua['borde_arriba'] ?>" alt="NAVEGADOR" /></td>
+        </tr>
+    </table>
+
+    <table width="<?php echo $this->formato['ancho'] ?>" border="0" cellspacing="0" cellpadding="0" id="activacion" align="center">
+
+        <?php if(is_array($this->mensaje)): ?>
+            <?php foreach($this->mensaje as $linea): ?>
+                <tr id="texto">
+                    <td valign="center">
+                        <h3 style="color: black; text-align: center; padding: 0;">
+                            <font><?php echo $linea ?></font>
+                        </h3>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <tr style="line-height: 100%">
+                <td valign="center"><h3 style="color: black; text-align: center; padding: 0;"><font><?php echo $this->mensaje?></font></h3></td>
+            </tr>
+        <?php endif; ?>
+
+        <tr style="height: 5px">
+
+        </tr>
+    </table>
+
+    <table id="borde_abajo" align="center" width="<?php echo $this->ua['ancho_tabla'] . 'px'?>" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td><img class="menu" src="/<?php echo $this->ua['borde_abajo'] ?>" alt="BORDE_ABAJO"></td>
+        </tr>
+    </table>
+</div>
