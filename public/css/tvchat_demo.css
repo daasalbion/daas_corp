@@ -1,0 +1,62 @@
+.titulo{
+    width: 100vw;
+    height: 20vh;
+    background: #ff0000;
+}
+.juegos{
+    width: 50vw;
+    height: 60vh;
+    background: darkred;
+}
+.tvchat{
+    width: 100vw;
+    height: 20vh;
+    background: firebrick;
+}
+.titulo h1{
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+.juegos h1{
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+.tvchat h1{
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+h1{margin: 0;}
+body{
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-right: 0;
+}
+#canvas{
+
+    width: 25vw;
+    height: 25vw;
+    margin-left: 8vw;
+}
+
+#numeros_sorteados{
+
+    margin-left: 12vw;
+}
+.numero_ganador{
+
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    float: left;
+    border-collapse: collapse;
+    border-color: black;
+}
+.numero{
+
+    text-align: center;
+    top: auto;
+}

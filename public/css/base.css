@@ -106,8 +106,8 @@ img {
     width: 175px;
     height: 22px;
     border: none;
-    padding: 0;
-    margin: 0;
+    padding: none;
+    margin: none;
     margin-top: 9px;
     margin-left: 15px;
     color: #737373;
@@ -170,7 +170,9 @@ img {
     font-weight: bold;
     margin-left: 80px;
 }
-
+#footer #bases{
+    margin-left: 3px;
+}
 #footer span {
     display: block;
     float: right;
@@ -185,4 +187,8 @@ img {
     top: 0px;
     left: 163px;
     float: left;
+}
+.bloque_reporte_wap{
+
+    margin-top: 10px;
 }

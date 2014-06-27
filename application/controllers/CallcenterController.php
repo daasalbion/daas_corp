@@ -61,6 +61,9 @@ class CallcenterController extends Zend_Controller_Action
 
         $this->view->headLink()->appendStylesheet('/css/callcenter.css', 'screen');
 
+        $namespace = new Zend_Session_Namespace("entermovil_callcenter");
+        $this->view->nombre = $namespace->nombre;
+
         $layout = $this->_helper->layout();
         $layout->mostrar_busqueda = true;
     }
@@ -78,6 +81,45 @@ class CallcenterController extends Zend_Controller_Action
 
         $cel = $this->_getParam('nro_linea', 0);
         $idPromocion = $this->_getParam('id_promocion', 0);
+        $id_carrier = $this->consulta('GET_ID_CARRIER', array(
+            'cel' => $cel
+        ));
+        $namespace = new Zend_Session_Namespace("entermovil_callcenter");
+
+        $datos_promocion = $this->consulta('GET_DATOS_ID_PROMOCION', array(
+            'id_carrier' => $id_carrier,
+            'id_promocion' => $idPromocion
+        ));
+
+        $enviar_mensaje_cancelacion = false;
+        $mensaje_cancelacion = '-';
+        if($id_carrier == 6) {
+            //Insertar en tabla
+            $status = $this->consulta('INSERTAR_CANCELACION_CALLCENTER', array(
+                'cel' => $cel,
+                'id_carrier' => $id_carrier,
+                'id_promocion' => $idPromocion,
+                'ts_local' => new Zend_Db_Expr('NOW()'),
+                'usuario' => $namespace->usuario,
+                'enviar_mensaje_cancelacion' => true,
+                'mensaje' => 'Estimado cliente el servicio de suscripcion '. $datos_promocion['alias'] .' del '. $datos_promocion['numero'] .' fue eliminado con exito.',
+                'numero' => $datos_promocion['numero']
+            ));
+
+        } else {
+            //Insertar en tabla
+            $status = $this->consulta('INSERTAR_CANCELACION_CALLCENTER', array(
+                'cel' => $cel,
+                'id_carrier' => $id_carrier,
+                'id_promocion' => $idPromocion,
+                'ts_local' => new Zend_Db_Expr('NOW()'),
+                'usuario' => $namespace->usuario,
+                'mensaje' => '--',
+                'numero' => $datos_promocion['numero']
+            ));
+        }
+
+        $this->logger->info('InsertarCancelacionCallcenter -> status:[' . $status . ']');
 
         $status = $this->consulta('CANCELAR_SUSCRIPCION', array(
             'cel' => $cel,
@@ -132,7 +174,9 @@ class CallcenterController extends Zend_Controller_Action
             $this->logger->info('NroLinea:[' . $nro_linea . ']');
             $historial = $this->consulta('HISTORIAL', array(
                 'cel' => $nro_linea,
-                'id_carrier' => $this->idCarrierCel($nro_linea)
+                'id_carrier' => $id_carrier = $this->consulta('GET_ID_CARRIER', array(
+                    'cel' => $nro_linea
+                ))
             ));
             $respuesta['status'] = 'OK';
             $respuesta['cantidad'] = 0;
@@ -170,16 +214,28 @@ class CallcenterController extends Zend_Controller_Action
         if(!is_null($busqueda)) {
 
             $namespace = new Zend_Session_Namespace("entermovil_callcenter");
-            $prefijo = '09';
-            if(isset($namespace->prefijo)) {
-                $prefijo = $namespace->prefijo;
+            $id_carrier_operador = 0;
+            if(isset($namespace->id_carrier)) {
+                $id_carrier_operador = $namespace->id_carrier;
             }
-            $this->logger->info('Prefijo:[' . $prefijo . ']');
+            $this->logger->info('id_carrier_operador:[' . $id_carrier_operador . ']');
 
             $nro_linea = trim($busqueda);
-            $this->logger->info('NroLinea:[' . $nro_linea . ']');
-            if(strlen($nro_linea) == 10) {
-                if(substr($nro_linea, 0, strlen($prefijo)) == $prefijo) {
+            //de que carrier es la linea
+            $id_carrier = $this->consulta('GET_ID_CARRIER', array(
+                'cel' => $nro_linea
+            ));
+            $this->logger->info('NroLinea:[' . $nro_linea . '] id_carrier:[' . $id_carrier . ']');
+
+            if($id_carrier > 0) {//Si el cel tiene id_carrier, alguna vez se suscribio a algun servicio
+
+                if($id_carrier_operador > 0 && $id_carrier_operador != $id_carrier) {//Un usuario de una operador solicito una linea de otra operadora
+
+                    //usuario de operadora A pide numero de operadora B
+                    $respuesta['status'] = 'ERROR';
+                    $respuesta['error'] = 'Nro. de Línea Incorrecto';
+
+                } else {
 
                     $respuesta['cel'] = $nro_linea;
 
@@ -198,16 +254,13 @@ class CallcenterController extends Zend_Controller_Action
                         echo json_encode($respuesta);
                         return;
                     }
-
-                } else {
-                    //error prefijo
-                    $respuesta['status'] = 'ERROR';
-                    $respuesta['error'] = 'Prefijo Incorrecto. Debe ser [' . $prefijo . ']';
                 }
+
+
             } else {
-                //nro de linea incorrecto
+                //nro de linea no encontrada
                 $respuesta['status'] = 'ERROR';
-                $respuesta['error'] = 'Nro. de Línea Incorrecto';
+                $respuesta['error'] = 'Nro. de Línea No Encontrado';
             }
 
         } else {
@@ -235,6 +288,42 @@ class CallcenterController extends Zend_Controller_Action
         ));
         $db = Zend_Db::factory($config->database);
         $db->getConnection();
+
+        if($accion == 'INSERTAR_CANCELACION_CALLCENTER') {
+
+            try {
+
+                $status = $db->insert('callcenter_cancelaciones', $datos);
+                $this->logger->info('status:[' . $status . ']');
+
+                return $status;
+
+            } catch(Zend_Db_Exception $e){
+                $this->logger->err($e);
+            }
+        }
+
+        if($accion == 'GET_DATOS_ID_PROMOCION') {
+
+            $datos_respuesta = array();
+            $sql = 'select numero, alias from info_promociones where id_carrier = ? and id_promocion = ?';
+            $rs = $db->fetchRow($sql, array($datos['id_carrier'], $datos['id_promocion']));
+            if($rs) {
+                $datos_respuesta = (array)$rs;
+            }
+            return $datos_respuesta;
+        }
+
+        if($accion == 'GET_ID_CARRIER') {
+
+            $datos_respuesta = array();
+            $sql = 'select promosuscripcion.id_carrier_cel(?) as id_carrier';
+            $rs = $db->fetchRow($sql, array($datos['cel']));
+            if($rs) {
+                $datos_respuesta = (array)$rs;
+            }
+            return $datos_respuesta['id_carrier'];
+        }
 
         if($accion == 'CANCELAR_SUSCRIPCION') {
 
@@ -290,21 +379,49 @@ class CallcenterController extends Zend_Controller_Action
                 'SALUD' => 'Propiedades Curativas de las Frutas y Verduras',
                 'VIDA' => 'Propiedades Curativas de las Frutas y Verduras',
                 'GT' => 'Historia de Guatemala',
-                'SABER' => 'Saber de Todo',
-                'CONOCER' => 'Conocer de Todo',
                 'SEXO' => 'Tips de Sexo',
                 'PAREJA' => 'Tips de Pareja',
+
+                'SABER' => 'Saber de Todo',
+                'CONOCER' => 'Conocer de Todo',
+
+                'DINERO' => 'Consejos para atraer dinero',
+                'FORTUNA' => 'Consejos para atraer fortuna',
+
                 'EXITO' => 'Frases para el Exito',
-                'GANAR' => 'Frases para Ganar',
+                /*'GANAR' => 'Frases para Ganar',*/
+
                 'ASTRO' => 'Consejos sobre el Horoscopo',
                 'SIGNO' => 'Consejos sobre el Horoscopo',
                 'SANTO' => 'Oraciones Milagrosas',
                 'ORAR' => 'Oraciones Milagrosas',
+
+                'CARRITO' => 'Gana para tu Super conociendo mas sobre alimentacion',
+                'SUPER' => 'Gana un celular de ultima generacion',
+                'COMPRAR' => 'Gana para tu Super conociendo mas sobre alimentacion',
+
+                'SALDO' => 'Gana Saldo aprendiendo de Cultura General',
+                'GANAR' => 'Gana Saldo aprendiendo de Cultura General',
+
+                'CUENTAS' => 'Te ayudamos a pagar tus cuentas recibiendo consejos de dinero',
+                'PAGAR' => 'Te ayudamos a pagar tus cuentas recibiendo consejos de dinero',
+
+                'CARGAR' => 'Gana Saldo para un anho',
+                'LLENAR' => 'Gana Saldo para un anho',
+
+                'CEL' => 'Gana un celular de ultima generacion',
+
+                'HORA' => 'Hora Paraguaya',
+                'BINGO' => 'Mini-Bingo',
+                'OSCAR' => 'Oscar Acosta',
+                'MAGALI' => 'Magali Paez',
+                'PAVON' => 'Enrique Pavon',
+
             );
 
             $this->logger->info('Consulta: BUSQUEDA_SUSCRIPCIONES');
             $datos_respuesta = array();
-            $sql_suscriptos = "SELECT S.id_suscripto, S.id_carrier, S.id_promocion, IP.alias, IP.numero, (select ts_local from promosuscripcion.log_suscriptos where cel = S.cel and id_promocion = S.id_promocion and accion = 'ALTA' order by ts_local desc limit 1)::date as alta, S.cel
+            $sql_suscriptos = "SELECT S.id_suscripto, S.id_carrier, S.id_promocion, IP.alias, IP.numero, (select ts_local from promosuscripcion.log_suscriptos where cel = S.cel and id_promocion = S.id_promocion and accion = 'ALTA' order by ts_local desc limit 1)::date as alta, trim(both from S.cel)::varchar as cel
             FROM promosuscripcion.suscriptos S
             LEFT JOIN info_promociones IP ON IP.id_promocion = S.id_promocion and IP.id_carrier = S.id_carrier
             WHERE S.cel = ?

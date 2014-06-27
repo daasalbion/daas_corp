@@ -2,16 +2,19 @@
 
     <div id="search">
         <form id="search_form" action="/callcenter/buscar" method="post">
-            <input id="query" name="q" value="" maxlength="10" placeholder="Nro. de Línea:" />
+            <input id="query" name="q" value="" maxlength="10" placeholder="Nro. de Línea: (Sin Prefijo País)" />
             <input class="form_submit" type="image" src="/img/search_button.png" value="Buscar" />
         </form>
     </div>
 
     <div id="nro_de_linea"></div>
 
-    <h1 class="titulo_derecha"><a href="/SalirCallCenter">SALIR</a></h1>
+    <h1 class="titulo_derecha"><a href="/SalirCallCenter" title="<?php echo $this->nombre ?>">SALIR</a></h1>
 </div>
-<div id="bloque_acceso">
+<div id="bloque_loading" style="display: none;">
+    <img src="../img/ajax-loader.gif" alt="Espere un momento..." />
+</div>
+<div id="bloque_acceso" style="display: none;">
     <h2 class="subtitulo">Servicios Activos</h2>
     <div class="bloque_servicio_activo">
         <span class="numero_corto_servicio celda_titulo">Número</span>
@@ -30,7 +33,7 @@
 
 
 </div>
-<div id="bloque_contacto">
+<div id="bloque_contacto" style="display: none;">
     <h2 class="subtitulo">Histórico de Servicios</h2>
     <div class="bloque_servicio_activo">
         <span class="titulo_fecha celda_titulo" style="color: #000000; text-align: left;">Fecha</span>

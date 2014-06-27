@@ -1,6 +1,6 @@
 #link_reportes_contenidos {
     color: #000000;
-    background: url("../img/background_menu_button_hover.png") no-repeat;
+    text-decoration:underline;
 }
 
 .col1 {
@@ -144,4 +144,30 @@ td.dia_envio {
 .fondo_amarillo {
 
     background-color: yellow;
+}
+.fondo_rosa {
+
+    background-color: #ffffff;
+}
+.fondo_verde {
+
+    background-color: #79eb74;
+}
+.fondo_lila {
+
+     background-color: #d8bfd8;
+ }
+.fondo_hierba {
+
+    background-color: #d0eb85;
+}
+.fondo_celeste {
+
+    background-color: #a6e1ec;
+}
+.descripcion {
+    min-width: 280px;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
 }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Document Title</title>
+
+</head>
+<body>
+
+<iframe src="/tvchat/ok" frameborder="1"></iframe>
+
+<script>
+
+    // Informo de que me han abierto
+    window.opener.popupAbierto();
+
+    // Le digo a la ventana padre que esta ventana se va a cerrar (tambien puedo delegar esta responabilidad al padre)
+    function usuarioLogado(){
+        window.opener.popupCerrado();
+        window.close();
+    }
+
+</script>
+</body>
+</html>

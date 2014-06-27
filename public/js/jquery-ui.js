@@ -14442,7 +14442,7 @@ $.widget( "ui.tabs", {
 
 		// support: jQuery <1.8
 		// jQuery <1.8 returns false if the request is canceled in beforeSend,
-		// but as of 1.8, $.ajax() always returns a jqXHR object.
+		// but as of 1.8, $.tvchat() always returns a jqXHR object.
 		if ( this.xhr && this.xhr.statusText !== "canceled" ) {
 			tab.addClass( "ui-tabs-loading" );
 			panel.attr( "aria-busy", "true" );
@@ -14673,7 +14673,7 @@ $.widget( "ui.tooltip", {
 			if ( !target.data( "ui-tooltip-open" ) ) {
 				return;
 			}
-			// IE may instantly serve a cached response for ajax requests
+			// IE may instantly serve a cached response for tvchat requests
 			// delay this call to _open so the other call to _open runs first
 			that._delay(function() {
 				// jQuery creates a special event for focusin when it doesn't

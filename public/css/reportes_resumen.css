@@ -1,6 +1,6 @@
 #link_reportes_resumen {
     color: #000000;
-    background: url("../img/background_menu_button_hover.png") no-repeat;
+    text-decoration:underline;
 }
 table, tr, td, th, thead, tfoot, tbody {
     margin:0;

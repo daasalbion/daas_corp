@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Document Title</title>
+
+    <style>
+        body{
+            background-color: #999999;
+            color: #ffffff;
+        }
+
+        a:link, a:visited, a:active, a:hover {
+            color: #ffffff;
+        }
+    </style>
+
+</head>
+<body>
+<a href="javascript:logadoOk()" target="_self">Ya me he logado y quiero cerrar esta ventana</a>
+
+<script>
+
+    // Se lo comunico la ventana contenedora de este iFrame
+    function logadoOk(){
+        window.parent.usuarioLogado();
+    }
+
+</script>
+</body>
+</html>

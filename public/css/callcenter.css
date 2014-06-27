@@ -13,6 +13,18 @@
     border-bottom: 1px dotted #424242;
     margin-bottom: 12px;
 }
+
+#bloque_loading {
+    float: left;
+    margin-top: 25px;
+    width: 647px;
+    height: 42px;
+    padding-bottom: 12px;
+    border-bottom: 1px dotted #424242;
+    margin-bottom: 12px;
+}
+
+
 #bloque_titulo h1.titulo_izquierda {
     display: block;
     float: left;

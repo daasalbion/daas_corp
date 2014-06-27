@@ -54,6 +54,10 @@
                 <li><a id="link_reportes_pautas" href="/reportes/pautas">Control TV</a></li>
                 <?php endif; ?>
 
+                <?php if($this->infoSesion()->accesoPermitido('USSD')): ?>
+                    <li><a id="link_reportes_ussd" href="/reportes/ussd">Control USSD</a></li>
+                <?php endif; ?>
+
                 <?php if($this->infoSesion()->accesoPermitido('cobros-por-carrier')): ?>
                 <li><a id="link_reportes_cobros" href="/reportes/cobros-por-carrier">Cobros</a></li>
                 <?php endif; ?>
@@ -71,9 +75,32 @@
                 <?php endif; ?>
 
                 <?php if($this->infoSesion()->accesoPermitido('contenidos')): ?>
-                <li><a id="link_reportes_contenidos" href="/reportes/contenidos">Stock Contenidos</a></li>
+                <li><a id="link_reportes_contenidos" href="/reportes/contenidos-nuevo">Stock Contenidos</a></li>
                 <?php endif; ?>
 
+                <?php if($this->infoSesion()->accesoPermitido('informe-pautas')): ?>
+                <li><a id="link_reportes_informe_pautas" href="/reportes/informe-pautas">Reporte Pautas</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('wap')): ?>
+                    <li><a id="link_reportes_wap" href="/reportes/wap">Reporte Wap</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('suscriptos-x-tipo')): ?>
+                    <li><a id="link_reportes_suscriptos_x_tipo" href="/reportes/suscriptos-x-tipo">Suscriptos YA</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('cobros-por-tipo')): ?>
+                    <li><a id="link_reportes_cobros_por_tipo" href="/reportes/cobros-por-tipo">Reporte MES-YA</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('backtones')): ?>
+                    <li><a id="link_reportes_backtones" href="/reportes/backtones">Reporte Backtones</a></li>
+                <?php endif; ?>
+
+                <?php if($this->infoSesion()->accesoPermitido('proveedores-contenidos')): ?>
+                    <li><a id="link_reportes_proveedores_contenidos" href="/reportes/proveedores-contenidos">Proveedores Contenidos</a></li>
+                <?php endif; ?>
             </ul>
 
         </div>

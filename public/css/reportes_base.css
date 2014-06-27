@@ -77,8 +77,9 @@ ul.horizontal_list {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    height: 22px;
-    margin-left: 5%;
+    height: 27px;
+    margin-top: 0.5%;
+    margin-left: 1%;
 }
 ul.horizontal_list li {
     float: left;
@@ -90,16 +91,17 @@ ul.horizontal_list a {
     text-decoration: none;
     display: block;
     color: #000000;
-    font-size:  12px;
-    width: 132px;
+    font-size:  10px;
+    width: 85px;
     height: 22px;
     text-align: center;
-    background: url("../img/background_menu_button.png") no-repeat;
+    background: none;
+    /*background: url("../img/background_menu_button.png") no-repeat;*/
 
 }
 ul.horizontal_list a:hover {
-    color: #ffffff;
-    background: url("../img/background_menu_button_hover.png") no-repeat;
+    color: #ff0000;
+    /*background: url("../img/background_menu_button_hover.png") no-repeat;*/
 }
 ul.horizontal_list li span.vertical_line {
     float: left;

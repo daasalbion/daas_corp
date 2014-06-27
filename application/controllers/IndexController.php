@@ -418,6 +418,15 @@ class IndexController extends Zend_Controller_Action
         return;
     }
 
+    public function mensajeroDisneyAction() {
+
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+
+        $this->_redirect('http://www.entermovil.com.py:8085/RadioMensajesWeb');
+        return;
+    }
+
     public function indexAction()
     {
         /*$white_list = array('201.217.51.198', '192.168.1.6');
@@ -437,6 +446,7 @@ class IndexController extends Zend_Controller_Action
         $this->view->headScript()->appendFile('/js/home.js', 'text/javascript');
 
         $this->view->headLink()->appendStylesheet('/css/home.css', 'screen');
+
         //$this->view->headLink()->appendStylesheet('http://fonts.googleapis.com/css?family=Titan+One&subset=latin,latin-ext');
 
 
@@ -459,7 +469,63 @@ class IndexController extends Zend_Controller_Action
 
         //$this->_helper->viewRenderer('acceso-callcenter');
     }
+    public function basesYCondicionesAction(){
 
+        $this->view->headScript()->appendFile('/js/modernizr-2.0.6.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/jquery.placeholder.min.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/base.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('/css/bases_y_condiciones.css', 'screen');
+
+    }
+    public function promoAction(){
+        $this->view->headScript()->appendFile('/js/modernizr-2.0.6.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/jquery.placeholder.min.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/base.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('/css/promo.css', 'screen');
+
+        //<p>La presente promoción tendrá una duración de X meses, salvo que el Organizador considere conveniente su cancelación antes de cumplido el plazo o su renovación, una vez producido su término.</p>
+        $servicios = array(
+            /*'super'=>array('encabezado' => 'PROMO SUPER: TE AYUDAMOS A PAGAR TU SUPER',
+            'duracion'=>'3 (tres)',
+            'aliases'=>'SUPER, COMPRAR y CARRITO',
+            'premiacion'=>'500.000 (Quinientos mil guaraníes)',
+            ),
+            'combustible'=>array('encabezado' => 'PROMO COMBUSTIBLE: TE AYUDAMOS A CARGAR COMBUSTIBLE',
+                'duracion'=>'12 (doce)',
+                'aliases'=>'CARGAR y LLENAR',
+                'premiacion'=>'500.000 (Quinientos mil guaraníes)',
+            ),
+            'cuentas'=>array('encabezado' => 'PROMO CUENTAS: TE AYUDAMOS A PAGAR TUS CUENTAS',
+                'duracion'=>'12 (doce)',
+                'aliases'=>'CUENTAS y PAGAR',
+                'premiacion'=>'500.000 (Quinientos mil guaraníes)',
+            ),
+            'saldo'=>array('encabezado' => 'PROMO SALDO: GANA SALDO PARA TU CELULAR',
+                'duracion'=>'12 (doce)',
+                'aliases'=>'GANAR y SALDO',
+                'premiacion'=>'500.000 (Quinientos mil guaraníes)',
+            ),*/
+
+
+            //nuevo
+            'saldo'=>array('encabezado' => 'PROMO SALDO MILLONARIO: SORTEAMOS SALDO POR UN AÑO',
+                'duracion'=>'3 (tres)',
+                'aliases'=>'CARGAR Y LLENAR',
+                'premiacion'=>'El premio único a ser otorgado al ganador del sorteo mensual, consiste en Gs. 1.000.000 (Un millón de guaraníes), en efectivo',
+            ),
+            'celular'=>array('encabezado' => 'PROMO CELULAR ÚLTIMA GENERACIÓN',
+                'duracion'=>'3 (tres)',
+                'aliases'=>'SUPER Y CEL',
+                'premiacion'=>'El premio a ser otorgado al ganador del sorteo mensual, consiste en 1 (uno) Aparato de Teléfono Celular de Última Generación más Gs. 500.000 (Quinientos mil guaraníes guaraníes), en efectivo',
+            ),
+        );
+        $parametro_promo = $this->_getParam('id-promo',null);
+        if(!is_null($parametro_promo)){
+
+            $this->view->promo = $servicios[$parametro_promo];
+        }
+
+    }
     public function bannerEstaticoAction() {
 
         $this->_helper->_layout->setLayout('imagen');

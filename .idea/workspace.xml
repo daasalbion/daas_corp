@@ -1,7 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="" />
+    <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="RequestUserService terminado">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/Tragamoneda-Masking.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/borde_titulo_tvchat.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/fondo_encabezado_tvchat.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/fondo_tvchat.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/logo_afortunado.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/logo_jugar_derecha.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/logo_jugar_izquierda.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/luces_tvchat.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tira_fondo_titulo_tvchat.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tira_fondo_tvchat.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tira_fondo_tvchat_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tira_tvchat.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/titulo_tvchat.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamoneda_masking.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamonedas_linea_ganadora.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamonedas_luces_horizontales.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamonedas_luces_verticales.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamonedas_numero_ganador.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamonedas_tiras.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tragamonedas_titulo.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat_titulo_tragamonedas.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/JuegosController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/daas-marquee.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/daas-marquee.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/demo2.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/hijo.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/hijo.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/index.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/inicializar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery.tinysort.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/juegos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/marquee-manager.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/Webservices/Personal/Paraguay/notification.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/ok.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/ok.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/reset.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/ruleta.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/ruleta2.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/setup.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/juegos/tragamonedas.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/tvchat.child.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/tvchat.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/tvchat.manager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/tvchat.marquee.manager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/tvchat.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/tvchat.utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/tvchat.wheel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/tvchat_demo.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/tvchat_dinamic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/utils.js" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\log\webservices_2013-03-22.log" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\log\webservices_2013-03-23.log" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\log\webservices_2013-03-25.log" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\log\www.entermovil.com.py_2013-03-22.log" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\log\www.entermovil.com.py_2013-03-23.log" afterPath="" />
+      <change type="DELETED" beforePath="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\log\www.entermovil.com.py_2013-03-25.log" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/.htaccess" afterPath="$PROJECT_DIR$/public/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/AuthController.php" afterPath="$PROJECT_DIR$/application/controllers/AuthController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/Bootstrap.php" afterPath="$PROJECT_DIR$/application/Bootstrap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/CallcenterController.php" afterPath="$PROJECT_DIR$/application/controllers/CallcenterController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ErrorController.php" afterPath="$PROJECT_DIR$/application/controllers/ErrorController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/EventoController.php" afterPath="$PROJECT_DIR$/application/controllers/EventoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/IndexController.php" afterPath="$PROJECT_DIR$/application/controllers/IndexController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/forms/Login.php" afterPath="$PROJECT_DIR$/application/forms/Login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/MailController.php" afterPath="$PROJECT_DIR$/application/controllers/MailController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/MobileController.php" afterPath="$PROJECT_DIR$/application/controllers/MobileController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ReportesController.php" afterPath="$PROJECT_DIR$/application/controllers/ReportesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/SubscriptionServices.php" afterPath="$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/SubscriptionServices.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/WebservicesController.php" afterPath="$PROJECT_DIR$/application/controllers/WebservicesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/auth/acceso.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/auth/acceso.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/configs/application.ini" afterPath="$PROJECT_DIR$/application/configs/application.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/base.css" afterPath="$PROJECT_DIR$/public/css/base.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/callcenter.css" afterPath="$PROJECT_DIR$/public/css/callcenter.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/callcenter.js" afterPath="$PROJECT_DIR$/public/js/callcenter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/reportes/cobros-por-carrier.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/cobros-por-carrier.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/error/error.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/error/error.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/callcenter/index.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/callcenter/index.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery-1.7.js" afterPath="$PROJECT_DIR$/public/js/jquery-1.7.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery-1.7.min.js" afterPath="$PROJECT_DIR$/public/js/jquery-1.7.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery-1.8.0.js" afterPath="$PROJECT_DIR$/public/js/jquery-1.8.0.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery-1.8.0.min.js" afterPath="$PROJECT_DIR$/public/js/jquery-1.8.0.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/jquery-ui.css" afterPath="$PROJECT_DIR$/public/css/jquery-ui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery-ui.js" afterPath="$PROJECT_DIR$/public/js/jquery-ui.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery.form.js" afterPath="$PROJECT_DIR$/public/js/jquery.form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery.placeholder.js" afterPath="$PROJECT_DIR$/public/js/jquery.placeholder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery.placeholder.min.js" afterPath="$PROJECT_DIR$/public/js/jquery.placeholder.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/jquery.timeentry.css" afterPath="$PROJECT_DIR$/public/css/jquery.timeentry.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/jquery.timeentry.js" afterPath="$PROJECT_DIR$/public/js/jquery.timeentry.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" afterPath="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/modernizr-2.0.6.js" afterPath="$PROJECT_DIR$/public/js/modernizr-2.0.6.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/reportes/pautas.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/pautas.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/layouts/scripts/reporte-layout.phtml" afterPath="$PROJECT_DIR$/application/layouts/scripts/reporte-layout.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_base.css" afterPath="$PROJECT_DIR$/public/css/reportes_base.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_cobros.css" afterPath="$PROJECT_DIR$/public/css/reportes_cobros.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_contenidos.css" afterPath="$PROJECT_DIR$/public/css/reportes_contenidos.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_pautas.css" afterPath="$PROJECT_DIR$/public/css/reportes_pautas.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_resumen.css" afterPath="$PROJECT_DIR$/public/css/reportes_resumen.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/reportes_resumen.js" afterPath="$PROJECT_DIR$/public/js/reportes_resumen.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_suscriptos.css" afterPath="$PROJECT_DIR$/public/css/reportes_suscriptos.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_suscriptos_por_hora.css" afterPath="$PROJECT_DIR$/public/css/reportes_suscriptos_por_hora.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/reportes_suscriptos_x_minuto.css" afterPath="$PROJECT_DIR$/public/css/reportes_suscriptos_x_minuto.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/reportes/resumen-cobros.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/reportes/resumen-cobros.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/tempo.js" afterPath="$PROJECT_DIR$/public/js/tempo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="www.entermovil.com.py.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,103 +126,21 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="www.entermovil.com.py" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SubscriptionServices.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/SubscriptionServices.php">
+      <file leaf-file-name="demo1.phtml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="515" column="0" selection-start="19784" selection-end="19784" vertical-scroll-proportion="0.0">
+            <state line="46" column="41" selection-start="2505" selection-end="2505" vertical-scroll-proportion="0.42938933" vertical-offset="557" max-vertical-offset="1632">
               <folding>
-                <marker date="1364315622273" expanded="true" signature="15014:15016" placeholder="-- and suscr..." />
-                <marker date="1364315622273" expanded="true" signature="16496:16620" placeholder="/** * @param..." />
-                <marker date="1364315622273" expanded="true" signature="18840:18960" placeholder="/** * @param..." />
-                <marker date="1364315622273" expanded="true" signature="19594:19704" placeholder="/** * @param..." />
-                <marker date="1364315622273" expanded="true" signature="21679:21793" placeholder="/** * @param..." />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.ini" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/configs/application.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="511" selection-end="511" vertical-scroll-proportion="0.7122905">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnSubscribeUserRequestParams.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/UnSubscribeUserRequestParams.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="6" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="date.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/date.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="800" column="21" selection-start="22085" selection-end="22102" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetUserServicesResponseParams.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/GetUserServicesResponseParams.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="36" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReportesController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/ReportesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="262" column="146" selection-start="10626" selection-end="10626" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/AuthController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="24" selection-start="2890" selection-end="2890" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CallcenterController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/CallcenterController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="245" column="34" selection-start="7942" selection-end="7943" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Service.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/Service.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="13" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetUserServicesRequestParams.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/GetUserServicesRequestParams.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="6" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -127,20 +154,66 @@
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
-      <array>
+      <list>
         <option value="augusto" />
-      </array>
+      </list>
     </option>
-    <option name="CHECKOUT_INCLUDE_TAGS" value="false" />
-    <option name="UPDATE_CHANGES_POLICY" value="STASH" />
-    <option name="LINE_SEPARATORS_CONVERSION" value="ASK" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$USER_HOME$/ENTERMOVIL/DAAS/PROYECTOS/LECTURA_SPREEDSHEETS/PHPExcel_1.7.9_doc/Examples/SpreedSheetReader.php" />
+        <option value="$USER_HOME$/ENTERMOVIL/DAAS/PROYECTOS/ENVIOSMS/prueba.php" />
+        <option value="$USER_HOME$/ENTERMOVIL/DAAS/PROYECTOS/ENVIOSMS/respuestas/guardarMensajeObtenido.php" />
+        <option value="$USER_HOME$/ENTERMOVIL/DAAS/PROYECTOS/ENVIOSMS/pruebaEnvioReciboSms.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/reportes/contenidos-wap.phtml" />
         <option value="$PROJECT_DIR$/application/configs/application.ini" />
-        <option value="$PROJECT_DIR$/application/controllers/ReportesController.php" />
-        <option value="$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/SubscriptionServices.php" />
+        <option value="$PROJECT_DIR$/log/tvchat_2014-04-16.log" />
+        <option value="$PROJECT_DIR$/log/tvchat_2014-04-21.log" />
+        <option value="$PROJECT_DIR$/public/js/jquery.marquee.js" />
+        <option value="$PROJECT_DIR$/log/tvchat_2014-04-25.log" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/ok.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/daas-marquee.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/hijo.phtml" />
+        <option value="$PROJECT_DIR$/log/tvchat_2014-04-30.log" />
+        <option value="$PROJECT_DIR$/log/webservices_2014-05-02.log" />
+        <option value="$PROJECT_DIR$/library/Webservices/Personal/Paraguay/SubscribeToServiceRequestParams.php" />
+        <option value="$PROJECT_DIR$/library/Webservices/Personal/Paraguay/SubscriptionServices.php" />
+        <option value="$PROJECT_DIR$/library/Webservices/Personal/Paraguay/NotificarEventoResponse.php" />
+        <option value="$PROJECT_DIR$/log/webservices_2014-05-05.log" />
+        <option value="$PROJECT_DIR$/library/Webservices/Personal/Paraguay/notification.php" />
+        <option value="$PROJECT_DIR$/library/Webservices/Personal/Paraguay/WSNotificationsHandler.php" />
+        <option value="$PROJECT_DIR$/library/Webservices/Personal/Paraguay/NotificarEvento.php" />
+        <option value="$PROJECT_DIR$/log/webservices_2014-05-06.log" />
+        <option value="$PROJECT_DIR$/application/controllers/WebservicesController.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/juegos/juegos.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/juegos/juegos2.html" />
+        <option value="$PROJECT_DIR$/public/js/jquery.tinysort.js" />
+        <option value="$PROJECT_DIR$/public/css/reset.css" />
+        <option value="$PROJECT_DIR$/public/js/excanvas.js" />
+        <option value="$PROJECT_DIR$/application/views/scripts/juegos/tragamonedas.phtml" />
+        <option value="$PROJECT_DIR$/application/controllers/JuegosController.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/juegos/ruleta2.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/juegos/ruleta.phtml" />
+        <option value="$PROJECT_DIR$/public/js/wheel.js" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/prueba.phtml" />
+        <option value="$PROJECT_DIR$/public/js/tvchat.utils.js" />
+        <option value="$PROJECT_DIR$/application/controllers/TvchatController.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/marquee.phtml" />
+        <option value="$PROJECT_DIR$/public/css/tvchat_complete.css" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/tvchat.phtml" />
+        <option value="$PROJECT_DIR$/public/css/tvchat_dinamic.css" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo2.phtml" />
+        <option value="$PROJECT_DIR$/public/js/tvchat.manager.js" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/marquee-manager.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/setup.phtml" />
+        <option value="$PROJECT_DIR$/public/js/tvchat.child.js" />
+        <option value="$PROJECT_DIR$/public/js/tvchat.marquee.manager.js" />
+        <option value="$PROJECT_DIR$/public/js/tvchat.wheel.js" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml" />
+        <option value="$PROJECT_DIR$/public/css/tvchat.css" />
       </list>
     </option>
   </component>
@@ -151,6 +224,28 @@
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+          <State>
+            <id>Type compatibilityPHP</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PhpParamsInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
@@ -158,7 +253,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -177,7 +272,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -196,96 +290,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.entermovil.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.entermovil.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Webservices" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tigo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Guatemala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.entermovil.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.entermovil.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.entermovil.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.entermovil.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.entermovil.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.entermovil.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="configs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="139" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="157" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="154" />
-    <property name="options.lastSelected" value="project.propVCSSupport.VCSs.Git" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="159" />
@@ -293,43 +308,46 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="828" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="152" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="options.lastSelected" value="settings.github" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="options.searchVisible" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/ENTERMOVIL/DAAS/PROYECTOS/TRAGAMONEDAS/roulette.js" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
-  <component name="PublishConfig">
-    <servers>
-      <server id="18a10fbe-d79c-45be-a5a8-098f039986d0">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" />
-          </mappings>
-        </serverdata>
-      </server>
-    </servers>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\img" />
+      <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\js" />
+      <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\css" />
+      <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\application\views\scripts\tvchat" />
+      <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\application\views\scripts\juegos" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" scope="Directory">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
-      <method>
-        <option name="PhingTarget" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method>
-        <option name="PhingTarget" enabled="false" />
-      </method>
+      <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method>
-        <option name="FtpUpload" enabled="false">
-          <server_id />
-          <server_name />
-        </option>
-        <option name="PhingTarget" enabled="false" />
-      </method>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="18a10fbe-d79c-45be-a5a8-098f039986d0" server_name="www.entermovil.com.py">
+      <method />
     </configuration>
     <list size="0" />
   </component>
@@ -337,7 +355,7 @@
   <component name="StructureViewFactory">
     <option name="ACTIVE_ACTIONS" value="Show Constants,Show Includes,ALPHA_COMPARATOR,Show Fields,Show Inherited" />
   </component>
-  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
     <option name="mySSHConnectionTimeout" value="30000" />
@@ -347,11 +365,11 @@
     <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
     <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
     <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="DETECT_NESTED_COPIES" value="true" />
     <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
     <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
     <configuration useDefault="false">C:\Users\USER\AppData\Roaming\Subversion</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
@@ -365,175 +383,303 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27133107" sideWeight="0.4941435" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27072757" sideWeight="0.4941435" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35944363" sideWeight="0.38423645" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35944363" sideWeight="0.28735632" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25075528" sideWeight="0.39898133" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18731117" sideWeight="0.0" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25075528" sideWeight="0.60101867" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31691298" sideWeight="0.50073206" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33490565" sideWeight="0.0" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18845502" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
-      <value>
-        <are-packages-shown value="false" />
-        <are-modules-shown value="false" />
-        <flatten-packages value="false" />
-        <is-autoscroll-to-source value="false" />
-      </value>
+      <TodoPanelSettings />
     </option>
-    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
-    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
-    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
-    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
-    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
-    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
-    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
-    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
-    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
-    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
-    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="servicios implementados, falta implementar RequestUserService solamente" />
-    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
-    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
-    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
-    <option name="ACTIVE_VCS_NAME" />
-    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
-    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
-    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
-    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="servicio getUserServices implementado" />
     <MESSAGE value="cambio en el archivo application.ini" />
     <MESSAGE value="servicios implementados, falta implementar RequestUserService solamente" />
+    <MESSAGE value="RequestUserService terminado" />
+    <option name="LAST_COMMIT_MESSAGE" value="RequestUserService terminado" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/library/Webservices/Personal/Paraguay/notification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="2" selection-start="12" selection-end="12" vertical-scroll-proportion="0.058020476" vertical-offset="0" max-vertical-offset="595" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Webservices/Personal/Paraguay/NotificarEvento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="28" selection-start="430" selection-end="430" vertical-scroll-proportion="0.63822526" vertical-offset="0" max-vertical-offset="646" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Webservices/Personal/Paraguay/WSNotificationsHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="21" selection-start="509" selection-end="509" vertical-scroll-proportion="0.2901024" vertical-offset="153" max-vertical-offset="1887" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/WebservicesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="52" column="39" selection-start="1783" selection-end="1801" vertical-scroll-proportion="0.27474403" vertical-offset="128" max-vertical-offset="1632" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/SubscribeToServiceResponseParams.php">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/juegos/ok.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="28" selection-start="582" selection-end="582" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/SubscribeToServiceRequestParams.php">
+    <entry file="file://$PROJECT_DIR$/public/css/reset.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="19" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" />
+        <state line="0" column="780" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="599" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/MailController.php">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/juegos/ruleta2.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="27" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" />
+        <state line="178" column="0" selection-start="7049" selection-end="7049" vertical-scroll-proportion="0.38568935" vertical-offset="2805" max-vertical-offset="6970" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/EventoController.php">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/juegos/tragamonedas.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="43" selection-start="343" selection-end="343" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/BlackListUserRequestParams.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="6" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/UnSubscribeUserRequestParams.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="6" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/date.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="800" column="21" selection-start="22085" selection-end="22102" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/GetUserServicesResponseParams.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="36" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/ReportesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="262" column="146" selection-start="10626" selection-end="10626" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="4664" column="8" selection-start="199647" selection-end="199819" vertical-scroll-proportion="0.63822526" vertical-offset="1819" max-vertical-offset="3995" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/AuthController.php">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/juegos/juegos.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="24" selection-start="2890" selection-end="2890" vertical-scroll-proportion="0.0" />
+        <state line="9" column="7" selection-start="178" selection-end="178" vertical-scroll-proportion="0.26109216" vertical-offset="0" max-vertical-offset="586" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/CallcenterController.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="245" column="34" selection-start="7942" selection-end="7943" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="1223" column="35" selection-start="21023" selection-end="21023" vertical-scroll-proportion="0.0" vertical-offset="20587" max-vertical-offset="37060" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/Service.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/JuegosController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="13" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0" />
+        <state line="54" column="27" selection-start="1460" selection-end="1460" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="3264" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/GetUserServicesRequestParams.php">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/juegos/ruleta.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="6" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" />
+        <state line="15" column="32" selection-start="837" selection-end="837" vertical-scroll-proportion="0.432282" vertical-offset="22" max-vertical-offset="561" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/Webservices/Tigo/Guatemala/SubscriptionServices.php">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/daas-marquee.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="515" column="0" selection-start="19784" selection-end="19784" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1364315622273" expanded="true" signature="15014:15016" placeholder="-- and suscr..." />
-            <marker date="1364315622273" expanded="true" signature="16496:16620" placeholder="/** * @param..." />
-            <marker date="1364315622273" expanded="true" signature="18840:18960" placeholder="/** * @param..." />
-            <marker date="1364315622273" expanded="true" signature="19594:19704" placeholder="/** * @param..." />
-            <marker date="1364315622273" expanded="true" signature="21679:21793" placeholder="/** * @param..." />
-          </folding>
-        </state>
+        <state line="12" column="3" selection-start="224" selection-end="477" vertical-scroll-proportion="0.37847868" vertical-offset="0" max-vertical-offset="539" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="7" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.33274338" vertical-offset="1104" max-vertical-offset="3247" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="17" selection-start="211" selection-end="211" vertical-scroll-proportion="0.33097345" vertical-offset="0" max-vertical-offset="64821" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="563" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/telefono-alias-tono-boton-ingresar.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/luces_tvchat.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/logo_jugar_izquierda.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/logo_afortunado.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/logo_jugar_derecha.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/tvchat_dinamic.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="1" selection-start="2422" selection-end="2422" vertical-scroll-proportion="0.9396092" vertical-offset="1545" max-vertical-offset="2176" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo2.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="18" selection-start="631" selection-end="982" vertical-scroll-proportion="-9.807693" vertical-offset="153" max-vertical-offset="867" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/tvchat_demo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="0" selection-start="620" selection-end="869" vertical-scroll-proportion="0.34501845" vertical-offset="561" max-vertical-offset="1156" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/tvchat.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="14" selection-start="545" selection-end="545" vertical-scroll-proportion="0.41154563" vertical-offset="0" max-vertical-offset="537" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/marquee.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="25" selection-start="3820" selection-end="3820" vertical-scroll-proportion="0.33333334" vertical-offset="1538" max-vertical-offset="2907" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/marquee-manager.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="184" column="14" selection-start="7062" selection-end="7189" vertical-scroll-proportion="2.7414448" vertical-offset="1686" max-vertical-offset="3281" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/WaptwoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="25" selection-start="1045" selection-end="1045" vertical-scroll-proportion="-0.8403042" vertical-offset="1071" max-vertical-offset="61880" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/tvchat_logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/WapController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="30" selection-start="3410" selection-end="3410" vertical-scroll-proportion="-0.3493976" vertical-offset="565" max-vertical-offset="7327" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/configs/application.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="511" selection-end="511" vertical-scroll-proportion="0.7122905">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.8053097" vertical-offset="455" max-vertical-offset="1071" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/tvchat.wheel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="9" selection-start="0" selection-end="12253" vertical-scroll-proportion="0.6920354" vertical-offset="255" max-vertical-offset="6953" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/tvchat.utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="16" selection-start="0" selection-end="662" vertical-scroll-proportion="0.45132744" vertical-offset="0" max-vertical-offset="565" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/jquery.tinysort.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="42" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.1539855" vertical-offset="0" max-vertical-offset="552" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/inicializar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/Bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="4" selection-start="74" selection-end="303" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="595" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/jquery.marquee.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="4844" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="552" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/tvchat.marquee.manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="0" selection-end="1353" vertical-scroll-proportion="0.0" vertical-offset="417" max-vertical-offset="969" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/jquery.marquee.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="14" selection-start="192" selection-end="192" vertical-scroll-proportion="0.123188406" vertical-offset="0" max-vertical-offset="7344" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/setup.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="42" selection-start="0" selection-end="1349" vertical-scroll-proportion="-13.230769" vertical-offset="149" max-vertical-offset="816" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/TvchatController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="0" selection-start="3910" selection-end="3910" vertical-scroll-proportion="0.45419848" vertical-offset="1819" max-vertical-offset="3519" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/tvchat.child.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0" vertical-offset="1777" max-vertical-offset="2567">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/Tragamoneda-Masking.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/tvchat.manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="10" selection-start="1992" selection-end="1992" vertical-scroll-proportion="1.8072727" vertical-offset="315" max-vertical-offset="1632">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/tvchat.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="270" column="14" selection-start="5404" selection-end="5404" vertical-scroll-proportion="0.78863233" vertical-offset="4146" max-vertical-offset="4709">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="41" selection-start="2505" selection-end="2505" vertical-scroll-proportion="0.42938933" vertical-offset="557" max-vertical-offset="1632">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#3;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

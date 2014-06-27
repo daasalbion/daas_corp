@@ -536,9 +536,13 @@ class SubscriptionServices
         if($existeSuscripcion)
         {
           //obtengo el id de la promocion de acuerdo a los parametros de entrada
-          $sql="select id_promocion,numero from info_promociones
-              where id_promocion=(select id_promocion from promosuscripcion.suscriptos where cel= ? and id_carrier=5)
-              and id_carrier=5 and alias=?";
+          $sql="select IP.id_promocion,IP.numero from info_promociones IP
+                left join  promosuscripcion.suscriptos S on S.id_promocion=IP.id_promocion
+                where cel= ? and IP.id_carrier=5 and alias=?";
+
+         // $sql="select id_promocion,numero from info_promociones
+         //     where id_promocion=(select id_promocion from promosuscripcion.suscriptos where cel= ? and id_carrier=5)
+          //    and id_carrier=5 and alias=?";
              //--and numero = '4550' //si pasa el shortcodenumber
 
           if($requestParams->shortcodenumber)
@@ -554,61 +558,19 @@ class SubscriptionServices
           $numero=$rs[0]['numero'];
           $logger->info('id promo = '.$idPromocion);
           $logger->info('numero = '.$numero);
-/*
-          //cuenta la cantidad de mensajes que se envio hoy (estado 4 = envio de mensaje ok) y se cobro
-           $sql2 ="select count(*)::integer as total from promosuscripcion.tigo_guatemala_billingcheck where id_carrier = 5 and estado = 4
-                   and ts_proximo_chequeo::date = current_date and cel = ? and id_promocion = ? ";
 
-           $rs2 = $db->fetchAll($sql2, array($phoneSinPais,$idPromocion));
-
-           $envios_hoy=$rs2[0]['total'];
-           $logger->info('enviados hoy = '.$envios_hoy);
-
-           $sql3="select envios from promosuscripcion.envios_x_dia where id_carrier=5 and id_promocion = ? and dia = extract(dow from current_date)::integer";
-
-           $rs3=  $db->fetchAll($sql3, array($idPromocion));
-           $max_envios_hoy=$rs3[0]['envios'];
-           $logger->info('max envios hoy = '.$max_envios_hoy);
-
-           //1. si ya se le envio y cobro los 2: se reenvia los 2 sin volver a cobrar (confirmar)
-            if($enviados_hoy = $max_envios_hoy)
-            {
-            try {
-                for($i=0;$i<$max_envios_hoy;$i++)
-                 {
-                 $status = $db->insert('promosuscripcion.tigo_guatemala_billingcheck', array('id_carrier' => 5,'id_promocion' =>$idPromocion,'numero'=>$numero,'cel'=>$phoneSinPais,'estado'=>7,'ts_local'=>'now()','cantidad_chequeos'=>0,'ts_proximo_chequeo'=>'now()'));
-                 $logger->info('status:[' . $status . ']');
-                 }
-                } catch(Zend_Db_Exception $e) {
-                    $logger->err($e);
-                }
-            }
-            else if($enviados_hoy < $max_envios_hoy)
-            {
-            $a_enviar= $max_envios_hoy - $enviados_hoy;
-
-            }
-*/
-            //controla q no se intente reenviar un men con los mismos parametros con diferencia de al menos 3 minutos (ts_local)
-          /*  $sql2="select *,(hora_actual - hora_ts_local ) as dif_hora, (minuto_actual - minuto_ts_local) as dif_min from
-                  (select ts_local, (select extract(hour from ts_local)) as hora_ts_local, (select extract(minute from ts_local)) as minuto_ts_local,
-                  (select extract(hour from timestamp 'now()')) as hora_actual, (select extract(minute from timestamp 'now()')) as minuto_actual
-                  from promosuscripcion.tigo_guatemala_reenvios
-                  where id_carrier=5 and id_promocion= ? and cel=? and ts_local::date=current_date) S2
-                  where (hora_actual - hora_ts_local) =0 and (minuto_actual - minuto_ts_local) < 3";
-           */
             if($requestParams->shortcodenumber)
              {
              $sql2="select coalesce((EXTRACT(epoch FROM (current_timestamp -
-                   (select ts_local from  promosuscripcion.tigo_guatemala_reenvios where id_carrier=5 and id_promocion= ? and cel=? and numero=?
+                   (select max(ts_local)  from  promosuscripcion.tigo_guatemala_reenvios where id_carrier=5 and id_promocion= ? and cel=? and numero=?
                    and ts_local::date=current_date limit 1))::interval)/60)::integer,-1) as dif_minutos";
 
-             $rs2 = $db->fetchAll($sql2, array($idPromocion,$phoneSinPais,$requestParams->shortcodenumber));
+             $rs2 = $db->fetchRow($sql2, array($idPromocion,$phoneSinPais,$requestParams->shortcodenumber));
              }
             else
              {
              $sql2="select coalesce((EXTRACT(epoch FROM (current_timestamp -
-                   (select ts_local from  promosuscripcion.tigo_guatemala_reenvios where id_carrier=5 and id_promocion= ? and cel=?
+                   (select max(ts_local) from  promosuscripcion.tigo_guatemala_reenvios where id_carrier=5 and id_promocion= ? and cel=?
                    and ts_local::date=current_date limit 1))::interval)/60)::integer,-1) as dif_minutos";
 
              $rs2 = $db->fetchRow($sql2, array($idPromocion,$phoneSinPais));
@@ -618,16 +580,17 @@ class SubscriptionServices
 
             if($rs2['dif_minutos'] != -1)
              {
-             if( $rs2['dif_minutos'] < 5)
+             $logger->info('dif_minutos != -1');
+             if( $rs2['dif_minutos'] < 5)//cambiar por 5 min
               {
+                  $logger->info('dif_minutos < 5');
                   $responseParams = new RequestUserServiceResponseParams(
                       'ERROR',
                       $requestParams->transactionid,
                       'Ya realizo un intento de reenvio hace menos de 5 minutos, espere unos minutos y luego intente nuevamente'
                   );
+              return $responseParams;
               }
-
-             return $responseParams;
              }
 
 

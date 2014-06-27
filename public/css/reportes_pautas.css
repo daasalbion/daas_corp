@@ -1,6 +1,6 @@
 #link_reportes_pautas{
     color: #000000;
-    background: url("../img/background_menu_button_hover.png") no-repeat;
+    text-decoration:underline;
 }
 #bloque_mes_viejo {
     margin-top: 20px;
@@ -100,3 +100,6 @@ th.ultima_celda, td.ultima_celda {
      text-align: right;
      font-weight: bold;
  }
+.columna{
+    background-color: yellow;
+}

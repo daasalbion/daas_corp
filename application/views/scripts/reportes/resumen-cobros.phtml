@@ -1,10 +1,15 @@
 <div id="bloque_mes">
+    <?php if($this->mostrar_lista_paises): ?>
     País:&nbsp;
     <select id="id_pais" name="id_pais">
         <?php foreach($this->paises as $pais): ?>
         <option value="<?php echo $pais['id_pais'] ?>" <?php echo ( $pais['id_pais']== $this->id_pais) ? 'selected=selected' . 'value='.$this->id_pais :''?>><?php echo $pais['nombre'] ?></option>
         <?php endforeach; ?>
     </select>
+    <?php else: ?>
+        País:&nbsp;<?php echo $this->nombre_pais ?>&nbsp;&nbsp;
+    <?php endif; ?>
+
     Dia Seleccionado:&nbsp;
     <input type="text" id="datepicker" value="<?php echo (isset($this->fecha)) ? $this->fecha : date('Y-m-d') ?>" />
     <input type="button" id="cargar_resumen" value="Cargar">
@@ -24,7 +29,7 @@ $total_foot = array(
 )
 ?>
 
-<!--  <?php print_r($this->carriers_numeros) ?>  -->
+<!--  <?php //print_r($this->carriers_numeros) ?>  -->
 <?php foreach($this->carriers_numeros as $carrier_numero): ?>
 
 <table id="tabla_resumen_<?php echo $this->nombre_carrier[$carrier_numero['id_carrier']] ?>_<?php echo $carrier_numero['numero'] ?>" class="tabla_reporte">
@@ -46,8 +51,8 @@ $total_foot = array(
         </tr>
 
         <tr>
-            <th class="fondo_naranja" style="width: 70px;">Cobros Hoy</th>
-            <th class="fondo_naranja" style="width: 100px;">Total Hoy</th>
+            <th class="fondo_naranja" style="width: 70px;">Cobros Día</th>
+            <th class="fondo_naranja" style="width: 100px;">Total Día</th>
             <th class="fondo_naranja" style="width: 100px;">Neto Hoy</th>
 
             <th class="fondo_naranja" style="width: 70px;">Cobros Mes</th>
@@ -60,7 +65,7 @@ $total_foot = array(
     <tbody>
         <?php $primera_fila = true; ?>
         <?php foreach($this->promociones_carriers_numeros[$carrier_numero['id_carrier']][$carrier_numero['numero']] as $promocion_carrier_numero): ?>
-        <!-- <?php echo 'carrier_numero:[' . print_r($carrier_numero, true) . ']' ?> -->
+        <!-- <?php //echo 'carrier_numero:[' . print_r($carrier_numero, true) . ']' ?> -->
         <tr>
             <?php if($primera_fila) {
                 $cantidad_promociones = count($this->promociones_carriers_numeros[$carrier_numero['id_carrier']][$carrier_numero['numero']]);

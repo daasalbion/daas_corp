@@ -5,7 +5,11 @@ $(document).ready(function(){
         var id_pais = $("#id_pais").val();
         var fecha = $("#mes").val();
         var dia = $("#datepicker").val();
-        window.location = '/reportes/resumen-cobros/pais/' + id_pais + '/fecha/' + dia;
+        if(typeof id_pais != 'undefined') {
+            window.location = '/reportes/resumen-cobros/pais/' + id_pais + '/fecha/' + dia;
+        } else {
+            window.location = '/reportes/resumen-cobros/fecha/' + dia;
+        }
     });
     $( "#datepicker" ).datepicker({
         dateFormat: 'yy-mm-dd',

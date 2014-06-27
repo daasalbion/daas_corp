@@ -18,6 +18,9 @@ $(document).ready(function(){
                 var cel = partes[1];
                 var idPromocion = partes[2];
 
+                $("#link_cancelar_" + idPromocion).attr('href', '');
+                $("#link_cancelar_" + idPromocion).html('<img src="../img/tvchat-loader.gif" alt="Espere un momento..." width="50" height="19" />');
+
                 $.post(url,	{ nro_linea: cel, id_promocion: idPromocion }, function(data, statusText) {
                     //console.log(data);
                     //console.log(textStatus);
@@ -52,6 +55,10 @@ $(document).ready(function(){
         $("#bloque_servicios").html("");
         $("#bloque_historial").html("");
 
+        $("#bloque_acceso").hide();
+        $("#bloque_contacto").hide();
+        $("#bloque_loading").show();
+
         // inside event callbacks 'this' is the DOM element so we first
         // wrap it in a jQuery object and then invoke ajaxSubmit
         $(this).ajaxSubmit({
@@ -74,6 +81,11 @@ $(document).ready(function(){
     }*/
 
     function onResponseBusquedaSuscriptos(data, statusText)  {//, xhr, $form
+
+        $("#bloque_loading").hide();
+        $("#bloque_acceso").show();
+        $("#bloque_contacto").show();
+
 
         if(statusText == 'success') {
 
