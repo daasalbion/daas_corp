@@ -42,9 +42,10 @@ body, html {
     width: 360px;
     height: 360px;
     float: left;
+    margin-left: -10px;
 }
 .conductora{
-    width: 360px;
+    width: 388px;
     height: 360px;
     float:right;
     background-color: #ffffff;
@@ -167,7 +168,7 @@ body, html {
     background-image: url("/img/tragamonedas_tiras.png");
     height: 128px;
     margin-left: 30px;
-    margin-top: 80px;
+    margin-top: 79px;
     width: 288px;
 }
 .tragamonedas_numeros_ganadores{
@@ -211,19 +212,19 @@ body, html {
     position: absolute;
 }
 .tragamonedas_luces_verticales_izq{
-    background-image: url("/img/tragamonedas_luces_verticales.gif");
-    background-repeat: repeat-y;
+    background-image: url("/img/tragamonedas_luces_verticales_izquierda.gif");
+    background-repeat: no-repeat;
     height: 167px;
-    margin-left: -2px;
+    margin-left: 4px;
     margin-top: 63px;
     position: absolute;
     width: 38px;
 }
 .tragamonedas_luces_verticales_der{
-    background-image: url("/img/tragamonedas_luces_verticales.gif");
-    background-repeat: repeat-y;
+    background-image: url("/img/tragamonedas_luces_verticales_derecha.gif");
+    background-repeat: no-repeat;
     height: 167px;
-    margin-left: 312px;
+    margin-left: 319px;
     margin-top: 63px;
     position: absolute;
     width: 38px;
