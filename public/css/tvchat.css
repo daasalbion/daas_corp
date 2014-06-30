@@ -158,7 +158,7 @@ body, html {
 .tragamonedas_wrapper{
     width: 360px;
     height: 360px;
-    background-image: url("/img/tragamoneda_masking.png");
+    background-image: url("/img/tragamonedas_masking.png");
     position:absolute;
     background-repeat: no-repeat;
     margin-top: 38px;
@@ -213,20 +213,20 @@ body, html {
 .tragamonedas_luces_verticales_izq{
     background-image: url("/img/tragamonedas_luces_verticales.gif");
     background-repeat: repeat-y;
-    height: 142px;
-    margin-left: 10px;
-    margin-top: 74px;
+    height: 167px;
+    margin-left: -2px;
+    margin-top: 63px;
     position: absolute;
-    width: 12px;
+    width: 38px;
 }
 .tragamonedas_luces_verticales_der{
     background-image: url("/img/tragamonedas_luces_verticales.gif");
     background-repeat: repeat-y;
-    height: 142px;
-    margin-left: 328px;
-    margin-top: 74px;
+    height: 167px;
+    margin-left: 312px;
+    margin-top: 63px;
     position: absolute;
-    width: 12px;
+    width: 38px;
 }
 .tira1{
     background-color: #ffffff;
@@ -269,4 +269,19 @@ body, html {
     margin-top: 116px;
     position: absolute;
     width: 272px;
+}
+div.roulette-inner {
+    left : 10px;
+}
+/*para la ruleta de la izquierda*/
+div.roulette {
+    margin-top: 10px;
+}
+/*para la ruleta de la centro*/
+div.roulette1 {
+    margin-top: 10px;
+}
+/*para la ruleta de la derecha*/
+div.roulette2 {
+    margin-top: 10px;
 }
