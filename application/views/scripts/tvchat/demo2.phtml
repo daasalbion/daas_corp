@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TVChat Demo</title>
-        <script src="/js/jquery.marquee.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="/js/jquery-1.7.min.js"></script>
-        <script src="/js/jquery.marquee.js" type="text/javascript"></script>
-        <script type="application/javascript">
-
-            $(document).ready(function(){
-
-                $('.marquee').marquee();
-            });
-        </script>
+        <title>TVChat Demo 800x600</title>
+        <!--Plugins JS-->
+        <script type="text/javascript" src="/js/plugins/jquery-2.1.0.js"></script>
+        <script type="text/javascript" src="/js/plugins/jquery.marquee.js"></script>
+        <script type="text/javascript" src="/js/plugins/roulette.js"></script>
+        <!--Tombola JS-->
+        <script type="text/javascript" src="/js/tvchat.utils.js"></script>
+        <script type="text/javascript" src="/js/tvchat.wheel.js"></script>
+        <!--Master JS-->
+        <script type="text/javascript" src="/js/tvchat.child.js"></script>
         <!--Tvchat CSS-->
-        <link href="/css/tvchat.css" rel="stylesheet" type="text/css">
+        <link href="/css/tvchat.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div class="titulo">
-            <div class="jugar_izquierda">
-                <img src="/img/LogoJugarIzquierdaAnimado.gif">
+        <div class="tvchat_screen">
+            <div class="titulo">
+                <div class="jugar_izquierda">
+                    <img src="/img/LogoJugarIzquierdaAnimado.gif">
+                </div>
+                <div class="logo_afortunado">
+                    <img src="/img/LogoAfortunadoAnimado.gif">
+                </div>
+                <div class="jugar_derecha">
+                    <img src="/img/LogoJugarDerechaAnimado.gif">
+                </div>
             </div>
-            <div class="logo_afortunado">
-                <img src="/img/LogoAfortunadoAnimado.gif">
+            <div class="interactive">
+                <div class="juegos">
+                    <div id="game_wrapper">
+                        <div id="wheel">
+                            <canvas id="canvas" width="400" height="400"></canvas>
+                        </div>
+                        <div id="stats">
+                            <div id="counter"></div>
+                            <div id="counter2"></div>
+                        </div>
+                        <div id="numeros_sorteados">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="conductora"></div>
             </div>
-            <div class="jugar_derecha">
-                <img src="/img/LogoJugarDerechaAnimado.gif">
+            <div class="tvchat">
+                <div id="scroller">
+                    <div class="static-text">
+                        <div class="tvchat_logo">
+                            <img src="/img/tvchat_logo.png">
+                        </div>
+                        <div class="tvchat_logo_detalle_derecha">
+                            <img src="/img/tvchat_detalle_derecha.png">
+                        </div>
+                    </div>
+                    <div id="ventana" class="marquee">Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha</div>
+                </div>
             </div>
-        </div>
-        <div class="luces"></div>
-        <div class="interactive">
-            <div class="juegos">
-            </div>
-            <div class="conductora">
-            </div>
-        </div>
-        <div class="tvchat">
-            <div id="scroller">
-                <div class="static-text"><img src="/img/titulo_tvchat.jpg"></div>
-                <div class="static-text"><img src="/img/titulo_tvchat.jpg"></div>
-                <div id="ventana" class="marquee">Me gusta tu programa!!_____________________________________Saludos a todos los que me conocen!!!</div>
+            <div class="costo">
+                Costo por cada mensaje cobro semanal Gs. 2200 IVA incluido - Proveedor y Licenciatario Entermovil SA Asuncion Paraguay
             </div>
         </div>
     </body>

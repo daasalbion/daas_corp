@@ -1,8 +1,8 @@
 $(function(){
 
-    var imagenes_tiras1 = ['coin', 'chomp', 'flower', 'star'];
-    var imagenes_tiras2 = ['coin', 'chomp', 'star', 'flower'];
-    var imagenes_tiras3 = [ 'flower', 'coin', 'chomp', 'star'];
+    var imagenes_tiras1 = ['coin', 'chomp', 'flower', 'star', '0', '1', '2', '4', '5', '6', '7'];
+    var imagenes_tiras2 = ['coin', 'chomp', 'star', 'flower', '0', '1', '2', '4', '5', '6', '7'];
+    var imagenes_tiras3 = [ 'flower', 'coin', 'chomp', 'star', '0', '1', '2', '4', '5', '6', '7'];
 
     var tira_imagenes1 = $('#tira_imagenes1');
     var tira_imagenes2 = $('#tira_imagenes2');
@@ -11,15 +11,15 @@ $(function(){
     for(var i= 0; i<imagenes_tiras1.length; i++){
         tira_imagenes1.append(
             $(document.createElement("img"))
-                .attr('src', "/img/tragamonedas/" +imagenes_tiras1[i]+'_prueba.png')
+                .attr('src', "/img/tragamonedas/" +imagenes_tiras1[i]+'.png')
         );
         tira_imagenes2.append(
             $(document.createElement("img"))
-                .attr('src', "/img/tragamonedas/" +imagenes_tiras2[i]+'_prueba.png')
+                .attr('src', "/img/tragamonedas/" +imagenes_tiras2[i]+'.png')
         );
         tira_imagenes3.append(
             $(document.createElement("img"))
-                .attr('src', "/img/tragamonedas/" +imagenes_tiras3[i]+'_prueba.png')
+                .attr('src', "/img/tragamonedas/" +imagenes_tiras3[i]+'.png')
         );
     }
 
@@ -34,11 +34,11 @@ $(function(){
 	}
 	var p = {
 		startCallback : function() {
-			appendLogMsg('start');
-			$('#speed, #duration').slider('disable');
-			$('#stopImageNumber').spinner('disable');
-			$('.start').attr('disabled', 'true');
-			$('.stop').removeAttr('disabled');
+			//appendLogMsg('start');
+//			$('#speed, #duration').slider('disable');
+//			$('#stopImageNumber').spinner('disable');
+//			$('.start').attr('disabled', 'true');
+//			$('.stop').removeAttr('disabled');
 		},
 		slowDownCallback : function() {
 			appendLogMsg('slowdown');
@@ -299,7 +299,5 @@ $(function(){
                 .addClass("numero_ganador")
         )
     }
-
-    console.log("mierda: " + p.duration);
 });
 

@@ -1,6 +1,6 @@
 function cargarJuego(params){
 
-    //alert("juego: " + params["juego"]);
+    alert("juego: " + params["juego"]);
     console.log("juego: " + params["juego"]);
     var juego = $('#game_wrapper');
 
@@ -12,8 +12,8 @@ function cargarJuego(params){
                 .attr('id', 'wheel')
                 .append(
                     $(document.createElement("canvas"))
-                        .attr('width', '360')
-                        .attr('height', '280')
+                        .attr('width', '300')
+                        .attr('height', '200')
                         .attr('id', 'canvas')
             )
         )

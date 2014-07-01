@@ -115,9 +115,9 @@ class TvchatController extends Zend_Controller_Action{
         $this->logger->info("tvchat");
     }
 
-    public function demo1Action(){
+    public function bingoShowAction(){
 
-        $this->logger->info("demo1");
+        $this->logger->info("bingo-show");
     }
 
     public function demo2Action(){

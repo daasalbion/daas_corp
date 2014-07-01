@@ -199,8 +199,9 @@ var wheel = {
     },
 
     clear : function() {
+        console.log("ok");
         var ctx = wheel.canvasContext;
-        ctx.clearRect(0, 0, 1000, 800);
+        ctx.clearRect(0, 0, 300, 200);
     },
     /*
      * calcula el tiempo necesario para caer en un determinado valor

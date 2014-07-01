@@ -286,3 +286,10 @@ div.roulette1 {
 div.roulette2 {
     margin-top: 10px;
 }
+
+#wheel{
+    position:absolute;
+}
+#canvas{
+    position:absolute;
+}
