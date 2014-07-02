@@ -32,7 +32,7 @@ var wheel = {
     centerX : 150,
     centerY : 150,
 
-    valoresEsperados : [1,2,3,4],
+    valoresEsperados : [0,1,2,3,4,5,6,7,8,9],
     contadorIterations : 0,
     angulos: [],
 
