@@ -8,7 +8,7 @@ var wheel = {
     angleCurrent : 0,
     angleDelta : 0,
 
-    size : 100,
+    size : 120,
     canvasContext : null,
 
     colors : [ '#ffff00', '#ffc700', '#ff9100', '#ff6301', '#ff0000', '#c6037e',
@@ -29,7 +29,7 @@ var wheel = {
 
     frames : 0,
 
-    centerX : 180,
+    centerX : 150,
     centerY : 150,
 
     valoresEsperados : [1,2,3,4],
@@ -199,7 +199,6 @@ var wheel = {
     },
 
     clear : function() {
-        console.log("ok");
         var ctx = wheel.canvasContext;
         ctx.clearRect(0, 0, 300, 200);
     },

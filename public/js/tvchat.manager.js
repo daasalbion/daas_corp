@@ -15,8 +15,8 @@ $(document).ready(function(){
     })
     $('#abrir_ventana3').click(function(){
 
-        ventana2 = window.open("/tvchat/demo2",
-            "_blank", "menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=yes, fullscreen=yes");
+        ventana2 = window.open("/tvchat/demo1",
+            "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
 
     })
 

@@ -48,7 +48,8 @@ body, html {
     width: 388px;
     height: 360px;
     float:right;
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
+    border:1px white dotted;
 }
 .tvchat{
     width: 800px;
