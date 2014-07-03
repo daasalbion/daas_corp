@@ -2,6 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/video/Carrera-Galgos.mp4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/video/Dados-Demo.mp4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/video/Demo.mp4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/video/Slot.mp4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tombola_contenedor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat_logo_jugar_derecha.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/demo-dados.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/demo-galgos.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/demo-slot.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/demo-video.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/demo.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/TvchatController.php" afterPath="$PROJECT_DIR$/application/controllers/TvchatController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/tvchat/setup.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/setup.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/tvchat.css" afterPath="$PROJECT_DIR$/public/css/tvchat.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/tvchat.manager.js" afterPath="$PROJECT_DIR$/public/js/tvchat.manager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/scripts/tvchat/tvchat.phtml" afterPath="$PROJECT_DIR$/application/views/scripts/tvchat/tvchat.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/tvchat.wheel.js" afterPath="$PROJECT_DIR$/public/js/tvchat.wheel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -26,10 +42,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="demo1.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml">
+      <file leaf-file-name="tvchat.manager.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/tvchat.manager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="33" selection-start="1089" selection-end="1089" vertical-scroll-proportion="-7.8461537" vertical-offset="187" max-vertical-offset="1717">
+            <state line="25" column="56" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="2108">
               <folding />
             </state>
           </provider>
@@ -38,46 +54,7 @@
       <file leaf-file-name="demo2.phtml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo2.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="48" selection-start="1098" selection-end="1140" vertical-scroll-proportion="-9.807693" vertical-offset="153" max-vertical-offset="1156">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bingo-show.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/bingo-show.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="20" selection-start="1271" selection-end="1309" vertical-scroll-proportion="-6.5384617" vertical-offset="289" max-vertical-offset="1717">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tvchat.wheel.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/tvchat.wheel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="18" selection-start="648" selection-end="648" vertical-scroll-proportion="0.6964618" vertical-offset="153" max-vertical-offset="6953">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.marquee.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/plugins/jquery.marquee.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7344">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1398178491849" expanded="false" signature="7341:7355" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setup.phtml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/setup.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="11" selection-start="467" selection-end="467" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="969">
+            <state line="6" column="8" selection-start="194" selection-end="266" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="1156">
               <folding />
             </state>
           </provider>
@@ -86,19 +63,37 @@
       <file leaf-file-name="TvchatController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/TvchatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="0" selection-start="3919" selection-end="3919" vertical-scroll-proportion="-7.1923075" vertical-offset="1870" max-vertical-offset="3604">
+            <state line="130" column="5" selection-start="4080" selection-end="4080" vertical-scroll-proportion="-14.115385" vertical-offset="1843" max-vertical-offset="3859">
               <folding>
-                <marker date="1404310583132" expanded="true" signature="4523:4645" placeholder="select * fro..tvchat_mensajes..." />
-                <marker date="1404310583132" expanded="true" signature="5402:5613" placeholder="select PT.id..tvchat_mensajes..." />
+                <marker date="1404316269735" expanded="true" signature="4787:4909" placeholder="select * fro..tvchat_mensajes..." />
+                <marker date="1404316269735" expanded="true" signature="5666:5877" placeholder="select PT.id..tvchat_mensajes..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tvchat.manager.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/tvchat.manager.js">
+      <file leaf-file-name="bingo-show.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/bingo-show.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="43" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1632">
+            <state line="67" column="34" selection-start="3305" selection-end="3777" vertical-scroll-proportion="-16.346153" vertical-offset="714" max-vertical-offset="1717">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tvchat.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/tvchat.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="30" selection-start="1440" selection-end="1440" vertical-scroll-proportion="-3.2692308" vertical-offset="459" max-vertical-offset="1360">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tvchat.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/css/tvchat.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="12" selection-start="987" selection-end="987" vertical-scroll-proportion="0.7246892" vertical-offset="459" max-vertical-offset="5270">
               <folding />
             </state>
           </provider>
@@ -122,10 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$USER_HOME$/ENTERMOVIL/DAAS/PROYECTOS/ENVIOSMS/respuestas/guardarMensajeObtenido.php" />
-        <option value="$USER_HOME$/ENTERMOVIL/DAAS/PROYECTOS/ENVIOSMS/pruebaEnvioReciboSms.php" />
-        <option value="$PROJECT_DIR$/application/views/scripts/reportes/contenidos-wap.phtml" />
-        <option value="$PROJECT_DIR$/application/configs/application.ini" />
         <option value="$PROJECT_DIR$/log/tvchat_2014-04-16.log" />
         <option value="$PROJECT_DIR$/log/tvchat_2014-04-21.log" />
         <option value="$PROJECT_DIR$/public/js/jquery.marquee.js" />
@@ -154,25 +145,29 @@
         <option value="$PROJECT_DIR$/application/views/scripts/juegos/ruleta2.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/juegos/ruleta.phtml" />
         <option value="$PROJECT_DIR$/public/js/wheel.js" />
-        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/tvchat/prueba.phtml" />
         <option value="$PROJECT_DIR$/public/js/tvchat.utils.js" />
         <option value="$PROJECT_DIR$/application/views/scripts/tvchat/marquee.phtml" />
         <option value="$PROJECT_DIR$/public/css/tvchat_complete.css" />
-        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/tvchat.phtml" />
         <option value="$PROJECT_DIR$/public/css/tvchat_dinamic.css" />
         <option value="$PROJECT_DIR$/application/views/scripts/tvchat/marquee-manager.phtml" />
         <option value="$PROJECT_DIR$/public/js/tvchat.marquee.manager.js" />
         <option value="$PROJECT_DIR$/public/js/plugins/roulette.js" />
         <option value="$PROJECT_DIR$/public/js/tvchat.child.js" />
         <option value="$PROJECT_DIR$/public/js/tvchat.tragamonedas.manager.js" />
-        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo2.phtml" />
-        <option value="$PROJECT_DIR$/public/css/tvchat.css" />
-        <option value="$PROJECT_DIR$/application/controllers/TvchatController.php" />
         <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml" />
-        <option value="$PROJECT_DIR$/public/js/tvchat.manager.js" />
-        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/setup.phtml" />
         <option value="$PROJECT_DIR$/public/js/tvchat.wheel.js" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo2.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo-video.phtml" />
+        <option value="$PROJECT_DIR$/application/controllers/TvchatController.php" />
+        <option value="$PROJECT_DIR$/public/js/tvchat.manager.js" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo-dados.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo-slot.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/demo-galgos.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/setup.phtml" />
+        <option value="$PROJECT_DIR$/application/views/scripts/tvchat/tvchat.phtml" />
+        <option value="$PROJECT_DIR$/public/css/tvchat.css" />
       </list>
     </option>
   </component>
@@ -278,29 +273,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.entermovil.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.entermovil.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -315,6 +288,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.entermovil.com.py" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.entermovil.com.py" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.entermovil.com.py" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.entermovil.com.py" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tvchat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.entermovil.com.py" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.entermovil.com.py" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -355,11 +394,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\img" />
+      <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\application\views\scripts\tvchat" />
+      <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\video" />
       <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\js\plugins" />
       <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\img\tragamonedas" />
-      <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\application\views\scripts\tvchat" />
-      <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\img" />
-      <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Program Files (x86)\Zend\Apache2\htdocs\www.entermovil.com.py\public\js\plugins" />
@@ -437,11 +476,15 @@
       <created>1404312581582</created>
       <updated>1404312581582</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="agregado para muestra demo1 y tombola&#10;">
+      <created>1404313145184</created>
+      <updated>1404313145184</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18845502" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -455,7 +498,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1971299" sideWeight="0.39898133" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1971299" sideWeight="0.39898133" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1971299" sideWeight="0.60101867" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -467,6 +510,30 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18845502" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27072757" sideWeight="0.4941435" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18731117" sideWeight="0.0" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33490565" sideWeight="0.0" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1971299" sideWeight="0.39898133" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1971299" sideWeight="0.60101867" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -501,36 +568,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/controllers/WebservicesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="39" selection-start="1783" selection-end="1801" vertical-scroll-proportion="0.27474403" vertical-offset="128" max-vertical-offset="1632" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/juegos/ok.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/reset.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="780" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="599" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/juegos/ruleta2.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="0" selection-start="7049" selection-end="7049" vertical-scroll-proportion="0.38568935" vertical-offset="2805" max-vertical-offset="6970" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/juegos/tragamonedas.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/ReportesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4664" column="8" selection-start="199647" selection-end="199819" vertical-scroll-proportion="0.63822526" vertical-offset="1819" max-vertical-offset="3995" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/juegos/juegos.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="7" selection-start="178" selection-end="178" vertical-scroll-proportion="0.26109216" vertical-offset="0" max-vertical-offset="586" />
@@ -604,11 +641,6 @@
     <entry file="file://$PROJECT_DIR$/public/css/tvchat_demo.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="0" selection-start="620" selection-end="869" vertical-scroll-proportion="0.34501845" vertical-offset="561" max-vertical-offset="1156" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/tvchat.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="14" selection-start="545" selection-end="545" vertical-scroll-proportion="0.41154563" vertical-offset="0" max-vertical-offset="537" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/marquee.phtml">
@@ -713,25 +745,26 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="157964" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/tvchat.css">
+    <entry file="file://$PROJECT_DIR$/public/js/plugins/jquery.marquee.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="5" selection-start="885" selection-end="885" vertical-scroll-proportion="0.3712297" vertical-offset="639" max-vertical-offset="5134">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7344">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1398178491849" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/tvchat.wheel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="23" selection-start="804" selection-end="804" vertical-scroll-proportion="-7.1923075" vertical-offset="459" max-vertical-offset="6953">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/bingo-show.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="20" selection-start="1271" selection-end="1309" vertical-scroll-proportion="-6.5384617" vertical-offset="289" max-vertical-offset="1717">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/setup.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="11" selection-start="467" selection-end="467" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="969">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/public/img/tvchat_logo_jugar_derecha.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo1.phtml">
@@ -741,43 +774,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo2.phtml">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo-video.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="48" selection-start="1098" selection-end="1140" vertical-scroll-proportion="-9.807693" vertical-offset="153" max-vertical-offset="1156">
+        <state line="32" column="22" selection-start="1529" selection-end="1529" vertical-scroll-proportion="-11.115385" vertical-offset="255" max-vertical-offset="1173">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="89" selection-start="1709" selection-end="1709" vertical-scroll-proportion="-13.730769" vertical-offset="255" max-vertical-offset="1173">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo-dados.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="99" selection-start="1719" selection-end="1719" vertical-scroll-proportion="-9.807693" vertical-offset="357" max-vertical-offset="1173">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo-galgos.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="76" selection-start="1696" selection-end="1696" vertical-scroll-proportion="0.9230769" vertical-offset="636" max-vertical-offset="1173">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/setup.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="15" selection-start="1543" selection-end="1543" vertical-scroll-proportion="1.3612663" vertical-offset="0" max-vertical-offset="1241">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/tvchat.manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="56" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="2108">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo-slot.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="18" selection-start="0" selection-end="2800" vertical-scroll-proportion="0.47486034" vertical-offset="306" max-vertical-offset="1173">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/TvchatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="0" selection-start="3919" selection-end="3919" vertical-scroll-proportion="-7.1923075" vertical-offset="1870" max-vertical-offset="3604">
+        <state line="130" column="5" selection-start="4080" selection-end="4080" vertical-scroll-proportion="-14.115385" vertical-offset="1843" max-vertical-offset="3859">
           <folding>
-            <marker date="1404310583132" expanded="true" signature="4523:4645" placeholder="select * fro..tvchat_mensajes..." />
-            <marker date="1404310583132" expanded="true" signature="5402:5613" placeholder="select PT.id..tvchat_mensajes..." />
+            <marker date="1404316269735" expanded="true" signature="4787:4909" placeholder="select * fro..tvchat_mensajes..." />
+            <marker date="1404316269735" expanded="true" signature="5666:5877" placeholder="select PT.id..tvchat_mensajes..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/tvchat.manager.js">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/demo2.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="43" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1632">
+        <state line="6" column="8" selection-start="194" selection-end="266" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="1156">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/plugins/jquery.marquee.js">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/bingo-show.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7344">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1398178491849" expanded="false" signature="7341:7355" placeholder="..." />
-          </folding>
+        <state line="67" column="34" selection-start="3305" selection-end="3777" vertical-scroll-proportion="-16.346153" vertical-offset="714" max-vertical-offset="1717">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/tvchat.wheel.js">
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/tvchat.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="18" selection-start="648" selection-end="648" vertical-scroll-proportion="0.6964618" vertical-offset="153" max-vertical-offset="6953">
+        <state line="32" column="30" selection-start="1440" selection-end="1440" vertical-scroll-proportion="-3.2692308" vertical-offset="459" max-vertical-offset="1360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/tvchat.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="12" selection-start="987" selection-end="987" vertical-scroll-proportion="0.7246892" vertical-offset="459" max-vertical-offset="5270">
           <folding />
         </state>
       </provider>

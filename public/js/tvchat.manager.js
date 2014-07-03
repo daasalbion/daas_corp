@@ -20,6 +20,34 @@ $(document).ready(function(){
 
     })
 
+    $('#abrir_ventana4').click(function(){
+
+        ventana4= window.open("/tvchat/demo-galgos",
+            "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
+
+    })
+
+    $('#abrir_ventana5').click(function(){
+
+        ventana4= window.open("/tvchat/demo-dados",
+            "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
+
+    })
+
+    $('#abrir_ventana6').click(function(){
+
+        ventana4= window.open("/tvchat/demo",
+            "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
+
+    })
+
+    $('#abrir_ventana7').click(function(){
+
+        ventana4= window.open("/tvchat/demo-slot",
+            "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
+
+    })
+
     //cerrar ventanas
     $('#cerrar_ventana1').click(function(){
         tvchat.close();

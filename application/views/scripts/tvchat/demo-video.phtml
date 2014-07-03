@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TVChat Demo 800x600</title>
+        <!--Plugins JS-->
+        <script type="text/javascript" src="/js/plugins/jquery-2.1.0.js"></script>
+        <script type="text/javascript" src="/js/plugins/jquery.marquee.js"></script>
+        <script type="text/javascript" src="/js/plugins/roulette.js"></script>
+        <!--Tombola JS-->
+        <script type="text/javascript" src="/js/tvchat.utils.js"></script>
+        <script type="text/javascript" src="/js/tvchat.wheel.js"></script>
+        <!--Master JS-->
+        <script type="text/javascript" src="/js/tvchat.child.js"></script>
+        <!--Tvchat CSS-->
+        <link href="/css/tvchat.css" type="text/css" rel="stylesheet">
+        <!--Tragamonedas JS-->
+        <script type="text/javascript" src="/js/tvchat.tragamonedas.manager.js"></script>
+    </head>
+    <body>
+        <div class="tvchat_screen">
+            <div class="titulo">
+                <div class="jugar_izquierda">
+<!--                    <img src="/img/LogoJugarIzquierdaAnimado.gif">-->
+                    <img src="/img/chat_izquierda.gif">
+                </div>
+                <div class="logo_afortunado">
+<!--                    <img src="/img/LogoAfortunadoAnimado.gif">-->
+                    <img src="/img/LogoAfortunadoAnimado.gif">
+                </div>
+                <div class="jugar_derecha">
+<!--                    <img src="/img/LogoJugarDerechaAnimado.gif">-->
+                    <img src="/img/chat_derecha.gif">
+                </div>
+            </div>
+            <div class="interactive">
+                <div class="juegos">
+                    <video width="360" height="360" autoplay="autoplay" loop src="/video/Dados-Demo.mp4">
+                    </video>
+                </div>
+                <div class="conductora"></div>
+            </div>
+            <div class="tvchat">
+                <div id="scroller">
+                    <div class="static-text">
+                        <div class="tvchat_logo">
+                            <img src="/img/tvchat_logo.png">
+                        </div>
+                        <div class="tvchat_logo_detalle_derecha">
+                            <img src="/img/tvchat_detalle_derecha.png">
+                        </div>
+                    </div>
+                    <div id="ventana" class="marquee">Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha</div>
+                </div>
+            </div>
+            <div class="costo">
+                Costo por cada mensaje cobro semanal Gs. 2200 IVA incluido - Proveedor y Licenciatario Entermovil SA Asuncion Paraguay
+            </div>
+            <div>
+                <button class="btn btn-large btn-primary start"> START </button>
+            </div>
+        </div>
+    </body>
+</html>

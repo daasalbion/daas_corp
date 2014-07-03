@@ -130,9 +130,24 @@ class TvchatController extends Zend_Controller_Action{
         $this->logger->info("demo2");
     }
 
-    public function pruebaAction(){
+    public function demoGalgosAction(){
 
-        $this->logger->info("prueba");
+        $this->logger->info("demoVideo");
+    }
+
+    public function demoDadosAction(){
+
+    $this->logger->info("demoVideo");
+    }
+
+    public function demoAction(){
+
+        $this->logger->info("demoVideo");
+    }
+
+    public function demoSlotAction(){
+
+        $this->logger->info("demoVideo");
     }
 
     private function _consulta( $accion, $datos = null ){
