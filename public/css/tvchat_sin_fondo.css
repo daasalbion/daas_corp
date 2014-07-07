@@ -22,7 +22,7 @@ body, html {
 .titulo{
     width: 800px;
     height: 160px;
-    background-image: url("/img/fondo_encabezado_tvchat.jpg");
+    /*background-image: url("/img/fondo_encabezado_tvchat.jpg");*/
 }
 .luces{
     background-image: url("/img/luces.gif");
@@ -121,18 +121,21 @@ body, html {
     float: left;
 }
 .jugar_izquierda img{
+    margin-left: 30px;
+    margin-top: 25px;
     position: absolute;
-    z-index:1;
+    z-index: 1;
 }
 .logo_afortunado img{
+    margin-left: 230px;
     position: absolute;
-    z-index:2;
-    padding-left: 230px;
+    z-index: 2;
 }
 .jugar_derecha img{
+    margin-left: 600px;
+    margin-top: 25px;
     position: absolute;
-    z-index:1;
-    padding-left: 513px;
+    z-index: 1;
 }
 .costo{
     height: 7px;
@@ -339,7 +342,12 @@ div.roulette2 {
     z-index: 56;
 }
 .chat_derecha_sin_fondo{
-    background-image: url("/img/chat_derecha_sin_fondo.gif");
+    background-image: url("/img/tvchat_derecha_iluminado_sin_fondo.png");
+    height: 53px;
+    margin-left: 125px;
+}
+.chat_izquierda_sin_fondo{
+    background-image: url("/img/tvchat_izquierda_iluminado_sin_fondo.png");
     height: 53px;
     margin-left: 125px;
 }

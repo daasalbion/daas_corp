@@ -13,7 +13,7 @@
         <!--Master JS-->
         <script type="text/javascript" src="/js/tvchat.child.js"></script>
         <!--Tvchat CSS-->
-        <link href="/css/tvchat.css" type="text/css" rel="stylesheet">
+        <link href="/css/tvchat_sin_fondo.css" type="text/css" rel="stylesheet">
         <!--Tragamonedas JS-->
         <script type="text/javascript" src="/js/tvchat.tragamonedas.manager.js"></script>
     </head>
@@ -21,29 +21,28 @@
         <div class="tvchat_screen">
             <div class="titulo">
                 <div class="jugar_izquierda">
-                    <img src="/img/chat_izquierda.gif">
+<!--                    <img src="/img/chat_izquierda.gif">-->
+                    <img src="/img/tvchat_chat_izquierda_iluminado_sin_fondo.png">
                 </div>
                 <div class="logo_afortunado">
-                    <img src="/img/tvchat_logo_nuevo.gif">
+                    <img src="/img/tvchat_logo_afortunado.gif">
                 </div>
                 <div class="jugar_derecha">
-                    <img src="/img/chat_derecha.gif">
+<!--                    <img src="/img/chat_derecha.gif">-->
+                    <img src="/img/tvchat_chat_derecha_iluminado_sin_fondo.png">
                 </div>
             </div>
             <div class="interactive">
                 <div class="juegos">
                     <div id="game_wrapper">
+                        <div class="tombola_luces"></div>
+                        <div class="tombola_aguja"></div>
+                        <div class="tombola_circulo_central"></div>
                         <div class="tombola_wrapper">
                             <div id="wheel">
                                 <canvas id="canvas" height="280" width="300"></canvas>
                             </div>
-                            <div class="tragamonedas_numeros_ganadores">
-                                <div class="linea_ganadora">
-                                    <div class="container_ganador">
-                                        <div class="premio">Premio: Saldo para tu celular</div>
-                                        <div class="linea">Ganador: 0982-3132XX</div>
-                                    </div>
-                                </div>
+                            <div class="tombola_numeros_ganadores">
                             </div>
                         </div>
                     </div>

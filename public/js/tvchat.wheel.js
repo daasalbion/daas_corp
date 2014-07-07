@@ -8,11 +8,10 @@ var wheel = {
     angleCurrent : 0,
     angleDelta : 0,
 
-    size : 120,
+    size : 124,
     canvasContext : null,
 
-    colors : [ '#ffff00', '#ffc700', '#ff9100', '#ff6301', '#ff0000', '#c6037e',
-        '#713697', '#444ea1', '#2772b2', '#0297ba', '#008e5b', '#8ac819' ],
+    colors : [ '#ff0000', '#00FF00', '#FF00FF', '#FF6600', '#6699CC' ],
 
     segments : [],
 
@@ -32,7 +31,7 @@ var wheel = {
     centerX : 150,
     centerY : 150,
 
-    valoresEsperados : [0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9],
+    valoresEsperados : [0,1,2,3,4,5,6,7,8,9,],
     contadorIterations : 0,
     angulos: [],
 
@@ -173,7 +172,7 @@ var wheel = {
     update : function() {
         // Ensure we start mid way on a item
         //var r = Math.floor(Math.random() * wheel.segments.length);
-        var r = 0;
+        var r = Math.PI/2;
         //wheel.angleCurrent = ((r + 0.5) / wheel.segments.length) * Math.PI * 2;
         wheel.angleCurrent = r;
 
@@ -238,9 +237,14 @@ var wheel = {
 
         ctx.beginPath();
 
-        ctx.moveTo(centerX + size - 40, centerY);
+        /*ctx.moveTo(centerX + size - 40, centerY);
         ctx.lineTo(centerX + size + 20, centerY - 10);
-        ctx.lineTo(centerX + size + 20, centerY + 10);
+        ctx.lineTo(centerX + size + 20, centerY + 10);*/
+
+        ctx.moveTo(centerX, centerY - size + 35);
+        ctx.lineTo(centerX - 15, centerY - size - 20);
+        ctx.lineTo(centerX + 15, centerY - size - 20);
+
         ctx.closePath();
 
         ctx.stroke();
@@ -277,6 +281,7 @@ var wheel = {
         ctx.moveTo(centerX, centerY);
         ctx.arc(centerX, centerY, size, lastAngle, angle, false); // Draw a arc around the edge
         ctx.lineTo(centerX, centerY); // Now draw a line back to the centre
+        ctx.lineWidth = 2;
 
         // Clip anything that follows to this area
         //ctx.clip(); // It would be best to clip, but we can double performance without it
@@ -284,6 +289,7 @@ var wheel = {
 
         ctx.fillStyle = colors[key];
         ctx.fill();
+        ctx.strokeStyle = 'white';
         ctx.stroke();
 
         // Now draw the text
@@ -353,7 +359,7 @@ var wheel = {
         ctx.arc(centerX, centerY, size, 0, PI2, false);
         ctx.closePath();
 
-        ctx.lineWidth   = 10;
+        ctx.lineWidth   = 4;
         ctx.strokeStyle = '#000000';
         ctx.stroke();
     },
