@@ -180,6 +180,7 @@ class TvchatController extends Zend_Controller_Action{
     public function tvchatAction(){
 
         $this->logger->info("tvchat");
+        $this->_helper->layout->disableLayout();
     }
 
     public function bingoShowAction(){
@@ -189,33 +190,38 @@ class TvchatController extends Zend_Controller_Action{
     }
 
     public function demo1Action(){
-
+        $this->_helper->layout->disableLayout();
         $this->logger->info("demo1");
     }
 
     public function demo2Action(){
 
         $this->logger->info("demo2");
+        $this->_helper->layout->disableLayout();
     }
 
     public function demoGalgosAction(){
 
         $this->logger->info("demoVideo");
+        $this->_helper->layout->disableLayout();
     }
 
     public function demoDadosAction(){
 
     $this->logger->info("demoVideo");
+        $this->_helper->layout->disableLayout();
     }
 
     public function demoAction(){
 
         $this->logger->info("demoVideo");
+        $this->_helper->layout->disableLayout();
     }
 
     public function demoSlotAction(){
 
         $this->logger->info("demoVideo");
+        $this->_helper->layout->disableLayout();
     }
 
     private function _consulta( $accion, $datos = null ){
