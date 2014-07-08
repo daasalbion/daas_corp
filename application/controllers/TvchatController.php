@@ -3,6 +3,10 @@
 class TvchatController extends Zend_Controller_Action{
 
     public $logger;
+    var $usuarios = array(
+
+        'daas' => array('clave' => 'daas', 'nombre' => 'DAAS'),
+    );
 
     public function init(){
         /* Initialize action controller here */
@@ -16,8 +20,8 @@ class TvchatController extends Zend_Controller_Action{
         $this->logger->setEventItem('remoteAddr', $_SERVER['REMOTE_ADDR']);
 
         //Deshabilitar layout y vista
-        $this->_helper->layout->disableLayout();
 
+        $this->_helper->_layout->setLayout('tvchat-layout');
     }
 
     public function getLog(){
@@ -34,7 +38,66 @@ class TvchatController extends Zend_Controller_Action{
     public function indexAction(){
 
         $this->logger->info("index");
-        $this->_forward('setup');
+        $this->_forward('login');
+    }
+
+    public function loginAction() {
+
+        $form = new Application_Form_Login();
+        if($this->getRequest()->isPost()) {
+
+            $formData = $this->getRequest()->getPost();
+
+            if($form->isValid($formData)){
+
+                $nick = $form->getValue('login_user');
+                $clave = $form->getValue('login_pass');
+
+                if(!empty($nick) && !empty($clave)) {
+
+                    if(array_key_exists($nick, $this->usuarios) && $clave == $this->usuarios[$nick]['clave']) {
+
+                        $this->logger->info('LOGIN:[' . $nick . ']');
+                        $namespace = new Zend_Session_Namespace("entermovil-tvchat");
+                        $namespace->usuario = $nick;
+                        $namespace->nombre = $this->usuarios[$nick]['nombre'];
+                        $namespace->id= $this->usuarios[$nick]['id'];
+                        $namespace->prefijo = $this->usuarios[$nick]['prefijo'];
+                        $namespace->accesos = array(
+                            'FULL'
+                        );
+
+                        $this->_redirect('/tvchat/administracion');
+
+                    } else {
+
+                        $this->_redirect('/tvchat/login');
+                    }
+
+                } else {
+
+                    $this->_redirect('/tvchat/login');
+                }
+
+            } else {
+
+                $this->_redirect('/tvchat/login');
+            }
+        }
+    }
+
+    public function logoutAction() {
+
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat");
+        $this->logger->info('LOGOUT:[' . ( isset($namespace->usuario) ? $namespace->usuario : '')  . ']('.$namespace->nombre.')');
+
+        unset($namespace->usuario);
+        unset($namespace->nombre);
+
+        $namespace->unsetAll();
+        unset($namespace);
+
+        $this->_redirect('/tvchat/login');
     }
 
     public function marqueeManagerAction(){
@@ -105,8 +168,12 @@ class TvchatController extends Zend_Controller_Action{
         }
     }
 
-    public function setupAction(){
+    public function administracionAction(){
 
+        $this->view->headScript()->appendFile('/js/plugins/jquery-2.1.0.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat/tvchat.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat.manager.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat.marquee.manager.js', 'text/javascript');
         $this->logger->info("setup");
     }
 
@@ -118,6 +185,7 @@ class TvchatController extends Zend_Controller_Action{
     public function bingoShowAction(){
 
         $this->logger->info("bingo-show");
+        $this->_helper->layout->disableLayout();
     }
 
     public function demo1Action(){
