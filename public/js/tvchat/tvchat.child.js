@@ -1,6 +1,5 @@
 function cargarJuego(params){
 
-    alert("juego: " + params["juego"]);
     console.log("juego: " + params["juego"]);
     var juego = $('#game_wrapper');
 
@@ -51,8 +50,57 @@ function cargarJuego(params){
 
     }else if( params['juego'] == "tragamonedas" ){
 
-        alert("aun no cargado");
         console.log("aun no cargado");
+        juego.append(
+            //cargo los elementos
+            $(document.createElement("div"))
+                .addClass('tragamonedas_wrapper')
+                .append(
+
+                    /*
+                    <div class="tragamonedas_tiras">
+                         <div id="tragamonedas_luces_horizontales_arriba" class="tragamonedas_luces_horizontales_arriba"></div>
+                         <div id="tragamonedas_luces_horizontales_abajo" class="tragamonedas_luces_horizontales_abajo"></div>
+                         <div class="tira1">
+                         <div id="tira_imagenes1" class="roulette" style="display:none;">
+                         </div>
+                         </div>
+                         <div class="tira2">
+                         <div id="tira_imagenes2" class="roulette1" style="display:none;">
+                         </div>
+                         </div>
+                         <div class="tira3">
+                         <div id="tira_imagenes3" class="roulette2" style="display:none;">
+                         </div>
+                         </div>
+                         </div>
+                         <div class="tragamonedas_numeros_ganadores">
+                         <div class="linea_ganadora">
+                         <div class="container_ganador">
+                         <div class="premio">Premio: Saldo para tu celular</div>
+                         <div class="linea">Ganador: 0982-3132XX</div>
+                         </div>
+                         </div>
+                     </div>
+                     */
+                    $(document.createElement("div"))
+                        .attr('id','tragamonedas_luces_verticales_izq' )
+                        .addClass('tragamonedas_luces_verticales_izq'),
+                    $(document.createElement("div"))
+                        .attr('id','tragamonedas_luces_verticales_der' )
+                        .addClass('tragamonedas_luces_verticales_der'),
+                    $(document.createElement("div"))
+                        .attr('id','tragamonedas_titulo' )
+                        .addClass('tragamonedas_titulo')
+                        .append(
+                            $(document.createElement("img"))
+                                .attr('src', "/img/tragamonedas_titulo.gif")
+                        ),
+                    $(document.createElement("div"))
+                        .attr('id','tragamonedas_tiras' )
+                        .addClass('tragamonedas_tiras')
+                )
+        )
     }else if( params['juego'] == "tvchat" ){
 
         alert("aun no cargado");

@@ -2360,3 +2360,7 @@ td.beauty-hover {
     display: none;
   }
 }
+.juego_preview{
+    height: 100px;
+    width: 100px;
+}

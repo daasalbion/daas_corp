@@ -3,7 +3,7 @@ $(document).ready(function(){
     //abrir ventanas
     $('#abrir_ventana1').click(function(){
 
-        tvchat = window.open("/tvchat/bingo-show",
+        tvchat = window.open("/tvchat/tv",
             "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
 
     })

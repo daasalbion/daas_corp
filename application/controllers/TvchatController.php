@@ -19,8 +19,7 @@ class TvchatController extends Zend_Controller_Action{
         $this->logger->addWriter($writer);
         $this->logger->setEventItem('remoteAddr', $_SERVER['REMOTE_ADDR']);
 
-        //Deshabilitar layout y vista
-
+        //Habilitar layouts
         $this->_helper->_layout->setLayout('tvchat-layout');
     }
 
@@ -43,7 +42,12 @@ class TvchatController extends Zend_Controller_Action{
 
     public function loginAction() {
 
+        $this->_helper->layout->disableLayout();
+        /*$this->view->headLink()->setStylesheet('/css/tvchat/style.css', 'screen');
+        $this->view->headLink()->setStylesheet('/css/plugins/bootstrap/bootstrap.css', 'screen');*/
+
         $form = new Application_Form_Login();
+
         if($this->getRequest()->isPost()) {
 
             $formData = $this->getRequest()->getPost();
@@ -89,7 +93,7 @@ class TvchatController extends Zend_Controller_Action{
     public function logoutAction() {
 
         $namespace = new Zend_Session_Namespace("entermovil-tvchat");
-        $this->logger->info('LOGOUT:[' . ( isset($namespace->usuario) ? $namespace->usuario : '')  . ']('.$namespace->nombre.')');
+        $this->logger->info('logout:[' . ( isset($namespace->usuario) ? $namespace->usuario : '')  . ']('.$namespace->nombre.')');
 
         unset($namespace->usuario);
         unset($namespace->nombre);
@@ -172,15 +176,22 @@ class TvchatController extends Zend_Controller_Action{
 
         $this->view->headScript()->appendFile('/js/plugins/jquery-2.1.0.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.js', 'text/javascript');
-        $this->view->headScript()->appendFile('/js/tvchat.manager.js', 'text/javascript');
-        $this->view->headScript()->appendFile('/js/tvchat.marquee.manager.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat/tvchat.manager.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat/tvchat.marquee.manager.js', 'text/javascript');
         $this->logger->info("setup");
     }
 
-    public function tvchatAction(){
+    public function tvAction(){
 
-        $this->logger->info("tvchat");
-        $this->_helper->layout->disableLayout();
+        $this->view->headScript()->appendFile('/js/plugins/jquery-1.7.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/plugins/jquery.marquee.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/plugins/roulette.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat/tvchat.utils.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat/tvchat.wheel.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat/tvchat.child.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat/tvchat.tragamonedas.manager.js', 'text/javascript');
+        $this->logger->info("tv");
+        $this->_helper->_layout->setLayout('tvchat-window-layout');
     }
 
     public function bingoShowAction(){
