@@ -285,12 +285,7 @@ div.roulette2 {
     margin-top: 10px;
 }
 
-#wheel{
-    position:absolute;
-}
-#canvas{
-    position:absolute;
-}
+/*tombola*/
 .tombola_wrapper{
     width: 300px;
     height: 300px;
@@ -334,8 +329,12 @@ div.roulette2 {
     width: 53px;
     z-index: 56;
 }
-.chat_derecha_sin_fondo{
-    background-image: url("/img/chat_derecha_sin_fondo.gif");
-    height: 53px;
-    margin-left: 125px;
+/*
+.wheel{
+    position:absolute;
+    z-index: 5;
 }
+.canvas{
+    position:absolute;
+    z-index: 6;
+}*/

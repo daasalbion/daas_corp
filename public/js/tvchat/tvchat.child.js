@@ -8,24 +8,35 @@ function cargarJuego(params){
         juego.append(
             //cargo los elementos
             $(document.createElement("div"))
-                .attr('id', 'wheel')
+                .attr('id', 'tombola_wheel_wrapper')
                 .append(
-                    $(document.createElement("canvas"))
-                        .attr('width', '300')
-                        .attr('height', '200')
-                        .attr('id', 'canvas')
-            )
+                    $(document.createElement("div"))
+                        .addClass('tombola_luces'),
+                    $(document.createElement("div"))
+                        .addClass('tombola_aguja'),
+                    $(document.createElement("div"))
+                        .addClass('tombola_circulo_central'),
+                    $(document.createElement("div"))
+                        .attr('id', 'tombola_wrapper')
+                        .addClass('tombola_wrapper')
+                        .append(
+                            $(document.createElement("div"))
+                                .attr('id','wheel' )
+                                .addClass('wheel')
+                                .append(
+                                    $(document.createElement("canvas"))
+                                        .attr("width", "300")
+                                        .attr("height", "300")
+                                        .attr('id', 'canvas')
+                                        .addClass('canvas')
+                                )
+                        ),
+                    $(document.createElement("div"))
+                        .attr('id','tombola_numeros_ganadores' )
+                        .addClass('tombola_numeros_ganadores')
+                )
         )
-        juego.append(
 
-            $(document.createElement("div"))
-            .attr('id', 'numeros_sorteados')
-            .append(
-                $(document.createElement("p"))
-            )
-        )
-
-        wheel.init();
         //array asociativo para cargar los valores estaticamente en la tombola
         var venues = {
             "116208"  : "0",
@@ -39,6 +50,9 @@ function cargarJuego(params){
             "257424"  : "8",
             "512060"  : "9"
         };
+
+        wheel.init();
+
         var segments = new Array();
 
         $.each(venues, function(key, value) {
@@ -54,35 +68,9 @@ function cargarJuego(params){
         juego.append(
             //cargo los elementos
             $(document.createElement("div"))
+                .attr('id','tragamonedas_wrapper' )
                 .addClass('tragamonedas_wrapper')
                 .append(
-
-                    /*
-                    <div class="tragamonedas_tiras">
-                         <div id="tragamonedas_luces_horizontales_arriba" class="tragamonedas_luces_horizontales_arriba"></div>
-                         <div id="tragamonedas_luces_horizontales_abajo" class="tragamonedas_luces_horizontales_abajo"></div>
-                         <div class="tira1">
-                         <div id="tira_imagenes1" class="roulette" style="display:none;">
-                         </div>
-                         </div>
-                         <div class="tira2">
-                         <div id="tira_imagenes2" class="roulette1" style="display:none;">
-                         </div>
-                         </div>
-                         <div class="tira3">
-                         <div id="tira_imagenes3" class="roulette2" style="display:none;">
-                         </div>
-                         </div>
-                         </div>
-                         <div class="tragamonedas_numeros_ganadores">
-                         <div class="linea_ganadora">
-                         <div class="container_ganador">
-                         <div class="premio">Premio: Saldo para tu celular</div>
-                         <div class="linea">Ganador: 0982-3132XX</div>
-                         </div>
-                         </div>
-                     </div>
-                     */
                     $(document.createElement("div"))
                         .attr('id','tragamonedas_luces_verticales_izq' )
                         .addClass('tragamonedas_luces_verticales_izq'),
@@ -99,6 +87,60 @@ function cargarJuego(params){
                     $(document.createElement("div"))
                         .attr('id','tragamonedas_tiras' )
                         .addClass('tragamonedas_tiras')
+                        .append(
+                            $(document.createElement("div"))
+                                .attr('id', 'tragamonedas_luces_horizontales_arriba')
+                                .addClass('tragamonedas_luces_horizontales_arriba'),
+                            $(document.createElement("div"))
+                                .attr('id', 'tragamonedas_luces_horizontales_abajo')
+                                .addClass('tragamonedas_luces_horizontales_abajo'),
+                            $(document.createElement("div"))
+                                .attr('id', 'tira1')
+                                .addClass('tira1')
+                                .append(
+                                    $(document.createElement("div"))
+                                        .attr('id', 'tira_imagenes1')
+                                        .addClass('roulette')
+                                ),
+                            $(document.createElement("div"))
+                                .attr('id', 'tira2')
+                                .addClass('tira2')
+                                .append(
+                                    $(document.createElement("div"))
+                                        .attr('id', 'tira_imagenes2')
+                                        .addClass('roulette')
+                                ),
+                            $(document.createElement("div"))
+                                .attr('id', 'tira3')
+                                .addClass('tira3')
+                                .append(
+                                    $(document.createElement("div"))
+                                        .attr('id', 'tira_imagenes3')
+                                        .addClass('roulette')
+                                )
+                        ),
+                        $(document.createElement("div"))
+                            .attr('id','tragamonedas_numeros_ganadores' )
+                            .addClass('tragamonedas_numeros_ganadores')
+                            .append(
+                                $(document.createElement("div"))
+                                    .attr('id', 'linea_ganadora')
+                                    .addClass('linea_ganadora')
+                                    .append(
+                                        $(document.createElement("div"))
+                                            .attr('id', 'container_ganador')
+                                            .addClass('container_ganador')
+                                            .append(
+                                                $(document.createElement("div"))
+                                                    .attr('id', 'premio')
+                                                    .addClass('premio')
+                                                    ,
+                                                $(document.createElement("div"))
+                                                    .attr('id', 'linea')
+                                                    .addClass('linea')
+                                            )
+                                    )
+                            )
                 )
         )
     }else if( params['juego'] == "tvchat" ){
@@ -108,25 +150,31 @@ function cargarJuego(params){
     }
 }
 
-function descargarJuego(param){
+function descargarJuego(params){
 
-    if(param['juego'] == "tombola"){
+    if(params['juego'] == "tombola"){
 
-        var tombola = $('#wheel');
-        var numeros_ganadores = $('#numeros_sorteados');
-        tombola.remove();
-        numeros_ganadores.remove();
-    }else if( param['juego'] == "tragamonedas" ){
-
-        var juego = $('#tragamonedas');
+        var juego = $('#tombola_wheel_wrapper');
         juego.remove();
-    }else if(param['juego'] == "tvchat" ){
+    }else if( params['juego'] == "tragamonedas" ){
+
+        var juego = $('#tragamonedas_wrapper');
+        juego.remove();
+    }else if(params['juego'] == "tvchat" ){
 
         var juego = $('#ventana');
         juego.remove();
     }
 
     console.log("juego descargado!!");
+}
+
+function jugarJuego(params){
+    console.log("jugar que" +params);
+    if(params['juego'] == "tombola"){
+        var canvas = $('#canvas');
+        canvas.trigger( "click" );
+    }
 }
 
 var textarray;

@@ -116,4 +116,11 @@ $(document).ready(function(){
 
         tvchat.descargarJuego(params);
     })
+    $('#jugarTombola').click(function(){
+
+        var params = {
+            "jugar": "tombola"
+        }
+        tvchat.jugarJuego(params);
+    });
 });
