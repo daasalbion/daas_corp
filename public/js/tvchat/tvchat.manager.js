@@ -123,4 +123,11 @@ $(document).ready(function(){
         }
         tvchat.jugarJuego(params);
     });
+    $('#jugarTragamonedas').click(function(){
+
+        var params = {
+            "jugar": "tragamonedas"
+        }
+        tvchat.jugarJuego(params);
+    });
 });

@@ -64,7 +64,6 @@ function cargarJuego(params){
 
     }else if( params['juego'] == "tragamonedas" ){
 
-        console.log("aun no cargado");
         juego.append(
             //cargo los elementos
             $(document.createElement("div"))
@@ -108,7 +107,7 @@ function cargarJuego(params){
                                 .append(
                                     $(document.createElement("div"))
                                         .attr('id', 'tira_imagenes2')
-                                        .addClass('roulette')
+                                        .addClass('roulette1')
                                 ),
                             $(document.createElement("div"))
                                 .attr('id', 'tira3')
@@ -116,7 +115,7 @@ function cargarJuego(params){
                                 .append(
                                     $(document.createElement("div"))
                                         .attr('id', 'tira_imagenes3')
-                                        .addClass('roulette')
+                                        .addClass('roulette2')
                                 )
                         ),
                         $(document.createElement("div"))
@@ -143,6 +142,32 @@ function cargarJuego(params){
                             )
                 )
         )
+
+            var imagenes_tiras1 = ['coin', 'chomp', 'flower', 'star', '0', '1', '2', '4', '5', '6', '7'];
+            var imagenes_tiras2 = ['coin', 'chomp', 'star', 'flower', '0', '1', '2', '4', '5', '6', '7'];
+            var imagenes_tiras3 = [ 'flower', 'coin', 'chomp', 'star', '0', '1', '2', '4', '5', '6', '7'];
+
+            var tira_imagenes1 = $('#tira_imagenes1');
+            var tira_imagenes2 = $('#tira_imagenes2');
+            var tira_imagenes3 = $('#tira_imagenes3');
+
+            for(var i= 0; i<imagenes_tiras1.length; i++){
+                tira_imagenes1.append(
+                    $(document.createElement("img"))
+                        .attr('src', "/img/tragamonedas/" +imagenes_tiras1[i]+'.png')
+                );
+                tira_imagenes2.append(
+                    $(document.createElement("img"))
+                        .attr('src', "/img/tragamonedas/" +imagenes_tiras2[i]+'.png')
+                );
+                tira_imagenes3.append(
+                    $(document.createElement("img"))
+                        .attr('src', "/img/tragamonedas/" +imagenes_tiras3[i]+'.png')
+                );
+            }
+
+
+
     }else if( params['juego'] == "tvchat" ){
 
         alert("aun no cargado");
@@ -170,10 +195,23 @@ function descargarJuego(params){
 }
 
 function jugarJuego(params){
-    console.log("jugar que" +params);
-    if(params['juego'] == "tombola"){
+    console.log("jugar que " +params['jugar']);
+    if(params['jugar'] == "tombola"){
         var canvas = $('#canvas');
         canvas.trigger( "click" );
+    }else if(params['jugar'] == "tragamonedas"){
+        //creo los 3 elementos ruletas
+        var rouletter = $('div.roulette');
+        var rouletter1 = $('div.roulette1');
+        var rouletter2 = $('div.roulette2');
+
+        rouletter.roulette(p);
+        rouletter1.roulette(p);
+        rouletter2.roulette(p);
+
+        rouletter.roulette('start');
+        rouletter1.roulette('start');
+        rouletter2.roulette('start');
     }
 }
 
