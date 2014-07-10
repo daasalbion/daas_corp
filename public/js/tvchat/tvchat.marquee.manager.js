@@ -28,15 +28,15 @@ function cargarMensajes(respuesta){
     console.log(mensajes);
 }
 
-function obtenerMensajesBD(){
+/*function obtenerMensajesBD(){
 
     console.log("llamada ajax");
     $.get("http://www.entermovil.com.py.localserver/tvchat/obtener-mensajes", {solicitud: true, id_mensaje:siguiente_id_solicitar}, cargarMensajes, "json");
     return;
-}
+}*/
 
 //modulo de obtencion de mensajes
-setInterval(obtenerMensajesBD(), 5000);
+//setInterval(obtenerMensajesBD(), 5000);
 
 $(document).ready(function(){
 

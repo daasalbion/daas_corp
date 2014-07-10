@@ -338,3 +338,6 @@ div.roulette2 {
     position:absolute;
     z-index: 6;
 }*/
+.numeros_sorteados{
+    float: left;
+}

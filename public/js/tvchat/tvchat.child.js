@@ -107,7 +107,7 @@ function cargarJuego(params){
                                 .append(
                                     $(document.createElement("div"))
                                         .attr('id', 'tira_imagenes2')
-                                        .addClass('roulette1')
+                                        .addClass('roulette')
                                 ),
                             $(document.createElement("div"))
                                 .attr('id', 'tira3')
@@ -115,7 +115,7 @@ function cargarJuego(params){
                                 .append(
                                     $(document.createElement("div"))
                                         .attr('id', 'tira_imagenes3')
-                                        .addClass('roulette2')
+                                        .addClass('roulette')
                                 )
                         ),
                         $(document.createElement("div"))
@@ -184,12 +184,12 @@ function cargarJuego(params){
                 },
                 stopCallback : function($stopElm) {
                     appendLogMsg('stop');
-                    console.log("stop" + $stopElm);
-                    cargar_elementos_sorteados($stopElm);
+                    console.log("stop " + $stopElm);
+                    /*cargar_elementos_sorteados($stopElm);
                     $('#speed, #duration').slider('enable');
                     $('#stopImageNumber').spinner('enable');
                     $('.start').removeAttr('disabled');
-                    $('.stop').attr('disabled', 'true');
+                    $('.stop').attr('disabled', 'true');*/
                 }
             }
 
@@ -481,11 +481,11 @@ function jugarJuego(params){
             stopCallback : function($stopElm) {
                 appendLogMsg('stop');
                 console.log("stop" + $stopElm);
-                cargar_elementos_sorteados($stopElm);
+                /*cargar_elementos_sorteados($stopElm);
                 $('#speed, #duration').slider('enable');
                 $('#stopImageNumber').spinner('enable');
                 $('.start').removeAttr('disabled');
-                $('.stop').attr('disabled', 'true');
+                $('.stop').attr('disabled', 'true');*/
             }
         }
 

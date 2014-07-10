@@ -1,8 +1,11 @@
+var tvchat = null;
+
 $(document).ready(function(){
 
     //abrir ventanas
     $('#abrir_ventana1').click(function(){
 
+        $('#abrir_ventana1').attr('disabled', 'true');
         tvchat = window.open("/tvchat/tv",
             "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
 
@@ -19,28 +22,24 @@ $(document).ready(function(){
             "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
 
     })
-
     $('#abrir_ventana4').click(function(){
 
         ventana4= window.open("/tvchat/demo-galgos",
             "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
 
     })
-
     $('#abrir_ventana5').click(function(){
 
         ventana4= window.open("/tvchat/demo-dados",
             "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
 
     })
-
     $('#abrir_ventana6').click(function(){
 
         ventana4= window.open("/tvchat/demo",
             "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
 
     })
-
     $('#abrir_ventana7').click(function(){
 
         ventana4= window.open("/tvchat/demo-slot",
@@ -50,6 +49,7 @@ $(document).ready(function(){
 
     //cerrar ventanas
     $('#cerrar_ventana1').click(function(){
+        $('#abrir_ventana1').removeAttr('disabled');
         tvchat.close();
     })
     $('#cerrar_ventana2').click(function(){
@@ -59,22 +59,26 @@ $(document).ready(function(){
         ventana2.close();
     })
 
-    $('#cargar_tombola').click(function(){
-
-        //valores por defecto
-        var params = {
-            "juego": "tombola",
-            "valores_ganadores": [1,2,3,4,5]
-        };
-
-        tvchat.cargarJuego(params);
-    })
+    //cargar juegos
     $('#cargar_tragamonedas').click(function(){
-
+        //no puede volver a cargar los demas juegos
+        $('#cargar_tragamonedas').attr('disabled', 'true');
+        $('#cargar_tombola').attr('disabled', 'true');
         //valores por defecto
         var params = {
             "juego": "tragamonedas",
             "valores_ganadores": [1,2,3]
+        };
+
+        tvchat.cargarJuego(params);
+    })
+    $('#cargar_tombola').click(function(){
+        $('#cargar_tragamonedas').attr('disabled', 'true');
+        $('#cargar_tombola').attr('disabled', 'true');
+        //valores por defecto
+        var params = {
+            "juego": "tombola",
+            "valores_ganadores": [1,2,3,4,5]
         };
 
         tvchat.cargarJuego(params);
@@ -89,8 +93,11 @@ $(document).ready(function(){
         tvchat.cargarJuego(params);
     })
 
+    //descargar juegos
     $('#cerrar_tragamonedas').click(function(){
 
+        $('#cargar_tragamonedas').removeAttr('disabled');
+        $('#cargar_tombola').removeAttr('disabled');
         //valores por defecto
         var params = {
             "juego": "tragamonedas"
@@ -100,6 +107,8 @@ $(document).ready(function(){
     })
     $('#cerrar_tombola').click(function(){
 
+        $('#cargar_tragamonedas').removeAttr('disabled');
+        $('#cargar_tombola').removeAttr('disabled');
         //valores por defecto
         var params = {
             "juego": "tombola"
@@ -116,13 +125,8 @@ $(document).ready(function(){
 
         tvchat.descargarJuego(params);
     })
-    $('#jugarTombola').click(function(){
 
-        var params = {
-            "jugar": "tombola"
-        }
-        tvchat.jugarJuego(params);
-    });
+    //jugar juegos
     $('#jugarTragamonedas').click(function(){
 
         var params = {
@@ -130,4 +134,40 @@ $(document).ready(function(){
         }
         tvchat.jugarJuego(params);
     });
-});
+    $('#jugarTombola').click(function(){
+
+        $('#jugarTombola').attr('disabled', 'true');
+        var params = {
+            "jugar": "tombola"
+        }
+        tvchat.jugarJuego(params);
+    });
+
+    //obtener elementos sorteados
+    $('#getWinElementsTragamonedas').click(function(){
+
+        console.log("getWinElementsTragamonedas");
+        $.get("http://www.entermovil.desarrollodaas.com.py/tvchat/get-win-elements-tragamonedas", {}, cargarNumerosGanadores, "json");
+        return;
+    })
+
+    //funciones
+    function cargarNumerosGanadores(respuesta){
+
+        alert(respuesta.sorteo);
+        var WinElementsTragamonedas = $('#WinElementsTragamonedas p');
+        $.each(respuesta.sorteo, function(i, item) {
+            WinElementsTragamonedas.append(
+                $(document.createElement("h4"))
+                        .append(item)
+                        .addClass("numeros_sorteados")
+            );
+        });
+    }
+})
+
+window.onunload = unloadPage;
+function unloadPage(){
+
+    alert("unload event detected!");
+}

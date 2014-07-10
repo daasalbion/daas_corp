@@ -41,6 +41,17 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         );
         $router->addRoute('servicio_portal_wap', $r);*/
 
+        //De la forma: www.entermovil.com.py/ws/tigo/guatemala/SubscribeToService
+        $r = new Zend_Controller_Router_Route(
+            'smsfwstatus/tigo/sv/:request_id/:status',
+            array(
+                'controller' => 'waptwo',
+                'action' => 'tigowapfwsv',
+                'id_carrier' => 11
+            )
+        );
+        $router->addRoute('tigo-sv-confirmacion-alta', $r);
+
         $r = new Zend_Controller_Router_Route(
             'oneapi/userprofile/v1/notifySubscription',
             array(
@@ -131,17 +142,30 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $router->addRoute('alta_portal_gt', $r);
 
         //Suscripcion PORTAL - COLOMBIA
-        //http://entermovil.com.py/col/alta/PORTAL
+        //http://entermovil.com.py/co/alta/PORTAL
         $r = new Zend_Controller_Router_Route(
-            'col/alta/PORTAL',
+            'co/alta/PORTAL',
             array(
                 'controller' => 'utilidades',
                 'action' => 'detectar',
                 'alias' => 'PORTAL',
-                'redireccionar' => 'col/alta/PORTAL'
+                'redireccionar' => 'co/alta/PORTAL'
             )
         );
-        $router->addRoute('alta_portal_col', $r);
+        $router->addRoute('alta_portal_co', $r);
+
+        //Suscripcion PORTAL - EL SALVADOR
+        //http://entermovil.com.py/sv/alta/PORTAL
+        $r = new Zend_Controller_Router_Route(
+            'sv/alta/PORTAL',
+            array(
+                'controller' => 'utilidades',
+                'action' => 'detectar',
+                'alias' => 'PORTAL',
+                'redireccionar' => 'sv/alta/PORTAL'
+            )
+        );
+        $router->addRoute('alta_portal_sv', $r);
 
         //Suscripcion PORTAL - PARAGUAY
         //http://entermovil.com.py/activar/PORTAL
@@ -172,7 +196,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         //Agregado para pruebas Derlis
         //http://entermovil.com.py/RE/PORTAL
         $r = new Zend_Controller_Router_Route(
-            'RE/PORTAL',
+            'prueba/TIGO-SV',
             array(
                 'controller' => 'utilidades',
                 'action' => 'detectar',
@@ -180,7 +204,18 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                 'redireccionar' => 'PRUEBA'
             )
         );
-        $router->addRoute('activar_portal_py_control_resoluciones', $r);
+        $router->addRoute('prueba_portal_elsalvador', $r);
+
+        $r = new Zend_Controller_Router_Route(
+            'prueba/TIGO-CO',
+            array(
+                'controller' => 'utilidades',
+                'action' => 'detectar',
+                'alias' => 'PORTAL',
+                'redireccionar' => 'PRUEBA'
+            )
+        );
+        $router->addRoute('prueba_portal_colombia', $r);
 
 
         //Suscripcion PATRON - PARAGUAY
@@ -450,7 +485,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view->headTitle()->setSeparator(' - ');
         $view->headTitle('ENTERMOVIL');
 
-        $view->headScript()->setFile('/js/jquery-1.7.min.js', 'text/javascript');
+        $view->headScript()->setFile('/js/plugins/jquery-1.7.js', 'text/javascript');
 
         //$view->headScript()->appendFile('/js/base.js', 'text/javascript');
         //$view->headLink()->setStylesheet('/css/base.css', 'screen');

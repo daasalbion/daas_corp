@@ -31,7 +31,7 @@ var wheel = {
     centerX : 150,
     centerY : 150,
 
-    valoresEsperados : [0,1,2,3,4,5,6,7,8,9,],
+    valoresEsperados : [0,1,2,3],
     contadorIterations : 0,
     angulos: [],
 
@@ -381,7 +381,7 @@ var wheel = {
     }
 }
 
-window.onload = function() {
+/*window.onload = function() {
 
     wheel.init();
     //array asociativo para cargar los valores estaticamente en la tombola
@@ -406,4 +406,4 @@ window.onload = function() {
     wheel.segments = segments;
     wheel.update();
 
-}
+}*/

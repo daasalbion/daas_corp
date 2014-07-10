@@ -7,6 +7,8 @@ class TvchatController extends Zend_Controller_Action{
 
         'daas' => array('clave' => 'daas', 'nombre' => 'DAAS'),
     );
+    var $NRO_ELEMENTOS_SORTEADOS_TRAGAMONEDAS = 3;
+    var $NRO_ELEMENTOS_SORTEADOS_TOMBOLA = 3;
 
     public function init(){
         /* Initialize action controller here */
@@ -174,7 +176,7 @@ class TvchatController extends Zend_Controller_Action{
 
     public function administracionAction(){
 
-        $this->view->headScript()->appendFile('/js/plugins/jquery-2.1.0.js', 'text/javascript');
+        //$this->view->headScript()->appendFile('/js/plugins/jquery-1.7.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.manager.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.marquee.manager.js', 'text/javascript');
@@ -183,13 +185,13 @@ class TvchatController extends Zend_Controller_Action{
 
     public function tvAction(){
 
-        $this->view->headScript()->appendFile('/js/plugins/jquery-1.7.js', 'text/javascript');
+        //$this->view->headScript()->appendFile('/js/plugins/jquery-1.7.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/jquery.marquee.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/roulette.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.utils.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.wheel.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.child.js', 'text/javascript');
-        $this->view->headScript()->appendFile('/js/tvchat/tvchat.tragamonedas.manager.js', 'text/javascript');
+        //$this->view->headScript()->appendFile('/js/tvchat/tvchat.tragamonedas.manager.js', 'text/javascript');
         $this->logger->info("tv");
         $this->_helper->_layout->setLayout('tvchat-window-layout');
     }
@@ -233,6 +235,20 @@ class TvchatController extends Zend_Controller_Action{
 
         $this->logger->info("demoVideo");
         $this->_helper->layout->disableLayout();
+    }
+
+    public function getWinElementsTragamonedasAction(){
+
+        $elementos_ganadores = array();
+        $nro = $this->NRO_ELEMENTOS_SORTEADOS_TRAGAMONEDAS;
+        for( $i=1; $i < $nro; $i++){
+            $elementos_ganadores[] = rand(1,10);
+        }
+        $this->logger->info('datos a obtenidos ' . print_r($elementos_ganadores, true));
+        $respuesta = json_encode(array( "sorteo" => $elementos_ganadores ) );
+        $this->logger->info('datos a enviar ' . $elementos_ganadores );
+        echo $respuesta;
+        exit;
     }
 
     private function _consulta( $accion, $datos = null ){
