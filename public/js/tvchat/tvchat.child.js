@@ -187,7 +187,7 @@ function cargarJuego(params){
             },
             stopCallback : function($stopElm) {
                 appendLogMsg('stop');
-                console.log("stop " + $stopElm);
+                console.log("mierda stop " + $stopElm);
                 /*cargar_elementos_sorteados($stopElm);
                 $('#speed, #duration').slider('enable');
                 $('#stopImageNumber').spinner('enable');
