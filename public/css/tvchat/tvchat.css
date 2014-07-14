@@ -340,4 +340,6 @@ div.roulette2 {
 }*/
 .numeros_sorteados{
     float: left;
+    color: red;
+    font: bold;
 }
