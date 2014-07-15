@@ -8,7 +8,7 @@ class TvchatController extends Zend_Controller_Action{
         'daas' => array('clave' => 'daas', 'nombre' => 'DAAS'),
     );
     var $NRO_ELEMENTOS_SORTEADOS_TRAGAMONEDAS = 3;
-    var $NRO_ELEMENTOS_SORTEADOS_TOMBOLA = 3;
+    var $NRO_ELEMENTOS_SORTEADOS_TOMBOLA = 4;
 
     public function init(){
         /* Initialize action controller here */
@@ -140,7 +140,7 @@ class TvchatController extends Zend_Controller_Action{
         $inicio = 0;
         $mensajes_marquee = '';
 
-        if ( ( $_GET['solicitud'] == true ) and ( isset( $_GET['id_mensaje'] ) ) ){
+        if ( ( isset( $_GET['solicitud'] ) ) && ( $_GET['solicitud'] == true ) && ( isset( $_GET['id_mensaje'] ) ) ){
 
             $mensajes_nuevos = $this->_consulta( 'GET_MENSAJES_NUEVOS', array( 'id_tvchat_mensaje' => $_GET['id_mensaje'] ) );
             $this->logger->info( 'datos a obtenidos ' . print_r( $mensajes_nuevos, true ) );
@@ -171,12 +171,24 @@ class TvchatController extends Zend_Controller_Action{
                 'mensajes_marquee' => $mensajes_marquee, 'siguiente_id_solicitar' => $siguiente_id_solicitar ) );
             $this->logger->info('datos a enviar ' . $respuesta );
             echo $respuesta;
+            exit;
+        }else{
+
+            $mensajes_nuevos = $this->_consulta( 'GET_MENSAJES_NUEVOS', array( 'id_tvchat_mensaje' => null ) );
+            $this->logger->info( 'datos a obtenidos ' . print_r( $mensajes_nuevos, true ) );
+
+            //seteo el siguiente id a solicitar
+            $respuesta = json_encode( array( "mensajes" => $mensajes_nuevos ) );
+            $this->logger->info( 'datos a enviar ' . $respuesta );
+            echo $respuesta;
+            exit;
         }
     }
 
     public function administracionAction(){
 
-        //$this->view->headScript()->appendFile('/js/plugins/jquery-1.7.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/plugins/jquery-1.8.0.min.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/plugins/bootstrap.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.manager.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.marquee.manager.js', 'text/javascript');
@@ -254,7 +266,8 @@ class TvchatController extends Zend_Controller_Action{
     public function getWinElementsTombolaAction(){
 
         $elementos_ganadores = array();
-        $nro = $this->NRO_ELEMENTOS_SORTEADOS_TRAGAMONEDAS;
+        $nro = $this->NRO_ELEMENTOS_SORTEADOS_TOMBOLA;
+        $this->logger->info("numero de elementos tombola: " . $this->NRO_ELEMENTOS_SORTEADOS_TOMBOLA);
         for( $i=1; $i <= $nro; $i++){
             $elementos_ganadores[] = rand(1,10);
         }
@@ -313,6 +326,9 @@ class TvchatController extends Zend_Controller_Action{
                     where PT.id_tvchat_mensaje > ?
                     order by 1
                     limit 10";
+
+            if($datos['id_tvchat_mensaje'] == null)
+                $datos['id_tvchat_mensaje'] = 1;
 
             $rs = $db->fetchAll( $sql, array( $datos['id_tvchat_mensaje'] ) );
 

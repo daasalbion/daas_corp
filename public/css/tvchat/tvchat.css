@@ -329,15 +329,6 @@ div.roulette2 {
     width: 53px;
     z-index: 56;
 }
-/*
-.wheel{
-    position:absolute;
-    z-index: 5;
-}
-.canvas{
-    position:absolute;
-    z-index: 6;
-}*/
 .numeros_sorteados{
     float: left;
     color: red;

@@ -99,7 +99,7 @@ $(document).ready(function(){
         //valores por defecto
         var params = {
             "juego": "tombola",
-            "valores_ganadores": [1,2,3,4,5]
+            "valores_ganadores": tombola_elementos_ganadores
         };
 
         var sorteo = $('#WinElementsTombola p');
@@ -193,6 +193,9 @@ $(document).ready(function(){
         return;
     })
 
+    setInterval( obtenerMensajes, 1000*5*60 );
+
+    obtenerMensajes();
     deshabilitarBotones();
 
     //funciones
@@ -281,20 +284,21 @@ $(document).ready(function(){
             tragamonedas_numeros_ganadores.push(respuesta.cel_ganador);
         }else if( respuesta.juego == "tombola" ){
 
-            var WinElementsTragamonedas = $('#WinElementsTombola p');
+            console.log("tombola");
+            var WinElementsTombola = $('#WinElementsTombola p');
             $.each(respuesta.sorteo, function(i, item) {
                 if(i>0){
-                    WinElementsTragamonedas
+                    WinElementsTombola
                         .append(" - "+item)
                         .addClass("numeros_sorteados")
                 }else{
-                    WinElementsTragamonedas
+                    WinElementsTombola
                         .append(item)
                         .addClass("numeros_sorteados")
                 }
 
                 //cargar los elementos ganadores a pasar
-                tragamonedas_elementos_ganadores[i] = item;
+                tombola_elementos_ganadores[i] = item;
             });
             console.log("tombola_elementos_ganadores: "+ tombola_elementos_ganadores);
             $('#WinElementsTombola').append(
@@ -307,4 +311,39 @@ $(document).ready(function(){
         }
     }
 
+    function obtenerMensajes(){
+
+        console.log("solicito mensajes nuevos");
+        $.get("http://www.entermovil.desarrollodaas.com.py/tvchat/obtener-mensajes", {}, cargarOpcionesMensajes, "json");
+        return;
+    }
+
+    function cargarOpcionesMensajes( respuesta){
+
+        var opciones_mensajes = $('#mensajes');
+        $.each( respuesta.mensajes, function( i, item ) {
+
+            opciones_mensajes.append(
+
+                $(document.createElement("p"))
+                    .attr('id', i)
+                    .append(item)
+                    .addClass("numeros_sorteados")
+                    .append(
+                        $(document.createElement("button"))
+                            .addClass("seleccionar btn btn-primary")
+                            .attr('data-id-mensaje', i)
+                            .attr('id', "mierda")
+                            .append("Seleccionar")
+                    )
+            )
+        });
+    }
+
+    $('#mierda').click(function(){
+
+        console.log("mierda");
+        alert("mierda");
+    })
 })
+
