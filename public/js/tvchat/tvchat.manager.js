@@ -12,11 +12,14 @@ function ObjetoGanador(combinacion_ganadora, cel_ganador, nombre_juego) {
 
 var tragamonedas = JSON.parse(localStorage.getItem('tragamonedas'));
 var tombola = JSON.parse(localStorage.getItem('tombola'));
+var mensajes = JSON.parse(localStorage.getItem('mensajes'));
 
 if (tragamonedas == null)
     var tragamonedas = [];
 if (tombola == null)
     var tombola = [];
+if (mensajes == null)
+    var mensajes = [];
 
 
 $(document).ready(function(){
@@ -212,7 +215,7 @@ $(document).ready(function(){
 
     setInterval( obtenerMensajes, 1000*5*60 );
 
-    //obtenerMensajes();
+    obtenerMensajes();
 
     deshabilitarBotones();
 
@@ -379,6 +382,8 @@ $(document).ready(function(){
                             .append("Seleccionar")
                     )
             )
+
+            mensajes.push(item);
         });
     }
 
@@ -391,6 +396,7 @@ $(document).ready(function(){
         alert('vaciar');
         localStorage.removeItem('tragamonedas');
         localStorage.removeItem('tombola');
+        localStorage.removeItem('mensajes');
     })
 })
 
@@ -399,5 +405,6 @@ $(window).bind('beforeunload',function(){
     //save info somewhere
     if( tvchat != null )
         tvchat.close();
+    //return 'Esta seguro?';
     return;
 });
