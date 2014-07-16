@@ -223,6 +223,7 @@ function cargarJuego( params ){
             "512060"  : "9"
         };
 
+        wheel.valoresEsperados = elementos_ganadores;
         wheel.init();
 
         var segments = new Array();
@@ -247,6 +248,7 @@ function descargarJuego(params){
     if(params['juego'] == "tombola"){
 
         var juego = $('#tombola_wheel_wrapper');
+        wheel.clear();
         juego.remove();
     }else if( params['juego'] == "tragamonedas" ){
 

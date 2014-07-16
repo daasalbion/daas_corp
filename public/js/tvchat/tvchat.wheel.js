@@ -31,7 +31,7 @@ var wheel = {
     centerX : 150,
     centerY : 150,
 
-    valoresEsperados : [0,1,2,3],
+    valoresEsperados : [],
     contadorIterations : 0,
     angulos: [],
 
@@ -329,12 +329,13 @@ var wheel = {
 
         //angulos: [10, 9, 8, 7, 6, 5, 4 , 3 , 2 , 1],
         for (var i = 1; i <= len; i++) {
+
             var angle = PI2 * (i / len) + angleCurrent;
             wheel.drawSegment(i - 1, lastAngle, angle);
             wheel.angles[i] = lastAngle;
             //guardo el orden de los angulos guardados
             var j = wheel.segments.length - Math.floor((lastAngle / (Math.PI * 2))	* wheel.segments.length) - 1;
-            if(j<0)
+            if( j < 0 )
                 j = len - (-1)*j;
             wheel.angulos[j] = wheel.angles[i];
 
