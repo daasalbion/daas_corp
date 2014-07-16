@@ -254,11 +254,12 @@ class TvchatController extends Zend_Controller_Action{
         $elementos_ganadores = array();
         $nro = $this->NRO_ELEMENTOS_SORTEADOS_TRAGAMONEDAS;
         for( $i=1; $i <= $nro; $i++){
-            $elementos_ganadores[] = rand(1,10);
+
+            $elementos_ganadores[] = rand( 1, 10 );
         }
-        $this->logger->info('datos a obtenidos ' . print_r($elementos_ganadores, true));
-        $respuesta = json_encode(array( "sorteo" => $elementos_ganadores, "cel_ganador" => "0982313289", "juego" => "tragamonedas" ) );
-        $this->logger->info('datos a enviar ' . $elementos_ganadores );
+        $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
+        $respuesta = json_encode( array( "sorteo" => $elementos_ganadores, "cel_ganador" => "0982313289", "juego" => "tragamonedas" ) );
+        $this->logger->info( 'datos a enviar ' . $elementos_ganadores );
         echo $respuesta;
         exit;
     }

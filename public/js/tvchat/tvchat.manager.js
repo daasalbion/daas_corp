@@ -1,8 +1,23 @@
-var tvchat;
+var tvchat = null;
 var tragamonedas_elementos_ganadores = [];
 var tragamonedas_numeros_ganadores = [];
 var tombola_elementos_ganadores = [];
 var tombola_numeros_ganadores = [];
+
+function ObjetoGanador(combinacion_ganadora, cel_ganador, nombre_juego) {
+    this.combinacion_ganadora = combinacion_ganadora;
+    this.cel_ganador = cel_ganador;
+    this.nombre_juego = nombre_juego;
+}
+
+var tragamonedas = JSON.parse(localStorage.getItem('tragamonedas'));
+var tombola = JSON.parse(localStorage.getItem('tombola'));
+
+if (tragamonedas == null)
+    var tragamonedas = [];
+if (tombola == null)
+    var tombola = [];
+
 
 $(document).ready(function(){
 
@@ -80,12 +95,13 @@ $(document).ready(function(){
         var sorteo = $('#WinElementsTragamonedas p');
         sorteo.remove();
         var tragamonedas_historial = $('#historial_tragamonedas');
+        $('#historial_tragamonedas p').remove();
 
-        $.each(tragamonedas_numeros_ganadores, function(i, item) {
+        $.each(tragamonedas, function(i, objetoGanador) {
 
             tragamonedas_historial.append(
                 $(document.createElement("p"))
-                    .append(item)
+                    .append(objetoGanador.combinacion_ganadora + ' - ' + objetoGanador.cel_ganador)
                     .addClass("numeros_sorteados")
             )
             tragamonedas_numeros_ganadores.pop();
@@ -105,12 +121,13 @@ $(document).ready(function(){
         var sorteo = $('#WinElementsTombola p');
         sorteo.remove();
         var tombola_historial = $('#historial_tombola');
+        $('#historial_tombola p').remove();
 
-        $.each(tombola_numeros_ganadores, function(i, item) {
+        $.each(tombola, function(i, objetoGanador) {
 
             tombola_historial.append(
                 $(document.createElement("p"))
-                    .append(item)
+                    .append(objetoGanador.combinacion_ganadora + ' - ' + objetoGanador.cel_ganador)
                     .addClass("numeros_sorteados")
             )
             tombola_numeros_ganadores.pop();
@@ -182,20 +199,21 @@ $(document).ready(function(){
 
         habilitarBotones(2,'tragamonedas');
         console.log("getWinElementsTragamonedas");
-        $.get("http://www.entermovil.desarrollodaas.com.py/tvchat/get-win-elements-tragamonedas", {}, cargarNumerosGanadores, "json");
+        $.get("/tvchat/get-win-elements-tragamonedas", {}, cargarNumerosGanadores, "json");
         return;
     })
     $('#getWinElementsTombola').click(function(){
 
         habilitarBotones(2,'tombola');
         console.log("getWinElementsTombola");
-        $.get("http://www.entermovil.desarrollodaas.com.py/tvchat/get-win-elements-tombola", {}, cargarNumerosGanadores, "json");
+        $.get("/tvchat/get-win-elements-tombola", {}, cargarNumerosGanadores, "json");
         return;
     })
 
     setInterval( obtenerMensajes, 1000*5*60 );
 
-    obtenerMensajes();
+    //obtenerMensajes();
+
     deshabilitarBotones();
 
     //funciones
@@ -255,17 +273,27 @@ $(document).ready(function(){
 
     }
 
-    function cargarNumerosGanadores(respuesta){
+    function cargarNumerosGanadores( respuesta ){
+
+        var nuevoGanador = new ObjetoGanador( '', '', respuesta.juego );
 
         if( respuesta.juego == "tragamonedas" ){
 
+            $('#WinElementsTragamonedas')
+                .append(
+                    $(document.createElement("p"))
+                );
+
             var WinElementsTragamonedas = $('#WinElementsTragamonedas p');
-            $.each(respuesta.sorteo, function(i, item) {
-                if(i>0){
+            $.each(respuesta.sorteo, function( i, item ) {
+
+                if( i > 0 ){
+
                     WinElementsTragamonedas
-                        .append(" - "+item)
+                        .append(" - " + item)
                         .addClass("numeros_sorteados")
                 }else{
+
                     WinElementsTragamonedas
                         .append(item)
                         .addClass("numeros_sorteados")
@@ -273,23 +301,32 @@ $(document).ready(function(){
 
                 //cargar los elementos ganadores a pasar
                 tragamonedas_elementos_ganadores[i] = item;
+                nuevoGanador.combinacion_ganadora += item;
             });
-            console.log("tragamonedas_elementos_ganadores: "+ tragamonedas_elementos_ganadores);
+
+            console.log("tragamonedas_elementos_ganadores: " + tragamonedas_elementos_ganadores);
             $('#WinElementsTragamonedas').append(
+
                 $(document.createElement("p"))
                     .append(respuesta.cel_ganador)
                     .addClass("numeros_sorteados")
             );
 
             tragamonedas_numeros_ganadores.push(respuesta.cel_ganador);
+
+            nuevoGanador.cel_ganador = respuesta.cel_ganador;
+            tragamonedas.push(nuevoGanador);
+            localStorage.setItem('tragamonedas', JSON.stringify(tragamonedas));
+
         }else if( respuesta.juego == "tombola" ){
 
             console.log("tombola");
             var WinElementsTombola = $('#WinElementsTombola p');
             $.each(respuesta.sorteo, function(i, item) {
-                if(i>0){
+                if( i > 0 ){
+
                     WinElementsTombola
-                        .append(" - "+item)
+                        .append( " - " + item )
                         .addClass("numeros_sorteados")
                 }else{
                     WinElementsTombola
@@ -299,7 +336,9 @@ $(document).ready(function(){
 
                 //cargar los elementos ganadores a pasar
                 tombola_elementos_ganadores[i] = item;
+                nuevoGanador.combinacion_ganadora += item;
             });
+
             console.log("tombola_elementos_ganadores: "+ tombola_elementos_ganadores);
             $('#WinElementsTombola').append(
                 $(document.createElement("p"))
@@ -308,17 +347,20 @@ $(document).ready(function(){
             );
 
             tombola_numeros_ganadores.push(respuesta.cel_ganador);
+            nuevoGanador.cel_ganador = respuesta.cel_ganador;
+            tombola.push(nuevoGanador);
+            localStorage.setItem('tombola', JSON.stringify(tombola))
         }
     }
 
     function obtenerMensajes(){
 
         console.log("solicito mensajes nuevos");
-        $.get("http://www.entermovil.desarrollodaas.com.py/tvchat/obtener-mensajes", {}, cargarOpcionesMensajes, "json");
+        $.get("/tvchat/obtener-mensajes", {}, cargarOpcionesMensajes, "json");
         return;
     }
 
-    function cargarOpcionesMensajes( respuesta){
+    function cargarOpcionesMensajes( respuesta ){
 
         var opciones_mensajes = $('#mensajes');
         $.each( respuesta.mensajes, function( i, item ) {
@@ -340,10 +382,22 @@ $(document).ready(function(){
         });
     }
 
-    $('#mierda').click(function(){
+    $('.mierda').click(function(){
 
         console.log("mierda");
         alert("mierda");
     })
+    $('#vaciar_localstorage').click(function(){
+        alert('vaciar');
+        localStorage.removeItem('tragamonedas');
+        localStorage.removeItem('tombola');
+    })
 })
 
+$(window).bind('beforeunload',function(){
+
+    //save info somewhere
+    if( tvchat != null )
+        tvchat.close();
+    return;
+});
