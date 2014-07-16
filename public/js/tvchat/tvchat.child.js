@@ -5,6 +5,7 @@ function cargarJuego(params){
     var elementos_ganadores = params["valores_ganadores"];
 
     var juego = $('#game_wrapper');
+    //mirar
 
     if(params["juego"] == "tombola"){
 
