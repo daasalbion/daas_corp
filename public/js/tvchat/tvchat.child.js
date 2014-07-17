@@ -1,14 +1,17 @@
-var rouletter;
+//variables globales
 var rouletter1;
 var rouletter2;
+var rouletter3;
+var textarray = [];
+var elementos_ganadores;
+
+//funciones
 function cargarJuego( params ){
 
     console.log("juego: " + params["juego"]);
     console.log("valores_ganadores: " + params["valores_ganadores"]);
-    var elementos_ganadores = params["valores_ganadores"];
-
+    elementos_ganadores = params["valores_ganadores"];
     var juego = $('#game_wrapper');
-    //mirar
 
     if( params['juego'] == "tragamonedas" ){
 
@@ -47,7 +50,7 @@ function cargarJuego( params ){
                                 .append(
                                     $(document.createElement("div"))
                                         .attr('id', 'tira_imagenes1')
-                                        .addClass('roulette')
+                                        .addClass('roulette1')
                                 ),
                             $(document.createElement("div"))
                                 .attr('id', 'tira2')
@@ -55,7 +58,7 @@ function cargarJuego( params ){
                                 .append(
                                     $(document.createElement("div"))
                                         .attr('id', 'tira_imagenes2')
-                                        .addClass('roulette1')
+                                        .addClass('roulette2')
                                 ),
                             $(document.createElement("div"))
                                 .attr('id', 'tira3')
@@ -63,7 +66,7 @@ function cargarJuego( params ){
                                 .append(
                                     $(document.createElement("div"))
                                         .attr('id', 'tira_imagenes3')
-                                        .addClass('roulette2')
+                                        .addClass('roulette3')
                                 )
                         ),
                     $(document.createElement("div"))
@@ -90,10 +93,10 @@ function cargarJuego( params ){
                         )
                 )
         )
-                               //0    1    2    3    4    5    6     7       8         9        10
-        var imagenes_tiras1 = ['0', '1', '2', '4', '5', '6', '7', 'coin', 'chomp', 'flower', 'star'];
-        var imagenes_tiras2 = ['0', '1', '2', '4', '5', '6', '7', 'coin', 'chomp', 'flower', 'star'];
-        var imagenes_tiras3 = ['0', '1', '2', '4', '5', '6', '7', 'coin', 'chomp', 'flower', 'star'];
+                              //0    1    2    3    4    5    6    7     8        9        10       11
+        var imagenes_tiras1 = ['0', '1', '2', '3', '4', '5', '6', '7', 'coin', 'chomp', 'flower', 'star'];
+        var imagenes_tiras2 = ['0', '1', '2', '3', '4', '5', '6', '7', 'coin', 'chomp', 'flower', 'star'];
+        var imagenes_tiras3 = ['0', '1', '2', '3', '4', '5', '6', '7', 'coin', 'chomp', 'flower', 'star'];
 
         var tira_imagenes1 = $('#tira_imagenes1');
         var tira_imagenes2 = $('#tira_imagenes2');
@@ -104,15 +107,15 @@ function cargarJuego( params ){
 
             tira_imagenes1.append(
                 $(document.createElement("img"))
-                    .attr('src', "/img/tragamonedas/" +imagenes_tiras1[i]+'.png')
+                    .attr('src', "/img/tvchat/tragamonedas/" +imagenes_tiras1[i]+'.png')
             );
             tira_imagenes2.append(
                 $(document.createElement("img"))
-                    .attr('src', "/img/tragamonedas/" +imagenes_tiras2[i]+'.png')
+                    .attr('src', "/img/tvchat/tragamonedas/" +imagenes_tiras2[i]+'.png')
             );
             tira_imagenes3.append(
                 $(document.createElement("img"))
-                    .attr('src', "/img/tragamonedas/" +imagenes_tiras3[i]+'.png')
+                    .attr('src', "/img/tvchat/tragamonedas/" +imagenes_tiras3[i]+'.png')
             );
         }
 
@@ -126,38 +129,16 @@ function cargarJuego( params ){
                 .append('<p class="muted">' + msg + '</p>')
                 .scrollTop(100000000);
         }
-        var p = {
-            startCallback : function() {
-                console.log("stop" + p.stopImageNumber);
-            },
-            slowDownCallback : function() {
-            },
-            stopCallback : function($stopElm) {
-                appendLogMsg('stop');
-                console.log("mierda stop " + $stopElm);
-                resultado++;
-                if( resultado == 3 ){
 
-                    $('#premio').append("Saldo");
-                    $('#linea').append("0982313289");
-                }
-            }
-        }
 
         //creo los 3 elementos ruletas
-        rouletter = $('div.roulette');
         rouletter1 = $('div.roulette1');
         rouletter2 = $('div.roulette2');
+        rouletter3 = $('div.roulette3');
 
-        p['stopImageNumber'] = Number(elementos_ganadores[0]);
-        console.log("mirar1 p :"+imagenes_tiras1[p['stopImageNumber']]);
-        rouletter.roulette( p );
-        p['stopImageNumber'] = Number(elementos_ganadores[1]);
-        console.log("mirar2 p :"+imagenes_tiras1[p['stopImageNumber']]);
-        rouletter1.roulette( p );
-        p['stopImageNumber'] = Number(elementos_ganadores[2]);
-        console.log("mirar3 p :"+imagenes_tiras1[p['stopImageNumber']]);
-        rouletter2.roulette( p );
+        rouletter1.roulette( );
+        rouletter2.roulette( );
+        rouletter3.roulette( );
 
         //funcion para desplegar los resultados
         function cargar_elementos_sorteados(indice){
@@ -175,7 +156,7 @@ function cargarJuego( params ){
         }
 
     }
-    else if(params["juego"] == "tombola"){
+    else if( params["juego"] == "tombola" ){
 
         juego.append(
             //cargo los elementos
@@ -236,16 +217,11 @@ function cargarJuego( params ){
         wheel.update();
 
     }
-    else if( params['juego'] == "tvchat" ){
-
-        alert("aun no cargado");
-        console.log("aun no cargado");
-    }
 }
 
 function descargarJuego(params){
 
-    if(params['juego'] == "tombola"){
+    if( params['juego'] == "tombola" ){
 
         var juego = $('#tombola_wheel_wrapper');
         wheel.clear();
@@ -254,7 +230,7 @@ function descargarJuego(params){
 
         var juego = $('#tragamonedas_wrapper');
         juego.remove();
-    }else if(params['juego'] == "tvchat" ){
+    }else if( params['juego'] == "tvchat" ){
 
         var juego = $('#ventana');
         juego.remove();
@@ -265,21 +241,47 @@ function descargarJuego(params){
 
 function jugarJuego(params){
 
-    console.log("juego a jugar: " +params['jugar']);
+    console.log("juego a jugar: " + params['jugar']);
+    console.log("valores_ganadores: " + params["objeto_ganador"].combinacion_ganadora_list);
+    elementos_ganadores = params["objeto_ganador"].combinacion_ganadora_list;
+    var ganador = params['objeto_ganador'].cel_ganador;
+    var resultado = 0;
 
-    if(params['jugar'] == "tombola"){
+    if(params['jugar'] == "tragamonedas"){
+
+        var p = {
+            startCallback : function() {
+            },
+            slowDownCallback : function() {
+            },
+            stopCallback : function($stopElm) {
+                console.log("mierda stop " + $stopElm);
+                resultado++;
+                if( resultado == 3 ){
+
+                    $('#premio').append( "Saldo para tu celular" );
+                    $('#linea').append( "Ganador: " + ganador );
+                }
+            }
+        }
+
+        p['stopImageNumber'] = Number(elementos_ganadores[0]);
+        rouletter1.roulette( 'option', p );
+        p['stopImageNumber'] = Number(elementos_ganadores[1]);
+        rouletter2.roulette( 'option', p );
+        p['stopImageNumber'] = Number(elementos_ganadores[2]);
+        rouletter3.roulette( 'option', p );
+
+        rouletter1.roulette('start');
+        rouletter2.roulette('start');
+        rouletter3.roulette('start');
+
+    }else if(params['jugar'] == "tombola"){
 
         var canvas = $('#canvas');
         canvas.trigger( "click" );
-    }else if(params['jugar'] == "tragamonedas"){
-
-        rouletter.roulette('start');
-        rouletter1.roulette('start');
-        rouletter2.roulette('start');
     }
 }
-
-var textarray;
 
 function obtenerMensajesNuevos(){
 

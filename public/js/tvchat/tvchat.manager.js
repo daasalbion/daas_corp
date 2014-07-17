@@ -1,13 +1,15 @@
-var tvchat = null;
+//var tvchat = null;
 var tragamonedas_elementos_ganadores = [];
 var tragamonedas_numeros_ganadores = [];
 var tombola_elementos_ganadores = [];
 var tombola_numeros_ganadores = [];
+var nuevoGanador = null;
 
-function ObjetoGanador(combinacion_ganadora, cel_ganador, nombre_juego) {
+function ObjetoGanador(combinacion_ganadora, cel_ganador, nombre_juego, combinacion_ganadora_list) {
     this.combinacion_ganadora = combinacion_ganadora;
     this.cel_ganador = cel_ganador;
     this.nombre_juego = nombre_juego;
+    this.combinacion_ganadora_list = combinacion_ganadora_list;
 }
 
 var tragamonedas = JSON.parse(localStorage.getItem('tragamonedas'));
@@ -21,6 +23,8 @@ if (tombola == null)
 if (mensajes == null)
     var mensajes = [];
 
+var prueba =[];
+
 
 $(document).ready(function(){
 
@@ -28,7 +32,7 @@ $(document).ready(function(){
     $('#abrir_ventana_principal').click(function(){
 
         $('#abrir_ventana_principal').attr('disabled', 'true');
-        habilitarBotones(1,null);
+        //habilitarBotones(1,null);
         tvchat = window.open("/tvchat/tv",
             "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
 
@@ -88,33 +92,17 @@ $(document).ready(function(){
     //cargar juegos
     $('#cargar_tragamonedas').click(function(){
 
-        habilitarBotones( 3, 'tragamonedas' );
+        //habilitarBotones( 3, 'tragamonedas' );
         //valores por defecto
         var params = {
-            "juego": "tragamonedas",
-            "valores_ganadores": tragamonedas_elementos_ganadores
+            "juego": "tragamonedas"
         };
-
-        var sorteo = $('#WinElementsTragamonedas p');
-        sorteo.remove();
-        var tragamonedas_historial = $('#historial_tragamonedas');
-        $('#historial_tragamonedas p').remove();
-
-        $.each(tragamonedas, function(i, objetoGanador) {
-
-            tragamonedas_historial.append(
-                $(document.createElement("p"))
-                    .append(objetoGanador.combinacion_ganadora + ' - ' + objetoGanador.cel_ganador)
-                    .addClass("numeros_sorteados")
-            )
-            tragamonedas_numeros_ganadores.pop();
-        });
 
         tvchat.cargarJuego(params);
     })
     $('#cargar_tombola').click(function(){
 
-        habilitarBotones( 3, 'tombola' );
+        //habilitarBotones( 3, 'tombola' );
         //valores por defecto
         var params = {
             "juego": "tombola",
@@ -151,7 +139,7 @@ $(document).ready(function(){
     //descargar juegos
     $('#cerrar_tragamonedas').click(function(){
 
-        habilitarBotones( 1, null );
+        //habilitarBotones( 1, null );
         //valores por defecto
         var params = {
             "juego": "tragamonedas"
@@ -182,16 +170,44 @@ $(document).ready(function(){
     //jugar juegos
     $('#jugarTragamonedas').click(function(){
 
-        habilitarBotones( 4, 'tragamonedas' );
+        //habilitarBotones( 4, 'tragamonedas' );
         var params = {
-            "jugar": "tragamonedas"
+
+            "jugar": "tragamonedas",
+            "objeto_ganador": nuevoGanador
         }
+
+        //borrar elemento sorteado
+        var sorteo = $('#WinElementsTragamonedas p');
+        sorteo.remove();
+
+        var tragamonedas_historial = $('#historial_tragamonedas');
+        $('#historial_tragamonedas p').remove();
+
+        console.log("combinacion_ganadora: " + nuevoGanador.combinacion_ganadora);
+        console.log("combinacion_ganadora_list: " + nuevoGanador.combinacion_ganadora_list);
+        console.log("cel_ganador: " + nuevoGanador.cel_ganador);
+        console.log("nombre_juego: " + nuevoGanador.nombre_juego);
+
+        //se obtiene efectivamente un nuevo ganador
+        tragamonedas.push(nuevoGanador);
+
+        $.each(tragamonedas, function(i, objetoGanador) {
+
+            tragamonedas_historial.append(
+                $(document.createElement("p"))
+                    .append(objetoGanador.combinacion_ganadora + ' - ' + objetoGanador.cel_ganador)
+                    .addClass("numeros_sorteados")
+            )
+        });
+
         tvchat.jugarJuego(params);
     });
     $('#jugarTombola').click(function(){
 
         habilitarBotones( 4, 'tombola' );
         var params = {
+
             "jugar": "tombola"
         }
         tvchat.jugarJuego(params);
@@ -200,24 +216,24 @@ $(document).ready(function(){
     //obtener elementos sorteados
     $('#getWinElementsTragamonedas').click(function(){
 
-        habilitarBotones(2,'tragamonedas');
+        //habilitarBotones(2,'tragamonedas');
         console.log("getWinElementsTragamonedas");
         $.get("/tvchat/get-win-elements-tragamonedas", {}, cargarNumerosGanadores, "json");
         return;
     })
     $('#getWinElementsTombola').click(function(){
 
-        habilitarBotones(2,'tombola');
+        //habilitarBotones(2,'tombola');
         console.log("getWinElementsTombola");
         $.get("/tvchat/get-win-elements-tombola", {}, cargarNumerosGanadores, "json");
         return;
     })
 
-    setInterval( obtenerMensajes, 1000*5*60 );
+    setInterval( obtenerMensajes, 1000*9*60 );
 
     obtenerMensajes();
 
-    deshabilitarBotones();
+    //deshabilitarBotones();
 
     //funciones
     function deshabilitarBotones(){
@@ -278,7 +294,7 @@ $(document).ready(function(){
 
     function cargarNumerosGanadores( respuesta ){
 
-        var nuevoGanador = new ObjetoGanador( '', '', respuesta.juego );
+        nuevoGanador = new ObjetoGanador( '', '', respuesta.juego, '' );
 
         if( respuesta.juego == "tragamonedas" ){
 
@@ -318,8 +334,7 @@ $(document).ready(function(){
             tragamonedas_numeros_ganadores.push(respuesta.cel_ganador);
 
             nuevoGanador.cel_ganador = respuesta.cel_ganador;
-            tragamonedas.push(nuevoGanador);
-            localStorage.setItem('tragamonedas', JSON.stringify(tragamonedas));
+            nuevoGanador.combinacion_ganadora_list = tragamonedas_elementos_ganadores;
 
         }else if( respuesta.juego == "tombola" ){
 
@@ -352,7 +367,7 @@ $(document).ready(function(){
             tombola_numeros_ganadores.push(respuesta.cel_ganador);
             nuevoGanador.cel_ganador = respuesta.cel_ganador;
             tombola.push(nuevoGanador);
-            localStorage.setItem('tombola', JSON.stringify(tombola))
+            localStorage.setItem('tombola', JSON.stringify(tombola));
         }
     }
 
@@ -366,37 +381,41 @@ $(document).ready(function(){
     function cargarOpcionesMensajes( respuesta ){
 
         var opciones_mensajes = $('#mensajes');
-        $.each( respuesta.mensajes, function( i, item ) {
+        $.each( respuesta.mensajes, function( i, mensaje ) {
 
             opciones_mensajes.append(
 
                 $(document.createElement("p"))
                     .attr('id', i)
-                    .append(item)
+                    .append(mensaje)
                     .addClass("numeros_sorteados")
                     .append(
                         $(document.createElement("button"))
                             .addClass("seleccionar btn btn-primary")
                             .attr('data-id-mensaje', i)
+                            .attr('data-mensaje', mensaje)
                             .attr('id', "mierda")
                             .append("Seleccionar")
                     )
             )
 
-            mensajes.push(item);
+            mensajes.push(mensaje);
+            prueba.push(mensaje);
+            //localStorage.setItem('mensajes', JSON.stringify(mensajes));
         });
+
+        console.log("mirar: " + prueba.length);
     }
 
-    $('.mierda').click(function(){
+    $('.seleccionar').click(function(){
 
         console.log("mierda");
-        alert("mierda");
+        mensaje_seleccionado = $(this).data('mensaje');
+        localStorage.mensaje_seleccionado.setItem("mensaje_seleccionado", mensaje_seleccionado);
     })
     $('#vaciar_localstorage').click(function(){
-        alert('vaciar');
-        localStorage.removeItem('tragamonedas');
-        localStorage.removeItem('tombola');
-        localStorage.removeItem('mensajes');
+
+        localStorage.clear();
     })
 })
 

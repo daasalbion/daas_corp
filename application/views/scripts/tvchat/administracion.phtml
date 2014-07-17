@@ -36,30 +36,32 @@
                     <thead>
                         <tr>
                             <th class="col-sm-2">Preview</th>
-                            <th class="col-sm-2">Sortear</th>
-                            <th class="col-sm-3">Historial Ganadores</th>
                             <th class="col-sm-2">Cargar</th>
+                            <th class="col-sm-2">Obtener Ganador</th>
                             <th class="col-sm-2">Jugar</th>
+                            <th class="col-sm-3">Ganadores</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><img class="juego_preview" src="/img/tvchat/interfaz/tvchat_tragamonedas_preview.png"></td>
                             <td>
-                                <button id="getWinElementsTragamonedas" type="button" class="btn btn-primary">Sortear</button>
-                                <div id="WinElementsTragamonedas">
-                                </div>
-                            </td>
-                            <td>
-                                <div id="historial_tragamonedas">
-                                </div>
+                                <img class="juego_preview" src="/img/tvchat/interfaz/tvchat_tragamonedas_preview.png">
                             </td>
                             <td>
                                 <button id="cargar_tragamonedas" class="btn btn-primary">Cargar</button>
                                 <button id="cerrar_tragamonedas" class="btn btn-primary">Quitar</button>
                             </td>
                             <td>
+                                <button id="getWinElementsTragamonedas" type="button" class="btn btn-primary">Sortear</button>
+                                <div id="WinElementsTragamonedas">
+                                </div>
+                            </td>
+                            <td>
                                 <button id="jugarTragamonedas" class="btn btn-primary">Jugar</button>
+                            </td>
+                            <td>
+                                <div id="historial_tragamonedas">
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -164,7 +166,7 @@
                                 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#opciones_mensajes">
                                     Seleccionar
                                 </button>
-                                <button class="mierda btn btn-primary">mierda</button>
+                                <button class="seleccionar btn btn-primary">mierda</button>
                             </td>
                             <td>
                                 <div>
@@ -193,9 +195,9 @@
             </div>
             <div class="modal-body">
                 <div class="row" id="mensajes">
-                    <p>HOla gdsgdsg dsgffdgdg<button class="mierda btn btn-primary" id="1">Seleccionar</button></p>
-                    <p>HOla gdsgdsg dsgffdgdg<button class="mierda btn btn-primary" id="2">Seleccionar</button></p>
-                    <p>HOla gdsgdsg dsgffdgdg<button class="mierda btn btn-primary" id="3">Seleccionar</button></p>
+                    <p>Ola q ace<button data-mensaje="Ola q ace 1" class="seleccionar btn btn-primary" id="1">Seleccionar</button></p>
+                    <p>Ola q ace<button data-mensaje="Ola q ace 2" class="seleccionar btn btn-primary" id="2">Seleccionar</button></p>
+                    <p>Ola q ace<button data-mensaje="Ola q ace 3" class="seleccionar btn btn-primary" id="3">Seleccionar</button></p>
                 </div>
             </div>
             <div class="modal-footer">
