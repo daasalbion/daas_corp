@@ -11,7 +11,17 @@ function cargarJuego( params ){
     console.log("juego: " + params["juego"]);
     console.log("valores_ganadores: " + params["valores_ganadores"]);
     elementos_ganadores = params["valores_ganadores"];
+
+    //elimino cualquier juego creado antes
     var juego = $('#game_wrapper');
+    juego.remove();
+    var juegos = $('.juegos');
+    juegos.append(
+        $(document.createElement("div"))
+            .attr('id', 'game_wrapper')
+    )
+
+    juego = $('#game_wrapper');
 
     if( params['juego'] == "tragamonedas" ){
 
@@ -271,10 +281,10 @@ function jugarJuego(params){
     console.log("valores_ganadores: " + params["objeto_ganador"].combinacion_ganadora);
     elementos_ganadores = params["objeto_ganador"].combinacion_ganadora_list;
     var ganador = params['objeto_ganador'].cel_ganador;
-    var resultado = 0;
 
     if( params['jugar'] == "tragamonedas" ){
 
+        var resultado = 0;
         var p = {
             startCallback : function() {
             },
@@ -284,6 +294,21 @@ function jugarJuego(params){
                 console.log("mierda stop " + $stopElm);
                 resultado++;
                 if( resultado == 3 ){
+
+                    if( $('#premio') > 0 && $('#linea') > 0){
+
+                        $('#premio').remove();
+                        $('#linea').remove();
+                        $('#container_ganador').append(
+                            $(document.createElement("div"))
+                                .attr('id', 'premio')
+                                .addClass('premio'),
+                            $(document.createElement("div"))
+                                .attr('id', 'linea')
+                                .addClass('linea')
+                        )
+
+                    }
 
                     $('#premio').append( "Saldo para tu celular" );
                     $('#linea').append( "Ganador: " + ganador );

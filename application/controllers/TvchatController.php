@@ -276,8 +276,10 @@ class TvchatController extends Zend_Controller_Action{
 
             $elementos_ganadores[] = rand( 0, 9 );
         }
+
+        $cel_ganador = '0982000000' + rand( 0, 999999);
         $this->logger->info('datos a obtenidos ' . print_r($elementos_ganadores, true));
-        $respuesta = json_encode(array( "sorteo" => $elementos_ganadores, "cel_ganador" => "0982313289", "juego" => "tombola" ) );
+        $respuesta = json_encode(array( "sorteo" => $elementos_ganadores, "cel_ganador" => $cel_ganador, "juego" => "tombola" ) );
         $this->logger->info('datos a enviar ' . $elementos_ganadores );
         echo $respuesta;
         exit;
