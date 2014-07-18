@@ -104,7 +104,13 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><img class="juego_preview" src="/img/tvchat/interfaz/tvchat_tombola_preview.png"></td>
+                            <td>
+                                <img class="juego_preview" src="/img/tvchat/interfaz/tvchat_tombola_preview.png">
+                            </td>
+                            <td>
+                                <button id="cargar_tombola" class="btn btn-primary">Cargar</button>
+                                <button id="cerrar_tombola" class="btn btn-primary">Quitar</button>
+                            </td>
                             <td>
                                 <button id="getWinElementsTombola" type="button" class="btn btn-primary">Sortear</button>
                                 <div id="WinElementsTombola">
@@ -112,14 +118,12 @@
                                 </div>
                             </td>
                             <td>
+                                <button id="jugarTombola" class="btn btn-primary">Jugar</button>
+                            </td>
+                            <td>
                                 <div id="historial_tombola">
                                 </div>
                             </td>
-                            <td>
-                                <button id="cargar_tombola" class="btn btn-primary">Cargar</button>
-                                <button id="cerrar_tombola" class="btn btn-primary">Cerrar</button>
-                            </td>
-                            <td><button id="jugarTombola" class="btn btn-primary">Jugar</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -163,20 +167,25 @@
                         <tr>
                             <td><p style="width: 100px; height: 100px" >No disponbile</p></td>
                             <td>
-                                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#opciones_mensajes">
-                                    Seleccionar
-                                </button>
+                                <button id="cargar_piropo" class="btn btn-primary">Cargar</button>
+                                <button id="cerrar_piropo" class="btn btn-primary">Quitar</button>
                             </td>
                             <td>
                                 <div>
-                                    <span></span>
+                                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#opciones_mensajes">
+                                        Seleccionar
+                                    </button>
+                                    <div id="WinElementsPiropo">
+                                    </div>
                                 </div>
                             </td>
                             <td>
-                                <button id="cargar_piropo" type="button" class="btn btn-primary">Cargar</button>
-                                <button id="cerrar_piropo" type="button" class="btn btn-primary">Quitar</button>
+                                <button id="jugarPiropo" class="btn btn-primary">Jugar</button>
                             </td>
-                            <td><button id="jugarPiropo" class="btn btn-primary">Jugar</button></td>
+                            <td>
+                                <div id="historial_piropo">
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

@@ -217,20 +217,46 @@ function cargarJuego( params ){
         wheel.update();
 
     }
+    else if( params["juego"] == "piropo" ){
+
+        juego.append(
+            //cargo los elementos
+            $(document.createElement("div"))
+                .attr('id', 'mensaje_wrapper')
+                .append(
+                    $(document.createElement("h2"))
+                        .append('Piropo Seleccionado')
+                        .addClass('centrar')
+                )
+                .append(
+                    $(document.createElement("div"))
+                        .attr('id', 'mensaje_seleccionado')
+                        .addClass('centrar')
+                )
+                .addClass('mensaje_wrapper')
+        )
+    }
 }
 
 function descargarJuego(params){
 
-    if( params['juego'] == "tombola" ){
+    if( params['juego'] == "tragamonedas" ){
+
+        var juego = $('#tragamonedas_wrapper');
+        juego.remove();
+    }
+    else if( params['juego'] == "tombola" ){
 
         var juego = $('#tombola_wheel_wrapper');
         wheel.clear();
         juego.remove();
-    }else if( params['juego'] == "tragamonedas" ){
+    }
+    else if( params['juego'] == "piropo" ){
 
-        var juego = $('#tragamonedas_wrapper');
+        var juego = $('#mensaje_wrapper');
         juego.remove();
-    }else if( params['juego'] == "tvchat" ){
+    }
+    else if( params['juego'] == "tvchat" ){
 
         var juego = $('#ventana');
         juego.remove();
@@ -242,12 +268,12 @@ function descargarJuego(params){
 function jugarJuego(params){
 
     console.log("juego a jugar: " + params['jugar']);
-    console.log("valores_ganadores: " + params["objeto_ganador"].combinacion_ganadora_list);
+    console.log("valores_ganadores: " + params["objeto_ganador"].combinacion_ganadora);
     elementos_ganadores = params["objeto_ganador"].combinacion_ganadora_list;
     var ganador = params['objeto_ganador'].cel_ganador;
     var resultado = 0;
 
-    if(params['jugar'] == "tragamonedas"){
+    if( params['jugar'] == "tragamonedas" ){
 
         var p = {
             startCallback : function() {
@@ -276,10 +302,39 @@ function jugarJuego(params){
         rouletter2.roulette('start');
         rouletter3.roulette('start');
 
-    }else if(params['jugar'] == "tombola"){
+    }
+    else if( params['jugar'] == "tombola" ){
 
         var canvas = $('#canvas');
         canvas.trigger( "click" );
+    }
+    else if( params['jugar'] == "piropo" ){
+
+        console.log("combinacion_ganadora: " + params["objeto_ganador"].combinacion_ganadora);
+        console.log("combinacion_ganadora_list: " + params["objeto_ganador"].combinacion_ganadora_list);
+        console.log("cel_ganador: " + params["objeto_ganador"].cel_ganador);
+        console.log("nombre_juego: " + params["objeto_ganador"].nombre_juego);
+
+        if( $('#mensaje_seleccionado h3').length > 0 )
+            $('#mensaje_seleccionado h3').remove();
+
+        if( $('#mensaje_seleccionado h4').length > 0 )
+            $('#mensaje_seleccionado h4').remove();
+
+        $('#mensaje_seleccionado')
+            .append(
+                $(document.createElement("h3"))
+            )
+            .append(
+                $(document.createElement("h4"))
+            );
+
+        $('#mensaje_seleccionado h3').append(
+            params['objeto_ganador'].combinacion_ganadora
+        ).addClass('centrar')
+        $('#mensaje_seleccionado h4').append(
+            params['objeto_ganador'].cel_ganador
+        ).addClass('centrar')
     }
 }
 
