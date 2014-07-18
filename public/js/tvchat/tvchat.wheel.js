@@ -5,7 +5,7 @@ var wheel = {
     iterationsHandle: 0,
     timerDelay : 100,
 
-    angleCurrent : 0,
+    angleCurrent :  Math.PI/2,
     angleDelta : 0,
 
     size : 124,

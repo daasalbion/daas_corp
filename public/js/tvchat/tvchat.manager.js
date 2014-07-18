@@ -231,7 +231,7 @@ $(document).ready(function(){
 
     setInterval( obtenerMensajes, 1000*9*60 );
 
-    obtenerMensajes();
+    //obtenerMensajes();
 
     //deshabilitarBotones();
 
@@ -411,7 +411,8 @@ $(document).ready(function(){
 
         console.log("mierda");
         mensaje_seleccionado = $(this).data('mensaje');
-        localStorage.mensaje_seleccionado.setItem("mensaje_seleccionado", mensaje_seleccionado);
+        alert(mensaje_seleccionado);
+        localStorage.setItem("mensaje_seleccionado", mensaje_seleccionado);
     })
     $('#vaciar_localstorage').click(function(){
 
