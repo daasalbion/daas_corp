@@ -4,6 +4,7 @@ var rouletter2;
 var rouletter3;
 var textarray = [];
 var elementos_ganadores;
+var wheel;
 
 //funciones
 function cargarJuego( params ){
@@ -14,14 +15,7 @@ function cargarJuego( params ){
 
     //elimino cualquier juego creado antes
     var juego = $('#game_wrapper');
-    juego.remove();
-    var juegos = $('.juegos');
-    juegos.append(
-        $(document.createElement("div"))
-            .attr('id', 'game_wrapper')
-    )
-
-    juego = $('#game_wrapper');
+    juego.empty();
 
     if( params['juego'] == "tragamonedas" ){
 
@@ -295,26 +289,14 @@ function jugarJuego(params){
                 resultado++;
                 if( resultado == 3 ){
 
-                    if( $('#premio') > 0 && $('#linea') > 0){
-
-                        $('#premio').remove();
-                        $('#linea').remove();
-                        $('#container_ganador').append(
-                            $(document.createElement("div"))
-                                .attr('id', 'premio')
-                                .addClass('premio'),
-                            $(document.createElement("div"))
-                                .attr('id', 'linea')
-                                .addClass('linea')
-                        )
-
-                    }
-
                     $('#premio').append( "Saldo para tu celular" );
                     $('#linea').append( "Ganador: " + ganador );
                 }
             }
         }
+
+        $('#premio').empty();
+        $('#linea').empty();
 
         p['stopImageNumber'] = Number(elementos_ganadores[0]);
         rouletter1.roulette( 'option', p );
@@ -332,6 +314,10 @@ function jugarJuego(params){
 
         var canvas = $('#canvas');
         canvas.trigger( "click" );
+        wheel.addEventListener( wheel.over(), function(){
+            console.log("over");
+        } );
+
     }
     else if( params['jugar'] == "piropo" ){
 

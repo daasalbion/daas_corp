@@ -228,10 +228,14 @@ $(document).ready(function(){
     $('#jugarTombola').click(function(){
 
         //habilitarBotones( 4, 'tombola' );
+        nuevoGanador = tombola_buffer.pop();
+
         var params = {
 
-            "jugar": "tombola"
+            "jugar": "tombola",
+            "objeto_ganador": nuevoGanador
         }
+
         tvchat.jugarJuego(params);
     });
     $('#jugarPiropo').click(function(){
@@ -297,7 +301,7 @@ $(document).ready(function(){
 
     setInterval( obtenerMensajes, 1000*9*60 );
 
-    obtenerMensajes();
+    //obtenerMensajes();
 
     deshabilitarBotones();
 
@@ -342,7 +346,7 @@ $(document).ready(function(){
         }
         else if( nivel == 3 && juego == "tragamonedas" ){
 
-            habilitarBotones( 2, tragamonedas );
+            habilitarBotones( 2, "tragamonedas" );
             $('#jugarTragamonedas').removeAttr('disabled');
         }
         else if( nivel == 4 && juego == "tragamonedas" ){
@@ -358,8 +362,7 @@ $(document).ready(function(){
         }
         else if( nivel == 3 && juego == "tombola" ){
 
-            deshabilitarBotones();
-            habilitarBotones( 1, null );
+            habilitarBotones( 2, "tombola" );
             $('#jugarTombola').removeAttr('disabled');
         }
         else if( nivel == 4 && juego == "tombola" ){

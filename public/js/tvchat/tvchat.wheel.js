@@ -44,6 +44,7 @@ var wheel = {
 
             clearInterval(wheel.iterationsHandle);
             wheel.contadorIterations = 0;
+            wheel.over();
 
         }else{
 
@@ -379,32 +380,10 @@ var wheel = {
                 )
                 .addClass("numero_ganador")
         )
+    },
+
+    over: function(){
+
+        console.log('over');
     }
 }
-
-/*window.onload = function() {
-
-    wheel.init();
-    //array asociativo para cargar los valores estaticamente en la tombola
-    var venues = {
-        "116208"  : "0",
-        "66271"   : "1",
-        "5518"    : "2",
-        "392360"  : "3",
-        "2210952" : "4",
-        "207306"  : "5",
-        "41457"   : "6",
-        "101161"  : "7",
-        "257424"  : "8",
-        "512060"  : "9"
-    };
-    var segments = new Array();
-
-    $.each(venues, function(key, value) {
-        segments.push( value );
-    });
-
-    wheel.segments = segments;
-    wheel.update();
-
-}*/
