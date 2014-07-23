@@ -268,19 +268,12 @@ $(document).ready(function(){
         tvchat.jugarJuego(params);
     });
 
-    //obtener elementos sorteados
+    //obtener elementos con ganadores
     $('#getWinElementsTragamonedas').click(function(){
 
         habilitarBotones( 3, 'tragamonedas' );
         console.log("getWinElementsTragamonedas");
         $.get("/tvchat/get-win-elements-tragamonedas", { premio : true }, cargarNumerosGanadores, "json");
-        return;
-    })
-    $('#getElementsTragamonedas').click(function(){
-
-        habilitarBotones( 3, 'tragamonedas' );
-        console.log("getElementsTragamonedas");
-        $.get("/tvchat/get-win-elements-tragamonedas", { premio : false }, cargarNumerosGanadores, "json");
         return;
     })
     $('#getWinElementsTombola').click(function(){
@@ -290,6 +283,15 @@ $(document).ready(function(){
         $.get("/tvchat/get-win-elements-tombola", { premio : true }, cargarNumerosGanadores, "json");
         return;
     })
+
+    //obtener elementos sin ganadores
+    $('#getElementsTragamonedas').click(function(){
+
+        habilitarBotones( 3, 'tragamonedas' );
+        console.log("getElementsTragamonedas");
+        $.get("/tvchat/get-win-elements-tragamonedas", { premio : false }, cargarNumerosGanadores, "json");
+        return;
+    })
     $('#getElementsTombola').click(function(){
 
         habilitarBotones( 3, 'tombola' );
@@ -297,6 +299,8 @@ $(document).ready(function(){
         $.get("/tvchat/get-win-elements-tombola", { premio : false }, cargarNumerosGanadores, "json");
         return;
     })
+
+    //obtener el mensaje con el mejor piropo
     $('#mensajes').on('click', '.seleccionar', function() {
 
         habilitarBotones( 3, 'piropo' );
