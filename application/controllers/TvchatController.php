@@ -202,6 +202,7 @@ class TvchatController extends Zend_Controller_Action{
         $this->view->headScript()->appendFile('/js/plugins/roulette.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.utils.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.wheel.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/plugins/jquery.wheel.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.child.js', 'text/javascript');
         //$this->view->headScript()->appendFile('/js/tvchat/tvchat.tragamonedas.manager.js', 'text/javascript');
         $this->logger->info("tv");
@@ -249,24 +250,49 @@ class TvchatController extends Zend_Controller_Action{
         $this->_helper->layout->disableLayout();
     }
 
+    //url -> /tvchat/get-win-elements-tragamonedas?premio=?
     public function getWinElementsTragamonedasAction(){
 
         $elementos_ganadores = array();
+        $parametros = array();
         $nro = $this->NRO_ELEMENTOS_SORTEADOS_TRAGAMONEDAS;
-        for( $i=1; $i <= $nro; $i++){
+        $parametros['premio'] = $_GET['premio'];
 
-            $elementos_ganadores[] = rand( 0, 3 );
+        $this->logger->info( "parametros: ". print_r( $parametros, true ) );
+
+        if( $parametros['premio'] == 'true' ){
+
+            for( $i = 1; $i <= $nro; $i++ ){
+
+                $elementos_ganadores[] = rand( 0, 3 );
+            }
+
+            //numero de celular randomico
+            $cel_ganador = "0982000000" + rand( 0, 999999);
+            $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
+            $respuesta = json_encode( array( "sorteo" => $elementos_ganadores, "cel_ganador" =>"0$cel_ganador", "juego" => "tragamonedas" ) );
+            $this->logger->info( 'datos a enviar ' . $respuesta );
+
+        }else{
+
+            for( $i = 1; $i <= $nro; $i++ ){
+
+                $elementos_ganadores[] = rand( 0, 3 );
+            }
+
+            $elementos_ganadores[$nro-1] = rand( 8, 11 );
+            //numero de celular randomico
+            $cel_ganador = "0982000000" + rand( 0, 999999);
+            $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
+            $respuesta = json_encode( array( "sorteo" => $elementos_ganadores, "cel_ganador" => "Sin Ganador", "juego" => "tragamonedas" ) );
+            $this->logger->info( 'datos a enviar ' . $respuesta );
+
         }
 
-        //numero de celular randomico
-        $cel_ganador = "0982000000" + rand( 0, 999999);
-        $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
-        $respuesta = json_encode( array( "sorteo" => $elementos_ganadores, "cel_ganador" =>"0$cel_ganador", "juego" => "tragamonedas" ) );
-        $this->logger->info( 'datos a enviar ' . $respuesta );
         echo $respuesta;
         exit;
     }
-
+    //url -> /tvchat/get-win-elements-tombola?premio=?
     public function getWinElementsTombolaAction(){
 
         $elementos_ganadores = array();

@@ -8,7 +8,7 @@
             iterationsHandle: 0,
             timerDelay : 100,
 
-            angleCurrent :  Math.PI/2,
+            angleCurrent :  Math.PI*3/2,
             angleDelta : 0,
 
             size : 124,
@@ -31,7 +31,7 @@
             centerX : 150,
             centerY : 150,
 
-            valoresEsperados : [0, 1, 2, 3],
+            valoresEsperados : [0,0,0,0],
             contadorIterations : 0,
 
             angulos: [],
@@ -101,7 +101,7 @@
                 progress = duration / (q.upTime + q.downTime);
                 //q.angleDelta = q.maxSpeed * Math.sin(progress * Math.PI / 2);
                 //mirar
-                console.log( "RAMDOM: " + ((Math.random() * (Math.PI/6)) + 0)/10);
+                //console.log( "RAMDOM: " + ((Math.random() * (Math.PI/6)) + 0)/10);
 
                 q.angleDelta = q.maxSpeed;// * progress;
 
@@ -191,7 +191,7 @@
         var update = function() {
             // Ensure we start mid way on a item
             //var r = Math.floor(Math.random() * q.segments.length);
-            var r = Math.PI*3/2;
+            var r = q.angleCurrent;
             //q.angleCurrent = ((r + 0.5) / q.segments.length) * Math.PI * 2;
             q.angleCurrent = r;
 
@@ -268,15 +268,15 @@
             ctx.fill();
 
             /*//dibujar needle
-            // Which segment is being pointed to?
-            var i = q.segments.length - Math.floor((q.angleCurrent / (Math.PI * 2))	* q.segments.length) - 1;
+             // Which segment is being pointed to?
+             var i = q.segments.length - Math.floor((q.angleCurrent / (Math.PI * 2))	* q.segments.length) - 1;
 
-            // Now draw the winning name
-            ctx.textAlign = "left";
-            ctx.textBaseline = "middle";
-            ctx.fillStyle = '#000000';
-            ctx.font = "2em Arial";
-            ctx.fillText(q.segments[i], centerX + size + 25, centerY);*/
+             // Now draw the winning name
+             ctx.textAlign = "left";
+             ctx.textBaseline = "middle";
+             ctx.fillStyle = '#000000';
+             ctx.font = "2em Arial";
+             ctx.fillText(q.segments[i], centerX + size + 25, centerY);*/
         };
 
         var drawSegment = function(key, lastAngle, angle) {
@@ -386,10 +386,10 @@
                 //cargo los elementos
                 $(document.createElement("div"))
                     .append(
-                    $(document.createElement("h4"))
-                        .append(q.valoresEsperados[q.contadorIterations-1])
-                        .addClass("numero")
-                )
+                        $(document.createElement("h4"))
+                            .append(q.valoresEsperados[q.contadorIterations-1])
+                            .addClass("numero")
+                    )
                     .addClass("numero_ganador")
             )
         };
@@ -458,24 +458,3 @@
         });
     }
 })(jQuery);
-
-$(document).ready(function(){
-
-    tombola = $('.wheel');
-    tombola.wheel( 'iniciar' );
-    $('#iniciar').click(
-        function(){
-            var q = {
-
-                valoresEsperados:[0,1,2,3],
-                stopCallback : function(mirar) {
-
-                    console.log("mirar" + mirar);
-                }
-            }
-
-            tombola.wheel('option', q);
-            tombola.wheel('start');
-        }
-    );
-});

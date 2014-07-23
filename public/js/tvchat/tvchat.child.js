@@ -1,16 +1,18 @@
 //variables globales
-var rouletter1;
-var rouletter2;
-var rouletter3;
+var rouletter1 = null;
+var rouletter2 = null;
+var rouletter3 = null;
 var textarray = [];
-var elementos_ganadores;
+var elementos_ganadores = [];
 var wheel;
+var tombola;
 
 //funciones
 function cargarJuego( params ){
 
     console.log("juego: " + params["juego"]);
     console.log("valores_ganadores: " + params["valores_ganadores"]);
+
     elementos_ganadores = params["valores_ganadores"];
 
     //elimino cualquier juego creado antes
@@ -191,34 +193,12 @@ function cargarJuego( params ){
                     $(document.createElement("div"))
                         .attr('id','tombola_numeros_ganadores' )
                         .addClass('tombola_numeros_ganadores')
+
                 )
         )
 
-        //array asociativo para cargar los valores estaticamente en la tombola
-        var venues = {
-            "116208"  : "0",
-            "66271"   : "1",
-            "5518"    : "2",
-            "392360"  : "3",
-            "2210952" : "4",
-            "207306"  : "5",
-            "41457"   : "6",
-            "101161"  : "7",
-            "257424"  : "8",
-            "512060"  : "9"
-        };
-
-        wheel.valoresEsperados = elementos_ganadores;
-        wheel.init();
-
-        var segments = new Array();
-
-        $.each(venues, function(key, value) {
-            segments.push( value );
-        });
-
-        wheel.segments = segments;
-        wheel.update();
+        tombola = $('.wheel');
+        tombola.wheel( 'iniciar' );
 
     }
     else if( params["juego"] == "piropo" ){
@@ -280,10 +260,6 @@ function jugarJuego(params){
 
         var resultado = 0;
         var p = {
-            startCallback : function() {
-            },
-            slowDownCallback : function() {
-            },
             stopCallback : function($stopElm) {
                 console.log("mierda stop " + $stopElm);
                 resultado++;
@@ -312,11 +288,31 @@ function jugarJuego(params){
     }
     else if( params['jugar'] == "tombola" ){
 
-        var canvas = $('#canvas');
-        canvas.trigger( "click" );
-        wheel.addEventListener( wheel.over(), function(){
-            console.log("over");
-        } );
+        var q = {
+
+            valoresEsperados: elementos_ganadores,
+            stopCallback : function($stopElm) {
+                console.log("mierda stop " + $stopElm);
+
+                $('#tombola_numeros_ganadores').append(
+                    $(document.createElement("div"))
+                        .attr('id', 'premio_tombola')
+                        .addClass('premio_tombola')
+                        .append( "Saldo para tu celular" )
+                    ,
+                    $(document.createElement("div"))
+                        .attr('id', 'linea_tombola')
+                        .addClass('linea_tombola')
+                        .append( "Ganador: " + ganador )
+                )
+            }
+        }
+
+        //por si se vuelve a sortear y vaciar el numero ya sorteado
+        $('#tombola_numeros_ganadores').empty();
+
+        tombola.wheel('option', q);
+        tombola.wheel('start', q);
 
     }
     else if( params['jugar'] == "piropo" ){

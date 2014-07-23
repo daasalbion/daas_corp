@@ -107,24 +107,9 @@ $(document).ready(function(){
         habilitarBotones( 2, 'tombola' );
         //valores por defecto
         var params = {
-            "juego": "tombola",
-            "valores_ganadores": tombola_elementos_ganadores
+            "juego": "tombola"
         };
 
-        var sorteo = $('#WinElementsTombola p');
-        sorteo.remove();
-        var tombola_historial = $('#historial_tombola');
-        $('#historial_tombola p').remove();
-
-        $.each(tombola, function(i, objetoGanador) {
-
-            tombola_historial.append(
-                $(document.createElement("p"))
-                    .append(objetoGanador.combinacion_ganadora + ' - ' + objetoGanador.cel_ganador)
-                    .addClass("numeros_sorteados")
-            )
-            tombola_numeros_ganadores.pop();
-        });
 
         tvchat.cargarJuego(params);
     })
@@ -236,6 +221,21 @@ $(document).ready(function(){
             "objeto_ganador": nuevoGanador
         }
 
+        var sorteo = $('#WinElementsTombola p');
+        sorteo.remove();
+        var tombola_historial = $('#historial_tombola');
+        $('#historial_tombola p').remove();
+
+        $.each(tombola, function(i, objetoGanador) {
+
+            tombola_historial.append(
+                $(document.createElement("p"))
+                    .append(objetoGanador.combinacion_ganadora + ' - ' + objetoGanador.cel_ganador)
+                    .addClass("numeros_sorteados")
+            )
+            tombola_numeros_ganadores.pop();
+        });
+
         tvchat.jugarJuego(params);
     });
     $('#jugarPiropo').click(function(){
@@ -273,14 +273,28 @@ $(document).ready(function(){
 
         habilitarBotones( 3, 'tragamonedas' );
         console.log("getWinElementsTragamonedas");
-        $.get("/tvchat/get-win-elements-tragamonedas", {}, cargarNumerosGanadores, "json");
+        $.get("/tvchat/get-win-elements-tragamonedas", { premio : true }, cargarNumerosGanadores, "json");
+        return;
+    })
+    $('#getElementsTragamonedas').click(function(){
+
+        habilitarBotones( 3, 'tragamonedas' );
+        console.log("getElementsTragamonedas");
+        $.get("/tvchat/get-win-elements-tragamonedas", { premio : false }, cargarNumerosGanadores, "json");
         return;
     })
     $('#getWinElementsTombola').click(function(){
 
         habilitarBotones( 3, 'tombola' );
         console.log("getWinElementsTombola");
-        $.get("/tvchat/get-win-elements-tombola", {}, cargarNumerosGanadores, "json");
+        $.get("/tvchat/get-win-elements-tombola", { premio : true }, cargarNumerosGanadores, "json");
+        return;
+    })
+    $('#getElementsTombola').click(function(){
+
+        habilitarBotones( 3, 'tombola' );
+        console.log("getElementsTombola");
+        $.get("/tvchat/get-win-elements-tombola", { premio : false }, cargarNumerosGanadores, "json");
         return;
     })
     $('#mensajes').on('click', '.seleccionar', function() {
@@ -309,12 +323,14 @@ $(document).ready(function(){
     function deshabilitarBotones(){
         //tragamonedas
         $('#getWinElementsTragamonedas').attr('disabled', 'true');
+        $('#getElementsTragamonedas').attr('disabled', 'true');
         $('#cargar_tragamonedas').attr('disabled', 'true');
         $('#cerrar_tragamonedas').attr('disabled', 'true');
         $('#jugarTragamonedas').attr('disabled', 'true');
 
         //tombola
         $('#getWinElementsTombola').attr('disabled', 'true');
+        $('#getElementsTombola').attr('disabled', 'true');
         $('#cargar_tombola').attr('disabled', 'true');
         $('#cerrar_tombola').attr('disabled', 'true');
         $('#jugarTombola').attr('disabled', 'true');
@@ -340,6 +356,7 @@ $(document).ready(function(){
             deshabilitarBotones();
             habilitarBotones( 1, null );
             $('#getWinElementsTragamonedas').removeAttr('disabled');
+            $('#getElementsTragamonedas').removeAttr('disabled');
             if( tragamonedas_buffer.length > 0 ){
                 $('#jugarTragamonedas').removeAttr('disabled');
             }
@@ -359,6 +376,7 @@ $(document).ready(function(){
             deshabilitarBotones();
             habilitarBotones( 1, null );
             $('#getWinElementsTombola').removeAttr('disabled');
+            $('#getElementsTombola').removeAttr('disabled');
         }
         else if( nivel == 3 && juego == "tombola" ){
 
