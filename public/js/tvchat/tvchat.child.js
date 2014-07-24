@@ -293,7 +293,7 @@ function jugarJuego(params){
             valoresEsperados: elementos_ganadores,
             stopCallback : function($stopElm) {
 
-                /*$('#tombola_numeros_ganadores #tombola_panel_ganador').hide();
+                $('#tombola_numeros_ganadores #tombola_panel_ganador').hide();
                 $('#tombola_numeros_ganadores').append(
                     $(document.createElement("div"))
                            .attr( 'id', 'tombola_premio_ganador' )
@@ -308,7 +308,7 @@ function jugarJuego(params){
                                     .addClass('linea_tombola')
                                     .append( "Ganador: " + ganador.substr(0,8) +"XX" )
                            )
-                )*/
+                )
 
                 /*var $divs = $("#tombola_numeros_ganadores div").hide(),
                 current = 0;
