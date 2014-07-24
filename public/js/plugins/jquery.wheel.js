@@ -15,7 +15,8 @@
             size : 124,
 
             canvasContext : null,
-
+                        //rojo                         //naranja  //azul
+            //colors : [ '#ED8282', '#A1FAA1', '#FCAAFC', '#FFA970', '#C4DAEF' ],
             colors : [ '#ff0000', '#00FF00', '#FF00FF', '#FF6600', '#6699CC' ],
 
             segments : [],
@@ -45,7 +46,8 @@
 
             stopCallback : function() {},
             startCallback : function() {},
-            slowDownCallback : function() {}
+            slowDownCallback : function() {},
+            stopNumberCallback : function() {}
 
         };
 
@@ -139,6 +141,9 @@
                 q.angleDelta = 0;
                 q.spinStart = 0;
                 $("#counter").html((q.frames / duration * 1000) + " FPS");
+
+                //avisar cuando una iteracion termina y el llamador pueda hacer algo
+                q.stopNumberCallback(q.valoresEsperados[q.contadorIterations-1]);
             }
 
             // Display RPM
@@ -328,6 +333,7 @@
             ctx.rotate((lastAngle + angle) / 2);
 
             ctx.fillStyle = '#000000';
+            ctx.font = 'bold 27px Arial';
             ctx.fillText(value.substr(0, 20), size / 2 + 20, 0);
             ctx.restore();
 

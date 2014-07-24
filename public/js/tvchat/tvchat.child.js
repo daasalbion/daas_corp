@@ -168,6 +168,7 @@ function cargarJuego( params ){
             //cargo los elementos
             $(document.createElement("div"))
                 .attr('id', 'tombola_wheel_wrapper')
+                .addClass( 'tombola_wheel_wrapper' )
                 .append(
                     $(document.createElement("div"))
                         .addClass('tombola_luces'),
@@ -193,7 +194,6 @@ function cargarJuego( params ){
                     $(document.createElement("div"))
                         .attr('id','tombola_numeros_ganadores' )
                         .addClass('tombola_numeros_ganadores')
-
                 )
         )
 
@@ -266,7 +266,7 @@ function jugarJuego(params){
                 if( resultado == 3 ){
 
                     $('#premio').append( "Saldo para tu celular" );
-                    $('#linea').append( "Ganador: " + ganador );
+                    $('#linea').append( "Ganador: " + ganador.substr(0,8) +"XX" );
                 }
             }
         }
@@ -292,24 +292,65 @@ function jugarJuego(params){
 
             valoresEsperados: elementos_ganadores,
             stopCallback : function($stopElm) {
-                console.log("mierda stop " + $stopElm);
 
+                /*$('#tombola_numeros_ganadores #tombola_panel_ganador').hide();
                 $('#tombola_numeros_ganadores').append(
                     $(document.createElement("div"))
-                        .attr('id', 'premio_tombola')
-                        .addClass('premio_tombola')
-                        .append( "Saldo para tu celular" )
-                    ,
-                    $(document.createElement("div"))
-                        .attr('id', 'linea_tombola')
-                        .addClass('linea_tombola')
-                        .append( "Ganador: " + ganador )
-                )
+                           .attr( 'id', 'tombola_premio_ganador' )
+                           .append(
+                                $(document.createElement("div"))
+                                    .attr('id', 'premio_tombola')
+                                    .addClass('premio_tombola')
+                                    .append( "Saldo para tu celular" )
+                                ,
+                                $(document.createElement("div"))
+                                    .attr('id', 'linea_tombola')
+                                    .addClass('linea_tombola')
+                                    .append( "Ganador: " + ganador.substr(0,8) +"XX" )
+                           )
+                )*/
+
+                /*var $divs = $("#tombola_numeros_ganadores div").hide(),
+                current = 0;
+
+                $divs.eq(0).show();
+
+                function showNext() {
+                    if (current < $divs.length - 1) {
+                        $divs.eq(current).delay(2000).fadeOut('fast', function() {
+                            current++;
+                            $divs.eq(current).fadeIn('fast');
+                            showNext();
+                        });
+                    }
+                }
+                showNext();*/
+
+            },
+            stopNumberCallback : function( $stopElement ){
+
+                console.log( 'mirar bien: ' + $stopElement );
+                $('#tombola_numeros_ganadores #tombola_panel_ganador')
+                    .append(
+                        $(document.createElement("div"))
+                            .append(
+                                $(document.createElement("h4"))
+                                    .append($stopElement)
+                                    .addClass("numero")
+                            )
+                            .addClass("numero_ganador")
+                    );
             }
         }
 
         //por si se vuelve a sortear y vaciar el numero ya sorteado
-        $('#tombola_numeros_ganadores').empty();
+        $('#tombola_numeros_ganadores div').empty();
+        $('#tombola_numeros_ganadores')
+            .append(
+                $(document.createElement("div"))
+                    .attr( 'id', 'tombola_panel_ganador' )
+                    .addClass( 'tombola_panel_ganador' )
+            )
 
         tombola.wheel('option', q);
         tombola.wheel('start', q);

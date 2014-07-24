@@ -250,7 +250,6 @@ class TvchatController extends Zend_Controller_Action{
         $this->_helper->layout->disableLayout();
     }
 
-    //url -> /tvchat/get-win-elements-tragamonedas?premio=?
     public function getWinElementsTragamonedasAction(){
 
         $elementos_ganadores = array();
@@ -292,7 +291,7 @@ class TvchatController extends Zend_Controller_Action{
         echo $respuesta;
         exit;
     }
-    //url -> /tvchat/get-win-elements-tombola?premio=?
+
     public function getWinElementsTombolaAction(){
 
         $elementos_ganadores = array();

@@ -131,28 +131,33 @@ body, html {
     margin-left: 562px;
 }
 .costo{
-    height: 7px;
     color: white;
     font-family: arial;
-    font-weight: bold;
     font-size: 10px;
-    padding-left: 90px;
+    font-weight: bold;
+    height: 7px;
+    margin-left: 90px;
+    margin-top: 6px;
 }
 #numeros_sorteados{
     margin-left: 50px;
 }
 .numero_ganador{
-    width: 50px;
-    height: 50px;
-    background: #808080;
-    float: left;
+    background: none repeat scroll 0 0 black;
     border-collapse: collapse;
     border-color: black;
-    margin-left: 2px;
+    float: left;
+    height: 40px;
+    margin-left: 1px;
+    margin-top: 10px;
+    width: 40px;
 }
 .numero{
-    text-align: center;
-    top: auto;
+    color: #ff0000;
+    font-family: arial;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 3px 10px 10px;
 }
 .tragamonedas_wrapper{
     width: 360px;
@@ -303,7 +308,7 @@ div.roulette3 {
     width: 193px;
 }
 .tombola_luces{
-    background-image: url("/img/tombola_luces.png");
+    background-image: url("/img/tombola_luces.gif");
     height: 56px;
     margin-left: 86px;
     margin-top: -14px;
@@ -322,7 +327,7 @@ div.roulette3 {
 }
 .tombola_circulo_central{
     background-image: url("/img/tombola_circulo_central.png");
-    height: 53px;
+    height: 54px;
     margin-left: 125px;
     margin-top: 134px;
     position: absolute;
@@ -355,4 +360,10 @@ div.roulette3 {
     font-weight: bold;
     margin-left: 15px;
     margin-top: 2px;
+}
+.tombola_panel_ganador{
+    margin-left: 15px;
+}
+.tombola_wheel_wrapper{
+    margin-left: 20px;
 }
