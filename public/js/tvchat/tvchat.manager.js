@@ -46,51 +46,6 @@ $(document).ready(function(){
         deshabilitarBotones();
     })
 
-    //abrir ventanas demos
-    $('#abrir_ventana2').click(function(){
-
-        ventana1 = window.open("/tvchat/demo2",
-            "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
-
-    })
-    $('#abrir_ventana3').click(function(){
-
-        ventana2 = window.open("/tvchat/demo1",
-            "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
-
-    })
-    $('#abrir_ventana4').click(function(){
-
-        ventana4= window.open("/tvchat/demo-galgos",
-            "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
-
-    })
-    $('#abrir_ventana5').click(function(){
-
-        ventana4= window.open("/tvchat/demo-dados",
-            "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
-
-    })
-    $('#abrir_ventana6').click(function(){
-
-        ventana4= window.open("/tvchat/demo",
-            "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
-
-    })
-    $('#abrir_ventana7').click(function(){
-
-        ventana4= window.open("/tvchat/demo-slot",
-            "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
-
-    })
-    //cerrar ventanas demos
-    $('#cerrar_ventana2').click(function(){
-        ventana1.close();
-    })
-    $('#cerrar_ventana3').click(function(){
-        ventana2.close();
-    })
-
     //cargar juegos
     $('#cargar_tragamonedas').click(function(){
 
@@ -225,6 +180,7 @@ $(document).ready(function(){
         sorteo.remove();
         var tombola_historial = $('#historial_tombola');
         $('#historial_tombola p').remove();
+        tombola.push(nuevoGanador);
 
         $.each(tombola, function(i, objetoGanador) {
 
@@ -502,7 +458,6 @@ $(document).ready(function(){
             tombola_numeros_ganadores.push(respuesta.cel_ganador);
             nuevoGanador.cel_ganador = respuesta.cel_ganador;
             nuevoGanador.combinacion_ganadora_list = tombola_elementos_ganadores;
-            tombola.push(nuevoGanador);
 
             tombola_buffer.push(nuevoGanador);
         }

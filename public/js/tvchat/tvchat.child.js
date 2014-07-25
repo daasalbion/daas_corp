@@ -6,6 +6,8 @@ var textarray = [];
 var elementos_ganadores = [];
 var wheel;
 var tombola;
+var intervalo = 0;
+var mostrar = 0;
 
 //funciones
 function cargarJuego( params ){
@@ -220,7 +222,7 @@ function cargarJuego( params ){
                 .addClass('mensaje_wrapper')
         )
     }
-}
+};
 
 function descargarJuego(params){
 
@@ -247,7 +249,7 @@ function descargarJuego(params){
     }
 
     console.log("juego descargado!!");
-}
+};
 
 function jugarJuego(params){
 
@@ -308,23 +310,10 @@ function jugarJuego(params){
                                     .addClass('linea_tombola')
                                     .append( "Ganador: " + ganador.substr(0,8) +"XX" )
                            )
-                )
+                );
 
-                /*var $divs = $("#tombola_numeros_ganadores div").hide(),
-                current = 0;
-
-                $divs.eq(0).show();
-
-                function showNext() {
-                    if (current < $divs.length - 1) {
-                        $divs.eq(current).delay(2000).fadeOut('fast', function() {
-                            current++;
-                            $divs.eq(current).fadeIn('fast');
-                            showNext();
-                        });
-                    }
-                }
-                showNext();*/
+                intervalo++;
+                mostrar = setInterval( parpadeo(), 2000);
 
             },
             stopNumberCallback : function( $stopElement ){
@@ -384,12 +373,40 @@ function jugarJuego(params){
             params['objeto_ganador'].cel_ganador
         ).addClass('centrar')
     }
-}
+};
 
 function obtenerMensajesNuevos(){
 
     textarray = window.opener.obtenerMensajesNuevosTvchat();
+};
+
+function parpadeo(){
+
+    if( intervalo % 2 == 0 ){
+
+        $('#tombola_numeros_ganadores #tombola_premio_ganador').hide();
+        $('#tombola_numeros_ganadores #tombola_panel_ganador').show();
+    }else{
+
+        $('#tombola_numeros_ganadores #tombola_panel_ganador').hide();
+        $('#tombola_numeros_ganadores #tombola_premio_ganador').show();
+    }
+
+    intervalo++;
+    console.log( "mirar: " + intervalo );
+    /*if( intervalo == 10 ){
+        clearInterval(mostrar);
+    }*/
 }
+
+function mostrarOcultar(){
+
+    var $divs = [$("#tombola_numeros_ganadores #tombola_panel_ganador"), $("#tombola_numeros_ganadores #tombola_premio_ganador")];
+    var mostrar = 0;
+    $divs[1].show();
+
+    //mostrar = setInterval()
+};
 
 $(document).ready(function(){
 

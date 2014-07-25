@@ -3,12 +3,12 @@
 class TvchatController extends Zend_Controller_Action{
 
     public $logger;
+    var $NRO_ELEMENTOS_SORTEADOS_TRAGAMONEDAS = 3;
+    var $NRO_ELEMENTOS_SORTEADOS_TOMBOLA = 4;
     var $usuarios = array(
 
         'daas' => array('clave' => 'daas', 'nombre' => 'DAAS'),
     );
-    var $NRO_ELEMENTOS_SORTEADOS_TRAGAMONEDAS = 3;
-    var $NRO_ELEMENTOS_SORTEADOS_TOMBOLA = 4;
 
     public function init(){
         /* Initialize action controller here */
@@ -45,30 +45,26 @@ class TvchatController extends Zend_Controller_Action{
     public function loginAction() {
 
         $this->_helper->layout->disableLayout();
-        /*$this->view->headLink()->setStylesheet('/css/tvchat/style.css', 'screen');
-        $this->view->headLink()->setStylesheet('/css/plugins/bootstrap/bootstrap.css', 'screen');*/
 
         $form = new Application_Form_Login();
 
-        if($this->getRequest()->isPost()) {
+        if( $this->getRequest()->isPost() ) {
 
             $formData = $this->getRequest()->getPost();
 
-            if($form->isValid($formData)){
+            if( $form->isValid( $formData ) ){
 
                 $nick = $form->getValue('login_user');
                 $clave = $form->getValue('login_pass');
 
-                if(!empty($nick) && !empty($clave)) {
+                if( !empty( $nick ) && !empty( $clave ) ) {
 
-                    if(array_key_exists($nick, $this->usuarios) && $clave == $this->usuarios[$nick]['clave']) {
+                    if( array_key_exists($nick, $this->usuarios) && $clave == $this->usuarios[$nick]['clave'] ) {
 
                         $this->logger->info('LOGIN:[' . $nick . ']');
                         $namespace = new Zend_Session_Namespace("entermovil-tvchat");
                         $namespace->usuario = $nick;
                         $namespace->nombre = $this->usuarios[$nick]['nombre'];
-                        $namespace->id= $this->usuarios[$nick]['id'];
-                        $namespace->prefijo = $this->usuarios[$nick]['prefijo'];
                         $namespace->accesos = array(
                             'FULL'
                         );
@@ -114,22 +110,6 @@ class TvchatController extends Zend_Controller_Action{
     public function marqueeAction(){
 
         $this->logger->info("marquee");
-    }
-
-    public function ajaxRequestAction(){
-
-        $this->logger->info( "ajax request" );
-        $this->_helper->viewRenderer->setNoRender(true);
-        $this->logger->info( "request ". print_r( $_GET, true ) );
-
-        if ($_GET['id_promocion'] == 25){
-
-            $mensajes_nuevos = $this->_consulta('GET_MENSAJES', array('id_promocion'=> 25));
-            $this->logger->info('datos a obtenidos ' . print_r($mensajes_nuevos, true));
-            $respuesta = json_encode(array("tieneiva"=>"1", "mensajes_nuevos"=>$mensajes_nuevos ));
-            $this->logger->info('datos a enviar ' . $respuesta );
-            echo $respuesta;
-        }
     }
 
     public function obtenerMensajesAction(){
@@ -187,6 +167,13 @@ class TvchatController extends Zend_Controller_Action{
 
     public function administracionAction(){
 
+        //ver como utilizar predispatch
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat");
+        if( !isset( $namespace->usuario ) ){
+
+            $this->_redirect('/tvchat/login');
+        }
+
         $this->view->headScript()->appendFile('/js/plugins/jquery-1.8.0.min.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/bootstrap.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.js', 'text/javascript');
@@ -196,6 +183,13 @@ class TvchatController extends Zend_Controller_Action{
     }
 
     public function tvAction(){
+
+        //ver como utilizar predispatch
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat");
+        if( !isset( $namespace->usuario ) ){
+
+            $this->_redirect('/tvchat/login');
+        }
 
         //$this->view->headScript()->appendFile('/js/plugins/jquery-1.7.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/jquery.marquee.js', 'text/javascript');
@@ -207,47 +201,6 @@ class TvchatController extends Zend_Controller_Action{
         //$this->view->headScript()->appendFile('/js/tvchat/tvchat.tragamonedas.manager.js', 'text/javascript');
         $this->logger->info("tv");
         $this->_helper->_layout->setLayout('tvchat-window-layout');
-    }
-
-    public function bingoShowAction(){
-
-        $this->logger->info("bingo-show");
-        $this->_helper->layout->disableLayout();
-    }
-
-    public function demo1Action(){
-        $this->_helper->layout->disableLayout();
-        $this->logger->info("demo1");
-    }
-
-    public function demo2Action(){
-
-        $this->logger->info("demo2");
-        $this->_helper->layout->disableLayout();
-    }
-
-    public function demoGalgosAction(){
-
-        $this->logger->info("demoVideo");
-        $this->_helper->layout->disableLayout();
-    }
-
-    public function demoDadosAction(){
-
-    $this->logger->info("demoVideo");
-        $this->_helper->layout->disableLayout();
-    }
-
-    public function demoAction(){
-
-        $this->logger->info("demoVideo");
-        $this->_helper->layout->disableLayout();
-    }
-
-    public function demoSlotAction(){
-
-        $this->logger->info("demoVideo");
-        $this->_helper->layout->disableLayout();
     }
 
     public function getWinElementsTragamonedasAction(){
