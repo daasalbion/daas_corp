@@ -7,11 +7,15 @@ var tragamonedas_buffer = [];
 var tombola_buffer = [];
 var piropos_buffer = [];
 var nuevoGanador = null;
+var premio_tragamonedas;
+var premio_tombola;
+var premio_piropo;
 
-function ObjetoGanador(combinacion_ganadora, cel_ganador, nombre_juego, combinacion_ganadora_list) {
+function ObjetoGanador(combinacion_ganadora, cel_ganador, nombre_juego, premio, combinacion_ganadora_list) {
     this.combinacion_ganadora = combinacion_ganadora;
     this.cel_ganador = cel_ganador;
     this.nombre_juego = nombre_juego;
+    this.premio = premio;
     this.combinacion_ganadora_list = combinacion_ganadora_list;
 }
 
@@ -130,8 +134,9 @@ $(document).ready(function(){
     //jugar juegos
     $('#jugarTragamonedas').click(function(){
 
-        //habilitarBotones( 4, 'tragamonedas' );
+        habilitarBotones( 4, 'tragamonedas' );
         nuevoGanador = tragamonedas_buffer.pop();
+        nuevoGanador.premio = premio_tragamonedas;
 
         var params = {
 
@@ -149,6 +154,7 @@ $(document).ready(function(){
         console.log("combinacion_ganadora: " + nuevoGanador.combinacion_ganadora);
         console.log("combinacion_ganadora_list: " + nuevoGanador.combinacion_ganadora_list);
         console.log("cel_ganador: " + nuevoGanador.cel_ganador);
+        console.log("premio: " + nuevoGanador.premio);
         console.log("nombre_juego: " + nuevoGanador.nombre_juego);
 
         //se obtiene efectivamente un nuevo ganador
@@ -158,7 +164,7 @@ $(document).ready(function(){
 
             tragamonedas_historial.append(
                 $(document.createElement("p"))
-                    .append(objetoGanador.combinacion_ganadora + ' - ' + objetoGanador.cel_ganador)
+                    .append(objetoGanador.combinacion_ganadora + ' - ' + objetoGanador.cel_ganador + ' - ' + objetoGanador.premio)
                     .addClass("numeros_sorteados")
             )
         });
@@ -167,8 +173,9 @@ $(document).ready(function(){
     });
     $('#jugarTombola').click(function(){
 
-        //habilitarBotones( 4, 'tombola' );
+        habilitarBotones( 4, 'tombola' );
         nuevoGanador = tombola_buffer.pop();
+        nuevoGanador.premio = premio_tombola;
 
         var params = {
 
@@ -186,7 +193,7 @@ $(document).ready(function(){
 
             tombola_historial.append(
                 $(document.createElement("p"))
-                    .append(objetoGanador.combinacion_ganadora + ' - ' + objetoGanador.cel_ganador)
+                    .append(objetoGanador.combinacion_ganadora + ' - ' + objetoGanador.cel_ganador + ' - ' + objetoGanador.premio)
                     .addClass("numeros_sorteados")
             )
             tombola_numeros_ganadores.pop();
@@ -273,9 +280,19 @@ $(document).ready(function(){
 
     });
 
+    //seleccionar premio
+    $("#premios_tragamonedas").change(function(){
+
+        premio_tragamonedas = $( "#premios_tragamonedas option:selected" ).text();
+    });
+    $("#premios_tombola").change(function(){
+
+        premio_tombola = $( "#premios_tombola option:selected" ).text();
+    });
+
     setInterval( obtenerMensajes, 1000*9*60 );
 
-    //obtenerMensajes();
+    obtenerMensajes();
 
     deshabilitarBotones();
 
@@ -287,6 +304,7 @@ $(document).ready(function(){
         $('#cargar_tragamonedas').attr('disabled', 'true');
         $('#cerrar_tragamonedas').attr('disabled', 'true');
         $('#jugarTragamonedas').attr('disabled', 'true');
+        $('#premios_tragamonedas').hide();
 
         //tombola
         $('#getWinElementsTombola').attr('disabled', 'true');
@@ -294,6 +312,7 @@ $(document).ready(function(){
         $('#cargar_tombola').attr('disabled', 'true');
         $('#cerrar_tombola').attr('disabled', 'true');
         $('#jugarTombola').attr('disabled', 'true');
+        $('#premios_tombola').hide();
 
         //piropo
         $('#seleccionar_piropo').attr('disabled', 'true');
@@ -317,18 +336,20 @@ $(document).ready(function(){
             habilitarBotones( 1, null );
             $('#getWinElementsTragamonedas').removeAttr('disabled');
             $('#getElementsTragamonedas').removeAttr('disabled');
-            if( tragamonedas_buffer.length > 0 ){
+            /*if( tragamonedas_buffer.length > 0 ){
                 $('#jugarTragamonedas').removeAttr('disabled');
-            }
+            }*/
         }
         else if( nivel == 3 && juego == "tragamonedas" ){
 
             habilitarBotones( 2, "tragamonedas" );
+            $('#premios_tragamonedas').show();
             $('#jugarTragamonedas').removeAttr('disabled');
         }
         else if( nivel == 4 && juego == "tragamonedas" ){
 
             deshabilitarBotones();
+            habilitarBotones( 2, "tragamonedas" );
             $('#cerrar_tragamonedas').removeAttr('disabled');
         }
         else if( nivel == 2 && juego == "tombola" ){
@@ -341,11 +362,13 @@ $(document).ready(function(){
         else if( nivel == 3 && juego == "tombola" ){
 
             habilitarBotones( 2, "tombola" );
+            $('#premios_tombola').show();
             $('#jugarTombola').removeAttr('disabled');
         }
         else if( nivel == 4 && juego == "tombola" ){
 
             deshabilitarBotones();
+            habilitarBotones( 2, "tombola" );
             $('#cerrar_tombola').removeAttr('disabled');
         }
         else if( nivel == 2 && juego == "piropo" ){
@@ -367,7 +390,7 @@ $(document).ready(function(){
 
         if( respuesta.juego == "tragamonedas" ){
 
-            nuevoGanador = new ObjetoGanador( '', '', respuesta.juego, '' );
+            nuevoGanador = new ObjetoGanador( '', '', respuesta.juego, '', '' );
 
             if( $('#WinElementsTragamonedas p').length > 0 )
                 $('#WinElementsTragamonedas p').remove();
@@ -417,7 +440,7 @@ $(document).ready(function(){
         }
         else if( respuesta.juego == "tombola" ){
 
-            nuevoGanador = new ObjetoGanador( '', '', respuesta.juego, '' );
+            nuevoGanador = new ObjetoGanador( '', '', respuesta.juego, '', '' );
 
             console.log("tombola");
             if( $('#WinElementsTombola p').length > 0 )
@@ -495,14 +518,20 @@ $(document).ready(function(){
 
             opciones_mensajes.append(
 
-                $(document.createElement("p"))
-                    .append(mensaje)
+                $(document.createElement("tr"))
                     .append(
-                        $(document.createElement("button"))
-                            .addClass("mierda seleccionar btn btn-primary")
-                            .attr('data-mensaje', mensaje)
-                            .attr( 'id', i )
-                            .append("Seleccionar")
+                        $(document.createElement("td"))
+                            .append(
+                                mensaje
+                            ),
+                        $(document.createElement("td"))
+                            .append(
+                                $(document.createElement("button"))
+                                    .addClass("seleccionar btn btn-primary")
+                                    .attr('data-mensaje', mensaje)
+                                    .attr( 'id', i )
+                                    .append("Seleccionar")
+                            )
                     )
             )
 

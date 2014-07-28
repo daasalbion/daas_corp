@@ -258,6 +258,7 @@ function jugarJuego(params){
     console.log("valores_ganadores: " + params["objeto_ganador"].combinacion_ganadora);
     elementos_ganadores = params["objeto_ganador"].combinacion_ganadora_list;
     var ganador = params['objeto_ganador'].cel_ganador;
+    var premio = params['objeto_ganador'].premio;
     clearInterval(mostrar);
 
     if( params['jugar'] == "tragamonedas" ){
@@ -269,7 +270,7 @@ function jugarJuego(params){
                 resultado++;
                 if( resultado == 3 ){
 
-                    $('#premio').append( "Saldo para tu celular" );
+                    $('#premio').append( premio );
                     $('#linea').append( "Ganador: " + ganador.substr(0,8) +"XX" );
                 }
             }
@@ -305,7 +306,7 @@ function jugarJuego(params){
                                 $(document.createElement("div"))
                                     .attr('id', 'premio_tombola')
                                     .addClass('premio_tombola')
-                                    .append( "Saldo para tu celular" )
+                                    .append( premio )
                                 ,
                                 $(document.createElement("div"))
                                     .attr('id', 'linea_tombola')
@@ -328,17 +329,12 @@ function jugarJuego(params){
                     }
 
                     intervalo++;
-                    if( intervalo == 10 ){
-                        clearInterval(mostrar);
-                    }
-
                     console.log( "mirar: " + intervalo );
                 }, 2000);
 
             },
             stopNumberCallback : function( $stopElement ){
 
-                console.log( 'mirar bien: ' + $stopElement );
                 $('#tombola_numeros_ganadores #tombola_panel_ganador')
                     .append(
                         $(document.createElement("div"))
@@ -354,6 +350,7 @@ function jugarJuego(params){
 
         //por si se vuelve a sortear y vaciar el numero ya sorteado
         $('#tombola_numeros_ganadores div').empty();
+        $('#tombola_numeros_ganadores div').remove();
         $('#tombola_numeros_ganadores')
             .append(
                 $(document.createElement("div"))
