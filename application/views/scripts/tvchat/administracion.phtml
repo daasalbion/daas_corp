@@ -3,13 +3,14 @@
     <div id="breadcrumb" class="col-xs-12">
         <ol class="breadcrumb">
             <li><a href="#">Dashboard</a></li>
-            <button id="cerrar_ventana_principal" style="float: right" class="btn btn-danger">Cerrar</button>
-            <button id="abrir_ventana_principal" style="float: right" class="btn btn-danger">Jugar</button>
+            <button id="cerrar_ventana_principal" style="float: right" class="btn btn-danger">Cerrar Pantalla</button>
+            <button id="abrir_ventana_principal" style="float: right" class="btn btn-danger">Abrir Pantalla</button>
             <button id="vaciar_localstorage" style="float: right" class="btn btn-danger">Vaciar</button>
         </ol>
     </div>
 </div>
 <!--End Breadcrumb-->
+<!--tragamonedas-->
 <div class="row">
     <div class="col-xs-12">
         <div class="box">
@@ -39,6 +40,7 @@
                             <th class="col-sm-2">Cargar</th>
                             <th class="col-sm-2">Obtener Ganador</th>
                             <th class="col-sm-2">Jugar</th>
+                            <th class="col-sm-2">Acciones</th>
                             <th class="col-sm-3">Ganadores</th>
                         </tr>
                     </thead>
@@ -69,6 +71,11 @@
                                 <button id="jugarTragamonedas" class="btn btn-primary">Jugar</button>
                             </td>
                             <td>
+                                <button id="stopRoulette1" class="btn btn-primary">Parar 1</button>
+                                <button id="stopRoulette2" class="btn btn-primary">Parar 2</button>
+                                <button id="stopRoulette3" class="btn btn-primary">Parar 3</button>
+                            </td>
+                            <td>
                                 <div id="historial_tragamonedas">
                                 </div>
                             </td>
@@ -79,6 +86,7 @@
         </div>
     </div>
 </div>
+<!--tombola-->
 <div class="row">
     <div class="col-xs-12">
         <div class="box">
@@ -149,6 +157,7 @@
         </div>
     </div>
 </div>
+<!--piropos-->
 <div class="row">
     <div class="col-xs-12">
         <div class="box">
@@ -211,6 +220,76 @@
         </div>
     </div>
 </div>
+<!--tragamonedas sexy-->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-name">
+                    <i class="fa fa-table"></i>
+                    <span><strong>Tragamonedas Sexy</strong></span>
+                </div>
+                <div class="box-icons">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="expand-link">
+                        <i class="fa fa-expand"></i>
+                    </a>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="no-move"></div>
+            </div>
+            <div class="box-content no-padding">
+                <table class="table table-striped table-bordered table-hover table-heading no-border-bottom">
+                    <thead>
+                    <tr>
+                        <th class="col-sm-2">Preview</th>
+                        <th class="col-sm-2">Cargar</th>
+                        <th class="col-sm-2">Obtener Ganador</th>
+                        <th class="col-sm-2">Jugar</th>
+                        <th class="col-sm-3">Ganadores</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <img class="juego_preview" src="/img/tvchat/interfaz/tvchat_tragamonedas_preview.png">
+                        </td>
+                        <td>
+                            <button id="cargar_tragamonedas_sexy" class="btn btn-primary">Cargar</button>
+                            <button id="cerrar_tragamonedas_sexy" class="btn btn-primary">Quitar</button>
+                        </td>
+                        <td>
+                            <button id="getWinElementsTragamonedas" type="button" class="btn btn-primary">C/ Premio</button>
+                            <button id="getElementsTragamonedas" type="button" class="btn btn-primary">S/ Premio</button>
+                            <div id="WinElementsTragamonedas">
+                            </div>
+                            <div class="premios_tragamonedas">
+                                <select id="premios_tragamonedas" class="form-control">
+                                    <option>Premios</option>
+                                    <option value="500000">500.000 Gs En Efectivo</option>
+                                    <option value="200000">200.000 Gs En Efectivo</option>
+                                    <option value="100000">100.000 Gs En Efectivo</option>
+                                </select
+                            </div>
+                        </td>
+                        <td>
+                            <button id="jugarTragamonedas" class="btn btn-primary">Jugar</button>
+                        </td>
+                        <td>
+                            <div id="historial_tragamonedas">
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Modal -->
 <div class="modal fade" id="opciones_mensajes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div style="width: 1300px" class="modal-dialog">
@@ -239,49 +318,4 @@
         </div>
     </div>
 </div>
-<!--<div>
-    <p>
-        <button id="abrir_ventanas1">Bingo Show</button>
-        <button id="cerrar_ventana1">Cerrar</button>
-    </p>
-    <p>
-        <button id="abrir_ventana2">Afortunado Tombola</button>
-        <button id="cerrar_ventana2">Cerrar</button>
-    </p>
-    <p>
-        <button id="abrir_ventana3">Afortunado Tragamonedas</button>
-        <button id="cerrar_ventana3">Cerrar</button>
-    </p>
-    <p>
-        <button id="abrir_ventana4">Demo Galgo</button>
-        <button id="cerrar_ventana4">Cerrar</button>
-    </p>
-    <p>
-        <button id="abrir_ventana5">Demo Dados</button>
-        <button id="cerrar_ventana5">Cerrar</button>
-    </p>
-    <p>
-        <button id="abrir_ventana6">Demo Bingo</button>
-        <button id="cerrar_ventana6">Cerrar</button>
-    </p>
-    <p>
-        <button id="abrir_ventana7">Demo Slot</button>
-        <button id="cerrar_ventana7">Cerrar</button>
-    </p>
-       <p>
-            <button id="cargar_tombola">Tombola</button>
-            <button id="cerrar_tombola">Quitar</button>
-        </p>
-        <p>
-            <button id="cargar_tragamonedas">Tragamonedas</button>
-            <button id="cerrar_tragamonedas">Quitar</button>
-        </p>
-        <p>
-            <button id="cargar_tvchat">TVchat</button>
-            <button id="cerrar_tvchat">Quitar</button>
-        </p>
-        <div>
-            <input id="cargar_normal" type="text" value="">
-            <a href="#" id="cargar">Cargar</a>
-        </div>
-</div>-->
+

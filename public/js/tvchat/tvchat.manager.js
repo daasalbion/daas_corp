@@ -61,6 +61,16 @@ $(document).ready(function(){
 
         tvchat.cargarJuego(params);
     })
+    $('#cargar_tragamonedas_sexy').click(function(){
+
+        habilitarBotones( 2, 'tragamonedas' );
+        //valores por defecto
+        var params = {
+            "juego": "tragamonedas_sexy"
+        };
+
+        tvchat.cargarJuego(params);
+    })
     $('#cargar_tombola').click(function(){
 
         habilitarBotones( 2, 'tombola' );
@@ -170,6 +180,48 @@ $(document).ready(function(){
         });
 
         tvchat.jugarJuego(params);
+    });
+    $('#stopRoulette1').click(function(){
+
+        //habilitarBotones( 4, 'tragamonedas' );
+        //nuevoGanador = tragamonedas_buffer.pop();
+        //nuevoGanador.premio = premio_tragamonedas;
+
+        var params = {
+
+            "stop": "tragamonedas",
+            "roulette": "1"
+        }
+
+        tvchat.pararJuego(params);
+    });
+    $('#stopRoulette2').click(function(){
+
+        //habilitarBotones( 4, 'tragamonedas' );
+        //nuevoGanador = tragamonedas_buffer.pop();
+        //nuevoGanador.premio = premio_tragamonedas;
+
+        var params = {
+
+            "stop": "tragamonedas",
+            "roulette": "2"
+        }
+
+        tvchat.pararJuego(params);
+    });
+    $('#stopRoulette3').click(function(){
+
+        //habilitarBotones( 4, 'tragamonedas' );
+        //nuevoGanador = tragamonedas_buffer.pop();
+        //nuevoGanador.premio = premio_tragamonedas;
+
+        var params = {
+
+            "stop": "tragamonedas",
+            "roulette": "3"
+        }
+
+        tvchat.pararJuego(params);
     });
     $('#jugarTombola').click(function(){
 
@@ -294,7 +346,7 @@ $(document).ready(function(){
 
     obtenerMensajes();
 
-    deshabilitarBotones();
+    //deshabilitarBotones();
 
     //funciones
     function deshabilitarBotones(){
@@ -334,6 +386,7 @@ $(document).ready(function(){
 
             deshabilitarBotones();
             habilitarBotones( 1, null );
+            $('#cerrar_tragamonedas').removeAttr('disabled');
             $('#getWinElementsTragamonedas').removeAttr('disabled');
             $('#getElementsTragamonedas').removeAttr('disabled');
             /*if( tragamonedas_buffer.length > 0 ){

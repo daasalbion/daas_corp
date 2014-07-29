@@ -30,24 +30,20 @@ body, html {
     width: 800px;
 }
 .interactive{
-    width: 800px;
     height: 365px;
-    padding-bottom: 1px;
-    padding-top: 0px;
+    width: 750px;
+    padding: 0 25px;
 }
 .juegos{
     width: 360px;
     height: 357px;
     float: left;
-    margin-left: 25px;
 }
 .conductora{
     width: 387px;
     height: 358px;
     float:left;
-    /*background-color: #ffffff;*/
     border: 1px white dotted;
-    margin-right: 25px;
 }
 .tvchat{
     width: 800px;
@@ -109,26 +105,19 @@ body, html {
 }
 .jugar_izquierda{
     float: left;
+    position: absolute;
+    z-index:1;
 }
 .logo_afortunado{
     float: left;
+    left: 230px;
+    position: absolute;
+    z-index: 2;
 }
 .jugar_derecha{
     float: left;
-}
-.jugar_izquierda img{
     position: absolute;
-    z-index:1;
-}
-.logo_afortunado img{
-    position: absolute;
-    z-index:2;
-    margin-left: 230px;
-}
-.jugar_derecha img{
-    position: absolute;
-    z-index:1;
-    margin-left: 562px;
+    left: 562px;
 }
 .costo{
     color: white;
@@ -136,8 +125,8 @@ body, html {
     font-size: 10px;
     font-weight: bold;
     height: 7px;
-    margin-left: 90px;
     margin-top: 6px;
+    text-align: center;
 }
 #numeros_sorteados{
     margin-left: 50px;
@@ -160,8 +149,8 @@ body, html {
     margin: 3px 10px 10px;
 }
 .tragamonedas_wrapper{
-    width: 360px;
-    height: 360px;
+    width: 350px;
+    height: 300px;
     background-image: url("/img/tragamonedas_masking.png");
     position:absolute;
     background-repeat: no-repeat;
@@ -218,19 +207,19 @@ body, html {
     background-image: url("/img/tragamonedas_luces_verticales_izquierda.gif");
     background-repeat: no-repeat;
     height: 167px;
-    margin-left: 4px;
-    margin-top: 63px;
+    left: 4px;
     position: absolute;
-    width: 38px;
+    top: 63px;
+    width: 26px;
 }
 .tragamonedas_luces_verticales_der{
     background-image: url("/img/tragamonedas_luces_verticales_derecha.gif");
     background-repeat: no-repeat;
     height: 167px;
-    margin-left: 319px;
-    margin-top: 63px;
+    left: 319px;
     position: absolute;
-    width: 38px;
+    top: 63px;
+    width: 26px;
 }
 .tira1{
     background-color: #ffffff;
@@ -340,9 +329,38 @@ div.roulette3 {
     font: bold;
 }
 .mensaje_wrapper{
-    width: 300px;
-    height: 300px;
-    background-color: #ffffff;
+    background-image: url("/img/tvchat/piropos/mensaje_wrapper.png");
+    background-repeat: no-repeat;
+    height: 290px;
+    margin-top: 35px;
+    padding-top: 30px;
+    width: 336px;
+}
+.titulo_piropo{
+    color: #ffff00;
+    font-family: arial;
+    font-size: 27px;
+    font-weight: bold;
+    margin-left: 68px;
+    margin-top: 3px;
+    position: absolute;
+}
+.mensaje_piropo{
+    color: #ffffff;
+    font-family: arial;
+    font-size: 19px;
+    font-weight: bold;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 60px;
+}
+.mensaje_cel_ganador{
+    color: #ff0000;
+    font-family: arial;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 0;
+    margin-top: 5px;
 }
 .centrar{
     text-align: center;
