@@ -314,9 +314,14 @@ function cargarJuego( params ){
     }
 };
 
-function descargarJuego(params){
+function descargarJuego( params ){
 
     if( params['juego'] == "tragamonedas" ){
+
+        var juego = $('#tragamonedas_wrapper');
+        juego.remove();
+    }
+    else if( params['juego'] == "tragamonedas_sexy" ){
 
         var juego = $('#tragamonedas_wrapper');
         juego.remove();
@@ -341,7 +346,7 @@ function descargarJuego(params){
     console.log("juego descargado!!");
 };
 
-function jugarJuego(params){
+function jugarJuego( params ){
 
     console.log("juego a jugar: " + params['jugar']);
     console.log("valores_ganadores: " + params["objeto_ganador"].combinacion_ganadora);
@@ -354,6 +359,38 @@ function jugarJuego(params){
 
         var resultado = 0;
         var p = {
+            duration: 1000,
+            stopCallback : function($stopElm) {
+                console.log("mierda stop " + $stopElm);
+                resultado++;
+                if( resultado == 3 ){
+
+                    $('#premio').append( premio );
+                    $('#linea').append( "Ganador: " + ganador.substr(0,8) +"XX" );
+                }
+            }
+        }
+
+        $('#premio').empty();
+        $('#linea').empty();
+
+        p['stopImageNumber'] = Number(elementos_ganadores[0]);
+        rouletter1.roulette( 'option', p );
+        p['stopImageNumber'] = Number(elementos_ganadores[1]);
+        rouletter2.roulette( 'option', p );
+        p['stopImageNumber'] = Number(elementos_ganadores[2]);
+        rouletter3.roulette( 'option', p );
+
+        rouletter1.roulette('start');
+        rouletter2.roulette('start');
+        rouletter3.roulette('start');
+
+    }
+    if( params['jugar'] == "tragamonedas_sexy" ){
+
+        var resultado = 0;
+        var p = {
+
             duration: 1000,
             stopCallback : function($stopElm) {
                 console.log("mierda stop " + $stopElm);
@@ -482,11 +519,26 @@ function jugarJuego(params){
     }
 };
 
-function pararJuego(params){
+function pararJuego( params ){
 
     console.log("juego a jugar: " + params);
 
     if( params['stop'] == "tragamonedas" ){
+
+        if( params['roulette'] == "1" ){
+
+            rouletter1.roulette('stop');
+        }
+        else if( params['roulette'] == "2" ){
+
+            rouletter2.roulette('stop');
+        }
+        else if( params['roulette'] == "3" ){
+
+            rouletter3.roulette('stop');
+        }
+    }
+    else if( params['stop'] == "tragamonedas_sexy" ){
 
         if( params['roulette'] == "1" ){
 
