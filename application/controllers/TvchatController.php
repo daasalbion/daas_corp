@@ -174,7 +174,7 @@ class TvchatController extends Zend_Controller_Action{
             $this->_redirect('/tvchat/login');
         }
 
-        $this->view->headScript()->appendFile('/js/plugins/jquery-1.8.0.min.js', 'text/javascript');
+        //$this->view->headScript()->appendFile('/js/plugins/jquery-1.8.0.min.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/bootstrap.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.manager.js', 'text/javascript');
@@ -256,29 +256,10 @@ class TvchatController extends Zend_Controller_Action{
 
         if( $parametros['premio'] == 'true' ){
 
-            for( $i = 1; $i <= $nro; $i++ ){
-
-                $elementos_ganadores[] = rand( 0, 3 );
-            }
-
             //numero de celular randomico
             $cel_ganador = "0982000000" + rand( 0, 999999);
             $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
             $respuesta = json_encode( array( "sorteo" => $elementos_ganadores, "cel_ganador" =>"0$cel_ganador", "juego" => "tragamonedas_sexy" ) );
-            $this->logger->info( 'datos a enviar ' . $respuesta );
-
-        }else{
-
-            for( $i = 1; $i <= $nro; $i++ ){
-
-                $elementos_ganadores[] = rand( 0, 3 );
-            }
-
-            $elementos_ganadores[$nro-1] = rand( 8, 11 );
-            //numero de celular randomico
-            $cel_ganador = "0982000000" + rand( 0, 999999);
-            $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
-            $respuesta = json_encode( array( "sorteo" => $elementos_ganadores, "cel_ganador" => "Sin Ganador", "juego" => "tragamonedas" ) );
             $this->logger->info( 'datos a enviar ' . $respuesta );
 
         }

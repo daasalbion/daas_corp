@@ -1,12 +1,15 @@
 //var tvchat = null;
 var tragamonedas_elementos_ganadores = [];
+var tragamonedas_sexy_combinacion_ganadora = [];
 var tragamonedas_numeros_ganadores = [];
 var tombola_elementos_ganadores = [];
 var tombola_numeros_ganadores = [];
 var tragamonedas_buffer = [];
+var tragamonedas_sexy_buffer = [];
 var tombola_buffer = [];
 var piropos_buffer = [];
 var nuevoGanador = null;
+var premio_tragamonedas;
 var premio_tragamonedas;
 var premio_tombola;
 var premio_piropo;
@@ -20,11 +23,14 @@ function ObjetoGanador( combinacion_ganadora, cel_ganador, nombre_juego, premio,
 };
 
 var tragamonedas = JSON.parse(localStorage.getItem('tragamonedas'));
+var tragamonedas_sexy = JSON.parse(localStorage.getItem('tragamonedas_sexy'));
 var tombola = JSON.parse(localStorage.getItem('tombola'));
 var mensajes = JSON.parse(localStorage.getItem('mensajes'));
 
 if (tragamonedas == null)
     var tragamonedas = [];
+if (tragamonedas_sexy == null)
+    var tragamonedas_sexy = [];
 if (tombola == null)
     var tombola = [];
 if (mensajes == null)
@@ -236,8 +242,9 @@ $(document).ready(function(){
     $('#jugarTragamonedasSexy').click(function(){
 
         //habilitarBotones( 4, 'tragamonedas' );
-        nuevoGanador = tragamonedas_buffer.pop();
+        nuevoGanador = tragamonedas_sexy_buffer.pop();
         nuevoGanador.premio = premio_tragamonedas;
+        nuevoGanador.combinacion_ganadora_list = tragamonedas_sexy_combinacion_ganadora;
 
         var params = {
 
@@ -259,9 +266,9 @@ $(document).ready(function(){
         console.log("nombre_juego: " + nuevoGanador.nombre_juego);
 
         //se obtiene efectivamente un nuevo ganador
-        tragamonedas.push(nuevoGanador);
+        tragamonedas_sexy.push(nuevoGanador);
 
-        $.each(tragamonedas, function(i, objetoGanador) {
+        $.each(tragamonedas_sexy, function(i, objetoGanador) {
 
             tragamonedas_historial.append(
                 $(document.createElement("p"))
@@ -440,8 +447,8 @@ $(document).ready(function(){
         updateParamater1();
     }
     var updateParamater1 = function(){
-        p['stopImageNumber'] = Number($('.stop_image_number_param1').eq(0).text());
-        rouletter1.roulette('option', p);
+        var stopImageNumber = Number($('.stop_image_number_param1').eq(0).text());
+        tragamonedas_sexy_combinacion_ganadora[0] = stopImageNumber;
     }
     $('#image_sample2').children().click(function(){
         var stopImageNumber = $(this).attr('data-value');
@@ -454,8 +461,8 @@ $(document).ready(function(){
         updateParamater2();
     }
     var updateParamater2 = function(){
-        p['stopImageNumber'] = Number($('.stop_image_number_param1').eq(0).text());
-        rouletter2.roulette('option', p);
+        var stopImageNumber = Number($('.stop_image_number_param2').eq(0).text());
+        tragamonedas_sexy_combinacion_ganadora[1] = stopImageNumber;
     }
     $('#image_sample3').children().click(function(){
         var stopImageNumber = $(this).attr('data-value');
@@ -468,8 +475,8 @@ $(document).ready(function(){
         updateParamater3();
     }
     var updateParamater3 = function(){
-        p['stopImageNumber'] = Number($('.stop_image_number_param1').eq(0).text());
-        rouletter3.roulette('option', p);
+        var stopImageNumber = Number($('.stop_image_number_param3').eq(0).text());
+        tragamonedas_sexy_combinacion_ganadora[2] = stopImageNumber;
     }
 
     setInterval( obtenerMensajes, 1000*9*60 );
@@ -633,28 +640,6 @@ $(document).ready(function(){
                     $(document.createElement("p"))
                 );
 
-            var WinElementsTragamonedas = $('#WinElementsTragamonedasSexy p');
-            //cargo los elementos ganadores del sorteo
-            $.each(respuesta.sorteo, function( i, item ) {
-
-                if( i > 0 ){
-
-                    WinElementsTragamonedas
-                        .append(" - " + item)
-                        .addClass("numeros_sorteados")
-                }else{
-
-                    WinElementsTragamonedas
-                        .append(item)
-                        .addClass("numeros_sorteados")
-                }
-
-                //cargar los elementos ganadores a pasar
-                tragamonedas_elementos_ganadores[i] = item;
-                nuevoGanador.combinacion_ganadora += item;
-            });
-
-            console.log("tragamonedas_elementos_ganadores: " + tragamonedas_elementos_ganadores);
             $('#WinElementsTragamonedasSexy').append(
 
                 $(document.createElement("p"))
@@ -662,13 +647,11 @@ $(document).ready(function(){
                     .addClass("numeros_sorteados")
             );
 
-            tragamonedas_numeros_ganadores.push(respuesta.cel_ganador);
-
             nuevoGanador.cel_ganador = respuesta.cel_ganador;
-            nuevoGanador.combinacion_ganadora_list = tragamonedas_elementos_ganadores;
+            nuevoGanador.combinacion_ganadora_list = tragamonedas_sexy_combinacion_ganadora;
 
             //buffer donde voy guardando los sorteos
-            tragamonedas_buffer.push(nuevoGanador);
+            tragamonedas_sexy_buffer.push(nuevoGanador);
 
         }
         else if( respuesta.juego == "tombola" ){
