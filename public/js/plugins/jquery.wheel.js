@@ -297,7 +297,7 @@
             ctx.stroke();
         };
 
-        var drawSegment = function(key, lastAngle, angle) {
+        var drawSegment = function( key, lastAngle, angle ) {
             var ctx = q.canvasContext;
             var centerX = q.centerX;
             var centerY = q.centerY;
@@ -419,16 +419,17 @@
 
             var canvas = $('#wheel #canvas').get(0);
             console.log('empezar');
-            initIterations();
+            //initIterations();
+            spin();
             q.canvasContext = canvas.getContext("2d");
-        }
+        };
 
         var ret = {
             start : start,
             //init : init,
             iniciar : iniciar,
             option : option
-        }
+        };
 
         return ret;
 
@@ -453,6 +454,6 @@
                 $(this).data( 'plugin_' + pluginName, wheel );
             }
         });
-    }
+    };
 
 })(jQuery);

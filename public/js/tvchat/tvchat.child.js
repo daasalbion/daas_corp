@@ -2,7 +2,8 @@
 var rouletter1 = null;
 var rouletter2 = null;
 var rouletter3 = null;
-var textarray = [];
+var textarray_buffer = ['Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha'];
+var textarray = ['Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha'];
 var elementos_ganadores = [];
 var wheel;
 var tombola;
@@ -553,82 +554,15 @@ function pararJuego( params ){
             rouletter3.roulette('stop');
         }
     }
-    else if( params['jugar'] == "tombola" ){
+    else if( params['stop'] == "tombola" ){
 
-        var q = {
-
-            valoresEsperados: elementos_ganadores,
-            stopCallback : function($stopElm) {
-
-                $('#tombola_numeros_ganadores #tombola_panel_ganador').hide();
-                $('#tombola_numeros_ganadores').append(
-                    $(document.createElement("div"))
-                        .attr( 'id', 'tombola_premio_ganador' )
-                        .append(
-                            $(document.createElement("div"))
-                                .attr('id', 'premio_tombola')
-                                .addClass('premio_tombola')
-                                .append( premio )
-                            ,
-                            $(document.createElement("div"))
-                                .attr('id', 'linea_tombola')
-                                .addClass('linea_tombola')
-                                .append( "Ganador: " + ganador.substr(0,8) +"XX" )
-                        )
-                );
-
-                intervalo = 0;
-                mostrar = setInterval( function parpadeo(){
-                    if( intervalo % 2 == 0 ){
-
-                        $('#tombola_numeros_ganadores #tombola_panel_ganador').hide();
-                        $('#tombola_numeros_ganadores #tombola_premio_ganador').show();
-
-                    }else{
-
-                        $('#tombola_numeros_ganadores #tombola_premio_ganador').hide();
-                        $('#tombola_numeros_ganadores #tombola_panel_ganador').show();
-                    }
-
-                    intervalo++;
-                    console.log( "mirar: " + intervalo );
-                }, 2000);
-
-            },
-            stopNumberCallback : function( $stopElement ){
-
-                $('#tombola_numeros_ganadores #tombola_panel_ganador')
-                    .append(
-                        $(document.createElement("div"))
-                            .append(
-                                $(document.createElement("h4"))
-                                    .append($stopElement)
-                                    .addClass("numero")
-                            )
-                            .addClass("numero_ganador")
-                    );
-            }
-        }
-
-        //por si se vuelve a sortear y vaciar el numero ya sorteado
-        $('#tombola_numeros_ganadores div').empty();
-        $('#tombola_numeros_ganadores div').remove();
-        $('#tombola_numeros_ganadores')
-            .append(
-                $(document.createElement("div"))
-                    .attr( 'id', 'tombola_panel_ganador' )
-                    .addClass( 'tombola_panel_ganador' )
-            )
-
-        tombola.wheel('option', q);
-        tombola.wheel('start', q);
-
+        tombola.wheel( 'start' );
     }
 };
 
 function obtenerMensajesNuevos(){
 
-    textarray = window.opener.obtenerMensajesNuevosTvchat();
+    textarray = window.opener.obtenerMensajesNuevosMensajero();
 };
 
 $(document).ready(function(){
@@ -638,13 +572,15 @@ $(document).ready(function(){
         var length = textarray.length;
         console.log(textarray);
         console.log(textarray.length);
-        if( textarray.length == 0 ){
-            var eliminar = $( '.js-marquee-wrapper' );
+        if( length == 0 ){
+            /*var eliminar = $( '.js-marquee-wrapper' );
             eliminar.remove();
             //coloco una cadena vacia
             obtenerMensajesNuevos();
-            console.log( textarray );
+            console.log( textarray );*/
+            textarray = textarray_buffer;
             mostrarMensajesMarquee();
+
             return;
         }
         var texto = textarray.pop();
@@ -685,5 +621,5 @@ $(document).ready(function(){
     //obtenerMensajesNuevos();
 
     console.log("mostrar_mensajes");
-    //mostrarMensajesMarquee();
+    mostrarMensajesMarquee();
 });

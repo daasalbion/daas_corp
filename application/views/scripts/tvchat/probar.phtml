@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="description" content="description">
+    <meta name="author" content="DAAS">
+    <meta name="keyword" content="keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/plugins/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="/css/tvchat/style.css" rel="stylesheet">
+    <style>
+        body{
+            padding-left: 10%;
+            padding-right: 10%;
+        }</style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <div class="box-name">
+                        <i class="fa fa-table"></i>
+                        <span><strong>Mensajes</strong></span>
+                    </div>
+                </div>
+                <div style="padding: 0; margin: 0" class="box-content">
+                    <ul style="list-style-type: none; margin: 0; padding: 0">
+                        <?php if( !empty($this->datos_mostrar) ):?>
+                            <?php foreach ( $this->datos_mostrar as $indice => $fila ): ?>
+                                <li style="text-align: left; color: #ff0000">
+                                    [<?php echo substr($fila['fh_mensaje_usuario'],0,19)?>]
+                                </li>
+                                <li style="text-align: left; color: #ff0000">
+                                    <?php echo $fila['mensaje_usuario']?>
+                                </li>
+                                <li style="text-align: right">
+                                    [<?php echo substr($fila['fh_mensaje_operador'],0,19)?>]
+                                </li>
+                                <li style="text-align: right">
+                                        <?php echo $fila['mensaje_operador']?>
+                                </li>
+                            <?php endforeach; ?>
+                        <?php endif?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center">
+            <h3 class="page-header">Entermovil</h3>
+        </div>
+        <form class="form-signin" name = "form1" method="post" action ="/tvchat/probar">
+            <div class="form-group">
+                <label class="control-label">Mensaje</label>
+                <input type="text" name="mensaje" id="mensaje" class="form-control" autofocus/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Cel</label>
+                <input type="text" name="cel" id="cel" class="form-control" autofocus value="<?php echo isset($this->cel)?$this->cel:''?>"/>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</body>

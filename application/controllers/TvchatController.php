@@ -350,7 +350,8 @@ class TvchatController extends Zend_Controller_Action{
 
                 return $resultado;
             }
-        }elseif( $accion == 'GET_MENSAJES_NUEVOS' ){
+        }
+        else if( $accion == 'GET_MENSAJES_NUEVOS' ){
 
             $sql = "select PT.id_tvchat_mensaje, PT.mensaje
                     from promosuscripcion.tvchat_mensajes PT
@@ -376,6 +377,138 @@ class TvchatController extends Zend_Controller_Action{
             }else{
 
                 return $resultado;
+            }
+        }
+        else if( $accion == 'INSERTAR' ){
+
+            $insertar = array(
+                'id_carrier' => '2',
+                'n_llamado' => '6767',
+                'n_remitente' => $datos['cel'],
+                'alias' => 'DEMO-CHAT',
+                'sms' => $datos['mensaje'],
+                'ts_local' => 'now()',
+                'id_cliente' => '2',
+                'id_sms_carrier' => '2',
+                'estado' => '2',
+                'id_sc' => '2',
+                'cmd_id' => '2',
+                'id_promocion' => '2',
+                'id_tipo_promocion' => '2',
+            );
+
+            $status = $db->insert('chatcenter.sms_entrantes', $insertar);
+            /*INSERT INTO chatcenter.sms_entrantes(id_carrier, n_llamado, n_remitente,
+            alias, sms, ts_local, id_cliente, id_sms_carrier, estado, id_sc, cmd_id, id_promocion, id_tipo_promocion)
+            VALUES (2, '6767', '0981100100', 'DEMO-CHAT', 'Mensaje del Operador', now(), 0, 0, 0, 0, 0, 90, 0);*/
+            return;
+        }
+        else if( $accion == 'MOSTRAR' ){
+
+            $sql = "select fh_in as fh_mensaje_usuario, msj_in as mensaje_usuario, fh_out as fh_mensaje_operador,
+                    msj_out as mensaje_operador
+                    from chatcenter.historial
+                    where cel = ?
+                    order by id_historial asc";
+
+            $rs = $db->fetchAll( $sql, array( $datos['cel'] ) );
+
+            if( !empty( $rs ) ){
+
+                foreach( $rs as $fila ){
+
+                    $resultado[] = $fila;
+                }
+
+                return $resultado;
+
+            }else{
+
+                return $resultado;
+            }
+        }
+    }
+
+    public function chatNumeroAction() {
+
+        $this->_helper->layout->disableLayout();
+
+        $namespace = new Zend_Session_Namespace("entermovil-cliente-chat-sexy");
+
+        if($this->getRequest()->isPost()) {
+
+            $formData = $this->getRequest()->getPost();
+            if(trim($formData['cel']) == "") {
+                $this->_forward('chat-numero');
+
+            } else {
+                $namespace->cel = $formData['cel'];
+            }
+            $this->_redirect('/tvchat/chat-historial');
+            return;
+
+        } else {
+
+            if(isset($namespace->cel)) {
+                $this->view->cel = $namespace->cel;
+            }
+        }
+    }
+
+    public function chatHistorialAction() {
+
+        $this->_helper->layout->disableLayout();
+        $namespace = new Zend_Session_Namespace("entermovil-cliente-chat-sexy");
+
+        if(!isset($namespace->cel)) {
+            $this->_redirect('/tvchat/chat-numero');
+
+        } else {
+
+            $this->view->cel = $namespace->cel;
+
+            $datos = array();
+            $parametros = $this->_getAllParams( 'cel', null);
+            if( !is_null( $parametros ) ){
+
+                $datos['cel'] = $namespace->cel;
+                $datos_mostrar = $this->_consulta( 'MOSTRAR', $datos );
+                $this->view->datos_mostrar = $datos_mostrar;
+                $this->view->cel = $parametros['cel'];
+            }
+        }
+
+    }
+
+    public function probarAction(){
+
+        $this->_helper->layout->disableLayout();
+
+        if( $this->getRequest()->isPost() ){
+
+            $formData = $this->getRequest()->getPost();
+
+            if( isset($formData) ){
+
+                $datos['mensaje'] = $formData['mensaje'];
+                $datos['cel'] = $formData['cel'];
+
+                $this->logger->info( print_r($datos, true));
+
+                $this->_consulta( 'INSERTAR', $datos );
+                $this->_redirect('/tvchat/probar/cel/' . $formData['cel']);
+            }
+
+        }else{
+
+            $datos = array();
+            $parametros = $this->_getAllParams( 'cel', null);
+            if( !is_null( $parametros ) ){
+
+                $datos['cel'] = $parametros['cel'];
+                $datos_mostrar = $this->_consulta( 'MOSTRAR', $datos );
+                $this->view->datos_mostrar = $datos_mostrar;
+                $this->view->cel = $parametros['cel'];
             }
         }
     }

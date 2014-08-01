@@ -13,6 +13,8 @@ var premio_tragamonedas;
 var premio_tragamonedas;
 var premio_tombola;
 var premio_piropo;
+var mensajero_buffer;
+var mensajero;
 
 function ObjetoGanador( combinacion_ganadora, cel_ganador, nombre_juego, premio, combinacion_ganadora_list ) {
     this.combinacion_ganadora = combinacion_ganadora;
@@ -339,6 +341,15 @@ $(document).ready(function(){
 
         tvchat.jugarJuego(params);
     });
+    $('#stopTombola').click(function(){
+
+        var params = {
+
+            "stop": "tombola"
+        }
+
+        tvchat.pararJuego(params);
+    });
     $('#jugarPiropo').click(function(){
         //habilitarBotones( 4, 'tombola' );
 
@@ -483,17 +494,29 @@ $(document).ready(function(){
 
     obtenerMensajes();
 
-    //deshabilitarBotones();
+    deshabilitarBotones();
 
     //funciones
     function deshabilitarBotones(){
         //tragamonedas
         $('#getWinElementsTragamonedas').attr('disabled', 'true');
+        $('#getWinElementsTragamonedasSexy').attr('disabled', 'true');
         $('#getElementsTragamonedas').attr('disabled', 'true');
         $('#cargar_tragamonedas').attr('disabled', 'true');
         $('#cerrar_tragamonedas').attr('disabled', 'true');
+        $('#cargar_tragamonedas_sexy').attr('disabled', 'true');
+        $('#cerrar_tragamonedas_sexy').attr('disabled', 'true');
         $('#jugarTragamonedas').attr('disabled', 'true');
+        $('#jugarTragamonedasSexy').attr('disabled', 'true');
+        $('#stopRoulette1').attr('disabled', 'true');
+        $('#stopRoulette2').attr('disabled', 'true');
+        $('#stopRoulette3').attr('disabled', 'true');
+        $('#stopRouletteSexy1').attr('disabled', 'true');
+        $('#stopRouletteSexy2').attr('disabled', 'true');
+        $('#stopRouletteSexy3').attr('disabled', 'true');
+        $('#premios_tragamonedas_sexy').hide();
         $('#premios_tragamonedas').hide();
+        $('#selectWinElements').hide();
 
         //tombola
         $('#getWinElementsTombola').attr('disabled', 'true');
@@ -501,6 +524,7 @@ $(document).ready(function(){
         $('#cargar_tombola').attr('disabled', 'true');
         $('#cerrar_tombola').attr('disabled', 'true');
         $('#jugarTombola').attr('disabled', 'true');
+        $('#stopTombola').attr('disabled', 'true');
         $('#premios_tombola').hide();
 
         //piropo
@@ -516,6 +540,7 @@ $(document).ready(function(){
 
             //deshabilitarBotones();
             $('#cargar_tragamonedas').removeAttr('disabled');
+            $('#cargar_tragamonedas_sexy').removeAttr('disabled');
             $('#cargar_tombola').removeAttr('disabled');
             $('#cargar_piropo').removeAttr('disabled');
         }
@@ -540,6 +565,9 @@ $(document).ready(function(){
 
             deshabilitarBotones();
             habilitarBotones( 2, "tragamonedas" );
+            $('#stopRoulette1').removeAttr('disabled');
+            $('#stopRoulette2').removeAttr('disabled');
+            $('#stopRoulette3').removeAttr('disabled');
             $('#cerrar_tragamonedas').removeAttr('disabled');
         }
         else if( nivel == 2 && juego == "tombola" ){
@@ -754,6 +782,34 @@ $(document).ready(function(){
             mensajes.push(mensaje);
         });
     };
+
+    function obtenerMensajesBD(){
+
+        console.log("llamada ajax");
+        $.get("/tvchat/obtener-mensajes", {solicitud: true, id_mensaje:siguiente_id_solicitar}, cargarMensajes, "json");
+        return;
+    };
+
+    function cargarMensajes(respuesta){
+        $("#mensajes_nuevos_obtenidos").html("Mensajes Nuevos: " + respuesta.mensajes_marquee);
+        mensajero_buffer.push(respuesta.mensajes_marquee);
+        siguiente_id_solicitar = respuesta.siguiente_id_solicitar;
+        console.log(mensajero_buffer);
+    }
+
+    function obtenerMensajesNuevosMensajero(){
+
+        console.log("obtener nuevos mensajes");
+        console.log(mensajes);
+//    if( mensajes.length == 0 ){
+//
+//        console.log("mierda");
+//        mensajes.push("ok");
+//        console.log(mensajes);
+//    }
+
+        return mensajes;
+    }
 
     $('#vaciar_localstorage').click(function(){
 

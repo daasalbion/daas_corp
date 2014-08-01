@@ -2364,7 +2364,8 @@ td.beauty-hover {
     height: 100px;
     width: 100px;
 }
-.premios_tragamonedas{
+.premios{
+    margin: auto;
     width: 102px;
 }
 .premios_tombola{
@@ -2381,4 +2382,10 @@ td.beauty-hover {
 .image_sample3 img {
     cursor: pointer;
     width: 25px;
+}
+.table th, td{
+    text-align: center;
+}
+.preview{
+    width: 16px;
 }
