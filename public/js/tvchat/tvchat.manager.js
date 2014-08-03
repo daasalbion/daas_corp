@@ -71,7 +71,7 @@ $(document).ready(function(){
     });
     $('#cargar_tragamonedas_sexy').click(function(){
 
-        habilitarBotones( 2, 'tragamonedas' );
+        habilitarBotones( 2, 'tragamonedas_sexy' );
         //valores por defecto
         var params = {
             "juego": "tragamonedas_sexy"
@@ -243,7 +243,7 @@ $(document).ready(function(){
     });
     $('#jugarTragamonedasSexy').click(function(){
 
-        //habilitarBotones( 4, 'tragamonedas' );
+        habilitarBotones( 4, 'tragamonedas_sexy' );
         nuevoGanador = tragamonedas_sexy_buffer.pop();
         nuevoGanador.premio = premio_tragamonedas;
         nuevoGanador.combinacion_ganadora_list = tragamonedas_sexy_combinacion_ganadora;
@@ -390,7 +390,7 @@ $(document).ready(function(){
     });
     $('#getWinElementsTragamonedasSexy').click(function(){
 
-        habilitarBotones( 3, 'tragamonedas' );
+        habilitarBotones( 3, 'tragamonedas_sexy' );
         console.log("getWinElementsTragamonedas");
         $.get("/tvchat/get-win-elements-tragamonedas-sexy", { premio : true }, cargarNumerosGanadores, "json");
         return;
@@ -570,6 +570,29 @@ $(document).ready(function(){
             $('#stopRoulette3').removeAttr('disabled');
             $('#cerrar_tragamonedas').removeAttr('disabled');
         }
+        else if( nivel == 2 && juego == "tragamonedas_sexy" ){
+
+            deshabilitarBotones();
+            habilitarBotones( 1, null );
+            $('#cerrar_tragamonedas_sexy').removeAttr('disabled');
+            $('#getWinElementsTragamonedasSexy').removeAttr('disabled');
+        }
+        else if( nivel == 3 && juego == "tragamonedas_sexy" ){
+
+            habilitarBotones( 2, "tragamonedas_sexy" );
+            $('#premios_tragamonedas_sexy').show();
+            $('#selectWinElements').show();
+            $('#jugarTragamonedasSexy').removeAttr('disabled');
+        }
+        else if( nivel == 4 && juego == "tragamonedas_sexy" ){
+
+            deshabilitarBotones();
+            habilitarBotones( 2, "tragamonedas_sexy" );
+            $('#stopRouletteSexy1').removeAttr('disabled');
+            $('#stopRouletteSexy2').removeAttr('disabled');
+            $('#stopRouletteSexy3').removeAttr('disabled');
+            $('#cerrar_tragamonedas_sexy').removeAttr('disabled');
+        }
         else if( nivel == 2 && juego == "tombola" ){
 
             deshabilitarBotones();
@@ -587,6 +610,7 @@ $(document).ready(function(){
 
             deshabilitarBotones();
             habilitarBotones( 2, "tombola" );
+            $('#stopTombola').removeAttr('disabled');
             $('#cerrar_tombola').removeAttr('disabled');
         }
         else if( nivel == 2 && juego == "piropo" ){

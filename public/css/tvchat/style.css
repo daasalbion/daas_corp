@@ -343,11 +343,12 @@ a.show-sidebar:hover {
   overflow: hidden;
   background: #f5f5f5;
   border-bottom: 1px solid #E4E4E4;
-  height: 28px;
+  height: 30px;
 }
 .box-name, .modal-header-name {
   padding-left: 15px;
   line-height: 28px;
+    font-size: 20px;
 }
 .box-name:hover {
   cursor: move;
@@ -2388,4 +2389,7 @@ td.beauty-hover {
 }
 .preview{
     width: 16px;
+}
+.contenedor{
+    margin-top: 50px;
 }
