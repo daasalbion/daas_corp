@@ -10,7 +10,7 @@ var tombola_buffer = [];
 var piropos_buffer = [];
 var nuevoGanador = null;
 var premio_tragamonedas;
-var premio_tragamonedas;
+var premio_tragamonedas_sexy;
 var premio_tombola;
 var premio_piropo;
 var mensajero_buffer;
@@ -245,7 +245,8 @@ $(document).ready(function(){
 
         habilitarBotones( 4, 'tragamonedas_sexy' );
         nuevoGanador = tragamonedas_sexy_buffer.pop();
-        nuevoGanador.premio = premio_tragamonedas;
+        nuevoGanador.premio = premio_tragamonedas_sexy;
+        nuevoGanador.combinacion_ganadora = tragamonedas_sexy_combinacion_ganadora.toString();
         nuevoGanador.combinacion_ganadora_list = tragamonedas_sexy_combinacion_ganadora;
 
         var params = {
@@ -441,9 +442,31 @@ $(document).ready(function(){
 
         premio_tragamonedas = $( "#premios_tragamonedas option:selected" ).text();
     });
+    $("#premios_tragamonedas_sexy").change(function(){
+
+        premio_tragamonedas_sexy = $( "#premios_tragamonedas_sexy option:selected" ).text();
+    });
     $("#premios_tombola").change(function(){
 
         premio_tombola = $( "#premios_tombola option:selected" ).text();
+    });
+
+    //mostrar ganador
+    $("#mostrarGanadorTragamonedas").click(function(){
+
+        var params = {
+
+            "juego": "tragamonedas"
+        }
+        tvchat.mostrarGanador( params );
+    });
+    $("#mostrarGanadorTragamonedasSexy").click(function(){
+
+        var params = {
+
+            "juego": "tragamonedas_sexy"
+        }
+        tvchat.mostrarGanador( params );
     });
 
     //tragamonedas sexy
@@ -492,7 +515,7 @@ $(document).ready(function(){
 
     setInterval( obtenerMensajes, 1000*9*60 );
 
-    obtenerMensajes();
+    //obtenerMensajes();
 
     deshabilitarBotones();
 

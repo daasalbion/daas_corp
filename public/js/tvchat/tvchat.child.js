@@ -204,7 +204,7 @@ function cargarJuego( params ){
                                 .addClass('linea_ganadora')
                                 .append(
                                     $(document.createElement("div"))
-                                        .attr('id', 'container_ganador')
+                                        .attr('id', 'container_ganador_sexy')
                                         .addClass('container_ganador')
                                         .append(
                                             $(document.createElement("div"))
@@ -360,9 +360,8 @@ function jugarJuego( params ){
 
         var resultado = 0;
         var p = {
-            duration: 1000,
+            duration: 10,
             stopCallback : function($stopElm) {
-                console.log("mierda stop " + $stopElm);
                 resultado++;
                 if( resultado == 3 ){
 
@@ -392,7 +391,7 @@ function jugarJuego( params ){
         var resultado = 0;
         var p = {
 
-            duration: 1000,
+            duration: 10,
             stopCallback : function($stopElm) {
                 console.log("mierda stop " + $stopElm);
                 resultado++;
@@ -557,6 +556,20 @@ function pararJuego( params ){
     else if( params['stop'] == "tombola" ){
 
         tombola.wheel( 'start' );
+    }
+};
+
+function mostrarGanador( params ){
+
+    console.log("juego a mostrar ganador: " + params);
+
+    if( params['juego'] == "tragamonedas" ){
+
+        $("#container_ganador").removeClass('container_ganador');
+    }
+    else if( params['juego'] == "tragamonedas_sexy" ){
+
+        $("#container_ganador_sexy").removeClass('container_ganador');
     }
 };
 

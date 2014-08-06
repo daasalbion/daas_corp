@@ -385,3 +385,6 @@ div.roulette3 {
 .tombola_wheel_wrapper{
     margin-left: 20px;
 }
+.container_ganador{
+    visibility: hidden;
+}
