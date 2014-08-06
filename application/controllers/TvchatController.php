@@ -178,7 +178,6 @@ class TvchatController extends Zend_Controller_Action{
         $this->view->headScript()->appendFile('/js/plugins/bootstrap.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.manager.js', 'text/javascript');
-        $this->view->headScript()->appendFile('/js/tvchat/tvchat.marquee.manager.js', 'text/javascript');
         $this->logger->info("setup");
     }
 
@@ -199,6 +198,21 @@ class TvchatController extends Zend_Controller_Action{
         $this->view->headScript()->appendFile('/js/plugins/jquery.wheel.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.child.js', 'text/javascript');
         //$this->view->headScript()->appendFile('/js/tvchat/tvchat.tragamonedas.manager.js', 'text/javascript');
+        $this->logger->info("tv");
+        $this->_helper->_layout->setLayout('tvchat-window-layout');
+    }
+
+    public function tvhotAction(){
+
+        //ver como utilizar predispatch
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat");
+        if( !isset( $namespace->usuario ) ){
+
+            $this->_redirect('/tvchat/login');
+        }
+
+        $this->view->headLink()->appendStylesheet('/css/tvchat/tvhot.css', 'screen');
+        $this->view->headScript()->appendFile('/js/plugins/jquery.marquee.js', 'text/javascript');
         $this->logger->info("tv");
         $this->_helper->_layout->setLayout('tvchat-window-layout');
     }
@@ -405,13 +419,39 @@ class TvchatController extends Zend_Controller_Action{
         }
         else if( $accion == 'MOSTRAR' ){
 
-            $sql = "select fh_in as fh_mensaje_usuario, msj_in as mensaje_usuario, fh_out as fh_mensaje_operador,
+            $sql = "select id_historial, fh_in as fh_mensaje_usuario, msj_in as mensaje_usuario, fh_out as fh_mensaje_operador,
                     msj_out as mensaje_operador
                     from chatcenter.historial
                     where cel = ?
                     order by id_historial asc";
 
             $rs = $db->fetchAll( $sql, array( $datos['cel'] ) );
+
+            if( !empty( $rs ) ){
+
+                foreach( $rs as $fila ){
+
+                    $resultado[] = $fila;
+                }
+
+                return $resultado;
+
+            }else{
+
+                return $resultado;
+            }
+        }
+        else if( $accion == 'MOSTRAR_MENSAJES_NUEVOS' ){
+
+            $sql = "select id_historial, fh_in as fh_mensaje_usuario, msj_in as mensaje_usuario, fh_out as fh_mensaje_operador,
+                    msj_out as mensaje_operador
+                    from chatcenter.historial
+                    where cel = ?
+                    and id_historial > ?
+                    and msj_out is not null
+                    order by id_historial asc";
+
+            $rs = $db->fetchAll( $sql, array( $datos['cel'], $datos['id_historial'] ) );
 
             if( !empty( $rs ) ){
 
@@ -455,28 +495,91 @@ class TvchatController extends Zend_Controller_Action{
         }
     }
 
+    public function chatNuevosMensajesAction() {
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+
+        $namespace = new Zend_Session_Namespace("entermovil-cliente-chat-sexy");
+
+        $nuevos_mensajes = array();
+
+        if(isset($namespace->cel)) {
+
+            $this->view->cel = $namespace->cel;
+
+            $id_historial = $this->_getParam('ultimo', 0);
+
+            $datos = array();
+
+            $datos['cel'] = $namespace->cel;
+            $datos['id_historial'] = $id_historial;
+
+            $nuevos_mensajes = $this->_consulta( 'MOSTRAR_MENSAJES_NUEVOS', $datos );
+
+        }
+
+        $respuesta = array(
+            'hayNuevosMensajes' => false
+        );
+
+        if(count($nuevos_mensajes) > 0) {
+
+            $respuesta['hayNuevosMensajes'] = true;
+            $respuesta['ultimoId'] = $nuevos_mensajes[count($nuevos_mensajes)-1]['id_historial'];
+        }
+
+        header('Content-type: application/json');
+        echo json_encode($respuesta);
+    }
+
     public function chatHistorialAction() {
 
         $this->_helper->layout->disableLayout();
         $namespace = new Zend_Session_Namespace("entermovil-cliente-chat-sexy");
 
-        if(!isset($namespace->cel)) {
-            $this->_redirect('/tvchat/chat-numero');
+        if($this->getRequest()->isPost()) {
+
+            $formData = $this->getRequest()->getPost();
+
+            if(isset($formData)){
+
+                $datos['mensaje'] = $formData['mensaje'];
+                $datos['cel'] = $formData['cel'];
+
+                $this->logger->info( print_r($datos, true));
+
+                $this->_consulta( 'INSERTAR', $datos );
+                $this->_redirect('/tvchat/chat-historial');
+            }
 
         } else {
 
-            $this->view->cel = $namespace->cel;
+            if(!isset($namespace->cel)) {
+                $this->_redirect('/tvchat/chat-numero');
 
-            $datos = array();
-            $parametros = $this->_getAllParams( 'cel', null);
-            if( !is_null( $parametros ) ){
+            } else {
+
+                $this->view->cel = $namespace->cel;
+
+                $datos = array();
 
                 $datos['cel'] = $namespace->cel;
                 $datos_mostrar = $this->_consulta( 'MOSTRAR', $datos );
+                $ultimo_id = 0;
+                foreach($datos_mostrar as $fila) {
+                    if(!empty($fila['mensaje_usuario'])) {
+                        $ultimo_id = $fila['id_historial'];
+                    }
+
+                }
+                $this->view->ultimo_id = $ultimo_id;
                 $this->view->datos_mostrar = $datos_mostrar;
-                $this->view->cel = $parametros['cel'];
+                $this->view->cel = $namespace->cel;
+
             }
         }
+
+
 
     }
 
@@ -484,7 +587,7 @@ class TvchatController extends Zend_Controller_Action{
 
         $this->_helper->layout->disableLayout();
 
-        if( $this->getRequest()->isPost() ){
+        if($this->getRequest()->isPost()) {
 
             $formData = $this->getRequest()->getPost();
 

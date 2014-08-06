@@ -5,97 +5,92 @@
 (function($) {
     $.fn.marquee = function(options) {
 
-
         return this.each(function() {
 
             //declaracion de variables
-
             // Extend the options if any provided
             //fusiona las opciones por defecto y las funciones pasadas como parametros
             //y le argrega las variables que va a utilizar
             var o = $.extend({}, $.fn.marquee.defaults, options),
-                $this = $(this),
-                $marqueeWrapper, containerWidth, animationCss, verticalDir, elWidth,
-                loopCount = 3,
-                playState = 'animation-play-state',
-                css3AnimationIsSupported = false,
-
-
+            $this = $(this),
+            $marqueeWrapper, containerWidth, animationCss, verticalDir, elWidth,
+            loopCount = 3,
+            playState = 'animation-play-state',
+            css3AnimationIsSupported = false,
             //fin declaracion de variables
 
-                //Private methods //mirar despues no se para que sirve
-                _prefixedEvent = function(element, type, callback) {
-                    var pfx = ["webkit", "moz", "MS", "o", ""];
-                    for (var p = 0; p < pfx.length; p++) {
-                        if (!pfx[p]) type = type.toLowerCase();
-                        element.addEventListener(pfx[p] + type, callback, false);
-                    }
-                },
+            //Private methods //mirar despues no se para que sirve
+            _prefixedEvent = function(element, type, callback) {
+                var pfx = ["webkit", "moz", "MS", "o", ""];
+                for (var p = 0; p < pfx.length; p++) {
+                    if (!pfx[p]) type = type.toLowerCase();
+                    element.addEventListener(pfx[p] + type, callback, false);
+                }
+            },
 
-                _objToString = function(obj) {
-                    var tabjson = [];
-                    for (var p in obj) {
-                        if (obj.hasOwnProperty(p)) {
-                            tabjson.push(p + ':' + obj[p]);
+            _objToString = function(obj) {
+                var tabjson = [];
+                for (var p in obj) {
+                    if (obj.hasOwnProperty(p)) {
+                        tabjson.push(p + ':' + obj[p]);
+                    }
+                }
+                tabjson.push();
+                return '{' + tabjson.join(',') + '}';
+            },
+
+            //funcion para animar el marquee
+            _startAnimationWithDelay = function() {
+                $this.timer = setTimeout(animate, o.delayBeforeStart);
+            },
+
+            //Public methods
+            methods = {
+                pause: function() {
+                    if (css3AnimationIsSupported && o.allowCss3Support) {
+                        $marqueeWrapper.css(playState, 'paused');
+                    } else {
+                        //pause using pause plugin
+                        if ($.fn.pause) {
+                            $marqueeWrapper.pause();
                         }
                     }
-                    tabjson.push();
-                    return '{' + tabjson.join(',') + '}';
+                    //save the status //seria como un mapeo clave valor pero que se le asigna al DOM
+                    //es decir esos datos van a aparecer en htnml
+                    $this.data('runningStatus', 'paused');
+                    //fire event //se le asigna el valor al DOM y por eso pausa
+                    $this.trigger('paused');
                 },
 
-                //funcion para animar el marquee
-                _startAnimationWithDelay = function() {
-                    $this.timer = setTimeout(animate, o.delayBeforeStart);
-                },
-
-                //Public methods
-                methods = {
-                    pause: function() {
-                        if (css3AnimationIsSupported && o.allowCss3Support) {
-                            $marqueeWrapper.css(playState, 'paused');
-                        } else {
-                            //pause using pause plugin
-                            if ($.fn.pause) {
-                                $marqueeWrapper.pause();
-                            }
+                resume: function() {
+                    //resume using css3
+                    if (css3AnimationIsSupported && o.allowCss3Support) {
+                        $marqueeWrapper.css(playState, 'running');
+                    } else {
+                        //resume using pause plugin
+                        if ($.fn.resume) {
+                            $marqueeWrapper.resume();
                         }
-                        //save the status //seria como un mapeo clave valor pero que se le asigna al DOM
-                        //es decir esos datos van a aparecer en htnml
-                        $this.data('runningStatus', 'paused');
-                        //fire event //se le asigna el valor al DOM y por eso pausa
-                        $this.trigger('paused');
-                    },
-
-                    resume: function() {
-                        //resume using css3
-                        if (css3AnimationIsSupported && o.allowCss3Support) {
-                            $marqueeWrapper.css(playState, 'running');
-                        } else {
-                            //resume using pause plugin
-                            if ($.fn.resume) {
-                                $marqueeWrapper.resume();
-                            }
-                        }
-                        //save the status
-                        $this.data('runningStatus', 'resumed');
-                        //fire event
-                        $this.trigger('resumed');
-                    },
-                    //si pones el cursor sobre la marquesina pausa sino se mueve
-                    toggle: function() {
-                        methods[$this.data('runningStatus') == 'resumed' ? 'pause' : 'resume']();
-                    },
-                    //find() busca todos los elementos el DOM descendientes del elemnento que se busca en el bind y los elimina
-                    destroy: function() {
-                        //Clear timer
-                        clearTimeout($this.timer);
-                        //Unbind all events
-                        $this.find("*").andSelf().unbind();
-                        //Just unwrap the elements that has been added using this plugin
-                        $this.html($this.find('.js-marquee:first').html());
                     }
-                };
-
+                    //save the status
+                    $this.data('runningStatus', 'resumed');
+                    //fire event
+                    $this.trigger('resumed');
+                },
+                //si pones el cursor sobre la marquesina pausa sino se mueve
+                toggle: function() {
+                    methods[$this.data('runningStatus') == 'resumed' ? 'pause' : 'resume']();
+                },
+                //find() busca todos los elementos el DOM descendientes del elemnento que se busca en el bind y los elimina
+                destroy: function() {
+                    //Clear timer
+                    clearTimeout($this.timer);
+                    //Unbind all events
+                    $this.find("*").andSelf().unbind();
+                    //Just unwrap the elements that has been added using this plugin
+                    $this.html($this.find('.js-marquee:first').html());
+                }
+            };
 
             //Check for methods por ejemplo destroy que le paso al terminar siempre
             if (typeof options === 'string') {
@@ -113,7 +108,6 @@
                 }
                 return;
             }
-
 
             /* Check if element has data attributes. They have top priority
                For details https://twitter.com/aamirafridi/status/403848044069679104 - Can't find a better solution :/

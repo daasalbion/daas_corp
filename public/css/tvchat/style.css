@@ -18,6 +18,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 }
 #logo {
   position:relative;
+    text-align:center;
   background: #525252 url(/img/tvchat/devoops_pattern_b10.png) 0 0 repeat;
 }
 #logo a {
