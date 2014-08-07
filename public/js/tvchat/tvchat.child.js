@@ -366,7 +366,12 @@ function jugarJuego( params ){
                 if( resultado == 3 ){
 
                     $('#premio').append( premio );
-                    $('#linea').append( "Ganador: " + ganador.substr(0,8) +"XX" );
+                    if(ganador != "Sin Ganador"){
+                        $('#linea').append( "Ganador: " + ganador.substr(0,8) +"XX" );
+                    }
+                    else{
+                        $('#linea').append( "Ganador: " + ganador );
+                    }
                 }
             }
         }
@@ -398,7 +403,12 @@ function jugarJuego( params ){
                 if( resultado == 3 ){
 
                     $('#premio').append( premio );
-                    $('#linea').append( "Ganador: " + ganador.substr(0,8) +"XX" );
+                    if(ganador != "Sin Ganador"){
+                        $('#linea').append( "Ganador: " + ganador.substr(0,8) +"XX" );
+                    }
+                    else{
+                        $('#linea').append( "Ganador: " + ganador );
+                    }
                 }
             }
         }
@@ -425,6 +435,10 @@ function jugarJuego( params ){
             valoresEsperados: elementos_ganadores,
             stopCallback : function($stopElm) {
 
+                if(ganador != "Sin Ganador"){
+                    ganador = ganador.substr(0,8) +"XX";
+                }
+
                 $('#tombola_numeros_ganadores #tombola_panel_ganador').hide();
                 $('#tombola_numeros_ganadores').append(
                     $(document.createElement("div"))
@@ -438,7 +452,7 @@ function jugarJuego( params ){
                                 $(document.createElement("div"))
                                     .attr('id', 'linea_tombola')
                                     .addClass('linea_tombola')
-                                    .append( "Ganador: " + ganador.substr(0,8) +"XX" )
+                                    .append( "Ganador: " + ganador )
                            )
                 );
 

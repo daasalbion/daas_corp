@@ -431,6 +431,9 @@ $(document).ready(function(){
     $('#getElementsTragamonedas').click(function(){
 
         habilitarBotones( 3, 'tragamonedas' );
+        $('#premios_tragamonedas').hide();
+        premio_tragamonedas.premio_texto = "Sin Premio";
+        premio_tragamonedas.premio_gs = 0;
         console.log("getElementsTragamonedas");
         $.get("/tvchat/get-win-elements-tragamonedas", { premio : false }, cargarNumerosGanadores, "json");
         return;
@@ -438,6 +441,9 @@ $(document).ready(function(){
     $('#getElementsTombola').click(function(){
 
         habilitarBotones( 3, 'tombola' );
+        $('#premios_tombola').hide();
+        premio_tombola.premio_texto = "Sin Premio";
+        premio_tombola.premio_gs = 0;
         console.log("getElementsTombola");
         $.get("/tvchat/get-win-elements-tombola", { premio : false }, cargarNumerosGanadores, "json");
         return;

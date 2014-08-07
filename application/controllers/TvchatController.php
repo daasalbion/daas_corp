@@ -69,7 +69,7 @@ class TvchatController extends Zend_Controller_Action{
                             'FULL'
                         );
 
-                        $this->_redirect('/tvchat/administracion');
+                        $this->_redirect('/tvchat/admin/');
 
                     } else {
 
@@ -178,6 +178,7 @@ class TvchatController extends Zend_Controller_Action{
         $this->view->headScript()->appendFile('/js/plugins/bootstrap.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.manager.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat/tvchat.marquee.manager.js', 'text/javascript');
         $this->logger->info("setup");
     }
 
@@ -583,14 +584,36 @@ class TvchatController extends Zend_Controller_Action{
 
     }
 
-    public function probarAction(){
+    public function adminAction(){
 
         $this->_helper->layout->disableLayout();
-        //ver como utilizar predispatch
-        $namespace = new Zend_Session_Namespace("entermovil-tvchat");
-        if( !isset( $namespace->usuario ) ){
 
-            $this->_redirect('/tvchat/login');
+        if($this->getRequest()->isPost()) {
+
+            $formData = $this->getRequest()->getPost();
+
+            if( isset($formData) ){
+
+                $datos['mensaje'] = $formData['mensaje'];
+                $datos['cel'] = $formData['cel'];
+
+                $this->logger->info( print_r($datos, true));
+
+                $this->_consulta( 'INSERTAR', $datos );
+                $this->_redirect('/tvchat/probar/cel/' . $formData['cel']);
+            }
+
+        }else{
+
+            $datos = array();
+            $parametros = $this->_getAllParams( 'cel', null);
+            if( !is_null( $parametros ) ){
+
+                $datos['cel'] = $parametros['cel'];
+                $datos_mostrar = $this->_consulta( 'MOSTRAR', $datos );
+                $this->view->datos_mostrar = $datos_mostrar;
+                $this->view->cel = $parametros['cel'];
+            }
         }
     }
 }
