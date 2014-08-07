@@ -586,33 +586,11 @@ class TvchatController extends Zend_Controller_Action{
     public function probarAction(){
 
         $this->_helper->layout->disableLayout();
+        //ver como utilizar predispatch
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat");
+        if( !isset( $namespace->usuario ) ){
 
-        if($this->getRequest()->isPost()) {
-
-            $formData = $this->getRequest()->getPost();
-
-            if( isset($formData) ){
-
-                $datos['mensaje'] = $formData['mensaje'];
-                $datos['cel'] = $formData['cel'];
-
-                $this->logger->info( print_r($datos, true));
-
-                $this->_consulta( 'INSERTAR', $datos );
-                $this->_redirect('/tvchat/probar/cel/' . $formData['cel']);
-            }
-
-        }else{
-
-            $datos = array();
-            $parametros = $this->_getAllParams( 'cel', null);
-            if( !is_null( $parametros ) ){
-
-                $datos['cel'] = $parametros['cel'];
-                $datos_mostrar = $this->_consulta( 'MOSTRAR', $datos );
-                $this->view->datos_mostrar = $datos_mostrar;
-                $this->view->cel = $parametros['cel'];
-            }
+            $this->_redirect('/tvchat/login');
         }
     }
 }

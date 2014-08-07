@@ -360,7 +360,7 @@ function jugarJuego( params ){
 
         var resultado = 0;
         var p = {
-            duration: 10,
+            duration: 1000,
             stopCallback : function($stopElm) {
                 resultado++;
                 if( resultado == 3 ){
@@ -391,7 +391,7 @@ function jugarJuego( params ){
         var resultado = 0;
         var p = {
 
-            duration: 10,
+            duration: 1000,
             stopCallback : function($stopElm) {
                 console.log("mierda stop " + $stopElm);
                 resultado++;
