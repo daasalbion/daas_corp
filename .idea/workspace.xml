@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/TvchatController.php" afterPath="$PROJECT_DIR$/application/controllers/TvchatController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/tvchat_2014-08-07.log" afterPath="$PROJECT_DIR$/log/tvchat_2014-08-07.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/www.entermovil.com.py_2014-08-07.log" afterPath="$PROJECT_DIR$/log/www.entermovil.com.py_2014-08-07.log" />
@@ -31,7 +30,7 @@
       <file leaf-file-name="TvchatController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/TvchatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="0" selection-start="2619" selection-end="2619" vertical-scroll-proportion="0.67840374" vertical-offset="561" max-vertical-offset="1666">
+            <state line="589" column="15" selection-start="19475" selection-end="19475" vertical-scroll-proportion="0.52112675" vertical-offset="1240" max-vertical-offset="1666">
               <folding>
                 <element signature="e#200#277#0" expanded="false" />
                 <element signature="n#init#0;n#TvchatController#0;n#!!top" expanded="false" />
@@ -1238,7 +1237,11 @@
       <created>1407457188914</created>
       <updated>1407457188914</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="nueva interfaz cambios&#10;">
+      <created>1407457385482</created>
+      <updated>1407457385482</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2421,7 +2424,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/TvchatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="0" selection-start="2619" selection-end="2619" vertical-scroll-proportion="0.67840374" vertical-offset="561" max-vertical-offset="1666">
+        <state line="589" column="15" selection-start="19475" selection-end="19475" vertical-scroll-proportion="0.52112675" vertical-offset="1240" max-vertical-offset="1666">
           <folding>
             <element signature="e#200#277#0" expanded="false" />
             <element signature="n#init#0;n#TvchatController#0;n#!!top" expanded="false" />
