@@ -1,4 +1,4 @@
-//var tvchat = null;
+var tvchat = null;
 var tvhot = null;
 var tragamonedas_elementos_ganadores = [];
 var tragamonedas_sexy_combinacion_ganadora = [];

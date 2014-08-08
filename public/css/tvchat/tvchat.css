@@ -18,9 +18,18 @@ body, html {
     margin-right: 0px;
     background-image: url("/img/tvchat/tvchat_tira_fondo.png");
 }
+.margenes{
+    width: 716px;
+    height: 516px;
+    border: 1px white dotted;
+    z-index: 24;
+    margin-top: 42px;
+    margin-left: 42px;
+    position: absolute;
+}
 /*Secciones*/
-.titulo{
-    width: 800px;
+.banners{
+    width: 716px;
     height: 167px;
 }
 .luces{
@@ -30,9 +39,9 @@ body, html {
     width: 800px;
 }
 .interactive{
-    height: 365px;
-    width: 750px;
-    padding: 0 25px;
+    height: 355px;
+    width: 800px;
+    padding-left: 25px;
 }
 .juegos{
     width: 360px;
@@ -40,14 +49,14 @@ body, html {
     float: left;
 }
 .conductora{
-    width: 387px;
-    height: 358px;
+    width: 437px;
+    height: 347px;
     float:left;
     border: 1px white dotted;
 }
 .tvchat{
     width: 800px;
-    height: 30px;
+    height: 33px;
     background-image: url("/img/tira_fondo_tvchat.jpg");
     background-repeat: repeat-x;
     border-top: 3px solid;
@@ -77,26 +86,26 @@ body, html {
 #scroller {
     background-color: #B22222;
     color: #FFFFFF;
-    font-size: 14px;
-    line-height: 28px;
+    font-size: 18px;
+    line-height: 33px;
 }
 .tvchat_logo{
-    background-image: url("/img/tira_fondo_tvchat_logo.png");
+    background-image: url("/img/tvchat/mensajero_tira_fondo_titulo.png");
     background-repeat: repeat-x;
-    width: 210px;
-    height: 30px;
+    width: 232px;
+    height: 33px;
     margin: 0;
     float:left
 }
 .tvchat_logo_detalle_derecha{
-    width: 30px;
+    width: 0px;
     height: 30px;
     margin-right: 0;
     float:left
 }
 .tvchat_logo img{
     margin-top: 3px;
-    margin-left: 26px;
+    margin-left: 45px;
 }
 .marquee{
     font-family: arial;
@@ -107,17 +116,22 @@ body, html {
     float: left;
     position: absolute;
     z-index:1;
+    margin-top: 22px;
+    margin-left: 20px;
 }
 .logo_afortunado{
     float: left;
     left: 230px;
     position: absolute;
     z-index: 2;
+    margin-top: -1px;
 }
 .jugar_derecha{
     float: left;
+    left: 546px;
+    margin-right: 31px;
+    margin-top: 22px;
     position: absolute;
-    left: 562px;
 }
 .costo{
     color: white;

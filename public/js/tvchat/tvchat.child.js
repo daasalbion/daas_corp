@@ -329,7 +329,7 @@ function descargarJuego( params ){
     }
     else if( params['juego'] == "tombola" ){
 
-        var juego = $('#tombola_wheel_wrapper');
+        var juego = $('#tombola_wrapper');
         wheel.clear();
         juego.remove();
     }
