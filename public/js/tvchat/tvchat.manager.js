@@ -1,4 +1,5 @@
 //var tvchat = null;
+var tvhot = null;
 var tragamonedas_elementos_ganadores = [];
 var tragamonedas_sexy_combinacion_ganadora = [];
 var tragamonedas_numeros_ganadores = [];
@@ -69,10 +70,23 @@ $(document).ready(function(){
             "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
 
     });
+    $('#abrir_ventana_tvhot').click(function(){
+
+        $('#abrir_ventana_tvhot').attr('disabled', 'true');
+        tvhot = window.open("/tvchat/tvhot",
+            "_blank", "width=720, height=576, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
+
+    });
+
     //cerrar ventana principal
     $('#cerrar_ventana_principal').click(function(){
         $('#abrir_ventana_principal').removeAttr('disabled');
         tvchat.close();
+        deshabilitarBotones();
+    });
+    $('#cerrar_ventana_tvhot').click(function(){
+        $('#cerrar_ventana_tvhot').removeAttr('disabled');
+        tvhot.close();
         deshabilitarBotones();
     });
 
