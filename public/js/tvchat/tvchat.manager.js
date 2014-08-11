@@ -10,6 +10,7 @@ var tragamonedas_buffer = [];
 var tragamonedas_sexy_buffer = [];
 var tombola_buffer = [];
 var piropos_buffer = [];
+var piropos2_buffer = [];
 var mensajero_buffer = [];
 //elemento ganador
 var nuevoGanador = null;
@@ -27,6 +28,10 @@ var premio_tombola = {
     'premio_texto': null
 };
 var premio_piropo = {
+    'premio_gs': 0,
+    'premio_texto': null
+};
+var premio_piropo2 = {
     'premio_gs': 0,
     'premio_texto': null
 };
@@ -55,6 +60,7 @@ if (mensajes == null)
     var mensajes = [];
 
 var piropos =[];
+var piropos2 =[];
 var mensajero = null;
 var total_guaranies = 0;
 var total_sorteos = 0;
@@ -62,13 +68,17 @@ var total_sorteos = 0;
 $(document).ready(function(){
 
     //abrir ventana principal
-    $('#abrir_ventana_principal').click(function(){
+    $('#abrir_ventana_principal a').click(function(){
 
-        $('#abrir_ventana_principal').attr('disabled', 'true');
+        if( tvchat == null ){
+
+            tvchat = window.open("/tvchat/tv",
+                "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
+
+            $('#abrir_ventana_principal').addClass('disabled');
+        }
+
         habilitarBotones( 1, null );
-        tvchat = window.open("/tvchat/tv",
-            "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
-
     });
     $('#abrir_ventana_tvhot').click(function(){
 
@@ -80,8 +90,10 @@ $(document).ready(function(){
 
     //cerrar ventana principal
     $('#cerrar_ventana_principal').click(function(){
-        $('#abrir_ventana_principal').removeAttr('disabled');
+
+        $('#abrir_ventana_principal').removeClass('disabled');
         tvchat.close();
+        tvchat = null;
         deshabilitarBotones();
     });
     $('#cerrar_ventana_tvhot').click(function(){
@@ -93,43 +105,56 @@ $(document).ready(function(){
     //cargar juegos
     $('#cargar_tragamonedas').click(function(){
 
-        habilitarBotones( 2, 'tragamonedas' );
         //valores por defecto
         var params = {
             "juego": "tragamonedas"
         };
 
         tvchat.cargarJuego(params);
+
+        habilitarBotones( 2, 'tragamonedas' );
     });
     $('#cargar_tragamonedas_sexy').click(function(){
 
-        habilitarBotones( 2, 'tragamonedas_sexy' );
         //valores por defecto
         var params = {
             "juego": "tragamonedas_sexy"
         };
 
         tvchat.cargarJuego(params);
+
+        habilitarBotones( 2, 'tragamonedas_sexy' );
     });
     $('#cargar_tombola').click(function(){
 
-        habilitarBotones( 2, 'tombola' );
-        //valores por defecto
         var params = {
+
             "juego": "tombola"
         };
 
-
         tvchat.cargarJuego(params);
+
+        habilitarBotones( 2, 'tombola' );
     });
     $('#cargar_piropo').click(function(){
 
-        habilitarBotones( 2, 'piropo' );
         var params = {
             "juego": "piropo"
         };
 
         tvchat.cargarJuego(params);
+
+        habilitarBotones( 2, 'piropo' );
+    });
+    $('#cargar_piropo2').click(function(){
+
+        var params = {
+            "juego": "piropo2"
+        };
+
+        tvchat.cargarJuego(params);
+
+        habilitarBotones( 2, 'piropo' );
     });
     $('#cargar_tvchat').click(function(){
 
@@ -194,7 +219,6 @@ $(document).ready(function(){
     //jugar juegos
     $('#jugarTragamonedas').click(function(){
 
-        habilitarBotones( 4, 'tragamonedas' );
         nuevoGanador = tragamonedas_buffer.pop();
         nuevoGanador.premio = premio_tragamonedas.premio_texto;
 
@@ -233,10 +257,11 @@ $(document).ready(function(){
 
         actualizarTotalGuaranies( premio_tragamonedas.premio_gs );
 
+        habilitarBotones( 4, 'tragamonedas' );
+
     });
     $('#jugarTragamonedasSexy').click(function(){
 
-        habilitarBotones( 4, 'tragamonedas_sexy' );
         nuevoGanador = tragamonedas_sexy_buffer.pop();
         nuevoGanador.premio = premio_tragamonedas_sexy.premio_texto;
         nuevoGanador.combinacion_ganadora = tragamonedas_sexy_combinacion_ganadora.toString();
@@ -270,10 +295,12 @@ $(document).ready(function(){
         tvchat.jugarJuego(params);
 
         actualizarTotalGuaranies( premio_tragamonedas_sexy.premio_gs );
+
+        habilitarBotones( 4, 'tragamonedas_sexy' );
+
     });
     $('#jugarTombola').click(function(){
 
-        habilitarBotones( 4, 'tombola' );
         nuevoGanador = tombola_buffer.pop();
         nuevoGanador.premio = premio_tombola.premio_texto;
 
@@ -302,10 +329,11 @@ $(document).ready(function(){
         tvchat.jugarJuego(params);
 
         actualizarTotalGuaranies( premio_tombola.premio_gs );
+
+        habilitarBotones( 4, 'tombola' );
     });
     $('#jugarPiropo').click(function(){
 
-        habilitarBotones( 4, 'piropo' );
         nuevoGanador.premio = premio_piropo.premio_texto;
         //borrar elemento sorteado
         var sorteo = $('#WinElementsPiropo');
@@ -333,6 +361,103 @@ $(document).ready(function(){
 
         tvchat.jugarJuego(params);
         actualizarTotalGuaranies( premio_piropo.premio_gs );
+
+        habilitarBotones( 4, 'piropo' );
+    });
+    $('#jugarPiropo2').click(function(){
+
+        nuevoGanador = piropos2_buffer.pop();
+
+        var sorteo = $('#WinElementsPiropo2');
+        sorteo.empty();
+
+        var params = {
+
+            "jugar": "piropo2",
+            "objeto_ganador": nuevoGanador
+        }
+
+        var tragamonedas_historial = $('#jugador_piropo2');
+        $('#jugador_piropo2').empty();
+
+        piropos2.push(nuevoGanador);
+
+        tragamonedas_historial.append(
+            $(document.createElement("p"))
+                .append( nuevoGanador.cel_ganador )
+                .addClass("numeros_sorteados")
+        )
+
+        tvchat.jugarJuego(params);
+
+        //habilitarBotones( 4, 'piropo' );
+    });
+
+    $('#jugarPiropo2Premio').click(function(){
+
+        nuevoGanador = piropos2.pop();
+        nuevoGanador.premio = premio_piropo2.premio_texto;
+
+        var sorteo = $('#jugador_piropo2');
+        sorteo.empty();
+
+        var params = {
+
+            "jugar": "piropo2",
+            "objeto_ganador": nuevoGanador
+        }
+
+        var tragamonedas_historial = $('#historial_piropo2');
+        $('#historial_piropo2 p').remove();
+
+        piropos2.push(nuevoGanador);
+
+        $.each(piropos2, function(i, objetoGanador) {
+
+            tragamonedas_historial.append(
+                $(document.createElement("p"))
+                    .append( 'Piropo al aire - ' + objetoGanador.cel_ganador + ' - ' + objetoGanador.premio )
+                    .addClass("numeros_sorteados")
+            )
+        });
+
+        tvchat.jugarJuego(params);
+        actualizarTotalGuaranies( premio_piropo2.premio_gs );
+
+        //habilitarBotones( 4, 'piropo' );
+    });
+    $('#jugarPiropo2SinPremio').click(function(){
+
+        nuevoGanador = piropos2.pop();
+        nuevoGanador.premio = "Sin premio";
+
+        var sorteo = $('#jugador_piropo2');
+        sorteo.empty();
+
+        var params = {
+
+            "jugar": "piropo2",
+            "objeto_ganador": nuevoGanador
+        }
+
+        var tragamonedas_historial = $('#historial_piropo2');
+        $('#historial_piropo2 p').remove();
+
+        piropos2.push(nuevoGanador);
+
+        $.each(piropos2, function(i, objetoGanador) {
+
+            tragamonedas_historial.append(
+                $(document.createElement("p"))
+                    .append( 'Piropo al aire - ' + objetoGanador.cel_ganador + ' - ' + objetoGanador.premio )
+                    .addClass("numeros_sorteados")
+            )
+        });
+
+        tvchat.jugarJuego(params);
+        actualizarTotalGuaranies( 0 );
+
+        //habilitarBotones( 4, 'piropo' );
     });
 
     //parar juegos
@@ -421,52 +546,64 @@ $(document).ready(function(){
     //obtener elementos con ganadores
     $('#getWinElementsTragamonedas').click(function(){
 
-        habilitarBotones( 3, 'tragamonedas' );
         console.log("getWinElementsTragamonedas");
         $.get("/tvchat/get-win-elements-tragamonedas", { premio : true }, cargarNumerosGanadores, "json");
+        //habilitarBotones( 3, 'tragamonedas' );
+
+        return;
+    });
+    $('#getWinElementsPiropo').click(function(){
+
+        $.get("/tvchat/get-win-elements-piropo", { premio: true }, cargarNumerosGanadores, "json");
+        //habilitarBotones( 3, 'tragamonedas_sexy' );
+
         return;
     });
     $('#getWinElementsTragamonedasSexy').click(function(){
 
-        habilitarBotones( 3, 'tragamonedas_sexy' );
         console.log("getWinElementsTragamonedas");
         $.get("/tvchat/get-win-elements-tragamonedas-sexy", { premio : true }, cargarNumerosGanadores, "json");
+        habilitarBotones( 3, 'tragamonedas_sexy' );
+
         return;
     });
     $('#getWinElementsTombola').click(function(){
 
-        habilitarBotones( 3, 'tombola' );
+        $("#stopTombola").text("Girar");
         console.log("getWinElementsTombola");
         $.get("/tvchat/get-win-elements-tombola", { premio : true }, cargarNumerosGanadores, "json");
+        habilitarBotones( 3, 'tombola' );
+
         return;
     });
 
     //obtener elementos sin ganadores
     $('#getElementsTragamonedas').click(function(){
 
-        habilitarBotones( 3, 'tragamonedas' );
         $('#premios_tragamonedas').hide();
         premio_tragamonedas.premio_texto = "Sin Premio";
         premio_tragamonedas.premio_gs = 0;
         console.log("getElementsTragamonedas");
         $.get("/tvchat/get-win-elements-tragamonedas", { premio : false }, cargarNumerosGanadores, "json");
+        habilitarBotones( 3, 'tragamonedas' );
+
         return;
     });
     $('#getElementsTombola').click(function(){
 
-        habilitarBotones( 3, 'tombola' );
         $('#premios_tombola').hide();
+        $("#stopTombola").text("Girar");
         premio_tombola.premio_texto = "Sin Premio";
         premio_tombola.premio_gs = 0;
         console.log("getElementsTombola");
         $.get("/tvchat/get-win-elements-tombola", { premio : false }, cargarNumerosGanadores, "json");
+        habilitarBotones( 3, 'tombola' );
+
         return;
     });
 
     //obtener el mensaje con el mejor piropo
     $('#mensajes').on('click', '.seleccionar', function() {
-
-        habilitarBotones( 3, 'piropo' );
 
         mensaje_seleccionado = $(this).data('mensaje');
         cel_ganador = '0982313289';
@@ -477,6 +614,8 @@ $(document).ready(function(){
         $('#opciones_mensajes').modal('hide');
 
         cargarNumerosGanadores(nuevoGanador);
+
+        habilitarBotones( 3, 'piropo' );
 
     });
 
@@ -501,6 +640,11 @@ $(document).ready(function(){
         premio_piropo.premio_texto = $( "#premios_piropos option:selected" ).text();
         premio_piropo.premio_gs = $( "#premios_piropos option:selected" ).val();
     });
+    $("#premios_piropos2").change(function(){
+
+        premio_piropo2.premio_texto = $( "#premios_piropos2 option:selected" ).text();
+        premio_piropo2.premio_gs = $( "#premios_piropos2 option:selected" ).val();
+    });
 
     //mostrar ganador
     $("#mostrarGanadorTragamonedas").click(function(){
@@ -518,6 +662,26 @@ $(document).ready(function(){
             "juego": "tragamonedas_sexy"
         }
         tvchat.mostrarGanador( params );
+    });
+
+    //mostrar lineas punteadas para la conductora
+    $("#ocultar_lineas_referencia_conductora").click(function(){
+
+        var params = {
+
+            "accion": "ocultar"
+        }
+
+        tvchat.lineasReferencia( params );
+    });
+    $("#mostrar_lineas_referencia_conductora").click(function(){
+
+        var params = {
+
+            "accion": "mostrar"
+        }
+
+        tvchat.lineasReferencia( params );
     });
 
     //tragamonedas sexy
@@ -571,7 +735,7 @@ $(document).ready(function(){
     deshabilitarBotones();
 
     //funciones
-    function deshabilitarBotones(){
+    /*function deshabilitarBotones(){
         //tragamonedas
         $('#getWinElementsTragamonedas').attr('disabled', 'true');
         $('#getWinElementsTragamonedasSexy').attr('disabled', 'true');
@@ -607,9 +771,9 @@ $(document).ready(function(){
         $('#cerrar_piropo').attr('disabled', 'true');
         $('#jugarPiropo').attr('disabled', 'true');
         $('#premios_piropos').hide();
-    };
+    };*/
 
-    function habilitarBotones( nivel, juego ){
+    /*function habilitarBotones( nivel, juego ){
 
         if( nivel == 1 && juego == null ){
 
@@ -626,9 +790,9 @@ $(document).ready(function(){
             $('#cerrar_tragamonedas').removeAttr('disabled');
             $('#getWinElementsTragamonedas').removeAttr('disabled');
             $('#getElementsTragamonedas').removeAttr('disabled');
-            /*if( tragamonedas_buffer.length > 0 ){
+            *//*if( tragamonedas_buffer.length > 0 ){
                 $('#jugarTragamonedas').removeAttr('disabled');
-            }*/
+            }*//*
         }
         else if( nivel == 3 && juego == "tragamonedas" ){
 
@@ -707,7 +871,7 @@ $(document).ready(function(){
             habilitarBotones( 2, "piropo" );
             $('#cerrar_piropo').removeAttr('disabled');
         }
-    };
+    };*/
 
     function cargarNumerosGanadores( respuesta ){
 
@@ -834,21 +998,44 @@ $(document).ready(function(){
         }
         else if( respuesta.nombre_juego == "piropo" ){
 
-            if( $('#WinElementsPiropo p').length > 0 )
-                $('#WinElementsPiropo p').remove();
+                /*if( $('#WinElementsPiropo p').length > 0 )
+                    $('#WinElementsPiropo p').remove();
+                */
 
-            console.log("piropo");
-            $('#WinElementsPiropo')
+                $('#WinElementsPiropo').empty();
+
+                $('#WinElementsPiropo')
+                    .append(
+                        $(document.createElement("p"))
+                    );
+
+                var WinElementsPiropo = $('#WinElementsPiropo p');
+                WinElementsPiropo
+                            .append( respuesta.cel_ganador + ' - ' + respuesta.combinacion_ganadora )
+                            .addClass("numeros_sorteados")
+
+                piropos_buffer.push(respuesta);
+
+
+        }
+        else if( respuesta.juego == "piropo2" ){
+
+            console.log("mierda");
+            nuevoGanador = new ObjetoGanador( '', '', respuesta.juego, '', '' );
+
+            $('#WinElementsPiropo2').empty();
+
+            $('#WinElementsPiropo2')
                 .append(
                     $(document.createElement("p"))
                 );
 
-            var WinElementsPiropo = $('#WinElementsPiropo p');
+            var WinElementsPiropo = $('#WinElementsPiropo2 p');
             WinElementsPiropo
-                        .append( respuesta.cel_ganador + ' - ' + respuesta.combinacion_ganadora )
-                        .addClass("numeros_sorteados")
+                .append( respuesta.cel_ganador )
+                .addClass("numeros_sorteados")
 
-            piropos_buffer.push(respuesta);
+            piropos2_buffer.push(respuesta);
         }
     };
 
@@ -925,6 +1112,11 @@ $(document).ready(function(){
         $('#total_sorteos').append(total_sorteos);
     };
 
+    function habilitarGirarTombola(){
+
+        alert("mierda");
+    }
+
     $('#vaciar_localstorage').click(function(){
 
         localStorage.clear();
@@ -940,3 +1132,4 @@ $(window).bind( 'beforeunload', function(){
     //return 'Esta seguro?';
     return;
 });
+

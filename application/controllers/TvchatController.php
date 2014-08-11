@@ -69,7 +69,7 @@ class TvchatController extends Zend_Controller_Action{
                             'FULL'
                         );
 
-                        $this->_redirect('/tvchat/probar/');
+                        $this->_redirect('/tvchat/admin/');
 
                     } else {
 
@@ -316,6 +316,25 @@ class TvchatController extends Zend_Controller_Action{
             $respuesta = json_encode( array( "sorteo" => $elementos_ganadores, "cel_ganador" => "Sin Ganador", "juego" => "tombola" ) );
             $this->logger->info( 'datos a enviar ' . $respuesta );
 
+        }
+
+        echo $respuesta;
+        exit;
+    }
+
+    public function getWinElementsPiropoAction(){
+
+        $parametros = array();
+        $parametros['premio'] = $_GET['premio'];
+
+        $this->logger->info( "parametros: ". print_r( $parametros, true ) );
+
+        if( $parametros['premio'] == 'true' ){
+
+            //numero de celular randomico
+            $cel_ganador = "0982000000" + rand( 0, 999999);
+            $respuesta = json_encode( array( "cel_ganador" => "0$cel_ganador", "juego" => "piropo2" ) );
+            $this->logger->info( 'datos a enviar ' . $respuesta );
         }
 
         echo $respuesta;
@@ -582,7 +601,7 @@ class TvchatController extends Zend_Controller_Action{
 
     }
 
-    public function probarAction(){
+    public function adminAction(){
 
         $this->_helper->layout->disableLayout();
         //ver como utilizar predispatch

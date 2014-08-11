@@ -51,7 +51,7 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -72,8 +72,8 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
-                        <a id="abrir_ventana_principal" href="#"><i class="fa fa-fw fa-dashboard"></i>Abrir Pantalla</a>
+                    <li id="abrir_ventana_principal" class="active">
+                        <a href="#"><i class="fa fa-fw fa-dashboard"></i>Abrir Pantalla</a>
                     </li>
                     <li>
                         <a id="cerrar_ventana_principal" href="#"><i class="fa fa-fw fa-dashboard"></i>Cerrar Pantalla</a>
@@ -102,6 +102,12 @@
                             </tr>
                             </tbody>
                         </table>
+                    </li>
+                    <li>
+                        <a id="ocultar_lineas_referencia_conductora" href="#"><i class="fa fa-fw fa-dashboard"></i>Ocultar Lineas Referencia</a>
+                    </li>
+                    <li>
+                        <a id="mostrar_lineas_referencia_conductora" href="#"><i class="fa fa-fw fa-dashboard"></i>Mostrar Lineas Referencia</a>
                     </li>
                 </ul>
             </div>
@@ -261,7 +267,7 @@
             <!--piropos-->
             <div class="row">
                 <div class="col-xs-12">
-                    <h3>Piropos</h3>
+                    <h3>Piropos 1</h3>
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover">
                             <thead>
@@ -313,6 +319,80 @@
                                                 </select
                                             </div>
                                         </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Piropos 2</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col-sm-1">Preview</th>
+                                    <th class="col-sm-1">Modulo</th>
+                                    <th class="col-sm-1">Ganador</th>
+                                    <th class="col-sm-1">Jugar</th>
+                                    <th class="col-sm-2">Acciones</th>
+                                    <th class="col-sm-3">Historial</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3">
+                                        <img class="juego_preview" src="/img/tvchat/interfaz/tvchat_piropo_preview.png">
+                                    </td>
+                                    <td>
+                                        <button id="cargar_piropo2" class="btn btn-primary">Cargar</button>
+                                    </td>
+                                    <td>
+                                        <button id="getWinElementsPiropo" class="btn btn-primary">
+                                            Obtener
+                                        </button>
+                                    </td>
+                                    <td rowspan="3">
+                                        <button id="jugarPiropo2" class="btn btn-primary">Jugar</button>
+                                    </td>
+                                    <td>
+                                        <div id="jugador_piropo2">
+                                        </div>
+                                    </td>
+                                    </td>
+                                    <td rowspan="3">
+                                        <div id="historial_piropo2">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="cerrar_piropo" class="btn btn-primary">Quitar</button>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <div id="WinElementsPiropo2">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button id="jugarPiropo2Premio" type="button" class="btn btn-primary">C/ Premio</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <div class="premios">
+                                            <select id="premios_piropos2" class="form-control">
+                                                <option>Premios</option>
+                                                <option value="50000">50.000 Gs En Saldo</option>
+                                            </select
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button id="jugarPiropo2SinPremio" type="button" class="btn btn-primary">S/ Premio</button>
                                     </td>
                                 </tr>
                             </tbody>
