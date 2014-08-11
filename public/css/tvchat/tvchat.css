@@ -23,13 +23,13 @@ body, html {
     height: 516px;
     border: 1px white dotted;
     z-index: 24;
-    margin-top: 42px;
-    margin-left: 42px;
+    top: 42px;
+    left: 42px;
     position: absolute;
 }
 /*Secciones*/
 .banners{
-    width: 716px;
+    width: 800px;
     height: 167px;
 }
 .luces{
@@ -40,7 +40,7 @@ body, html {
 }
 .interactive{
     height: 355px;
-    width: 800px;
+    width: 775px;
     padding-left: 25px;
 }
 .juegos{
@@ -49,7 +49,7 @@ body, html {
     float: left;
 }
 .conductora{
-    width: 437px;
+    width: 411px;
     height: 347px;
     float:left;
     border: 1px white dotted;
@@ -104,7 +104,7 @@ body, html {
     float:left
 }
 .tvchat_logo img{
-    margin-top: 3px;
+    margin-top: 4px;
     margin-left: 45px;
 }
 .marquee{

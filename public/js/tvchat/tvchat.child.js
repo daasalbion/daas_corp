@@ -329,9 +329,9 @@ function descargarJuego( params ){
     }
     else if( params['juego'] == "tombola" ){
 
-        var juego = $('#tombola_wrapper');
-        wheel.clear();
+        var juego = $('#tombola_wheel_wrapper');
         juego.remove();
+        wheel.clear();
     }
     else if( params['juego'] == "piropo" ){
 
@@ -391,7 +391,7 @@ function jugarJuego( params ){
         rouletter3.roulette('start');
 
     }
-    if( params['jugar'] == "tragamonedas_sexy" ){
+    else if( params['jugar'] == "tragamonedas_sexy" ){
 
         var resultado = 0;
         var p = {
@@ -430,12 +430,14 @@ function jugarJuego( params ){
     }
     else if( params['jugar'] == "tombola" ){
 
+        var contador = 0;
         var q = {
 
             valoresEsperados: elementos_ganadores,
-            stopCallback : function($stopElm) {
+            stopCallback : function( $stopElm ) {
 
                 if(ganador != "Sin Ganador"){
+
                     ganador = ganador.substr(0,8) +"XX";
                 }
 
@@ -486,6 +488,17 @@ function jugarJuego( params ){
                             )
                             .addClass("numero_ganador")
                     );
+
+                contador++;
+                console.log( "contador: " + contador );
+                if( elementos_ganadores.length == contador  ){
+
+                    window.opener.$("#stopTombola").removeAttr('disabled');
+                    window.opener.$("#stopTombola").text("Mostrar");
+                }else{
+
+                    window.opener.$("#stopTombola").removeAttr('disabled');
+                }
             }
         }
 
@@ -501,6 +514,8 @@ function jugarJuego( params ){
 
         tombola.wheel('option', q);
         tombola.wheel('start', q);
+
+        window.opener.$("#stopTombola").attr('disabled', 'true');
 
     }
     else if( params['jugar'] == "piropo" ){
@@ -570,6 +585,7 @@ function pararJuego( params ){
     else if( params['stop'] == "tombola" ){
 
         tombola.wheel( 'start' );
+        window.opener.$("#stopTombola").attr('disabled', 'true');
     }
 };
 
@@ -591,6 +607,19 @@ function obtenerMensajesNuevos(){
 
     textarray = window.opener.obtenerMensajesNuevosMensajero();
 };
+
+function lineasReferencia( params ){
+
+    if( params.accion == "ocultar" ){
+
+        $('#conductora').hide();
+        $('#margenes').hide();
+    }
+    else if( params.accion == "mostrar" ){
+
+        $('#conductora').show();
+    }
+}
 
 $(document).ready(function(){
 
