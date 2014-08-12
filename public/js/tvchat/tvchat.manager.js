@@ -609,7 +609,7 @@ $(document).ready(function(){
 
     obtenerMensajes();
 
-    deshabilitarBotones();
+    //deshabilitarBotones();
 
     //funciones
     /*function deshabilitarBotones(){

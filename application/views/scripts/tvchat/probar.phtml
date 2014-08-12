@@ -87,19 +87,19 @@
                     <li>
                         <table class="totales table table-bordered table-hover">
                             <thead>
-                            <tr>
-                                <th style="background-color: #000000; color: #ffffff" colspan="2" class="col-sm-1">Totales</th>
-                            </tr>
+                                <tr>
+                                    <th style="background-color: #000000; color: #ffffff" colspan="2" class="col-sm-1">Totales</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td style="background-color: #ffffff" class="col-sm-1">Total Guaranies: </td>
-                                <td style="background-color: #ffffff" class="col-sm-1" id="total_guaranies">0</td>
-                            </tr>
-                            <tr>
-                                <td style="background-color: #ffffff">Total Sorteos: </td>
-                                <td style="background-color: #ffffff" id="total_sorteos">0</td>
-                            </tr>
+                                <tr>
+                                    <td style="background-color: #ffffff" class="col-sm-1">Total Guaranies: </td>
+                                    <td style="background-color: #ffffff" class="col-sm-1" id="total_guaranies">0</td>
+                                </tr>
+                                <tr>
+                                    <td style="background-color: #ffffff">Total Sorteos: </td>
+                                    <td style="background-color: #ffffff" id="total_sorteos">0</td>
+                                </tr>
                             </tbody>
                         </table>
                     </li>
@@ -267,7 +267,7 @@
             <!--piropos-->
             <div class="row">
                 <div class="col-xs-12">
-                    <h3>Piropos</h3>
+                    <h3>Piropos 1</h3>
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover">
                             <thead>
@@ -294,6 +294,67 @@
                                             Seleccionar
                                         </button>
                                         <!---->
+                                    </td>
+                                    <td rowspan="2">
+                                        <button id="jugarPiropo" class="btn btn-primary">Jugar</button>
+                                    </td>
+                                    <td rowspan="2"></td>
+                                    <td rowspan="2">
+                                        <div id="historial_piropo">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="cerrar_piropo" class="btn btn-primary">Quitar</button>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <div id="WinElementsPiropo">
+                                            </div>
+                                            <div class="premios">
+                                                <select id="premios_piropos" class="form-control">
+                                                    <option>Premios</option>
+                                                    <option value="50000">50.000 Gs En Saldo</option>
+                                                </select
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Piropos 2</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col-sm-1">Preview</th>
+                                    <th class="col-sm-1">Modulo</th>
+                                    <th class="col-sm-2">Ganador</th>
+                                    <th class="col-sm-1">Jugar</th>
+                                    <th class="col-sm-1">Acciones</th>
+                                    <th class="col-sm-3">Historial</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">
+                                        <img class="juego_preview" src="/img/tvchat/interfaz/tvchat_piropo_preview.png">
+                                    </td>
+                                    <td>
+                                        <button id="cargar_piropo" class="btn btn-primary">Cargar</button>
+
+                                    </td>
+                                    <td>
+                                        <button id="seleccionar_piropo" class="btn btn-primary" data-toggle="modal" data-target="#opciones_mensajes">
+                                            Seleccionar
+                                        </button>
                                     </td>
                                     <td rowspan="2">
                                         <button id="jugarPiropo" class="btn btn-primary">Jugar</button>
