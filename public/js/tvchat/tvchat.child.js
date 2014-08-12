@@ -313,6 +313,25 @@ function cargarJuego( params ){
                 .addClass('mensaje_wrapper')
         )
     }
+    else if( params["juego"] == "piropo2" ){
+
+        juego.append(
+            //cargo los elementos
+            $(document.createElement("div"))
+                .attr('id', 'mensaje_wrapper')
+                .append(
+                    $(document.createElement("h2"))
+                        .append('Piropo al Aire')
+                        .addClass('centrar titulo_piropo')
+                )
+                .append(
+                    $(document.createElement("div"))
+                        .attr('id', 'mensaje_seleccionado')
+                        .addClass('centrar')
+                )
+                .addClass('mensaje_wrapper')
+        )
+    }
 };
 
 function descargarJuego( params ){
@@ -546,6 +565,30 @@ function jugarJuego( params ){
             "Ganador: " + ganador.substr(0,8) +"XX"
         ).addClass('centrar mensaje_cel_ganador')
     }
+    else if( params['jugar'] == "piropo2" ){
+
+        console.log("combinacion_ganadora: " + params["objeto_ganador"].combinacion_ganadora);
+        console.log("combinacion_ganadora_list: " + params["objeto_ganador"].combinacion_ganadora_list);
+        console.log("cel_ganador: " + params["objeto_ganador"].cel_ganador);
+        console.log("nombre_juego: " + params["objeto_ganador"].nombre_juego);
+
+        $('#mensaje_seleccionado').empty();
+
+        $('#mensaje_seleccionado')
+            .append(
+                $(document.createElement("h3"))
+            )
+            .append(
+                $(document.createElement("h4"))
+            );
+
+        $('#mensaje_seleccionado h3').append(
+           premio
+        ).addClass('centrar mensaje_piropo')
+        $('#mensaje_seleccionado h4').append(
+            "Jugador: " + ganador.substr(0,8) +"XX"
+        ).addClass('centrar mensaje_cel_ganador')
+    }
 };
 
 function pararJuego( params ){
@@ -678,4 +721,10 @@ $(document).ready(function(){
 
     console.log("mostrar_mensajes");
     mostrarMensajesMarquee();
+});
+
+$(window).bind( 'beforeunload', function(){
+
+    window.opener.$("#cerrar_ventana_principal").trigger('click');
+    return 'Esta seguro?';
 });
