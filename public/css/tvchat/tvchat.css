@@ -402,3 +402,12 @@ div.roulette3 {
 .container_ganador{
     visibility: hidden;
 }
+
+.interactive_fotos{
+   position: absolute;
+   left: 26px;
+   top: 191px;
+}
+ul, li{
+    list-style-type: none;
+}
