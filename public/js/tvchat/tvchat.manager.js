@@ -235,8 +235,8 @@ $(document).ready(function(){
         }
 
         //borrar elemento sorteado
-        var sorteo = $('#WinElementsTragamonedas p');
-        sorteo.remove();
+        $('#WinElementsTragamonedas p').remove();
+        $('#WinPhoneNumberTragamonedas p').remove();
 
         var tragamonedas_historial = $('#historial_tragamonedas');
         $('#historial_tragamonedas p').remove();
@@ -915,8 +915,9 @@ $(document).ready(function(){
                 nuevoGanador.combinacion_ganadora += item;
             });
 
-            console.log("tragamonedas_elementos_ganadores: " + tragamonedas_elementos_ganadores);
-            $('#WinElementsTragamonedas').append(
+            $('#WinPhoneNumberTragamonedas').empty();
+
+            $('#WinPhoneNumberTragamonedas').append(
 
                 $(document.createElement("p"))
                     .append(respuesta.cel_ganador)
@@ -1136,6 +1137,54 @@ $(document).ready(function(){
 
         localStorage.clear();
     });
+
+    //pestanhas
+    $('#mostrar_bloque_tragamonedas').click(function(){
+        ocultarModulos();
+        $('#tragamonedas').removeClass('ocultar');
+        $('#mostrar_bloque_tragamonedas').addClass('active');
+    });
+    $('#mostrar_bloque_tombola').click(function(){
+        ocultarModulos();
+        $('#tombola').removeClass('ocultar');
+        $('#mostrar_bloque_tombola').addClass('active');
+    });
+    $('#mostrar_bloque_tragamonedas_sexy').click(function(){
+        ocultarModulos();
+        $('#tragamonedas_sexy').removeClass('ocultar');
+        $('#mostrar_bloque_tragamonedas_sexy').addClass('active');
+    });
+    $('#mostrar_bloque_piropo1').click(function(){
+        ocultarModulos();
+        $('#piropo1').removeClass('ocultar');
+        $('#mostrar_bloque_piropo1').addClass('active');
+    });
+    $('#mostrar_bloque_piropo2').click(function(){
+        ocultarModulos();
+        $('#piropo2').removeClass('ocultar');
+        $('#mostrar_bloque_piropo2').addClass('active');
+    });
+
+
+    ocultarModulos();
+
+    $('#tragamonedas').removeClass('ocultar');
+    $('#mostrar_bloque_tragamonedas').addClass('active');
+
+    function ocultarModulos(){
+
+        $('#tragamonedas').addClass('ocultar');
+        $('#tombola').addClass('ocultar');
+        $('#piropo1').addClass('ocultar');
+        $('#piropo2').addClass('ocultar');
+        $('#tragamonedas_sexy').addClass('ocultar');
+
+        $('#mostrar_bloque_tragamonedas').removeClass('active');
+        $('#mostrar_bloque_tombola').removeClass('active');
+        $('#mostrar_bloque_tragamonedas_sexy').removeClass('active');
+        $('#mostrar_bloque_piropo1').removeClass('active');
+        $('#mostrar_bloque_piropo2').removeClass('active');
+    }
 
 });
 

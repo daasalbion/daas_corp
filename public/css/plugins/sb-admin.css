@@ -268,3 +268,19 @@ ul.alert-dropdown {
 body{
     overflow-x: hidden;
 }
+p {
+    margin: 0;
+}
+#WinElementsTragamonedas, #WinPhoneNumberTragamonedas{
+    font-size: 16px;
+    color: #ff0000;
+    font-family: arial;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.ocultar{
+    display: none;
+}
+.mostrar{
+    display: inline;
+}
