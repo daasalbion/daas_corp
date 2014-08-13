@@ -115,7 +115,7 @@
             <!-- /.navbar-collapse -->
         </nav>
 
-        <div id="page-wrapper">
+        <div id="page-wrapper" style="height: 433px">
 
         <div class="container-fluid">
 
@@ -237,10 +237,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td rowspan="2">
+                                    <td rowspan="4">
                                         <img class="juego_preview" src="/img/tvchat/interfaz/tvchat_tombola_preview.png">
                                     </td>
-                                    <td>
+                                    <td rowspan="2">
                                         <button id="cargar_tombola" class="btn btn-primary">Cargar</button>
                                     </td>
                                     <td>
@@ -249,23 +249,26 @@
                                     <td>
                                         <button id="getElementsTombola" type="button" class="btn btn-primary">S/ Premio</button>
                                     </td>
-                                    <td rowspan="2">
+                                    <td rowspan="4">
                                         <button id="jugarTombola" class="btn btn-primary">Jugar</button>
                                     </td>
-                                    <td rowspan="2">
+                                    <td rowspan="4">
                                         <button id="stopTombola" class="btn btn-primary">Girar</button>
                                     </td>
-                                    <td rowspan="2">
+                                    <td rowspan="4">
                                         <div id="historial_tombola">
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td ><button id="cerrar_tombola" class="btn btn-primary">Quitar</button></td>
+                                    <td colspan="2" id="WinElementsTombola"></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"><button id="cerrar_tombola" class="btn btn-primary">Quitar</button></td>
+                                    <td colspan="2" id="WinPhoneNumberTombola"></td>
+                                </tr>
+                                <tr>
                                     <td colspan="2">
-                                        <div id="WinElementsTombola">
-                                            <p></p>
-                                        </div>
                                         <div class="premios">
                                             <select id="premios_tombola" class="form-control">
                                                 <option>Premios</option>

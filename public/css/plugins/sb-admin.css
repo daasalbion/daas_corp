@@ -271,12 +271,16 @@ body{
 p {
     margin: 0;
 }
-#WinElementsTragamonedas, #WinPhoneNumberTragamonedas{
+#WinElementsTragamonedas, #WinPhoneNumberTragamonedas, #WinElementsTombola, #WinPhoneNumberTombola{
     font-size: 16px;
     color: #ff0000;
     font-family: arial;
     font-weight: bold;
     vertical-align: middle;
+}
+#WinElementsTombola, #WinPhoneNumberTombola{
+
+    height: 51px;
 }
 .ocultar{
     display: none;

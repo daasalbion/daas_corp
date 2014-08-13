@@ -316,8 +316,9 @@ $(document).ready(function(){
             "objeto_ganador": nuevoGanador
         }
 
-        var sorteo = $('#WinElementsTombola p');
-        sorteo.remove();
+        $('#WinElementsTombola').empty();
+        $('#WinPhoneNumberTombola').empty();
+
         var tombola_historial = $('#historial_tombola');
         $('#historial_tombola p').remove();
         tombola.push(nuevoGanador);
@@ -568,7 +569,7 @@ $(document).ready(function(){
 
         console.log("getWinElementsTragamonedas");
         $.get("/tvchat/get-win-elements-tragamonedas-sexy", { premio : true }, cargarNumerosGanadores, "json");
-        habilitarBotones( 3, 'tragamonedas_sexy' );
+        //habilitarBotones( 3, 'tragamonedas_sexy' );
 
         return;
     });
@@ -963,9 +964,7 @@ $(document).ready(function(){
 
             nuevoGanador = new ObjetoGanador( '', '', respuesta.juego, '', '' );
 
-            console.log("tombola");
-            if( $('#WinElementsTombola p').length > 0 )
-                $('#WinElementsTombola p').remove();
+            $('#WinElementsTombola').empty();
 
             $('#WinElementsTombola')
                 .append(
@@ -992,8 +991,9 @@ $(document).ready(function(){
             });
 
             console.log("tombola_elementos_ganadores: "+ tombola_elementos_ganadores);
+            $('#WinPhoneNumberTombola').empty();
 
-            $('#WinElementsTombola').append(
+            $('#WinPhoneNumberTombola').append(
                 $(document.createElement("p"))
                     .append(respuesta.cel_ganador)
                     .addClass("numeros_sorteados")
@@ -1165,11 +1165,9 @@ $(document).ready(function(){
         $('#mostrar_bloque_piropo2').addClass('active');
     });
 
-
     ocultarModulos();
 
-    $('#tragamonedas').removeClass('ocultar');
-    $('#mostrar_bloque_tragamonedas').addClass('active');
+    $('#mostrar_bloque_tombola').trigger('click');
 
     function ocultarModulos(){
 
