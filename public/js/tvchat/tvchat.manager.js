@@ -69,16 +69,17 @@ $(document).ready(function(){
 
     //abrir ventana principal
     $('#abrir_ventana_principal a').click(function(){
-
         if( tvchat == null ){
 
             tvchat = window.open("/tvchat/tv",
-                "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
+                "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, " +
+                    "status=no, scrollbars=auto, fullscreen=yes");
+
 
             $('#abrir_ventana_principal').addClass('disabled');
         }
 
-        habilitarBotones( 1, null );
+        //habilitarBotones( 1, null );
     });
     $('#abrir_ventana_tvhot').click(function(){
 
@@ -112,7 +113,7 @@ $(document).ready(function(){
 
         tvchat.cargarJuego(params);
 
-        habilitarBotones( 2, 'tragamonedas' );
+        //habilitarBotones( 2, 'tragamonedas' );
     });
     $('#cargar_tragamonedas_sexy').click(function(){
 
@@ -176,6 +177,7 @@ $(document).ready(function(){
         };
 
         tvchat.descargarJuego(params);
+        cargarModuloPorDefecto();
     });
     $('#cerrar_tragamonedas_sexy').click(function(){
 
@@ -186,6 +188,7 @@ $(document).ready(function(){
         };
 
         tvchat.descargarJuego(params);
+        cargarModuloPorDefecto();
     });
     $('#cerrar_tombola').click(function(){
 
@@ -196,6 +199,7 @@ $(document).ready(function(){
         };
 
         tvchat.descargarJuego(params);
+        cargarModuloPorDefecto();
     });
     $('#cerrar_tvchat').click(function(){
 
@@ -205,6 +209,7 @@ $(document).ready(function(){
         };
 
         tvchat.descargarJuego(params);
+        cargarModuloPorDefecto();
     });
     $('#cerrar_piropo').click(function(){
 
@@ -214,6 +219,7 @@ $(document).ready(function(){
         };
 
         tvchat.descargarJuego(params);
+        cargarModuloPorDefecto();
     });
 
     //jugar juegos
@@ -326,7 +332,7 @@ $(document).ready(function(){
             tombola_numeros_ganadores.pop();
         });
 
-        tvchat.jugarJuego(params);
+        tvchat.jugarJuego( params );
 
         actualizarTotalGuaranies( premio_tombola.premio_gs );
 
@@ -392,7 +398,6 @@ $(document).ready(function(){
 
         //habilitarBotones( 4, 'piropo' );
     });
-
     $('#jugarPiropo2Premio').click(function(){
 
         nuevoGanador = piropos2.pop();
@@ -669,19 +674,22 @@ $(document).ready(function(){
 
         var params = {
 
-            "accion": "ocultar"
+            accion: "ocultar",
+            modulo: "lineas_referencia"
         }
 
-        tvchat.lineasReferencia( params );
+        tvchat.cargarModulo( params );
     });
     $("#mostrar_lineas_referencia_conductora").click(function(){
 
         var params = {
 
-            "accion": "mostrar"
+            accion: "mostrar",
+            modulo: "lineas_referencia"
         }
 
-        tvchat.lineasReferencia( params );
+        tvchat.cargarModulo( params );
+
     });
 
     //tragamonedas sexy
@@ -694,11 +702,11 @@ $(document).ready(function(){
         $('.image_sample1').children().filter('[data-value="' + stopImageNumber + '"]').css('opacity' , 1);
         $('.stop_image_number_param1').text(stopImageNumber);
         updateParamater1();
-    }
+    };
     var updateParamater1 = function(){
         var stopImageNumber = Number($('.stop_image_number_param1').eq(0).text());
         tragamonedas_sexy_combinacion_ganadora[0] = stopImageNumber;
-    }
+    };
     $('#image_sample2').children().click(function(){
         var stopImageNumber = $(this).attr('data-value');
         updateStopImageNumber2(stopImageNumber);
@@ -708,11 +716,11 @@ $(document).ready(function(){
         $('.image_sample2').children().filter('[data-value="' + stopImageNumber + '"]').css('opacity' , 1);
         $('.stop_image_number_param2').text(stopImageNumber);
         updateParamater2();
-    }
+    };
     var updateParamater2 = function(){
         var stopImageNumber = Number($('.stop_image_number_param2').eq(0).text());
         tragamonedas_sexy_combinacion_ganadora[1] = stopImageNumber;
-    }
+    };
     $('#image_sample3').children().click(function(){
         var stopImageNumber = $(this).attr('data-value');
         updateStopImageNumber3(stopImageNumber);
@@ -722,15 +730,15 @@ $(document).ready(function(){
         $('.image_sample3').children().filter('[data-value="' + stopImageNumber + '"]').css('opacity' , 1);
         $('.stop_image_number_param3').text(stopImageNumber);
         updateParamater3();
-    }
+    };
     var updateParamater3 = function(){
         var stopImageNumber = Number($('.stop_image_number_param3').eq(0).text());
         tragamonedas_sexy_combinacion_ganadora[2] = stopImageNumber;
-    }
+        };
 
-    setInterval( obtenerMensajes, 1000*9*60 );
+    //setInterval( obtenerMensajes, 1000*9*60 );
 
-    obtenerMensajes();
+    //obtenerMensajes();
 
     //deshabilitarBotones();
 
@@ -1112,25 +1120,21 @@ $(document).ready(function(){
         $('#total_sorteos').append(total_sorteos);
     };
 
-    function habilitarGirarTombola(){
+    function cargarModuloPorDefecto(){
 
-        alert("mierda");
-    }
+        console.log('mirar');
+        var params = {
+
+            accion: "mostrar",
+            modulo: "fotos"
+        };
+
+        tvchat.cargarModulo( params );
+    };
 
     $('#vaciar_localstorage').click(function(){
 
         localStorage.clear();
-    });
-
-    $('#interactive_fotos').scrollbox({
-        direction: 'h',
-        distance: 140
-    });
-    $('#demo5-backward').click(function () {
-        $('#demo5').trigger('backward');
-    });
-    $('#demo5-forward').click(function () {
-        $('#demo5').trigger('forward');
     });
 
 });

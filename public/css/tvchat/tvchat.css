@@ -44,7 +44,7 @@ body, html {
     padding-left: 25px;
 }
 .juegos{
-    width: 360px;
+    width: 361px;/*cambiar despues a 360*/
     height: 357px;
     float: left;
 }
@@ -403,11 +403,25 @@ div.roulette3 {
     visibility: hidden;
 }
 
-.interactive_fotos{
-   position: absolute;
-   left: 26px;
-   top: 191px;
+/*empieza demo plugins a modificar*/
+.scroll-img {
+    width: 361px;
+    height: 330px;
+    overflow: hidden;
+    font-size: 0;
+    position: absolute;
+    top: 180px;
 }
-ul, li{
-    list-style-type: none;
+.scroll-img ul {
+    width: 700px;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+}
+.scroll-img ul li {
+    display: inline-block;
+    margin: 0;
+}
+#interactive_fotos.scroll-img ul {
+    width: 1000px;
 }

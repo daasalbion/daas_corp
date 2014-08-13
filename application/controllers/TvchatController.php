@@ -110,6 +110,7 @@ class TvchatController extends Zend_Controller_Action{
     public function marqueeAction(){
 
         $this->logger->info("marquee");
+        $this->_helper->layout->disableLayout();
     }
 
     public function obtenerMensajesAction(){

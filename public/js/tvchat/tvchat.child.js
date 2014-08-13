@@ -350,7 +350,6 @@ function descargarJuego( params ){
 
         var juego = $('#tombola_wheel_wrapper');
         juego.remove();
-        wheel.clear();
     }
     else if( params['juego'] == "piropo" ){
 
@@ -651,16 +650,50 @@ function obtenerMensajesNuevos(){
     textarray = window.opener.obtenerMensajesNuevosMensajero();
 };
 
-function lineasReferencia( params ){
+function cargarModulo( params ){
 
-    if( params.accion == "ocultar" ){
+    console.log(params);
+    if( params.accion == "ocultar" && params.modulo == "lineas_referencia" ){
 
         $('#conductora').hide();
         $('#margenes').hide();
     }
-    else if( params.accion == "mostrar" ){
+    else if( params.accion == "mostrar" && params.modulo == "lineas_referencia" ){
 
         $('#conductora').show();
+    }
+    else if( params.accion == "mostrar" && params.modulo == "fotos" ){
+
+        var juego = $('#game_wrapper');
+        juego.empty();
+
+        juego.append(
+            //cargo los elementos
+            $(document.createElement("div"))
+                .attr('id', 'interactive_fotos')
+                .addClass('scroll-img')
+                .append(
+                    $(document.createElement("ul"))
+                )
+        )
+
+        for( var i= 0; i < 2; i++ ){
+
+            $('#interactive_fotos ul')
+                .append(
+                    $(document.createElement("li"))
+                        .append(
+                            $(document.createElement("img"))
+                                .attr('src', '/img/tvchat/fotos/foto_1.png')
+                        )
+                );
+        }
+
+        $('#interactive_fotos').scrollbox({
+            direction: 'h',
+            distance: 361,
+            speed: 150
+        });
     }
 }
 
@@ -721,7 +754,20 @@ $(document).ready(function(){
 
     console.log("mostrar_mensajes");
     mostrarMensajesMarquee();
+    cargarModuloPorDefecto();
 });
+
+function cargarModuloPorDefecto(){
+
+    console.log('mirar');
+    var params = {
+
+        accion: "mostrar",
+        modulo: "fotos"
+    };
+
+    cargarModulo( params );
+};
 
 /*
 $(window).bind( 'beforeunload', function(){
