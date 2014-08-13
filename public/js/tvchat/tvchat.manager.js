@@ -147,6 +147,16 @@ $(document).ready(function(){
 
         habilitarBotones( 2, 'piropo' );
     });
+    $('#cargar_video').click(function(){
+
+        var params = {
+            "juego": "video"
+        };
+
+        tvchat.cargarJuego(params);
+
+        //habilitarBotones( 2, 'piropo' );
+    });
     $('#cargar_piropo2').click(function(){
 
         var params = {
@@ -206,6 +216,16 @@ $(document).ready(function(){
         //valores por defecto
         var params = {
             "juego": "tvchat"
+        };
+
+        tvchat.descargarJuego(params);
+        cargarModuloPorDefecto();
+    });
+    $('#cerrar_video').click(function(){
+
+        //valores por defecto
+        var params = {
+            "juego": "video"
         };
 
         tvchat.descargarJuego(params);
@@ -1164,10 +1184,18 @@ $(document).ready(function(){
         $('#piropo2').removeClass('ocultar');
         $('#mostrar_bloque_piropo2').addClass('active');
     });
+    $('#mostrar_bloque_video').click(function(){
+        ocultarModulos();
+        $('#video').removeClass('ocultar');
+        $('#mostrar_bloque_video').addClass('active');
+    });
+    $('#mostrar_modulo_por_defecto').click(function(){
+        cargarModuloPorDefecto();
+    });
 
     ocultarModulos();
 
-    $('#mostrar_bloque_tombola').trigger('click');
+    $('#mostrar_bloque_tragamonedas').trigger('click');
 
     function ocultarModulos(){
 
@@ -1176,12 +1204,14 @@ $(document).ready(function(){
         $('#piropo1').addClass('ocultar');
         $('#piropo2').addClass('ocultar');
         $('#tragamonedas_sexy').addClass('ocultar');
+        $('#video').addClass('ocultar');
 
         $('#mostrar_bloque_tragamonedas').removeClass('active');
         $('#mostrar_bloque_tombola').removeClass('active');
         $('#mostrar_bloque_tragamonedas_sexy').removeClass('active');
         $('#mostrar_bloque_piropo1').removeClass('active');
         $('#mostrar_bloque_piropo2').removeClass('active');
+        $('#mostrar_bloque_video').removeClass('active');
     }
 
 });

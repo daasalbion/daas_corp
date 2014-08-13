@@ -74,10 +74,10 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li id="abrir_ventana_principal" class="active">
-                        <a href="#"><i class="fa fa-fw fa-dashboard"></i>Abrir Pantalla</a>
+                        <a href="#opentv"><i class="fa fa-fw fa-dashboard"></i>Abrir Pantalla</a>
                     </li>
                     <li>
-                        <a id="cerrar_ventana_principal" href="#"><i class="fa fa-fw fa-dashboard"></i>Cerrar Pantalla</a>
+                        <a id="cerrar_ventana_principal" href="#closetv"><i class="fa fa-fw fa-dashboard"></i>Cerrar Pantalla</a>
                     </li>
                     <li>
                         <a id="abrir_ventana_tvhot" href="#"><i class="fa fa-fw fa-dashboard"></i>Abrir Tvhot</a>
@@ -105,10 +105,13 @@
                         </table>
                     </li>
                     <li>
-                        <a id="ocultar_lineas_referencia_conductora" href="#"><i class="fa fa-fw fa-dashboard"></i>Ocultar Lineas Referencia</a>
+                        <a id="ocultar_lineas_referencia_conductora" href="#ocultarLineaReferencia"><i class="fa fa-fw fa-dashboard"></i>Ocultar Lineas Referencia</a>
                     </li>
                     <li>
-                        <a id="mostrar_lineas_referencia_conductora" href="#"><i class="fa fa-fw fa-dashboard"></i>Mostrar Lineas Referencia</a>
+                        <a id="mostrar_lineas_referencia_conductora" href="#mostrarLineaReferencia"><i class="fa fa-fw fa-dashboard"></i>Mostrar Lineas Referencia</a>
+                    </li>
+                    <li>
+                        <a id="mostrar_modulo_por_defecto" href="#defaultmodule"><i class="fa fa-fw fa-dashboard"></i>Quitar</a>
                     </li>
                 </ul>
             </div>
@@ -142,6 +145,7 @@
                             <li id="mostrar_bloque_piropo1"><a href="#piropo1">Piropo 1</a></li>
                             <li id="mostrar_bloque_piropo2"><a href="#piropo2">Piropo 2</a></li>
                             <li id="mostrar_bloque_tragamonedas_sexy"><a href="#tragamonedas_sexy">Tragamonedas Sexy</a></li>
+                            <li id="mostrar_bloque_video"><a href="#video">Video</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div>
@@ -513,6 +517,47 @@
                                     <td>
                                         <button id="mostrarGanadorTragamonedasSexy" class="btn btn-primary">Mostrar</button>
                                     </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!--video-->
+            <div class="row" id="video">
+                <div class="col-xs-12">
+                    <h3>Video</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col-sm-1">Preview</th>
+                                    <th class="col-sm-1">Modulo</th>
+                                    <th class="col-sm-2">Ganador</th>
+                                    <th class="col-sm-1">Jugar</th>
+                                    <th class="col-sm-1">Acciones</th>
+                                    <th class="col-sm-3">Historial</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">
+                                        Preview no disponible
+                                    </td>
+                                    <td>
+                                        <button id="cargar_video" class="btn btn-primary">Cargar</button>
+                                    </td>
+                                    <td></td>
+                                    <td rowspan="2"></td>
+                                    <td rowspan="2"></td>
+                                    <td rowspan="2"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="cerrar_video" class="btn btn-primary">Quitar</button>
+                                    </td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>

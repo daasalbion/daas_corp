@@ -332,6 +332,22 @@ function cargarJuego( params ){
                 .addClass('mensaje_wrapper')
         )
     }
+    else if( params["juego"] == "video" ){
+
+        juego.append(
+            //cargo los elementos
+            $(document.createElement("div"))
+                .attr('id', 'video_wrapper')
+                .append(
+                    $(document.createElement("video"))
+                        .attr('width', '360')
+                        .attr('height', '360')
+                        .attr('autoplay', 'true')
+                        .attr('loop', 'loop')
+                        .attr('src', "/video/Dados-Demo.mp4")
+                )
+        );
+    }
 };
 
 function descargarJuego( params ){
@@ -359,6 +375,11 @@ function descargarJuego( params ){
     else if( params['juego'] == "tvchat" ){
 
         var juego = $('#ventana');
+        juego.remove();
+    }
+    else if( params['juego'] == "video" ){
+
+        var juego = $('#video_wrapper');
         juego.remove();
     }
 
