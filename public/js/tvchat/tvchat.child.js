@@ -740,6 +740,10 @@ function cargarModulo( params ){
     }
     else if( params.accion == "ocultar" && params.modulo == "marquee" ){
 
+        console.log('llego ak');
+        //$mwo.trigger('pause');
+        var eliminar = $('.js-marquee-wrapper');
+        eliminar.remove();
         $mwo.marquee('destroy');
     }
 };

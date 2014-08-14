@@ -1193,7 +1193,9 @@ $(document).ready(function(){
         cargarModuloPorDefecto();
     });
 
+
     $('#parar_marquee').click(function(){
+        alert("mjirar");
 
         var params = {
 
