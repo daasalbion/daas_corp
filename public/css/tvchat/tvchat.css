@@ -425,3 +425,7 @@ div.roulette3 {
 #interactive_fotos.scroll-img ul {
     width: 1000px;
 }
+.interactive_fotos_titulo{
+    position: absolute;
+    left: 14px;
+}

@@ -348,6 +348,7 @@ function cargarJuego( params ){
                 )
         );
     }
+
 };
 
 function descargarJuego( params ){
@@ -695,6 +696,12 @@ function cargarModulo( params ){
                 .addClass('scroll-img')
                 .append(
                     $(document.createElement("ul"))
+                ),
+            $(document.createElement("div"))
+                .append(
+                    $(document.createElement("img"))
+                        .attr('src', '/img/tvchat/fotos/interactive_fotos_titulo.png')
+                        .addClass('interactive_fotos_titulo')
                 )
         )
 
