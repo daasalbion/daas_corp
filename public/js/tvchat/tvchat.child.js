@@ -9,6 +9,8 @@ var wheel;
 var tombola;
 var intervalo = 0;
 var mostrar = 0;
+var $mwo = null;
+
 
 //funciones
 function cargarJuego( params ){
@@ -736,6 +738,10 @@ function cargarModulo( params ){
             speed: 150
         });
     }
+    else if( params.accion == "ocultar" && params.modulo == "marquee" ){
+
+        $mwo.marquee('destroy');
+    }
 };
 
 $(document).ready(function(){
@@ -764,7 +770,7 @@ $(document).ready(function(){
             .marquee({duration: 7000, duplicated:false});
     }
 
-    var $mwo = $('.marquee');
+    $mwo = $('.marquee');
     var cadena = '';
 
     $('.marquee').marquee({

@@ -1193,6 +1193,17 @@ $(document).ready(function(){
         cargarModuloPorDefecto();
     });
 
+    $('#parar_marquee').click(function(){
+
+        var params = {
+
+            accion: "ocultar",
+            modulo: "marquee"
+        }
+
+        tvchat.cargarModulo( params );
+    });
+
     ocultarModulos();
 
     $('#mostrar_bloque_tragamonedas').trigger('click');
