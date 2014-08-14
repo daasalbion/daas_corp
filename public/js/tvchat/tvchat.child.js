@@ -363,31 +363,37 @@ function descargarJuego( params ){
 
         var juego = $('#tragamonedas_wrapper');
         juego.remove();
+        $('#game_wrapper').empty();
     }
     else if( params['juego'] == "tragamonedas_sexy" ){
 
         var juego = $('#tragamonedas_wrapper');
         juego.remove();
+        $('#game_wrapper').empty();
     }
     else if( params['juego'] == "tombola" ){
 
         var juego = $('#tombola_wheel_wrapper');
         juego.remove();
+        $('#game_wrapper').empty();
     }
     else if( params['juego'] == "piropo" ){
 
         var juego = $('#mensaje_wrapper');
         juego.remove();
+        $('#game_wrapper').empty();
     }
     else if( params['juego'] == "tvchat" ){
 
         var juego = $('#ventana');
         juego.remove();
+        $('#game_wrapper').empty();
     }
     else if( params['juego'] == "video" ){
 
         var juego = $('#video_wrapper');
         juego.remove();
+        $('#game_wrapper').empty();
     }
 
     console.log("juego descargado!!");
@@ -730,7 +736,7 @@ function cargarModulo( params ){
             speed: 150
         });
     }
-}
+};
 
 $(document).ready(function(){
 
