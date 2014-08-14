@@ -23,6 +23,12 @@ function cargarJuego( params ){
     var juego = $('#game_wrapper');
     juego.empty();
 
+    /*$('#interactive').append(
+        $(document.createElement("div"))
+            .attr('id', 'game_wrapper')
+            .addClass('juegos')
+    );*/
+
     if( params['juego'] == "tragamonedas" ){
 
         juego.append(
@@ -400,13 +406,14 @@ function jugarJuego( params ){
 
         var resultado = 0;
         var p = {
-            duration: 1000,
+            duration: 60,
             stopCallback : function($stopElm) {
                 resultado++;
                 if( resultado == 3 ){
 
                     $('#premio').append( premio );
                     if(ganador != "Sin Ganador"){
+
                         $('#linea').append( "Ganador: " + ganador.substr(0,8) +"XX" );
                     }
                     else{
@@ -436,7 +443,7 @@ function jugarJuego( params ){
         var resultado = 0;
         var p = {
 
-            duration: 1000,
+            duration: 60,
             stopCallback : function($stopElm) {
                 console.log("mierda stop " + $stopElm);
                 resultado++;
