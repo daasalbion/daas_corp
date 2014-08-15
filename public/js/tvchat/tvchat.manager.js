@@ -113,6 +113,9 @@ $(document).ready(function(){
 
         tvchat.cargarJuego(params);
 
+        removerCss();
+        $('#mostrar_bloque_tragamonedas a').css('background-color', 'gold');
+
         //habilitarBotones( 2, 'tragamonedas' );
     });
     $('#cargar_tragamonedas_sexy').click(function(){
@@ -124,7 +127,10 @@ $(document).ready(function(){
 
         tvchat.cargarJuego(params);
 
-        habilitarBotones( 2, 'tragamonedas_sexy' );
+        removerCss();
+        $('#mostrar_bloque_tragamonedas_sexy a').css('background-color', 'gold');
+        //habilitarBotones( 2, 'tragamonedas_sexy' );
+
     });
     $('#cargar_tombola').click(function(){
 
@@ -135,7 +141,10 @@ $(document).ready(function(){
 
         tvchat.cargarJuego(params);
 
-        habilitarBotones( 2, 'tombola' );
+        removerCss();
+        $('#mostrar_bloque_tombola a').css('background-color', 'gold');
+
+        //habilitarBotones( 2, 'tombola' );
     });
     $('#cargar_piropo').click(function(){
 
@@ -145,7 +154,10 @@ $(document).ready(function(){
 
         tvchat.cargarJuego(params);
 
-        habilitarBotones( 2, 'piropo' );
+        removerCss();
+        $('#mostrar_bloque_piropo1 a').css('background-color', 'gold');
+
+        //habilitarBotones( 2, 'piropo' );
     });
     $('#cargar_video').click(function(){
 
@@ -154,6 +166,9 @@ $(document).ready(function(){
         };
 
         tvchat.cargarJuego(params);
+
+        removerCss();
+        $('#mostrar_bloque_video a').css('background-color', 'gold');
 
         //habilitarBotones( 2, 'piropo' );
     });
@@ -164,6 +179,9 @@ $(document).ready(function(){
         };
 
         tvchat.cargarJuego(params);
+
+        removerCss();
+        $('#mostrar_bloque_piropo2 a').css('background-color', 'gold');
 
         habilitarBotones( 2, 'piropo' );
     });
@@ -187,6 +205,8 @@ $(document).ready(function(){
         };
 
         tvchat.descargarJuego(params);
+
+        removerCss();
         cargarModuloPorDefecto();
     });
     $('#cerrar_tragamonedas_sexy').click(function(){
@@ -198,6 +218,9 @@ $(document).ready(function(){
         };
 
         tvchat.descargarJuego(params);
+
+        removerCss();
+
         cargarModuloPorDefecto();
     });
     $('#cerrar_tombola').click(function(){
@@ -209,6 +232,9 @@ $(document).ready(function(){
         };
 
         tvchat.descargarJuego(params);
+
+        removerCss();
+
         cargarModuloPorDefecto();
     });
     $('#cerrar_tvchat').click(function(){
@@ -219,6 +245,9 @@ $(document).ready(function(){
         };
 
         tvchat.descargarJuego(params);
+
+        removerCss();
+
         cargarModuloPorDefecto();
     });
     $('#cerrar_video').click(function(){
@@ -229,6 +258,9 @@ $(document).ready(function(){
         };
 
         tvchat.descargarJuego(params);
+
+        removerCss();
+
         cargarModuloPorDefecto();
     });
     $('#cerrar_piropo').click(function(){
@@ -239,6 +271,9 @@ $(document).ready(function(){
         };
 
         tvchat.descargarJuego(params);
+
+        removerCss();
+
         cargarModuloPorDefecto();
     });
 
@@ -1222,6 +1257,16 @@ $(document).ready(function(){
     });
 
     ocultarModulos();
+
+    function removerCss(){
+
+        $('#mostrar_bloque_tragamonedas a').css( 'background-color', '' );
+        $('#mostrar_bloque_tombola a').css( 'background-color', '' );
+        $('#mostrar_bloque_tragamonedas_sexy a').css( 'background-color', '' );
+        $('#mostrar_bloque_piropo1 a').css( 'background-color', '' );
+        $('#mostrar_bloque_piropo2 a').css( 'background-color', '' );
+        $('#mostrar_bloque_video a').css( 'background-color', '' );
+    };
 
     $('#mostrar_bloque_tragamonedas').trigger('click');
 
