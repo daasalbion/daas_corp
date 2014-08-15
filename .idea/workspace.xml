@@ -280,7 +280,7 @@
       <file leaf-file-name="admin.phtml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/admin.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="209" column="0" selection-start="10560" selection-end="10560" vertical-scroll-proportion="0.024856597" vertical-offset="3540" max-vertical-offset="10761">
+            <state line="214" column="52" selection-start="11020" selection-end="11020" vertical-scroll-proportion="0.1873805" vertical-offset="3540" max-vertical-offset="10761">
               <folding>
                 <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#li#4;n#ul#0;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#li#4;n#ul#0;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -823,7 +823,11 @@
       <created>1408112330090</created>
       <updated>1408112330090</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="agregado conexion">
+      <created>1408112363660</created>
+      <updated>1408112363660</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1573,7 +1577,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/admin.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="209" column="0" selection-start="10560" selection-end="10560" vertical-scroll-proportion="0.024856597" vertical-offset="3540" max-vertical-offset="10761">
+        <state line="214" column="52" selection-start="11020" selection-end="11020" vertical-scroll-proportion="0.1873805" vertical-offset="3540" max-vertical-offset="10761">
           <folding>
             <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#li#4;n#ul#0;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#li#4;n#ul#0;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
