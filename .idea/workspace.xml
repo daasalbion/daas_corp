@@ -126,7 +126,7 @@
       <file leaf-file-name="tvchat.manager.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="27" selection-start="3503" selection-end="3503" vertical-scroll-proportion="0.5659656" vertical-offset="928" max-vertical-offset="5185">
+            <state line="120" column="46" selection-start="3234" selection-end="3234" vertical-scroll-proportion="0.33208954" vertical-offset="825" max-vertical-offset="4930">
               <folding>
                 <element signature="e#550#598#0" expanded="false" />
                 <element signature="e#631#679#0" expanded="false" />
@@ -138,6 +138,7 @@
                 <element signature="e#2371#2630#0" expanded="false" />
                 <element signature="e#2718#2918#0" expanded="false" />
                 <element signature="e#2970#3164#0" expanded="false" />
+                <element signature="e#3234#3529#0" expanded="false" />
                 <element signature="e#3583#3893#0" expanded="false" />
                 <element signature="e#3637#3689#0" expanded="false" />
                 <element signature="e#3937#4188#0" expanded="false" />
@@ -904,7 +905,11 @@
       <created>1408138233300</created>
       <updated>1408138233300</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="agregando habilitador de botones otra vez para asegurar">
+      <created>1408138252422</created>
+      <updated>1408138252422</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -974,7 +979,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="actualizando localstorage" />
     <MESSAGE value="cambios importantes&#10;" />
     <MESSAGE value="agregado botones con premio y sin premio" />
     <MESSAGE value="ya anda la tombola. falta suavizar el movimiento&#10;" />
@@ -999,7 +1003,8 @@
     <MESSAGE value="agregado conexion" />
     <MESSAGE value="marcado orejita cuando el juego se ha cargado" />
     <MESSAGE value="agregando habilitador de botones" />
-    <option name="LAST_COMMIT_MESSAGE" value="agregando habilitador de botones" />
+    <MESSAGE value="agregando habilitador de botones otra vez para asegurar" />
+    <option name="LAST_COMMIT_MESSAGE" value="agregando habilitador de botones otra vez para asegurar" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1032,6 +1037,7 @@
             <element signature="e#2371#2630#0" expanded="false" />
             <element signature="e#2718#2918#0" expanded="false" />
             <element signature="e#2970#3164#0" expanded="false" />
+            <element signature="e#3234#3529#0" expanded="false" />
             <element signature="e#3583#3893#0" expanded="false" />
             <element signature="e#3637#3689#0" expanded="false" />
             <element signature="e#3937#4188#0" expanded="false" />
@@ -1658,7 +1664,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="27" selection-start="3503" selection-end="3503" vertical-scroll-proportion="0.5659656" vertical-offset="928" max-vertical-offset="5185">
+        <state line="120" column="46" selection-start="3234" selection-end="3234" vertical-scroll-proportion="0.33208954" vertical-offset="825" max-vertical-offset="4930">
           <folding>
             <element signature="e#550#598#0" expanded="false" />
             <element signature="e#631#679#0" expanded="false" />
@@ -1670,6 +1676,7 @@
             <element signature="e#2371#2630#0" expanded="false" />
             <element signature="e#2718#2918#0" expanded="false" />
             <element signature="e#2970#3164#0" expanded="false" />
+            <element signature="e#3234#3529#0" expanded="false" />
             <element signature="e#3583#3893#0" expanded="false" />
             <element signature="e#3637#3689#0" expanded="false" />
             <element signature="e#3937#4188#0" expanded="false" />
