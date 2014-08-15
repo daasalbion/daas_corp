@@ -69,7 +69,11 @@
                     </ul>
                 </li>
             </ul>
-
+            <ul id="conexion" class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Conexion </a>
+                </li>
+            </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
@@ -163,8 +167,9 @@
                             <thead>
                                 <tr>
                                     <th class="col-sm-1">Preview</th>
-                                    <th class="col-sm-1">Modulo</th>
+
                                     <th colspan="2" class="col-sm-2">Ganador</th>
+                                    <th class="col-sm-1">Modulo</th>
                                     <th class="col-sm-1">Jugar</th>
                                     <th class="col-sm-1">Acciones</th>
                                     <th class="col-sm-3">Historial</th>
@@ -175,14 +180,15 @@
                                     <td rowspan="4">
                                         <img class="juego_preview" src="/img/tvchat/interfaz/tvchat_tragamonedas_preview.png">
                                     </td>
-                                    <td rowspan="2">
-                                        <button id="cargar_tragamonedas" class="btn btn-primary">Cargar</button>
-                                    </td>
+
                                     <td>
                                         <button id="getWinElementsTragamonedas" type="button" class="btn btn-primary">C/ Premio</button>
                                     </td>
                                     <td>
                                         <button id="getElementsTragamonedas" type="button" class="btn btn-primary">S/ Premio</button>
+                                    </td>
+                                    <td rowspan="2">
+                                        <button id="cargar_tragamonedas" class="btn btn-primary">Cargar</button>
                                     </td>
                                     <td rowspan="4">
                                         <button id="jugarTragamonedas" class="btn btn-primary">Jugar</button>
@@ -201,8 +207,8 @@
                                     <td><button id="stopRoulette2" class="btn btn-primary">Parar 2</button></td>
                                 </tr>
                                 <tr>
-                                    <td rowspan="2"><button id="cerrar_tragamonedas" class="btn btn-primary">Quitar</button></td>
                                     <td colspan="2" id="WinPhoneNumberTragamonedas"></td>
+                                    <td rowspan="2"><button id="cerrar_tragamonedas" class="btn btn-primary">Quitar</button></td>
                                     <td><button id="stopRoulette3" class="btn btn-primary">Parar 3</button></td>
                                 </tr>
                                 <tr>

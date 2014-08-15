@@ -613,5 +613,12 @@ class TvchatController extends Zend_Controller_Action{
             $this->_redirect('/tvchat/login');
         }
     }
+
+    public function testearConexionAction(){
+
+        $respuesta = 0;
+        echo $respuesta;
+        exit;
+    }
 }
 

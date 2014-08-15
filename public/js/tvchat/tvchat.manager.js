@@ -759,6 +759,8 @@ $(document).ready(function(){
 
     //setInterval( obtenerMensajes, 1000*9*60 );
 
+    //setInterval( testearConexion, 10000);
+
     //obtenerMensajes();
 
     //deshabilitarBotones();
@@ -1067,6 +1069,20 @@ $(document).ready(function(){
             piropos2_buffer.push(respuesta);
         }
     };
+
+    function testearConexion(){
+
+        $.get("/tvchat/testear-conexion", { }, procesarRespuesta, "json");
+    }
+
+    function procesarRespuesta( respuesta ){
+
+        alert('ok');
+        if( respuesta == 0 )
+            $('#conexion').addClass('conectado')
+        else
+            $('#conexion').addClass('desconectado')
+    }
 
     function obtenerMensajes(){
 
