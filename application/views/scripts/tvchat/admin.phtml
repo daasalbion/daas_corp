@@ -78,16 +78,16 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li id="abrir_ventana_principal" class="active">
-                        <a href="#opentv"><i class="fa fa-fw fa-dashboard"></i>Abrir Pantalla</a>
+                        <a href="#ventana_principal"><i class="fa fa-fw fa-dashboard"></i>Abrir Pantalla</a>
                     </li>
-                    <li>
-                        <a id="cerrar_ventana_principal" href="#closetv"><i class="fa fa-fw fa-dashboard"></i>Cerrar Pantalla</a>
+                    <li id="cerrar_ventana_principal">
+                        <a  href="#cerrar_ventana_principal"><i class="fa fa-fw fa-dashboard"></i>Cerrar Pantalla</a>
                     </li>
-                    <li>
-                        <a id="abrir_ventana_tvhot" href="#"><i class="fa fa-fw fa-dashboard"></i>Abrir Tvhot</a>
+                    <li id="abrir_ventana_tvhot">
+                        <a href="#ventana_tvhot"><i class="fa fa-fw fa-dashboard"></i>Abrir Tvhot</a>
                     </li>
-                    <li>
-                        <a id="cerrar_ventana_tvhot" href="#"><i class="fa fa-fw fa-dashboard"></i>Cerrar Tvhot</a>
+                    <li id="cerrar_ventana_tvhot">
+                        <a href="#cerrar_ventana_tvhot"><i class="fa fa-fw fa-dashboard"></i>Cerrar Tvhot</a>
                     </li>
                     <li>
                         <table class="totales table table-bordered table-hover">
@@ -108,17 +108,17 @@
                             </tbody>
                         </table>
                     </li>
-                    <li>
-                        <a id="ocultar_lineas_referencia_conductora" href="#ocultarLineaReferencia"><i class="fa fa-fw fa-dashboard"></i>Ocultar Lineas Referencia</a>
+                    <li id="ocultar_lineas_referencia_conductora">
+                        <a href="#ocultarLineaReferencia"><i class="fa fa-fw fa-dashboard"></i>Ocultar Lineas Referencia</a>
                     </li>
-                    <li>
-                        <a id="mostrar_lineas_referencia_conductora" href="#mostrarLineaReferencia"><i class="fa fa-fw fa-dashboard"></i>Mostrar Lineas Referencia</a>
+                    <li id="mostrar_lineas_referencia_conductora">
+                        <a href="#mostrarLineaReferencia"><i class="fa fa-fw fa-dashboard"></i>Mostrar Lineas Referencia</a>
                     </li>
-                    <li>
-                        <a id="mostrar_modulo_por_defecto" href="#defaultmodule"><i class="fa fa-fw fa-dashboard"></i>Quitar</a>
+                    <li id="mostrar_modulo_por_defecto">
+                        <a href="#mostrar_modulo_por_defecto"><i class="fa fa-fw fa-dashboard"></i>Quitar</a>
                     </li>
-                    <li>
-                        <a id="parar_marquee" href="#defaultmodule"><i class="fa fa-fw fa-dashboard"></i>Parar marquee</a>
+                    <li id="parar_marquee">
+                        <a href="#parar_marquee"><i class="fa fa-fw fa-dashboard"></i>Parar marquee</a>
                     </li>
                 </ul>
             </div>
@@ -148,10 +148,10 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav nav-tabs">
                             <li id="mostrar_bloque_tragamonedas"><a  href="#tragamonedas">Tragamonedas</a></li>
+                            <li id="mostrar_bloque_tragamonedas_sexy"><a href="#tragamonedas_sexy">Tragamonedas Sexy</a></li>
                             <li id="mostrar_bloque_tombola"><a href="#tombola">Tombola</a></li>
                             <li id="mostrar_bloque_piropo1"><a href="#piropo1">Piropo 1</a></li>
                             <li id="mostrar_bloque_piropo2"><a href="#piropo2">Piropo 2</a></li>
-                            <li id="mostrar_bloque_tragamonedas_sexy"><a href="#tragamonedas_sexy">Tragamonedas Sexy</a></li>
                             <li id="mostrar_bloque_video"><a href="#video">Video</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -167,9 +167,8 @@
                             <thead>
                                 <tr>
                                     <th class="col-sm-1">Preview</th>
-
-                                    <th colspan="2" class="col-sm-2">Ganador</th>
                                     <th class="col-sm-1">Modulo</th>
+                                    <th colspan="2" class="col-sm-2">Ganador</th>
                                     <th class="col-sm-1">Jugar</th>
                                     <th class="col-sm-1">Acciones</th>
                                     <th class="col-sm-3">Historial</th>
@@ -180,15 +179,14 @@
                                     <td rowspan="4">
                                         <img class="juego_preview" src="/img/tvchat/interfaz/tvchat_tragamonedas_preview.png">
                                     </td>
-
+                                    <td rowspan="2">
+                                        <button id="cargar_tragamonedas" class="btn btn-primary">Cargar</button>
+                                    </td>
                                     <td>
                                         <button id="getWinElementsTragamonedas" type="button" class="btn btn-primary">C/ Premio</button>
                                     </td>
                                     <td>
                                         <button id="getElementsTragamonedas" type="button" class="btn btn-primary">S/ Premio</button>
-                                    </td>
-                                    <td rowspan="2">
-                                        <button id="cargar_tragamonedas" class="btn btn-primary">Cargar</button>
                                     </td>
                                     <td rowspan="4">
                                         <button id="jugarTragamonedas" class="btn btn-primary">Jugar</button>
@@ -207,8 +205,8 @@
                                     <td><button id="stopRoulette2" class="btn btn-primary">Parar 2</button></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" id="WinPhoneNumberTragamonedas"></td>
                                     <td rowspan="2"><button id="cerrar_tragamonedas" class="btn btn-primary">Quitar</button></td>
+                                    <td colspan="2" id="WinPhoneNumberTragamonedas"></td>
                                     <td><button id="stopRoulette3" class="btn btn-primary">Parar 3</button></td>
                                 </tr>
                                 <tr>
@@ -241,8 +239,8 @@
                             <thead>
                                 <tr>
                                     <th class="col-sm-1">Preview</th>
-                                    <th class="col-sm-1">Modulo</th>
                                     <th colspan="2" class="col-sm-2">Ganador</th>
+                                    <th class="col-sm-1">Modulo</th>
                                     <th class="col-sm-1">Jugar</th>
                                     <th class="col-sm-1">Acciones</th>
                                     <th class="col-sm-3">Historial</th>
@@ -253,14 +251,14 @@
                                     <td rowspan="4">
                                         <img class="juego_preview" src="/img/tvchat/interfaz/tvchat_tombola_preview.png">
                                     </td>
-                                    <td rowspan="2">
-                                        <button id="cargar_tombola" class="btn btn-primary">Cargar</button>
-                                    </td>
                                     <td>
                                         <button id="getWinElementsTombola" type="button" class="btn btn-primary">C/ Premio</button>
                                     </td>
                                     <td>
                                         <button id="getElementsTombola" type="button" class="btn btn-primary">S/ Premio</button>
+                                    </td>
+                                    <td rowspan="2">
+                                        <button id="cargar_tombola" class="btn btn-primary">Cargar</button>
                                     </td>
                                     <td rowspan="4">
                                         <button id="jugarTombola" class="btn btn-primary">Jugar</button>
@@ -277,8 +275,8 @@
                                     <td colspan="2" id="WinElementsTombola"></td>
                                 </tr>
                                 <tr>
-                                    <td rowspan="2"><button id="cerrar_tombola" class="btn btn-primary">Quitar</button></td>
                                     <td colspan="2" id="WinPhoneNumberTombola"></td>
+                                    <td rowspan="2"><button id="cerrar_tombola" class="btn btn-primary">Quitar</button></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
@@ -445,8 +443,8 @@
                             <thead>
                                 <tr>
                                     <th class="col-sm-1">Preview</th>
-                                    <th class="col-sm-1">Modulo</th>
                                     <th class="col-sm-2">Ganador</th>
+                                    <th class="col-sm-1">Modulo</th>
                                     <th class="col-sm-1">Jugar</th>
                                     <th class="col-sm-1">Acciones</th>
                                     <th class="col-sm-3">Historial</th>
@@ -457,11 +455,11 @@
                                     <td rowspan="4">
                                         <img class="juego_preview" src="/img/tvchat/interfaz/tvchat_tragamonedas_preview.png">
                                     </td>
-                                    <td rowspan="2">
-                                        <button id="cargar_tragamonedas_sexy" class="btn btn-primary">Cargar</button>
-                                    </td>
                                     <td>
                                         <button id="getWinElementsTragamonedasSexy" type="button" class="btn btn-primary">Seleccionar</button>
+                                    </td>
+                                    <td rowspan="2">
+                                        <button id="cargar_tragamonedas_sexy" class="btn btn-primary">Cargar</button>
                                     </td>
                                     <td rowspan="4">
                                         <button id="jugarTragamonedasSexy" class="btn btn-primary">Jugar</button>

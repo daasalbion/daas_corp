@@ -1,5 +1,7 @@
+//ventanas
 var tvchat = null;
 var tvhot = null;
+//elementos ganadores vamos a cambiar
 var tragamonedas_elementos_ganadores = [];
 var tragamonedas_sexy_combinacion_ganadora = [];
 var tragamonedas_numeros_ganadores = [];
@@ -79,9 +81,10 @@ $(document).ready(function(){
             $('#abrir_ventana_principal').addClass('disabled');
         }
 
-        //habilitarBotones( 1, null );
+        habilitarBotones( 1, "tvchat" );
+
     });
-    $('#abrir_ventana_tvhot').click(function(){
+    $('#abrir_ventana_tvhot a').click(function(){
 
         $('#abrir_ventana_tvhot').attr('disabled', 'true');
         tvhot = window.open("/tvchat/tvhot",
@@ -90,16 +93,27 @@ $(document).ready(function(){
     });
 
     //cerrar ventana principal
-    $('#cerrar_ventana_principal').click(function(){
+    $('#cerrar_ventana_principal a').click(function(){
 
         $('#abrir_ventana_principal').removeClass('disabled');
-        tvchat.close();
-        tvchat = null;
+        if ( tvchat != null ){
+
+            tvchat.close();
+            tvchat = null;
+        }
+
         deshabilitarBotones();
     });
-    $('#cerrar_ventana_tvhot').click(function(){
+    $('#cerrar_ventana_tvhot a').click(function(){
+
         $('#cerrar_ventana_tvhot').removeAttr('disabled');
-        tvhot.close();
+
+        if ( tvhot != null ){
+
+            tvhot.close();
+            tvhot = null;
+        }
+
         deshabilitarBotones();
     });
 
@@ -108,6 +122,7 @@ $(document).ready(function(){
 
         //valores por defecto
         var params = {
+
             "juego": "tragamonedas"
         };
 
@@ -116,7 +131,8 @@ $(document).ready(function(){
         removerCss();
         $('#mostrar_bloque_tragamonedas a').css('background-color', 'gold');
 
-        //habilitarBotones( 2, 'tragamonedas' );
+        habilitarBotones( 2, 'tragamonedas' );
+
     });
     $('#cargar_tragamonedas_sexy').click(function(){
 
@@ -607,9 +623,8 @@ $(document).ready(function(){
     //obtener elementos con ganadores
     $('#getWinElementsTragamonedas').click(function(){
 
-        console.log("getWinElementsTragamonedas");
         $.get("/tvchat/get-win-elements-tragamonedas", { premio : true }, cargarNumerosGanadores, "json");
-        //habilitarBotones( 3, 'tragamonedas' );
+        habilitarBotones( 3, "tragamonedas" );
 
         return;
     });
@@ -644,9 +659,9 @@ $(document).ready(function(){
         $('#premios_tragamonedas').hide();
         premio_tragamonedas.premio_texto = "Sin Premio";
         premio_tragamonedas.premio_gs = 0;
-        console.log("getElementsTragamonedas");
         $.get("/tvchat/get-win-elements-tragamonedas", { premio : false }, cargarNumerosGanadores, "json");
-        habilitarBotones( 3, 'tragamonedas' );
+
+        //habilitarBotones( 3, 'tragamonedas' );
 
         return;
     });
@@ -726,7 +741,7 @@ $(document).ready(function(){
     });
 
     //mostrar lineas punteadas para la conductora
-    $("#ocultar_lineas_referencia_conductora").click(function(){
+    $("#ocultar_lineas_referencia_conductora a").click(function(){
 
         var params = {
 
@@ -736,7 +751,7 @@ $(document).ready(function(){
 
         tvchat.cargarModulo( params );
     });
-    $("#mostrar_lineas_referencia_conductora").click(function(){
+    $("#mostrar_lineas_referencia_conductora a").click(function(){
 
         var params = {
 
@@ -798,10 +813,10 @@ $(document).ready(function(){
 
     //obtenerMensajes();
 
-    //deshabilitarBotones();
+    deshabilitarBotones();
 
     //funciones
-    /*function deshabilitarBotones(){
+    function deshabilitarBotones(){
         //tragamonedas
         $('#getWinElementsTragamonedas').attr('disabled', 'true');
         $('#getWinElementsTragamonedasSexy').attr('disabled', 'true');
@@ -818,6 +833,14 @@ $(document).ready(function(){
         $('#stopRouletteSexy1').attr('disabled', 'true');
         $('#stopRouletteSexy2').attr('disabled', 'true');
         $('#stopRouletteSexy3').attr('disabled', 'true');
+        $('#mostrarGanadorTragamonedas').attr('disabled', 'true');
+        $('#mostrarGanadorTragamonedasSexy').attr('disabled', 'true');
+        $('#ocultar_lineas_referencia_conductora').addClass('disabled');
+        $('#mostrar_lineas_referencia_conductora').addClass('disabled');
+        $('#mostrar_modulo_por_defecto').addClass('disabled');
+        $('#cerrar_ventana_principal').addClass('disabled');
+        $('#cerrar_ventana_tvhot').addClass('disabled');
+        $('#parar_marquee').addClass('disabled');
         $('#premios_tragamonedas_sexy').hide();
         $('#premios_tragamonedas').hide();
         $('#selectWinElements').hide();
@@ -837,43 +860,47 @@ $(document).ready(function(){
         $('#cerrar_piropo').attr('disabled', 'true');
         $('#jugarPiropo').attr('disabled', 'true');
         $('#premios_piropos').hide();
-    };*/
+    };
 
-    /*function habilitarBotones( nivel, juego ){
+    function habilitarBotones( nivel, juego ){
 
-        if( nivel == 1 && juego == null ){
-
-            //deshabilitarBotones();
-            $('#cargar_tragamonedas').removeAttr('disabled');
-            $('#cargar_tragamonedas_sexy').removeAttr('disabled');
-            $('#cargar_tombola').removeAttr('disabled');
-            $('#cargar_piropo').removeAttr('disabled');
-        }
-        else if( nivel == 2 && juego == "tragamonedas" ){
+        if( nivel == 1 && juego == "tvchat" ){
 
             deshabilitarBotones();
-            habilitarBotones( 1, null );
+            $('#cargar_tragamonedas').removeAttr('disabled');
             $('#cerrar_tragamonedas').removeAttr('disabled');
+
+            $('#ocultar_lineas_referencia_conductora').removeClass('disabled');
+            $('#mostrar_lineas_referencia_conductora').removeClass('disabled');
+            $('#mostrar_modulo_por_defecto').removeClass('disabled');
+            $('#parar_marquee').removeClass('disabled');
+
+        }
+        else if( nivel == 2 && juego == 'tragamonedas' ){
+
+            habilitarBotones( 1, "tvchat" );
+
             $('#getWinElementsTragamonedas').removeAttr('disabled');
             $('#getElementsTragamonedas').removeAttr('disabled');
-            *//*if( tragamonedas_buffer.length > 0 ){
-                $('#jugarTragamonedas').removeAttr('disabled');
-            }*//*
-        }
-        else if( nivel == 3 && juego == "tragamonedas" ){
 
-            habilitarBotones( 2, "tragamonedas" );
+        }
+        //jugar
+        else if( nivel == 3 && juego == 'tragamonedas' ){
+
+            habilitarBotones( 2, 'tragamonedas' );
             $('#premios_tragamonedas').show();
             $('#jugarTragamonedas').removeAttr('disabled');
-        }
-        else if( nivel == 4 && juego == "tragamonedas" ){
 
-            deshabilitarBotones();
-            habilitarBotones( 2, "tragamonedas" );
+        }
+        //jugar - opciones
+        else if( nivel == 4 && juego == 'tragamonedas' ){
+
+            habilitarBotones( 2, 'tragamonedas' );
+            $('#premios_tragamonedas').hide();
             $('#stopRoulette1').removeAttr('disabled');
             $('#stopRoulette2').removeAttr('disabled');
             $('#stopRoulette3').removeAttr('disabled');
-            $('#cerrar_tragamonedas').removeAttr('disabled');
+            $('#mostrarGanadorTragamonedas').removeAttr('disabled');
         }
         else if( nivel == 2 && juego == "tragamonedas_sexy" ){
 
@@ -937,7 +964,7 @@ $(document).ready(function(){
             habilitarBotones( 2, "piropo" );
             $('#cerrar_piropo').removeAttr('disabled');
         }
-    };*/
+    };
 
     function cargarNumerosGanadores( respuesta ){
 
@@ -1240,7 +1267,7 @@ $(document).ready(function(){
         $('#video').removeClass('ocultar');
         $('#mostrar_bloque_video').addClass('active');
     });
-    $('#mostrar_modulo_por_defecto').click(function(){
+    $('#mostrar_modulo_por_defecto a').click(function(){
         cargarModuloPorDefecto();
     });
 

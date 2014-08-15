@@ -11,7 +11,6 @@ var intervalo = 0;
 var mostrar = 0;
 var $mwo = null;
 
-
 //funciones
 function cargarJuego( params ){
 

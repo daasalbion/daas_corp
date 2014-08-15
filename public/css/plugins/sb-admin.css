@@ -9,6 +9,8 @@
 body {
     margin-top: 100px;
     background-color: #222;
+    overflow-x: hidden;
+    /*overflow-y: hidden;*/
 }
 
 @media(min-width:768px) {
@@ -227,50 +229,60 @@ ul.alert-dropdown {
     height: 100px;
     width: 100px;
 }
+
 .premios{
     margin: auto;
     width: 102px;
 }
+
 .premios_tombola{
     width: 102px;
 }
+
 .image_sample1 img {
     cursor: pointer;
     width: 25px;
 }
+
 .image_sample2 img {
     cursor: pointer;
     width: 25px;
 }
+
 .image_sample3 img {
     cursor: pointer;
     width: 25px;
 }
+
 .table th, td{
     text-align: center;
 }
+
 .preview{
     width: 16px;
 }
+
 .contenedor{
     margin-top: 50px;
 }
+
 .selectWinElements{
     margin-bottom: 10px;
 }
+
 .acciones{
     height: 90px;
 }
+
 .totales{
     width: 200px;
     margin-left: 10px;
 }
-body{
-    overflow-x: hidden;
-}
+
 p {
     margin: 0;
 }
+
 #WinElementsTragamonedas, #WinPhoneNumberTragamonedas, #WinElementsTombola, #WinPhoneNumberTombola{
     font-size: 16px;
     color: #ff0000;
@@ -278,22 +290,28 @@ p {
     font-weight: bold;
     vertical-align: middle;
 }
+
 #WinElementsTombola, #WinPhoneNumberTombola{
 
     height: 51px;
 }
+
 .ocultar{
     display: none;
 }
+
 .mostrar{
     display: inline;
 }
+
 .conectado{
     background-color: green;
 }
+
 .desconectado{
     background-color: #ff0000;
 }
+
 .jugando{
     background-color: #ff0000;
 }

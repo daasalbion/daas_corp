@@ -620,5 +620,6 @@ class TvchatController extends Zend_Controller_Action{
         echo $respuesta;
         exit;
     }
+
 }
 
