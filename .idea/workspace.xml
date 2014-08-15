@@ -819,7 +819,11 @@
       <created>1408112305650</created>
       <updated>1408112305650</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="agregado conexion">
+      <created>1408112330090</created>
+      <updated>1408112330090</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="ToolWindowManager">
