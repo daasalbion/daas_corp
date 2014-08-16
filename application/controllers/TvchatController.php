@@ -121,9 +121,9 @@ class TvchatController extends Zend_Controller_Action{
         $inicio = 0;
         $mensajes_marquee = '';
 
-        if ( ( isset( $_GET['solicitud'] ) ) && ( $_GET['solicitud'] == true ) && ( isset( $_GET['id_mensaje'] ) ) ){
+        if ( ( isset( $_GET['solicitud'] ) ) && ( $_GET['solicitud'] == 'marquee' ) && ( isset( $_GET['id_mensaje'] ) ) ){
 
-            $mensajes_nuevos = $this->_consulta( 'GET_MENSAJES_NUEVOS', array( 'id_tvchat_mensaje' => $_GET['id_mensaje'] ) );
+            $mensajes_nuevos = $this->_consulta( 'GET_MENSAJES_MARQUEE', array( 'id_mensaje' => $_GET['id_mensaje'] ) );
             $this->logger->info( 'datos a obtenidos ' . print_r( $mensajes_nuevos, true ) );
 
             //mensajes mostrar marquee
@@ -140,22 +140,32 @@ class TvchatController extends Zend_Controller_Action{
 
                     }else{
 
-                        $mensajes_marquee .= '__________' . $mensaje;
+                        $mensajes_marquee .= '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' . $mensaje;
                     }
                 }
+            }else{
+
+                $indice = $_GET['id_mensaje'];
             }
+
             //seteo el siguiente id a solicitar
             $siguiente_id_solicitar = $indice;
             $this->logger->info('siguiente_id_solicitar ' . $siguiente_id_solicitar );
             $this->logger->info('mensajes_marquee ' . $mensajes_marquee );
-            $respuesta = json_encode( array( "mensajes_operador" => $mensajes_nuevos,
-                'mensajes_marquee' => $mensajes_marquee, 'siguiente_id_solicitar' => $siguiente_id_solicitar ) );
+            $respuesta = json_encode(
+
+                array(  'mensajes_operador' => $mensajes_nuevos,
+                        'mensajes_marquee' => $mensajes_marquee,
+                        'siguiente_id_solicitar' => $siguiente_id_solicitar
+                )
+            );
+
             $this->logger->info('datos a enviar ' . $respuesta );
             echo $respuesta;
             exit;
         }else{
 
-            $mensajes_nuevos = $this->_consulta( 'GET_MENSAJES_NUEVOS', array( 'id_tvchat_mensaje' => null ) );
+            $mensajes_nuevos = $this->_consulta( 'GET_MENSAJES_MARQUEE', array( 'id_tvchat_mensaje' => null ) );
             $this->logger->info( 'datos a obtenidos ' . print_r( $mensajes_nuevos, true ) );
 
             //seteo el siguiente id a solicitar
@@ -385,24 +395,24 @@ class TvchatController extends Zend_Controller_Action{
                 return $resultado;
             }
         }
-        else if( $accion == 'GET_MENSAJES_NUEVOS' ){
+        else if( $accion == 'GET_MENSAJES_MARQUEE' ){
 
-            $sql = "select PT.id_tvchat_mensaje, PT.mensaje
+            $sql = "select PT.id_mensaje, PT.mensaje, PT.mensaje
                     from promosuscripcion.tvchat_mensajes PT
-                    where PT.id_tvchat_mensaje > ?
-                    order by 1
-                    limit 10";
+                    where PT.id_mensaje > ?
+                    order by 1 desc
+                    limit 100";
 
-            if($datos['id_tvchat_mensaje'] == null)
-                $datos['id_tvchat_mensaje'] = 1;
+            if($datos['id_mensaje'] == null)
+                $datos['id_mensaje'] = 1;
 
-            $rs = $db->fetchAll( $sql, array( $datos['id_tvchat_mensaje'] ) );
+            $rs = $db->fetchAll( $sql, array( $datos['id_mensaje'] ) );
 
             if( !empty( $rs ) ){
 
                 foreach( $rs as $fila ){
 
-                    $resultado[$fila['id_tvchat_mensaje']] = $fila['mensaje'];
+                    $resultado[$fila['id_mensaje']] = $fila['mensaje'];
 
                 }
 
@@ -432,9 +442,7 @@ class TvchatController extends Zend_Controller_Action{
             );
 
             $status = $db->insert('chatcenter.sms_entrantes', $insertar);
-            /*INSERT INTO chatcenter.sms_entrantes(id_carrier, n_llamado, n_remitente,
-            alias, sms, ts_local, id_cliente, id_sms_carrier, estado, id_sc, cmd_id, id_promocion, id_tipo_promocion)
-            VALUES (2, '6767', '0981100100', 'DEMO-CHAT', 'Mensaje del Operador', now(), 0, 0, 0, 0, 0, 90, 0);*/
+
             return;
         }
         else if( $accion == 'MOSTRAR' ){

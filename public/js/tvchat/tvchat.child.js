@@ -2,8 +2,10 @@
 var rouletter1 = null;
 var rouletter2 = null;
 var rouletter3 = null;
-var textarray_buffer = ['Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha'];
-var textarray = ['Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha'];
+//var textarray_buffer = ['Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha''Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha'];
+var textarray_buffer =  window.opener.mensajero;
+//var textarray = ['Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha'];
+var textarray = [];
 var elementos_ganadores = [];
 var wheel;
 var tombola;
@@ -683,7 +685,9 @@ function mostrarGanador( params ){
 
 function obtenerMensajesNuevos(){
 
-    textarray = window.opener.obtenerMensajesNuevosMensajero();
+    textarray_buffer = window.opener.mensajero;
+    textarray = textarray_buffer;
+    return textarray;
 };
 
 function cargarModulo( params ){
@@ -752,25 +756,22 @@ $(document).ready(function(){
     function mostrarMensajesMarquee() {
 
         var length = textarray.length;
-        console.log(textarray);
-        console.log(textarray.length);
+
         if( length == 0 ){
-            /*var eliminar = $( '.js-marquee-wrapper' );
-            eliminar.remove();
-            //coloco una cadena vacia
-            obtenerMensajesNuevos();
-            console.log( textarray );*/
-            textarray = textarray_buffer;
+
+            var mensajes_nuevos = obtenerMensajesNuevos();
+            textarray = mensajes_nuevos;
             mostrarMensajesMarquee();
 
             return;
         }
+
         var texto = textarray.pop();
         $mwo
             .marquee('destroy')
             .bind('finished', mostrarMensajesMarquee)
             .html(texto)
-            .marquee({duration: 7000, duplicated:false});
+            .marquee({duration: 20000, duplicated:false});
     }
 
     $mwo = $('.marquee');
@@ -778,7 +779,7 @@ $(document).ready(function(){
 
     $('.marquee').marquee({
         //speed in milliseconds of the marquee
-        speed: 10000,
+        speed: 20000,
         //gap in pixels between the tickers
         gap: 50,
         //time in milliseconds before the marquee will start animating
@@ -800,11 +801,14 @@ $(document).ready(function(){
         $mwo.marquee('destroy');
     });
 
+    cargarModuloPorDefecto();
+
     //obtenerMensajesNuevos();
 
-    console.log("mostrar_mensajes");
+    //setInterval( obtenerMensajesNuevos, 30000 );
+
     mostrarMensajesMarquee();
-    cargarModuloPorDefecto();
+
 });
 
 function cargarModuloPorDefecto(){

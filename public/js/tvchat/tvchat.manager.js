@@ -66,6 +66,7 @@ var piropos2 =[];
 var mensajero = null;
 var total_guaranies = 0;
 var total_sorteos = 0;
+var siguiente_id_solicitar = 0;
 
 $(document).ready(function(){
 
@@ -809,14 +810,16 @@ $(document).ready(function(){
 
     //setInterval( obtenerMensajes, 1000*9*60 );
 
+    setInterval( obtenerMensajesMarquee, 1000000 );
+
     //setInterval( testearConexion, 10000);
 
-    //obtenerMensajes();
+    obtenerMensajesMarquee();
 
-    deshabilitarBotones();
+    //deshabilitarBotones();
 
     //funciones
-    function deshabilitarBotones(){
+/*    function deshabilitarBotones(){
         //tragamonedas
         $('#getWinElementsTragamonedas').attr('disabled', 'true');
         $('#getWinElementsTragamonedasSexy').attr('disabled', 'true');
@@ -860,9 +863,9 @@ $(document).ready(function(){
         $('#cerrar_piropo').attr('disabled', 'true');
         $('#jugarPiropo').attr('disabled', 'true');
         $('#premios_piropos').hide();
-    };
+    };*/
 
-    function habilitarBotones( nivel, juego ){
+/*    function habilitarBotones( nivel, juego ){
 
         if( nivel == 1 && juego == "tvchat" ){
 
@@ -964,7 +967,7 @@ $(document).ready(function(){
             habilitarBotones( 2, "piropo" );
             $('#cerrar_piropo').removeAttr('disabled');
         }
-    };
+    };*/
 
     function cargarNumerosGanadores( respuesta ){
 
@@ -1153,10 +1156,10 @@ $(document).ready(function(){
         return;
     };
 
-    function cargarOpcionesMensajes( respuesta ){
+    function cargarOpcionesMensajes( mensajero_buffer ){
 
         var opciones_mensajes = $('#mensajes');
-        $.each( respuesta.mensajes, function( i, mensaje ) {
+        $.each( mensajero_buffer, function( i, mensaje ) {
 
             opciones_mensajes.append(
 
@@ -1181,32 +1184,27 @@ $(document).ready(function(){
         });
     };
 
-    function obtenerMensajesBD(){
+    function obtenerMensajesMarquee(){
 
-        console.log("llamada ajax");
-        $.get("/tvchat/obtener-mensajes", {solicitud: true, id_mensaje:siguiente_id_solicitar}, cargarMensajes, "json");
+        $.get("/tvchat/obtener-mensajes", { solicitud: 'marquee', id_mensaje: siguiente_id_solicitar }, cargarMensajes, "json");
         return;
     };
 
-    function cargarMensajes(respuesta){
-        $("#mensajes_nuevos_obtenidos").html("Mensajes Nuevos: " + respuesta.mensajes_marquee);
+    function cargarMensajes( respuesta ){
+
         mensajero_buffer.push(respuesta.mensajes_marquee);
+        mensajero = $.extend(true, [], mensajero_buffer);
+        mensajes = respuesta.mensajes_operador;
         siguiente_id_solicitar = respuesta.siguiente_id_solicitar;
-        console.log(mensajero_buffer);
+        cargarOpcionesMensajes( mensajes );
     };
 
     function obtenerMensajesNuevosMensajero(){
 
         console.log("obtener nuevos mensajes");
-        console.log(mensajes);
-//    if( mensajes.length == 0 ){
-//
-//        console.log("mierda");
-//        mensajes.push("ok");
-//        console.log(mensajes);
-//    }
+        console.log(mensajero_buffer);
 
-        return mensajes;
+        return mensajero_buffer;
     };
 
     function actualizarTotalGuaranies( premio ){
