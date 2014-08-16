@@ -135,12 +135,12 @@ class TvchatController extends Zend_Controller_Action{
 
                     if( $inicio == 0 ){
 
-                        $mensajes_marquee .= $mensaje;
+                        $mensajes_marquee .= $mensaje['mensaje'];
                         $inicio++;
 
                     }else{
 
-                        $mensajes_marquee .= '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' . $mensaje;
+                        $mensajes_marquee .= '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' . $mensaje['mensaje'];
                     }
                 }
             }else{
@@ -397,7 +397,7 @@ class TvchatController extends Zend_Controller_Action{
         }
         else if( $accion == 'GET_MENSAJES_MARQUEE' ){
 
-            $sql = "select PT.id_mensaje, PT.mensaje, PT.mensaje
+            $sql = "select PT.id_mensaje, PT.cel, PT.mensaje
                     from promosuscripcion.tvchat_mensajes PT
                     where PT.id_mensaje > ?
                     order by 1 desc
@@ -412,7 +412,9 @@ class TvchatController extends Zend_Controller_Action{
 
                 foreach( $rs as $fila ){
 
-                    $resultado[$fila['id_mensaje']] = $fila['mensaje'];
+                    $resultado[$fila['id_mensaje']]['mensaje'] = $fila['mensaje'];
+                    $resultado[$fila['id_mensaje']]['cel'] = $fila['cel'];
+                    $resultado[$fila['id_mensaje']]['id_mensaje'] = $fila['id_mensaje'];
 
                 }
 

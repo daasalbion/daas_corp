@@ -683,7 +683,7 @@ $(document).ready(function(){
     $('#mensajes').on('click', '.seleccionar', function() {
 
         mensaje_seleccionado = $(this).data('mensaje');
-        cel_ganador = '0982313289';
+        cel_ganador = '0' + $(this).data('cel');
 
         //se aprovecha el campo cadena de combinacion_ganadora
         nuevoGanador = new ObjetoGanador( mensaje_seleccionado, cel_ganador, 'piropo', '', '' );
@@ -1161,26 +1161,31 @@ $(document).ready(function(){
         var opciones_mensajes = $('#mensajes');
         $.each( mensajero_buffer, function( i, mensaje ) {
 
+            //alert(i);
             opciones_mensajes.append(
 
                 $(document.createElement("tr"))
                     .append(
                         $(document.createElement("td"))
                             .append(
-                                mensaje
+                                mensaje.cel
+                            ),
+                        $(document.createElement("td"))
+                            .append(
+                                mensaje.mensaje
                             ),
                         $(document.createElement("td"))
                             .append(
                                 $(document.createElement("button"))
                                     .addClass("seleccionar btn btn-primary")
-                                    .attr('data-mensaje', mensaje)
+                                    .attr('data-cel', mensaje.cel)
+                                    .attr('data-mensaje', mensaje.mensaje)
                                     .attr( 'id', i )
                                     .append("Seleccionar")
                             )
                     )
             )
 
-            mensajes.push(mensaje);
         });
     };
 
