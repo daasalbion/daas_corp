@@ -621,5 +621,51 @@ class TvchatController extends Zend_Controller_Action{
         exit;
     }
 
+    public function descargarAction() {
+
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+
+        $this->logger->info('--->DESCARGAR_ACTION');
+
+        $parametros = $this->_getAllParams( 'id', null );
+
+        if( is_null( $parametros ) ) {
+
+            $this->logger->info('Auth NO-DEFINIDO!!');
+            throw new Zend_Exception("Parámetros No Válidos");
+            return;
+        }
+
+        $this->logger->info( 'Parametros:[' . print_r( $parametros, true ) . ']' );
+
+        if( isset( $parametros['id'] ) ) {
+
+            if( !empty( $parametros ) ){
+
+                $path_archivo_descarga = 'C:\Users\USER\ENTERMOVIL\DAAS\PROYECTOS\www.entermovil.desarrollodaas.com.py\public\img\tvchat\fotos\foto_1.png';
+                $size_archivo = filesize($path_archivo_descarga);
+                $this->logger->info( 'size:[' . $size_archivo . ']' );
+                header('Content-Description: File Transfer');
+                $content_type = 'image/jpeg';
+                header('Content-Type: ' . $content_type);
+                $nombre_contenido = basename($path_archivo_descarga);
+
+                header('Content-Disposition: inline; filename='.$nombre_contenido);
+                header('Content-Transfer-Encoding: binary');
+                header('Expires: 0');
+                header('Cache-Control: must-revalidate');
+                header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+                header('Pragma: public');
+                header('Content-Length: ' . $size_archivo);
+                ob_clean();
+                flush();
+
+                $bytes_leidos = readfile($path_archivo_descarga);
+                exit;
+            }
+        }
+    }
+
 }
 
