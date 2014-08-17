@@ -154,7 +154,8 @@ class TvchatController extends Zend_Controller_Action{
             $this->logger->info('mensajes_marquee ' . $mensajes_marquee );
             $respuesta = json_encode(
 
-                array(  'mensajes_operador' => $mensajes_nuevos,
+                array(
+                        'mensajes_operador' => $mensajes_nuevos,
                         'mensajes_marquee' => $mensajes_marquee,
                         'siguiente_id_solicitar' => $siguiente_id_solicitar
                 )
@@ -397,11 +398,7 @@ class TvchatController extends Zend_Controller_Action{
         }
         else if( $accion == 'GET_MENSAJES_MARQUEE' ){
 
-            $sql = "select PT.id_mensaje, PT.cel, PT.mensaje
-                    from promosuscripcion.tvchat_mensajes PT
-                    where PT.id_mensaje > ?
-                    order by 1 desc
-                    limit 100";
+            $sql = "select * from promosuscripcion.obtener_mensajes(?, 50)";
 
             if($datos['id_mensaje'] == null)
                 $datos['id_mensaje'] = 1;

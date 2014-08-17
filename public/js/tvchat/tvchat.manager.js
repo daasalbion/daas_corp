@@ -810,7 +810,8 @@ $(document).ready(function(){
 
     //setInterval( obtenerMensajes, 1000*9*60 );
 
-    setInterval( obtenerMensajesMarquee, 1000000 );
+    //cada 2 min
+    setInterval( obtenerMensajesMarquee, 60*1000*1.5 );
 
     //setInterval( testearConexion, 10000);
 

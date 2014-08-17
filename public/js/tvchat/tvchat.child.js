@@ -771,15 +771,14 @@ $(document).ready(function(){
             .marquee('destroy')
             .bind('finished', mostrarMensajesMarquee)
             .html(texto)
-            .marquee({duration: 20000, duplicated:false});
+            .marquee({duration: 25000, duplicated:false});
     }
 
     $mwo = $('.marquee');
-    var cadena = '';
 
     $('.marquee').marquee({
         //speed in milliseconds of the marquee
-        speed: 20000,
+        duration: 25000,
         //gap in pixels between the tickers
         gap: 50,
         //time in milliseconds before the marquee will start animating
