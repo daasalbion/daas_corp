@@ -125,7 +125,7 @@
             <!-- /.navbar-collapse -->
         </nav>
 
-        <div id="page-wrapper" style="height: 433px">
+        <div id="page-wrapper" style="height: 460px">
 
         <div class="container-fluid">
 
@@ -150,8 +150,8 @@
                             <li id="mostrar_bloque_tragamonedas"><a  href="#tragamonedas">Tragamonedas</a></li>
                             <li id="mostrar_bloque_tragamonedas_sexy"><a href="#tragamonedas_sexy">Tragamonedas Sexy</a></li>
                             <li id="mostrar_bloque_tombola"><a href="#tombola">Tombola</a></li>
-                            <li id="mostrar_bloque_piropo1"><a href="#piropo1">Piropo 1</a></li>
-                            <li id="mostrar_bloque_piropo2"><a href="#piropo2">Piropo 2</a></li>
+                            <li id="mostrar_bloque_piropo1"><a href="#piropo1">Piropos Mensajes</a></li>
+                            <li id="mostrar_bloque_piropo2"><a href="#piropo2">Piropos Llamadas</a></li>
                             <li id="mostrar_bloque_video"><a href="#video">Video</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -163,7 +163,7 @@
                 <div class="col-xs-12">
                     <h3>Tragamonedas</h3>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover tabla_tragamonedas">
+                        <table class="table table-bordered table-hover tabla">
                             <thead>
                                 <tr>
                                     <th class="col-sm-1">Preview</th>
@@ -235,7 +235,7 @@
                 <div class="col-xs-12">
                     <h3>Tombola</h3>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-hover tabla">
                             <thead>
                                 <tr>
                                     <th class="col-sm-1">Preview</th>
@@ -299,9 +299,9 @@
             <!--piropos-->
             <div class="row" id="piropo1">
                 <div class="col-xs-12">
-                    <h3>Piropos 1</h3>
+                    <h3>Piropos Mensajes</h3>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-hover tabla">
                             <thead>
                                 <tr>
                                     <th class="col-sm-1">Preview</th>
@@ -314,35 +314,40 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td rowspan="2">
+                                    <td rowspan="4">
                                         <img class="juego_preview" src="/img/tvchat/interfaz/tvchat_piropo_preview.png">
                                     </td>
-                                    <td>
+                                    <td rowspan="2">
                                         <button id="cargar_piropo" class="btn btn-primary">Cargar</button>
-
                                     </td>
                                     <td>
                                         <button id="seleccionar_piropo" class="btn btn-primary" data-toggle="modal" data-target="#opciones_mensajes">
                                             Seleccionar
                                         </button>
                                     </td>
-                                    <td rowspan="2">
+                                    <td rowspan="4">
                                         <button id="jugarPiropo" class="btn btn-primary">Jugar</button>
                                     </td>
-                                    <td rowspan="2"></td>
-                                    <td rowspan="2">
+                                    <td rowspan="4"></td>
+                                    <td rowspan="4">
                                         <div id="historial_piropo">
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td rowspan="2">
+                                        <div id="WinElementsPiropo">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">
                                         <button id="cerrar_piropo" class="btn btn-primary">Quitar</button>
                                     </td>
+                                </tr>
+                                <tr>
                                     <td>
                                         <div>
-                                            <div id="WinElementsPiropo">
-                                            </div>
                                             <div class="premios">
                                                 <select id="premios_piropos" class="form-control">
                                                     <option>Premios</option>
@@ -360,9 +365,9 @@
 
             <div class="row" id="piropo2">
                 <div class="col-xs-12">
-                    <h3>Piropos 2</h3>
+                    <h3>Piropos Llamadas</h3>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-hover tabla">
                             <thead>
                                 <tr>
                                     <th class="col-sm-1">Preview</th>
@@ -438,7 +443,7 @@
                 <div class="col-xs-12">
                     <h3>Tragamonedas Sexy</h3>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-hover tabla">
                             <thead>
                                 <tr>
                                     <th class="col-sm-1">Preview</th>
@@ -472,9 +477,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <div id="WinElementsTragamonedasSexy"></div>
-                                    </td>
+                                    <td id="WinElementsTragamonedasSexy"></td>
                                 </tr>
                                 <tr>
                                     <td rowspan="6">
@@ -543,7 +546,7 @@
                 <div class="col-xs-12">
                     <h3>Video</h3>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-bordered table-hover tabla">
                             <thead>
                                 <tr>
                                     <th class="col-sm-1">Preview</th>

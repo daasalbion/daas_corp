@@ -283,7 +283,7 @@ p {
     margin: 0;
 }
 
-#WinElementsTragamonedas, #WinPhoneNumberTragamonedas, #WinElementsTombola, #WinPhoneNumberTombola{
+#WinElementsTragamonedas, #WinPhoneNumberTragamonedas, #WinElementsTombola, #WinPhoneNumberTombola, #WinElementsTragamonedasSexy{
     font-size: 16px;
     color: #ff0000;
     font-family: arial;
@@ -291,7 +291,7 @@ p {
     vertical-align: middle;
 }
 
-#WinElementsTombola, #WinPhoneNumberTombola{
+#WinElementsTombola, #WinPhoneNumberTombola, #WinElementsTragamonedasSexy, #WinPhoneNumberPiropo1{
 
     height: 51px;
 }
@@ -314,4 +314,7 @@ p {
 
 .jugando{
     background-color: #ff0000;
+}
+.tabla td, th{
+    height: 51px;
 }

@@ -810,14 +810,14 @@ $(document).ready(function(){
             .marquee('destroy')
             .bind('finished', mostrarMensajesMarquee)
             .html(texto)
-            .marquee({duration: 25000, duplicated:false});
+            .marquee({duration: 15000, duplicated:false});
     }
 
     $mwo = $('.marquee');
 
     $('.marquee').marquee({
         //speed in milliseconds of the marquee
-        duration: 25000,
+        duration: 15000,
         //gap in pixels between the tickers
         gap: 50,
         //time in milliseconds before the marquee will start animating

@@ -1026,13 +1026,7 @@ $(document).ready(function(){
 
             nuevoGanador = new ObjetoGanador( '', '', respuesta.juego, '', '' );
 
-            if( $('#WinElementsTragamonedasSexy p').length > 0 )
-                $('#WinElementsTragamonedasSexy p').remove();
-
-            $('#WinElementsTragamonedasSexy')
-                .append(
-                    $(document.createElement("p"))
-                );
+            $('#WinElementsTragamonedasSexy').empty();
 
             $('#WinElementsTragamonedasSexy').append(
 
@@ -1094,10 +1088,6 @@ $(document).ready(function(){
             tombola_buffer.push(nuevoGanador);
         }
         else if( respuesta.nombre_juego == "piropo" ){
-
-                /*if( $('#WinElementsPiropo p').length > 0 )
-                    $('#WinElementsPiropo p').remove();
-                */
 
                 $('#WinElementsPiropo').empty();
 
