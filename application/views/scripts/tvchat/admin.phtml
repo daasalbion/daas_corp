@@ -239,8 +239,8 @@
                             <thead>
                                 <tr>
                                     <th class="col-sm-1">Preview</th>
-                                    <th colspan="2" class="col-sm-2">Ganador</th>
                                     <th class="col-sm-1">Modulo</th>
+                                    <th colspan="2" class="col-sm-2">Ganador</th>
                                     <th class="col-sm-1">Jugar</th>
                                     <th class="col-sm-1">Acciones</th>
                                     <th class="col-sm-3">Historial</th>
@@ -251,14 +251,14 @@
                                     <td rowspan="4">
                                         <img class="juego_preview" src="/img/tvchat/interfaz/tvchat_tombola_preview.png">
                                     </td>
+                                    <td rowspan="2">
+                                        <button id="cargar_tombola" class="btn btn-primary">Cargar</button>
+                                    </td>
                                     <td>
                                         <button id="getWinElementsTombola" type="button" class="btn btn-primary">C/ Premio</button>
                                     </td>
                                     <td>
                                         <button id="getElementsTombola" type="button" class="btn btn-primary">S/ Premio</button>
-                                    </td>
-                                    <td rowspan="2">
-                                        <button id="cargar_tombola" class="btn btn-primary">Cargar</button>
                                     </td>
                                     <td rowspan="4">
                                         <button id="jugarTombola" class="btn btn-primary">Jugar</button>
@@ -275,8 +275,8 @@
                                     <td colspan="2" id="WinElementsTombola"></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" id="WinPhoneNumberTombola"></td>
                                     <td rowspan="2"><button id="cerrar_tombola" class="btn btn-primary">Quitar</button></td>
+                                    <td colspan="2" id="WinPhoneNumberTombola"></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
@@ -442,8 +442,8 @@
                             <thead>
                                 <tr>
                                     <th class="col-sm-1">Preview</th>
-                                    <th class="col-sm-2">Ganador</th>
                                     <th class="col-sm-1">Modulo</th>
+                                    <th class="col-sm-2">Ganador</th>
                                     <th class="col-sm-1">Jugar</th>
                                     <th class="col-sm-1">Acciones</th>
                                     <th class="col-sm-3">Historial</th>
@@ -451,29 +451,33 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td rowspan="4">
+                                    <td rowspan="8">
                                         <img class="juego_preview" src="/img/tvchat/interfaz/tvchat_tragamonedas_preview.png">
+                                    </td>
+                                    <td rowspan="4">
+                                        <button id="cargar_tragamonedas_sexy" class="btn btn-primary">Cargar</button>
                                     </td>
                                     <td>
                                         <button id="getWinElementsTragamonedasSexy" type="button" class="btn btn-primary">Seleccionar</button>
                                     </td>
-                                    <td rowspan="2">
-                                        <button id="cargar_tragamonedas_sexy" class="btn btn-primary">Cargar</button>
-                                    </td>
-                                    <td rowspan="4">
+                                    <td rowspan="8">
                                         <button id="jugarTragamonedasSexy" class="btn btn-primary">Jugar</button>
                                     </td>
-                                    <td>
+                                    <td rowspan="2">
                                         <button id="stopRouletteSexy1" class="btn btn-primary">Parar 1</button>
                                     </td>
-                                    <td rowspan="4">
+                                    <td rowspan="8">
                                         <div id="historial_tragamonedas_sexy">
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td rowspan="3">
+                                    <td>
                                         <div id="WinElementsTragamonedasSexy"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="6">
                                         <div id="selectWinElements" class="selectWinElements">
                                             <div class="stop_image_number_value param_label1">
                                                 <span class="param_name">Tira 1: </span> <span class="stop_image_number_param1"></span>
@@ -507,23 +511,27 @@
                                             </select
                                         </div>
                                     </td>
-                                    <td>
+                                    <td rowspan="2">
                                         <button id="stopRouletteSexy2" class="btn btn-primary">Parar 2</button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td rowspan="2">
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">
                                         <button id="cerrar_tragamonedas_sexy" class="btn btn-primary">Quitar</button>
                                     </td>
-                                    <td>
+                                    <td rowspan="2">
                                         <button id="stopRouletteSexy3" class="btn btn-primary">Parar 3</button>
                                     </td>
                                 </tr>
+                                <tr></tr>
                                 <tr>
-                                    <td>
+                                    <td rowspan="2">
                                         <button id="mostrarGanadorTragamonedasSexy" class="btn btn-primary">Mostrar</button>
                                     </td>
                                 </tr>
+                                <tr></tr>
                             </tbody>
                         </table>
                     </div>
