@@ -2,28 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="probar ahora 2&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/20.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/30.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/40.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/50.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/60.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/70.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/80.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/50.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/20.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/10.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/90.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/0.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/0_viejo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/0.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/1.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/2.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/3.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/80.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/30.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/60.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/TvchatController.php" afterPath="$PROJECT_DIR$/application/controllers/TvchatController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/4.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/5.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/0.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/2.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/2.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/6.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/7.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/7.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/configs/application.ini" afterPath="$PROJECT_DIR$/application/configs/application.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/5.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/5.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/tvchat/tvchat.child.js" afterPath="$PROJECT_DIR$/public/js/tvchat/tvchat.child.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/0.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/0_viejo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/1.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/3.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/7.png" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
     </list>
     <ignored path="www.entermovil.com.py.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,15 +47,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TvchatController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TvchatController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/TvchatController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="346" column="41" selection-start="12331" selection-end="12331" vertical-scroll-proportion="-12.423077" vertical-offset="5559" max-vertical-offset="11628">
+            <state line="241" column="0" selection-start="8541" selection-end="8541" vertical-scroll-proportion="0.5171103" vertical-offset="3825" max-vertical-offset="11628">
               <folding>
-                <marker date="1408306514480" expanded="true" signature="12979:13101" placeholder="select * fro..tvchat_mensajes..." />
-                <marker date="1408306514480" expanded="true" signature="13869:13923" placeholder="select * fro..obtener_mensajes..." />
-                <marker date="1408306514480" expanded="true" signature="15309:15590" placeholder="select id_hi..historial..." />
-                <marker date="1408306514480" expanded="true" signature="15990:16356" placeholder="select id_hi..historial..." />
+                <marker date="1408376518295" expanded="true" signature="12980:13102" placeholder="select * fro..tvchat_mensajes..." />
+                <marker date="1408376518295" expanded="true" signature="13870:13924" placeholder="select * fro..obtener_mensajes..." />
+                <marker date="1408376518295" expanded="true" signature="15310:15591" placeholder="select id_hi..historial..." />
+                <marker date="1408376518295" expanded="true" signature="15991:16357" placeholder="select id_hi..historial..." />
               </folding>
             </state>
           </provider>
@@ -63,7 +64,7 @@
       <file leaf-file-name="tvchat.manager.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="873" column="30" selection-start="25435" selection-end="25435" vertical-scroll-proportion="0.0" vertical-offset="14722" max-vertical-offset="22729">
+            <state line="873" column="30" selection-start="25435" selection-end="25435" vertical-scroll-proportion="0.0" vertical-offset="14841" max-vertical-offset="22729">
               <folding />
             </state>
           </provider>
@@ -72,16 +73,16 @@
       <file leaf-file-name="admin.phtml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/admin.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="25" selection-start="3807" selection-end="3807" vertical-scroll-proportion="0.0" vertical-offset="1173" max-vertical-offset="10727">
+            <state line="84" column="25" selection-start="3807" selection-end="3807" vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="10863">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tvchat.child.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="tvchat.child.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/tvchat/tvchat.child.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="449" column="43" selection-start="21940" selection-end="21940" vertical-scroll-proportion="0.28363636" vertical-offset="3023" max-vertical-offset="3621">
+            <state line="183" column="30" selection-start="11163" selection-end="11163" vertical-scroll-proportion="0.0" vertical-offset="2589" max-vertical-offset="3621">
               <folding>
                 <element signature="e#2773#2922#0" expanded="false" />
                 <element signature="e#10328#10904#0" expanded="false" />
@@ -158,7 +159,7 @@
       <file leaf-file-name="roulette.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/plugins/roulette.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="175" column="23" selection-start="5145" selection-end="5145" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3400">
+            <state line="178" column="60" selection-start="5279" selection-end="5279" vertical-scroll-proportion="0.0" vertical-offset="298" max-vertical-offset="3400">
               <folding />
             </state>
           </provider>
@@ -167,7 +168,7 @@
       <file leaf-file-name="tvchat.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/tvchat/tvchat.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="286" column="31" selection-start="5763" selection-end="5763" vertical-scroll-proportion="-11.461538" vertical-offset="4564" max-vertical-offset="7412">
+            <state line="286" column="31" selection-start="5763" selection-end="5763" vertical-scroll-proportion="0.0" vertical-offset="4862" max-vertical-offset="7412">
               <folding />
             </state>
           </provider>
@@ -243,11 +244,11 @@
         <option value="$PROJECT_DIR$/public/css/plugins/sb-admin.css" />
         <option value="$PROJECT_DIR$/application/views/scripts/tvchat/tv.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/tvchat/admin.phtml" />
-        <option value="$PROJECT_DIR$/application/controllers/TvchatController.php" />
         <option value="$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js" />
         <option value="$PROJECT_DIR$/application/configs/application.ini" />
         <option value="$PROJECT_DIR$/public/css/tvchat/tvchat.css" />
         <option value="$PROJECT_DIR$/public/js/tvchat/tvchat.child.js" />
+        <option value="$PROJECT_DIR$/application/controllers/TvchatController.php" />
       </list>
     </option>
   </component>
@@ -306,7 +307,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -389,6 +389,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tvchat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tragamonedas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.entermovil.com.py" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.entermovil.desarrollodaas.com.py" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -413,6 +439,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -724,16 +751,16 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23791541" sideWeight="0.4787776" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24093656" sideWeight="0.4788494" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27685326" sideWeight="0.0" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23791541" sideWeight="0.5212224" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24093656" sideWeight="0.5211506" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23187311" sideWeight="0.37181664" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3322034" sideWeight="0.0" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18781726" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -793,6 +820,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/css/tvchat/tvchat.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="286" column="31" selection-start="5763" selection-end="5763" vertical-scroll-proportion="0.0" vertical-offset="4862" max-vertical-offset="7412">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="130" column="24" selection-start="3530" selection-end="3530" vertical-scroll-proportion="0.0" vertical-offset="1729" max-vertical-offset="2346">
@@ -997,16 +1031,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/tv.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="70" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="697">
-          <folding />
-        </state>
+        <state line="25" column="70" selection-start="976" selection-end="976" vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="697" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/WaptwoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="634" column="4" selection-start="26170" selection-end="34152" vertical-scroll-proportion="0.0" vertical-offset="10778" max-vertical-offset="61642">
-          <folding />
-        </state>
+        <state line="634" column="4" selection-start="26170" selection-end="34152" vertical-scroll-proportion="0.0" vertical-offset="10778" max-vertical-offset="61642" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js">
@@ -1030,26 +1060,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/tvchat/tvchat.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="286" column="31" selection-start="5763" selection-end="5763" vertical-scroll-proportion="-11.461538" vertical-offset="4564" max-vertical-offset="7412">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/TvchatController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="346" column="41" selection-start="12331" selection-end="12331" vertical-scroll-proportion="-12.423077" vertical-offset="5559" max-vertical-offset="11628">
-          <folding>
-            <marker date="1408306514480" expanded="true" signature="12979:13101" placeholder="select * fro..tvchat_mensajes..." />
-            <marker date="1408306514480" expanded="true" signature="13869:13923" placeholder="select * fro..obtener_mensajes..." />
-            <marker date="1408306514480" expanded="true" signature="15309:15590" placeholder="select id_hi..historial..." />
-            <marker date="1408306514480" expanded="true" signature="15990:16356" placeholder="select id_hi..historial..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/plugins/roulette.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="23" selection-start="5145" selection-end="5145" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3400">
+        <state line="286" column="31" selection-start="5763" selection-end="5763" vertical-scroll-proportion="0.0" vertical-offset="4862" max-vertical-offset="7412">
           <folding />
         </state>
       </provider>
@@ -1063,7 +1074,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/tvchat/tvchat.child.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="449" column="43" selection-start="21940" selection-end="21940" vertical-scroll-proportion="0.28363636" vertical-offset="3023" max-vertical-offset="3621">
+        <state line="183" column="30" selection-start="11163" selection-end="11163" vertical-scroll-proportion="0.0" vertical-offset="2589" max-vertical-offset="3621">
           <folding>
             <element signature="e#2773#2922#0" expanded="false" />
             <element signature="e#10328#10904#0" expanded="false" />
@@ -1132,6 +1143,25 @@
             <element signature="n#!!block;n#cargarModuloPorDefecto#0" expanded="false" />
             <element signature="e#34555#34614#0" expanded="false" />
             <element signature="e#34649#34796#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/plugins/roulette.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="178" column="60" selection-start="5279" selection-end="5279" vertical-scroll-proportion="0.0" vertical-offset="298" max-vertical-offset="3400">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/TvchatController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="241" column="0" selection-start="8541" selection-end="8541" vertical-scroll-proportion="0.5171103" vertical-offset="3825" max-vertical-offset="11628">
+          <folding>
+            <marker date="1408376518295" expanded="true" signature="12980:13102" placeholder="select * fro..tvchat_mensajes..." />
+            <marker date="1408376518295" expanded="true" signature="13870:13924" placeholder="select * fro..obtener_mensajes..." />
+            <marker date="1408376518295" expanded="true" signature="15310:15591" placeholder="select id_hi..historial..." />
+            <marker date="1408376518295" expanded="true" signature="15991:16357" placeholder="select id_hi..historial..." />
           </folding>
         </state>
       </provider>

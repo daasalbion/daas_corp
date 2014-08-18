@@ -242,7 +242,7 @@ class TvchatController extends Zend_Controller_Action{
 
             for( $i = 1; $i <= $nro; $i++ ){
 
-                $elementos_ganadores[] = rand( 0, 3 );
+                $elementos_ganadores[] = rand( 0, 99 );
             }
 
             //numero de celular randomico
