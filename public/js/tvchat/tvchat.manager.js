@@ -415,8 +415,8 @@ $(document).ready(function(){
 
         nuevoGanador.premio = premio_piropo.premio_texto;
         //borrar elemento sorteado
-        var sorteo = $('#WinElementsPiropo');
-        sorteo.empty();
+        $('#WinElementsPiropo').empty();
+        $('#WinPhoneNumberPiropo').empty();
 
         var params = {
 
@@ -447,8 +447,7 @@ $(document).ready(function(){
 
         nuevoGanador = piropos2_buffer.pop();
 
-        var sorteo = $('#WinElementsPiropo2');
-        sorteo.empty();
+        $('#WinElementsPiropo2').empty();
 
         var params = {
 
@@ -1095,14 +1094,20 @@ $(document).ready(function(){
                     .append(
                         $(document.createElement("p"))
                     );
+                $('#WinPhoneNumberPiropo')
+                    .append(
+                        $(document.createElement("p"))
+                    );
 
-                var WinElementsPiropo = $('#WinElementsPiropo p');
-                WinElementsPiropo
-                            .append( respuesta.cel_ganador + ' - ' + respuesta.combinacion_ganadora )
-                            .addClass("numeros_sorteados")
+                $('#WinElementsPiropo p')
+                            .append( respuesta.combinacion_ganadora )
+                            .addClass("numeros_sorteados");
+
+                $('#WinPhoneNumberPiropo p')
+                            .append( respuesta.cel_ganador )
+                            .addClass("numeros_sorteados");
 
                 piropos_buffer.push(respuesta);
-
 
         }
         else if( respuesta.juego == "piropo2" ){
@@ -1152,7 +1157,6 @@ $(document).ready(function(){
         var opciones_mensajes = $('#mensajes');
         $.each( mensajero_buffer, function( i, mensaje ) {
 
-            //alert(i);
             opciones_mensajes.append(
 
                 $(document.createElement("tr"))

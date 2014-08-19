@@ -79,7 +79,7 @@ class AuthController extends Zend_Controller_Action
                         'daas' => array('clave' => 'daas', 'nombre' => 'Derlis Arguello'),
                         'redaccion' => array('clave' => 'enter4589', 'nombre' => 'Redaccion Entermovil'),
                         'linda' => array('clave' => 'poletti', 'nombre' => 'Linda Poletti'),
-                        'entermovil' => array('clave' => 'enter4589', 'nombre' => 'Entermovil S.A.'),
+                        //'entermovil' => array('clave' => 'enter4589', 'nombre' => 'Entermovil S.A.'),
                         'content' => array('clave' => 'magic', 'nombre' => 'Content Magic'),
                         'disney' => array('clave' => '965', 'nombre' => 'Radio Disney'),
                     );
