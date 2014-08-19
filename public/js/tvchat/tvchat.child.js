@@ -162,15 +162,15 @@ function cargarJuego( params ){
 
             tira_imagenes1.append(
                 $(document.createElement("img"))
-                    .attr('src', "/img/tvchat/tragamonedas/" +imagenes_tiras1[i]+'.png')
+                    .attr('src', '/img/tvchat/tragamonedas/' + imagenes_tiras1[i] + '.png')
             );
             tira_imagenes2.append(
                 $(document.createElement("img"))
-                    .attr('src', "/img/tvchat/tragamonedas/" +imagenes_tiras2[i]+'.png')
+                    .attr('src', '/img/tvchat/tragamonedas/' + imagenes_tiras2[i] + '.png')
             );
             tira_imagenes3.append(
                 $(document.createElement("img"))
-                    .attr('src', "/img/tvchat/tragamonedas/" +imagenes_tiras3[i]+'.png')
+                    .attr('src', '/img/tvchat/tragamonedas/' + imagenes_tiras3[i] + '.png')
             );
         }
 
@@ -762,14 +762,15 @@ function cargarModulo( params ){
                 )
         )
 
-        for( var i= 0; i < 2; i++ ){
+        var ul = $('#interactive_fotos ul');
 
-            $('#interactive_fotos ul')
-                .append(
+        for( var i= 1; i <= 5; i++ ){
+
+                ul.append(
                     $(document.createElement("li"))
                         .append(
                             $(document.createElement("img"))
-                                .attr('src', '/img/tvchat/fotos/foto_1.png')
+                                .attr('src', '/img/tvchat/fotos/foto_' + i + '.png')
                         )
                 );
         }
