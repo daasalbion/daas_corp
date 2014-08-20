@@ -1,5 +1,5 @@
 //ventanas
-var tvchat = null;
+//var tvchat = null;
 var tvhot = null;
 //elementos ganadores vamos a cambiar
 var tragamonedas_elementos_ganadores = [];
@@ -72,7 +72,7 @@ $(document).ready(function(){
 
     //abrir ventana principal
     $('#abrir_ventana_principal a').click(function(){
-        if( tvchat == null ){
+        //if( tvchat == null ){
 
             tvchat = window.open("/tvchat/tv",
                 "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, " +
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 
             $('#abrir_ventana_principal').addClass('disabled');
-        }
+        //}
 
         habilitarBotones( 1, "tvchat" );
 
@@ -91,6 +91,13 @@ $(document).ready(function(){
         tvhot = window.open("/tvchat/tvhot",
             "_blank", "width=720, height=576, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
 
+        var params = {
+
+            accion: "mostrar",
+            modulo: "tvhot"
+        }
+
+        tvchat.cargarModulo( params );
     });
 
     //cerrar ventana principal

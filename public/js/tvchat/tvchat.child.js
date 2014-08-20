@@ -783,11 +783,17 @@ function cargarModulo( params ){
     }
     else if( params.accion == "ocultar" && params.modulo == "marquee" ){
 
-        console.log('llego ak');
-        //$mwo.trigger('pause');
         var eliminar = $('.js-marquee-wrapper');
         eliminar.remove();
         $mwo.marquee('destroy');
+    }
+    else if( params.accion == "mostrar" && params.modulo == "tvhot" ){
+
+        //ocultamos y paramos la ventana principal para cargar el tvhot
+        $('.tvchat_screen').hide();
+        $('.js-marquee-wrapper').remove();
+        $mwo.marquee('destroy');
+
     }
 };
 

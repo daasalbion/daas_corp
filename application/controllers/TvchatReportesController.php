@@ -7,6 +7,20 @@ class TvchatReportesController extends Zend_Controller_Action{
 
         'daas' => array('clave' => 'daas', 'nombre' => 'DAAS'),
     );
+    var $meses = array(
+        'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Setiembre', 'Octubre', 'Noviembre', 'Diciembre'
+    );
+    var $dias_semana = array(
+        'Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'
+    );
+    var $rango_seleccion = array(
+        array('anho' => 2014, 'mes' => 7, 'descripcion' => '2014 - Julio')
+    );
+    var $numeros = array('6767', '8540');
+    var $carriers = array(
+        1 => 'PERSONAL',
+        2 => 'TIGO'
+    );
 
     public function init(){
         /* Initialize action controller here */
@@ -19,9 +33,9 @@ class TvchatReportesController extends Zend_Controller_Action{
         $this->logger->addWriter($writer);
         $this->logger->setEventItem('remoteAddr', $_SERVER['REMOTE_ADDR']);
 
-        //$this->_helper->layout->disableLayout();
+        $this->_helper->layout->disableLayout();
         //Habilitar layouts
-        $this->_helper->_layout->setLayout('tvchat-reporte-layout');
+        //$this->_helper->_layout->setLayout('tvchat-reporte-layout');
     }
 
     public function getLog(){
@@ -68,7 +82,7 @@ class TvchatReportesController extends Zend_Controller_Action{
                             'FULL'
                         );
 
-                        $this->_redirect('/tvchat-reportes/admin/');
+                        $this->_redirect('/tvchat-reportes/reporte/');
 
                     } else {
 
@@ -101,13 +115,69 @@ class TvchatReportesController extends Zend_Controller_Action{
         $this->_redirect('/tvchat-reportes/login');
     }
 
-    public function adminAction(){
+    public function reporteAction(){
 
         $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
         if( !isset( $namespace->usuario ) ){
 
             $this->_redirect('/tvchat-reportes/login');
         }
+
+        //$this->_helper->_layout->setLayout('tvchat-reporte-layout');
+        $this->view->headLink()->setStylesheet('/css/reportes_base.css', 'screen');
+        $this->_helper->_layout->setLayout('reporte-layout');
+        $this->view->headScript()->appendFile('/js/reportes_suscriptos.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('/css/reportes_suscriptos.css', 'screen');
+        $this->view->headTitle()->append('Suscriptos');
+
+        $fecha_seleccionada = $this->_getParam('fecha', null);
+
+        if(!is_null($fecha_seleccionada)) {
+
+            list($anho, $mes) = explode('-', $fecha_seleccionada);
+            $mes = (int)$mes;
+
+        } else {
+
+            $anho = date('Y');
+            $mes = date('n');
+
+        }
+
+        $this->_setupRangoSeleccion( $anho, $mes );
+
+        $this->view->nombre_mes = $this->meses[$mes-1];
+
+        $this->view->cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+
+        $this->view->anho = $anho;
+
+        $this->view->mes = $mes;
+
+        $this->view->dia_hoy = date('j');
+
+        $this->view->dias_semana = $this->dias_semana;
+
+        $this->view->nombres_dias_del_mes = $this->cargarNombresDiasDelMes( $anho, $mes );
+
+        $this->view->rango_seleccion = $this->rango_seleccion;
+
+        $datos = array();
+
+        foreach($this->numeros as $numero) {
+
+            $resultado = $this->_cargarSuscriptosNumero( $numero, $anho, $mes );
+            $datos[$numero] = $resultado[$numero];
+
+        }
+
+        $this->view->numeros = $this->numeros;
+        $this->view->datos = $datos;
+        $this->view->carriers = $this->carriers;
+    }
+
+    public function pruebaAction(){
+
     }
 
     private function _consulta( $accion, $datos = null ){
@@ -156,5 +226,192 @@ class TvchatReportesController extends Zend_Controller_Action{
             }
         }
     }
+
+    private function _setupRangoSeleccion($anho_seleccionado, $mes_seleccionado) {
+
+        $anho_inicio = $this->rango_seleccion[0]['anho'];
+        $mes_inicio = (int)$this->rango_seleccion[0]['mes'];
+        $this->logger->info('anho_inicio:[' . $anho_inicio . '] mes_inicio:[' . $mes_inicio . ']');
+
+        $this->rango_seleccion[0]['selected'] = '';
+        if($anho_inicio == $anho_seleccionado && $mes_inicio == $mes_seleccionado) {
+            $this->rango_seleccion[0]['selected'] = 'selected';
+        }
+
+        $anho_actual = date('Y');
+        $mes_actual = date('n');
+        $this->logger->info('anho_actual:[' . $anho_actual . '] mes_actual:[' . $mes_actual . ']');
+
+        if($anho_inicio == $anho_actual && $mes_inicio == $mes_actual) return;
+
+        //return;
+
+        $continuar = true;
+        $loops = 0;
+        while($continuar && $loops<30) {
+
+
+            if($mes_inicio == 12) {
+
+                $mes_inicio = 1;
+                $mes = $mes_inicio;
+
+                $anho_inicio++;
+                $anho = $anho_inicio;
+
+            } else {
+
+                $mes_inicio++;
+                $mes = $mes_inicio;
+
+                $anho = $anho_inicio;
+            }
+
+            $this->rango_seleccion[] = array(
+                'anho' => $anho,
+                'mes' => $mes,
+                'descripcion' => $anho . ' - ' . $this->meses[$mes-1],
+                'selected' => (($anho == $anho_seleccionado && $mes == $mes_seleccionado) ? 'selected' : '')
+            );
+
+
+            if($anho == $anho_actual && $mes == $mes_actual) {
+                $continuar = false;
+            }
+
+            $this->logger->info('continuar:[' . ($continuar ? 'SI' : 'NO') . ']');
+
+            $loops++;
+        }
+
+        $this->logger->info('rango_seleccion:[' . print_r($this->rango_seleccion, true) . ']');
+    }
+
+    private function cargarNombresDiasDelMes( $anho, $mes ) {
+
+        $cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+        $nombre_dias_del_mes = array();
+        for($i=1; $i<=$cantidad_dias; $i++) {
+            $dia_semana =  date('w', mktime(0, 0, 0, $mes, $i, $anho));
+            $nombre_dias_del_mes[$i] = array(
+                'dia_semana' => $dia_semana,
+                'nombre_dia' => $this->dias_semana[$dia_semana]
+            );
+        }
+
+        return $nombre_dias_del_mes;
+    }
+
+    private function _cargarSuscriptosNumero($numero, $anho, $mes) {
+
+        $resultado = array();
+
+        $bootstrap = $this->getInvokeArg('bootstrap');
+        $options = $bootstrap->getOptions();
+
+        $db = Zend_Db::factory(new Zend_Config($options['resources']['db']));
+        $db->getConnection();
+
+        $sql = 'select T1.*, count(T2.id_suscripto)::integer as total_suscriptos from (
+            select IP.alias, IP.id_promocion, IP.id_carrier
+            from info_promociones IP
+            where id_promocion in (88,89) and numero = ?
+            group by 1,2,3
+        ) T1 join (
+            select IP.id_promocion, IP.id_carrier, IP.cel, IP.id_suscripto
+            from promosuscripcion.suscriptos IP
+            where id_promocion in (88,89)
+        ) T2 on T1.id_promocion = T2.id_promocion and T1.id_carrier = T2.id_carrier
+        group by 1,2,3 order by 3,2 desc';
+
+        $rs_suscriptos = $db->fetchAll($sql, array($numero));
+        $promociones = array();
+        $suscriptos_x_promo = array();
+        $total_suscriptos = 0;
+
+        foreach($rs_suscriptos as $fila) {
+
+            $promociones[] = $fila;
+            $total_suscriptos += $fila['total_suscriptos'];
+        }
+
+        $resultado[$numero]['total_suscriptos'] = $total_suscriptos;
+
+        $resultado[$numero]['promociones'] = $promociones;
+
+        $sql = 'select extract(day from ts_local)::integer as dia_mes, extract(dow from ts_local)::integer as dia_semana, ts_local::date as fecha, id_promocion, id_carrier, accion, count(*) as total
+        from  promosuscripcion.log_suscriptos
+        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(88,89) group by 1 order by 1) and accion = \'ALTA\'
+        group by 1,2,3,4,5,6
+        union
+        select extract(day from ts_local)::integer as dia_mes, extract(dow from ts_local)::integer as dia_semana, ts_local::date as fecha, id_promocion, id_carrier, accion, count(*) as total
+        from promosuscripcion.log_suscriptos
+        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(88,89) group by 1 order by 1) and accion = \'BAJA\'
+        group by 1,2,3,4,5,6
+        order by 1,2,3,4,5';
+
+        $rs_suscriptos = $db->fetchAll($sql, array($anho, $mes, $numero, $anho, $mes, $numero));
+
+        $altas_bajas_x_mes = array(
+            'TOTALES_MES' => array(
+                'TOTAL_ALTA' => 0,
+                'TOTAL_BAJA' => 0,
+                'datos' => array()
+            )
+        );
+
+        $cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+        for($i=1; $i<=$cantidad_dias; $i++) {
+            $altas_bajas_x_mes['TOTALES_MES']['datos'][$i] = array(
+                'ALTA' => 0, 'BAJA' => 0
+            );
+        }
+
+        foreach($rs_suscriptos as $fila) {
+
+            if(!isset($altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']])) {
+
+                $altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']] = array(
+                    'TOTAL_ALTA' => 0,
+                    'TOTAL_BAJA' => 0,
+                    'datos' => array()
+                );
+
+                for($i=1; $i<=$cantidad_dias; $i++) {
+
+                    $altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']]['datos'][$i] = array(
+                        'ALTA' => 0, 'BAJA' => 0
+                    );
+                }
+            }
+
+            if(!isset($altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']]['datos'][$fila['dia_mes']])) {
+
+                $altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']]['datos'][$fila['dia_mes']] = array(
+                    'ALTA' => 0, 'BAJA' => 0
+                );
+            }
+
+            $altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']]['datos'][$fila['dia_mes']][$fila['accion']] = $fila['total'];
+
+            $altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']]['TOTAL_'.$fila['accion']] += $fila['total'];
+
+            if(!isset($altas_bajas_x_mes['TOTALES_MES']['datos'][$fila['dia_mes']])) {
+
+                $altas_bajas_x_mes['TOTALES_MES']['datos'][$fila['dia_mes']] = array(
+                    'ALTA' => 0, 'BAJA' => 0
+                );
+            }
+
+            $altas_bajas_x_mes['TOTALES_MES']['datos'][$fila['dia_mes']][$fila['accion']] += $fila['total'];
+            $altas_bajas_x_mes['TOTALES_MES']['TOTAL_'.$fila['accion']] += $fila['total'];
+
+        }
+
+        $resultado[$numero]['altas_bajas_x_mes'] = $altas_bajas_x_mes;
+
+        return $resultado;
+    }
+
 }
 

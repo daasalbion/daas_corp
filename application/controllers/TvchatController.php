@@ -190,7 +190,6 @@ class TvchatController extends Zend_Controller_Action{
         $this->view->headScript()->appendFile('/js/plugins/bootstrap.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.manager.js', 'text/javascript');
-        $this->view->headScript()->appendFile('/js/tvchat/tvchat.marquee.manager.js', 'text/javascript');
         $this->logger->info("setup");
     }
 
@@ -672,6 +671,11 @@ class TvchatController extends Zend_Controller_Action{
                 exit;
             }
         }
+    }
+
+    public function reporteAction(){
+
+
     }
 
 }
