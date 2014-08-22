@@ -46,11 +46,11 @@
         <div id="header_menu">
             <ul class="horizontal_list">
 
-                <?php if($this->infoSesion()->accesoPermitido('resumen-cobros')): ?>
+                <?php if($this->infoSesionTvchat()->accesoPermitido('resumen-cobros')): ?>
                 <li><a id="link_reportes_resumen" href="/tvchat-reportes/reporte/">Resumen</a></li>
                 <?php endif; ?>
 
-                <?php if($this->infoSesion()->accesoPermitido('pautas')): ?>
+                <?php if($this->infoSesionTvchat()->accesoPermitido('pautas')): ?>
                 <li><a id="link_reportes_pautas" href="/tvchat-reportes/reporte-x-hora/">Suscriptos X Hora</a></li>
                 <?php endif; ?>
 

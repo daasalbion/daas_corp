@@ -33,9 +33,9 @@ class TvchatReportesController extends Zend_Controller_Action{
         $this->logger->addWriter($writer);
         $this->logger->setEventItem('remoteAddr', $_SERVER['REMOTE_ADDR']);
 
-        $this->_helper->layout->disableLayout();
+        //$this->_helper->layout->disableLayout();
         //Habilitar layouts
-        //$this->_helper->_layout->setLayout('tvchat-tvchat-reporte-provisorio-layout');
+        $this->_helper->_layout->setLayout('tvchat-reporte-provisorio-layout');
     }
 
     public function getLog(){
@@ -168,6 +168,7 @@ class TvchatReportesController extends Zend_Controller_Action{
         foreach($this->numeros as $numero) {
 
             $resultado = $this->_cargarSuscriptosNumero( $numero, $anho, $mes );
+            //print_r($resultado);exit;
             $datos[$numero] = $resultado[$numero];
 
         }
@@ -179,7 +180,7 @@ class TvchatReportesController extends Zend_Controller_Action{
 
     public function reporteXHoraAction() {
 
-        $namespace = new Zend_Session_Namespace("entermovil");
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
 
         if( !isset( $namespace->usuario ) ){
 
