@@ -265,9 +265,9 @@ function cargarJuego( params ){
                 )
         )
                               //0    1    2    3    4    5    6    7     8        9        10       11
-        var imagenes_tiras1 = ['zapato', 'bombacha', 'portacena'];
-        var imagenes_tiras2 = ['zapato', 'bombacha', 'portacena'];
-        var imagenes_tiras3 = ['zapato', 'bombacha', 'portacena'];
+        var imagenes_tiras1 = ['zapato', 'bombacha', 'portacena', 'pantalon', 'short', 'vestido'];
+        var imagenes_tiras2 = ['zapato', 'bombacha', 'portacena', 'pantalon', 'short', 'vestido'];
+        var imagenes_tiras3 = ['zapato', 'bombacha', 'portacena', 'pantalon', 'short', 'vestido'];
 
         var tira_imagenes1 = $('#tira_imagenes1');
         var tira_imagenes2 = $('#tira_imagenes2');
@@ -512,10 +512,13 @@ function jugarJuego( params ){
         $('#linea').empty();
 
         p['stopImageNumber'] = Number(elementos_ganadores[0]);
+        p['speed'] = 40;
         rouletter1.roulette( 'option', p );
         p['stopImageNumber'] = Number(elementos_ganadores[1]);
+        p['speed'] = 30;
         rouletter2.roulette( 'option', p );
         p['stopImageNumber'] = Number(elementos_ganadores[2]);
+        p['speed'] = 20;
         rouletter3.roulette( 'option', p );
 
         rouletter1.roulette('start');

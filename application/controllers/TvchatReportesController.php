@@ -16,7 +16,7 @@ class TvchatReportesController extends Zend_Controller_Action{
     var $rango_seleccion = array(
         array('anho' => 2014, 'mes' => 7, 'descripcion' => '2014 - Julio')
     );
-    var $numeros = array('6767', '8540');
+    var $numeros = array( '6767', '8540' );
     var $carriers = array(
         1 => 'PERSONAL',
         2 => 'TIGO'
@@ -35,7 +35,7 @@ class TvchatReportesController extends Zend_Controller_Action{
 
         $this->_helper->layout->disableLayout();
         //Habilitar layouts
-        //$this->_helper->_layout->setLayout('tvchat-reporte-layout');
+        //$this->_helper->_layout->setLayout('tvchat-tvchat-reporte-provisorio-layout');
     }
 
     public function getLog(){
@@ -123,10 +123,11 @@ class TvchatReportesController extends Zend_Controller_Action{
             $this->_redirect('/tvchat-reportes/login');
         }
 
-        //$this->_helper->_layout->setLayout('tvchat-reporte-layout');
+        //$this->_helper->_layout->setLayout('tvchat-tvchat-reporte-provisorio-layout');
+        $this->_helper->_layout->setLayout('tvchat-reporte-provisorio-layout');
+
         $this->view->headLink()->setStylesheet('/css/reportes_base.css', 'screen');
-        $this->_helper->_layout->setLayout('reporte-layout');
-        $this->view->headScript()->appendFile('/js/reportes_suscriptos.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat_reportes_suscriptos.js', 'text/javascript');
         $this->view->headLink()->appendStylesheet('/css/reportes_suscriptos.css', 'screen');
         $this->view->headTitle()->append('Suscriptos');
 
@@ -174,6 +175,197 @@ class TvchatReportesController extends Zend_Controller_Action{
         $this->view->numeros = $this->numeros;
         $this->view->datos = $datos;
         $this->view->carriers = $this->carriers;
+    }
+
+    public function reporteXHoraAction() {
+
+        $namespace = new Zend_Session_Namespace("entermovil");
+
+        if( !isset( $namespace->usuario ) ){
+
+            $this->_redirect('/tvchat-reportes/login');
+        }
+
+        //$this->_helper->_layout->setLayout('tvchat-tvchat-reporte-provisorio-layout');
+        $this->_helper->_layout->setLayout('tvchat-reporte-provisorio-layout');
+
+        $this->view->headLink()->setStylesheet('/css/reportes_base.css', 'screen');
+        $this->view->headLink()->appendStylesheet('/css/reportes_resumen.css', 'screen');
+        $this->view->headScript()->appendFile('http://code.jquery.com/ui/1.10.0/jquery-ui.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css');
+        $this->view->headScript()->appendFile('/js/tvchat_reportes_resumen.js', 'text/javascript');
+        $this->view->headTitle()->append('Resumen Cobros');
+
+        $fecha_seleccionada = $this->_getParam('fecha', null);
+
+        $this->view->fecha = $fecha_seleccionada;
+
+        if(!is_null($fecha_seleccionada)) {
+
+            list( $anho, $mes, $dia ) = explode('-', $fecha_seleccionada);
+            $mes = (int)$mes;
+            $dia = (int)$dia;
+
+        } else {
+
+            $anho = date('Y');
+            $mes = date('n');
+            $dia = date('j');
+
+        }
+
+        $cadena_mes = $mes < 10 ? '0' . $mes : $mes;
+        $fecha_seleccionada = $anho . '-' . $cadena_mes. '-' . $dia;
+
+        $horas_exactas = array(
+            '0' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '1' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '2' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '3' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '4' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '5' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '6' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '7' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '8' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '9' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '10' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '11' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '12' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '13' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '14' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '15' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '16' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '17' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '18' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '19' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '20' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '21' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '22' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '23' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            '24' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+        );
+
+        $parametros = array( 'fecha_seleccionada' => $fecha_seleccionada );
+
+        $datos = $this->_consulta( 'GET_ALTAS_BAJAS_X_HORA', $parametros );
+
+        if( !is_null( $datos ) ){
+            $datos_mostrar = array();
+
+            foreach( $datos as $numero => $aliases ){
+
+                foreach( $aliases as $alias => $horas ){
+
+                    foreach( $horas_exactas as $hora => $acciones ){
+
+                        if( isset( $datos[$numero][$alias][$hora] ) ){
+
+                            if( isset( $datos[$numero][$alias][$hora]['ALTA'] ) ){
+
+                                $datos_mostrar[$numero][$alias][$hora]['ALTA'] = $datos[$numero][$alias][$hora]['ALTA'];
+                            }else{
+
+                                $datos_mostrar[$numero][$alias][$hora]['ALTA'] = 0;
+                            }
+
+                            if( isset( $datos[$numero][$alias][$hora]['BAJA'] ) ){
+
+                                $datos_mostrar[$numero][$alias][$hora]['BAJA'] = $datos[$numero][$alias][$hora]['BAJA'];
+                            }else{
+
+                                $datos_mostrar[$numero][$alias][$hora]['BAJA'] = 0;
+                            }
+
+                        }else{
+
+                            $datos_mostrar[$numero][$alias][$hora] = $acciones;
+                        }
+                    }
+                }
+            }
+
+            $this->view->vacio = false;
+            $this->view->datos = $datos_mostrar;
+
+        }else{
+
+            $this->view->vacio = true;
+        }
     }
 
     public function pruebaAction(){
@@ -225,9 +417,47 @@ class TvchatReportesController extends Zend_Controller_Action{
                 return $resultado;
             }
         }
+        else if( $accion == 'GET_ALTAS_BAJAS_X_HORA' ){
+
+            $sql = "select T1.ts_local::date as fecha, extract(hour from T1.ts_local)::integer as hora,
+            T1.id_promocion, T2.numero, T2.alias, T1.accion, count(*)::integer as total from (
+                select *
+                from promosuscripcion.log_suscriptos PL
+                where id_carrier in(1,2) and ts_local::date = ?
+                and id_promocion in(88,89) and accion = '"."ALTA"."'
+                union
+                select *
+                from promosuscripcion.log_suscriptos PL
+                where id_carrier in(1,2) and ts_local::date = ?
+                and id_promocion in(88,89) and accion = '"."BAJA"."'
+            ) T1 join (
+                select IP.numero, IP.id_promocion, IP.alias, IP.id_carrier
+                from info_promociones IP
+                where IP.id_promocion in (88,89)
+                group by 1,2,3,4
+            ) T2 on T1.id_carrier = T2.id_carrier and T1.id_promocion = T2.id_promocion
+            group by 1,2,3,4,5,6";
+
+            $rs = $db->fetchAll( $sql, array( $datos['fecha_seleccionada'] , $datos['fecha_seleccionada']  ) );
+
+            if( !empty( $rs ) ){
+
+                foreach( $rs as $fila ){
+
+                    $resultado[$fila['numero']][$fila['alias']][$fila['hora']][$fila['accion']] = $fila['total'];
+                }
+
+
+                return $resultado;
+
+            }else{
+
+                return $resultado;
+            }
+        }
     }
 
-    private function _setupRangoSeleccion($anho_seleccionado, $mes_seleccionado) {
+    private function _setupRangoSeleccion( $anho_seleccionado, $mes_seleccionado ) {
 
         $anho_inicio = $this->rango_seleccion[0]['anho'];
         $mes_inicio = (int)$this->rango_seleccion[0]['mes'];
@@ -302,7 +532,7 @@ class TvchatReportesController extends Zend_Controller_Action{
         return $nombre_dias_del_mes;
     }
 
-    private function _cargarSuscriptosNumero($numero, $anho, $mes) {
+    private function _cargarSuscriptosNumero( $numero, $anho, $mes ) {
 
         $resultado = array();
 

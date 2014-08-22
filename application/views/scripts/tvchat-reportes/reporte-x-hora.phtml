@@ -1,0 +1,41 @@
+<div id="bloque_mes">
+    Dia Seleccionado:&nbsp;
+    <input type="text" id="datepicker" value="<?php echo (isset($this->fecha)) ? $this->fecha : date('Y-m-d') ?>" />
+    <input type="button" id="cargar_resumen" value="Cargar">
+</div>
+<?php if( $this->vacio == false ): ?>
+
+    <?php foreach ( $this->datos as  $numero => $aliases ): ?>
+
+        <?php foreach ( $aliases as  $alias => $horas ): ?>
+
+            <table id="tabla_numero_<?php echo $numero?>" class="tabla_reporte">
+                <thead>
+                    <tr>
+                        <th colspan="10" class="fondo_naranja borde_arriba borde_derecha totales"><?php echo $alias ?></th>
+                    </tr>
+                    <tr>
+                        <th class="fondo_naranja borde_arriba totales">Hora</th>
+                        <th class="fondo_naranja borde_arriba totales">Altas</th>
+                        <th class="fondo_naranja borde_arriba borde_derecha totales">Bajas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ( $horas as $hora => $accion ): ?>
+
+                        <tr>
+                            <td><a style="color: black; font-size: 12px" href="/tvchat-reporte/reporte-x-minuto/fecha/<?php echo $this->fecha?>/hora/<?php echo $hora ?>"><?php echo $hora ?></a></td>
+                            <td><?php echo $accion['ALTA'] ?></td>
+                            <td class="borde_derecha"><?php echo $accion['BAJA'] ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php endforeach; ?>
+    <?php endforeach; ?>
+<?php else: ?>
+
+    <div style="margin-left: 20px; margin-top: 70px">
+        <h3>No existen datos</h3>
+    </div>
+<?php endif; ?>
