@@ -1,0 +1,33 @@
+<?php if( $this->vacio == false ): ?>
+
+    <?php foreach ( $this->datos as  $alias => $minutos ): ?>
+
+        <table id="tabla_numero_6767" class="tabla_reporte">
+            <thead>
+                <tr>
+                    <th colspan="10" class="fondo_naranja borde_arriba borde_derecha totales"><?php echo $alias ?></th>
+                </tr>
+                <tr>
+                    <th class="fondo_naranja borde_arriba totales">Minuto</th>
+                    <th class="fondo_naranja borde_arriba totales">Altas</th>
+                    <th class="fondo_naranja borde_arriba borde_derecha totales">Bajas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ( $minutos as $minuto => $accion ): ?>
+
+                    <tr>
+                        <td><?php echo ( strlen($minuto) > 1 )? $minuto: '0'.$minuto ?></td>
+                        <td><?php echo $accion['ALTA'] ?></td>
+                        <td class="borde_derecha"><?php echo $accion['BAJA'] ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php endforeach; ?>
+<?php else: ?>
+
+    <div style="margin-left: 20px; margin-top: 70px">
+        <h3>No existen registros</h3>
+    </div>
+<?php endif; ?>

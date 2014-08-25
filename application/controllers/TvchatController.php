@@ -672,11 +672,5 @@ class TvchatController extends Zend_Controller_Action{
             }
         }
     }
-
-    public function reporteAction(){
-
-
-    }
-
 }
 

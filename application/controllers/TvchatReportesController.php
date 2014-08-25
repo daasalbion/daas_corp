@@ -35,7 +35,7 @@ class TvchatReportesController extends Zend_Controller_Action{
 
         //$this->_helper->layout->disableLayout();
         //Habilitar layouts
-        $this->_helper->_layout->setLayout('tvchat-reporte-provisorio-layout');
+        $this->_helper->_layout->setLayout('tvchat-reporte-layout');
     }
 
     public function getLog(){
@@ -123,13 +123,12 @@ class TvchatReportesController extends Zend_Controller_Action{
             $this->_redirect('/tvchat-reportes/login');
         }
 
-        //$this->_helper->_layout->setLayout('tvchat-tvchat-reporte-provisorio-layout');
-        $this->_helper->_layout->setLayout('tvchat-reporte-provisorio-layout');
+        $this->_helper->_layout->setLayout('tvchat-reporte-layout');
 
         $this->view->headLink()->setStylesheet('/css/reportes_base.css', 'screen');
         $this->view->headScript()->appendFile('/js/tvchat_reportes_suscriptos.js', 'text/javascript');
-        $this->view->headLink()->appendStylesheet('/css/reportes_suscriptos.css', 'screen');
-        $this->view->headTitle()->append('Suscriptos');
+        $this->view->headLink()->appendStylesheet('/css/tvchat_reportes_altas_bajas.css', 'screen');
+        $this->view->headTitle()->append('Resumen - Altas - Bajas');
 
         $fecha_seleccionada = $this->_getParam('fecha', null);
 
@@ -187,15 +186,23 @@ class TvchatReportesController extends Zend_Controller_Action{
             $this->_redirect('/tvchat-reportes/login');
         }
 
-        //$this->_helper->_layout->setLayout('tvchat-tvchat-reporte-provisorio-layout');
-        $this->_helper->_layout->setLayout('tvchat-reporte-provisorio-layout');
+        //$this->_helper->_layout->setLayout('tvchat-tvchat-reporte-layout');
+        $this->_helper->_layout->setLayout('tvchat-reporte-layout');
 
         $this->view->headLink()->setStylesheet('/css/reportes_base.css', 'screen');
-        $this->view->headLink()->appendStylesheet('/css/reportes_resumen.css', 'screen');
-        $this->view->headScript()->appendFile('http://code.jquery.com/ui/1.10.0/jquery-ui.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('/css/tvchat_reportes_altas_bajas_x_hora.css', 'screen');
         $this->view->headLink()->appendStylesheet('http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css');
+
+        $this->view->headScript()->appendFile('http://code.jquery.com/ui/1.10.0/jquery-ui.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat_reportes_resumen.js', 'text/javascript');
+
         $this->view->headTitle()->append('Resumen Cobros');
+
+        $this->view->promociones = array(
+
+            'TVCHAT' => 88,
+            'JUGAR' => 89
+        );
 
         $fecha_seleccionada = $this->_getParam('fecha', null);
 
@@ -363,10 +370,304 @@ class TvchatReportesController extends Zend_Controller_Action{
             $this->view->vacio = false;
             $this->view->datos = $datos_mostrar;
 
+            //print_r($datos_mostrar);exit;
+
         }else{
 
             $this->view->vacio = true;
         }
+    }
+
+    public function reporteXMinutoAction() {
+
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
+
+        if( !isset( $namespace->usuario ) ){
+
+            $this->_redirect('/tvchat-reportes/login');
+        }
+
+        //$this->_helper->_layout->setLayout('tvchat-tvchat-reporte-layout');
+        $this->_helper->_layout->setLayout('tvchat-reporte-layout');
+
+        $this->view->headLink()->setStylesheet('/css/reportes_base.css', 'screen');
+        $this->view->headLink()->appendStylesheet('/css/tvchat_reportes_altas_bajas_x_hora.css', 'screen');
+        $this->view->headLink()->appendStylesheet('http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css');
+
+        $this->view->headScript()->appendFile('http://code.jquery.com/ui/1.10.0/jquery-ui.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat_reportes_resumen.js', 'text/javascript');
+
+        $this->view->headTitle()->append('Resumen Cobros');
+
+        $parametros_get = $this->_getAllParams('fecha', 'hora', 'id-promocion', null);
+
+        if( !is_null( $parametros_get ) ) {
+
+            $minutos_exactos = array(
+                '0' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '1' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '2' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '3' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '4' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '5' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '6' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '7' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '8' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '9' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '10' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '11' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '12' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '13' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '14' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '15' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '16' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '17' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '18' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '19' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '20' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '21' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '22' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '23' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '24' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+                '25' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                )
+                ,'26' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'27' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'28' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'29' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'30' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'31' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'32' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'33' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'34' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'35' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'36' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'37' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'38' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'39' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'40' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'41' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'42' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'43' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'44' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'45' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'46' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'47' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'48' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'49' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'50' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'51' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'52' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'53' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'54' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'55' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'56' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'57' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'58' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'59' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),'60' => array(
+                    'ALTA' => 0,
+                    'BAJA' => 0
+                ),
+            );
+
+            $parametros = array(
+
+                'fecha' => $parametros_get['fecha'],
+                'hora' => $parametros_get['hora'],
+                'id_promocion' => $parametros_get['id-promocion']
+            );
+
+            $datos = $this->_consulta( 'GET_ALTAS_BAJAS_X_MINUTO', $parametros );
+
+            if( !is_null( $datos ) ){
+
+                $datos_mostrar = array();
+
+                    foreach( $datos as $alias => $minutos ){
+
+                        foreach( $minutos_exactos as $minuto => $acciones ){
+
+                            if( isset( $datos[$alias][$minuto] ) ){
+
+                                if( isset( $datos[$alias][$minuto]['ALTA'] ) ){
+
+                                    $datos_mostrar[$alias][$minuto]['ALTA'] = $datos[$alias][$minuto]['ALTA'];
+                                }else{
+
+                                    $datos_mostrar[$alias][$minuto]['ALTA'] = 0;
+                                }
+
+                                if( isset( $datos[$alias][$minuto]['BAJA'] ) ){
+
+                                    $datos_mostrar[$alias][$minuto]['BAJA'] = $datos[$alias][$minuto]['BAJA'];
+                                }else{
+
+                                    $datos_mostrar[$alias][$minuto]['BAJA'] = 0;
+                                }
+
+                            }else{
+
+                                $datos_mostrar[$alias][$minuto] = $acciones;
+                            }
+                        }
+                }
+
+                $this->view->vacio = false;
+                $this->view->datos = $datos_mostrar;
+
+            }else{
+
+                $this->view->vacio = true;
+            }
+
+        }
+
     }
 
     public function pruebaAction(){
@@ -448,6 +749,46 @@ class TvchatReportesController extends Zend_Controller_Action{
                     $resultado[$fila['numero']][$fila['alias']][$fila['hora']][$fila['accion']] = $fila['total'];
                 }
 
+
+                return $resultado;
+
+            }else{
+
+                return $resultado;
+            }
+        }
+        else if( $accion == 'GET_ALTAS_BAJAS_X_MINUTO' ){
+
+            $sql = "select T3.alias, T2.* from (
+                select T1.*, count(*)::integer as total from (
+                    select PL.id_promocion, extract(minute from PL.ts_local)::integer as minuto, PL.accion
+                    from promosuscripcion.log_suscriptos PL
+                    where id_carrier in(1,2) and ts_local::date = ?
+                    and id_promocion = ? and accion = '"."ALTA"."'
+                    and extract(hour from ts_local)::integer = ?
+                    union
+                    select PL.id_promocion, extract(minute from PL.ts_local)::integer as minuto, PL.accion
+                    from promosuscripcion.log_suscriptos PL
+                    where id_carrier in(1,2) and ts_local::date = ?
+                    and id_promocion = ? and accion = '"."BAJA"."'
+                    and extract(hour from ts_local)::integer = ?
+                ) T1 group by 1,2,3
+            ) T2 join (
+                select id_promocion, alias
+                from info_promociones
+                where id_promocion = ?
+                group by 1, 2
+            ) T3 on T2.id_promocion = T3.id_promocion";
+
+            $rs = $db->fetchAll( $sql, array( $datos['fecha'] , $datos['id_promocion'],
+                $datos['hora'], $datos['fecha'] , $datos['id_promocion'], $datos['hora'],  $datos['id_promocion']  ) );
+
+            if( !empty( $rs ) ){
+
+                foreach( $rs as $fila ){
+
+                    $resultado[$fila['alias']][$fila['minuto']][$fila['accion']] = $fila['total'];
+                }
 
                 return $resultado;
 

@@ -1,119 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    echo $this->doctype();
+    echo "\n";
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<?php echo $this->headTitle() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headLink() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headStyle() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headScript() ?>
+	<?php echo "\n" ?>
 
-    <head>
+    <link rel="shortcut icon" href="/favicon.ico"  type="image/x-icon" />
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
+    <script type="text/javascript">
 
-        <title>Entermovil - Reportes</title>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34516205-1']);
+        _gaq.push(['_setDomainName', 'entermovil.com.py']);
+        _gaq.push(['_trackPageview']);
 
-        <!-- Bootstrap Core CSS -->
-        <link href="/css/plugins/bootstrap/bootstrap.css" rel="stylesheet">
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
 
-        <!-- Custom CSS -->
-        <link href="/css/plugins/sb-admin.css" rel="stylesheet">
+    </script>
 
-        <!-- Morris Charts CSS -->
-        <link href="/css/plugins/morris.css" rel="stylesheet">
+</head>
+<body>
 
-        <!-- Custom Fonts -->
-        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <div id="header">
+        <div id="header_main">
+            <div id="header_logo"><a href="/reportes" class="invisible_link">ENTERMOVIL.com.py</a></div>
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-        <?php echo $this->headTitle() ?>
-        <?php echo "\n" ?>
-        <?php echo $this->headLink() ?>
-        <?php echo "\n" ?>
-        <?php echo $this->headStyle() ?>
-        <?php echo "\n" ?>
-        <?php echo $this->headScript() ?>
-        <?php echo "\n" ?>
-
-    </head>
-
-    <body>
-
-        <div id="wrapper">
-
-            <!-- Navigation -->
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Entermovil Reportes</a>
-                </div>
-                <!-- Top Menu Items -->
-                <ul class="nav navbar-right top-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="/tvchat-reportes/logout/"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav side-nav">
-                        <li id="abrir_ventana_principal" class="active">
-                            <a href="#ventana_principal">Cobros</a>
-                        </li>
-                        <li id="cerrar_ventana_principal">
-                            <a  href="#cerrar_ventana_principal">Altas</a>
-                        </li>
-                        <li id="abrir_ventana_tvhot">
-                            <a href="#ventana_tvhot">Bajas</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </nav>
-
-            <div id="page-wrapper" style="height: 460px">
-
-                <div class="container-fluid">
-                    <?php echo $this->layout()->content; ?>
-                </div>
-                <!-- /.container-fluid -->
-
+            <div id="user_info">
+                <a id="logout_link" href="/tvchat-reportes/logout" title="Salir">Cerrar Sesión</a>
+                <span id="info_usuario"><?php echo $this->infoSesionTvchat()->usuario() ?></span>
             </div>
-            <!-- /#page-wrapper -->
+        </div>
+        <div id="header_menu">
+            <ul class="horizontal_list">
+
+                <?php if($this->infoSesionTvchat()->accesoPermitido('resumen-suscriptos')): ?>
+                <li><a id="link_reportes_altas_bajas" href="/tvchat-reportes/reporte/">Resumen</a></li>
+                <?php endif; ?>
+                <?php if($this->infoSesionTvchat()->accesoPermitido('pautas')): ?>
+                <li><a id="link_reportes_altas_bajas_x_hora" href="/tvchat-reportes/reporte-x-hora/">Suscriptos X Hora</a></li>
+                <?php endif; ?>
+
+            </ul>
 
         </div>
-        <!-- /#wrapper -->
-
-        <!-- jQuery Version 1.11.0 -->
-        <script src="/js/plugins/jquery-1.7.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="/js/plugins/bootstrap.min.js"></script>
-
-        <!-- Morris Charts JavaScript -->
-        <script src="/js/plugins/raphael.min.js"></script>
-
-    </body>
-
+	</div>
+    <div class="colmask fullpage">
+        <div class="col1">
+            <?php echo $this->layout()->content; ?>
+        </div>
+    </div>
+    
+</body>
 </html>
