@@ -323,12 +323,12 @@ class TvchatController extends Zend_Controller_Action{
                 'premio' => 'true'
             );
 
-            //$datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS_SEXY', $datos );
-            $datos_obtenidos = array(
+            $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS_SEXY', $datos );
+            /*$datos_obtenidos = array(
                 'cel'=>'0982313289',
                 'id_sorteo'=>'1',
                 'codigo'=>'No tiene'
-            );
+            );*/
 
             $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
 
@@ -339,7 +339,7 @@ class TvchatController extends Zend_Controller_Action{
                 $codigo = $datos_obtenidos['codigo'];
 
                 $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
-                $respuesta = json_encode( array( "sorteo" => $elementos_ganadores, "cel_ganador" => $cel_ganador,
+                $respuesta = json_encode( array( "id_sorteo" => $id_sorteo, "sorteo" => $elementos_ganadores, "cel_ganador" => $cel_ganador,
                     "juego" => "tragamonedas_sexy" ) );
 
                 $this->logger->info( 'datos a enviar ' . $respuesta );
