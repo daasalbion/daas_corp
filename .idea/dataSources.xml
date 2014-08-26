@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2836605443">
+    <data-source source="LOCAL" name="entermovil(produccion)" uuid="77125be0-cf63-47a4-a623-48a414556f13">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://190.128.183.138:5432/gw</jdbc-url>
+      <user-name>konectagw</user-name>
+      <user-password>dfc1dfc5dfc4dfcfdfc9dfdedfcbdfcddfdddf98df9adf9adf9c</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="entermovil(desarrollo)" uuid="49e5f7c2-25b9-4767-8a5e-9c3a3475f7b1">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://10.0.2.8:5432/gw</jdbc-url>
+      <user-name>konectagw</user-name>
+      <user-password>dfc1dfc5dfc4dfcfdfc9dfdedfcbdfcddfdddf98df9adf9adf9c</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

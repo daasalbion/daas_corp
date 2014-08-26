@@ -153,14 +153,14 @@ body, html {
     height: 40px;
     margin-left: 1px;
     margin-top: 10px;
-    width: 40px;
+    width: 33px;
 }
 .numero{
     color: #ff0000;
     font-family: arial;
     font-size: 30px;
     font-weight: bold;
-    margin: 3px 10px 10px;
+    margin: 3px 6px 10px;
 }
 .tragamonedas_wrapper{
     width: 350px;
@@ -427,5 +427,5 @@ div.roulette3 {
 }
 .interactive_fotos_titulo{
     position: absolute;
-    left: 14px;
+    left: 18px;
 }
