@@ -1,176 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/18.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/19.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/21.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/22.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/23.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/25.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/26.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/27.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/28.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/29.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/31.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/33.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/34.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/35.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/36.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/37.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/38.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/39.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/41.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/42.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/43.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/44.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/45.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/46.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/47.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/48.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/49.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/51.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/52.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/53.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/54.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/55.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/56.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/57.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/58.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/59.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/61.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/62.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/63.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/64.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/65.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/66.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/67.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/68.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/69.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/71.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/72.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/73.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/74.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/75.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/76.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/77.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/78.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/79.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/81.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/82.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/83.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/84.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/85.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/86.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/87.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/88.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/89.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/91.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/92.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/93.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/94.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/95.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/96.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/97.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/98.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/99.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/fotos/foto_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/fotos/foto_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/fotos/foto_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/fotos/foto_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/pantalon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/short.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tvchat/tragamonedas/vestido.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/Markdown.Editor.hack.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/lib/magic/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/js/app.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/js/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/js/app.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/helper/background.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/general/base.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/helper/bg-image.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/bootstrap-fileupload.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/bootstrap-wysihtml5-hack.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/lib/magic/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/box.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/button.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/calendar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/checkbox.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/colorpicker_hack.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/component.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/general/content.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/js/core.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/js/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/js/core.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/countdown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/js/countdown.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/js/countdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/js/countdown.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/elfinder.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/error/error.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/helper/flex-embed.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/general/footer.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/fullCalendarHack.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/general/head.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/innerHR.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/lib/autosize/jquery.autosize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/lib/autosize/jquery.autosize.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/jquery.cleditor-hack.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/lib/jquery/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/lib/jquery/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/lib/jquery/jquery.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/layout/layout.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/layout/layout2.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/general/left.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/lib/less/less-1.7.3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/login/login.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/lib/magic/magic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/lib/magic/magic.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/lib/magic/magic.styl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/main.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/main.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/main.rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/map.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/helper/margin.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/general/menu.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/mixins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/helper/padding.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/pricing.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/progressbar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/quick-btn.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/lib/respond/respond.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/scroll-bar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/simple-table.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/sortable-table.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/sparkline.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/stats-box.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/layout/sticky.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/style-switcher.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/js/style-switcher.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/js/style-switcher.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/style-switcher.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/js/style-switcher.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/style.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/theme.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/general/top.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/var-suit.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/variable.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/plugins/assets/css/less/main/components/wellDark.less" />
+    <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="verificar&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="www.entermovil.com.py.iws" />
@@ -1150,7 +981,11 @@
       <created>1409169792041</created>
       <updated>1409169792041</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="verificar&#10;">
+      <created>1409169885769</created>
+      <updated>1409169885769</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="ToolWindowManager">
