@@ -8,6 +8,8 @@ class TvchatController extends Zend_Controller_Action{
     var $usuarios = array(
 
         'daas' => array('clave' => 'daas', 'nombre' => 'DAAS'),
+        'admin' => array('clave' => 'admin', 'nombre' => 'Administrador'),
+        'operador' => array('clave' => 'operador123', 'nombre' => 'Operador')
     );
 
     public function init(){
@@ -230,10 +232,18 @@ class TvchatController extends Zend_Controller_Action{
 
     public function getWinElementsTragamonedasAction(){
 
-        $elementos_ganadores = array();
-        $datos_obtenidos = array();
         $parametros = array();
         $nro = $this->NRO_ELEMENTOS_SORTEADOS_TRAGAMONEDAS*2;
+
+        $datos_obtenidos = array(
+            /*'codigo' => '001122',
+            'cel' => '0982313289',
+            'id_sorteo' => 1*/
+        );
+        $elementos_ganadores = array();
+        $cel_ganador = 'No obtenido';
+        $id_sorteo = null;
+        $codigo = 'No obtenido';
 
         $parametros['premio'] = $_GET['premio'];
 
@@ -259,13 +269,8 @@ class TvchatController extends Zend_Controller_Action{
 
                 for( $i = 0; $i < $nro; $i = $i+2 ){
 
-                    $elementos_ganadores[] = substr( $codigo, $i, 2);
+                    $elementos_ganadores[] = substr( $codigo, $i, 2 );
                 }
-
-                $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
-                $respuesta = json_encode( array( "id_sorteo" => $id_sorteo, "sorteo" => $elementos_ganadores,
-                    "cel_ganador" => $cel_ganador, "juego" => "tragamonedas" ) );
-                $this->logger->info( 'datos a enviar ' . $respuesta );
             }
 
         }else if( $parametros['premio'] == 'false' ){
@@ -291,18 +296,24 @@ class TvchatController extends Zend_Controller_Action{
                     $elementos_ganadores[] = substr( $codigo, $i, 2);
                 }
 
-                //numero de celular randomico
-
-                $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
-                $respuesta = json_encode( array( "id_sorteo" => $id_sorteo, "sorteo" => $elementos_ganadores,
-                    "cel_ganador" => $cel_ganador, "juego" => "tragamonedas" ) );
-                $this->logger->info( 'datos a enviar ' . $respuesta );
-
             }
         }
 
+        $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
+        $respuesta = json_encode(
+            array(
+                    "id_sorteo" => $id_sorteo,
+                    "sorteo" => $elementos_ganadores,
+                    "cel_ganador" => $cel_ganador,
+                    "juego" => "tragamonedas"
+            )
+        );
+
+        $this->logger->info( 'datos a enviar ' . $respuesta );
         echo $respuesta;
+
         exit;
+
     }
 
     public function getWinElementsTragamonedasSexyAction(){
@@ -310,6 +321,9 @@ class TvchatController extends Zend_Controller_Action{
         $parametros = array();
         $datos_obtenidos = array();
         $elementos_ganadores = array();
+        $cel_ganador = 'No obtenido';
+        $id_sorteo = 'No obtenido';
+        $codigo = 'No obtenido';
 
         $parametros['premio'] = $_GET['premio'];
 
@@ -324,12 +338,6 @@ class TvchatController extends Zend_Controller_Action{
             );
 
             $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS_SEXY', $datos );
-            /*$datos_obtenidos = array(
-                'cel'=>'0982313289',
-                'id_sorteo'=>'1',
-                'codigo'=>'No tiene'
-            );*/
-
             $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
 
             if( !is_null( $datos_obtenidos ) ){
@@ -338,13 +346,20 @@ class TvchatController extends Zend_Controller_Action{
                 $id_sorteo = $datos_obtenidos['id_sorteo'];
                 $codigo = $datos_obtenidos['codigo'];
 
-                $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
-                $respuesta = json_encode( array( "id_sorteo" => $id_sorteo, "sorteo" => $elementos_ganadores, "cel_ganador" => $cel_ganador,
-                    "juego" => "tragamonedas_sexy" ) );
-
-                $this->logger->info( 'datos a enviar ' . $respuesta );
             }
         }
+
+        $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
+        $respuesta = json_encode(
+            array(
+                    "id_sorteo" => $id_sorteo,
+                    "sorteo" => $elementos_ganadores,
+                    "cel_ganador" => $cel_ganador,
+                    "juego" => "tragamonedas_sexy"
+            )
+        );
+
+        $this->logger->info( 'datos a enviar ' . $respuesta );
 
         echo $respuesta;
         exit;
@@ -355,9 +370,9 @@ class TvchatController extends Zend_Controller_Action{
         $parametros = array();
         $elementos_ganadores = array();
         $nro = $this->NRO_ELEMENTOS_SORTEADOS_TOMBOLA;
-        $cel_ganador = 'Sin Ganador';
-        $id_sorteo = 000000;
-        $codigo = 000000;
+        $cel_ganador = 'No obtenido';
+        $id_sorteo = 'No obtenido';
+        $codigo = 'No obtenido';
 
         $parametros['premio'] = $_GET['premio'];
 
@@ -385,15 +400,9 @@ class TvchatController extends Zend_Controller_Action{
 
                     $elementos_ganadores[] = substr( $codigo, $i, 1);
                 }
-
-                $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
-                $respuesta = json_encode( array( "id_sorteo" => $id_sorteo, "sorteo" => $elementos_ganadores,
-                    "cel_ganador" => $cel_ganador, "juego" => "tombola" ) );
-                $this->logger->info( 'datos a enviar ' . $respuesta );
             }
 
-        }
-        else if( $parametros['premio'] == 'false' ){
+        }else if( $parametros['premio'] == 'false' ){
 
             $datos = array(
 
@@ -402,7 +411,6 @@ class TvchatController extends Zend_Controller_Action{
             );
 
             $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS', $datos );
-
             $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
 
             if( !is_null( $datos_obtenidos ) ){
@@ -415,43 +423,20 @@ class TvchatController extends Zend_Controller_Action{
 
                     $elementos_ganadores[] = substr( $codigo, $i, 2);
                 }
-
-                //numero de celular randomico
-
-                $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
-                $respuesta = json_encode( array( "id_sorteo" => $id_sorteo, "sorteo" => $elementos_ganadores,
-                    "cel_ganador" => $cel_ganador, "juego" => "tombola" ) );
-                $this->logger->info( 'datos a enviar ' . $respuesta );
-
             }
         }
 
-        /*for( $i = 1; $i <= $nro; $i++ ){
-
-            $elementos_ganadores[] = rand( 0, 9 );
-        }
-
-        //numero de celular randomico
-        $cel_ganador = "0982000000" + rand( 0, 999999);
         $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
-        $respuesta = json_encode( array( "sorteo" => $elementos_ganadores, "cel_ganador" =>"0$cel_ganador", "juego" => "tombola" ) );
+
+        $respuesta = json_encode(
+            array(
+                    "id_sorteo" => $id_sorteo,
+                    "sorteo" => $elementos_ganadores,
+                    "cel_ganador" => $cel_ganador,
+                    "juego" => "tombola"
+            )
+        );
         $this->logger->info( 'datos a enviar ' . $respuesta );
-
-    }else{
-
-        for( $i = 1; $i <= $nro; $i++ ){
-
-            $elementos_ganadores[] = rand( 0, 9 );
-        }
-
-        //numero de celular randomico
-        $cel_ganador = "0982000000" + rand( 0, 999999);
-        $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
-        $respuesta = json_encode( array( "sorteo" => $elementos_ganadores, "cel_ganador" => "Sin Ganador", "juego" => "tombola" ) );
-        $this->logger->info( 'datos a enviar ' . $respuesta );
-
-        */
-
 
         echo $respuesta;
         exit;
@@ -460,20 +445,90 @@ class TvchatController extends Zend_Controller_Action{
     public function getWinElementsPiropoAction(){
 
         $parametros = array();
+        $datos_obtenidos = array();
+        $elementos_ganadores = array();
+        $cel_ganador = 'No obtenido';
+        $id_sorteo = 'No obtenido';
+        $codigo = 'No obtenido';
+
         $parametros['premio'] = $_GET['premio'];
 
         $this->logger->info( "parametros: ". print_r( $parametros, true ) );
 
         if( $parametros['premio'] == 'true' ){
 
-            //numero de celular randomico
-            $cel_ganador = "0982000000" + rand( 0, 999999);
-            $respuesta = json_encode( array( "cel_ganador" => "0$cel_ganador", "juego" => "piropo2" ) );
-            $this->logger->info( 'datos a enviar ' . $respuesta );
+            $datos = array(
+
+                'id_juego' => 5,
+                'premio' => 'true'
+            );
+
+            $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_PIROPO2', $datos );
+            $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
+
+            if( !is_null( $datos_obtenidos ) ){
+
+                $cel_ganador = $datos_obtenidos['cel'];
+                $id_sorteo = $datos_obtenidos['id_sorteo'];
+                $codigo = $datos_obtenidos['codigo'];
+
+            }
         }
+
+        $this->logger->info( 'datos a obtenidos ' . print_r( $elementos_ganadores, true ) );
+        $respuesta = json_encode(
+            array(
+                "id_sorteo" => $id_sorteo,
+                "sorteo" => $elementos_ganadores,
+                "cel_ganador" => $cel_ganador,
+                "juego" => "piropo2"
+            )
+        );
+
+        $this->logger->info( 'datos a enviar ' . $respuesta );
 
         echo $respuesta;
         exit;
+
+    }
+
+    public function guardarSorteoAction(){
+
+        $parametros = array();
+        $id_sorteo = null;
+        $id_premio = null;
+        $status = 0;
+
+        $parametros['id_sorteo'] = $_GET['id_sorteo'];
+        $parametros['id_premio'] = $_GET['id_premio'];
+
+        $this->logger->info( "parametros: ". print_r( $parametros, true ) );
+
+        if( isset( $parametros['id_sorteo'] ) && isset( $parametros['id_premio'] ) ){
+
+            $datos = array(
+
+                'id_sorteo' => $parametros['id_sorteo'],
+                'id_premio' => $parametros['id_premio']
+            );
+
+            $status = $this->_consulta( 'UPDATE_SORTEO', $datos );
+
+            $this->logger->info( 'datos recibidos [' . $status. ']' );
+
+        }
+
+        $respuesta = json_encode(
+            array(
+                "status" => $status,
+            )
+        );
+
+        $this->logger->info( 'datos a enviar ' . $respuesta );
+        echo $respuesta;
+
+        exit;
+
     }
 
     private function _consulta( $accion, $datos = null ){
@@ -616,7 +671,6 @@ class TvchatController extends Zend_Controller_Action{
                 return $resultado;
             }
 
-
         }
         else if( $accion == 'GET_ELEMENTS_TRAGAMONEDAS' ){
 
@@ -639,6 +693,7 @@ class TvchatController extends Zend_Controller_Action{
 
                 return $resultado;
             }
+
         }
         else if( $accion == 'GET_ELEMENTS_TRAGAMONEDAS_SEXY' ){
 
@@ -659,6 +714,7 @@ class TvchatController extends Zend_Controller_Action{
 
                 return $resultado;
             }
+
         }
         else if( $accion == 'GET_ELEMENTS_TOMBOLA' ){
 
@@ -680,6 +736,47 @@ class TvchatController extends Zend_Controller_Action{
                 return $resultado;
             }
         }
+        else if( $accion == 'GET_ELEMENTS_PIROPO2' ){
+
+            $sql = "select * from promosuscripcion.jugar_sorteo( ?, ? )";
+
+            $rs = $db->fetchAll( $sql, array( $datos['id_juego'], $datos['premio'] ) );
+
+            if( !empty( $rs ) ){
+
+                foreach( $rs as $fila ){
+
+                    $resultado = $fila;
+                }
+
+                return $resultado;
+
+            }else{
+
+                return $resultado;
+            }
+        }
+        else if( $accion == 'UPDATE_SORTEO' ){
+
+            $sql = "select * from promosuscripcion.jugar_confirmar_sorteo( ?, ? )";
+
+            $rs = $db->fetchAll( $sql, array( $datos['id_sorteo'], $datos['id_premio'] ) );
+
+            if( !empty( $rs ) ){
+
+                foreach( $rs as $fila ){
+
+                    $resultado = $fila;
+                }
+
+                return $resultado;
+
+            }else{
+
+                return $resultado;
+            }
+        }
+
     }
 
     public function chatNumeroAction() {
