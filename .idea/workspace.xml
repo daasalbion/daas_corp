@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/TvchatController.php" afterPath="$PROJECT_DIR$/application/controllers/TvchatController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js" afterPath="$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="www.entermovil.com.py.iws" />
@@ -24,7 +26,226 @@
     <favorites_list name="www.entermovil.com.py" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="TvchatController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/TvchatController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="285" column="14" selection-start="9798" selection-end="9798" vertical-scroll-proportion="-39.23077" vertical-offset="408" max-vertical-offset="2584">
+              <folding>
+                <element signature="e#200#430#0" expanded="false" />
+                <element signature="n#init#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="n#getLog#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="n#indexAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="n#loginAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="n#logoutAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="n#marqueeManagerAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="n#marqueeAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="n#obtenerMensajesAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="e#4317#4717#0" expanded="false" />
+                <element signature="e#5082#5356#0" expanded="false" />
+                <element signature="e#5112#5342#1" expanded="false" />
+                <element signature="n#administracionAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="n#tvAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="n#tvhotAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="e#10378#10503#0" expanded="false" />
+                <element signature="n#getWinElementsTragamonedasSexyAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="e#11484#11573#0" expanded="false" />
+                <element signature="e#12126#12384#0" expanded="false" />
+                <element signature="e#12151#12374#1" expanded="false" />
+                <element signature="n#getWinElementsTombolaAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="e#12980#13069#0" expanded="false" />
+                <element signature="e#13490#13610#0" expanded="false" />
+                <element signature="e#13702#13792#0" expanded="false" />
+                <element signature="e#14207#14327#0" expanded="false" />
+                <element signature="e#14468#14716#0" expanded="false" />
+                <element signature="e#14493#14706#1" expanded="false" />
+                <element signature="n#getWinElementsPiropoAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="e#15291#15380#0" expanded="false" />
+                <element signature="e#15923#16155#0" expanded="false" />
+                <element signature="e#15948#16145#1" expanded="false" />
+                <element signature="n#guardarSorteoAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="e#16717#16851#0" expanded="false" />
+                <element signature="e#17026#17118#0" expanded="false" />
+                <element signature="e#17051#17108#1" expanded="false" />
+                <element signature="n#_consulta#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="e#17841#18288#0" expanded="false" />
+                <element signature="e#17960#18068#0" expanded="false" />
+                <element signature="e#18099#18171#0" expanded="false" />
+                <element signature="e#18749#19040#0" expanded="false" />
+                <element signature="e#19224#19750#0" expanded="false" />
+                <element signature="n#chatNumeroAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="n#chatNuevosMensajesAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="e#25126#25183#0" expanded="false" />
+                <element signature="n#chatHistorialAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="e#26497#26691#0" expanded="false" />
+                <element signature="n#adminAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="n#testearConexionAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <element signature="n#descargarAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+                <marker date="1409195374062" expanded="true" signature="17590:17712" placeholder="select * fro..tvchat_mensajes..." />
+                <marker date="1409195374062" expanded="true" signature="18480:18534" placeholder="select * fro..obtener_mensajes..." />
+                <marker date="1409195374062" expanded="true" signature="19920:20201" placeholder="select id_hi..historial..." />
+                <marker date="1409195374062" expanded="true" signature="20601:20967" placeholder="select id_hi..historial..." />
+                <marker date="1409195374062" expanded="true" signature="21482:21533" placeholder="select * fro..jugar_sorteo..." />
+                <marker date="1409195374062" expanded="true" signature="21962:22013" placeholder="select * fro..jugar_sorteo..." />
+                <marker date="1409195374062" expanded="true" signature="22432:22483" placeholder="select * fro..jugar_sorteo..." />
+                <marker date="1409195374062" expanded="true" signature="22901:22952" placeholder="select * fro..jugar_sorteo..." />
+                <marker date="1409195374062" expanded="true" signature="23363:23424" placeholder="select * fro..jugar_confirmar_sorteo..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tvchat.manager.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="726" column="48" selection-start="18935" selection-end="18935" vertical-scroll-proportion="0.30427048" vertical-offset="3025" max-vertical-offset="4930">
+              <folding>
+                <element signature="e#606#669#0" expanded="false" />
+                <element signature="e#692#755#0" expanded="false" />
+                <element signature="e#777#840#0" expanded="false" />
+                <element signature="e#863#926#0" expanded="false" />
+                <element signature="n#!!block;n#Premio#0" expanded="false" />
+                <element signature="n#!!block;n#ObjetoGanador#0" expanded="false" />
+                <element signature="e#2274#2658#0" expanded="false" />
+                <element signature="e#2709#3101#0" expanded="false" />
+                <element signature="e#2984#3055#0" expanded="false" />
+                <element signature="e#3189#3389#0" expanded="false" />
+                <element signature="e#3284#3351#0" expanded="false" />
+                <element signature="e#3441#3635#0" expanded="false" />
+                <element signature="e#3532#3597#0" expanded="false" />
+                <element signature="e#3705#4002#0" expanded="false" />
+                <element signature="e#3759#3807#0" expanded="false" />
+                <element signature="e#4056#4368#0" expanded="false" />
+                <element signature="e#4110#4162#0" expanded="false" />
+                <element signature="e#4412#4665#0" expanded="false" />
+                <element signature="e#4436#4479#0" expanded="false" />
+                <element signature="e#4708#4958#0" expanded="false" />
+                <element signature="e#4732#4773#0" expanded="false" />
+                <element signature="e#5000#5247#0" expanded="false" />
+                <element signature="e#5024#5064#0" expanded="false" />
+                <element signature="e#5291#5540#0" expanded="false" />
+                <element signature="e#5315#5357#0" expanded="false" />
+                <element signature="e#5583#5722#0" expanded="false" />
+                <element signature="e#5637#5678#0" expanded="false" />
+                <element signature="e#5795#6041#0" expanded="false" />
+                <element signature="e#5806#5838#0" expanded="false" />
+                <element signature="e#5890#5937#0" expanded="false" />
+                <element signature="e#6095#6347#0" expanded="false" />
+                <element signature="e#6106#6138#0" expanded="false" />
+                <element signature="e#6190#6242#0" expanded="false" />
+                <element signature="e#6391#6633#0" expanded="false" />
+                <element signature="e#6402#6434#0" expanded="false" />
+                <element signature="e#6486#6528#0" expanded="false" />
+                <element signature="e#6676#6876#0" expanded="false" />
+                <element signature="e#6730#6771#0" expanded="false" />
+                <element signature="e#6918#7117#0" expanded="false" />
+                <element signature="e#6972#7012#0" expanded="false" />
+                <element signature="e#7160#7360#0" expanded="false" />
+                <element signature="e#7214#7255#0" expanded="false" />
+                <element signature="e#8122#8435#0" expanded="false" />
+                <element signature="e#8570#8685#0" expanded="false" />
+                <element signature="e#8835#10099#0" expanded="false" />
+                <element signature="e#9168#9265#0" expanded="false" />
+                <element signature="e#9627#9926#0" expanded="false" />
+                <element signature="e#10141#11128#0" expanded="false" />
+                <element signature="e#10270#10357#0" expanded="false" />
+                <element signature="e#10636#10974#0" expanded="false" />
+                <element signature="e#11169#12071#0" expanded="false" />
+                <element signature="e#11373#11459#0" expanded="false" />
+                <element signature="e#11654#11921#0" expanded="false" />
+                <element signature="e#12113#12732#0" expanded="false" />
+                <element signature="e#12227#12314#0" expanded="false" />
+                <element signature="e#12780#13687#0" expanded="false" />
+                <element signature="e#12972#13059#0" expanded="false" />
+                <element signature="e#13258#13535#0" expanded="false" />
+                <element signature="e#13738#14607#0" expanded="false" />
+                <element signature="e#13915#14002#0" expanded="false" />
+                <element signature="e#14201#14478#0" expanded="false" />
+                <element signature="e#14851#14927#0" expanded="false" />
+                <element signature="e#15193#15269#0" expanded="false" />
+                <element signature="e#15535#15611#0" expanded="false" />
+                <element signature="e#15700#15847#0" expanded="false" />
+                <element signature="e#15724#15805#0" expanded="false" />
+                <element signature="e#15894#16041#0" expanded="false" />
+                <element signature="e#15918#15999#0" expanded="false" />
+                <element signature="e#16088#16235#0" expanded="false" />
+                <element signature="e#16112#16193#0" expanded="false" />
+                <element signature="e#16276#16384#0" expanded="false" />
+                <element signature="e#16300#16342#0" expanded="false" />
+                <element signature="e#16479#16660#0" expanded="false" />
+                <element signature="e#16710#16891#0" expanded="false" />
+                <element signature="e#16951#17195#0" expanded="false" />
+                <element signature="e#17246#17458#0" expanded="false" />
+                <element signature="e#17931#18315#0" expanded="false" />
+                <element signature="e#18422#18858#0" expanded="false" />
+                <element signature="n#!!block;n#imprimir#0" expanded="false" />
+                <element signature="e#19661#19877#0" expanded="false" />
+                <element signature="e#19923#20099#0" expanded="false" />
+                <element signature="e#20145#20319#0" expanded="false" />
+                <element signature="e#20366#20544#0" expanded="false" />
+                <element signature="e#20623#20742#0" expanded="false" />
+                <element signature="e#20647#20695#0" expanded="false" />
+                <element signature="e#20802#20926#0" expanded="false" />
+                <element signature="e#20826#20879#0" expanded="false" />
+                <element signature="e#21045#21198#0" expanded="false" />
+                <element signature="e#21069#21152#0" expanded="false" />
+                <element signature="e#21266#21420#0" expanded="false" />
+                <element signature="e#21290#21373#0" expanded="false" />
+                <element signature="e#21499#21613#0" expanded="false" />
+                <element signature="e#21675#21941#0" expanded="false" />
+                <element signature="e#21980#22139#0" expanded="false" />
+                <element signature="e#22192#22306#0" expanded="false" />
+                <element signature="e#22368#22634#0" expanded="false" />
+                <element signature="e#22673#22832#0" expanded="false" />
+                <element signature="e#22885#22999#0" expanded="false" />
+                <element signature="e#23061#23327#0" expanded="false" />
+                <element signature="e#23366#23529#0" expanded="false" />
+                <element signature="e#23586#23598#0" expanded="false" />
+                <element signature="e#23782#26073#0" expanded="false" />
+                <element signature="e#26075#29945#0" expanded="false" />
+                <element signature="n#!!block;n#cargarNumerosGanadores#0" expanded="false" />
+                <element signature="e#30392#31714#0" expanded="false" />
+                <element signature="e#30948#31318#0" expanded="false" />
+                <element signature="e#30978#31143#0" expanded="false" />
+                <element signature="e#31147#31304#0" expanded="false" />
+                <element signature="e#31772#32409#0" expanded="false" />
+                <element signature="e#32457#34051#0" expanded="false" />
+                <element signature="e#32897#33429#0" expanded="false" />
+                <element signature="e#32926#33088#0" expanded="false" />
+                <element signature="e#33092#33243#0" expanded="false" />
+                <element signature="e#34105#34839#0" expanded="false" />
+                <element signature="e#34887#35432#0" expanded="false" />
+                <element signature="n#!!block;n#testearConexion#0" expanded="false" />
+                <element signature="n#!!block;n#procesarRespuesta#0" expanded="false" />
+                <element signature="n#!!block;n#obtenerMensajes#0" expanded="false" />
+                <element signature="n#!!block;n#cargarOpcionesMensajes#0" expanded="false" />
+                <element signature="e#36121#37148#0" expanded="false" />
+                <element signature="n#!!block;n#obtenerMensajesMarquee#0" expanded="false" />
+                <element signature="n#!!block;n#cargarMensajes#0" expanded="false" />
+                <element signature="n#!!block;n#obtenerMensajesNuevosMensajero#0" expanded="false" />
+                <element signature="n#!!block;n#actualizarTotalGuaranies#0" expanded="false" />
+                <element signature="n#!!block;n#cargarModuloPorDefecto#0" expanded="false" />
+                <element signature="e#38258#38329#0" expanded="false" />
+                <element signature="n#!!block;n#guardarSorteo#0" expanded="false" />
+                <element signature="e#38618#38656#0" expanded="false" />
+                <element signature="e#38730#38876#0" expanded="false" />
+                <element signature="e#38928#39064#0" expanded="false" />
+                <element signature="e#39126#39282#0" expanded="false" />
+                <element signature="e#39334#39470#0" expanded="false" />
+                <element signature="e#39522#39658#0" expanded="false" />
+                <element signature="e#39708#39840#0" expanded="false" />
+                <element signature="e#39898#39939#0" expanded="false" />
+                <element signature="e#39992#40135#0" expanded="false" />
+                <element signature="e#40016#40089#0" expanded="false" />
+                <element signature="n#!!block;n#removerCss#0" expanded="false" />
+                <element signature="n#!!block;n#ocultarModulos#0" expanded="false" />
+                <element signature="e#41421#41541#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -76,7 +297,6 @@
         <option value="$PROJECT_DIR$/application/views/scripts/tvchat-reportes/login.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/tvchat-reportes/admin.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/reportes/cobros-por-tipo.phtml" />
-        <option value="$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js" />
         <option value="$PROJECT_DIR$/application/views/scripts/tvchat/reporte.phtml" />
         <option value="$PROJECT_DIR$/application/views/scripts/tvchat-reportes/reporte.phtml" />
         <option value="$PROJECT_DIR$/public/css/plugins/assets/css/main.css" />
@@ -99,6 +319,7 @@
         <option value="$PROJECT_DIR$/public/css/plugins/sb-admin.css" />
         <option value="$PROJECT_DIR$/public/css/tvchat/tvchat.css" />
         <option value="$PROJECT_DIR$/application/controllers/TvchatController.php" />
+        <option value="$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js" />
       </list>
     </option>
   </component>
@@ -175,6 +396,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="www.daas.com.py" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.daas.com.py" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.daas.com.py" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.daas.com.py" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www.daas.com.py" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -535,21 +784,25 @@
       <created>1409194146080</created>
       <updated>1409194146080</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="stash">
+      <created>1409194152269</created>
+      <updated>1409194152269</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27040815" sideWeight="0.4941435" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27040815" sideWeight="0.4941435" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2212991" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20166163" sideWeight="0.42657343" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20166163" sideWeight="0.42687073" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27643505" sideWeight="0.0" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20166163" sideWeight="0.5710956" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20166163" sideWeight="0.5714286" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23187311" sideWeight="0.37181664" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33106962" sideWeight="0.0" order="7" side_tool="true" content_ui="tabs" />
@@ -643,12 +896,134 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/application/controllers/TvchatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="644" column="20" selection-start="21174" selection-end="21225" vertical-scroll-proportion="0.0" vertical-offset="7820" max-vertical-offset="7820" />
+        <state line="644" column="20" selection-start="21174" selection-end="21225" vertical-scroll-proportion="0.0" vertical-offset="7820" max-vertical-offset="7820">
+          <folding>
+            <element signature="e#200#430#0" expanded="false" />
+            <element signature="n#init#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#getLog#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#indexAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#loginAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#logoutAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#marqueeManagerAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#marqueeAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#obtenerMensajesAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#4317#4717#0" expanded="false" />
+            <element signature="e#5082#5356#0" expanded="false" />
+            <element signature="e#5112#5342#1" expanded="false" />
+            <element signature="n#administracionAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#tvAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#tvhotAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#10378#10503#0" expanded="false" />
+            <element signature="n#getWinElementsTragamonedasSexyAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#11484#11573#0" expanded="false" />
+            <element signature="e#12126#12384#0" expanded="false" />
+            <element signature="e#12151#12374#1" expanded="false" />
+            <element signature="n#getWinElementsTombolaAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#12980#13069#0" expanded="false" />
+            <element signature="e#13490#13610#0" expanded="false" />
+            <element signature="e#13702#13792#0" expanded="false" />
+            <element signature="e#14207#14327#0" expanded="false" />
+            <element signature="e#14468#14716#0" expanded="false" />
+            <element signature="e#14493#14706#1" expanded="false" />
+            <element signature="n#getWinElementsPiropoAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#15291#15380#0" expanded="false" />
+            <element signature="e#15923#16155#0" expanded="false" />
+            <element signature="e#15948#16145#1" expanded="false" />
+            <element signature="n#guardarSorteoAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#16717#16851#0" expanded="false" />
+            <element signature="e#17026#17118#0" expanded="false" />
+            <element signature="e#17051#17108#1" expanded="false" />
+            <element signature="n#_consulta#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#17841#18288#0" expanded="false" />
+            <element signature="e#17960#18068#0" expanded="false" />
+            <element signature="e#18099#18171#0" expanded="false" />
+            <element signature="e#18749#19040#0" expanded="false" />
+            <element signature="e#19224#19750#0" expanded="false" />
+            <element signature="n#chatNumeroAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#chatNuevosMensajesAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#25126#25183#0" expanded="false" />
+            <element signature="n#chatHistorialAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#26497#26691#0" expanded="false" />
+            <element signature="n#adminAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#testearConexionAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#descargarAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <marker date="1409195374062" expanded="true" signature="17590:17712" placeholder="select * fro..tvchat_mensajes..." />
+            <marker date="1409195374062" expanded="true" signature="18480:18534" placeholder="select * fro..obtener_mensajes..." />
+            <marker date="1409195374062" expanded="true" signature="19920:20201" placeholder="select id_hi..historial..." />
+            <marker date="1409195374062" expanded="true" signature="20601:20967" placeholder="select id_hi..historial..." />
+            <marker date="1409195374062" expanded="true" signature="21482:21533" placeholder="select * fro..jugar_sorteo..." />
+            <marker date="1409195374062" expanded="true" signature="21962:22013" placeholder="select * fro..jugar_sorteo..." />
+            <marker date="1409195374062" expanded="true" signature="22432:22483" placeholder="select * fro..jugar_sorteo..." />
+            <marker date="1409195374062" expanded="true" signature="22901:22952" placeholder="select * fro..jugar_sorteo..." />
+            <marker date="1409195374062" expanded="true" signature="23363:23424" placeholder="select * fro..jugar_confirmar_sorteo..." />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/TvchatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="644" column="20" selection-start="21174" selection-end="21225" vertical-scroll-proportion="0.0" vertical-offset="7820" max-vertical-offset="7820" />
+        <state line="644" column="20" selection-start="21174" selection-end="21225" vertical-scroll-proportion="0.0" vertical-offset="7820" max-vertical-offset="7820">
+          <folding>
+            <element signature="e#200#430#0" expanded="false" />
+            <element signature="n#init#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#getLog#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#indexAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#loginAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#logoutAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#marqueeManagerAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#marqueeAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#obtenerMensajesAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#4317#4717#0" expanded="false" />
+            <element signature="e#5082#5356#0" expanded="false" />
+            <element signature="e#5112#5342#1" expanded="false" />
+            <element signature="n#administracionAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#tvAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#tvhotAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#10378#10503#0" expanded="false" />
+            <element signature="n#getWinElementsTragamonedasSexyAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#11484#11573#0" expanded="false" />
+            <element signature="e#12126#12384#0" expanded="false" />
+            <element signature="e#12151#12374#1" expanded="false" />
+            <element signature="n#getWinElementsTombolaAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#12980#13069#0" expanded="false" />
+            <element signature="e#13490#13610#0" expanded="false" />
+            <element signature="e#13702#13792#0" expanded="false" />
+            <element signature="e#14207#14327#0" expanded="false" />
+            <element signature="e#14468#14716#0" expanded="false" />
+            <element signature="e#14493#14706#1" expanded="false" />
+            <element signature="n#getWinElementsPiropoAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#15291#15380#0" expanded="false" />
+            <element signature="e#15923#16155#0" expanded="false" />
+            <element signature="e#15948#16145#1" expanded="false" />
+            <element signature="n#guardarSorteoAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#16717#16851#0" expanded="false" />
+            <element signature="e#17026#17118#0" expanded="false" />
+            <element signature="e#17051#17108#1" expanded="false" />
+            <element signature="n#_consulta#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#17841#18288#0" expanded="false" />
+            <element signature="e#17960#18068#0" expanded="false" />
+            <element signature="e#18099#18171#0" expanded="false" />
+            <element signature="e#18749#19040#0" expanded="false" />
+            <element signature="e#19224#19750#0" expanded="false" />
+            <element signature="n#chatNumeroAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#chatNuevosMensajesAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#25126#25183#0" expanded="false" />
+            <element signature="n#chatHistorialAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#26497#26691#0" expanded="false" />
+            <element signature="n#adminAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#testearConexionAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#descargarAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <marker date="1409195374062" expanded="true" signature="17590:17712" placeholder="select * fro..tvchat_mensajes..." />
+            <marker date="1409195374062" expanded="true" signature="18480:18534" placeholder="select * fro..obtener_mensajes..." />
+            <marker date="1409195374062" expanded="true" signature="19920:20201" placeholder="select id_hi..historial..." />
+            <marker date="1409195374062" expanded="true" signature="20601:20967" placeholder="select id_hi..historial..." />
+            <marker date="1409195374062" expanded="true" signature="21482:21533" placeholder="select * fro..jugar_sorteo..." />
+            <marker date="1409195374062" expanded="true" signature="21962:22013" placeholder="select * fro..jugar_sorteo..." />
+            <marker date="1409195374062" expanded="true" signature="22432:22483" placeholder="select * fro..jugar_sorteo..." />
+            <marker date="1409195374062" expanded="true" signature="22901:22952" placeholder="select * fro..jugar_sorteo..." />
+            <marker date="1409195374062" expanded="true" signature="23363:23424" placeholder="select * fro..jugar_confirmar_sorteo..." />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/WebservicesController.php">
@@ -806,11 +1181,6 @@
         <state line="512" column="104" selection-start="29489" selection-end="29489" vertical-scroll-proportion="-18.846153" vertical-offset="8214" max-vertical-offset="10948" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="21" selection-start="2778" selection-end="2778" vertical-scroll-proportion="0.0" vertical-offset="1649" max-vertical-offset="22729" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/helpers/InfoSesion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="9" selection-start="647" selection-end="647" vertical-scroll-proportion="-12.153846" vertical-offset="75" max-vertical-offset="612" />
@@ -893,7 +1263,216 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/TvchatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="494" column="34" selection-start="16023" selection-end="16023" vertical-scroll-proportion="1.232342" vertical-offset="0" max-vertical-offset="1071" />
+        <state line="285" column="14" selection-start="9798" selection-end="9798" vertical-scroll-proportion="-39.23077" vertical-offset="408" max-vertical-offset="2584">
+          <folding>
+            <element signature="e#200#430#0" expanded="false" />
+            <element signature="n#init#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#getLog#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#indexAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#loginAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#logoutAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#marqueeManagerAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#marqueeAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#obtenerMensajesAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#4317#4717#0" expanded="false" />
+            <element signature="e#5082#5356#0" expanded="false" />
+            <element signature="e#5112#5342#1" expanded="false" />
+            <element signature="n#administracionAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#tvAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#tvhotAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#10378#10503#0" expanded="false" />
+            <element signature="n#getWinElementsTragamonedasSexyAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#11484#11573#0" expanded="false" />
+            <element signature="e#12126#12384#0" expanded="false" />
+            <element signature="e#12151#12374#1" expanded="false" />
+            <element signature="n#getWinElementsTombolaAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#12980#13069#0" expanded="false" />
+            <element signature="e#13490#13610#0" expanded="false" />
+            <element signature="e#13702#13792#0" expanded="false" />
+            <element signature="e#14207#14327#0" expanded="false" />
+            <element signature="e#14468#14716#0" expanded="false" />
+            <element signature="e#14493#14706#1" expanded="false" />
+            <element signature="n#getWinElementsPiropoAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#15291#15380#0" expanded="false" />
+            <element signature="e#15923#16155#0" expanded="false" />
+            <element signature="e#15948#16145#1" expanded="false" />
+            <element signature="n#guardarSorteoAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#16717#16851#0" expanded="false" />
+            <element signature="e#17026#17118#0" expanded="false" />
+            <element signature="e#17051#17108#1" expanded="false" />
+            <element signature="n#_consulta#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#17841#18288#0" expanded="false" />
+            <element signature="e#17960#18068#0" expanded="false" />
+            <element signature="e#18099#18171#0" expanded="false" />
+            <element signature="e#18749#19040#0" expanded="false" />
+            <element signature="e#19224#19750#0" expanded="false" />
+            <element signature="n#chatNumeroAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#chatNuevosMensajesAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#25126#25183#0" expanded="false" />
+            <element signature="n#chatHistorialAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="e#26497#26691#0" expanded="false" />
+            <element signature="n#adminAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#testearConexionAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <element signature="n#descargarAction#0;n#TvchatController#0;n#!!top" expanded="false" />
+            <marker date="1409195374062" expanded="true" signature="17590:17712" placeholder="select * fro..tvchat_mensajes..." />
+            <marker date="1409195374062" expanded="true" signature="18480:18534" placeholder="select * fro..obtener_mensajes..." />
+            <marker date="1409195374062" expanded="true" signature="19920:20201" placeholder="select id_hi..historial..." />
+            <marker date="1409195374062" expanded="true" signature="20601:20967" placeholder="select id_hi..historial..." />
+            <marker date="1409195374062" expanded="true" signature="21482:21533" placeholder="select * fro..jugar_sorteo..." />
+            <marker date="1409195374062" expanded="true" signature="21962:22013" placeholder="select * fro..jugar_sorteo..." />
+            <marker date="1409195374062" expanded="true" signature="22432:22483" placeholder="select * fro..jugar_sorteo..." />
+            <marker date="1409195374062" expanded="true" signature="22901:22952" placeholder="select * fro..jugar_sorteo..." />
+            <marker date="1409195374062" expanded="true" signature="23363:23424" placeholder="select * fro..jugar_confirmar_sorteo..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="726" column="48" selection-start="18935" selection-end="18935" vertical-scroll-proportion="0.30427048" vertical-offset="3025" max-vertical-offset="4845">
+          <folding>
+            <element signature="e#606#669#0" expanded="false" />
+            <element signature="e#692#755#0" expanded="false" />
+            <element signature="e#777#840#0" expanded="false" />
+            <element signature="e#863#926#0" expanded="false" />
+            <element signature="n#!!block;n#Premio#0" expanded="false" />
+            <element signature="n#!!block;n#ObjetoGanador#0" expanded="false" />
+            <element signature="e#2274#2658#0" expanded="false" />
+            <element signature="e#2709#3101#0" expanded="false" />
+            <element signature="e#2984#3055#0" expanded="false" />
+            <element signature="e#3189#3389#0" expanded="false" />
+            <element signature="e#3284#3351#0" expanded="false" />
+            <element signature="e#3441#3635#0" expanded="false" />
+            <element signature="e#3532#3597#0" expanded="false" />
+            <element signature="e#3705#4002#0" expanded="false" />
+            <element signature="e#3759#3807#0" expanded="false" />
+            <element signature="e#4056#4368#0" expanded="false" />
+            <element signature="e#4110#4162#0" expanded="false" />
+            <element signature="e#4412#4665#0" expanded="false" />
+            <element signature="e#4436#4479#0" expanded="false" />
+            <element signature="e#4708#4958#0" expanded="false" />
+            <element signature="e#4732#4773#0" expanded="false" />
+            <element signature="e#5000#5247#0" expanded="false" />
+            <element signature="e#5024#5064#0" expanded="false" />
+            <element signature="e#5291#5540#0" expanded="false" />
+            <element signature="e#5315#5357#0" expanded="false" />
+            <element signature="e#5583#5722#0" expanded="false" />
+            <element signature="e#5637#5678#0" expanded="false" />
+            <element signature="e#5795#6041#0" expanded="false" />
+            <element signature="e#5806#5838#0" expanded="false" />
+            <element signature="e#5890#5937#0" expanded="false" />
+            <element signature="e#6095#6347#0" expanded="false" />
+            <element signature="e#6106#6138#0" expanded="false" />
+            <element signature="e#6190#6242#0" expanded="false" />
+            <element signature="e#6391#6633#0" expanded="false" />
+            <element signature="e#6402#6434#0" expanded="false" />
+            <element signature="e#6486#6528#0" expanded="false" />
+            <element signature="e#6676#6876#0" expanded="false" />
+            <element signature="e#6730#6771#0" expanded="false" />
+            <element signature="e#6918#7117#0" expanded="false" />
+            <element signature="e#6972#7012#0" expanded="false" />
+            <element signature="e#7160#7360#0" expanded="false" />
+            <element signature="e#7214#7255#0" expanded="false" />
+            <element signature="e#8122#8435#0" expanded="false" />
+            <element signature="e#8570#8685#0" expanded="false" />
+            <element signature="e#8835#10099#0" expanded="false" />
+            <element signature="e#9168#9265#0" expanded="false" />
+            <element signature="e#9627#9926#0" expanded="false" />
+            <element signature="e#10141#11128#0" expanded="false" />
+            <element signature="e#10270#10357#0" expanded="false" />
+            <element signature="e#10636#10974#0" expanded="false" />
+            <element signature="e#11169#12071#0" expanded="false" />
+            <element signature="e#11373#11459#0" expanded="false" />
+            <element signature="e#11654#11921#0" expanded="false" />
+            <element signature="e#12113#12732#0" expanded="false" />
+            <element signature="e#12227#12314#0" expanded="false" />
+            <element signature="e#12780#13687#0" expanded="false" />
+            <element signature="e#12972#13059#0" expanded="false" />
+            <element signature="e#13258#13535#0" expanded="false" />
+            <element signature="e#13738#14607#0" expanded="false" />
+            <element signature="e#13915#14002#0" expanded="false" />
+            <element signature="e#14201#14478#0" expanded="false" />
+            <element signature="e#14851#14927#0" expanded="false" />
+            <element signature="e#15193#15269#0" expanded="false" />
+            <element signature="e#15535#15611#0" expanded="false" />
+            <element signature="e#15700#15847#0" expanded="false" />
+            <element signature="e#15724#15805#0" expanded="false" />
+            <element signature="e#15894#16041#0" expanded="false" />
+            <element signature="e#15918#15999#0" expanded="false" />
+            <element signature="e#16088#16235#0" expanded="false" />
+            <element signature="e#16112#16193#0" expanded="false" />
+            <element signature="e#16276#16384#0" expanded="false" />
+            <element signature="e#16300#16342#0" expanded="false" />
+            <element signature="e#16479#16660#0" expanded="false" />
+            <element signature="e#16710#16891#0" expanded="false" />
+            <element signature="e#16951#17195#0" expanded="false" />
+            <element signature="e#17246#17458#0" expanded="false" />
+            <element signature="e#17931#18315#0" expanded="false" />
+            <element signature="e#18422#18858#0" expanded="false" />
+            <element signature="n#!!block;n#imprimir#0" expanded="false" />
+            <element signature="e#19661#19877#0" expanded="false" />
+            <element signature="e#19923#20099#0" expanded="false" />
+            <element signature="e#20145#20319#0" expanded="false" />
+            <element signature="e#20366#20544#0" expanded="false" />
+            <element signature="e#20623#20742#0" expanded="false" />
+            <element signature="e#20647#20695#0" expanded="false" />
+            <element signature="e#20802#20926#0" expanded="false" />
+            <element signature="e#20826#20879#0" expanded="false" />
+            <element signature="e#21045#21198#0" expanded="false" />
+            <element signature="e#21069#21152#0" expanded="false" />
+            <element signature="e#21266#21420#0" expanded="false" />
+            <element signature="e#21290#21373#0" expanded="false" />
+            <element signature="e#21499#21613#0" expanded="false" />
+            <element signature="e#21675#21941#0" expanded="false" />
+            <element signature="e#21980#22139#0" expanded="false" />
+            <element signature="e#22192#22306#0" expanded="false" />
+            <element signature="e#22368#22634#0" expanded="false" />
+            <element signature="e#22673#22832#0" expanded="false" />
+            <element signature="e#22885#22999#0" expanded="false" />
+            <element signature="e#23061#23327#0" expanded="false" />
+            <element signature="e#23366#23529#0" expanded="false" />
+            <element signature="e#23586#23598#0" expanded="false" />
+            <element signature="e#23782#26073#0" expanded="false" />
+            <element signature="e#26075#29945#0" expanded="false" />
+            <element signature="n#!!block;n#cargarNumerosGanadores#0" expanded="false" />
+            <element signature="e#30392#31714#0" expanded="false" />
+            <element signature="e#30948#31318#0" expanded="false" />
+            <element signature="e#30978#31143#0" expanded="false" />
+            <element signature="e#31147#31304#0" expanded="false" />
+            <element signature="e#31772#32409#0" expanded="false" />
+            <element signature="e#32457#34051#0" expanded="false" />
+            <element signature="e#32897#33429#0" expanded="false" />
+            <element signature="e#32926#33088#0" expanded="false" />
+            <element signature="e#33092#33243#0" expanded="false" />
+            <element signature="e#34105#34839#0" expanded="false" />
+            <element signature="e#34887#35432#0" expanded="false" />
+            <element signature="n#!!block;n#testearConexion#0" expanded="false" />
+            <element signature="n#!!block;n#procesarRespuesta#0" expanded="false" />
+            <element signature="n#!!block;n#obtenerMensajes#0" expanded="false" />
+            <element signature="n#!!block;n#cargarOpcionesMensajes#0" expanded="false" />
+            <element signature="e#36121#37148#0" expanded="false" />
+            <element signature="n#!!block;n#obtenerMensajesMarquee#0" expanded="false" />
+            <element signature="n#!!block;n#cargarMensajes#0" expanded="false" />
+            <element signature="n#!!block;n#obtenerMensajesNuevosMensajero#0" expanded="false" />
+            <element signature="n#!!block;n#actualizarTotalGuaranies#0" expanded="false" />
+            <element signature="n#!!block;n#cargarModuloPorDefecto#0" expanded="false" />
+            <element signature="e#38258#38329#0" expanded="false" />
+            <element signature="n#!!block;n#guardarSorteo#0" expanded="false" />
+            <element signature="e#38618#38656#0" expanded="false" />
+            <element signature="e#38730#38876#0" expanded="false" />
+            <element signature="e#38928#39064#0" expanded="false" />
+            <element signature="e#39126#39282#0" expanded="false" />
+            <element signature="e#39334#39470#0" expanded="false" />
+            <element signature="e#39522#39658#0" expanded="false" />
+            <element signature="e#39708#39840#0" expanded="false" />
+            <element signature="e#39898#39939#0" expanded="false" />
+            <element signature="e#39992#40135#0" expanded="false" />
+            <element signature="e#40016#40089#0" expanded="false" />
+            <element signature="n#!!block;n#removerCss#0" expanded="false" />
+            <element signature="n#!!block;n#ocultarModulos#0" expanded="false" />
+            <element signature="e#41421#41541#0" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

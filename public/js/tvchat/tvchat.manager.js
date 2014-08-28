@@ -17,21 +17,30 @@ var mensajero_buffer = [];
 //elemento ganador
 var nuevoGanador = null;
 //premios
+var premio_tragamonedas = {
+    premio_gs: 0,
+    premio_texto: null,
+    id_premio : 0
+};
 var premio_tragamonedas_sexy = {
-    'premio_gs': 0,
-    'premio_texto': null
+    premio_gs: 0,
+    premio_texto: null,
+    id_premio : 0
 };
 var premio_tombola = {
-    'premio_gs': 0,
-    'premio_texto': null
+    premio_gs: 0,
+    premio_texto: null,
+    id_premio : 0
 };
 var premio_piropo = {
-    'premio_gs': 0,
-    'premio_texto': null
+    premio_gs: 0,
+    premio_texto: null,
+    id_premio : 0
 };
 var premio_piropo2 = {
-    'premio_gs': 0,
-    'premio_texto': null
+    premio_gs: 0,
+    premio_texto: null,
+    id_premio : 0
 };
 
 var valor_premios = [ 0, 500000, 200000, 100000, 50000 ];
@@ -310,6 +319,7 @@ var siguiente_id_solicitar = 0;
     $('#jugarTragamonedas').click(function(){
 
         nuevoGanador = tragamonedas_buffer.pop();
+        nuevoGanador.premio = premio_tragamonedas;
 
         var params = {
 
@@ -674,8 +684,9 @@ var siguiente_id_solicitar = 0;
     $('#getElementsTragamonedas').click(function(){
 
         $('#premios_tragamonedas').hide();
-        premio_tragamonedas.premio_texto = "Sin Premio";
-        premio_tragamonedas.premio_gs = 0;
+        /*premio_tragamonedas.premio_texto = "Sin Premio";
+        premio_tragamonedas.premio_gs = 0;*/
+
         $.get("/tvchat/get-win-elements-tragamonedas", { premio : false }, cargarNumerosGanadores, "json");
 
         ////habilitarBotones( 3, 'tragamonedas' );
@@ -715,18 +726,9 @@ var siguiente_id_solicitar = 0;
     //seleccionar premio
     $("#premios_tragamonedas").change(function(){
 
-        var ganador = tragamonedas_buffer.pop();
-        var premio_texto = $( "#premios_tragamonedas option:selected" ).text();
-        var id_premio = $( "#premios_tragamonedas option:selected" ).val();
-        var premio_gs = valor_premios[id_premio];
-        //var premio = new Premio( premio_gs, id_premio, premio_texto );
-
-        ganador.premio = new Premio( premio_gs, id_premio, premio_texto );
-
-        imprimir(ganador);
-
-        tragamonedas_buffer.push(ganador);
-
+        premio_tragamonedas.premio_texto = $( "#premios_tragamonedas option:selected" ).text();
+        premio_tragamonedas.id_premio = $( "#premios_tragamonedas option:selected" ).val();
+        premio_tragamonedas.premio_gs = valor_premios[premio_tragamonedas.id_premio];
     });
 
     function imprimir( respuesta ){
