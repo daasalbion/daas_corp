@@ -17,9 +17,7 @@ var $mwo = null;
 function cargarJuego( params ){
 
     console.log("juego: " + params["juego"]);
-    console.log("valores_ganadores: " + params["valores_ganadores"]);
 
-    elementos_ganadores = params["valores_ganadores"];
     clearInterval(mostrar);
 
     //elimino cualquier juego creado antes
@@ -126,8 +124,8 @@ function cargarJuego( params ){
             '60', '61', '62', '63', '64', '65', '66', '67', '68', '69',
             '70', '71', '72', '73', '74', '75', '76', '77', '78', '79',
             '80', '81', '82', '83', '84', '85', '86', '87', '88', '89',
-            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99',
-            'coin', 'chomp', 'flower', 'star'];
+            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99'];
+            //'coin', 'chomp', 'flower', 'star'];
         var imagenes_tiras2 = [
             '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
@@ -138,8 +136,7 @@ function cargarJuego( params ){
             '60', '61', '62', '63', '64', '65', '66', '67', '68', '69',
             '70', '71', '72', '73', '74', '75', '76', '77', '78', '79',
             '80', '81', '82', '83', '84', '85', '86', '87', '88', '89',
-            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99',
-            'coin', 'chomp', 'flower', 'star'];
+            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99'];
         var imagenes_tiras3 = [
             '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
@@ -150,8 +147,7 @@ function cargarJuego( params ){
             '60', '61', '62', '63', '64', '65', '66', '67', '68', '69',
             '70', '71', '72', '73', '74', '75', '76', '77', '78', '79',
             '80', '81', '82', '83', '84', '85', '86', '87', '88', '89',
-            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99',
-            'coin', 'chomp', 'flower', 'star'];
+            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99'];
 
         var tira_imagenes1 = $('#tira_imagenes1');
         var tira_imagenes2 = $('#tira_imagenes2');
@@ -440,11 +436,14 @@ function descargarJuego( params ){
 
 function jugarJuego( params ){
 
+    var ganador = params['objeto_ganador'].cel_ganador;
+    var premio = params['objeto_ganador'].premio.premio_texto;
+    var elementos_ganadores = params['objeto_ganador'].combinacion_ganadora_list;
+
     console.log("juego a jugar: " + params['jugar']);
     console.log("valores_ganadores: " + params["objeto_ganador"].combinacion_ganadora);
-    elementos_ganadores = params["objeto_ganador"].combinacion_ganadora_list;
-    var ganador = params['objeto_ganador'].cel_ganador;
-    var premio = params['objeto_ganador'].premio;
+    console.log("combinacion_ganadora_list: " + elementos_ganadores);
+
     clearInterval(mostrar);
 
     if( params['jugar'] == "tragamonedas" ){
