@@ -1,0 +1,890 @@
+2014-08-22T09:15:36-04:00 INFO - [127.0.0.1]: index
+2014-08-22T09:15:37-04:00 INFO - [127.0.0.1]: LOGIN:[daas]
+2014-08-22T09:15:37-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:15:37-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:15:37-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:15:37-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T09:16:42-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:16:42-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:16:42-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:16:42-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T09:17:20-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:17:20-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:17:20-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:17:20-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T09:24:14-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:24:14-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:24:14-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:24:14-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T09:28:08-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:28:08-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:28:08-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:28:08-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T09:29:36-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:29:36-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:29:36-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:29:36-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T09:37:10-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:37:10-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:37:10-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:37:10-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => selected
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => 
+        )
+
+)
+]
+2014-08-22T09:46:38-04:00 INFO - [127.0.0.1]: LOGIN:[daas]
+2014-08-22T09:46:38-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:46:38-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:46:38-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:46:38-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T09:47:33-04:00 INFO - [127.0.0.1]: LOGIN:[daas]
+2014-08-22T09:47:33-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:47:33-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:47:33-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:47:33-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T09:47:46-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:47:46-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:47:46-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:47:46-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T09:48:34-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:48:34-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:48:34-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:48:34-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T09:50:22-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:50:22-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:50:22-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:50:22-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => selected
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => 
+        )
+
+)
+]
+2014-08-22T09:52:19-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:52:19-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:52:19-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:52:19-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => selected
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => 
+        )
+
+)
+]
+2014-08-22T09:54:13-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:54:13-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:54:13-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:54:13-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => selected
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => 
+        )
+
+)
+]
+2014-08-22T09:58:40-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T09:58:40-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T09:58:40-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T09:58:40-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T10:00:54-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:00:54-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:00:54-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:00:54-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T10:01:54-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:01:54-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:01:54-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:01:54-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T10:05:00-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:05:00-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:05:00-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:05:00-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T10:07:30-04:00 INFO - [127.0.0.1]: LOGIN:[daas]
+2014-08-22T10:07:30-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:07:30-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:07:30-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:07:30-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T10:07:57-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:07:57-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:07:57-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:07:57-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T10:09:49-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:09:49-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:09:49-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:09:49-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T10:12:03-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:12:03-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:12:03-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:12:03-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T10:15:40-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:15:40-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:15:40-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:15:40-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T10:15:54-04:00 INFO - [127.0.0.1]: index
+2014-08-22T10:19:09-04:00 INFO - [127.0.0.1]: index
+2014-08-22T10:19:11-04:00 INFO - [127.0.0.1]: LOGIN:[daas]
+2014-08-22T10:19:11-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:19:11-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:19:11-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:19:11-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T10:22:08-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:22:08-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:22:08-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:22:08-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T10:28:16-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:28:16-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:28:16-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:28:16-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T10:29:01-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:29:01-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:29:01-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:29:01-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => selected
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => 
+        )
+
+)
+]
+2014-08-22T10:32:00-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:32:00-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:32:00-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:32:00-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T10:54:33-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T10:54:33-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T10:54:33-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T10:54:33-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T11:16:48-04:00 INFO - [127.0.0.1]: index
+2014-08-22T11:16:50-04:00 INFO - [127.0.0.1]: LOGIN:[daas]
+2014-08-22T11:16:50-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T11:16:50-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T11:16:50-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T11:16:50-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T11:43:28-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T11:43:28-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T11:43:28-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T11:43:28-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T11:44:06-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T11:44:06-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T11:44:06-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T11:44:06-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T12:00:18-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T12:00:18-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T12:00:18-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T12:00:18-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T12:02:40-04:00 INFO - [127.0.0.1]: index
+2014-08-22T12:02:50-04:00 INFO - [127.0.0.1]: LOGIN:[daas]
+2014-08-22T12:02:50-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T12:02:50-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T12:02:50-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T12:02:50-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T12:03:03-04:00 INFO - [127.0.0.1]: logout:[daas](DAAS)
+2014-08-22T12:03:05-04:00 INFO - [127.0.0.1]: LOGIN:[daas]
+2014-08-22T12:03:05-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T12:03:05-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T12:03:05-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T12:03:05-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T12:03:41-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T12:03:41-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T12:03:41-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T12:03:41-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T12:07:00-04:00 INFO - [127.0.0.1]: logout:[daas](DAAS)
+2014-08-22T12:07:02-04:00 INFO - [127.0.0.1]: LOGIN:[daas]
+2014-08-22T12:07:02-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T12:07:02-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T12:07:02-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T12:07:02-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-22T12:27:18-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-22T12:27:18-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-22T12:27:18-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-22T12:27:18-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]

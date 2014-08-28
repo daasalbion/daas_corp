@@ -1,0 +1,131 @@
+2014-08-15T19:40:57-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:40:57-04:00 INFO - [127.0.0.1]: IndexController -> Request
+2014-08-15T19:40:58-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:41:03-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:41:03-04:00 INFO - [127.0.0.1]: index
+2014-08-15T19:41:24-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:41:24-04:00 INFO - [127.0.0.1]: --->DESCARGAR_ACTION
+2014-08-15T19:41:24-04:00 INFO - [127.0.0.1]: Parametros:[Array]
+2014-08-15T19:42:30-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:42:30-04:00 INFO - [127.0.0.1]: --->DESCARGAR_ACTION
+2014-08-15T19:42:30-04:00 INFO - [127.0.0.1]: Parametros:[Array]
+2014-08-15T19:47:35-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:47:35-04:00 INFO - [127.0.0.1]: --->DESCARGAR_ACTION
+2014-08-15T19:47:35-04:00 INFO - [127.0.0.1]: Parametros:[Array
+(
+    [controller] => tvchat
+    [action] => descargar
+    [id] => 0
+    [module] => default
+)
+]
+2014-08-15T19:48:25-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:48:25-04:00 INFO - [127.0.0.1]: --->DESCARGAR_ACTION
+2014-08-15T19:48:25-04:00 INFO - [127.0.0.1]: Parametros:[Array
+(
+    [controller] => tvchat
+    [action] => descargar
+    [id] => 0
+    [module] => default
+)
+]
+2014-08-15T19:48:54-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:48:54-04:00 INFO - [127.0.0.1]: --->DESCARGAR_ACTION
+2014-08-15T19:48:54-04:00 INFO - [127.0.0.1]: Parametros:[Array
+(
+    [controller] => tvchat
+    [action] => descargar
+    [id] => 0
+    [module] => default
+)
+]
+2014-08-15T19:48:54-04:00 INFO - [127.0.0.1]: size:[135606]
+2014-08-15T19:48:54-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:48:54-04:00 INFO - [127.0.0.1]: --->DESCARGAR_ACTION
+2014-08-15T19:48:54-04:00 INFO - [127.0.0.1]: Parametros:[Array
+(
+    [controller] => tvchat
+    [action] => descargar
+    [id] => 0
+    [module] => default
+)
+]
+2014-08-15T19:48:54-04:00 INFO - [127.0.0.1]: size:[135606]
+2014-08-15T19:53:18-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:53:18-04:00 INFO - [127.0.0.1]: --->DESCARGAR_ACTION
+2014-08-15T19:53:18-04:00 INFO - [127.0.0.1]: Parametros:[Array
+(
+    [controller] => tvchat
+    [action] => descargar
+    [id] => 1
+    [module] => default
+)
+]
+2014-08-15T19:53:18-04:00 INFO - [127.0.0.1]: size:[135606]
+2014-08-15T19:53:18-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:53:18-04:00 INFO - [127.0.0.1]: --->DESCARGAR_ACTION
+2014-08-15T19:53:18-04:00 INFO - [127.0.0.1]: Parametros:[Array
+(
+    [controller] => tvchat
+    [action] => descargar
+    [id] => 1
+    [module] => default
+)
+]
+2014-08-15T19:53:18-04:00 INFO - [127.0.0.1]: size:[135606]
+2014-08-15T19:53:22-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:53:22-04:00 INFO - [127.0.0.1]: --->DESCARGAR_ACTION
+2014-08-15T19:53:22-04:00 INFO - [127.0.0.1]: Parametros:[Array
+(
+    [controller] => tvchat
+    [action] => descargar
+    [id] => 2
+    [module] => default
+)
+]
+2014-08-15T19:53:22-04:00 INFO - [127.0.0.1]: size:[135606]
+2014-08-15T19:53:23-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:53:23-04:00 INFO - [127.0.0.1]: --->DESCARGAR_ACTION
+2014-08-15T19:53:23-04:00 INFO - [127.0.0.1]: Parametros:[Array
+(
+    [controller] => tvchat
+    [action] => descargar
+    [id] => 2
+    [module] => default
+)
+]
+2014-08-15T19:53:23-04:00 INFO - [127.0.0.1]: size:[135606]
+2014-08-15T19:55:23-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T19:55:23-04:00 INFO - [127.0.0.1]: --->DESCARGAR_ACTION
+2014-08-15T19:55:23-04:00 INFO - [127.0.0.1]: Parametros:[Array
+(
+    [controller] => tvchat
+    [action] => descargar
+    [id] => 2
+    [module] => default
+)
+]
+2014-08-15T19:55:23-04:00 INFO - [127.0.0.1]: size:[135606]
+2014-08-15T19:55:23-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T20:32:08-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T20:32:08-04:00 INFO - [127.0.0.1]: --->DESCARGAR_ACTION
+2014-08-15T20:32:08-04:00 INFO - [127.0.0.1]: Parametros:[Array
+(
+    [controller] => tvchat
+    [action] => descargar
+    [id] => 1
+    [module] => default
+)
+]
+2014-08-15T20:32:08-04:00 INFO - [127.0.0.1]: size:[135606]
+2014-08-15T20:40:46-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-15T20:40:46-04:00 INFO - [127.0.0.1]: --->DESCARGAR_ACTION
+2014-08-15T20:40:46-04:00 INFO - [127.0.0.1]: Parametros:[Array
+(
+    [controller] => tvchat
+    [action] => descargar
+    [id] => 0
+    [module] => default
+)
+]
+2014-08-15T20:40:46-04:00 INFO - [127.0.0.1]: size:[135606]

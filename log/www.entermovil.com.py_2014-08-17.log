@@ -1,0 +1,1146 @@
+2014-08-17T16:20:00-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-17T16:20:00-04:00 INFO - [127.0.0.1]: IndexController -> Request
+2014-08-17T16:20:01-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-17T16:25:52-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-17T16:25:52-04:00 INFO - [127.0.0.1]: IndexController -> Request
+2014-08-17T16:25:52-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-17T16:25:55-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-17T16:25:55-04:00 INFO - [127.0.0.1]: IndexController -> Request
+2014-08-17T16:25:58-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-17T16:25:58-04:00 INFO - [127.0.0.1]: IndexController -> Log inicializado
+2014-08-17T16:25:58-04:00 INFO - [127.0.0.1]: LOGIN:[daas]
+2014-08-17T16:25:58-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-17T16:25:58-04:00 INFO - [127.0.0.1]: ReportesController -> Request
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: anho_inicio:[2011] mes_inicio:[11]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:25:59-04:00 INFO - [127.0.0.1]: continuar:[SI]
+2014-08-17T16:26:01-04:00 INFO - [127.0.0.1]: totales:[Array
+(
+    [1] => Array
+        (
+            [10130] => Array
+                (
+                    [66] => Array
+                        (
+                            [cobros] => 54
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 300
+                            [decimal] => 
+                            [total_bruto] => 16200
+                            [revenue_share] => 0.35
+                            [total_neto] => 5670
+                        )
+
+                )
+
+            [35500] => Array
+                (
+                    [77] => Array
+                        (
+                            [cobros] => 20
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 3000
+                            [decimal] => 
+                            [total_bruto] => 60000
+                            [revenue_share] => 0.40
+                            [total_neto] => 24000
+                        )
+
+                    [72] => Array
+                        (
+                            [cobros] => 58
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 3000
+                            [decimal] => 
+                            [total_bruto] => 174000
+                            [revenue_share] => 0.40
+                            [total_neto] => 69600
+                        )
+
+                    [7] => Array
+                        (
+                            [costo] => 2000
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.40
+                            [total_neto] => 0
+                        )
+
+                )
+
+            [6767] => Array
+                (
+                    [73] => Array
+                        (
+                            [cobros] => 3
+                            [cobros_hoy] => 1
+                            [costo_gs] => 900
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 900
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 315
+                            [total_neto_usd] => 0.000
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 2700
+                            [revenue_share] => 0.35
+                            [total_neto] => 945
+                        )
+
+                    [56] => Array
+                        (
+                            [cobros] => 27
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 24300
+                            [revenue_share] => 0.35
+                            [total_neto] => 8505
+                        )
+
+                    [54] => Array
+                        (
+                            [cobros] => 268
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 241200
+                            [revenue_share] => 0.35
+                            [total_neto] => 84420
+                        )
+
+                    [52] => Array
+                        (
+                            [cobros] => 16
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 14400
+                            [revenue_share] => 0.35
+                            [total_neto] => 5040
+                        )
+
+                    [51] => Array
+                        (
+                            [cobros] => 3
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 2700
+                            [revenue_share] => 0.35
+                            [total_neto] => 945
+                        )
+
+                    [50] => Array
+                        (
+                            [cobros] => 31
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 27900
+                            [revenue_share] => 0.35
+                            [total_neto] => 9765
+                        )
+
+                    [49] => Array
+                        (
+                            [cobros] => 44
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 39600
+                            [revenue_share] => 0.35
+                            [total_neto] => 13860
+                        )
+
+                    [47] => Array
+                        (
+                            [cobros] => 26
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 23400
+                            [revenue_share] => 0.35
+                            [total_neto] => 8190
+                        )
+
+                    [40] => Array
+                        (
+                            [cobros] => 5
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 4500
+                            [revenue_share] => 0.35
+                            [total_neto] => 1575
+                        )
+
+                    [37] => Array
+                        (
+                            [cobros] => 14
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 12600
+                            [revenue_share] => 0.35
+                            [total_neto] => 4410
+                        )
+
+                    [34] => Array
+                        (
+                            [cobros] => 184
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 165600
+                            [revenue_share] => 0.35
+                            [total_neto] => 57960
+                        )
+
+                    [32] => Array
+                        (
+                            [cobros] => 132
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 118800
+                            [revenue_share] => 0.35
+                            [total_neto] => 41580
+                        )
+
+                    [27] => Array
+                        (
+                            [cobros] => 12
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 10800
+                            [revenue_share] => 0.35
+                            [total_neto] => 3780
+                        )
+
+                    [26] => Array
+                        (
+                            [cobros] => 18
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 16200
+                            [revenue_share] => 0.35
+                            [total_neto] => 5670
+                        )
+
+                    [25] => Array
+                        (
+                            [cobros] => 1
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 900
+                            [revenue_share] => 0.35
+                            [total_neto] => 315
+                        )
+
+                    [24] => Array
+                        (
+                            [cobros] => 11
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 9900
+                            [revenue_share] => 0.35
+                            [total_neto] => 3465
+                        )
+
+                    [23] => Array
+                        (
+                            [cobros] => 1
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 900
+                            [revenue_share] => 0.35
+                            [total_neto] => 315
+                        )
+
+                    [22] => Array
+                        (
+                            [cobros] => 8
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 7200
+                            [revenue_share] => 0.35
+                            [total_neto] => 2520
+                        )
+
+                    [20] => Array
+                        (
+                            [cobros] => 420
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 378000
+                            [revenue_share] => 0.35
+                            [total_neto] => 132300
+                        )
+
+                    [19] => Array
+                        (
+                            [cobros] => 5
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 4500
+                            [revenue_share] => 0.35
+                            [total_neto] => 1575
+                        )
+
+                    [18] => Array
+                        (
+                            [cobros] => 1
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 500
+                            [decimal] => 
+                            [total_bruto] => 500
+                            [revenue_share] => 0.35
+                            [total_neto] => 175
+                        )
+
+                    [17] => Array
+                        (
+                            [cobros] => 171
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 153900
+                            [revenue_share] => 0.35
+                            [total_neto] => 53865
+                        )
+
+                    [14] => Array
+                        (
+                            [cobros] => 10
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 500
+                            [decimal] => 
+                            [total_bruto] => 5000
+                            [revenue_share] => 0.35
+                            [total_neto] => 1750
+                        )
+
+                    [35] => Array
+                        (
+                            [costo] => 900
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [78] => Array
+                        (
+                            [costo] => 500
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [61] => Array
+                        (
+                            [costo] => 500
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [48] => Array
+                        (
+                            [costo] => 900
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [30] => Array
+                        (
+                            [costo] => 900
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [33] => Array
+                        (
+                            [costo] => 900
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [41] => Array
+                        (
+                            [costo] => 900
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [60] => Array
+                        (
+                            [costo] => 900
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [89] => Array
+                        (
+                            [costo] => 2000
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [68] => Array
+                        (
+                            [costo] => 5000
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [16] => Array
+                        (
+                            [costo] => 500
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [38] => Array
+                        (
+                            [costo] => 900
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [79] => Array
+                        (
+                            [costo] => 500
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [80] => Array
+                        (
+                            [costo] => 500
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [76] => Array
+                        (
+                            [costo] => 500
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [29] => Array
+                        (
+                            [costo] => 900
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [67] => Array
+                        (
+                            [costo] => 1500
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [31] => Array
+                        (
+                            [costo] => 900
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                    [36] => Array
+                        (
+                            [costo] => 900
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 0.35
+                            [total_neto] => 0
+                        )
+
+                )
+
+            [8540] => Array
+                (
+                    [88] => Array
+                        (
+                            [costo] => 2000
+                            [decimal] => 
+                            [cobros] => 0
+                            [cobros_hoy] => 0
+                            [total_bruto] => 0
+                            [revenue_share] => 
+                            [total_neto] => 0
+                        )
+
+                )
+
+            [9330] => Array
+                (
+                    [62] => Array
+                        (
+                            [cobros] => 10
+                            [cobros_hoy] => 1
+                            [costo_gs] => 300
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 300
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 105
+                            [total_neto_usd] => 0.000
+                            [costo] => 300
+                            [decimal] => 
+                            [total_bruto] => 3000
+                            [revenue_share] => 0.35
+                            [total_neto] => 1050
+                        )
+
+                )
+
+            [965] => Array
+                (
+                    [57] => Array
+                        (
+                            [cobros] => 45
+                            [cobros_hoy] => 3
+                            [costo_gs] => 900
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 2700
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 945
+                            [total_neto_usd] => 0.000
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 40500
+                            [revenue_share] => 0.35
+                            [total_neto] => 14175
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [10130] => Array
+                (
+                    [66] => Array
+                        (
+                            [cobros] => 1518
+                            [cobros_hoy] => 71
+                            [costo_gs] => 300
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 21300
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 6390
+                            [total_neto_usd] => 0.000
+                            [costo] => 300
+                            [decimal] => 
+                            [total_bruto] => 455400
+                            [revenue_share] => 0.30
+                            [total_neto] => 136620
+                        )
+
+                )
+
+            [35500] => Array
+                (
+                    [7] => Array
+                        (
+                            [cobros] => 89
+                            [cobros_hoy] => 4
+                            [costo_gs] => 5000
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 20000
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 6000
+                            [total_neto_usd] => 0.000
+                            [costo] => 5000
+                            [decimal] => 
+                            [total_bruto] => 445000
+                            [revenue_share] => 0.30
+                            [total_neto] => 133500
+                        )
+
+                    [72] => Array
+                        (
+                            [cobros] => 1111
+                            [cobros_hoy] => 56
+                            [costo_gs] => 3000
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 168000
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 50400
+                            [total_neto_usd] => 0.000
+                            [costo] => 3000
+                            [decimal] => 
+                            [total_bruto] => 3333000
+                            [revenue_share] => 0.30
+                            [total_neto] => 999900
+                        )
+
+                    [77] => Array
+                        (
+                            [cobros] => 2
+                            [cobros_hoy] => 
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                        )
+
+                    [8] => Array
+                        (
+                            [cobros] => 2
+                            [cobros_hoy] => 
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                        )
+
+                )
+
+            [6767] => Array
+                (
+                    [14] => Array
+                        (
+                            [cobros] => 444
+                            [cobros_hoy] => 10
+                            [costo_gs] => 2000
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 20000
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 6000
+                            [total_neto_usd] => 0.000
+                            [costo] => 2000
+                            [decimal] => 
+                            [total_bruto] => 888000
+                            [revenue_share] => 0.30
+                            [total_neto] => 266400
+                        )
+
+                    [16] => Array
+                        (
+                            [cobros] => 597
+                            [cobros_hoy] => 26
+                            [costo_gs] => 2000
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 52000
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 15600
+                            [total_neto_usd] => 0.000
+                            [costo] => 2000
+                            [decimal] => 
+                            [total_bruto] => 1194000
+                            [revenue_share] => 0.30
+                            [total_neto] => 358200
+                        )
+
+                    [17] => Array
+                        (
+                            [cobros] => 40
+                            [cobros_hoy] => 9
+                            [costo_gs] => 3000
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 27000
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 8100
+                            [total_neto_usd] => 0.000
+                            [costo] => 3000
+                            [decimal] => 
+                            [total_bruto] => 120000
+                            [revenue_share] => 0.30
+                            [total_neto] => 36000
+                        )
+
+                    [20] => Array
+                        (
+                            [cobros] => 85
+                            [cobros_hoy] => 26
+                            [costo_gs] => 3000
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 78000
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 23400
+                            [total_neto_usd] => 0.000
+                            [costo] => 3000
+                            [decimal] => 
+                            [total_bruto] => 255000
+                            [revenue_share] => 0.30
+                            [total_neto] => 76500
+                        )
+
+                    [67] => Array
+                        (
+                            [cobros] => 4827
+                            [cobros_hoy] => 696
+                            [costo_gs] => 2000
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 1392000
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 417600
+                            [total_neto_usd] => 0.000
+                            [costo] => 2000
+                            [decimal] => 
+                            [total_bruto] => 9654000
+                            [revenue_share] => 0.30
+                            [total_neto] => 2896200
+                        )
+
+                    [68] => Array
+                        (
+                            [cobros] => 330
+                            [cobros_hoy] => 7
+                            [costo_gs] => 3000
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 21000
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 6300
+                            [total_neto_usd] => 0.000
+                            [costo] => 3000
+                            [decimal] => 
+                            [total_bruto] => 990000
+                            [revenue_share] => 0.30
+                            [total_neto] => 297000
+                        )
+
+                    [73] => Array
+                        (
+                            [cobros] => 4455
+                            [cobros_hoy] => 315
+                            [costo_gs] => 2000
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 630000
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 189000
+                            [total_neto_usd] => 0.000
+                            [costo] => 2000
+                            [decimal] => 
+                            [total_bruto] => 8910000
+                            [revenue_share] => 0.30
+                            [total_neto] => 2673000
+                        )
+
+                    [89] => Array
+                        (
+                            [cobros] => 1
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 2000
+                            [decimal] => 
+                            [total_bruto] => 2000
+                            [revenue_share] => 0.30
+                            [total_neto] => 600
+                        )
+
+                    [54] => Array
+                        (
+                            [cobros] => 2
+                            [cobros_hoy] => 
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                        )
+
+                    [47] => Array
+                        (
+                            [cobros] => 1
+                            [cobros_hoy] => 
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                        )
+
+                    [45] => Array
+                        (
+                            [cobros] => 8
+                            [cobros_hoy] => 
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                        )
+
+                    [37] => Array
+                        (
+                            [cobros] => 1
+                            [cobros_hoy] => 
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                        )
+
+                    [32] => Array
+                        (
+                            [cobros] => 1
+                            [cobros_hoy] => 
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                        )
+
+                    [18] => Array
+                        (
+                            [cobros] => 32
+                            [cobros_hoy] => 
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                        )
+
+                )
+
+            [8540] => Array
+                (
+                    [88] => Array
+                        (
+                            [cobros] => 4
+                            [cobros_hoy] => 0
+                            [costo_gs] => 
+                            [costo_usd] => 
+                            [total_bruto_gs] => 
+                            [total_bruto_usd] => 
+                            [total_neto_gs] => 
+                            [total_neto_usd] => 
+                            [costo] => 2000
+                            [decimal] => 
+                            [total_bruto] => 8000
+                            [revenue_share] => 
+                            [total_neto] => 0
+                        )
+
+                )
+
+            [9330] => Array
+                (
+                    [62] => Array
+                        (
+                            [cobros] => 120
+                            [cobros_hoy] => 1
+                            [costo_gs] => 300
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 300
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 90
+                            [total_neto_usd] => 0.000
+                            [costo] => 300
+                            [decimal] => 
+                            [total_bruto] => 36000
+                            [revenue_share] => 0.30
+                            [total_neto] => 10800
+                        )
+
+                )
+
+            [965] => Array
+                (
+                    [57] => Array
+                        (
+                            [cobros] => 223
+                            [cobros_hoy] => 8
+                            [costo_gs] => 900
+                            [costo_usd] => 0
+                            [total_bruto_gs] => 7200
+                            [total_bruto_usd] => 0.000
+                            [total_neto_gs] => 2160
+                            [total_neto_usd] => 0.000
+                            [costo] => 900
+                            [decimal] => 
+                            [total_bruto] => 200700
+                            [revenue_share] => 0.30
+                            [total_neto] => 60210
+                        )
+
+                )
+
+        )
+
+)
+]

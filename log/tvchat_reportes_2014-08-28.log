@@ -1,0 +1,94 @@
+2014-08-28T12:12:54-04:00 INFO - [127.0.0.1]: index
+2014-08-28T12:13:00-04:00 INFO - [127.0.0.1]: LOGIN:[david]
+2014-08-28T12:13:00-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-28T12:13:00-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-28T12:13:00-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-28T12:13:00-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-28T12:23:56-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-28T12:23:56-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-28T12:23:56-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-28T12:23:56-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]
+2014-08-28T12:24:16-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-28T12:24:16-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-28T12:24:16-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-28T12:24:16-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => selected
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => 
+        )
+
+)
+]
+2014-08-28T12:35:58-04:00 INFO - [127.0.0.1]: anho_inicio:[2014] mes_inicio:[7]
+2014-08-28T12:35:58-04:00 INFO - [127.0.0.1]: anho_actual:[2014] mes_actual:[8]
+2014-08-28T12:35:58-04:00 INFO - [127.0.0.1]: continuar:[NO]
+2014-08-28T12:35:58-04:00 INFO - [127.0.0.1]: rango_seleccion:[Array
+(
+    [0] => Array
+        (
+            [anho] => 2014
+            [mes] => 7
+            [descripcion] => 2014 - Julio
+            [selected] => 
+        )
+
+    [1] => Array
+        (
+            [anho] => 2014
+            [mes] => 8
+            [descripcion] => 2014 - Agosto
+            [selected] => selected
+        )
+
+)
+]

@@ -6,6 +6,7 @@ class TvchatReportesController extends Zend_Controller_Action{
     var $usuarios = array(
 
         'daas' => array('clave' => 'daas', 'nombre' => 'DAAS'),
+        'david' => array('clave' => 'david', 'nombre' => 'David Villalba')
     );
     var $meses = array(
         'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Setiembre', 'Octubre', 'Noviembre', 'Diciembre'

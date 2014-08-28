@@ -82,6 +82,8 @@ var total_guaranies = 0;
 var total_sorteos = 0;
 var siguiente_id_solicitar = 0;
 
+var sorteoTragamonedas = null;
+
 //$(document).ready(function(){
 
     //abrir ventana principal
@@ -318,7 +320,7 @@ var siguiente_id_solicitar = 0;
     //jugar juegos
     $('#jugarTragamonedas').click(function(){
 
-        nuevoGanador = tragamonedas_buffer.pop();
+        nuevoGanador = sorteoTragamonedas;
         nuevoGanador.premio = premio_tragamonedas;
 
         var params = {
@@ -653,7 +655,6 @@ var siguiente_id_solicitar = 0;
 
         $.get("/tvchat/get-win-elements-tragamonedas", { premio : true }, cargarNumerosGanadores, "json");
         //habilitarBotones( 3, "tragamonedas" );
-
         return;
     });
     $('#getWinElementsPiropo').click(function(){
@@ -732,11 +733,12 @@ var siguiente_id_solicitar = 0;
     });
 
     function imprimir( respuesta ){
+        console.log('IMPRIMIR');
         console.log('id_sorteo: ' + respuesta.id_sorteo);
         console.log('juego: ' + respuesta.nombre_juego);
         console.log('combinacion_ganadora: ' + respuesta.combinacion_ganadora_list);
         console.log('cel_ganador: ' + respuesta.cel_ganador);
-        console.log('premio: ' + respuesta.premio.premio_texto);
+        console.log('premio: ' + respuesta.premio);
         return;
     };
 
@@ -1010,17 +1012,26 @@ var siguiente_id_solicitar = 0;
 
     function cargarNumerosGanadores( respuesta ){
 
-        console.log('id_sorteo: ' + respuesta.id_sorteo);
-        console.log('juego: ' + respuesta.juego);
-        console.log('sorteo: ' + respuesta.sorteo);
-        console.log('cel_ganador: ' + respuesta.cel_ganador);
-        //combinacion_ganadora, cel_ganador, nombre_juego, premio, combinacion_ganadora_list, id_sorteo
-
+        //objeto nuevo ganador -> ( combinacion_ganadora, cel_ganador, nombre_juego, premio, combinacion_ganadora_list, id_sorteo )
         //terminado
         if( respuesta.juego == "tragamonedas" ){
 
-            nuevoGanador = new ObjetoGanador( respuesta.sorteo.toString(), respuesta.cel_ganador, respuesta.juego, '',
-                respuesta.sorteo, respuesta.id_sorteo );
+            var combinacion_ganadora = respuesta.sorteo.toString();
+            var cel_ganador = respuesta.cel_ganador;
+            var nombre_juego = respuesta.juego;
+            var codigo_ganador_list = respuesta.sorteo;
+            var id_sorteo = respuesta.id_sorteo;
+
+            nuevoGanador = new ObjetoGanador(
+                combinacion_ganadora,
+                cel_ganador,
+                nombre_juego,
+                null,
+                codigo_ganador_list,
+                id_sorteo
+            );
+
+            imprimir(nuevoGanador);
 
             $('#WinElementsTragamonedas')
                 .empty()
@@ -1051,12 +1062,12 @@ var siguiente_id_solicitar = 0;
                 .append(
 
                     $(document.createElement("p"))
-                        .append(respuesta.cel_ganador)
+                        .append(nuevoGanador.cel_ganador)
                         .addClass("numeros_sorteados")
                 );
 
             //buffer donde voy guardando los sorteos
-            tragamonedas_buffer.push(nuevoGanador);
+            //tragamonedas_buffer.push(nuevoGanador);
 
         }
         else if( respuesta.juego == "tragamonedas_sexy" ){

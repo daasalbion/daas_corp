@@ -1,7 +1,10 @@
 <?php
 
+
+
 class ReportesController extends Zend_Controller_Action
 {
+
     var $meses = array(
         'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Setiembre', 'Octubre', 'Noviembre', 'Diciembre'
     );
@@ -19,31 +22,29 @@ class ReportesController extends Zend_Controller_Action
         2 => 'TIGO'
     );
 
+    var $log;
+    var $numeros;
+
+
     var $carriers_wap = array(
         1 => 'PERSONAL',
         2 => 'TIGO',
         5 => 'TIGO_GT'
     );
-
     var $promociones = array(
         'PORTAL_PY_PORTAL' => '72',
         'PORTAL_GT_PORTAL' => '58',
         'PORTAL_PY_PATRON' => '77'
     );
-
     var $categorias = array(
         'image/jpeg' => 'Imagenes',
         'video/3gpp' => 'Videos',
         'audio/mpeg' => 'Audios',
     );
-
     var $id_promocion_x_tipo = array(
 
         'YA_6767_PY' => '73',
     );
-
-    var $log;
-    var $numeros;
 
     public function init()
     {
@@ -601,7 +602,7 @@ class ReportesController extends Zend_Controller_Action
 
         $this->view->canales = $canales;
 
-    }
+    }//fin pautas
 
     private function _cargarFilasUssd( $fecha_completa ) {
 
@@ -725,6 +726,7 @@ class ReportesController extends Zend_Controller_Action
         return $resultado;
     }
 
+    //AGREGADO 2013-04-17
     public function ussdAction(){
 
         $this->view->headLink()->appendStylesheet('/css/reportes_ussd.css', 'screen');
@@ -888,8 +890,11 @@ class ReportesController extends Zend_Controller_Action
 
         $this->view->canales = $canales;
 
-    }
-
+    }//fin ussd
+    /*
+     * MODIFICADO POR DAAS
+     * */
+    //traigo las horas de las pautas tambien
     private function _cargarFilasInformePautasDetallado( $fecha ){
         global $db;
         $datos = array();
@@ -965,6 +970,9 @@ class ReportesController extends Zend_Controller_Action
         return $datos;
     }
 
+    /*
+     *  Funcion que trae el informe de las pautas
+     * */
     public function informePautasAction(){
 
         $this->view->headScript()->appendFile('http://code.jquery.com/ui/1.10.0/jquery-ui.js', 'text/javascript');
@@ -1376,7 +1384,7 @@ class ReportesController extends Zend_Controller_Action
         }
         return $alias;
     }
-
+    //cargar base de datos
     public function cargarBdPautasAction(){
 
         $this->view->headLink()->appendStylesheet('/css/informe_pautas.css', 'screen');
@@ -1487,7 +1495,7 @@ class ReportesController extends Zend_Controller_Action
         }
         $this->view->programacion = $this->_cargarProgramacionPautas();
 
-    }
+    }//fin cargar BD pautas
 
     private function cargarNombresDiasDelMes($anho, $mes) {
 
@@ -1586,6 +1594,8 @@ class ReportesController extends Zend_Controller_Action
 
         return $costos_x_promocion;
     }
+
+    //private function _cargarResumenCobros($idPais)
 
     private function _cargarCobrosNumero($numero, $anho, $mes) {
 
@@ -1935,6 +1945,110 @@ class ReportesController extends Zend_Controller_Action
         return $resultado;
     }
 
+    /*public function cobrosPorCarrierAction() {
+
+        $this->view->headScript()->appendFile('/js/reportes_cobros.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('/css/reportes_cobros.css', 'screen');
+
+        $this->view->headTitle()->append('Cobros');
+
+        $namespace = new Zend_Session_Namespace("entermovil");
+        if(isset($namespace->numeros)) {
+            $this->numeros = $namespace->numeros;
+            $this->rango_seleccion = array(
+                array('anho' => 2013, 'mes' => 6, 'descripcion' => '2013 - Junio')
+            );
+        }
+
+        $fecha_seleccionada = $this->_getParam('fecha', null);
+        if(!is_null($fecha_seleccionada)) {
+            list($anho, $mes) = explode('-', $fecha_seleccionada);
+            $mes = (int)$mes;
+        } else {
+            $anho = date('Y');
+            $mes = date('n');
+        }
+
+        $this->_setupRangoSeleccion($anho, $mes);
+
+        $this->view->nombre_mes = $this->meses[$mes-1];
+
+        $this->view->cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+
+
+        $this->view->anho = $anho;
+        $this->view->mes = $mes;
+
+        $this->view->dia_hoy = date('j');
+
+        $this->view->dias_semana = $this->dias_semana;
+
+        $this->view->nombres_dias_del_mes = $this->cargarNombresDiasDelMes($anho, $mes);
+
+        $this->view->rango_seleccion = $this->rango_seleccion;
+
+        $this->view->costos_x_promocion = $this->_cargarCostosPorPromocion($anho, $mes);
+
+        $this->log->info('costos_x_promocion:[' . print_r($this->view->costos_x_promocion, true) . ']');
+
+        $datos = array();
+        foreach($this->numeros as $numero) {
+            $resultado = $this->_cargarCobrosNumero($numero, $anho, $mes);
+            //$this->log->info('Numero:['.$numero.'] resultado:[' . print_r($resultado, true) . ']');
+            $datos[$numero] = $resultado[$numero];
+
+            if(!isset($datos['TOTALES'])) {
+                $datos['TOTALES']['cobros_x_mes'] = array(
+                    'TOTALES_MES' => array(
+                        'total_suscriptos' => 0,
+                        'total_cobros' => 0,
+                        'total_bruto' => 0,
+                        'total_bruto_cliente' => 0,
+                        'total_bruto_otros' => 0,
+                        'datos_cobros' => array()
+                    )
+                );
+                for($i=1; $i<=$this->view->cantidad_dias; $i++) {
+                    $datos['TOTALES']['cobros_x_mes']['TOTALES_MES']['datos_cobros'][$i] = array(
+                        'total_cobros' => 0,
+                        'total_bruto' => 0,
+                        'total_bruto_cliente' => 0,
+                        'total_bruto_otros' => 0
+                    );
+                }
+            }
+
+            $datos['TOTALES']['cobros_x_mes']['TOTALES_MES']['total_suscriptos'] += $datos[$numero]['cobros_x_mes']['TOTALES_MES']['TOTAL']['total_suscriptos'];
+            $datos['TOTALES']['cobros_x_mes']['TOTALES_MES']['total_cobros'] += $datos[$numero]['cobros_x_mes']['TOTALES_MES']['TOTAL']['total_cobros'];
+            $datos['TOTALES']['cobros_x_mes']['TOTALES_MES']['total_bruto'] += $datos[$numero]['cobros_x_mes']['TOTALES_MES']['TOTAL']['total_bruto'];
+            $datos['TOTALES']['cobros_x_mes']['TOTALES_MES']['total_bruto_cliente'] += $datos[$numero]['cobros_x_mes']['TOTALES_MES']['TOTAL']['total_bruto_cliente'];
+            $datos['TOTALES']['cobros_x_mes']['TOTALES_MES']['total_bruto_otros'] += $datos[$numero]['cobros_x_mes']['TOTALES_MES']['TOTAL']['total_bruto_otros'];
+
+            for($i=1; $i<=$this->view->cantidad_dias; $i++) {
+
+                if(!isset($datos['TOTALES']['cobros_x_mes']['TOTALES_MES']['datos_cobros'][$i])) {
+                    $datos['TOTALES']['cobros_x_mes']['TOTALES_MES']['datos_cobros'][$i] = array(
+                        'total_cobros' => 0,
+                        'total_bruto' => 0,
+                        'total_bruto_cliente' => 0,
+                        'total_bruto_otros' => 0
+                    );
+                }
+                $datos['TOTALES']['cobros_x_mes']['TOTALES_MES']['datos_cobros'][$i]['total_cobros'] += isset($datos[$numero]['cobros_x_mes']['TOTALES_MES']['TOTAL']['datos_cobros'][$i]['total_cobros']) ? $datos[$numero]['cobros_x_mes']['TOTALES_MES']['TOTAL']['datos_cobros'][$i]['total_cobros'] : 0;
+                $datos['TOTALES']['cobros_x_mes']['TOTALES_MES']['datos_cobros'][$i]['total_bruto'] += isset($datos[$numero]['cobros_x_mes']['TOTALES_MES']['TOTAL']['datos_cobros'][$i]['total_bruto']) ? $datos[$numero]['cobros_x_mes']['TOTALES_MES']['TOTAL']['datos_cobros'][$i]['total_bruto'] : 0;
+                $datos['TOTALES']['cobros_x_mes']['TOTALES_MES']['datos_cobros'][$i]['total_bruto_cliente'] += isset($datos[$numero]['cobros_x_mes']['TOTALES_MES']['TOTAL']['datos_cobros'][$i]['total_bruto_cliente']) ? $datos[$numero]['cobros_x_mes']['TOTALES_MES']['TOTAL']['datos_cobros'][$i]['total_bruto_cliente'] : 0;
+                $datos['TOTALES']['cobros_x_mes']['TOTALES_MES']['datos_cobros'][$i]['total_bruto_otros'] += isset($datos[$numero]['cobros_x_mes']['TOTALES_MES']['TOTAL']['datos_cobros'][$i]['total_bruto_otros']) ? $datos[$numero]['cobros_x_mes']['TOTALES_MES']['TOTAL']['datos_cobros'][$i]['total_bruto_otros'] : 0;
+            }
+        }
+
+        //$this->log->info('Datos:[' . print_r($datos, true) . ']');
+
+        $this->view->numeros = $this->numeros;
+        $this->view->datos = $datos;
+        $this->view->carriers = $this->carriers;
+
+    }*/
+
     private function _cargarPaisesConPromociones() {
 
         $resultado = array();
@@ -2011,6 +2125,14 @@ class ReportesController extends Zend_Controller_Action
         $rs = $db->fetchAll($sql, array($id_pais));
         foreach($rs as $fila) {
 
+
+            /*$sql_cobros = 'select RM.numero, extract(year from RM.fecha)::integer as anho, extract(month from RM.fecha)::integer as mes,RM.id_carrier, RM.id_promocion, sum(RM.total_cobros)::integer as total_cobros
+            from reporte_mensual_cobros(?, ?) RM
+            where id_carrier = ? and numero = ?
+            group by 1,2,3,4,5
+            order by 1,2,3,4,5';*/
+            //anho, mes, id_carrier
+
             $sql_cobros = 'select S3.*, S4.total_cobros as total_cobros_hoy, S4.costo_gs, S4.total_bruto_gs, S4.total_neto_gs, S4.costo_usd, S4.total_bruto_usd, S4.total_neto_usd
                 from (
                     select RM.numero, extract(year from RM.fecha)::integer as anho, extract(month from RM.fecha)::integer as mes,RM.id_carrier, RM.id_promocion, sum(RM.total_cobros)::integer as total_cobros
@@ -2037,7 +2159,6 @@ class ReportesController extends Zend_Controller_Action
             $rs_cobros = $db->fetchAll($sql_cobros, array($anho, $mes, $fila['id_carrier'], $fila['numero'], $anho, $mes, $fila['id_carrier'], $fila['numero'], $fecha_completa));
 
             foreach($rs_cobros as $fila_cobro) {
-
                 $fila['cobros'][$fila_cobro['id_promocion']] = array(
                     'total_cobros' => $fila_cobro['total_cobros'],
                     'total_cobros_hoy' => $fila_cobro['total_cobros_hoy'],
@@ -2050,9 +2171,9 @@ class ReportesController extends Zend_Controller_Action
                 );
             }
 
+
             $resultado[] = $fila;
         }
-
         return $resultado;
     }
 
@@ -2161,28 +2282,37 @@ class ReportesController extends Zend_Controller_Action
         $this->view->headScript()->appendFile('http://code.jquery.com/ui/1.10.0/jquery-ui.js', 'text/javascript');
         $this->view->headLink()->appendStylesheet('http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css');
         $this->view->headScript()->appendFile('/js/reportes_resumen.js', 'text/javascript');
+
         $this->view->headTitle()->append('Resumen Cobros');
+
         $this->view->nombre_carrier = array(
             1 => 'PERSONAL', 2 => 'TIGO', 3 => 'VOX', 4 => 'CLARO',
             5 => 'TIGO_GUATEMALA', 6 => 'TIGO_BOLIVIA', 7 => 'TELCEL_MEXICO'
         );
+
         $namespace = new Zend_Session_Namespace("entermovil");
-
         if(isset($namespace->id_pais)) {
-
             $this->view->mostrar_lista_paises = false;
             $id_pais = $namespace->id_pais;
             $this->view->id_pais = $id_pais;
             $this->view->nombre_pais = "México";
 
         } else {
-
             $this->view->mostrar_lista_paises = true;
             $this->view->paises = $this->_cargarPaisesConPromociones();
             $id_pais = $this->_getParam('pais', 1);
             $this->view->id_pais = $id_pais;
         }
 
+
+
+        /*$fecha = $this->_getParam('fecha', date('Y-m'));
+
+        list($anho, $mes) = explode('-', $fecha);*/ //codigo original
+
+        //agregado DAAS
+
+        //obtengo el parametro fecha
         $fecha_seleccionada = $this->_getParam('fecha', null);
         $this->view->fecha = $fecha_seleccionada;
 
@@ -2201,36 +2331,51 @@ class ReportesController extends Zend_Controller_Action
         }
 
         $cadena_mes = $mes < 10 ? '0' . $mes : $mes;
+
         $fecha_seleccionada = $anho . '-' . $cadena_mes. '-' . $dia;
+
         $this->_setupRangoSeleccion($anho, $mes);
+
         $this->view->nombre_mes = $this->meses[$mes-1];
+
         $this->view->cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+
+
         $this->view->anho = $anho;
         $this->view->mes = $mes;
+
         $this->view->dia_hoy = date('j');
+
         $this->view->dias_semana = $this->dias_semana;
+
         $this->view->nombres_dias_del_mes = $this->cargarNombresDiasDelMes($anho, $mes);
+
         $this->view->rango_seleccion = $this->rango_seleccion;
+
+        //fin agregado DAAS
+
         $carriers_y_numeros = $this->_cargarCarriersYNumeros( $id_pais, $fecha_seleccionada );
+
         $this->view->carriers_numeros = $carriers_y_numeros;
+        //echo 'carriers_numeros:[' . print_r($carriers_y_numeros, true) . ']' . "\n\n"; exit;
+        //$this->log->info('carriers_numeros:[' . print_r($carriers_y_numeros, true) . ']');
+
+        //print_r($this->_cargarPromocionesCarrierNumero($id_pais));
         $promociones_carriers_numeros = $this->_cargarPromocionesCarrierNumero($id_pais);
         $this->view->promociones_carriers_numeros = $promociones_carriers_numeros;
+        //echo 'promociones_carriers_numeros:[' . print_r($promociones_carriers_numeros, true) . ']' . "\n\n"; exit;
 
         $total_sumatoria = array(
-
             'TOTAL_COBROS'=>0,
             'TOTAL_BRUTO'=>0,
             'TOTAL_NETO'=>0,
             'decimal' => false,
             'TOTAL_SUSCRIPTOS' => 0
         );
-
         $totales_promociones_carriers_numeros = array();
-
         foreach($carriers_y_numeros as $carrier_numero) {
-
+            //echo 'carrier_numero:[' . print_r($carrier_numero, true) . ']' . "\n\n";
             $sumatoria[$carrier_numero['id_carrier']][$carrier_numero['numero']] = array(
-
                 'TOTAL_COBROS'=>0,
                 'TOTAL_BRUTO'=>0,
                 'TOTAL_NETO'=>0,
@@ -2239,11 +2384,8 @@ class ReportesController extends Zend_Controller_Action
             );
 
             $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']] = array();
-
             if(isset($carrier_numero['cobros'])) {
-
                 foreach($carrier_numero['cobros'] as $id_promocion => $datos_cobros) {//$cantidad_cobros
-
                     $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$id_promocion]['cobros'] = $datos_cobros['total_cobros'];
                     $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$id_promocion]['cobros_hoy'] = $datos_cobros['total_cobros_hoy'];
 
@@ -2260,15 +2402,17 @@ class ReportesController extends Zend_Controller_Action
 
             foreach($promociones_carriers_numeros[$carrier_numero['id_carrier']][$carrier_numero['numero']] as $promocion_carrier_numero) {
 
+                //echo "=======\n\n\n";
+                //echo 'promocion_carrier_numero:[' . print_r($promocion_carrier_numero, true) . ']' . "\n\n";
+                //echo "=======\n\n\n";
+
                 $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['costo'] = ($promocion_carrier_numero['costo_gs'] == 0 ? $promocion_carrier_numero['costo_usd'] : $promocion_carrier_numero['costo_gs']);
                 $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['decimal'] = ($promocion_carrier_numero['costo_gs'] == 0 ? true : false);
-
+                //Si no tiene cobros, ponemos zero
                 if(!isset($totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['cobros'])) {
-
                     $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['cobros'] = 0;
                 }
                 if(!isset($totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['cobros_hoy'])) {
-
                     $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['cobros_hoy'] = 0;
                 }
 
@@ -2276,6 +2420,8 @@ class ReportesController extends Zend_Controller_Action
                 $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['total_bruto'] = $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['costo'] * $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['cobros'];
                 $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['revenue_share'] = $promocion_carrier_numero['porcentaje_proveedor'];
                 $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['total_neto'] = round($totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['total_bruto'] * $promocion_carrier_numero['porcentaje_proveedor'],2);
+                //agregado
+
 
                 /*
                  * Sumatoria de los totales: Cobros, Bruto, Neto
@@ -2295,8 +2441,10 @@ class ReportesController extends Zend_Controller_Action
                 $sumatoria[$carrier_numero['id_carrier']][$carrier_numero['numero']]['TOTAL_SUSCRIPTOS'] +=
                     $promocion_carrier_numero['suscriptos'];
 
-            }
 
+
+            }
+            //totales del mes
             $total_sumatoria['TOTAL_COBROS'] += $sumatoria[$carrier_numero['id_carrier']][$carrier_numero['numero']]['TOTAL_COBROS'];
 
             $total_sumatoria['TOTAL_BRUTO'] += $sumatoria[$carrier_numero['id_carrier']][$carrier_numero['numero']]['TOTAL_BRUTO'];
@@ -2305,7 +2453,9 @@ class ReportesController extends Zend_Controller_Action
 
             $total_sumatoria['TOTAL_SUSCRIPTOS'] += $sumatoria[$carrier_numero['id_carrier']][$carrier_numero['numero']]['TOTAL_SUSCRIPTOS'];
 
-            $total_sumatoria['decimal'] = $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['decimal'];
+            $total_sumatoria['decimal'] =
+                $totales[$carrier_numero['id_carrier']][$carrier_numero['numero']][$promocion_carrier_numero['id_promocion']]['decimal'];
+
 
         }
 
@@ -2313,6 +2463,42 @@ class ReportesController extends Zend_Controller_Action
         $this->view->totales = $totales;
         $this->view->sumatoria = $sumatoria;
         $this->log->info('totales:[' . print_r($totales, true) . ']');
+       // print_r($totales);
+        //exit;
+
+        /*foreach($this->view->carriers_numeros as $fila) {
+            if(isset($fila['cobros'])) {
+                foreach($fila['cobros'] as $id_promocion => $total_cobros) {
+                    $this->view->promociones_carriers_numeros[$fila['id_carrier']][$fila['numero']][$id_promocion]['total'] = $this->view->promociones_carriers_numeros
+                }
+            }
+        }*/
+
+        /*$fecha_seleccionada = $this->_getParam('fecha', null);
+        if(!is_null($fecha_seleccionada)) {
+            list($anho, $mes) = explode('-', $fecha_seleccionada);
+            $mes = (int)$mes;
+        } else {
+            $anho = date('Y');
+            $mes = date('n');
+        }
+
+        $this->_setupRangoSeleccion($anho, $mes);
+
+        $this->view->nombre_mes = $this->meses[$mes-1];
+
+        $this->view->cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+
+        $this->view->anho = $anho;
+        $this->view->mes = $mes;
+
+        $this->view->dia_hoy = date('j');
+
+        $this->view->dias_semana = $this->dias_semana;
+
+        $this->view->nombres_dias_del_mes = $this->cargarNombresDiasDelMes($anho, $mes);
+
+        $this->view->rango_seleccion = $this->rango_seleccion;*/
 
     }
 
@@ -2784,6 +2970,9 @@ class ReportesController extends Zend_Controller_Action
         return $resultado;
     }
 
+    /*
+     * Reporte de suscriptos por minuto
+     */
     public function suscriptosPorMinutoAction() {
         $this->view->headScript()->appendFile('http://code.jquery.com/ui/1.10.0/jquery-ui.js', 'text/javascript');
         $this->view->headLink()->appendStylesheet('http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css');
@@ -2885,6 +3074,9 @@ class ReportesController extends Zend_Controller_Action
 
     }
 
+    /*
+     * Crea una estructura de array con las horas y minutos de un rango seleccionado
+     */
     private function _cantidadMinutos($hora_desde, $hora_hasta){
         list($horaD, $minD) = explode(':',$hora_desde);
         list($horaH, $minH) = explode(':',$hora_hasta);
@@ -2900,6 +3092,9 @@ class ReportesController extends Zend_Controller_Action
         return $array_hora;
     }
 
+    /*
+     * Carga el reporte de suscriptos dentro de un rango de minutos
+     */
     private function _cargarSuscriptosPromocionMin($id_promocion, $anho, $mes, $dia, $hora_desde, $hora_hasta) {
 
         $resultado = array();
@@ -3464,6 +3659,7 @@ class ReportesController extends Zend_Controller_Action
             }
         }
     }
+
 
     public function suscriptosXTipoAction(){
 
@@ -4659,6 +4855,7 @@ class ReportesController extends Zend_Controller_Action
 
         $this->_forward('logout', 'auth');
     }
+
     //NUEVO
     public function cobrosPorCarrierAction() {
 
@@ -4744,7 +4941,7 @@ class ReportesController extends Zend_Controller_Action
 
         $datos['totales'] = $totales_x_dia;
 
-        $numeros = array('6767', '35500', '965', '9330', '10130');
+        $numeros = array('6767', '35500', '965', '9330', '10130', '8540');
 
 
         foreach($numeros as $numero) {
@@ -4840,6 +5037,7 @@ class ReportesController extends Zend_Controller_Action
 
         return $datos_por_promocion;
     }
+
     //reporte nuevo
     public function cobrosPorTipoAction() {
 
@@ -5022,6 +5220,8 @@ class ReportesController extends Zend_Controller_Action
 
         return $resultado;
     }
+
+
     //reporte backtones
     public function backtonesAction(){
 
@@ -5126,34 +5326,32 @@ class ReportesController extends Zend_Controller_Action
 
         $datos_backtones = $this->_consulta( 'GET_DATOS_BACKTONES', $datos );
 
-        if( !is_null( $datos_backtones ) ){
+        $datos_backtones['totales_generales']['cantidad'] = 0;
+        $datos_backtones['totales_generales']['total_bruto_gs'] = 0;
+        $datos_backtones['totales_generales']['total_neto_gs'] = 0;
+        $datos_backtones['totales_generales']['total_monto_proveedor'] = 0;
 
-            $datos_backtones['totales_generales']['cantidad'] = 0;
-            $datos_backtones['totales_generales']['total_bruto_gs'] = 0;
-            $datos_backtones['totales_generales']['total_neto_gs'] = 0;
-            $datos_backtones['totales_generales']['total_monto_proveedor'] = 0;
 
-            foreach ( $datos_backtones['datos'] as $carrier => $estructura_carrier ){
+        foreach ( $datos_backtones['datos'] as $carrier => $estructura_carrier ){
 
-                $datos_backtones['datos'][$carrier]['totales']['cantidad'] = 0;
-                $datos_backtones['datos'][$carrier]['totales']['total_bruto_gs'] = 0;
-                $datos_backtones['datos'][$carrier]['totales']['total_neto_gs'] = 0;
-                $datos_backtones['datos'][$carrier]['totales']['total_monto_proveedor'] = 0;
+            $datos_backtones['datos'][$carrier]['totales']['cantidad'] = 0;
+            $datos_backtones['datos'][$carrier]['totales']['total_bruto_gs'] = 0;
+            $datos_backtones['datos'][$carrier]['totales']['total_neto_gs'] = 0;
+            $datos_backtones['datos'][$carrier]['totales']['total_monto_proveedor'] = 0;
 
-                foreach( $estructura_carrier['tipos'] as $tipo => $datos_tipo ){
+            foreach( $estructura_carrier['tipos'] as $tipo => $datos_tipo ){
 
-                    $datos_backtones['datos'][$carrier]['totales']['cantidad'] += $datos_tipo['cantidad'];
-                    $datos_backtones['datos'][$carrier]['totales']['total_bruto_gs'] += $datos_tipo['total_bruto_gs'];
-                    $datos_backtones['datos'][$carrier]['totales']['total_neto_gs'] += $datos_tipo['total_neto_gs'];
-                    $datos_backtones['datos'][$carrier]['totales']['total_monto_proveedor'] += $datos_tipo['total_monto_proveedor'];
+                $datos_backtones['datos'][$carrier]['totales']['cantidad'] += $datos_tipo['cantidad'];
+                $datos_backtones['datos'][$carrier]['totales']['total_bruto_gs'] += $datos_tipo['total_bruto_gs'];
+                $datos_backtones['datos'][$carrier]['totales']['total_neto_gs'] += $datos_tipo['total_neto_gs'];
+                $datos_backtones['datos'][$carrier]['totales']['total_monto_proveedor'] += $datos_tipo['total_monto_proveedor'];
 
-                }
-
-                $datos_backtones['totales_generales']['cantidad'] += $datos_backtones['datos'][$carrier]['totales']['cantidad'];
-                $datos_backtones['totales_generales']['total_bruto_gs'] += $datos_backtones['datos'][$carrier]['totales']['total_bruto_gs'];
-                $datos_backtones['totales_generales']['total_neto_gs'] += $datos_backtones['datos'][$carrier]['totales']['total_neto_gs'];
-                $datos_backtones['totales_generales']['total_monto_proveedor'] += $datos_backtones['datos'][$carrier]['totales']['total_monto_proveedor'];
             }
+
+            $datos_backtones['totales_generales']['cantidad'] += $datos_backtones['datos'][$carrier]['totales']['cantidad'];
+            $datos_backtones['totales_generales']['total_bruto_gs'] += $datos_backtones['datos'][$carrier]['totales']['total_bruto_gs'];
+            $datos_backtones['totales_generales']['total_neto_gs'] += $datos_backtones['datos'][$carrier]['totales']['total_neto_gs'];
+            $datos_backtones['totales_generales']['total_monto_proveedor'] += $datos_backtones['datos'][$carrier]['totales']['total_monto_proveedor'];
         }
 
         return $datos_backtones;
@@ -5323,6 +5521,7 @@ class ReportesController extends Zend_Controller_Action
         return $detalles_backtones;
     }
 
+
     public function backtonesDetallePorProveedorAction(){
 
         $this->view->headScript()->appendFile('/js/reportes_backtones_detalle.js', 'text/javascript');
@@ -5424,6 +5623,7 @@ class ReportesController extends Zend_Controller_Action
 
         return $datos_backtones_proveedor;
     }
+
 
     public function proveedoresContenidosAction(){
 
