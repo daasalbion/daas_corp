@@ -7,30 +7,25 @@ var textarray_buffer =  window.opener.mensajero;
 //var textarray = ['Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha'];
 var textarray = [];
 var elementos_ganadores = [];
-var wheel;
-var tombola;
+var wheel = null;
+var tombola = null;
 var intervalo = 0;
 var mostrar = 0;
 var $mwo = null;
+var p = {};
 
 //funciones
 function cargarJuego( params ){
 
-    console.log("juego: " + params["juego"]);
-
+    console.log("juego cargado: " + params['juego']);
     clearInterval(mostrar);
 
     //elimino cualquier juego creado antes
     var juego = $('#game_wrapper');
     juego.empty();
+    setearDom();
 
-    /*$('#interactive').append(
-        $(document.createElement("div"))
-            .attr('id', 'game_wrapper')
-            .addClass('juegos')
-    );*/
-
-    if( params['juego'] == "tragamonedas" ){
+    if( params['juego'] == 'tragamonedas' ){
 
         juego.append(
             //cargo los elementos
@@ -110,7 +105,10 @@ function cargarJuego( params ){
                         )
                 )
         )
-
+        //0    1    2    3    4    5    6    7     8        9        10       11
+        /*var imagenes_tiras1 = ['0', '1', '2', '3', '4', '5', '6', '7', 'coin', 'chomp', 'flower', 'star'];
+         var imagenes_tiras2 = ['0', '1', '2', '3', '4', '5', '6', '7', 'coin', 'chomp', 'flower', 'star'];
+         var imagenes_tiras3 = ['0', '1', '2', '3', '4', '5', '6', '7', 'coin', 'chomp', 'flower', 'star'];*/
         var imagenes_tiras1 = [
             '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
@@ -121,7 +119,8 @@ function cargarJuego( params ){
             '60', '61', '62', '63', '64', '65', '66', '67', '68', '69',
             '70', '71', '72', '73', '74', '75', '76', '77', '78', '79',
             '80', '81', '82', '83', '84', '85', '86', '87', '88', '89',
-            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99'];
+            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99'
+        ];
         var imagenes_tiras2 = [
             '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
@@ -132,7 +131,8 @@ function cargarJuego( params ){
             '60', '61', '62', '63', '64', '65', '66', '67', '68', '69',
             '70', '71', '72', '73', '74', '75', '76', '77', '78', '79',
             '80', '81', '82', '83', '84', '85', '86', '87', '88', '89',
-            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99'];
+            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99'
+        ];
         var imagenes_tiras3 = [
             '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
@@ -143,11 +143,13 @@ function cargarJuego( params ){
             '60', '61', '62', '63', '64', '65', '66', '67', '68', '69',
             '70', '71', '72', '73', '74', '75', '76', '77', '78', '79',
             '80', '81', '82', '83', '84', '85', '86', '87', '88', '89',
-            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99'];
+            '90', '91', '92', '93', '94', '95', '96', '97', '98', '99'
+        ];
 
         var tira_imagenes1 = $('#tira_imagenes1');
         var tira_imagenes2 = $('#tira_imagenes2');
         var tira_imagenes3 = $('#tira_imagenes3');
+        var resultado = 0;
 
         for( var i= 0; i < imagenes_tiras1.length; i++ ){
 
@@ -170,9 +172,9 @@ function cargarJuego( params ){
         rouletter2 = $('div.roulette2');
         rouletter3 = $('div.roulette3');
 
-        rouletter1.roulette( );
-        rouletter2.roulette( );
-        rouletter3.roulette( );
+        rouletter1.roulette();
+        rouletter2.roulette();
+        rouletter3.roulette();
 
     }
     else if( params['juego'] == "tragamonedas_sexy" ){
@@ -255,7 +257,7 @@ function cargarJuego( params ){
                         )
                 )
         )
-                              //0    1    2    3    4    5    6    7     8        9        10       11
+        //0    1    2    3    4    5    6    7     8        9        10       11
         var imagenes_tiras1 = ['zapato', 'bombacha', 'portacena', 'pantalon', 'short', 'vestido'];
         var imagenes_tiras2 = ['zapato', 'bombacha', 'portacena', 'pantalon', 'short', 'vestido'];
         var imagenes_tiras3 = ['zapato', 'bombacha', 'portacena', 'pantalon', 'short', 'vestido'];
@@ -431,22 +433,31 @@ function descargarJuego( params ){
 
 function jugarJuego( params ){
 
-    var ganador = params['objeto_ganador'].cel_ganador;
+    var ganador = params['objeto_ganador'].cel;
     var premio = params['objeto_ganador'].premio.premio_texto;
-    elementos_ganadores = params['objeto_ganador'].combinacion_ganadora_list;
+    elementos_ganadores = [];
+    elementos_ganadores = params["objeto_ganador"].codigo;
 
     console.log("juego a jugar: " + params['jugar']);
-    console.log("valores_ganadores: " + params["objeto_ganador"].combinacion_ganadora);
-    console.log("combinacion_ganadora_list: " + elementos_ganadores);
+    console.log("codigo: " + elementos_ganadores );
+    console.log("id_sorteo: " + params["objeto_ganador"].id_sorteo );
 
     clearInterval(mostrar);
 
     if( params['jugar'] == "tragamonedas" ){
 
         var resultado = 0;
-        var p = {
-            duration: 60,
+
+        //vaciar por si acaso
+
+        rouletter1.roulette('reset');
+        rouletter2.roulette('reset');
+        rouletter3.roulette('reset');
+
+        p = {
+            duration: 30,
             stopCallback : function($stopElm) {
+                console.log("mierda stop " + $stopElm);
                 resultado++;
                 if( resultado == 3 ){
 
@@ -466,15 +477,13 @@ function jugarJuego( params ){
         $('#linea').empty();
 
         p['stopImageNumber'] = Number(elementos_ganadores[0]);
-        console.log(  'TIRA1: ' + p['stopImageNumber']  );
         p['speed'] = 20;
+        console.log(p.toSource());
         rouletter1.roulette( 'option', p );
         p['stopImageNumber'] = Number(elementos_ganadores[1]);
-        console.log(  'TIRA1: ' + p['stopImageNumber']  );
         p['speed'] = 30;
         rouletter2.roulette( 'option', p );
         p['stopImageNumber'] = Number(elementos_ganadores[2]);
-        console.log(  'TIRA1: ' + p['stopImageNumber']  );
         p['speed'] = 40;
         rouletter3.roulette( 'option', p );
 
@@ -482,12 +491,11 @@ function jugarJuego( params ){
         rouletter2.roulette('start');
         rouletter3.roulette('start');
 
-        elementos_ganadores = null;
     }
     else if( params['jugar'] == "tragamonedas_sexy" ){
 
         var resultado = 0;
-        var p = {
+        p = {
 
             duration: 60,
             stopCallback : function($stopElm) {
@@ -510,6 +518,7 @@ function jugarJuego( params ){
         $('#linea').empty();
 
         p['stopImageNumber'] = Number(elementos_ganadores[0]);
+
         p['speed'] = 40;
         rouletter1.roulette( 'option', p );
         p['stopImageNumber'] = Number(elementos_ganadores[1]);
@@ -540,19 +549,22 @@ function jugarJuego( params ){
                 $('#tombola_numeros_ganadores #tombola_panel_ganador').hide();
                 $('#tombola_numeros_ganadores').append(
                     $(document.createElement("div"))
-                           .attr( 'id', 'tombola_premio_ganador' )
-                           .append(
-                                $(document.createElement("div"))
-                                    .attr('id', 'premio_tombola')
-                                    .addClass('premio_tombola')
-                                    .append( premio )
-                                ,
-                                $(document.createElement("div"))
-                                    .attr('id', 'linea_tombola')
-                                    .addClass('linea_tombola')
-                                    .append( "Ganador: " + ganador )
-                           )
+                        .attr( 'id', 'tombola_premio_ganador' )
+                        .append(
+                            $(document.createElement("div"))
+                                .attr('id', 'premio_tombola')
+                                .addClass('premio_tombola')
+                                .append( premio )
+                            ,
+                            $(document.createElement("div"))
+                                .attr('id', 'linea_tombola')
+                                .addClass('linea_tombola')
+                                .append( "Ganador: " + ganador )
+                        )
                 );
+
+                //vaciar por si acaso
+                elementos_ganadores = [];
 
                 intervalo = 0;
                 mostrar = setInterval( function parpadeo(){
@@ -660,7 +672,7 @@ function jugarJuego( params ){
             );
 
         $('#mensaje_seleccionado h3').append(
-           premio
+            premio
         ).addClass('centrar mensaje_piropo')
         $('#mensaje_seleccionado h4').append(
             "Jugador: " + ganador.substr(0,8) +"XX"
@@ -670,19 +682,20 @@ function jugarJuego( params ){
 
 function pararJuego( params ){
 
-    console.log("juego a jugar: " + params);
+    console.log("juego a parar: " + params);
 
     if( params['stop'] == "tragamonedas" ){
 
-        if( params['roulette'] == "1" ){
+        console.log('entro ak 1');
+        if( params['roulette'] == 1 ){
 
             rouletter1.roulette('stop');
         }
-        else if( params['roulette'] == "2" ){
+        else if( params['roulette'] == 2 ){
 
             rouletter2.roulette('stop');
         }
-        else if( params['roulette'] == "3" ){
+        else if( params['roulette'] == 3 ){
 
             rouletter3.roulette('stop');
         }
@@ -767,13 +780,13 @@ function cargarModulo( params ){
 
         for( var i= 1; i <= 5; i++ ){
 
-                ul.append(
-                    $(document.createElement("li"))
-                        .append(
-                            $(document.createElement("img"))
-                                .attr('src', '/img/tvchat/fotos/foto_' + i + '.png')
-                        )
-                );
+            ul.append(
+                $(document.createElement("li"))
+                    .append(
+                        $(document.createElement("img"))
+                            .attr('src', '/img/tvchat/fotos/foto_' + i + '.png')
+                    )
+            );
         }
 
         $('#interactive_fotos').scrollbox({
@@ -796,6 +809,23 @@ function cargarModulo( params ){
         $mwo.marquee('destroy');
 
     }
+};
+
+function setearDom(){
+
+    console.log('setearDom()');
+    rouletter1 = null;
+    rouletter2 = null;
+    rouletter3 = null;
+    textarray_buffer =  window.opener.mensajero;
+    textarray = [];
+    elementos_ganadores = [];
+    wheel = null;
+    tombola = null;
+    intervalo = 0;
+    mostrar = 0;
+    $mwo = null;
+    p = null;
 };
 
 $(document).ready(function(){
@@ -870,8 +900,8 @@ function cargarModuloPorDefecto(){
 };
 
 /*
-$(window).bind( 'beforeunload', function(){
+ $(window).bind( 'beforeunload', function(){
 
-    window.opener.$("#cerrar_ventana_principal").trigger('click');
-    return 'Esta seguro?';
-});*/
+ window.opener.$("#cerrar_ventana_principal").trigger('click');
+ return 'Esta seguro?';
+ });*/
