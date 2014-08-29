@@ -628,10 +628,9 @@ function jugarJuego( params ){
     }
     else if( params['jugar'] == "piropo" ){
 
-        console.log("combinacion_ganadora: " + params["objeto_ganador"].combinacion_ganadora);
-        console.log("combinacion_ganadora_list: " + params["objeto_ganador"].combinacion_ganadora_list);
-        console.log("cel_ganador: " + params["objeto_ganador"].cel_ganador);
-        console.log("nombre_juego: " + params["objeto_ganador"].nombre_juego);
+        console.log("combinacion_ganadora_list: " + params["objeto_ganador"].codigo);
+        console.log("cel_ganador: " + params["objeto_ganador"].cel);
+        console.log("nombre_juego: " + params["objeto_ganador"].juego);
 
         if( $('#mensaje_seleccionado h3').length > 0 )
             $('#mensaje_seleccionado h3').remove();
@@ -648,7 +647,7 @@ function jugarJuego( params ){
             );
 
         $('#mensaje_seleccionado h3').append(
-            params['objeto_ganador'].combinacion_ganadora
+            elementos_ganadores
         ).addClass('centrar mensaje_piropo')
         $('#mensaje_seleccionado h4').append(
             "Ganador: " + ganador.substr(0,8) +"XX"
