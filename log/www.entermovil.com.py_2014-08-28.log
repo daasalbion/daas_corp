@@ -15138,3 +15138,305 @@
 )
 
 2014-08-28T22:46:40-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":1,"sorteo":[],"cel_ganador":"0982963531","juego":"tragamonedas_sexy"}
+2014-08-28T23:04:34-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:04:34-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:07:50-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:07:50-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:07:55-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:07:55-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => true
+)
+
+2014-08-28T23:07:55-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 1
+    [codigo] => 544342
+    [cel] => 0982236358
+)
+]
+2014-08-28T23:07:55-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 5
+    [1] => 4
+    [2] => 4
+    [3] => 3
+    [4] => 4
+)
+
+2014-08-28T23:07:55-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":1,"sorteo":["5","4","4","3","4"],"cel_ganador":"0982236358","juego":"tombola"}
+2014-08-28T23:11:02-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:11:02-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:11:07-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:11:07-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => true
+)
+
+2014-08-28T23:11:07-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 1
+    [codigo] => 888458
+    [cel] => 0982823455
+)
+]
+2014-08-28T23:11:07-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 8
+    [1] => 8
+    [2] => 8
+    [3] => 4
+    [4] => 5
+)
+
+2014-08-28T23:11:07-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":1,"sorteo":["8","8","8","4","5"],"cel_ganador":"0982823455","juego":"tombola"}
+2014-08-28T23:12:53-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:12:53-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:12:57-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:12:57-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => true
+)
+
+2014-08-28T23:12:57-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 1
+    [codigo] => 198059
+    [cel] => 0982421447
+)
+]
+2014-08-28T23:12:57-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 1
+    [1] => 9
+    [2] => 8
+    [3] => 0
+    [4] => 5
+)
+
+2014-08-28T23:12:57-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":1,"sorteo":["1","9","8","0","5"],"cel_ganador":"0982421447","juego":"tombola"}
+2014-08-28T23:13:06-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:13:06-04:00 INFO - [127.0.0.1]: tv
+2014-08-28T23:13:54-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:13:54-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => false
+)
+
+2014-08-28T23:13:54-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 1
+    [codigo] => 770599
+    [cel] => 0982770111
+)
+]
+2014-08-28T23:13:54-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 77
+    [1] => 70
+    [2] => 05
+    [3] => 59
+    [4] => 99
+)
+
+2014-08-28T23:13:54-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":1,"sorteo":["77","70","05","59","99"],"cel_ganador":"Sin Ganador","juego":"tombola"}
+2014-08-28T23:15:55-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:15:55-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:16:00-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:16:00-04:00 INFO - [127.0.0.1]: tv
+2014-08-28T23:16:02-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:16:02-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => false
+)
+
+2014-08-28T23:16:02-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 1
+    [codigo] => 8316
+    [cel] => 0982139404
+)
+]
+2014-08-28T23:16:02-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 83
+    [1] => 31
+    [2] => 16
+    [3] => 6
+    [4] => 
+)
+
+2014-08-28T23:16:02-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":1,"sorteo":["83","31","16","6",false],"cel_ganador":"Sin Ganador","juego":"tombola"}
+2014-08-28T23:16:04-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:16:04-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => false
+)
+
+2014-08-28T23:16:04-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 1
+    [codigo] => 4916
+    [cel] => 0982635040
+)
+]
+2014-08-28T23:16:04-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 49
+    [1] => 91
+    [2] => 16
+    [3] => 6
+    [4] => 
+)
+
+2014-08-28T23:16:04-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":1,"sorteo":["49","91","16","6",false],"cel_ganador":"Sin Ganador","juego":"tombola"}
+2014-08-28T23:16:04-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:16:05-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => false
+)
+
+2014-08-28T23:16:05-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 1
+    [codigo] => 9979
+    [cel] => 0982437316
+)
+]
+2014-08-28T23:16:05-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 99
+    [1] => 97
+    [2] => 79
+    [3] => 9
+    [4] => 
+)
+
+2014-08-28T23:16:05-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":1,"sorteo":["99","97","79","9",false],"cel_ganador":"Sin Ganador","juego":"tombola"}
+2014-08-28T23:16:05-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:16:05-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => false
+)
+
+2014-08-28T23:16:05-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 1
+    [codigo] => 29556
+    [cel] => 0982317657
+)
+]
+2014-08-28T23:16:05-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 29
+    [1] => 95
+    [2] => 55
+    [3] => 56
+    [4] => 6
+)
+
+2014-08-28T23:16:05-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":1,"sorteo":["29","95","55","56","6"],"cel_ganador":"Sin Ganador","juego":"tombola"}
+2014-08-28T23:16:06-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:16:06-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => false
+)
+
+2014-08-28T23:16:06-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 1
+    [codigo] => 33599
+    [cel] => 0982548461
+)
+]
+2014-08-28T23:16:06-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 33
+    [1] => 35
+    [2] => 59
+    [3] => 99
+    [4] => 9
+)
+
+2014-08-28T23:16:06-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":1,"sorteo":["33","35","59","99","9"],"cel_ganador":"Sin Ganador","juego":"tombola"}
+2014-08-28T23:16:07-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:16:07-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => false
+)
+
+2014-08-28T23:16:07-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 1
+    [codigo] => 55578
+    [cel] => 0982852783
+)
+]
+2014-08-28T23:16:07-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 55
+    [1] => 55
+    [2] => 57
+    [3] => 78
+    [4] => 8
+)
+
+2014-08-28T23:16:07-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":1,"sorteo":["55","55","57","78","8"],"cel_ganador":"Sin Ganador","juego":"tombola"}
+2014-08-28T23:16:39-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:16:39-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:16:41-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:16:41-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => false
+)
+
+2014-08-28T23:16:41-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 1
+    [codigo] => 334991
+    [cel] => 0982205993
+)
+]
+2014-08-28T23:16:41-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 33
+    [1] => 49
+    [2] => 91
+)
+
+2014-08-28T23:16:41-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":1,"sorteo":["33","49","91"],"cel_ganador":"Sin Ganador","juego":"tragamonedas"}
+2014-08-28T23:16:43-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:16:43-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => false
+)
+
+2014-08-28T23:16:43-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 1
+    [codigo] => 78387
+    [cel] => 0982544616
+)
+]
+2014-08-28T23:16:43-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 7
+    [1] => 8
+    [2] => 3
+    [3] => 8
+    [4] => 7
+)
+
+2014-08-28T23:16:43-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":1,"sorteo":["7","8","3","8","7"],"cel_ganador":"Sin Ganador","juego":"tombola"}
+2014-08-28T23:16:47-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:16:47-04:00 INFO - [127.0.0.1]: tv
+2014-08-28T23:28:16-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:28:16-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:28:25-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:28:25-04:00 INFO - [127.0.0.1]: tv
+2014-08-28T23:28:43-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-28T23:28:43-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => true
+)
+

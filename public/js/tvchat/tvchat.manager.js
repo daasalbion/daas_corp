@@ -58,6 +58,7 @@ function Sorteo(cel, codigo, premio, juego, id_sorteo){
 
 var sorteoTragamonedas = null;
 var sorteoTragamonedasSexy = null;
+var sorteoTombola = null;
 
 function Premio( id_premio, premio_gs, premio_texto ){
     this.id_premio = id_premio;
@@ -393,6 +394,18 @@ $('#jugarTragamonedasSexy').click(function(){
 
     actualizarTotalGuaranies( sorteoTragamonedasSexy.premio.premio_gs );
 
+    var parametros = {
+
+        id_sorteo : nuevoGanador.id_sorteo,
+        id_premio : nuevoGanador.premio.id_premio
+
+    };
+
+    guardarSorteo( parametros );
+
+    console.log('hago null el sorteo tragamonedas');
+    sorteoTragamonedasSexy = null;
+
     //habilitarBotones( 4, 'tragamonedas_sexy' );
 
 });
@@ -434,7 +447,53 @@ $("#mostrarGanadorTragamonedasSexy").click(function(){
     }
     tvchat.mostrarGanador( params );
 });
+$('#image_sample1').children().click(function(){
+    var stopImageNumber = $(this).attr('data-value');
+    updateStopImageNumber1(stopImageNumber);
+});
+var updateStopImageNumber1 = function(stopImageNumber) {
+    $('.image_sample1').children().css('opacity' , 0.2);
+    $('.image_sample1').children().filter('[data-value="' + stopImageNumber + '"]').css('opacity' , 1);
+    $('.stop_image_number_param1').text(stopImageNumber);
+    updateParamater1();
+};
+var updateParamater1 = function(){
+    var stopImageNumber = Number($('.stop_image_number_param1').eq(0).text());
+    tragamonedas_sexy_combinacion_ganadora[0] = stopImageNumber;
+    sorteoTragamonedasSexy.codigo[0] = stopImageNumber;
+};
+$('#image_sample2').children().click(function(){
+    var stopImageNumber = $(this).attr('data-value');
+    updateStopImageNumber2(stopImageNumber);
+});
+var updateStopImageNumber2 = function(stopImageNumber) {
+    $('.image_sample2').children().css('opacity' , 0.2);
+    $('.image_sample2').children().filter('[data-value="' + stopImageNumber + '"]').css('opacity' , 1);
+    $('.stop_image_number_param2').text(stopImageNumber);
+    updateParamater2();
+};
+var updateParamater2 = function(){
+    var stopImageNumber = Number($('.stop_image_number_param2').eq(0).text());
+    tragamonedas_sexy_combinacion_ganadora[1] = stopImageNumber;
+    sorteoTragamonedasSexy.codigo[1] = stopImageNumber;
+};
+$('#image_sample3').children().click(function(){
+    var stopImageNumber = $(this).attr('data-value');
+    updateStopImageNumber3(stopImageNumber);
+});
+var updateStopImageNumber3 = function(stopImageNumber) {
+    $('.image_sample3').children().css('opacity' , 0.2);
+    $('.image_sample3').children().filter('[data-value="' + stopImageNumber + '"]').css('opacity' , 1);
+    $('.stop_image_number_param3').text(stopImageNumber);
+    updateParamater3();
+};
+var updateParamater3 = function(){
+    var stopImageNumber = Number($('.stop_image_number_param3').eq(0).text());
+    tragamonedas_sexy_combinacion_ganadora[2] = stopImageNumber;
+    sorteoTragamonedasSexy.codigo[2] = stopImageNumber;
+};
 
+//tombola
 $('#cargar_tombola').click(function(){
 
     var params = {
@@ -449,58 +508,6 @@ $('#cargar_tombola').click(function(){
 
     ////habilitarBotones( 2, 'tombola' );
 });
-$('#cargar_piropo').click(function(){
-
-    var params = {
-        "juego": "piropo"
-    };
-
-    tvchat.cargarJuego(params);
-
-    removerCss();
-    $('#mostrar_bloque_piropo1 a').css('background-color', 'gold');
-
-    ////habilitarBotones( 2, 'piropo' );
-});
-$('#cargar_video').click(function(){
-
-    var params = {
-        "juego": "video"
-    };
-
-    tvchat.cargarJuego(params);
-
-    removerCss();
-    $('#mostrar_bloque_video a').css('background-color', 'gold');
-
-    ////habilitarBotones( 2, 'piropo' );
-});
-$('#cargar_piropo2').click(function(){
-
-    var params = {
-        "juego": "piropo2"
-    };
-
-    tvchat.cargarJuego(params);
-
-    removerCss();
-    $('#mostrar_bloque_piropo2 a').css('background-color', 'gold');
-
-    //habilitarBotones( 2, 'piropo' );
-});
-$('#cargar_tvchat').click(function(){
-
-    //valores por defecto
-    var params = {
-        "juego": "tvchat"
-    };
-
-    tvchat.cargarJuego(params);
-});
-
-//descargar juegos
-
-
 $('#cerrar_tombola').click(function(){
 
     ////habilitarBotones( 1, null );
@@ -515,58 +522,56 @@ $('#cerrar_tombola').click(function(){
 
     cargarModuloPorDefecto();
 });
-$('#cerrar_tvchat').click(function(){
+$('#getWinElementsTombola').click(function(){
 
-    //valores por defecto
-    var params = {
-        "juego": "tvchat"
-    };
+    $("#stopTombola").text("Girar");
+    console.log("getWinElementsTombola");
+    $.get("/tvchat/get-win-elements-tombola", { premio : true }, cargarNumerosGanadores, "json");
+    //habilitarBotones( 3, 'tombola' );
 
-    tvchat.descargarJuego(params);
-
-    removerCss();
-
-    cargarModuloPorDefecto();
+    return;
 });
-$('#cerrar_video').click(function(){
+$('#getElementsTombola').click(function(){
 
-    //valores por defecto
-    var params = {
-        "juego": "video"
-    };
+    $('#premios_tombola').hide();
+    $("#stopTombola").text("Girar");
+    premio_tombola.premio_texto = "Sin Premio";
+    premio_tombola.premio_gs = 0;
+    console.log("getElementsTombola");
+    $.get("/tvchat/get-win-elements-tombola", { premio : false }, cargarNumerosGanadores, "json");
+    //habilitarBotones( 3, 'tombola' );
 
-    tvchat.descargarJuego(params);
-
-    removerCss();
-
-    cargarModuloPorDefecto();
+    return;
 });
-$('#cerrar_piropo').click(function(){
+$("#premios_tombola").change(function(){
 
-    //valores por defecto
-    var params = {
-        "juego": "piropo"
-    };
+    premio_tombola.premio_texto = $( "#premios_tombola option:selected" ).text();
+    premio_tombola.premio_gs = $( "#premios_tombola option:selected" ).val();
 
-    tvchat.descargarJuego(params);
+    var premio_texto = $( "#premios_tombola option:selected" ).text();
+    var id_premio = $( "#premios_tombola option:selected" ).val();
+    var premio_gs = valor_premios[id_premio];
 
-    removerCss();
-
-    cargarModuloPorDefecto();
+    sorteoTombola.premio = new Premio(id_premio, premio_gs, premio_texto);
 });
-
-//jugar juegos
-
-
 $('#jugarTombola').click(function(){
 
-    nuevoGanador = tombola_buffer.pop();
-    nuevoGanador.premio = premio_tombola.premio_texto;
+    if( sorteoTragamonedas.premio == null ){
+
+        var premio_texto = 'Sin Premio';
+        var id_premio = 0;
+        var premio_gs = valor_premios[id_premio];
+
+        sorteoTombola.premio = new Premio(id_premio, premio_gs, premio_texto);
+    }
+
+    var nuevoGanador = sorteoTombola;
+    //nuevoGanador.premio = premio_tombola.premio_texto;
 
     var params = {
 
-        "jugar": "tombola",
-        "objeto_ganador": nuevoGanador
+        jugar: "tombola",
+        objeto_ganador: nuevoGanador
     }
 
     $('#WinElementsTombola').empty();
@@ -580,17 +585,71 @@ $('#jugarTombola').click(function(){
 
         tombola_historial.append(
             $(document.createElement("p"))
-                .append(objetoGanador.combinacion_ganadora + ' - ' + objetoGanador.cel_ganador + ' - ' + objetoGanador.premio)
+                .append(objetoGanador.codigo + ' - ' + objetoGanador.cel + ' - ' + objetoGanador.premio.premio_texto)
                 .addClass("numeros_sorteados")
         )
-        tombola_numeros_ganadores.pop();
     });
 
     tvchat.jugarJuego( params );
 
-    actualizarTotalGuaranies( premio_tombola.premio_gs );
+    actualizarTotalGuaranies( nuevoGanador.premio.premio_gs );
 
+    var parametros = {
+
+        id_sorteo : nuevoGanador.id_sorteo,
+        id_premio : nuevoGanador.premio.id_premio
+
+    };
+
+    console.log('hago null el sorteo tragamonedas');
+    sorteoTombola = null;
+
+    guardarSorteo( parametros );
     //habilitarBotones( 4, 'tombola' );
+});
+$('#stopTombola').click(function(){
+
+    var params = {
+
+        stop: "tombola"
+    }
+
+    tvchat.pararJuego(params);
+});
+
+//piropo mensajes
+$('#cargar_piropo').click(function(){
+
+    var params = {
+        juego: "piropo"
+    };
+
+    tvchat.cargarJuego(params);
+
+    removerCss();
+    $('#mostrar_bloque_piropo1 a').css('background-color', 'gold');
+
+    ////habilitarBotones( 2, 'piropo' );
+});
+$('#mensajes').on('click', '.seleccionar', function() {
+
+    mensaje_seleccionado = $(this).data('mensaje');
+    cel_ganador = '0' + $(this).data('cel');
+
+    //se aprovecha el campo cadena de combinacion_ganadora
+    nuevoGanador = new ObjetoGanador( mensaje_seleccionado, cel_ganador, 'piropo', '', '' );
+    //ocultamos el modal
+    $('#opciones_mensajes').modal('hide');
+
+    cargarNumerosGanadores(nuevoGanador);
+
+    //habilitarBotones( 3, 'piropo' );
+
+});
+$("#premios_piropos").change(function(){
+
+    premio_piropo.premio_texto = $( "#premios_piropos option:selected" ).text();
+    premio_piropo.premio_gs = $( "#premios_piropos option:selected" ).val();
 });
 $('#jugarPiropo').click(function(){
 
@@ -623,6 +682,34 @@ $('#jugarPiropo').click(function(){
     actualizarTotalGuaranies( premio_piropo.premio_gs );
 
     //habilitarBotones( 4, 'piropo' );
+});
+
+//piropo llamadas
+$('#cargar_piropo2').click(function(){
+
+    var params = {
+
+        juego: "piropo2"
+    };
+
+    tvchat.cargarJuego(params);
+
+    removerCss();
+    $('#mostrar_bloque_piropo2 a').css('background-color', 'gold');
+
+    //habilitarBotones( 2, 'piropo' );
+});
+$('#getWinElementsPiropo').click(function(){
+
+    $.get("/tvchat/get-win-elements-piropo", { premio: true }, cargarNumerosGanadores, "json");
+    ////habilitarBotones( 3, 'tragamonedas_sexy' );
+
+    return;
+});
+$("#premios_piropos2").change(function(){
+
+    premio_piropo2.premio_texto = $( "#premios_piropos2 option:selected" ).text();
+    premio_piropo2.premio_gs = $( "#premios_piropos2 option:selected" ).val();
 });
 $('#jugarPiropo2').click(function(){
 
@@ -718,93 +805,88 @@ $('#jugarPiropo2SinPremio').click(function(){
     ////habilitarBotones( 4, 'piropo' );
 });
 
-//parar juegos
+//piropos mensajes
 
+$('#cerrar_piropo').click(function(){
 
-$('#stopTombola').click(function(){
+    //valores por defecto
+    var params = {
+
+        juego: "piropo"
+    };
+
+    tvchat.descargarJuego(params);
+
+    removerCss();
+
+    cargarModuloPorDefecto();
+});
+
+//video
+$('#cargar_video').click(function(){
 
     var params = {
 
-        "stop": "tombola"
+        juego: "video"
+    };
+
+    tvchat.cargarJuego(params);
+
+    removerCss();
+    $('#mostrar_bloque_video a').css('background-color', 'gold');
+
+    ////habilitarBotones( 2, 'piropo' );
+});
+$('#cerrar_video').click(function(){
+
+    //valores por defecto
+    var params = {
+
+        juego: "video"
+    };
+
+    tvchat.descargarJuego(params);
+
+    removerCss();
+
+    cargarModuloPorDefecto();
+});
+
+//mensajero
+$('#cargar_tvchat').click(function(){
+
+    //valores por defecto
+    var params = {
+
+        juego: "tvchat"
+    };
+
+    tvchat.cargarJuego(params);
+});
+$('#cerrar_tvchat').click(function(){
+
+    //valores por defecto
+    var params = {
+
+        juego: "tvchat"
+    };
+
+    tvchat.descargarJuego(params);
+
+    removerCss();
+
+    cargarModuloPorDefecto();
+});
+$('#parar_marquee').click(function(){
+
+    var params = {
+
+        accion: "ocultar",
+        modulo: "marquee"
     }
 
-    tvchat.pararJuego(params);
+    tvchat.cargarModulo( params );
 });
-
-//obtener elementos con ganadores
-
-$('#getWinElementsPiropo').click(function(){
-
-    $.get("/tvchat/get-win-elements-piropo", { premio: true }, cargarNumerosGanadores, "json");
-    ////habilitarBotones( 3, 'tragamonedas_sexy' );
-
-    return;
-});
-
-$('#getWinElementsTombola').click(function(){
-
-    $("#stopTombola").text("Girar");
-    console.log("getWinElementsTombola");
-    $.get("/tvchat/get-win-elements-tombola", { premio : true }, cargarNumerosGanadores, "json");
-    //habilitarBotones( 3, 'tombola' );
-
-    return;
-});
-
-//obtener elementos sin ganadores
-
-$('#getElementsTombola').click(function(){
-
-    $('#premios_tombola').hide();
-    $("#stopTombola").text("Girar");
-    premio_tombola.premio_texto = "Sin Premio";
-    premio_tombola.premio_gs = 0;
-    console.log("getElementsTombola");
-    $.get("/tvchat/get-win-elements-tombola", { premio : false }, cargarNumerosGanadores, "json");
-    //habilitarBotones( 3, 'tombola' );
-
-    return;
-});
-
-//obtener el mensaje con el mejor piropo
-$('#mensajes').on('click', '.seleccionar', function() {
-
-    mensaje_seleccionado = $(this).data('mensaje');
-    cel_ganador = '0' + $(this).data('cel');
-
-    //se aprovecha el campo cadena de combinacion_ganadora
-    nuevoGanador = new ObjetoGanador( mensaje_seleccionado, cel_ganador, 'piropo', '', '' );
-    //ocultamos el modal
-    $('#opciones_mensajes').modal('hide');
-
-    cargarNumerosGanadores(nuevoGanador);
-
-    //habilitarBotones( 3, 'piropo' );
-
-});
-
-//seleccionar premio
-
-
-$("#premios_tombola").change(function(){
-
-    premio_tombola.premio_texto = $( "#premios_tombola option:selected" ).text();
-    premio_tombola.premio_gs = $( "#premios_tombola option:selected" ).val();
-});
-$("#premios_piropos").change(function(){
-
-    premio_piropo.premio_texto = $( "#premios_piropos option:selected" ).text();
-    premio_piropo.premio_gs = $( "#premios_piropos option:selected" ).val();
-});
-$("#premios_piropos2").change(function(){
-
-    premio_piropo2.premio_texto = $( "#premios_piropos2 option:selected" ).text();
-    premio_piropo2.premio_gs = $( "#premios_piropos2 option:selected" ).val();
-});
-
-//mostrar ganador
-
-
 
 //mostrar lineas punteadas para la conductora
 $("#ocultar_lineas_referencia_conductora a").click(function(){
@@ -829,52 +911,45 @@ $("#mostrar_lineas_referencia_conductora a").click(function(){
 
 });
 
-//tragamonedas sexy
-$('#image_sample1').children().click(function(){
-    var stopImageNumber = $(this).attr('data-value');
-    updateStopImageNumber1(stopImageNumber);
+$('#vaciar_localstorage').click(function(){
+
+    localStorage.clear();
 });
-var updateStopImageNumber1 = function(stopImageNumber) {
-    $('.image_sample1').children().css('opacity' , 0.2);
-    $('.image_sample1').children().filter('[data-value="' + stopImageNumber + '"]').css('opacity' , 1);
-    $('.stop_image_number_param1').text(stopImageNumber);
-    updateParamater1();
-};
-var updateParamater1 = function(){
-    var stopImageNumber = Number($('.stop_image_number_param1').eq(0).text());
-    tragamonedas_sexy_combinacion_ganadora[0] = stopImageNumber;
-    sorteoTragamonedasSexy.codigo[0] = stopImageNumber;
-};
-$('#image_sample2').children().click(function(){
-    var stopImageNumber = $(this).attr('data-value');
-    updateStopImageNumber2(stopImageNumber);
+
+//pestanhas
+$('#mostrar_bloque_tragamonedas').click(function(){
+    ocultarModulos();
+    $('#tragamonedas').removeClass('ocultar');
+    $('#mostrar_bloque_tragamonedas').addClass('active');
 });
-var updateStopImageNumber2 = function(stopImageNumber) {
-    $('.image_sample2').children().css('opacity' , 0.2);
-    $('.image_sample2').children().filter('[data-value="' + stopImageNumber + '"]').css('opacity' , 1);
-    $('.stop_image_number_param2').text(stopImageNumber);
-    updateParamater2();
-};
-var updateParamater2 = function(){
-    var stopImageNumber = Number($('.stop_image_number_param2').eq(0).text());
-    tragamonedas_sexy_combinacion_ganadora[1] = stopImageNumber;
-    sorteoTragamonedasSexy.codigo[1] = stopImageNumber;
-};
-$('#image_sample3').children().click(function(){
-    var stopImageNumber = $(this).attr('data-value');
-    updateStopImageNumber3(stopImageNumber);
+$('#mostrar_bloque_tombola').click(function(){
+    ocultarModulos();
+    $('#tombola').removeClass('ocultar');
+    $('#mostrar_bloque_tombola').addClass('active');
 });
-var updateStopImageNumber3 = function(stopImageNumber) {
-    $('.image_sample3').children().css('opacity' , 0.2);
-    $('.image_sample3').children().filter('[data-value="' + stopImageNumber + '"]').css('opacity' , 1);
-    $('.stop_image_number_param3').text(stopImageNumber);
-    updateParamater3();
-};
-var updateParamater3 = function(){
-    var stopImageNumber = Number($('.stop_image_number_param3').eq(0).text());
-    tragamonedas_sexy_combinacion_ganadora[2] = stopImageNumber;
-    sorteoTragamonedasSexy.codigo[2] = stopImageNumber;
-};
+$('#mostrar_bloque_tragamonedas_sexy').click(function(){
+    ocultarModulos();
+    $('#tragamonedas_sexy').removeClass('ocultar');
+    $('#mostrar_bloque_tragamonedas_sexy').addClass('active');
+});
+$('#mostrar_bloque_piropo1').click(function(){
+    ocultarModulos();
+    $('#piropo1').removeClass('ocultar');
+    $('#mostrar_bloque_piropo1').addClass('active');
+});
+$('#mostrar_bloque_piropo2').click(function(){
+    ocultarModulos();
+    $('#piropo2').removeClass('ocultar');
+    $('#mostrar_bloque_piropo2').addClass('active');
+});
+$('#mostrar_bloque_video').click(function(){
+    ocultarModulos();
+    $('#video').removeClass('ocultar');
+    $('#mostrar_bloque_video').addClass('active');
+});
+$('#mostrar_modulo_por_defecto a').click(function(){
+    cargarModuloPorDefecto();
+});
 
 //setInterval( obtenerMensajes, 1000*9*60 );
 
@@ -1127,6 +1202,8 @@ function cargarNumerosGanadores( respuesta ){
 
         nuevoGanador = new ObjetoGanador( '', '', respuesta.juego, '', '' );
 
+        sorteoTombola = new Sorteo(respuesta.cel_ganador, respuesta.sorteo, null, respuesta.juego, respuesta.id_sorteo);
+
         $('#WinElementsTombola').empty();
 
         $('#WinElementsTombola')
@@ -1166,7 +1243,7 @@ function cargarNumerosGanadores( respuesta ){
         nuevoGanador.cel_ganador = respuesta.cel_ganador;
         nuevoGanador.combinacion_ganadora_list = tombola_elementos_ganadores;
 
-        tombola_buffer.push(nuevoGanador);
+        //tombola_buffer.push(nuevoGanador);
     }
     else if( respuesta.nombre_juego == "piropo" ){
 
@@ -1311,64 +1388,11 @@ function cargarModuloPorDefecto(){
     tvchat.cargarModulo( params );
 };
 
-
 function guardarSorteo( parametros ){
 
     $.get("/tvchat/guardar-sorteo/", { id_sorteo : parametros.id_sorteo, id_premio : parametros.id_premio }, {}, "json");
     return;
 };
-
-$('#vaciar_localstorage').click(function(){
-
-    localStorage.clear();
-});
-
-//pestanhas
-$('#mostrar_bloque_tragamonedas').click(function(){
-    ocultarModulos();
-    $('#tragamonedas').removeClass('ocultar');
-    $('#mostrar_bloque_tragamonedas').addClass('active');
-});
-$('#mostrar_bloque_tombola').click(function(){
-    ocultarModulos();
-    $('#tombola').removeClass('ocultar');
-    $('#mostrar_bloque_tombola').addClass('active');
-});
-$('#mostrar_bloque_tragamonedas_sexy').click(function(){
-    ocultarModulos();
-    $('#tragamonedas_sexy').removeClass('ocultar');
-    $('#mostrar_bloque_tragamonedas_sexy').addClass('active');
-});
-$('#mostrar_bloque_piropo1').click(function(){
-    ocultarModulos();
-    $('#piropo1').removeClass('ocultar');
-    $('#mostrar_bloque_piropo1').addClass('active');
-});
-$('#mostrar_bloque_piropo2').click(function(){
-    ocultarModulos();
-    $('#piropo2').removeClass('ocultar');
-    $('#mostrar_bloque_piropo2').addClass('active');
-});
-$('#mostrar_bloque_video').click(function(){
-    ocultarModulos();
-    $('#video').removeClass('ocultar');
-    $('#mostrar_bloque_video').addClass('active');
-});
-$('#mostrar_modulo_por_defecto a').click(function(){
-    cargarModuloPorDefecto();
-});
-
-//mo
-$('#parar_marquee').click(function(){
-
-    var params = {
-
-        accion: "ocultar",
-        modulo: "marquee"
-    }
-
-    tvchat.cargarModulo( params );
-});
 
 ocultarModulos();
 
@@ -1381,8 +1405,6 @@ function removerCss(){
     $('#mostrar_bloque_piropo2 a').css( 'background-color', '' );
     $('#mostrar_bloque_video a').css( 'background-color', '' );
 };
-
-$('#mostrar_bloque_tragamonedas').trigger('click');
 
 function ocultarModulos(){
 
@@ -1401,6 +1423,7 @@ function ocultarModulos(){
     $('#mostrar_bloque_video').removeClass('active');
 };
 
+$('#mostrar_bloque_tragamonedas').trigger('click');
 //});
 
 $(window).bind( 'beforeunload', function(){
