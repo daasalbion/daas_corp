@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="4" />
+<project version="4">
+  <component name="PublishConfigData" uploadOnCheckin="eccea078-8c07-49bb-9c8e-1a7fea3657ce">
+    <option name="myUploadOnCheckinName" value="LocalServer" />
+  </component>
+</project>
 
