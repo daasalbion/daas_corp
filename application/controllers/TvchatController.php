@@ -147,34 +147,25 @@ class TvchatController extends Zend_Controller_Action{
 
                 $indice = $_GET['id_mensaje'];
             }
-
-            //seteo el siguiente id a solicitar
-            $siguiente_id_solicitar = $indice;
-            $this->logger->info('siguiente_id_solicitar ' . $siguiente_id_solicitar );
-            $this->logger->info('mensajes_marquee ' . $mensajes_marquee );
-            $respuesta = json_encode(
-
-                array(
-                    'mensajes_operador' => $mensajes_nuevos,
-                    'mensajes_marquee' => $mensajes_marquee,
-                    'siguiente_id_solicitar' => $siguiente_id_solicitar
-                )
-            );
-
-            $this->logger->info('datos a enviar ' . $respuesta );
-            echo $respuesta;
-            exit;
-        }else{
-
-            $mensajes_nuevos = $this->_consulta( 'GET_MENSAJES_MARQUEE', array( 'id_tvchat_mensaje' => null ) );
-            $this->logger->info( 'datos a obtenidos ' . print_r( $mensajes_nuevos, true ) );
-
-            //seteo el siguiente id a solicitar
-            $respuesta = json_encode( array( "mensajes" => $mensajes_nuevos ) );
-            $this->logger->info( 'datos a enviar ' . $respuesta );
-            echo $respuesta;
-            exit;
         }
+
+        //seteo el siguiente id a solicitar
+        $siguiente_id_solicitar = $indice;
+        $this->logger->info('siguiente_id_solicitar ' . $siguiente_id_solicitar );
+        $this->logger->info('mensajes_marquee ' . $mensajes_marquee );
+        $respuesta = json_encode(
+
+            array(
+                'mensajes_operador' => $mensajes_nuevos,
+                'mensajes_marquee' => $mensajes_marquee,
+                'siguiente_id_solicitar' => $siguiente_id_solicitar
+            )
+        );
+
+        $this->logger->info('datos a enviar ' . $respuesta );
+        echo $respuesta;
+        exit;
+
     }
 
     public function administracionAction(){
@@ -648,7 +639,7 @@ class TvchatController extends Zend_Controller_Action{
         }
         else if( $accion == 'GET_MENSAJES_MARQUEE' ){
 
-            $sql = "select * from promosuscripcion.obtener_mensajes(?, 50)";
+            $sql = "select * from promosuscripcion.obtener_mensajes(?, 10)";
 
             if($datos['id_mensaje'] == null)
                 $datos['id_mensaje'] = 1;

@@ -1037,8 +1037,8 @@ $('#mostrar_modulo_por_defecto a').click(function(){
 //setInterval( obtenerMensajes, 1000*9*60 );
 
 //cada 2 min
-//obtenerMensajesMarquee();
-//setInterval( obtenerMensajesMarquee, 60*1000*1.5 );
+obtenerMensajesMarquee();
+setInterval( obtenerMensajesMarquee, 60*1000*1.5 );
 
 //setInterval( testearConexion, 10000);
 
@@ -1460,11 +1460,16 @@ function obtenerMensajesMarquee(){
 
 function cargarMensajes( respuesta ){
 
-    mensajero_buffer.push(respuesta.mensajes_marquee);
+    if( respuesta.mensajes_operador != null ){
+
+        mensajero_buffer.push(respuesta.mensajes_marquee);
+    }
+
     mensajero = $.extend(true, [], mensajero_buffer);
     mensajes = respuesta.mensajes_operador;
     siguiente_id_solicitar = respuesta.siguiente_id_solicitar;
     cargarOpcionesMensajes( mensajes );
+
 };
 
 function obtenerMensajesNuevosMensajero(){
