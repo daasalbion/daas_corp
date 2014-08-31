@@ -1,6 +1,8 @@
 (function($) {
-	var Roulette = function(options) {
-		var defaultSettings = {
+
+    var Roulette = function(options) {
+
+        var defaultSettings = {
 			maxPlayCount : null, // x >= 0 or null
 			speed : 15, // x > 0
 			stopImageNumber : null, // x >= 0 or null or -1
@@ -9,7 +11,7 @@
 			stopCallback : function() {},
 			startCallback : function() {},
 			slowDownCallback : function() {}
-		}
+		};
 		var defaultProperty = {
 			playCount : 0,
 			$rouletteTarget : null,
@@ -40,7 +42,7 @@
 			p.isSlowdown = defaultProperty.isSlowdown;
 			p.isStop = defaultProperty.isStop;
 			p.topPosition = defaultProperty.topPosition;
-		}
+		};
 		
 		var slowDownSetup = function() {
 			if(p.isSlowdown){
@@ -55,7 +57,7 @@
 				p.maxDistance += (p.totalHeight - (p.maxDistance % p.totalHeight) + (p.stopImageNumber * p.imageHeight))
 						% p.totalHeight;
 			}
-		}
+		};
 
 		var roll = function() {
 			var speed_ = p.speed;
@@ -94,7 +96,7 @@
 				p.$rouletteTarget.css('transform', 'translate(0px, -' + p.topPosition + 'px)');
 			}
 			setTimeout(roll, 1);
-		}
+		};
 
 		var init = function($roulette) {
 			$roulette.css({ 'overflow' : 'hidden' });
@@ -128,7 +130,7 @@
 			p.$rouletteTarget.append(p.$images);
 			p.$rouletteTarget.append(p.$images.eq(0).clone());
 			$roulette.show();
-		}
+		};
 
 		var start = function() {
 			p.playCount++;
@@ -142,7 +144,7 @@
 			setTimeout(function(){
 				slowDownSetup();
 			}, p.duration * 1000);
-		}
+		};
 
 		var stop = function(option) {
 			if (!p.isSlowdown) {
@@ -154,22 +156,25 @@
 				}
 				slowDownSetup();
 			}
-		}
+		};
+
 		var option = function(options) {
 			p = $.extend(p, options);
 			p.speed = Number(p.speed);
 			p.duration = Number(p.duration);
 			p.duration = p.duration > 1 ? p.duration - 1 : 1; 
 			defaultProperty.originalStopImageNumber = options.stopImageNumber; 
-		}
+		};
 
 		var ret = {
 			start : start,
 			stop : stop,
 			init : init,
 			option : option
-		}
+		};
+
 		return ret;
+
 	}
 
 	var pluginName = 'roulette';

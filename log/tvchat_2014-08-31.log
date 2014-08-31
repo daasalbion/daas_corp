@@ -6016,3 +6016,1207 @@
 2014-08-31T12:33:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
 2014-08-31T12:33:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
 2014-08-31T12:33:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:34:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:34:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:34:44-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:34:44-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:34:44-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:34:44-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:36:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:36:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:36:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:36:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:36:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:36:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:37:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:37:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:37:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:37:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:37:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:37:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:39:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:39:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:39:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:39:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:39:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:39:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:40:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:40:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:40:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:40:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:40:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:40:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:42:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:42:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:42:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:42:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:42:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:42:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:43:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:43:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:43:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:43:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:43:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:43:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:45:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:45:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:45:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:45:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:45:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:45:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:46:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:46:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:46:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:46:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:46:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:46:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:48:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:48:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:48:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:48:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:48:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:48:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:49:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:49:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:49:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:49:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:49:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:49:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:51:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:51:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:51:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:51:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:51:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:51:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:52:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:52:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:52:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:52:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:52:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:52:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:54:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:54:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:54:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:54:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:54:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:54:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:55:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:55:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:55:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:55:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:55:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:55:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:57:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:57:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:57:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:57:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:57:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:57:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T12:58:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T12:58:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T12:58:44-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T12:58:44-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T12:58:44-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T12:58:44-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:00:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:00:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:00:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:00:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:00:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:00:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:01:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:01:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:01:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:01:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:01:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:01:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:03:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:03:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:03:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:03:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:03:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:03:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:04:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:04:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:04:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:04:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:04:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:04:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:06:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:06:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:06:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:06:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:06:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:06:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:07:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:07:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:07:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:07:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:07:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:07:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:09:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:09:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:09:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:09:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:09:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:09:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:10:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:10:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:10:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:10:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:10:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:10:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:12:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:12:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:12:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:12:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:12:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:12:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:13:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:13:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:13:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:13:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:13:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:13:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:15:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:15:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:15:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:15:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:15:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:15:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:16:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:16:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:16:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:16:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:16:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:16:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:18:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:18:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:18:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:18:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:18:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:18:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:19:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:19:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:19:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:19:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:19:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:19:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:21:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:21:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:21:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:21:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:21:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:21:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:22:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:22:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:22:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:22:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:22:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:22:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:24:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:24:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:24:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:24:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:24:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:24:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:25:43-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:25:43-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:25:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:25:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:25:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:25:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:27:13-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:27:13-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 38
+)
+
+2014-08-31T13:27:13-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:27:13-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 38
+2014-08-31T13:27:13-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:27:13-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"38"}
+2014-08-31T13:27:53-04:00 INFO - [127.0.0.1]: index
+2014-08-31T13:28:09-04:00 INFO - [127.0.0.1]: LOGIN:[daas]
+2014-08-31T13:28:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:28:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:28:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:28:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:28:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:28:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:28:13-04:00 INFO - [127.0.0.1]: tv
+2014-08-31T13:28:35-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => true
+)
+
+2014-08-31T13:28:35-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_juego] => 1
+    [premio] => true
+)
+]
+2014-08-31T13:28:36-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 467
+    [cel] => 0982313438
+    [codigo] => 092608
+)
+]
+2014-08-31T13:28:36-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 09
+    [1] => 26
+    [2] => 08
+)
+
+2014-08-31T13:28:36-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":467,"sorteo":["09","26","08"],"cel_ganador":"0982313438","juego":"tragamonedas"}
+2014-08-31T13:28:44-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [id_sorteo] => 467
+    [id_premio] => 1
+)
+
+2014-08-31T13:28:44-04:00 INFO - [127.0.0.1]: datos recibidos [Array]
+2014-08-31T13:28:44-04:00 INFO - [127.0.0.1]: datos a enviar {"status":{"jugar_confirmar_sorteo":"OK"}}
+2014-08-31T13:29:29-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => true
+)
+
+2014-08-31T13:29:31-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_juego] => 1
+    [premio] => true
+)
+]
+2014-08-31T13:29:33-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 468
+    [cel] => 0982313455
+    [codigo] => 522857
+)
+]
+2014-08-31T13:29:33-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 52
+    [1] => 28
+    [2] => 57
+)
+
+2014-08-31T13:29:33-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":468,"sorteo":["52","28","57"],"cel_ganador":"0982313455","juego":"tragamonedas"}
+2014-08-31T13:29:37-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [id_sorteo] => 468
+    [id_premio] => 2
+)
+
+2014-08-31T13:29:38-04:00 INFO - [127.0.0.1]: datos recibidos [Array]
+2014-08-31T13:29:38-04:00 INFO - [127.0.0.1]: datos a enviar {"status":{"jugar_confirmar_sorteo":"OK"}}
+2014-08-31T13:29:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:29:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:29:41-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:29:41-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:29:41-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:29:41-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:31:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:31:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:31:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:31:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:31:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:31:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:32:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:32:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:32:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:32:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:32:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:32:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:34:10-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:34:10-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:34:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:34:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:34:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:34:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:35:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:35:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:35:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:35:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:35:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:35:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:37:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:37:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:37:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:37:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:37:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:37:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:38:40-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:38:40-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:38:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:38:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:38:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:38:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:40:10-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:40:10-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:40:11-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:40:11-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:40:11-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:40:11-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:41:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:41:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:41:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:41:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:41:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:41:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:43:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:43:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:43:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:43:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:43:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:43:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:44:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:44:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:44:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:44:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:44:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:44:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:46:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:46:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:46:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:46:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:46:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:46:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:47:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:47:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:47:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:47:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:47:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:47:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:49:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:49:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:49:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:49:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:49:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:49:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:50:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:50:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:50:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:50:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:50:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:50:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:52:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:52:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:52:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:52:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:52:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:52:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:53:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:53:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:53:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:53:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:53:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:53:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:55:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:55:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:55:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:55:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:55:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:55:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:56:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:56:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:56:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:56:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:56:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:56:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:58:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:58:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:58:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:58:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:58:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:58:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T13:59:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T13:59:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T13:59:42-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T13:59:42-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T13:59:42-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T13:59:42-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:01:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:01:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:01:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:01:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:01:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:01:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:02:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:02:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:02:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:02:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:02:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:02:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:04:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:04:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:04:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:04:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:04:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:04:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:05:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:05:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:05:39-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:05:39-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:05:39-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:05:39-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:07:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:07:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:07:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:07:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:07:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:07:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:08:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:08:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:08:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:08:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:08:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:08:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:10:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:10:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:10:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:10:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:10:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:10:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:11:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:11:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:11:39-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:11:39-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:11:39-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:11:39-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:13:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:13:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:13:09-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:13:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:13:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:13:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:14:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:14:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:14:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:14:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:14:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:14:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:16:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:16:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:16:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:16:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:16:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:16:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:17:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:17:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:17:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:17:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:17:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:17:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:19:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:19:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:19:09-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:19:09-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:19:09-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:19:09-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:20:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:20:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:20:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:20:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:20:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:20:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:22:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:22:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:22:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:22:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:22:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:22:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:23:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:23:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:23:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:23:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:23:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:23:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:25:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:25:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:25:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:25:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:25:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:25:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:26:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:26:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:26:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:26:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:26:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:26:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:28:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:28:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:28:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:28:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:28:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:28:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:29:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:29:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:29:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:29:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:29:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:29:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:31:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:31:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:31:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:31:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:31:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:31:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:32:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:32:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:32:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:32:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:32:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:32:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:34:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:34:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:34:09-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:34:09-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:34:09-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:34:09-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:35:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:35:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:35:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:35:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:35:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:35:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:37:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:37:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:37:11-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:37:11-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:37:11-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:37:11-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:38:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:38:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:38:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:38:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:38:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:38:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:40:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:40:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:40:09-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:40:09-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:40:09-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:40:09-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:41:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:41:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:41:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:41:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:41:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:41:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:43:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:43:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:43:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:43:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:43:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:43:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:44:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:44:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:44:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:44:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:44:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:44:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:46:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:46:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:46:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:46:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:46:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:46:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:47:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:47:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:47:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:47:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:47:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:47:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:49:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:49:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:49:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:49:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:49:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:49:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:50:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:50:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:50:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:50:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:50:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:50:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:52:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:52:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:52:09-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:52:09-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:52:09-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:52:09-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:53:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:53:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:53:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:53:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:53:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:53:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:55:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:55:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:55:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:55:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:55:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:55:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:56:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:56:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:56:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:56:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:56:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:56:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:58:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:58:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:58:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:58:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:58:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:58:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T14:59:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T14:59:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T14:59:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T14:59:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T14:59:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T14:59:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T15:01:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T15:01:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T15:01:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T15:01:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T15:01:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T15:01:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T15:02:39-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T15:02:39-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T15:02:40-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T15:02:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T15:02:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T15:02:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T15:04:09-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T15:04:09-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T15:04:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T15:04:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T15:04:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T15:04:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T15:05:40-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T15:05:40-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T15:05:43-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T15:05:43-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T15:05:43-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T15:05:43-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T15:07:10-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T15:07:10-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T15:07:10-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T15:07:10-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T15:07:10-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T15:07:10-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
