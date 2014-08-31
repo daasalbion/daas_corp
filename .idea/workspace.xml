@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/tvchat_2014-08-30.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/tvchat_2014-08-31.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/www.entermovil.com.py_2014-08-30.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/www.entermovil.com.py_2014-08-31.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/tvchat_2014-08-29.log" afterPath="$PROJECT_DIR$/log/tvchat_2014-08-29.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/www.entermovil.com.py_2014-08-29.log" afterPath="$PROJECT_DIR$/log/www.entermovil.com.py_2014-08-29.log" />
     </list>
     <ignored path="www.entermovil.com.py.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -980,7 +974,11 @@
       <created>1409363601185</created>
       <updated>1409363601185</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="commit">
+      <created>1409502862623</created>
+      <updated>1409502862623</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1052,7 +1050,6 @@
       <TodoPanelSettings />
     </option>
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
-    <MESSAGE value="mirar" />
     <MESSAGE value="agregado fotos gabi" />
     <MESSAGE value="agregado pestanhas" />
     <MESSAGE value="terminado pestanhas y tragamonedas" />
@@ -1077,7 +1074,8 @@
     <MESSAGE value="cambios tragamonedas&#10;" />
     <MESSAGE value="boton de wait para las llamadas&#10;" />
     <MESSAGE value="terminado boton de carga de elementos ganadores&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="terminado boton de carga de elementos ganadores&#10;" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
