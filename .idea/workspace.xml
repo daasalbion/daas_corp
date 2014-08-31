@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/TvchatController.php" afterPath="$PROJECT_DIR$/application/controllers/TvchatController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js" afterPath="$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/tvchat_2014-08-30.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/tvchat_2014-08-31.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/www.entermovil.com.py_2014-08-30.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/www.entermovil.com.py_2014-08-31.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/tvchat_2014-08-29.log" afterPath="$PROJECT_DIR$/log/tvchat_2014-08-29.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/www.entermovil.com.py_2014-08-29.log" afterPath="$PROJECT_DIR$/log/www.entermovil.com.py_2014-08-29.log" />
@@ -164,7 +165,7 @@
       <file leaf-file-name="tvchat_2014-08-29.log" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log/tvchat_2014-08-29.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5306" column="63" selection-start="257182" selection-end="257182" vertical-scroll-proportion="0.0" vertical-offset="89788" max-vertical-offset="90338">
+            <state line="6378" column="63" selection-start="306012" selection-end="306012" vertical-scroll-proportion="0.0" vertical-offset="108012" max-vertical-offset="108562">
               <folding />
             </state>
           </provider>
@@ -173,7 +174,7 @@
       <file leaf-file-name="tvchat.manager.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1464" column="50" selection-start="39706" selection-end="39706" vertical-scroll-proportion="0.61824954" vertical-offset="2643" max-vertical-offset="3655">
+            <state line="1460" column="36" selection-start="39605" selection-end="39605" vertical-scroll-proportion="0.78863233" vertical-offset="2463" max-vertical-offset="3451">
               <folding>
                 <element signature="e#356#374#0" expanded="false" />
                 <element signature="e#438#486#0" expanded="false" />
@@ -334,6 +335,7 @@
                 <element signature="e#37255#38354#0" expanded="false" />
                 <element signature="e#38358#39379#0" expanded="false" />
                 <element signature="n#!!block;n#obtenerMensajesMarquee#0" expanded="false" />
+                <element signature="n#!!block;n#cargarMensajes#0" expanded="false" />
                 <element signature="n#!!block;n#obtenerMensajesNuevosMensajero#0" expanded="false" />
                 <element signature="n#!!block;n#actualizarTotalGuaranies#0" expanded="false" />
                 <element signature="n#!!block;n#cargarModuloPorDefecto#0" expanded="false" />
@@ -974,7 +976,11 @@
       <created>1409327440846</created>
       <updated>1409327440846</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="terminado boton de carga de elementos ganadores&#10;">
+      <created>1409363601185</created>
+      <updated>1409363601185</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1046,7 +1052,6 @@
       <TodoPanelSettings />
     </option>
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
-    <MESSAGE value="nueva interfaz cambios&#10;" />
     <MESSAGE value="mirar" />
     <MESSAGE value="agregado fotos gabi" />
     <MESSAGE value="agregado pestanhas" />
@@ -1071,7 +1076,8 @@
     <MESSAGE value="stash" />
     <MESSAGE value="cambios tragamonedas&#10;" />
     <MESSAGE value="boton de wait para las llamadas&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="boton de wait para las llamadas&#10;" />
+    <MESSAGE value="terminado boton de carga de elementos ganadores&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="terminado boton de carga de elementos ganadores&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1520,7 +1526,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/log/tvchat_2014-08-29.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5306" column="63" selection-start="257182" selection-end="257182" vertical-scroll-proportion="0.0" vertical-offset="89788" max-vertical-offset="90338">
+        <state line="6378" column="63" selection-start="306012" selection-end="306012" vertical-scroll-proportion="0.0" vertical-offset="108012" max-vertical-offset="108562">
           <folding />
         </state>
       </provider>
@@ -1666,7 +1672,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/tvchat/tvchat.manager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1464" column="50" selection-start="39706" selection-end="39706" vertical-scroll-proportion="0.61824954" vertical-offset="2643" max-vertical-offset="3655">
+        <state line="1460" column="36" selection-start="39605" selection-end="39605" vertical-scroll-proportion="0.78863233" vertical-offset="2463" max-vertical-offset="3451">
           <folding>
             <element signature="e#356#374#0" expanded="false" />
             <element signature="e#438#486#0" expanded="false" />
@@ -1827,6 +1833,7 @@
             <element signature="e#37255#38354#0" expanded="false" />
             <element signature="e#38358#39379#0" expanded="false" />
             <element signature="n#!!block;n#obtenerMensajesMarquee#0" expanded="false" />
+            <element signature="n#!!block;n#cargarMensajes#0" expanded="false" />
             <element signature="n#!!block;n#obtenerMensajesNuevosMensajero#0" expanded="false" />
             <element signature="n#!!block;n#actualizarTotalGuaranies#0" expanded="false" />
             <element signature="n#!!block;n#cargarModuloPorDefecto#0" expanded="false" />
