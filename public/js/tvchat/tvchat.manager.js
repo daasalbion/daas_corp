@@ -279,8 +279,8 @@ $('#stopRoulette1').click(function(){
 
     var params = {
 
-        stop: "tragamonedas",
-        roulette: 1
+        "stop": "tragamonedas",
+        "roulette": "1"
     }
 
     tvchat.pararJuego(params);
@@ -291,8 +291,8 @@ $('#stopRoulette2').click(function(){
 
     var params = {
 
-        stop: "tragamonedas",
-        "roulette": 2
+        "stop": "tragamonedas",
+        "roulette": "2"
     }
 
     tvchat.pararJuego(params);
@@ -303,19 +303,21 @@ $('#stopRoulette3').click(function(){
 
     var params = {
 
-        stop: "tragamonedas",
-        roulette: 3
+        "stop": "tragamonedas",
+        "roulette": "3"
     }
 
     tvchat.pararJuego(params);
 });
-$("#mostrarGanadorTragamonedas").click(function(){
+$('#mostrarGanadorTragamonedas').click(function(){
 
     var params = {
 
         "juego": "tragamonedas"
     }
+
     tvchat.mostrarGanador( params );
+
 });
 
 //tragamonedas sexy
@@ -1037,8 +1039,8 @@ $('#mostrar_modulo_por_defecto a').click(function(){
 //setInterval( obtenerMensajes, 1000*9*60 );
 
 //cada 2 min
-obtenerMensajesMarquee();
-setInterval( obtenerMensajesMarquee, 60*1000*1.5 );
+//obtenerMensajesMarquee();
+//setInterval( obtenerMensajesMarquee, 60*1000*1.5 );
 
 //setInterval( testearConexion, 10000);
 

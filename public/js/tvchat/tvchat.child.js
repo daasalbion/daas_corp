@@ -508,7 +508,6 @@ function jugarJuego( params ){
         $('#linea').empty();
 
         p['stopImageNumber'] = Number(elementos_ganadores[0]);
-
         p['speed'] = 40;
         rouletter1.roulette( 'option', p );
         p['stopImageNumber'] = Number(elementos_ganadores[1]);
@@ -675,17 +674,17 @@ function pararJuego( params ){
 
     if( params['stop'] == "tragamonedas" ){
 
-        if( params['roulette'] == 1 ){
+        if( params['roulette'] == "1" ){
 
-            //rouletter1.roulette('stop');
+            rouletter1.roulette('stop');
         }
-        else if( params['roulette'] == 2 ){
+        else if( params['roulette'] == "2" ){
 
-            //rouletter2.roulette('stop');
+            rouletter2.roulette('stop');
         }
-        else if( params['roulette'] == 3 ){
+        else if( params['roulette'] == "3" ){
 
-            //rouletter3.roulette('stop');
+            rouletter3.roulette('stop');
         }
     }
     else if( params['stop'] == "tragamonedas_sexy" ){
