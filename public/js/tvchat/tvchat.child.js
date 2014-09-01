@@ -436,7 +436,6 @@ function jugarJuego( params ){
 
     console.log("juego a jugar: " + params['jugar']);
     console.log("codigo: " + elementos_ganadores );
-    console.log("id_sorteo: " + params["objeto_ganador"].id_sorteo );
 
     clearInterval(mostrar);
 
@@ -445,9 +444,11 @@ function jugarJuego( params ){
         var resultado = 0;
 
         p = {
-            duration: 30,
+
+            duration: 15,
             stopCallback : function($stopElm) {
-                console.log("mierda stop " + $stopElm);
+
+                console.log("stop " + $stopElm);
                 resultado++;
                 if( resultado == 3 ){
 
@@ -676,15 +677,15 @@ function pararJuego( params ){
 
         if( params['roulette'] == 1 ){
 
-            rouletter1.roulette('stop');
+            //rouletter1.roulette('stop');
         }
         else if( params['roulette'] == 2 ){
 
-            rouletter2.roulette('stop');
+            //rouletter2.roulette('stop');
         }
         else if( params['roulette'] == 3 ){
 
-            rouletter3.roulette('stop');
+            //rouletter3.roulette('stop');
         }
     }
     else if( params['stop'] == "tragamonedas_sexy" ){
@@ -835,14 +836,14 @@ $(document).ready(function(){
             .marquee('destroy')
             .bind('finished', mostrarMensajesMarquee)
             .html(texto)
-            .marquee({duration: 15000, duplicated:false});
+            .marquee({duration: 20000, duplicated:false, gap:10, delayBeforeStart:0});
     }
 
     $mwo = $('.marquee');
 
     $('.marquee').marquee({
         //speed in milliseconds of the marquee
-        duration: 15000,
+        duration: 20000,
         //gap in pixels between the tickers
         gap: 50,
         //time in milliseconds before the marquee will start animating
@@ -865,10 +866,6 @@ $(document).ready(function(){
     });
 
     cargarModuloPorDefecto();
-
-    //obtenerMensajesNuevos();
-
-    //setInterval( obtenerMensajesNuevos, 30000 );
 
     mostrarMensajesMarquee();
 

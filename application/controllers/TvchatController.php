@@ -639,7 +639,7 @@ class TvchatController extends Zend_Controller_Action{
         }
         else if( $accion == 'GET_MENSAJES_MARQUEE' ){
 
-            $sql = "select * from promosuscripcion.obtener_mensajes(?, 10)";
+            $sql = "select * from promosuscripcion.obtener_mensajes(?,15)";
 
             if($datos['id_mensaje'] == null)
                 $datos['id_mensaje'] = 1;
