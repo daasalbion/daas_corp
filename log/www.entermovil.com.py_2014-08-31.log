@@ -11175,3 +11175,269 @@
 2014-08-31T20:57:40-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
 2014-08-31T20:57:40-04:00 INFO - [127.0.0.1]: mensajes_marquee 
 2014-08-31T20:57:40-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T20:58:53-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T20:58:53-04:00 INFO - [127.0.0.1]: tv
+2014-08-31T20:59:01-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T20:59:01-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T20:59:01-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T20:59:02-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T20:59:02-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T20:59:02-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T20:59:02-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T20:59:10-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T20:59:10-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => true
+)
+
+2014-08-31T20:59:10-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_juego] => 1
+    [premio] => true
+)
+]
+2014-08-31T20:59:11-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 482
+    [cel] => 0982313407
+    [codigo] => 406702
+)
+]
+2014-08-31T20:59:11-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 40
+    [1] => 67
+    [2] => 02
+)
+
+2014-08-31T20:59:11-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":482,"sorteo":["40","67","02"],"cel_ganador":"0982313407","juego":"tragamonedas"}
+2014-08-31T20:59:17-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T20:59:17-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [id_sorteo] => 482
+    [id_premio] => 0
+)
+
+2014-08-31T20:59:17-04:00 INFO - [127.0.0.1]: datos recibidos [Array]
+2014-08-31T20:59:17-04:00 INFO - [127.0.0.1]: datos a enviar {"status":{"jugar_confirmar_sorteo":"OK"}}
+2014-08-31T21:00:08-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:00:08-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => false
+)
+
+2014-08-31T21:00:08-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_juego] => 1
+    [premio] => false
+)
+]
+2014-08-31T21:00:08-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 483
+    [cel] => 9999999999
+    [codigo] => 072050
+)
+]
+2014-08-31T21:00:08-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 07
+    [1] => 20
+    [2] => 50
+)
+
+2014-08-31T21:00:08-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":483,"sorteo":["07","20","50"],"cel_ganador":"Sin Ganador","juego":"tragamonedas"}
+2014-08-31T21:00:30-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:00:30-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T21:00:30-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T21:00:31-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T21:00:31-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T21:00:31-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T21:00:31-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T21:00:53-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:00:53-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [id_sorteo] => 483
+    [id_premio] => 0
+)
+
+2014-08-31T21:00:53-04:00 INFO - [127.0.0.1]: datos recibidos [Array]
+2014-08-31T21:00:53-04:00 INFO - [127.0.0.1]: datos a enviar {"status":{"jugar_confirmar_sorteo":"OK"}}
+2014-08-31T21:01:59-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:01:59-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => false
+)
+
+2014-08-31T21:02:00-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_juego] => 1
+    [premio] => false
+)
+]
+2014-08-31T21:02:00-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:02:00-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T21:02:00-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T21:02:01-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T21:02:01-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T21:02:01-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T21:02:01-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T21:02:02-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 484
+    [cel] => 9999999999
+    [codigo] => 760462
+)
+]
+2014-08-31T21:02:02-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 76
+    [1] => 04
+    [2] => 62
+)
+
+2014-08-31T21:02:02-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":484,"sorteo":["76","04","62"],"cel_ganador":"Sin Ganador","juego":"tragamonedas"}
+2014-08-31T21:02:11-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:02:11-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [id_sorteo] => 484
+    [id_premio] => 0
+)
+
+2014-08-31T21:02:12-04:00 INFO - [127.0.0.1]: datos recibidos [Array]
+2014-08-31T21:02:12-04:00 INFO - [127.0.0.1]: datos a enviar {"status":{"jugar_confirmar_sorteo":"OK"}}
+2014-08-31T21:03:09-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:03:09-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => true
+)
+
+2014-08-31T21:03:09-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_juego] => 1
+    [premio] => true
+)
+]
+2014-08-31T21:03:12-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 485
+    [cel] => 0982313430
+    [codigo] => 893153
+)
+]
+2014-08-31T21:03:12-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 89
+    [1] => 31
+    [2] => 53
+)
+
+2014-08-31T21:03:12-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":485,"sorteo":["89","31","53"],"cel_ganador":"0982313430","juego":"tragamonedas"}
+2014-08-31T21:03:21-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:03:21-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [id_sorteo] => 485
+    [id_premio] => 3
+)
+
+2014-08-31T21:03:21-04:00 INFO - [127.0.0.1]: datos recibidos [Array]
+2014-08-31T21:03:21-04:00 INFO - [127.0.0.1]: datos a enviar {"status":{"jugar_confirmar_sorteo":"OK"}}
+2014-08-31T21:03:30-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:03:30-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T21:03:30-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T21:03:31-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T21:03:31-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T21:03:31-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T21:03:31-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T21:04:32-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:04:32-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [premio] => false
+)
+
+2014-08-31T21:04:32-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_juego] => 1
+    [premio] => false
+)
+]
+2014-08-31T21:04:35-04:00 INFO - [127.0.0.1]: datos recibidos [Array
+(
+    [id_sorteo] => 486
+    [cel] => 9999999999
+    [codigo] => 933994
+)
+]
+2014-08-31T21:04:35-04:00 INFO - [127.0.0.1]: datos a obtenidos Array
+(
+    [0] => 93
+    [1] => 39
+    [2] => 94
+)
+
+2014-08-31T21:04:35-04:00 INFO - [127.0.0.1]: datos a enviar {"id_sorteo":486,"sorteo":["93","39","94"],"cel_ganador":"Sin Ganador","juego":"tragamonedas"}
+2014-08-31T21:04:37-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:04:37-04:00 INFO - [127.0.0.1]: parametros: Array
+(
+    [id_sorteo] => 486
+    [id_premio] => 0
+)
+
+2014-08-31T21:04:37-04:00 INFO - [127.0.0.1]: datos recibidos [Array]
+2014-08-31T21:04:37-04:00 INFO - [127.0.0.1]: datos a enviar {"status":{"jugar_confirmar_sorteo":"OK"}}
+2014-08-31T21:05:00-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:05:00-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T21:05:00-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T21:05:00-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T21:05:00-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T21:05:00-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T21:05:00-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T21:06:30-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:06:30-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T21:06:30-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T21:06:30-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T21:06:30-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T21:06:30-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T21:06:30-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
+2014-08-31T21:08:04-04:00 INFO - [127.0.0.1]: initLogger()
+2014-08-31T21:08:04-04:00 INFO - [127.0.0.1]: solicitud de mensajes nuevos
+2014-08-31T21:08:04-04:00 INFO - [127.0.0.1]: request Array
+(
+    [solicitud] => marquee
+    [id_mensaje] => 0
+)
+
+2014-08-31T21:08:04-04:00 INFO - [127.0.0.1]: datos a obtenidos 
+2014-08-31T21:08:04-04:00 INFO - [127.0.0.1]: siguiente_id_solicitar 0
+2014-08-31T21:08:04-04:00 INFO - [127.0.0.1]: mensajes_marquee 
+2014-08-31T21:08:04-04:00 INFO - [127.0.0.1]: datos a enviar {"mensajes_operador":null,"mensajes_marquee":"","siguiente_id_solicitar":"0"}
