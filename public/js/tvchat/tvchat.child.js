@@ -105,10 +105,7 @@ function cargarJuego( params ){
                         )
                 )
         )
-        //0    1    2    3    4    5    6    7     8        9        10       11
-        /*var imagenes_tiras1 = ['0', '1', '2', '3', '4', '5', '6', '7', 'coin', 'chomp', 'flower', 'star'];
-         var imagenes_tiras2 = ['0', '1', '2', '3', '4', '5', '6', '7', 'coin', 'chomp', 'flower', 'star'];
-         var imagenes_tiras3 = ['0', '1', '2', '3', '4', '5', '6', '7', 'coin', 'chomp', 'flower', 'star'];*/
+
         var imagenes_tiras1 = [
             '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
             '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
@@ -149,7 +146,6 @@ function cargarJuego( params ){
         var tira_imagenes1 = $('#tira_imagenes1');
         var tira_imagenes2 = $('#tira_imagenes2');
         var tira_imagenes3 = $('#tira_imagenes3');
-        var resultado = 0;
 
         for( var i= 0; i < imagenes_tiras1.length; i++ ){
 
@@ -448,12 +444,6 @@ function jugarJuego( params ){
 
         var resultado = 0;
 
-        //vaciar por si acaso
-
-        rouletter1.roulette('reset');
-        rouletter2.roulette('reset');
-        rouletter3.roulette('reset');
-
         p = {
             duration: 30,
             stopCallback : function($stopElm) {
@@ -478,7 +468,6 @@ function jugarJuego( params ){
 
         p['stopImageNumber'] = Number(elementos_ganadores[0]);
         p['speed'] = 20;
-        console.log(p.toSource());
         rouletter1.roulette( 'option', p );
         p['stopImageNumber'] = Number(elementos_ganadores[1]);
         p['speed'] = 30;
@@ -681,11 +670,10 @@ function jugarJuego( params ){
 
 function pararJuego( params ){
 
-    console.log("juego a parar: " + params);
+    console.log("juego a parar: " + params.stop );
 
     if( params['stop'] == "tragamonedas" ){
 
-        console.log('entro ak 1');
         if( params['roulette'] == 1 ){
 
             rouletter1.roulette('stop');
