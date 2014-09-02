@@ -445,7 +445,7 @@ function jugarJuego( params ){
 
         p = {
 
-            duration: 15,
+            duration: 180,
             stopCallback : function($stopElm) {
 
                 console.log("stop " + $stopElm);
@@ -468,13 +468,13 @@ function jugarJuego( params ){
         $('#linea').empty();
 
         p['stopImageNumber'] = Number(elementos_ganadores[0]);
-        p['speed'] = 20;
+        p['speed'] = 57;
         rouletter1.roulette( 'option', p );
         p['stopImageNumber'] = Number(elementos_ganadores[1]);
-        p['speed'] = 30;
+        p['speed'] = 59;
         rouletter2.roulette( 'option', p );
         p['stopImageNumber'] = Number(elementos_ganadores[2]);
-        p['speed'] = 40;
+        p['speed'] = 61;
         rouletter3.roulette( 'option', p );
 
         rouletter1.roulette('start');

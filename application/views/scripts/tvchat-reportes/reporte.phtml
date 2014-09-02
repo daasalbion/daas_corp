@@ -104,3 +104,58 @@
         </tbody>
     </table>
 <?php endforeach; ?>
+
+<table id="tabla_totales_TOTAl" class="tabla_reporte">
+    <thead>
+    <tr>
+        <th class="celda_vacia"></th>
+        <th colspan="4" class="borde_arriba borde_derecha" style="height: 25px; border-bottom: none;">Mes: <?php echo $this->nombre_mes ?> / Año: <?php echo $this->anho ?></th>
+        <th colspan="<?php echo (3 + $this->cantidad_dias) ?>" class="celda_vacia"></th><!-- cantidad dias + 2 columnas -->
+    </tr>
+    <tr>
+        <th class="fondo_naranja borde_arriba" style="min-width: 50px; width: 50px;">TOTAL</th>
+        <th colspan="4" class="fondo_naranja borde_arriba">Total Suscriptos</th>
+
+        <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
+            <th class="nro_dia borde_arriba<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>" title="<?php echo $this->nombres_dias_del_mes[$i]['nombre_dia'] ?>"><?php echo $i ?></th>
+        <?php endfor; ?>
+
+        <th class="fondo_naranja totales borde_arriba">Totales</th>
+        <th class="fondo_naranja totales borde_arriba"></th>
+        <th class="fondo_naranja porcentaje borde_arriba"></th>
+    </tr>
+
+    </thead>
+    <tfoot>
+    <tr>
+        <th class="celda_vacia"></th>
+        <th rowspan="3" class="alias">Totales</th>
+        <th rowspan="3" class="carrier">&nbsp;&nbsp;&nbsp;&nbsp;TOTAL</th>
+        <th rowspan="3" class="suscriptos"><?php echo "" ?></th>
+        <th class="descripcion_cobro">ALTAS</th>
+
+        <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
+            <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero( $this->total_general['total'][$i]['ALTA'] ) ?>&nbsp;</th>
+        <?php endfor; ?>
+
+        <th class="numero borde_derecha celda_total"><?php echo $this->numero($this->total_general['total_general']['ALTA'] ) ?>&nbsp;</th>
+        <td rowspan="3" class="carrier">&nbsp;&nbsp;&nbsp;&nbsp;TOTAL</td>
+
+        <th class="celda_vacia"></th>
+    </tr>
+    <tr>
+        <th class="celda_vacia"></th>
+        <th class="descripcion_cobro celda_cliente">BAJAS</th>
+
+        <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
+            <th class="numero celda_cliente"><?php echo $this->numero( $this->total_general['total'][$i]['BAJA'] ) ?>&nbsp;</th>
+        <?php endfor; ?>
+
+        <th class="numero celda_cliente borde_derecha celda_total"><?php echo $this->total_general['total_general']['BAJA']  ?>&nbsp;</th>
+
+        <th class="celda_vacia"></th>
+    </tr>
+    </tfoot>
+</table>
+
+

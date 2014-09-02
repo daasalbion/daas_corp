@@ -6,7 +6,9 @@ class TvchatReportesController extends Zend_Controller_Action{
     var $usuarios = array(
 
         'daas' => array('clave' => 'daas', 'nombre' => 'DAAS'),
-        'david' => array('clave' => 'david', 'nombre' => 'David Villalba')
+        'david' => array('clave' => 'david', 'nombre' => 'David Villalba'),
+        'ezequiel' => array('clave' => 'ezequiel', 'nombre' => 'Ezequiel Garcia'),
+        'felix' => array('clave' => 'felix', 'nombre' => 'Felix Ovelar')
     );
     var $meses = array(
         'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Setiembre', 'Octubre', 'Noviembre', 'Diciembre'
@@ -165,16 +167,46 @@ class TvchatReportesController extends Zend_Controller_Action{
 
         $datos = array();
 
+        $total_general = array(
+            'total_general' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            )
+        );
+
         foreach($this->numeros as $numero) {
 
             $resultado = $this->_cargarSuscriptosNumero( $numero, $anho, $mes );
-            //print_r($resultado);exit;
             $datos[$numero] = $resultado[$numero];
 
         }
 
+        $cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+        for($i=1; $i<=$cantidad_dias; $i++) {
+
+            $total_general['total'][$i]['ALTA'] = 0;
+            $total_general['total'][$i]['BAJA'] = 0;
+        }
+
+        $this->logger->info('mirar' . print_r( $datos, true ));
+
+        foreach( $this->numeros as $numero ){
+
+            foreach( $datos[$numero]['altas_bajas_x_mes']['TOTALES_MES']['datos'] as $dia => $datos_del_mes ){
+
+                    $total_general['total'][$dia]['ALTA'] +=  $datos_del_mes['ALTA'];
+                    $total_general['total'][$dia]['BAJA'] +=  $datos_del_mes['BAJA'];
+
+                    $total_general['total_general']['ALTA'] += $datos_del_mes['ALTA'];
+                    $total_general['total_general']['BAJA'] += $datos_del_mes['BAJA'];
+            }
+        }
+
+        $this->logger->info('mirar 2 -> ' . print_r( $total_general, true ));
+
         $this->view->numeros = $this->numeros;
         $this->view->datos = $datos;
+        $this->view->total_general = $total_general;
         $this->view->carriers = $this->carriers;
     }
 
@@ -727,16 +759,16 @@ class TvchatReportesController extends Zend_Controller_Action{
                 select *
                 from promosuscripcion.log_suscriptos PL
                 where id_carrier in(1,2) and ts_local::date = ?
-                and id_promocion in(88,89) and accion = '"."ALTA"."'
+                and id_promocion in(88,89,94,95) and accion = '"."ALTA"."'
                 union
                 select *
                 from promosuscripcion.log_suscriptos PL
                 where id_carrier in(1,2) and ts_local::date = ?
-                and id_promocion in(88,89) and accion = '"."BAJA"."'
+                and id_promocion in(88,89,94,95) and accion = '"."BAJA"."'
             ) T1 join (
                 select IP.numero, IP.id_promocion, IP.alias, IP.id_carrier
                 from info_promociones IP
-                where IP.id_promocion in (88,89)
+                where IP.id_promocion in (88,89,94,95)
                 group by 1,2,3,4
             ) T2 on T1.id_carrier = T2.id_carrier and T1.id_promocion = T2.id_promocion
             group by 1,2,3,4,5,6";
@@ -888,12 +920,12 @@ class TvchatReportesController extends Zend_Controller_Action{
         $sql = 'select T1.*, count(T2.id_suscripto)::integer as total_suscriptos from (
             select IP.alias, IP.id_promocion, IP.id_carrier
             from info_promociones IP
-            where id_promocion in (88,89) and numero = ?
+            where id_promocion in (88,89,94,95) and numero = ?
             group by 1,2,3
         ) T1 join (
             select IP.id_promocion, IP.id_carrier, IP.cel, IP.id_suscripto
             from promosuscripcion.suscriptos IP
-            where id_promocion in (88,89)
+            where id_promocion in (88,89,94,95)
         ) T2 on T1.id_promocion = T2.id_promocion and T1.id_carrier = T2.id_carrier
         group by 1,2,3 order by 3,2 desc';
 
@@ -901,6 +933,7 @@ class TvchatReportesController extends Zend_Controller_Action{
         $promociones = array();
         $suscriptos_x_promo = array();
         $total_suscriptos = 0;
+        $total_general = array();
 
         foreach($rs_suscriptos as $fila) {
 
@@ -914,12 +947,12 @@ class TvchatReportesController extends Zend_Controller_Action{
 
         $sql = 'select extract(day from ts_local)::integer as dia_mes, extract(dow from ts_local)::integer as dia_semana, ts_local::date as fecha, id_promocion, id_carrier, accion, count(*) as total
         from  promosuscripcion.log_suscriptos
-        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(88,89) group by 1 order by 1) and accion = \'ALTA\'
+        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(88,89,94,95) group by 1 order by 1) and accion = \'ALTA\'
         group by 1,2,3,4,5,6
         union
         select extract(day from ts_local)::integer as dia_mes, extract(dow from ts_local)::integer as dia_semana, ts_local::date as fecha, id_promocion, id_carrier, accion, count(*) as total
         from promosuscripcion.log_suscriptos
-        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(88,89) group by 1 order by 1) and accion = \'BAJA\'
+        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(88,89,94,95) group by 1 order by 1) and accion = \'BAJA\'
         group by 1,2,3,4,5,6
         order by 1,2,3,4,5';
 
@@ -982,6 +1015,7 @@ class TvchatReportesController extends Zend_Controller_Action{
         }
 
         $resultado[$numero]['altas_bajas_x_mes'] = $altas_bajas_x_mes;
+
 
         return $resultado;
     }
