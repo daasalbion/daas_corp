@@ -445,7 +445,7 @@ function jugarJuego( params ){
 
         p = {
 
-            duration: 180,
+            duration: 60*2,
             stopCallback : function($stopElm) {
 
                 console.log("stop " + $stopElm);
@@ -487,7 +487,7 @@ function jugarJuego( params ){
         var resultado = 0;
         p = {
 
-            duration: 60,
+            duration: 60*2,
             stopCallback : function($stopElm) {
                 console.log("mierda stop " + $stopElm);
                 resultado++;
@@ -569,7 +569,6 @@ function jugarJuego( params ){
                     }
 
                     intervalo++;
-                    console.log( "mirar: " + intervalo );
                 }, 2000);
 
             },
@@ -643,11 +642,6 @@ function jugarJuego( params ){
         ).addClass('centrar mensaje_cel_ganador')
     }
     else if( params['jugar'] == "piropo2" ){
-
-        console.log("combinacion_ganadora: " + params["objeto_ganador"].combinacion_ganadora);
-        console.log("combinacion_ganadora_list: " + params["objeto_ganador"].combinacion_ganadora_list);
-        console.log("cel_ganador: " + params["objeto_ganador"].cel_ganador);
-        console.log("nombre_juego: " + params["objeto_ganador"].nombre_juego);
 
         $('#mensaje_seleccionado').empty();
 
@@ -725,7 +719,7 @@ function mostrarGanador( params ){
 
 function obtenerMensajesNuevos(){
 
-    textarray_buffer = window.opener.mensajero;
+    textarray_buffer = window.opener.mensajero_buffer;
     textarray = textarray_buffer;
     return textarray;
 };
@@ -819,23 +813,29 @@ $(document).ready(function(){
 
     function mostrarMensajesMarquee() {
 
-        var length = textarray.length;
+        if( textarray != null ){
 
-        if( length == 0 ){
+            var length = textarray.length;
 
-            var mensajes_nuevos = obtenerMensajesNuevos();
-            textarray = mensajes_nuevos;
-            mostrarMensajesMarquee();
+            if( length == 0 ){
+
+                var mensajes_nuevos = obtenerMensajesNuevos();
+                textarray = mensajes_nuevos;
+                mostrarMensajesMarquee();
+
+                return;
+            }
+
+            var texto = textarray.pop();
+            $mwo
+                .marquee('destroy')
+                .bind('finished', mostrarMensajesMarquee)
+                .html(texto)
+                .marquee({duration: 20000, duplicated:false, gap:10, delayBeforeStart:0});
+        }else{
 
             return;
         }
-
-        var texto = textarray.pop();
-        $mwo
-            .marquee('destroy')
-            .bind('finished', mostrarMensajesMarquee)
-            .html(texto)
-            .marquee({duration: 20000, duplicated:false, gap:10, delayBeforeStart:0});
     }
 
     $mwo = $('.marquee');
@@ -872,7 +872,6 @@ $(document).ready(function(){
 
 function cargarModuloPorDefecto(){
 
-    console.log('mirar');
     var params = {
 
         accion: "mostrar",

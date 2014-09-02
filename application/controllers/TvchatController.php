@@ -193,7 +193,7 @@ class TvchatController extends Zend_Controller_Action{
             $this->_redirect('/tvchat/login');
         }
 
-        //$this->view->headScript()->appendFile('/js/plugins/jquery-1.7.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/plugins/jquery-1.8.0.min.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/jquery.marquee.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/roulette.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/jquery.scrollbox.js', 'text/javascript');

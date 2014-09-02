@@ -171,7 +171,8 @@ class TvchatReportesController extends Zend_Controller_Action{
             'total_general' => array(
                 'ALTA' => 0,
                 'BAJA' => 0
-            )
+            ),
+            'total_suscriptos' => 0
         );
 
         foreach($this->numeros as $numero) {
@@ -200,6 +201,8 @@ class TvchatReportesController extends Zend_Controller_Action{
                     $total_general['total_general']['ALTA'] += $datos_del_mes['ALTA'];
                     $total_general['total_general']['BAJA'] += $datos_del_mes['BAJA'];
             }
+
+            $total_general['total_suscriptos'] += $datos[$numero]['total_suscriptos'];
         }
 
         $this->logger->info('mirar 2 -> ' . print_r( $total_general, true ));
@@ -927,7 +930,7 @@ class TvchatReportesController extends Zend_Controller_Action{
             from promosuscripcion.suscriptos IP
             where id_promocion in (88,89,94,95)
         ) T2 on T1.id_promocion = T2.id_promocion and T1.id_carrier = T2.id_carrier
-        group by 1,2,3 order by 3,2 desc';
+        group by 1,2,3 order by 1,2 desc';
 
         $rs_suscriptos = $db->fetchAll($sql, array($numero));
         $promociones = array();

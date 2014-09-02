@@ -1,5 +1,5 @@
 //ventanas
-//var tvchat = null;
+var tvchat = null;
 var tvhot = null;
 //elementos ganadores vamos a cambiar
 var tragamonedas_elementos_ganadores = [];
@@ -356,6 +356,7 @@ $('#getWinElementsTragamonedasSexy').click(function(){
     btn.button('loading')
     $.get("/tvchat/get-win-elements-tragamonedas-sexy", { premio : true }, cargarNumerosGanadores, "json").always(function () {
         btn.button('reset')
+        $('#selectWinElements').show()
     });
 
     ////habilitarBotones( 3, 'tragamonedas_sexy' );
@@ -418,6 +419,7 @@ $('#jugarTragamonedasSexy').click(function(){
     console.log('hago null el sorteo tragamonedas');
     sorteoTragamonedasSexy = null;
 
+    $('#selectWinElements').hide();
     //habilitarBotones( 4, 'tragamonedas_sexy' );
 
 });
@@ -807,7 +809,7 @@ $('#jugarPiropo2').click(function(){
     var tragamonedas_historial = $('#jugador_piropo2');
     $('#jugador_piropo2').empty();
 
-    piropos2.push(nuevoGanador);
+
 
     tragamonedas_historial.append(
         $(document.createElement("p"))
@@ -821,7 +823,11 @@ $('#jugarPiropo2').click(function(){
 });
 $('#jugarPiropo2Premio').click(function(){
 
+    sorteoPiropoLlamadas.premio = new Premio(4, 50000, '50.000 Gs en Saldo');
+
     var nuevoGanador = sorteoPiropoLlamadas;
+
+    piropos2.push(nuevoGanador);
 
     var sorteo = $('#jugador_piropo2');
     sorteo.empty();
@@ -867,6 +873,8 @@ $('#jugarPiropo2SinPremio').click(function(){
     sorteoPiropoLlamadas.premio = new Premio(0,0,'Sin premio');
 
     var nuevoGanador = sorteoPiropoLlamadas;
+
+    piropos2.push(nuevoGanador);
 
     var sorteo = $('#jugador_piropo2');
     sorteo.empty();
@@ -1036,11 +1044,14 @@ $('#mostrar_modulo_por_defecto a').click(function(){
     cargarModuloPorDefecto();
 });
 
+$('#selectWinElements').hide();
+$('#premios_tragamonedas_sexy').hide();
+
 //setInterval( obtenerMensajes, 1000*9*60 );
 
 //cada 2 min
 obtenerMensajesMarquee();
-setInterval( obtenerMensajesMarquee, 60*1000*1.5 );
+setInterval( obtenerMensajesMarquee, 60*1000 );
 
 //setInterval( testearConexion, 10000);
 

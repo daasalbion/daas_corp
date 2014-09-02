@@ -10,151 +10,124 @@
 <?php foreach($this->numeros as $numero): ?>
     <table id="tabla_numero_<?php echo $numero ?>" class="tabla_reporte">
         <thead>
-        <tr>
-            <th class="celda_vacia"></th>
-            <th colspan="4" class="borde_arriba borde_derecha" style="height: 25px; border-bottom: none;">Mes: <?php echo $this->nombre_mes ?> / Año: <?php echo $this->anho ?></th>
-            <th colspan="<?php echo ($this->cantidad_dias) ?>" class="celda_vacia"></th><!-- cantidad dias + 2 columnas -->
-            <th colspan="4" class="borde_arriba borde_derecha" style="height: 25px; border-bottom: none;">Mes: <?php echo $this->nombre_mes ?> / Año: <?php echo $this->anho ?></th>
-        </tr>
-        <tr>
-            <th class="fondo_naranja borde_arriba" style="min-width: 50px; width: 50px;"><?php echo $numero ?></th>
-            <th colspan="4" class="fondo_naranja borde_arriba">Productos / Suscriptos</th>
-
-            <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
-                <th class="nro_dia borde_arriba<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>" title="<?php echo $this->nombres_dias_del_mes[$i]['nombre_dia'] ?>"><?php echo $i ?></th>
-            <?php endfor; ?>
-
-            <th colspan="3" class="fondo_naranja borde_arriba">Productos / Suscriptos</th>
-            <th class="fondo_naranja totales borde_arriba borde_derecha">Totales</th>
-        </tr>
-
+            <tr>
+                <th class="celda_vacia"></th>
+                <th colspan="4" class="borde_arriba borde_derecha" style="height: 25px; border-bottom: none;">Mes: <?php echo $this->nombre_mes ?> / Año: <?php echo $this->anho ?></th>
+                <th colspan="<?php echo ($this->cantidad_dias) ?>" class="celda_vacia"></th><!-- cantidad dias + 2 columnas -->
+                <th colspan="4" class="borde_arriba borde_derecha" style="height: 25px; border-bottom: none;">Mes: <?php echo $this->nombre_mes ?> / Año: <?php echo $this->anho ?></th>
+            </tr>
+            <tr>
+                <th class="fondo_naranja borde_arriba" style="min-width: 50px; width: 50px;"><?php echo $numero ?></th>
+                <th colspan="4" class="fondo_naranja borde_arriba">Productos / Suscriptos</th>
+                <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
+                    <th class="nro_dia borde_arriba<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>" title="<?php echo $this->nombres_dias_del_mes[$i]['nombre_dia'] ?>"><?php echo $i ?></th>
+                <?php endfor; ?>
+                <th colspan="4" class="fondo_naranja borde_arriba">Productos / Suscriptos</th>
+                <th class="fondo_naranja totales borde_arriba borde_derecha">Totales</th>
+            </tr>
         </thead>
-        <tfoot>
-        <tr>
-            <th class="celda_vacia"></th>
-            <th rowspan="2">Totales</th>
-            <td rowspan="2" class="carrier">TOTAL</td>
-            <th rowspan="2"><?php echo $this->numero($this->datos[$numero]['total_suscriptos']) ?></th>
-            <th class="descripcion_cobro">Altas</th>
-
-            <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
-                <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero($this->datos[$numero]['altas_bajas_x_mes']['TOTALES_MES']['datos'][$i]['ALTA']) ?>&nbsp;</th>
-            <?php endfor; ?>
-
-            <th rowspan="2">Totales</th>
-            <th rowspan="2"><?php echo $this->numero($this->datos[$numero]['total_suscriptos']) ?></th>
-            <th class="descripcion_cobro">Altas</th>
-            <th class="numero borde_derecha celda_total"><?php echo $this->numero($this->datos[$numero]['altas_bajas_x_mes']['TOTALES_MES']['TOTAL_ALTA']) ?>&nbsp;</th>
-
-            <th class="celda_vacia"></th>
-        </tr>
-        <tr>
-            <th class="celda_vacia"></th>
-            <th class="descripcion_cobro celda_cliente">Bajas</th>
-
-            <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
-                <th class="numero celda_cliente"><?php echo $this->numero($this->datos[$numero]['altas_bajas_x_mes']['TOTALES_MES']['datos'][$i]['BAJA']) ?>&nbsp;</th>
-            <?php endfor; ?>
-
-            <th class="descripcion_cobro celda_cliente">Bajas</th>
-            <th class="numero celda_cliente borde_derecha celda_total"><?php echo $this->numero($this->datos[$numero]['altas_bajas_x_mes']['TOTALES_MES']['TOTAL_BAJA']) ?>&nbsp;</th>
-
-            <th class="celda_vacia"></th>
-        </tr>
-
-        </tfoot>
-
         <tbody>
-
-        <?php foreach($this->datos[$numero]['promociones'] as $promocion): ?>
-            <tr>
-                <td rowspan="2" class="celda_vacia"></td>
-                <td rowspan="2" class="alias"><?php echo $promocion['alias'] ?></td>
-                <td rowspan="2" class="carrier<?php echo ' ' . strtolower($this->carriers[$promocion['id_carrier']]) ?>"><?php echo $this->carriers[$promocion['id_carrier']] ?></td>
-                <td rowspan="2" class="suscriptos"><?php echo $this->numero($promocion['total_suscriptos']) ?></td>
-                <td class="descripcion_cobro">Altas</td>
-
-                <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
-                    <td class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero((isset($this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]['datos'][$i]) ? $this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]['datos'][$i]['ALTA'] : 0)) ?>&nbsp;</td>
-                <?php endfor; ?>
-
-                <td rowspan="2" class="alias"><?php echo $promocion['alias'] ?></td>
-                <td rowspan="2" class="suscriptos"><?php echo $this->numero($promocion['total_suscriptos']) ?></td>
-                <td class="descripcion_cobro">Altas</td>
-                <td class="numero celda_total borde_derecha"><?php echo $this->numero((isset($this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]) ? $this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]['TOTAL_ALTA'] : 0)) ?>&nbsp;</td>
-
-            </tr>
-            <tr>
-                <td class="descripcion_cobro celda_cliente">Bajas</td>
-
-                <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
-                    <td class="monto_gs celda_cliente"><?php echo $this->numero((isset($this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]['datos'][$i]) ? $this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]['datos'][$i]['BAJA'] : 0)) ?></td>
-                <?php endfor; ?>
-
-                <td class="descripcion_cobro celda_cliente">Bajas</td>
-                <td class="monto_gs celda_cliente celda_total borde_derecha"><?php echo $this->numero((isset($this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]) ? $this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]['TOTAL_BAJA'] : 0)) ?>&nbsp;</td>
-
-            </tr>
-            <tr class="fila_separador">
-                <td class="celda_vacia" style="height: 1px; font-size: 1px;"></td>
-                <td colspan="<?php echo (3 + $this->cantidad_dias + 2 + 3) ?>" class="separador borde_derecha" style="height: 1px; font-size: 1px;">&nbsp;</td>
-            </tr>
-        <?php endforeach; ?>
-
+            <?php foreach($this->datos[$numero]['promociones'] as $promocion): ?>
+                <tr>
+                    <td rowspan="2" class="celda_vacia"></td>
+                    <td rowspan="2" class="alias"><?php echo $promocion['alias'] ?></td>
+                    <td rowspan="2" class="carrier<?php echo ' ' . strtolower($this->carriers[$promocion['id_carrier']]) ?>"><?php echo $this->carriers[$promocion['id_carrier']] ?></td>
+                    <td rowspan="2" class="suscriptos"><?php echo $this->numero($promocion['total_suscriptos']) ?></td>
+                    <td class="descripcion_cobro">Altas</td>
+                    <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
+                        <td class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero((isset($this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]['datos'][$i]) ? $this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]['datos'][$i]['ALTA'] : 0)) ?>&nbsp;</td>
+                    <?php endfor; ?>
+                    <td rowspan="2" class="alias"><?php echo $promocion['alias'] ?></td>
+                    <td rowspan="2" class="carrier<?php echo ' ' . strtolower($this->carriers[$promocion['id_carrier']]) ?>"><?php echo $this->carriers[$promocion['id_carrier']] ?></td>
+                    <td rowspan="2" class="suscriptos"><?php echo $this->numero($promocion['total_suscriptos']) ?></td>
+                    <td class="descripcion_cobro">Altas</td>
+                    <td class="numero celda_total borde_derecha"><?php echo $this->numero((isset($this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]) ? $this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]['TOTAL_ALTA'] : 0)) ?>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="descripcion_cobro celda_cliente">Bajas</td>
+                    <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
+                        <td class="monto_gs celda_cliente"><?php echo $this->numero((isset($this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]['datos'][$i]) ? $this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]['datos'][$i]['BAJA'] : 0)) ?></td>
+                    <?php endfor; ?>
+                    <td class="descripcion_cobro celda_cliente">Bajas</td>
+                    <td class="monto_gs celda_cliente celda_total borde_derecha"><?php echo $this->numero((isset($this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]) ? $this->datos[$numero]['altas_bajas_x_mes'][$promocion['id_promocion']][$promocion['id_carrier']]['TOTAL_BAJA'] : 0)) ?>&nbsp;</td>
+                </tr>
+                <tr class="fila_separador">
+                    <td class="celda_vacia" style="height: 1px; font-size: 1px;"></td>
+                    <td colspan="<?php echo (3 + $this->cantidad_dias + 2 + 3 + 1) ?>" class="separador borde_derecha" style="height: 1px; font-size: 1px;">&nbsp;</td>
+                </tr>
+            <?php endforeach; ?>
         </tbody>
+        <tfoot>
+            <tr>
+                <th class="celda_vacia"></th>
+                <th rowspan="2">Totales</th>
+                <td rowspan="2" class="carrier">TOTAL</td>
+                <th rowspan="2"><?php echo $this->numero($this->datos[$numero]['total_suscriptos']) ?></th>
+                <th class="descripcion_cobro">Altas</th>
+                <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
+                    <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero($this->datos[$numero]['altas_bajas_x_mes']['TOTALES_MES']['datos'][$i]['ALTA']) ?>&nbsp;</th>
+                <?php endfor; ?>
+                <th rowspan="2" colspan="2">Totales</th>
+                <th rowspan="2"><?php echo $this->numero($this->datos[$numero]['total_suscriptos']) ?></th>
+                <th class="descripcion_cobro">Altas</th>
+                <th class="numero borde_derecha celda_total"><?php echo $this->numero($this->datos[$numero]['altas_bajas_x_mes']['TOTALES_MES']['TOTAL_ALTA']) ?>&nbsp;</th>
+                <th class="celda_vacia"></th>
+            </tr>
+            <tr>
+                <th class="celda_vacia"></th>
+                <th class="descripcion_cobro celda_cliente">Bajas</th>
+                <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
+                    <th class="numero celda_cliente"><?php echo $this->numero($this->datos[$numero]['altas_bajas_x_mes']['TOTALES_MES']['datos'][$i]['BAJA']) ?>&nbsp;</th>
+                <?php endfor; ?>
+                <th class="descripcion_cobro celda_cliente">Bajas</th>
+                <th class="numero celda_cliente borde_derecha celda_total"><?php echo $this->numero($this->datos[$numero]['altas_bajas_x_mes']['TOTALES_MES']['TOTAL_BAJA']) ?>&nbsp;</th>
+                <th class="celda_vacia"></th>
+            </tr>
+        </tfoot>
     </table>
 <?php endforeach; ?>
 
 <table id="tabla_totales_TOTAl" class="tabla_reporte">
     <thead>
-    <tr>
-        <th class="celda_vacia"></th>
-        <th colspan="4" class="borde_arriba borde_derecha" style="height: 25px; border-bottom: none;">Mes: <?php echo $this->nombre_mes ?> / Año: <?php echo $this->anho ?></th>
-        <th colspan="<?php echo (3 + $this->cantidad_dias) ?>" class="celda_vacia"></th><!-- cantidad dias + 2 columnas -->
-    </tr>
-    <tr>
-        <th class="fondo_naranja borde_arriba" style="min-width: 50px; width: 50px;">TOTAL</th>
-        <th colspan="4" class="fondo_naranja borde_arriba">Total Suscriptos</th>
-
-        <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
-            <th class="nro_dia borde_arriba<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>" title="<?php echo $this->nombres_dias_del_mes[$i]['nombre_dia'] ?>"><?php echo $i ?></th>
-        <?php endfor; ?>
-
-        <th class="fondo_naranja totales borde_arriba">Totales</th>
-        <th class="fondo_naranja totales borde_arriba"></th>
-        <th class="fondo_naranja porcentaje borde_arriba"></th>
-    </tr>
-
+        <tr>
+            <th class="celda_vacia"></th>
+            <th colspan="4" class="borde_arriba borde_derecha" style="height: 25px; border-bottom: none;">Mes: <?php echo $this->nombre_mes ?> / Año: <?php echo $this->anho ?></th>
+            <th colspan="<?php echo (3 + $this->cantidad_dias) ?>" class="celda_vacia"></th><!-- cantidad dias + 2 columnas -->
+        </tr>
+        <tr>
+            <th class="fondo_naranja borde_arriba" style="min-width: 50px; width: 50px;">TOTAL</th>
+            <th colspan="4" class="fondo_naranja borde_arriba">Movimiento Suscriptos</th>
+            <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
+                <th class="nro_dia borde_arriba<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>" title="<?php echo $this->nombres_dias_del_mes[$i]['nombre_dia'] ?>"><?php echo $i ?></th>
+            <?php endfor; ?>
+            <th colspan="4" class="fondo_naranja borde_arriba">Movimiento Suscriptos</th>
+            <th class="fondo_naranja totales borde_arriba borde_derecha">Totales</th>
+        </tr>
     </thead>
     <tfoot>
-    <tr>
-        <th class="celda_vacia"></th>
-        <th rowspan="3" class="alias">Totales</th>
-        <th rowspan="3" class="carrier">&nbsp;&nbsp;&nbsp;&nbsp;TOTAL</th>
-        <th rowspan="3" class="suscriptos"><?php echo "" ?></th>
-        <th class="descripcion_cobro">ALTAS</th>
-
-        <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
-            <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero( $this->total_general['total'][$i]['ALTA'] ) ?>&nbsp;</th>
-        <?php endfor; ?>
-
-        <th class="numero borde_derecha celda_total"><?php echo $this->numero($this->total_general['total_general']['ALTA'] ) ?>&nbsp;</th>
-        <td rowspan="3" class="carrier">&nbsp;&nbsp;&nbsp;&nbsp;TOTAL</td>
-
-        <th class="celda_vacia"></th>
-    </tr>
-    <tr>
-        <th class="celda_vacia"></th>
-        <th class="descripcion_cobro celda_cliente">BAJAS</th>
-
-        <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
-            <th class="numero celda_cliente"><?php echo $this->numero( $this->total_general['total'][$i]['BAJA'] ) ?>&nbsp;</th>
-        <?php endfor; ?>
-
-        <th class="numero celda_cliente borde_derecha celda_total"><?php echo $this->total_general['total_general']['BAJA']  ?>&nbsp;</th>
-
-        <th class="celda_vacia"></th>
-    </tr>
+        <tr>
+            <th class="celda_vacia"></th>
+            <th rowspan="3" class="alias">Totales</th>
+            <th rowspan="3" class="carrier">&nbsp;&nbsp;&nbsp;&nbsp;TOTAL</th>
+            <th rowspan="3" class="suscriptos"><?php echo $this->numero( $this->total_general['total_suscriptos'] ) ?></th>
+            <th class="descripcion_cobro">ALTAS</th>
+            <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
+                <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero( $this->total_general['total'][$i]['ALTA'] ) ?>&nbsp;</th>
+            <?php endfor; ?>
+            <th style="width: 200px" class="alias" colspan="2" rowspan="2">Totales</th>
+            <th rowspan="2" class="suscriptos"><?php echo $this->numero( $this->total_general['total_suscriptos'] ) ?></th>
+            <th class="descripcion_cobro celda_cliente">Altas</th>
+            <th class="numero alias borde_derecha celda_total"><?php echo $this->numero($this->total_general['total_general']['ALTA'] ) ?>&nbsp;</th>
+        </tr>
+        <tr>
+            <th class="celda_vacia"></th>
+            <th class="descripcion_cobro celda_cliente">BAJAS</th>
+            <?php for($i=1; $i<=$this->cantidad_dias; $i++): ?>
+                <th class="numero celda_cliente"><?php echo $this->numero( $this->total_general['total'][$i]['BAJA'] ) ?>&nbsp;</th>
+            <?php endfor; ?>
+            <th class="descripcion_cobro celda_cliente">Bajas</th>
+            <th class="numero alias celda_cliente borde_derecha celda_total"><?php echo $this->numero( $this->total_general['total_general']['BAJA'] )?>&nbsp;</th>
+        </tr>
     </tfoot>
 </table>
 
