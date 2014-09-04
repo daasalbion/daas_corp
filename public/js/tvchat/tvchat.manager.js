@@ -115,33 +115,6 @@ $('#cerrar_ventana_principal a').click(function(){
     //deshabilitarBotones();
 });
 
-$('#abrir_ventana_tvhot a').click(function(){
-
-    $('#abrir_ventana_tvhot').attr('disabled', 'true');
-    tvhot = window.open("/tvchat/tvhot",
-        "_blank", "width=720, height=576, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");
-
-    var params = {
-
-        accion: "mostrar",
-        modulo: "tvhot"
-    }
-
-    tvchat.cargarModulo( params );
-});
-$('#cerrar_ventana_tvhot a').click(function(){
-
-    $('#cerrar_ventana_tvhot').removeAttr('disabled');
-
-    if ( tvhot != null ){
-
-        tvhot.close();
-        tvhot = null;
-    }
-
-    //deshabilitarBotones();
-});
-
 //tragamonedas
 $('#cargar_tragamonedas').click(function(){
 
@@ -981,6 +954,35 @@ $('#parar_marquee').click(function(){
     tvchat.cargarModulo( params );
 });
 
+//tvhot
+$('#abrir_ventana_tvhot').click(function(){
+
+    $('#abrir_ventana_tvhot').attr('disabled', 'true');
+    /*tvhot = window.open("/tvchat/tvhot",
+        "_blank", "width=720, height=576, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");*/
+
+    var params = {
+
+        accion: "mostrar",
+        modulo: "tvhot"
+    }
+
+    tvchat.cargarModulo( params );
+});
+$('#cerrar_ventana_tvhot').click(function(){
+
+    $('#abrir_ventana_tvhot').removeAttr('disabled');
+
+    var params = {
+
+        accion: "ocultar",
+        modulo: "tvhot"
+    }
+
+    tvchat.cargarModulo( params );
+
+});
+
 //mostrar lineas punteadas para la conductora
 $("#ocultar_lineas_referencia_conductora a").click(function(){
 
@@ -1039,6 +1041,11 @@ $('#mostrar_bloque_video').click(function(){
     ocultarModulos();
     $('#video').removeClass('ocultar');
     $('#mostrar_bloque_video').addClass('active');
+});
+$('#mostrar_bloque_tvhot').click(function(){
+    ocultarModulos();
+    $('#tvhot').removeClass('ocultar');
+    $('#mostrar_bloque_tvhot').addClass('active');
 });
 $('#mostrar_modulo_por_defecto a').click(function(){
     cargarModuloPorDefecto();
@@ -1476,13 +1483,12 @@ function cargarMensajes( respuesta ){
     if( respuesta.mensajes_operador != null ){
 
         mensajero_buffer.push(respuesta.mensajes_marquee);
+        mensajes = respuesta.mensajes_operador;
+        cargarOpcionesMensajes( mensajes );
     }
 
     mensajero = $.extend(true, [], mensajero_buffer);
-    mensajes = respuesta.mensajes_operador;
     siguiente_id_solicitar = respuesta.siguiente_id_solicitar;
-    cargarOpcionesMensajes( mensajes );
-
 };
 
 function obtenerMensajesNuevosMensajero(){
@@ -1548,6 +1554,7 @@ function ocultarModulos(){
     $('#piropo2').addClass('ocultar');
     $('#tragamonedas_sexy').addClass('ocultar');
     $('#video').addClass('ocultar');
+    $('#tvhot').addClass('ocultar');
 
     $('#mostrar_bloque_tragamonedas').removeClass('active');
     $('#mostrar_bloque_tombola').removeClass('active');
@@ -1555,6 +1562,7 @@ function ocultarModulos(){
     $('#mostrar_bloque_piropo1').removeClass('active');
     $('#mostrar_bloque_piropo2').removeClass('active');
     $('#mostrar_bloque_video').removeClass('active');
+    $('#mostrar_bloque_tvhot').removeClass('active');
 };
 
 function crearSorteoPiropo( respuesta ){
@@ -1562,7 +1570,7 @@ function crearSorteoPiropo( respuesta ){
     sorteoPiropoMensajes.id_sorteo = respuesta.id_sorteo;
 }
 
-$('#mostrar_bloque_tragamonedas').trigger('click');
+$('#mostrar_bloque_tvhot').trigger('click');
 
 //});
 

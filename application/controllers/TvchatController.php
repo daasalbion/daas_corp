@@ -4,7 +4,7 @@ class TvchatController extends Zend_Controller_Action{
 
     public $logger;
     var $NRO_ELEMENTOS_SORTEADOS_TRAGAMONEDAS = 3;
-    var $NRO_ELEMENTOS_SORTEADOS_TOMBOLA = 5;
+    var $NRO_ELEMENTOS_SORTEADOS_TOMBOLA = 6;
     var $usuarios = array(
 
         'daas' => array('clave' => 'daas', 'nombre' => 'DAAS'),
@@ -193,7 +193,7 @@ class TvchatController extends Zend_Controller_Action{
             $this->_redirect('/tvchat/login');
         }
 
-        $this->view->headScript()->appendFile('/js/plugins/jquery-1.8.0.min.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/plugins/jquery-1.7.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/jquery.marquee.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/roulette.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/jquery.scrollbox.js', 'text/javascript');

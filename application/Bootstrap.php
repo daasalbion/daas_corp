@@ -485,7 +485,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view->headTitle()->setSeparator(' - ');
         $view->headTitle('ENTERMOVIL');
 
-        //$view->headScript()->setFile('/js/plugins/jquery-1.7.js', 'text/javascript');
+        $view->headScript()->setFile('/js/plugins/jquery-1.7.js', 'text/javascript');
 
         //$view->headScript()->appendFile('/js/base.js', 'text/javascript');
         //$view->headLink()->setStylesheet('/css/base.css', 'screen');

@@ -24,7 +24,7 @@
                     <?php foreach ( $horas as $hora => $accion ): ?>
 
                         <tr>
-                            <td><a style="color: black; font-size: 12px" href="/tvchat-reportes/reporte-x-minuto/fecha/<?php echo $this->fecha?>/hora/<?php echo $hora ?>/id-promocion/<?php echo $this->promociones[$alias] ?>"><?php echo ( strlen( $hora ) > 1 )? $hora : '0'. $hora ?></a></td>
+                            <td><a style="color: black; font-size: 12px" href="/tvchat-reportes/reporte-x-minuto/fecha/<?php echo (isset($this->fecha)) ? $this->fecha : date('Y-m-d') ?>/hora/<?php echo $hora ?>/id-promocion/<?php echo $this->promociones[$alias] ?>"><?php echo ( strlen( $hora ) > 1 )? $hora : '0'. $hora ?></a></td>
                             <td><?php echo $accion['ALTA'] ?></td>
                             <td class="borde_derecha"><?php echo $accion['BAJA'] ?></td>
                         </tr>

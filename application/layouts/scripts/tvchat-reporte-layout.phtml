@@ -50,7 +50,10 @@
                 <li><a id="link_reportes_altas_bajas" href="/tvchat-reportes/reporte/">Resumen</a></li>
                 <?php endif; ?>
                 <?php if($this->infoSesionTvchat()->accesoPermitido('pautas')): ?>
-                <li><a id="link_reportes_altas_bajas_x_hora" href="/tvchat-reportes/reporte-x-hora/">Suscriptos X Hora</a></li>
+                <li><a id="link_reportes_suscriptos_por_hora" href="/tvchat-reportes/suscriptos-por-hora/">Suscriptos X Hora</a></li>
+                <?php endif; ?>
+                <?php if($this->infoSesionTvchat()->accesoPermitido('pautas')): ?>
+                <li><a id="link_reportes_altas_bajas_x_hora" href="/tvchat-reportes/reporte-x-hora/">Suscriptos X Hora Min</a></li>
                 <?php endif; ?>
 
             </ul>

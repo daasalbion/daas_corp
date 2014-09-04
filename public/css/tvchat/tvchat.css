@@ -7,7 +7,7 @@ body{
 body, html {
     overflow-x: hidden;
     overflow-y: hidden;
-    background-color: #000000;
+    background-color: green;
 }
 .tvchat_screen{
     width: 800px;
@@ -153,7 +153,7 @@ body, html {
     height: 40px;
     margin-left: 1px;
     margin-top: 10px;
-    width: 33px;
+    width: 25px;
 }
 .numero{
     color: #ff0000;
@@ -428,4 +428,33 @@ div.roulette3 {
 .interactive_fotos_titulo{
     position: absolute;
     left: 18px;
+}
+
+.marquee_tvhot {
+    width: 227px;
+    overflow: hidden;
+    border: 1px solid black;
+    background: black;
+    color: #ffff00;
+    font-family: arial;
+    font-weight: bold;
+}
+.ver {
+    height: 318px;
+    width: 227px;
+}
+.tvhot_mensajero{
+    width: 227px;
+    height: 318px;
+    background: #000000;
+    margin-left: 436px;
+    margin-top:154px
+}
+.tvhot_mensaje{
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.croma{
+
+    background-color: green;
 }

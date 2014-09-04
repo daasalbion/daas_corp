@@ -8,7 +8,9 @@ class TvchatReportesController extends Zend_Controller_Action{
         'daas' => array('clave' => 'daas', 'nombre' => 'DAAS'),
         'david' => array('clave' => 'david', 'nombre' => 'David Villalba'),
         'ezequiel' => array('clave' => 'ezequiel', 'nombre' => 'Ezequiel Garcia'),
-        'felix' => array('clave' => 'felix', 'nombre' => 'Felix Ovelar')
+        'felix' => array('clave' => 'felix', 'nombre' => 'Felix Ovelar'),
+        'diego' => array('clave' => 'diego', 'nombre' => 'Diego Borja')
+
     );
     var $meses = array(
         'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Setiembre', 'Octubre', 'Noviembre', 'Diciembre'
@@ -706,6 +708,91 @@ class TvchatReportesController extends Zend_Controller_Action{
 
     }
 
+    public function suscriptosPorHoraAction() {
+
+        $this->_helper->_layout->setLayout('tvchat-reporte-layout');
+
+        $this->view->headLink()->setStylesheet('/css/reportes_base.css', 'screen');
+        $this->view->headScript()->appendFile('/js/tvchat_reportes_suscriptos_por_hora.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('/css/reportes_suscriptos_por_hora.css', 'screen');
+
+        $this->view->headTitle()->append('Suscriptos');
+
+        $fecha_seleccionada = $this->_getParam('fecha', null);
+        if(!is_null($fecha_seleccionada)) {
+            list($anho, $mes) = explode('-', $fecha_seleccionada);
+            $mes = (int)$mes;
+        } else {
+            $anho = date('Y');
+            $mes = date('n');
+        }
+
+        $this->_setupRangoSeleccion($anho, $mes);
+
+        $this->view->nombre_mes = $this->meses[$mes-1];
+
+        $this->view->cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+
+
+        $this->view->anho = $anho;
+        $this->view->mes = $mes;
+
+        $this->view->dia_hoy = date('j');
+        $this->view->hora_actual = date('G');
+
+        $this->view->dias_semana = $this->dias_semana;
+
+        $this->view->nombres_dias_del_mes = $this->cargarNombresDiasDelMes($anho, $mes);
+
+        $this->view->rango_seleccion = $this->rango_seleccion;
+
+        $promociones = $this->_cargarPromociones();
+        $this->view->promociones = $promociones;
+
+        $id_promocion = $this->_getParam('id_promocion', 0);
+        $carriers_promocion = array();
+        if($id_promocion > 0) {
+
+            $this->view->id_promocion_seleccionado = $id_promocion;
+            foreach($promociones as $promocion) {
+                if($promocion['id_promocion'] == $id_promocion) {
+                    $this->view->promocion = $promocion;
+                    switch($id_promocion) {
+
+                        case 88:
+                        case 89:
+                        case 94:
+                        case 95:
+                            $carriers_promocion = array(1,2);
+                            break;
+
+                        default:
+                            $carriers_promocion = array(2);
+                    }
+
+                    break;
+                }
+            }
+
+            $this->view->carriers_promocion = $carriers_promocion;
+
+            $datos = $this->_cargarSuscriptosPromocion($id_promocion, $anho, $mes);
+
+
+
+            $this->view->numeros = $this->numeros;
+            $this->view->datos = $datos;
+            $this->view->carriers = $this->carriers;
+
+            $this->logger->info('datos:[' . print_r($datos, true) . ']');
+
+        } else {
+
+            //
+        }
+
+    }
+
     public function pruebaAction(){
 
     }
@@ -1019,6 +1106,122 @@ class TvchatReportesController extends Zend_Controller_Action{
 
         $resultado[$numero]['altas_bajas_x_mes'] = $altas_bajas_x_mes;
 
+
+        return $resultado;
+    }
+
+    private function _cargarPromociones() {
+
+        $servicios = array();
+
+        $bootstrap = $this->getInvokeArg('bootstrap');
+        $options = $bootstrap->getOptions();
+
+        $db = Zend_Db::factory(new Zend_Config($options['resources']['db']));
+        $db->getConnection();
+        $sql = "SELECT numero, id_promocion, promocion, alias
+                FROM info_promociones
+                WHERE numero IN('8540', '6767')
+                and id_promocion in(88,89,94,95)
+                GROUP BY 1,2,3,4
+                ORDER BY 1 desc,2";
+
+        $rs_promociones = $db->fetchAll($sql);
+        foreach($rs_promociones as $fila) {
+            $servicios[] = $fila;
+        }
+
+        return $servicios;
+    }
+
+    private function _cargarSuscriptosPromocion($id_promocion, $anho, $mes) {
+
+        $resultado = array();
+
+        $bootstrap = $this->getInvokeArg('bootstrap');
+        $options = $bootstrap->getOptions();
+
+        $db = Zend_Db::factory(new Zend_Config($options['resources']['db']));
+        $db->getConnection();
+
+        $sql = "select id_promocion, extract(hour from ts_local)::integer as hora, extract(dow from ts_local)::integer as dia_semana, extract(day from ts_local)::integer as dia_mes, id_carrier, ts_local::date as fecha, accion, count(*) as total
+                from promosuscripcion.log_suscriptos
+                where id_promocion = ? and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and accion = 'ALTA'
+                group by 1,2,3,4,5,6,7
+                union
+                select id_promocion, extract(hour from ts_local)::integer as hora, extract(dow from ts_local)::integer as dia_semana, extract(day from ts_local)::integer as dia_mes, id_carrier, ts_local::date as fecha, accion, count(*) as total
+                from promosuscripcion.log_suscriptos
+                where id_promocion = ? and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and accion = 'BAJA'
+                group by 1,2,3,4,5,6,7
+                order by 1,2,3,4,5,7";
+
+        $rs_suscriptos = $db->fetchAll($sql, array($id_promocion, $anho, $mes, $id_promocion, $anho, $mes));
+
+        if(count($rs_suscriptos) > 0) {
+
+            $altas_bajas_promocion = array(
+                'TOTALES' => array(
+                    'TOTAL_ALTA' => 0,
+                    'TOTAL_BAJA' => 0,
+                    'datos' => array()
+                )
+            );
+            $cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+            for($i=1; $i<=$cantidad_dias; $i++) {
+                $altas_bajas_promocion['TOTALES']['datos'][$i] = array(
+                    'ALTA' => 0, 'BAJA' => 0
+                );
+            }
+
+            foreach($rs_suscriptos as $fila) {
+
+                $this->logger->info('fila -> dia:['. $fila['dia_mes'] .'] hora:[' . $fila['hora'] . '] id_carrier:[' . $fila['id_carrier'] . '] accion:[' . $fila['accion'] . ']');
+
+                if(!isset($altas_bajas_promocion['TOTALES'][$fila['id_carrier']]['TOTAL_ALTA'])) {
+                    $altas_bajas_promocion['TOTALES'][$fila['id_carrier']]['TOTAL_ALTA'] = 0;
+                    $altas_bajas_promocion['TOTALES'][$fila['id_carrier']]['TOTAL_BAJA'] = 0;
+                }
+
+                if(!isset($altas_bajas_promocion[$fila['hora']][$fila['id_carrier']])) {
+
+                    $altas_bajas_promocion[$fila['hora']][$fila['id_carrier']] = array(
+                        'TOTAL_ALTA' => 0,
+                        'TOTAL_BAJA' => 0,
+                        'datos' => array()
+                    );
+
+                    for($i=1; $i<=$cantidad_dias; $i++) {
+                        $altas_bajas_promocion[$fila['hora']][$fila['id_carrier']]['datos'][$i] = array(
+                            'ALTA' => 0, 'BAJA' => 0
+                        );
+                    }
+                }
+
+                $altas_bajas_promocion[$fila['hora']][$fila['id_carrier']]['datos'][$fila['dia_mes']][$fila['accion']] = $fila['total'];
+
+                $altas_bajas_promocion[$fila['hora']][$fila['id_carrier']]['TOTAL_'.$fila['accion']] += $fila['total'];
+
+                if(!isset($altas_bajas_promocion['TOTALES']['datos'][$fila['dia_mes']])) {
+                    $altas_bajas_promocion['TOTALES']['datos'][$fila['dia_mes']] = array(
+                        'ALTA' => 0, 'BAJA' => 0
+                    );
+                }
+
+                $altas_bajas_promocion['TOTALES']['datos'][$fila['dia_mes']][$fila['accion']] += $fila['total'];
+                $altas_bajas_promocion['TOTALES']['TOTAL_'.$fila['accion']] += $fila['total'];
+
+                if(!isset($altas_bajas_promocion['TOTALES'][$fila['id_carrier']]['datos'][$fila['dia_mes']])) {
+                    $altas_bajas_promocion['TOTALES'][$fila['id_carrier']]['datos'][$fila['dia_mes']] = array(
+                        'ALTA' => 0, 'BAJA' => 0
+                    );
+                }
+
+                $altas_bajas_promocion['TOTALES'][$fila['id_carrier']]['datos'][$fila['dia_mes']][$fila['accion']] += $fila['total'];
+                $altas_bajas_promocion['TOTALES'][$fila['id_carrier']]['TOTAL_'.$fila['accion']] += $fila['total'];
+            }
+
+            $resultado = $altas_bajas_promocion;
+        }
 
         return $resultado;
     }

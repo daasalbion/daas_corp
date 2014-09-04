@@ -3,9 +3,9 @@ var rouletter1 = null;
 var rouletter2 = null;
 var rouletter3 = null;
 //var textarray_buffer = ['Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha''Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha'];
-var textarray_buffer =  window.opener.mensajero;
+var textarray_buffer =  window.opener.mensajero_buffer;
 //var textarray = ['Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha'];
-var textarray = [];
+var textarray = window.opener.mensajero;
 var elementos_ganadores = [];
 var wheel = null;
 var tombola = null;
@@ -719,8 +719,7 @@ function mostrarGanador( params ){
 
 function obtenerMensajesNuevos(){
 
-    textarray_buffer = window.opener.mensajero_buffer;
-    textarray = textarray_buffer;
+    textarray = $.extend(true, [], textarray_buffer);
     return textarray;
 };
 
@@ -789,6 +788,46 @@ function cargarModulo( params ){
         $('.js-marquee-wrapper').remove();
         $mwo.marquee('destroy');
 
+        var contenedor = $('.contenedor');
+
+        contenedor.append(
+            $(document.createElement("div"))
+                .attr('id','tvhot_mensajero' )
+                .addClass('tvhot_mensajero')
+                .append(
+                    $(document.createElement("div"))
+                        .attr('id','marquee_wrapper' )
+                        .addClass('marquee_tvhot ver')
+                        .append(
+                            $(document.createElement("p"))
+                                .append('hola')
+                        )
+                )
+        ).addClass('croma');
+
+        $mwo = $('.marquee_tvhot');
+
+        $('.marquee_tvhot').marquee({
+            //speed in milliseconds of the marquee
+            duration: 20000,
+            //gap in pixels between the tickers
+            gap: 0,
+            //time in milliseconds before the marquee will start animating
+            delayBeforeStart: 0,
+            //'left' or 'right'
+            direction: 'up',
+            //true or false - should the marquee be duplicated to show an effect of continues flow
+            duplicated: false,
+            //on hover pause the marquee - using jQuery plugin https://github.com/tobia/Pause
+            pauseOnHover: false
+        });
+
+        //mostrarMensajesMarquee();
+    }
+    else if( params.accion == "ocultar" && params.modulo == "tvhot" ){
+
+        $('#tvhot_mensajero').empty().remove();
+        $('.tvchat_screen').show();
     }
 };
 
@@ -805,38 +844,11 @@ function setearDom(){
     tombola = null;
     intervalo = 0;
     mostrar = 0;
-    $mwo = null;
+    //$mwo = null;
     p = null;
 };
 
 $(document).ready(function(){
-
-    function mostrarMensajesMarquee() {
-
-        if( textarray != null ){
-
-            var length = textarray.length;
-
-            if( length == 0 ){
-
-                var mensajes_nuevos = obtenerMensajesNuevos();
-                textarray = mensajes_nuevos;
-                mostrarMensajesMarquee();
-
-                return;
-            }
-
-            var texto = textarray.pop();
-            $mwo
-                .marquee('destroy')
-                .bind('finished', mostrarMensajesMarquee)
-                .html(texto)
-                .marquee({duration: 20000, duplicated:false, gap:10, delayBeforeStart:0});
-        }else{
-
-            return;
-        }
-    }
 
     $mwo = $('.marquee');
 
@@ -869,6 +881,33 @@ $(document).ready(function(){
     mostrarMensajesMarquee();
 
 });
+
+function mostrarMensajesMarquee() {
+
+    if( textarray != null ){
+
+        var length = textarray.length;
+
+        if( length == 0 ){
+
+            var mensajes_nuevos = obtenerMensajesNuevos();
+            textarray = mensajes_nuevos;
+            mostrarMensajesMarquee();
+
+            return;
+        }
+
+        var texto = textarray.pop();
+        $mwo
+            .marquee('destroy')
+            .bind('finished', mostrarMensajesMarquee)
+            .html(texto)
+            .marquee({duration: 20000, duplicated:false, gap:10, delayBeforeStart:0});
+    }else{
+
+        return;
+    }
+}
 
 function cargarModuloPorDefecto(){
 

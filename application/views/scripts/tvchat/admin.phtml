@@ -80,12 +80,12 @@
                     <li id="cerrar_ventana_principal">
                         <a  href="#cerrar_ventana_principal"><i class="fa fa-fw fa-dashboard"></i>Cerrar Pantalla</a>
                     </li>
-                    <li id="abrir_ventana_tvhot">
+                    <!--<li id="abrir_ventana_tvhot">
                         <a href="#ventana_tvhot"><i class="fa fa-fw fa-dashboard"></i>Abrir Tvhot</a>
                     </li>
                     <li id="cerrar_ventana_tvhot">
                         <a href="#cerrar_ventana_tvhot"><i class="fa fa-fw fa-dashboard"></i>Cerrar Tvhot</a>
-                    </li>
+                    </li>-->
                     <li>
                         <table class="totales table table-bordered table-hover">
                             <thead>
@@ -126,19 +126,6 @@
 
         <div class="container-fluid">
 
-            <!-- Page Heading -->
-            <!--<div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">
-                        Dashboard <small>Statistics Overview</small>
-                        </h1>
-                    <ol class="breadcrumb">
-                        <li class="active">
-                            <i class="fa fa-dashboard"></i> Juegos
-                        </li>
-                    </ol>
-                </div>
-            </div>-->
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="row">
                 <div class="col-lg-12">
@@ -150,6 +137,7 @@
                             <li id="mostrar_bloque_piropo1"><a href="#piropo1">Piropos Mensajes</a></li>
                             <li id="mostrar_bloque_piropo2"><a href="#piropo2">Piropos Llamadas</a></li>
                             <li id="mostrar_bloque_video"><a href="#video">Video</a></li>
+                            <li id="mostrar_bloque_tvhot"><a href="#tvhot">Tvhot</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div>
@@ -581,6 +569,46 @@
                     </div>
                 </div>
             </div>
+            <!--tvhot-->
+            <div class="row" id="tvhot">
+                <div class="col-xs-12">
+                    <h3>Tvhot</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover tabla">
+                            <thead>
+                                <tr>
+                                    <th class="col-sm-1">Preview</th>
+                                    <th class="col-sm-1">Modulo</th>
+                                    <th class="col-sm-2">Ganador</th>
+                                    <th class="col-sm-1">Jugar</th>
+                                    <th class="col-sm-1">Acciones</th>
+                                    <th class="col-sm-3">Historial</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">
+                                        Preview no disponible
+                                    </td>
+                                    <td>
+                                        <button id="abrir_ventana_tvhot" class="btn btn-primary">Cargar</button>
+                                    </td>
+                                    <td></td>
+                                    <td rowspan="2"></td>
+                                    <td rowspan="2"></td>
+                                    <td rowspan="2"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="cerrar_ventana_tvhot" class="btn btn-primary">Quitar</button>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
         </div>
         <!-- /.container-fluid -->
@@ -622,7 +650,7 @@
         <!-- .Modal -->
 
         <!-- jQuery Version 1.11.0 -->
-        <script src="/js/plugins/jquery-1.8.0.min.js"></script>
+        <script src="/js/plugins/jquery-1.7.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
         <script src="/js/plugins/bootstrap.min.js"></script>
