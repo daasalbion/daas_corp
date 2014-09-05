@@ -1247,7 +1247,7 @@ function habilitarBotones( nivel, juego ){
          //deshabilitarBotones();
          //habilitarBotones( 2, "tombola" );
          $('#premios_tombola').hide();
-         $('#stopTombola').removeAttr('disabled');
+         //$('#stopTombola').removeAttr('disabled');
      }
      else if( nivel == 2 && juego == "piropo" ){
          //deshabilitarBotones();
