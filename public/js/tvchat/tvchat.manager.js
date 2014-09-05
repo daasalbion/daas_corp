@@ -177,7 +177,7 @@ $('#getWinElementsTragamonedas').click(function(){
         $('#premios_tragamonedas').show();
     });
 
-    //habilitarBotones( 3, "tragamonedas" );
+    habilitarBotones( 3, "tragamonedas" );
 
     return;
 });
