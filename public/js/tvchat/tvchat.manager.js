@@ -1402,6 +1402,7 @@ function cargarNumerosGanadores( respuesta ){
     else if( respuesta.juego == "piropo" ){
 
         $('#WinElementsPiropo').empty();
+        $('#WinPhoneNumberPiropo').empty();
 
         $('#WinElementsPiropo')
             .append(
