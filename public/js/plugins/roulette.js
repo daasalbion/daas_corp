@@ -6,8 +6,8 @@
 			maxPlayCount : null, // x >= 0 or null
 			speed : 15, // x > 0
 			stopImageNumber : null, // x >= 0 or null or -1
-			rollCount : 3, // x >= 0
-			duration : 3, //(x second)	
+			rollCount : 100, // x >= 0
+			duration : 180, //(x second)
 			stopCallback : function() {},
 			startCallback : function() {},
 			slowDownCallback : function() {}

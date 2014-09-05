@@ -260,13 +260,13 @@ class TvchatController extends Zend_Controller_Action{
                 'premio' => 'true'
             );
 
-            $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS', $datos );
+            //$datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS', $datos );
 
-            /*$datos_obtenidos = array(
+            $datos_obtenidos = array(
                 'id_sorteo' => rand(0,99),
                 'codigo' => rand(0, 999999),
                 'cel' => '0982' . rand(0, 999999),
-            );*/
+            );
 
             $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
 
@@ -290,13 +290,13 @@ class TvchatController extends Zend_Controller_Action{
                 'premio' => 'false'
             );
 
-            $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS', $datos );
+            //$datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS', $datos );
 
-            /*$datos_obtenidos = array(
+            $datos_obtenidos = array(
                 'id_sorteo' => 1,
                 'codigo' => rand(0, 999999),
                 'cel' => '0982' . rand(0, 999999),
-            );*/
+            );
 
             $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
 
@@ -408,13 +408,13 @@ class TvchatController extends Zend_Controller_Action{
                 'premio' => 'true'
             );
 
-            $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TOMBOLA', $datos );
+            //$datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TOMBOLA', $datos );
 
-            /*$datos_obtenidos = array(
+            $datos_obtenidos = array(
                 'id_sorteo' => 1,
-                'codigo' => rand(0,99999),
+                'codigo' => rand(0,999999),
                 'cel' => '0982' . rand(0, 999999),
-            );*/
+            );
 
             $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
 

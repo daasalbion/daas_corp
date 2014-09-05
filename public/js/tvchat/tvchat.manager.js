@@ -97,6 +97,7 @@ $('#abrir_ventana_principal a').click(function(){
 
 
         $('#abrir_ventana_principal').addClass('disabled');
+        $('#cerrar_ventana_principal').removeClass('disabled');
     }
     habilitarBotones( 1, "tvchat" );
 }).addClass('active');
@@ -205,6 +206,14 @@ $("#premios_tragamonedas").change(function(){
     sorteoTragamonedas.premio = new Premio(id_premio, premio_gs, premio_texto);
 });
 $('#jugarTragamonedas').click(function(){
+
+
+    var params = {
+
+        juego: 'tragamonedas'
+    };
+
+    tvchat.cargarJuego(params);
 
     if( sorteoTragamonedas.premio == null ){
 
@@ -371,6 +380,14 @@ $("#premios_tragamonedas_sexy").change(function(){
     sorteoTragamonedasSexy.premio = new Premio(id_premio, premio_gs, premio_texto);
 });
 $('#jugarTragamonedasSexy').click(function(){
+
+    //valores por defecto
+    var params = {
+
+        juego: 'tragamonedas_sexy'
+    };
+
+    tvchat.cargarJuego(params);
 
     var nuevoGanador = sorteoTragamonedasSexy;
 
