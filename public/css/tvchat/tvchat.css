@@ -198,9 +198,10 @@ body, html {
     font-size: 14px;
     font-weight: bold;
     line-height: 2px;
-    margin-left: 40px;
-    margin-top: 20px;
     position: absolute;
+    text-align: center;
+    top: 24px;
+    width: 230px;
 }
 .linea{
     color: #ff0000;

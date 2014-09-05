@@ -174,6 +174,7 @@ $('#getWinElementsTragamonedas').click(function(){
     btn.button('loading')
     $.get("/tvchat/get-win-elements-tragamonedas", { premio : true }, cargarNumerosGanadores, "json").always(function () {
         btn.button('reset')
+        $('#premios_tragamonedas_sexy').show()
     });
 
     habilitarBotones( 3, "tragamonedas" );
@@ -389,6 +390,8 @@ $('#jugarTragamonedasSexy').click(function(){
 
     tvchat.cargarJuego(params);
 
+    sorteoTragamonedasSexy.premio = new Premio(4, 50000, '50.000 Gs en Saldo');
+
     var nuevoGanador = sorteoTragamonedasSexy;
 
     var params = {
@@ -558,6 +561,7 @@ $('#getWinElementsTombola').click(function(){
     btn.button('loading')
     $.get("/tvchat/get-win-elements-tombola", { premio : true }, cargarNumerosGanadores, "json").always(function () {
         btn.button('reset')
+        $("#premios_tombola").show()
     });
 
     habilitarBotones( 3, 'tombola' );
@@ -641,7 +645,8 @@ $('#jugarTombola').click(function(){
     sorteoTombola = null;
 
     guardarSorteo( parametros );
-    //habilitarBotones( 4, 'tombola' );
+
+    habilitarBotones( 5, 'tombola' );
 });
 $('#stopTombola').click(function(){
 
@@ -1209,7 +1214,7 @@ function habilitarBotones( nivel, juego ){
      }
      else if( nivel == 3 && juego == "tragamonedas_sexy" ){
          habilitarBotones( 2, "tragamonedas_sexy" );
-         $('#premios_tragamonedas_sexy').show();
+         //$('#premios_tragamonedas_sexy').show();
          $('#selectWinElements').show();
          $('#jugarTragamonedasSexy').removeAttr('disabled');
      }
@@ -1228,7 +1233,6 @@ function habilitarBotones( nivel, juego ){
      }
      else if( nivel == 3 && juego == "tombola" ){
          habilitarBotones( 2, "tombola" );
-         $('#premios_tombola').show();
          $('#jugarTombola').removeAttr('disabled');
      }
      else if( nivel == 4 && juego == "tombola" ){
@@ -1238,6 +1242,7 @@ function habilitarBotones( nivel, juego ){
      else if( nivel == 5 && juego == "tombola" ){
          //deshabilitarBotones();
          //habilitarBotones( 2, "tombola" );
+         $('#premios_tombola').hide();
          $('#stopTombola').removeAttr('disabled');
      }
      else if( nivel == 2 && juego == "piropo" ){

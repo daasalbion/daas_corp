@@ -465,13 +465,13 @@ function jugarJuego( params ){
         $('#linea').empty();
 
         p['stopImageNumber'] = Number(elementos_ganadores[0]);
-        p['speed'] = 40;
+        p['speed'] = 50;
         rouletter1.roulette( 'option', p );
         p['stopImageNumber'] = Number(elementos_ganadores[1]);
-        p['speed'] = 45;
+        p['speed'] = 40;
         rouletter2.roulette( 'option', p );
         p['stopImageNumber'] = Number(elementos_ganadores[2]);
-        p['speed'] = 50;
+        p['speed'] = 30;
         rouletter3.roulette( 'option', p );
 
         rouletter1.roulette('start');
