@@ -456,7 +456,7 @@ function jugarJuego( params ){
                         $('#linea').append( "Ganador: " + ganador );
                     }
 
-
+                    window.opener.$("#jugarTragamonedas").removeAttr('disabled');
                 }
             }
         }
@@ -497,6 +497,8 @@ function jugarJuego( params ){
                     else{
                         $('#linea').append( "Ganador: " + ganador );
                     }
+
+                    window.opener.$("#jugarTragamonedasSexy").removeAttr('disabled');
                 }
             }
         }

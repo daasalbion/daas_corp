@@ -173,11 +173,11 @@ $('#getWinElementsTragamonedas').click(function(){
     var btn = $(this)
     btn.button('loading')
     $.get("/tvchat/get-win-elements-tragamonedas", { premio : true }, cargarNumerosGanadores, "json").always(function () {
-        btn.button('reset')
-        $('#premios_tragamonedas_sexy').show()
+        btn.button('reset');
+        $('#premios_tragamonedas').show();
     });
 
-    habilitarBotones( 3, "tragamonedas" );
+    //habilitarBotones( 3, "tragamonedas" );
 
     return;
 });
@@ -189,6 +189,7 @@ $('#getElementsTragamonedas').click(function(){
     btn.button('loading')
     $.get("/tvchat/get-win-elements-tragamonedas", { premio : false }, cargarNumerosGanadores, "json").always(function () {
         btn.button('reset')
+        $('#premios_tragamonedas').hide()
     });
 
     habilitarBotones( 4, 'tragamonedas' );
@@ -208,6 +209,7 @@ $("#premios_tragamonedas").change(function(){
 });
 $('#jugarTragamonedas').click(function(){
 
+    $('#jugarTragamonedas').attr('disabled', 'true');
 
     var params = {
 
@@ -382,6 +384,7 @@ $("#premios_tragamonedas_sexy").change(function(){
 });
 $('#jugarTragamonedasSexy').click(function(){
 
+    $('#jugarTragamonedasSexy').attr('disabled', 'true');
     //valores por defecto
     var params = {
 
@@ -1123,50 +1126,51 @@ deshabilitarBotones();
 
 //funciones
 function deshabilitarBotones(){
- //tragamonedas
- $('#getWinElementsTragamonedas').attr('disabled', 'true');
- $('#getWinElementsTragamonedasSexy').attr('disabled', 'true');
- $('#getElementsTragamonedas').attr('disabled', 'true');
- $('#cargar_tragamonedas').attr('disabled', 'true');
- $('#cerrar_tragamonedas').attr('disabled', 'true');
- $('#cargar_tragamonedas_sexy').attr('disabled', 'true');
- $('#cerrar_tragamonedas_sexy').attr('disabled', 'true');
- $('#jugarTragamonedas').attr('disabled', 'true');
- $('#jugarTragamonedasSexy').attr('disabled', 'true');
- $('#stopRoulette1').attr('disabled', 'true');
- $('#stopRoulette2').attr('disabled', 'true');
- $('#stopRoulette3').attr('disabled', 'true');
- $('#stopRouletteSexy1').attr('disabled', 'true');
- $('#stopRouletteSexy2').attr('disabled', 'true');
- $('#stopRouletteSexy3').attr('disabled', 'true');
- $('#mostrarGanadorTragamonedas').attr('disabled', 'true');
- $('#mostrarGanadorTragamonedasSexy').attr('disabled', 'true');
- $('#ocultar_lineas_referencia_conductora').addClass('disabled');
- $('#mostrar_lineas_referencia_conductora').addClass('disabled');
- $('#mostrar_modulo_por_defecto').addClass('disabled');
- $('#cerrar_ventana_principal').addClass('disabled');
- $('#cerrar_ventana_tvhot').addClass('disabled');
- $('#parar_marquee').addClass('disabled');
- $('#premios_tragamonedas_sexy').hide();
- $('#premios_tragamonedas').hide();
- $('#selectWinElements').hide();
+    //tragamonedas
+    $('#getWinElementsTragamonedas').attr('disabled', 'true');
+    $('#getWinElementsTragamonedasSexy').attr('disabled', 'true');
+    $('#getElementsTragamonedas').attr('disabled', 'true');
+    $('#cargar_tragamonedas').attr('disabled', 'true');
+    $('#cerrar_tragamonedas').attr('disabled', 'true');
+    $('#cargar_tragamonedas_sexy').attr('disabled', 'true');
+    $('#cerrar_tragamonedas_sexy').attr('disabled', 'true');
+    $('#jugarTragamonedas').attr('disabled', 'true');
+    $('#jugarTragamonedasSexy').attr('disabled', 'true');
+    $('#stopRoulette1').attr('disabled', 'true');
+    $('#stopRoulette2').attr('disabled', 'true');
+    $('#stopRoulette3').attr('disabled', 'true');
+    $('#stopRouletteSexy1').attr('disabled', 'true');
+    $('#stopRouletteSexy2').attr('disabled', 'true');
+    $('#stopRouletteSexy3').attr('disabled', 'true');
+    $('#mostrarGanadorTragamonedas').attr('disabled', 'true');
+    $('#mostrarGanadorTragamonedasSexy').attr('disabled', 'true');
+    $('#ocultar_lineas_referencia_conductora').addClass('disabled');
+    $('#mostrar_lineas_referencia_conductora').addClass('disabled');
+    $('#mostrar_modulo_por_defecto').addClass('disabled');
+    $('#cerrar_ventana_principal').addClass('disabled');
+    $('#cerrar_ventana_tvhot').addClass('disabled');
+    $('#parar_marquee').addClass('disabled');
+    $('#premios_tragamonedas_sexy').hide();
+    $('#premios_tragamonedas').hide();
+    $('#selectWinElements').hide();
 
- //tombola
- $('#getWinElementsTombola').attr('disabled', 'true');
- $('#getElementsTombola').attr('disabled', 'true');
- $('#cargar_tombola').attr('disabled', 'true');
- $('#cerrar_tombola').attr('disabled', 'true');
- $('#jugarTombola').attr('disabled', 'true');
- $('#stopTombola').attr('disabled', 'true');
- $('#premios_tombola').hide();
+    //tombola
+    $('#getWinElementsTombola').attr('disabled', 'true');
+    $('#getElementsTombola').attr('disabled', 'true');
+    $('#cargar_tombola').attr('disabled', 'true');
+    $('#cerrar_tombola').attr('disabled', 'true');
+    $('#jugarTombola').attr('disabled', 'true');
+    $('#stopTombola').attr('disabled', 'true');
+    $('#premios_tombola').hide();
 
- //piropo
- $('#seleccionar_piropo').attr('disabled', 'true');
- $('#cargar_piropo').attr('disabled', 'true');
- $('#cerrar_piropo').attr('disabled', 'true');
- $('#jugarPiropo').attr('disabled', 'true');
- $('#premios_piropos').hide();
- };
+    //piropo
+    $('#seleccionar_piropo').attr('disabled', 'true');
+    $('#cargar_piropo').attr('disabled', 'true');
+    $('#cerrar_piropo').attr('disabled', 'true');
+    $('#jugarPiropo').attr('disabled', 'true');
+    $('#premios_piropos').hide();
+    $('#premios_piropos2').hide();
+};
 
 function habilitarBotones( nivel, juego ){
 
