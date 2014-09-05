@@ -23,8 +23,6 @@ class TvchatController extends Zend_Controller_Action{
         $this->logger->addWriter($writer);
         $this->logger->setEventItem('remoteAddr', $_SERVER['REMOTE_ADDR']);
 
-        //Habilitar layouts
-        $this->_helper->_layout->setLayout('tvchat-layout');
     }
 
     public function getLog(){
@@ -193,7 +191,6 @@ class TvchatController extends Zend_Controller_Action{
             $this->_redirect('/tvchat/login');
         }
 
-        $this->view->headScript()->appendFile('/js/plugins/jquery-1.7.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/jquery.marquee.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/roulette.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/jquery.scrollbox.js', 'text/javascript');
@@ -202,6 +199,26 @@ class TvchatController extends Zend_Controller_Action{
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.child.js', 'text/javascript');
         $this->logger->info("tv");
         $this->_helper->_layout->setLayout('tvchat-window-layout');
+    }
+
+    public function afortunadosAction(){
+
+        //ver como utilizar predispatch
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat");
+        if( !isset( $namespace->usuario ) ){
+
+            $this->_redirect('/tvchat/login');
+        }
+
+        $this->view->headScript()->appendFile('/js/plugins/jquery.marquee.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/plugins/roulette.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/plugins/jquery.scrollbox.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat/tvchat.utils.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/plugins/jquery.wheel.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat/tvchat.child.js', 'text/javascript');
+        $this->logger->info("tv");
+        $this->_helper->_layout->setLayout('tvchat-window-layout');
+
     }
 
     public function tvhotAction(){
@@ -335,13 +352,13 @@ class TvchatController extends Zend_Controller_Action{
                 'premio' => 'true'
             );
 
-            $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS_SEXY', $datos );
+            //$datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS_SEXY', $datos );
 
-            /*$datos_obtenidos = array(
+            $datos_obtenidos = array(
                 'id_sorteo' => 1,
                 'codigo' => rand(0, 999999),
                 'cel' => '0982' . rand(0, 999999),
-            );*/
+            );
 
             $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
 
@@ -604,7 +621,39 @@ class TvchatController extends Zend_Controller_Action{
         $db->getConnection();
         $resultado = null;
 
-        if( $accion == 'GET_MENSAJES' ){
+        if($accion == 'DESCARGA_FOTO_REGALO') {
+
+
+
+        } else if($accion == 'ESTA_HABILITADO_FOTO_REGALO') {//recibe id_regalo y verifica si el usuario ya tiene habilitado dicho regalo
+
+            $sql = "select * from promosuscripcion.jugar_fotos_regalos_x_usuarios where cel = ? and id_promocion = ? and id_foto_regalo = ?;";
+            $rs = $db->fetchAll($sql, array($datos['cel'], $datos['id_promocion'], $datos['id_foto_regalo']));
+            $resultado = false;
+            if(!empty($rs)) {
+                foreach($rs as $fila) {
+                    $resultado = true;
+                    break;
+                }
+            }
+
+            return $resultado;
+
+        } else if($accion == 'GET_ID_FOTO_REGALO') {//recibe nombre de archivo y devuelve id_regalo si existe
+
+            $sql = "select * from promosuscripcion.jugar_fotos_regalos where nombre_archivo = ?;";
+            $rs = $db->fetchAll($sql, array($datos['nombre_archivo']));
+            $resultado = 0;//id_regalo
+            if(!empty($rs)) {
+                foreach($rs as $fila) {
+                    $resultado = $fila['id_foto_regalo'];
+                    break;
+                }
+            }
+
+            return $resultado;
+
+        } else if( $accion == 'GET_MENSAJES' ){
 
             $sql = "select * from promosuscripcion.tvchat_mensajes where emitido = false or emitido is null order by id_tvchat_mensaje limit 5";
             $rs = $db->fetchAll( $sql );
@@ -996,6 +1045,15 @@ class TvchatController extends Zend_Controller_Action{
         exit;
     }
 
+    private function _getFormatoCorto($nro_largo) {
+
+        $this->logger->info('_getFormatoCorto -> nroLargo:[' . $nro_largo . '] longitud:[' . strlen($nro_largo) . ']');
+        if(strlen($nro_largo) == 12 && substr($nro_largo, 0, 3) == '595') {//esta en formato largo
+            return '0'.substr($nro_largo, 3);
+        }
+        return $nro_largo;
+    }
+
     public function descargarAction() {
 
         $this->_helper->layout->disableLayout();
@@ -1003,20 +1061,90 @@ class TvchatController extends Zend_Controller_Action{
 
         $this->logger->info('--->DESCARGAR_ACTION');
 
-        $parametros = $this->_getAllParams( 'id', null );
+        /*$header_names = array('HTTP_MSISDN', 'HTTP_X_UP_CALLING_LINE_ID', 'HTTP_X_MSISDN', 'HTTP_X_NOKIA_MSISDN');
+        $nro_cel = 'NO_RECIBIDO';//En formato largo: 595 981 524 664
+        $nombre_header = null;
+        foreach($header_names as $header_name) {
+            if(isset($_SERVER[$header_name]) && !empty($_SERVER[$header_name])) {
+                $nro_cel = $_SERVER[$header_name];
+                $nombre_header = $header_name;
+                break;
+            }
+        }
 
-        if( is_null( $parametros ) ) {
-
-            $this->logger->info('Auth NO-DEFINIDO!!');
-            throw new Zend_Exception("Parámetros No Válidos");
+        if($nro_cel == 'NO_RECIBIDO') {
+            $this->logger->info('Debe utilizar la red 3G');
+            echo '<h1>Debe utilizar la conexion 3G de su teléfono</h1>';
             return;
         }
 
-        $this->logger->info( 'Parametros:[' . print_r( $parametros, true ) . ']' );
+        $nombre_archivo = $this->_getParam('id', null);
+        if(is_null($nombre_archivo)) {
+            $this->logger->info('Parametro incorrecto');
+            echo '<h1>Parámetro incorrecto</h1>';
+            return;
+        }
 
-        if( isset( $parametros['id'] ) ) {
+        $cel = $this->_getFormatoCorto($nro_cel);
+        $id_promocion = 89;//Jugar
+        $this->logger->info( 'nombre_archivo:[' . $nombre_archivo . '] cel:[' . $cel . ']' );*/
 
-            if( !empty( $parametros ) ){
+        $nombre_archivo = $this->_getParam('id', null);
+        if(is_null($nombre_archivo)) {
+            $this->logger->info('Parametro incorrecto');
+            echo '<h1>No Existe Archivo</h1>';
+            return;
+        }
+
+        if( !empty($nombre_archivo) && strlen($nombre_archivo)>0 ) {
+
+            //Gaby-Fotos-01.jpg
+            $id_foto_regalo = $this->_consulta('GET_ID_FOTO_REGALO', array('nombre_archivo' => $nombre_archivo));
+
+            if($id_foto_regalo > 0) {
+
+                //el id(nombre archivo) que se recibió existe.
+
+                //ahora se verifica si el usuario puede visualizar
+                $se_puede_descargar = true;// $this->_consulta('ESTA_HABILITADO_FOTO_REGALO', array('cel' => $cel, 'id_promocion' => $id_promocion, 'id_foto_regalo' => $id_foto_regalo));
+
+                if($se_puede_descargar) {
+
+                    $path_archivo_descarga = '/var/www/html/www.entermovil.com.py/public/img/tvchat/fotos/' . $nombre_archivo;
+                    $size_archivo = filesize($path_archivo_descarga);
+                    $this->logger->info( 'size:[' . $size_archivo . ']' );
+                    header('Content-Description: File Transfer');
+                    $content_type = 'image/jpeg';
+                    header('Content-Type: ' . $content_type);
+                    //$nombre_contenido = basename($path_archivo_descarga);
+
+                    header('Content-Disposition: inline; filename='.$nombre_archivo);
+                    header('Content-Transfer-Encoding: binary');
+                    header('Expires: 0');
+                    header('Cache-Control: must-revalidate');
+                    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+                    header('Pragma: public');
+                    header('Content-Length: ' . $size_archivo);
+                    ob_clean();
+                    flush();
+
+                    $bytes_leidos = readfile($path_archivo_descarga);
+                    $this->logger->info( 'bytes_leidos:[' . $bytes_leidos . ']' );
+                    exit;
+
+                } else {
+
+                    echo '<h1>Podras descargar esta foto de regalo en tu proxima renovacion</h1>';
+                    return;
+                }
+
+            } else {
+
+                echo '<h1>Parámetro Incorrecto</h1>';
+                return;
+            }
+
+            /*if( !empty( $parametros ) ){
 
                 $path_archivo_descarga = 'C:\Users\USER\ENTERMOVIL\DAAS\PROYECTOS\www.entermovil.desarrollodaas.com.py\public\img\tvchat\fotos\foto_1.png';
                 $size_archivo = filesize($path_archivo_descarga);
@@ -1038,7 +1166,7 @@ class TvchatController extends Zend_Controller_Action{
 
                 $bytes_leidos = readfile($path_archivo_descarga);
                 exit;
-            }
+            }*/
         }
     }
 

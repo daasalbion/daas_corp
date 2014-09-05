@@ -372,6 +372,15 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         );
         $router->addRoute('tigo-guatemala-sin-accion', $r);
 
+        $r = new Zend_Controller_Router_Route(
+            'regalo-afortunado/:id',
+            array(
+                'controller' => 'tvchat',
+                'action' => 'descargar',
+                'accion' => null
+            )
+        );
+        $router->addRoute('regalo-afortunado', $r);
 
         $r = new Zend_Controller_Router_Route(
             'login',
@@ -471,7 +480,14 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         );
         $router->addRoute('callcenter_servicios', $r);
 
-
+        $r = new Zend_Controller_Router_Route(
+            'chat',
+            array(
+                'controller' => 'index',
+                'action' => 'chatcenter',
+            )
+        );
+        $router->addRoute('demo_chat', $r);
 
     }
 
@@ -485,7 +501,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view->headTitle()->setSeparator(' - ');
         $view->headTitle('ENTERMOVIL');
 
-        $view->headScript()->setFile('/js/plugins/jquery-1.7.js', 'text/javascript');
+        $view->headScript()->setFile('/js/plugins/jquery-1.8.0.min.js', 'text/javascript');
 
         //$view->headScript()->appendFile('/js/base.js', 'text/javascript');
         //$view->headLink()->setStylesheet('/css/base.css', 'screen');

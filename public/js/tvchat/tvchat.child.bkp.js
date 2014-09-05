@@ -2,11 +2,16 @@
 var rouletter1 = null;
 var rouletter2 = null;
 var rouletter3 = null;
+//var textarray_buffer = ['Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha''Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha'];
+var textarray_buffer =  window.opener.mensajero_buffer;
+//var textarray = ['Saludos desde Bella Vista Norte/// Besos a mi hermana desde Colombia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Panama', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Hamas', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Turquia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Palestina', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Corea', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Japon', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Brazil', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Italia', 'Saludos desde Bella Vista Norte/// Besos a mi hermana desde Espanha'];
+var textarray = window.opener.mensajero;
 var elementos_ganadores = [];
 var wheel = null;
 var tombola = null;
 var intervalo = 0;
 var mostrar = 0;
+var $mwo = null;
 var p = {};
 
 //funciones
@@ -455,8 +460,6 @@ function jugarJuego( params ){
                     else{
                         $('#linea').append( "Ganador: " + ganador );
                     }
-
-
                 }
             }
         }
@@ -617,9 +620,11 @@ function jugarJuego( params ){
         console.log("cel_ganador: " + params["objeto_ganador"].cel);
         console.log("nombre_juego: " + params["objeto_ganador"].juego);
 
-        $('#mensaje_seleccionado h3').empty();
-        $('#mensaje_seleccionado h4').empty();
-        $('#mensaje_seleccionado h5').empty();
+        if( $('#mensaje_seleccionado h3').length > 0 )
+            $('#mensaje_seleccionado h3').remove();
+
+        if( $('#mensaje_seleccionado h4').length > 0 )
+            $('#mensaje_seleccionado h4').remove();
 
         $('#mensaje_seleccionado')
             .append(
@@ -627,9 +632,6 @@ function jugarJuego( params ){
             )
             .append(
                 $(document.createElement("h4"))
-            )
-            .append(
-                $(document.createElement("h5"))
             );
 
         $('#mensaje_seleccionado h3').append(
@@ -638,9 +640,6 @@ function jugarJuego( params ){
         $('#mensaje_seleccionado h4').append(
             "Ganador: " + ganador.substr(0,8) +"XX"
         ).addClass('centrar mensaje_cel_ganador')
-        $('#mensaje_seleccionado h5').append(
-            "Premio: " + premio
-        ).addClass('centrar premio_piropo')
     }
     else if( params['jugar'] == "piropo2" ){
 
@@ -652,20 +651,14 @@ function jugarJuego( params ){
             )
             .append(
                 $(document.createElement("h4"))
-            )
-            .append(
-                $(document.createElement("h5"))
             );
 
         $('#mensaje_seleccionado h3').append(
-            "Por 50.000 Gs en Saldo"
+            premio
         ).addClass('centrar mensaje_piropo')
         $('#mensaje_seleccionado h4').append(
             "Jugador: " + ganador.substr(0,8) +"XX"
         ).addClass('centrar mensaje_cel_ganador')
-        $('#mensaje_seleccionado h5').append(
-
-        ).addClass('centrar premio_piropo')
     }
 };
 
@@ -722,12 +715,12 @@ function mostrarGanador( params ){
 
         $("#container_ganador_sexy").removeClass('container_ganador');
     }
-    else if( params['juego'] == "piropo_llamada" ){
+};
 
-        $('#mensaje_seleccionado h5').append(
-            params['mensaje']
-        ).addClass('centrar premio_piropo')
-    }
+function obtenerMensajesNuevos(){
+
+    textarray = $.extend(true, [], textarray_buffer);
+    return textarray;
 };
 
 function cargarModulo( params ){
@@ -857,9 +850,64 @@ function setearDom(){
 
 $(document).ready(function(){
 
+    $mwo = $('.marquee');
+
+    $('.marquee').marquee({
+        //speed in milliseconds of the marquee
+        duration: 20000,
+        //gap in pixels between the tickers
+        gap: 50,
+        //time in milliseconds before the marquee will start animating
+        delayBeforeStart: 0,
+        //'left' or 'right'
+        direction: 'left',
+        //true or false - should the marquee be duplicated to show an effect of continues flow
+        duplicated: false,
+        //on hover pause the marquee - using jQuery plugin https://github.com/tobia/Pause
+        pauseOnHover: true
+    });
+
+    //pause and resume links
+    $('.pause').click(function(e){
+        e.preventDefault();
+        //$mwo.trigger('pause');
+        var eliminar = $('.js-marquee-wrapper');
+        eliminar.remove();
+        $mwo.marquee('destroy');
+    });
+
     cargarModuloPorDefecto();
 
+    mostrarMensajesMarquee();
+
 });
+
+function mostrarMensajesMarquee() {
+
+    if( textarray != null ){
+
+        var length = textarray.length;
+
+        if( length == 0 ){
+
+            var mensajes_nuevos = obtenerMensajesNuevos();
+            textarray = mensajes_nuevos;
+            mostrarMensajesMarquee();
+
+            return;
+        }
+
+        var texto = textarray.pop();
+        $mwo
+            .marquee('destroy')
+            .bind('finished', mostrarMensajesMarquee)
+            .html(texto)
+            .marquee({duration: 20000, duplicated:false, gap:10, delayBeforeStart:0});
+    }else{
+
+        return;
+    }
+}
 
 function cargarModuloPorDefecto(){
 
