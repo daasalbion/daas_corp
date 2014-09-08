@@ -18,10 +18,12 @@ var premio_tragamonedas = {
     'premio_texto': null
 };
 var premio_tragamonedas_sexy = {
+    'id_premio': 0,
     'premio_gs': 0,
     'premio_texto': null
 };
 var premio_tombola = {
+    'id_premio': 0,
     'premio_gs': 0,
     'premio_texto': null
 };
@@ -199,7 +201,8 @@ $('#getElementsTragamonedas').click(function(){
 $("#premios_tragamonedas").change(function(){
 
     premio_tragamonedas.premio_texto = $( "#premios_tragamonedas option:selected" ).text();
-    premio_tragamonedas.premio_gs = $( "#premios_tragamonedas option:selected" ).val();
+    premio_tragamonedas.id_premio = $( "#premios_tragamonedas option:selected" ).val();
+    premio_tragamonedas.premio_gs = valor_premios[premio_tragamonedas.id_premio];
 
     var premio_texto = $( "#premios_tragamonedas option:selected" ).text();
     var id_premio = $( "#premios_tragamonedas option:selected" ).val();
@@ -589,7 +592,8 @@ $('#getElementsTombola').click(function(){
 $("#premios_tombola").change(function(){
 
     premio_tombola.premio_texto = $( "#premios_tombola option:selected" ).text();
-    premio_tombola.premio_gs = $( "#premios_tombola option:selected" ).val();
+    premio_tombola.id_premio = $( "#premios_tombola option:selected" ).val();
+    premio_tombola.premio_gs = valor_premios[premio_tombola.id_premio];
 
     var premio_texto = $( "#premios_tombola option:selected" ).text();
     var id_premio = $( "#premios_tombola option:selected" ).val();
@@ -1279,6 +1283,12 @@ function cargarNumerosGanadores( respuesta ){
         var nuevoGanador = new ObjetoGanador( '', '', respuesta.juego, '', '' );
         sorteoTragamonedas = new Sorteo(respuesta.cel_ganador, respuesta.sorteo, null, respuesta.juego, respuesta.id_sorteo);
 
+        if( premio_tragamonedas.premio_texto != null ){
+
+            sorteoTragamonedas.premio = new Premio(premio_tragamonedas.id_premio, premio_tragamonedas.premio_gs, premio_tragamonedas.premio_texto);
+
+        }
+
         $('#WinElementsTragamonedas').empty();
 
         $('#WinElementsTragamonedas')
@@ -1357,6 +1367,12 @@ function cargarNumerosGanadores( respuesta ){
         nuevoGanador = new ObjetoGanador( '', '', respuesta.juego, '', '' );
 
         sorteoTombola = new Sorteo(respuesta.cel_ganador, respuesta.sorteo, null, respuesta.juego, respuesta.id_sorteo);
+
+        if( premio_tombola.premio_texto != null ){
+
+            sorteoTombola.premio = new Premio(premio_tombola.id_premio, premio_tombola.premio_gs, premio_tombola.premio_texto);
+
+        }
 
         $('#WinElementsTombola').empty();
 
