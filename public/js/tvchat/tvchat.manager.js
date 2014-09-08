@@ -1649,6 +1649,9 @@ $(window).bind( 'beforeunload', function(){
     //save info somewhere
     if( tvchat != null )
         tvchat.close();
+    if( tvmensajero != null )
+        tvmensajero.close();
+
     //return 'Esta seguro?';
     return;
 });

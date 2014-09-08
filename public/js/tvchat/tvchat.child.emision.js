@@ -166,9 +166,9 @@ function setearDom(){
     p = null;
 };
 
-$(window).bind( 'beforeunload', function(){
+/*$(window).bind( 'beforeunload', function(){
 
     window.opener.$("#cerrar_ventana_principal").trigger('click');
 
     return 'Esta seguro?';
-});
+});*/

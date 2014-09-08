@@ -263,7 +263,7 @@ class TvchatController extends Zend_Controller_Action{
             //$datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS', $datos );
 
             $datos_obtenidos = array(
-                'id_sorteo' => rand(0,99),
+                'id_sorteo' => 1,
                 'codigo' => rand(0, 999999),
                 'cel' => '0982' . rand(0, 999999),
             );
@@ -501,7 +501,7 @@ class TvchatController extends Zend_Controller_Action{
             //$datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_PIROPO2', $datos );
 
             $datos_obtenidos = array(
-                'id_sorteo' => rand(0,99),
+                'id_sorteo' => 1,
                 'codigo' => rand(0, 999999),
                 'cel' => '0982' . rand(0, 999999),
             );
