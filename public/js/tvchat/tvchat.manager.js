@@ -1,3 +1,4 @@
+//v1.1
 //ventanas
 var tvchat = null;
 var tvmensajero = null;
