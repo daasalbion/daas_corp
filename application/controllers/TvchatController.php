@@ -215,7 +215,7 @@ class TvchatController extends Zend_Controller_Action{
         $this->view->headScript()->appendFile('/js/plugins/jquery.scrollbox.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/tvchat/tvchat.utils.js', 'text/javascript');
         $this->view->headScript()->appendFile('/js/plugins/jquery.wheel.js', 'text/javascript');
-        $this->view->headScript()->appendFile('/js/tvchat/tvchat.child.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat/tvchat.child.emision.js', 'text/javascript');
         $this->logger->info("tv");
         $this->_helper->_layout->setLayout('tvchat-window-layout');
 

@@ -15,6 +15,7 @@ var mensajero_buffer = [];
 //var nuevoGanador = null;
 //premios
 var premio_tragamonedas = {
+    'id_premio': 0,
     'premio_gs': 0,
     'premio_texto': null
 };
@@ -222,7 +223,7 @@ $('#jugarTragamonedas').click(function(){
 
     tvchat.cargarJuego(params);
 
-    if( sorteoTragamonedas.premio == null ){
+    if( sorteoTragamonedas.cel == "Sin Ganador" ){
 
         var premio_texto = 'Sin Premio';
         var id_premio = 0;
@@ -283,7 +284,6 @@ $('#jugarTragamonedas').click(function(){
     habilitarBotones( 5, 'tragamonedas' );
 
 });
-//estos fallan
 $('#stopRoulette1').click(function(){
 
     ////habilitarBotones( 4, 'tragamonedas' );
@@ -604,7 +604,7 @@ $("#premios_tombola").change(function(){
 });
 $('#jugarTombola').click(function(){
 
-    if( sorteoTombola.premio == null ){
+    if( sorteoTombola.cel == "Sin Ganador" ){
 
         var premio_texto = 'Sin Premio';
         var id_premio = 0;
@@ -1022,7 +1022,7 @@ $('#parar_marquee').click(function(){
 //tvhot
 $('#abrir_ventana_tvhot').click(function(){
 
-    $('#abrir_ventana_tvhot').attr('disabled', 'true');
+    //$('#abrir_ventana_tvhot').attr('disabled', 'true');
     /*tvhot = window.open("/tvchat/tvhot",
         "_blank", "width=720, height=576, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");*/
 
@@ -1032,11 +1032,11 @@ $('#abrir_ventana_tvhot').click(function(){
         modulo: "tvhot"
     }
 
-    tvchat.cargarModulo( params );
+    tvmensajero.cargarModulo( params );
 });
 $('#cerrar_ventana_tvhot').click(function(){
 
-    $('#abrir_ventana_tvhot').removeAttr('disabled');
+    //$('#abrir_ventana_tvhot').removeAttr('disabled');
 
     var params = {
 
@@ -1044,7 +1044,7 @@ $('#cerrar_ventana_tvhot').click(function(){
         modulo: "tvhot"
     }
 
-    tvchat.cargarModulo( params );
+    tvmensajero.cargarModulo( params );
 
 });
 
@@ -1153,7 +1153,7 @@ function deshabilitarBotones(){
     $('#mostrar_lineas_referencia_conductora').addClass('disabled');
     $('#mostrar_modulo_por_defecto').addClass('disabled');
     $('#cerrar_ventana_principal').addClass('disabled');
-    $('#cerrar_ventana_tvhot').addClass('disabled');
+    //$('#cerrar_ventana_tvhot').addClass('disabled');
     $('#parar_marquee').addClass('disabled');
     $('#premios_tragamonedas_sexy').hide();
     $('#premios_tragamonedas').hide();
