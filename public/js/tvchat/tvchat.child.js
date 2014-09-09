@@ -991,7 +991,7 @@ function mostrarMensajesMarquee() {
     if( textarray != null ){
 
         var length = textarray.length;
-
+            //mirar
         if( length == 0 ){
 
             var mensajes_nuevos = obtenerMensajesNuevos();
