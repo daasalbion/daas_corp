@@ -1014,6 +1014,8 @@ function mostrarMensajesMarquee() {
     }
 };
 
+
+//mirar
 function obtenerMensajesNuevos(){
 
     textarray = $.extend(true, [], textarray_buffer);
