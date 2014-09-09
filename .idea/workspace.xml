@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="ahora mirar 1&#10;">
+    <list default="true" id="e749bb0f-6901-48a9-a367-1d051897f39e" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\daasalbion\PhpstormProjects\www.daas.com.py\log\tvchat_2014-07-08.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="www.entermovil.com.py.iws" />
@@ -514,46 +515,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.daas.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.daas.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.daas.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www.daas.com.py" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -975,7 +936,15 @@
       <created>1410289332270</created>
       <updated>1410289332270</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="ahora mirar 2&#10;">
+      <created>1410289374127</created>
+      <updated>1410289374127</updated>
+    </task>
+    <task id="LOCAL-00082" summary="ahora mirar 3&#10;">
+      <created>1410289439377</created>
+      <updated>1410289439377</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1047,8 +1016,6 @@
       <TodoPanelSettings />
     </option>
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
-    <MESSAGE value="probar ahora 1&#10;" />
-    <MESSAGE value="probar ahora 2&#10;" />
     <MESSAGE value="actualizar tragamonedas&#10;" />
     <MESSAGE value="probar ahora 3&#10;" />
     <MESSAGE value="scroll fotos terminado" />
@@ -1072,7 +1039,9 @@
     <MESSAGE value="minor bug&#10;" />
     <MESSAGE value="ahora mirar&#10;" />
     <MESSAGE value="ahora mirar 1&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="ahora mirar 1&#10;" />
+    <MESSAGE value="ahora mirar 2&#10;" />
+    <MESSAGE value="ahora mirar 3&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="ahora mirar 3&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1158,19 +1127,9 @@
         <state line="11" column="23" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5542" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/tvchat_2014-08-29.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6378" column="63" selection-start="306012" selection-end="306012" vertical-scroll-proportion="0.75272727" vertical-offset="108012" max-vertical-offset="108562" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/plugins/roulette.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="30" selection-start="86" selection-end="86" vertical-scroll-proportion="0.120781526" vertical-offset="0" max-vertical-offset="816" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/tvchat_2014-09-01.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6155" column="20" selection-start="272150" selection-end="272150" vertical-scroll-proportion="0.44363636" vertical-offset="104391" max-vertical-offset="104992" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/reportes/cobros-por-carrier.phtml">
@@ -1186,11 +1145,6 @@
     <entry file="file://$PROJECT_DIR$/application/views/scripts/reportes/suscriptos.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="69" column="8" selection-start="3593" selection-end="3593" vertical-scroll-proportion="0.29198474" vertical-offset="1020" max-vertical-offset="1904" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/tvchat_reportes_2014-09-01.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16592" column="18" selection-start="609670" selection-end="609683" vertical-scroll-proportion="0.0" vertical-offset="281858" max-vertical-offset="285532" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat-reportes/reporte.phtml">
@@ -1330,15 +1284,7 @@
     <entry file="file://$PROJECT_DIR$/application/views/scripts/tvchat/admin.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="23" selection-start="465" selection-end="465" vertical-scroll-proportion="0.51809525" vertical-offset="0" max-vertical-offset="12087">
-          <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#li#4;n#ul#0;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#li#4;n#ul#0;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#li#4;n#ul#0;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#li#4;n#ul#0;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#li#4;n#ul#0;n#div#1;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
