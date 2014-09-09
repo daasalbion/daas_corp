@@ -882,19 +882,19 @@ function cargarModulo( params ){
                                                 .attr('src', "/img/tvchat/tvchat_detalle_derecha.png")
                                         )
                                 ),
-                            $(document.createElement("div"))
-                                .attr('id', 'ventana')
-                                .addClass('marquee')
+                                $(document.createElement("div"))
+                                    .attr('id', 'ventana')
+                                    .addClass('marquee')
+                                )
                         )
-                )
 
-            ,
-            $(document.createElement("div"))
-                .attr('id', 'costo')
-                .addClass('costo')
-                .append(
-                    'Costo por cada mensaje cobro semanal Gs. 2200 IVA incluido - Proveedor y Licenciatario Entermovil SA Asuncion Paraguay'
-                )
+                ,
+                $(document.createElement("div"))
+                    .attr('id', 'costo')
+                    .addClass('costo')
+                    .append(
+                        'Costo por cada mensaje cobro semanal Gs. 2200 IVA incluido - Proveedor y Licenciatario Entermovil SA Asuncion Paraguay'
+                    )
         );
 
         $mwo = $('.marquee');
@@ -991,7 +991,7 @@ function mostrarMensajesMarquee() {
     if( textarray != null ){
 
         var length = textarray.length;
-        //mirar
+            //mirar
         if( length == 0 ){
 
             var mensajes_nuevos = obtenerMensajesNuevos();
@@ -1014,8 +1014,6 @@ function mostrarMensajesMarquee() {
     }
 };
 
-
-//mirar
 function obtenerMensajesNuevos(){
 
     textarray = $.extend(true, [], textarray_buffer);
@@ -1024,7 +1022,7 @@ function obtenerMensajesNuevos(){
 
 /*$(window).bind( 'beforeunload', function(){
 
- window.opener.$("#cerrar_ventana_principal").trigger('click');
+    window.opener.$("#cerrar_ventana_principal").trigger('click');
 
- return 'Esta seguro?';
- });*/
+    return 'Esta seguro?';
+});*/

@@ -23,15 +23,6 @@ $(document).ready(function(){
         pauseOnHover: true
     });
 
-    //pause and resume links
-    $('.pause').click(function(e){
-        e.preventDefault();
-        //$mwo.trigger('pause');
-        var eliminar = $('.js-marquee-wrapper');
-        eliminar.remove();
-        $mwo.marquee('destroy');
-    });
-
     mostrarMensajesMarquee();
 
 });
