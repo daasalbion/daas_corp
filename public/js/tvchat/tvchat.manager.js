@@ -984,29 +984,29 @@ $('#cerrar_video').click(function(){
 });
 
 //mensajero
-$('#cargar_tvchat').click(function(){
+$('#cargar_tvmensajero').click(function(){
 
-    //valores por defecto
     var params = {
 
-        juego: "tvchat"
+        modulo: "tvmensajero",
+        accion: "mostrar"
     };
 
-    tvchat.cargarJuego(params);
+    tvchat.cargarModulo(params);
 });
-$('#cerrar_tvchat').click(function(){
+$('#cerrar_tvmensajero').click(function(){
 
-    //valores por defecto
     var params = {
 
-        juego: "tvchat"
+        modulo: "tvmensajero",
+        accion: "ocultar"
     };
 
-    tvchat.descargarJuego(params);
+    tvchat.cargarModulo(params);
 
     removerCss();
-
     cargarModuloPorDefecto();
+
 });
 $('#parar_marquee').click(function(){
 
@@ -1111,6 +1111,11 @@ $('#mostrar_bloque_tvhot').click(function(){
     ocultarModulos();
     $('#tvhot').removeClass('ocultar');
     $('#mostrar_bloque_tvhot').addClass('active');
+});
+$('#mostrar_bloque_tvmensajero').click(function(){
+    ocultarModulos();
+    $('#tvmensajero').removeClass('ocultar');
+    $('#mostrar_bloque_tvmensajero').addClass('active');
 });
 $('#mostrar_modulo_por_defecto a').click(function(){
     cargarModuloPorDefecto();
@@ -1625,6 +1630,7 @@ function ocultarModulos(){
     $('#tragamonedas_sexy').addClass('ocultar');
     $('#video').addClass('ocultar');
     $('#tvhot').addClass('ocultar');
+    $('#tvmensajero').addClass('ocultar');
 
     $('#mostrar_bloque_tragamonedas').removeClass('active');
     $('#mostrar_bloque_tombola').removeClass('active');
@@ -1633,6 +1639,7 @@ function ocultarModulos(){
     $('#mostrar_bloque_piropo2').removeClass('active');
     $('#mostrar_bloque_video').removeClass('active');
     $('#mostrar_bloque_tvhot').removeClass('active');
+    $('#mostrar_bloque_tvmensajero').removeClass('active');
 };
 
 function crearSorteoPiropo( respuesta ){

@@ -883,24 +883,25 @@ class TvchatReportesController extends Zend_Controller_Action{
         else if( $accion == 'GET_ALTAS_BAJAS_X_MINUTO' ){
 
             $sql = "select T3.alias, T2.* from (
-                select T1.*, count(*)::integer as total from (
-                    select PL.id_promocion, extract(minute from PL.ts_local)::integer as minuto, PL.accion
-                    from promosuscripcion.log_suscriptos PL
-                    where id_carrier in(1,2) and ts_local::date = ?
-                    and id_promocion = ? and accion = '"."ALTA"."'
-                    and extract(hour from ts_local)::integer = ?
-                    union
-                    select PL.id_promocion, extract(minute from PL.ts_local)::integer as minuto, PL.accion
-                    from promosuscripcion.log_suscriptos PL
-                    where id_carrier in(1,2) and ts_local::date = ?
-                    and id_promocion = ? and accion = '"."BAJA"."'
-                    and extract(hour from ts_local)::integer = ?
-                ) T1 group by 1,2,3
+                select PL.id_promocion, extract(minute from PL.ts_local)::integer as minuto, PL.accion, count(*)::integer as total
+                from promosuscripcion.log_suscriptos PL
+                where id_carrier in(1,2) and ts_local::date = ?
+                and id_promocion = ? and accion = '"."ALTA"."'
+                and extract(hour from ts_local)::integer = ?
+                group by 1,2,3
+                union
+                select PL.id_promocion, extract(minute from PL.ts_local)::integer as minuto, PL.accion, count(*)::integer as total
+                from promosuscripcion.log_suscriptos PL
+                where id_carrier in(1,2) and ts_local::date = ?
+                and id_promocion = ? and accion = '"."BAJA"."'
+                and extract(hour from ts_local)::integer = ?
+                group by 1,2,3
+
             ) T2 join (
-                select id_promocion, alias
-                from info_promociones
-                where id_promocion = ?
-                group by 1, 2
+            select id_promocion, alias
+            from info_promociones
+            where id_promocion = ?
+            group by 1, 2
             ) T3 on T2.id_promocion = T3.id_promocion";
 
             $rs = $db->fetchAll( $sql, array( $datos['fecha'] , $datos['id_promocion'],

@@ -8,6 +8,9 @@ var tombola = null;
 var intervalo = 0;
 var mostrar = 0;
 var p = {};
+var textarray_buffer =  window.opener.mensajero_buffer;
+var textarray = window.opener.mensajero;
+var $mwo = null;
 
 //funciones
 function cargarJuego( params ){
@@ -807,10 +810,10 @@ function cargarModulo( params ){
                     $(document.createElement("div"))
                         .attr('id','marquee_wrapper' )
                         .addClass('marquee_tvhot ver')
-                        .append(
-                            $(document.createElement("p"))
-                                .append('hola')
-                        )
+                    /*.append(
+                     $(document.createElement("p"))
+                     .append('hola')
+                     )*/
                 )
         ).addClass('croma');
 
@@ -831,11 +834,93 @@ function cargarModulo( params ){
             pauseOnHover: false
         });
 
-        //mostrarMensajesMarquee();
+        mostrarMensajesMarqueeTvhot();
     }
     else if( params.accion == "ocultar" && params.modulo == "tvhot" ){
 
         $('#tvhot_mensajero').empty().remove();
+        $('.tvchat_screen').show();
+    }
+    else if( params.accion == "mostrar" && params.modulo == "tvmensajero" ){
+
+        //$('.tvchat_screen').children().hide();
+        $('.tvchat_screen').empty();
+
+        $('.tvchat_screen')
+            .append(
+                $(document.createElement("div"))
+                    .attr('id','marquee_habilitado')
+                    .addClass('marquee_habilitado')
+            );
+
+        var contenedor = $('.tvchat_screen');
+
+        contenedor.append(
+            $(document.createElement("div"))
+                .attr('id','tvchat')
+                .addClass('tvchat')
+                .append(
+                    $(document.createElement("div"))
+                        .attr('id','scroller')
+                        .append(
+                            $(document.createElement("div"))
+                                .attr('id', 'static-text')
+                                .addClass('static-text')
+                                .append(
+                                    $(document.createElement("div"))
+                                        .attr('id', 'tvchat_logo')
+                                        .addClass('tvchat_logo')
+                                        .append(
+                                            $(document.createElement("img"))
+                                                .attr('src', "/img/tvchat/tvchat_titulo_mensajero.png")
+                                        ),
+                                    $(document.createElement("div"))
+                                        .attr('id', 'tvchat_logo_detalle_derecha')
+                                        .addClass('tvchat_logo_detalle_derecha')
+                                        .append(
+                                            $(document.createElement("img"))
+                                                .attr('src', "/img/tvchat/tvchat_detalle_derecha.png")
+                                        )
+                                ),
+                                $(document.createElement("div"))
+                                    .attr('id', 'ventana')
+                                    .addClass('marquee')
+                                )
+                        )
+
+                ,
+                $(document.createElement("div"))
+                    .attr('id', 'costo')
+                    .addClass('costo')
+                    .append(
+                        'Costo por cada mensaje cobro semanal Gs. 2200 IVA incluido - Proveedor y Licenciatario Entermovil SA Asuncion Paraguay'
+                    )
+        );
+
+        $mwo = $('.marquee');
+
+        $('.marquee').marquee({
+            //speed in milliseconds of the marquee
+            duration: 20000,
+            //gap in pixels between the tickers
+            gap: 50,
+            //time in milliseconds before the marquee will start animating
+            delayBeforeStart: 0,
+            //'left' or 'right'
+            direction: 'left',
+            //true or false - should the marquee be duplicated to show an effect of continues flow
+            duplicated: false,
+            //on hover pause the marquee - using jQuery plugin https://github.com/tobia/Pause
+            pauseOnHover: true
+        });
+
+        mostrarMensajesMarquee();
+    }
+    else if( params.accion == "ocultar" && params.modulo == "tvmensajero" ){
+
+        $('#tvchat').empty().remove();
+        $('#costo').empty().remove();
+
         $('.tvchat_screen').show();
     }
 };
@@ -874,6 +959,66 @@ function cargarModuloPorDefecto(){
     cargarModulo( params );
 };
 
+function mostrarMensajesMarqueeTvhot() {
+
+    if( textarray != null ){
+
+        var length = textarray.length;
+
+        if( length == 0 ){
+
+            var mensajes_nuevos = obtenerMensajesNuevos();
+            textarray = mensajes_nuevos;
+            mostrarMensajesMarqueeTvhot();
+
+            return;
+        }
+
+        var texto = textarray.pop();
+        $mwo
+            .marquee('destroy')
+            .bind('finished', mostrarMensajesMarqueeTvhot)
+            .html(texto)
+            .marquee({duration: 20000, duplicated:false, gap:10, direction:'up', delayBeforeStart:0});
+    }else{
+
+        return;
+    }
+};
+
+function mostrarMensajesMarquee() {
+
+    if( textarray != null ){
+
+        var length = textarray.length;
+
+        if( length == 0 ){
+
+            var mensajes_nuevos = obtenerMensajesNuevos();
+            textarray = mensajes_nuevos;
+
+            mostrarMensajesMarquee()._delay(300000);
+            return;
+        }
+
+        var texto = textarray.pop();
+        $mwo
+            .marquee('destroy')
+            .bind('finished', mostrarMensajesMarquee)
+            .html(texto)
+            .marquee({duration: 20000, duplicated:false, gap:10, delayBeforeStart:0});
+    }else{
+
+        console.log('esperar 30s')
+        mostrarMensajesMarquee().delay(30000);
+    }
+};
+
+function obtenerMensajesNuevos(){
+
+    textarray = $.extend(true, [], textarray_buffer);
+    return textarray;
+};
 
 /*$(window).bind( 'beforeunload', function(){
 
