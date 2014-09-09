@@ -986,6 +986,9 @@ $('#cerrar_video').click(function(){
 //mensajero
 $('#cargar_tvmensajero').click(function(){
 
+    removerCss();
+    $('#mostrar_bloque_tvmensajero a').css('background-color', 'gold');
+
     var params = {
 
         modulo: "tvmensajero",
@@ -1025,6 +1028,8 @@ $('#abrir_ventana_tvhot').click(function(){
     //$('#abrir_ventana_tvhot').attr('disabled', 'true');
     /*tvhot = window.open("/tvchat/tvhot",
      "_blank", "width=720, height=576, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");*/
+    removerCss();
+    $('#mostrar_bloque_tvhot a').css('background-color', 'gold');
 
     var params = {
 
@@ -1032,7 +1037,7 @@ $('#abrir_ventana_tvhot').click(function(){
         modulo: "tvhot"
     }
 
-    tvmensajero.cargarModulo( params );
+    tvchat.cargarModulo( params );
 });
 $('#cerrar_ventana_tvhot').click(function(){
 
@@ -1044,7 +1049,7 @@ $('#cerrar_ventana_tvhot').click(function(){
         modulo: "tvhot"
     }
 
-    tvmensajero.cargarModulo( params );
+    tvchat.cargarModulo( params );
 
 });
 
@@ -1619,6 +1624,8 @@ function removerCss(){
     $('#mostrar_bloque_piropo1 a').css( 'background-color', '' );
     $('#mostrar_bloque_piropo2 a').css( 'background-color', '' );
     $('#mostrar_bloque_video a').css( 'background-color', '' );
+    $('#mostrar_bloque_tvhot a').css( 'background-color', '' );
+    $('#mostrar_bloque_tvmensajero a').css( 'background-color', '' );
 };
 
 function ocultarModulos(){

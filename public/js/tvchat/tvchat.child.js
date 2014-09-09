@@ -1,4 +1,6 @@
-//variables globales
+/*variables globales*/
+
+//juegos
 var rouletter1 = null;
 var rouletter2 = null;
 var rouletter3 = null;
@@ -8,7 +10,9 @@ var tombola = null;
 var intervalo = 0;
 var mostrar = 0;
 var p = {};
-var textarray_buffer =  window.opener.mensajero_buffer;
+
+//mensajero
+var textarray_buffer = window.opener.mensajero_buffer;
 var textarray = window.opener.mensajero;
 var $mwo = null;
 
@@ -797,8 +801,6 @@ function cargarModulo( params ){
 
         //ocultamos y paramos la ventana principal para cargar el tvhot
         $('.tvchat_screen').hide();
-        $('.js-marquee-wrapper').remove();
-        $mwo.marquee('destroy');
 
         var contenedor = $('.contenedor');
 
@@ -810,10 +812,6 @@ function cargarModulo( params ){
                     $(document.createElement("div"))
                         .attr('id','marquee_wrapper' )
                         .addClass('marquee_tvhot ver')
-                    /*.append(
-                     $(document.createElement("p"))
-                     .append('hola')
-                     )*/
                 )
         ).addClass('croma');
 
@@ -839,7 +837,8 @@ function cargarModulo( params ){
     else if( params.accion == "ocultar" && params.modulo == "tvhot" ){
 
         $('#tvhot_mensajero').empty().remove();
-        $('.tvchat_screen').show();
+        location.reload();
+
     }
     else if( params.accion == "mostrar" && params.modulo == "tvmensajero" ){
 
@@ -921,7 +920,7 @@ function cargarModulo( params ){
         $('#tvchat').empty().remove();
         $('#costo').empty().remove();
 
-        $('.tvchat_screen').show();
+        location.reload();
     }
 };
 
@@ -961,7 +960,7 @@ function cargarModuloPorDefecto(){
 
 function mostrarMensajesMarqueeTvhot() {
 
-    if( textarray != null ){
+    if( ( textarray != null ) && ( textarray_buffer.length > 0 ) ){
 
         var length = textarray.length;
 
@@ -980,6 +979,15 @@ function mostrarMensajesMarqueeTvhot() {
             .bind('finished', mostrarMensajesMarqueeTvhot)
             .html(texto)
             .marquee({duration: 20000, duplicated:false, gap:10, direction:'up', delayBeforeStart:0});
+
+    }else if( textarray_buffer.length == 0 ){
+
+        $mwo
+            .marquee('destroy')
+            .bind('finished', mostrarMensajesMarquee)
+            .html("Envia tu mensaje al 8540 para compartirlo en el Mensajero Afortunado!!!")
+            .marquee({duration: 25000, duplicated: false, gap: 10, direction: 'up', delayBeforeStart: 0});
+
     }else{
 
         return;
@@ -988,7 +996,7 @@ function mostrarMensajesMarqueeTvhot() {
 
 function mostrarMensajesMarquee() {
 
-    if( textarray != null ){
+    if( ( textarray != null ) && ( textarray_buffer.length > 0 ) ){
 
         var length = textarray.length;
             //mirar
@@ -997,7 +1005,7 @@ function mostrarMensajesMarquee() {
             var mensajes_nuevos = obtenerMensajesNuevos();
             textarray = mensajes_nuevos;
 
-            mostrarMensajesMarquee()._delay(300000);
+            mostrarMensajesMarquee();
             return;
         }
 
@@ -1007,10 +1015,21 @@ function mostrarMensajesMarquee() {
             .bind('finished', mostrarMensajesMarquee)
             .html(texto)
             .marquee({duration: 20000, duplicated:false, gap:10, delayBeforeStart:0});
+
+    }else if( textarray_buffer.length == 0 ){
+
+        $mwo
+            .marquee('destroy')
+            .bind('finished', mostrarMensajesMarquee)
+            .html("Envia tu mensaje al 8540 para compartirlo en el Mensajero Afortunado!!!")
+            .marquee({duration: 25000, duplicated: false, gap: 10, delayBeforeStart: 0});
+
+        textarray_buffer = window.opener.mensajero_buffer;
+        textarray = window.opener.mensajero;
+
     }else{
 
-        console.log('esperar 30s')
-        mostrarMensajesMarquee().delay(30000);
+        return;
     }
 };
 
