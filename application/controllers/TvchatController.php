@@ -131,15 +131,7 @@ class TvchatController extends Zend_Controller_Action{
 
                 foreach ( $mensajes_nuevos as $indice => $mensaje ){
 
-                    if( $inicio == 0 ){
-
-                        $mensajes_marquee .= $mensaje['mensaje'];
-                        $inicio++;
-
-                    }else{
-
-                        $mensajes_marquee .= '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' . $mensaje['mensaje'];
-                    }
+                    $mensajes_nuevos[$indice]['mostrado'] = 0;
                 }
             }else{
 
@@ -155,7 +147,7 @@ class TvchatController extends Zend_Controller_Action{
 
             array(
                 'mensajes_operador' => $mensajes_nuevos,
-                'mensajes_marquee' => $mensajes_marquee,
+                'mensajes_marquee' => $mensajes_nuevos,
                 'siguiente_id_solicitar' => $siguiente_id_solicitar
             )
         );

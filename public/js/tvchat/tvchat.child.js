@@ -10,6 +10,9 @@ var tombola = null;
 var intervalo = 0;
 var mostrar = 0;
 var p = {};
+var cantidad_concatenar = window.opener.cantidad_sms_concatenar;
+var sms_nuevos = 0;
+var cadena_x_defecto = 'Envia tu mensaje al 8540 para compartirlo en el Mensajero Afortunado!!!';
 
 //mensajero
 var textarray_buffer = [];
@@ -848,9 +851,6 @@ function cargarModulo( params ){
     }
     else if( params.accion == "mostrar" && params.modulo == "tvmensajero" ){
 
-        textarray_buffer = window.opener.mensajero_buffer;
-        textarray = window.opener.mensajero;
-
         //$('.tvchat_screen').children().hide();
         $('.tvchat_screen').empty();
 
@@ -890,19 +890,19 @@ function cargarModulo( params ){
                                                 .attr('src', "/img/tvchat/tvchat_detalle_derecha.png")
                                         )
                                 ),
-                                $(document.createElement("div"))
-                                    .attr('id', 'ventana')
-                                    .addClass('marquee')
-                                )
+                            $(document.createElement("div"))
+                                .attr('id', 'ventana')
+                                .addClass('marquee')
                         )
+                )
 
-                ,
-                $(document.createElement("div"))
-                    .attr('id', 'costo')
-                    .addClass('costo')
-                    .append(
-                        'Costo por cada mensaje cobro semanal Gs. 2200 IVA incluido - Proveedor y Licenciatario Entermovil SA Asuncion Paraguay'
-                    )
+            ,
+            $(document.createElement("div"))
+                .attr('id', 'costo')
+                .addClass('costo')
+                .append(
+                    'Costo por cada mensaje cobro semanal Gs. 2200 IVA incluido - Proveedor y Licenciatario Entermovil SA Asuncion Paraguay'
+                )
         );
 
         $mwo = $('.marquee');
@@ -939,7 +939,7 @@ function setearDom(){
     rouletter1 = null;
     rouletter2 = null;
     rouletter3 = null;
-    textarray_buffer =  window.opener.mensajero;
+    //textarray_buffer =  window.opener.mensajero;
     textarray = [];
     elementos_ganadores = [];
     wheel = null;
@@ -1008,12 +1008,10 @@ function mostrarMensajesMarquee() {
     if( ( textarray != null ) && ( textarray_buffer.length > 0 ) ){
 
         var length = textarray.length;
-            //mirar
+        //mirar
         if( length == 0 ){
 
-            var mensajes_nuevos = obtenerMensajesNuevos();
-            textarray = mensajes_nuevos;
-
+            procesarMensajes();
             mostrarMensajesMarquee();
             return;
         }
@@ -1030,7 +1028,7 @@ function mostrarMensajesMarquee() {
         $mwo
             .marquee('destroy')
             .bind('finished', mostrarMensajesMarquee)
-            .html("Envia tu mensaje al 8540 para compartirlo en el Mensajero Afortunado!!!")
+            .html(cadena_x_defecto)
             .marquee({duration: 25000, duplicated: false, gap: 10, delayBeforeStart: 0});
 
         textarray_buffer = window.opener.mensajero_buffer;
@@ -1048,9 +1046,76 @@ function obtenerMensajesNuevos(){
     return textarray;
 };
 
+function procesarMensajes(){
+
+    var objeto;
+    var texto = '';
+
+    if( textarray_buffer.length > 0 ){
+
+        //si la cantidad por defecto a concatenar es menor que la longitud, concateno lo especificado
+        if( cantidad_concatenar <= textarray_buffer.length ){
+
+            console.log('sms_nuevos: ' + sms_nuevos );
+
+            if( sms_nuevos > 0 ){
+
+                objeto = textarray_buffer[0];
+
+                while( objeto.mostrado > 0  ){
+                    textarray_buffer.shift();
+                    textarray_buffer.push( objeto );
+                    objeto = textarray_buffer[0];
+                }
+
+                cantidad_concatenar = sms_nuevos;
+                sms_nuevos = 0;
+            }
+
+            for ( var i = 0; i < cantidad_concatenar; i++ ) {
+
+                objeto = textarray_buffer[0];
+                objeto.mostrado +=1;
+                textarray_buffer.shift();
+                textarray_buffer.push(objeto);
+                console.log('mirar ' + objeto.mensaje);
+
+                if ( i == 0 )
+                    texto += objeto.mensaje;
+                else
+                    texto += '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' + objeto.mensaje;
+            }
+        }else{
+            //sino hace lo que puede nomas
+            for ( var i = 0; i < textarray_buffer.length; i++ ) {
+
+                objeto = textarray_buffer[0];
+                textarray_buffer.shift();
+                textarray_buffer.push(objeto);
+                console.log('mirar ' + objeto.mensaje);
+
+                if ( i == 0 )
+                    texto += objeto.mensaje;
+                else
+                    texto += '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' + objeto.mensaje;
+            }
+
+            texto += '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp' + cadena_x_defecto;
+        }
+
+        console.log( 'mirar ' + texto );
+        textarray.push(texto);
+        console.log( 'textarray ' + textarray );
+        console.log( 'textarray_buffer ' + textarray_buffer );
+        cantidad_concatenar = window.opener.cantidad_sms_concatenar
+    }
+
+    return;
+}
+
 /*$(window).bind( 'beforeunload', function(){
 
-    window.opener.$("#cerrar_ventana_principal").trigger('click');
+ window.opener.$("#cerrar_ventana_principal").trigger('click');
 
-    return 'Esta seguro?';
-});*/
+ return 'Esta seguro?';
+ });*/
