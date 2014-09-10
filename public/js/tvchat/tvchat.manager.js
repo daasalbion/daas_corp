@@ -795,6 +795,20 @@ $('#cargar_piropo2').click(function(){
 
     //habilitarBotones( 2, 'piropo' );
 });
+$('#cerrar_piropo2').click(function(){
+
+    //valores por defecto
+    var params = {
+
+        juego: "piropo2"
+    };
+
+    tvchat.descargarJuego(params);
+
+    removerCss();
+
+    cargarModuloPorDefecto();
+});
 $('#getWinElementsPiropo').click(function(){
 
     var btn = $(this)

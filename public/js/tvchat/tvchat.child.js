@@ -413,6 +413,12 @@ function descargarJuego( params ){
         juego.remove();
         $('#game_wrapper').empty();
     }
+    else if( params['juego'] == "piropo2" ){
+
+        var juego = $('#mensaje_wrapper');
+        juego.remove();
+        $('#game_wrapper').empty();
+    }
     else if( params['juego'] == "tvchat" ){
 
         var juego = $('#ventana');
@@ -987,7 +993,7 @@ function mostrarMensajesMarqueeTvhot() {
 
         $mwo
             .marquee('destroy')
-            .bind('finished', mostrarMensajesMarquee)
+            .bind('finished', mostrarMensajesMarqueeTvhot)
             .html("Envia tu mensaje al 8540 para compartirlo en el Mensajero Afortunado!!!")
             .marquee({duration: 25000, duplicated: false, gap: 10, direction: 'up', delayBeforeStart: 0});
 
