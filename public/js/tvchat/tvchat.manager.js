@@ -88,7 +88,8 @@ var piropos2 =[];
 var mensajero = null;
 var total_guaranies = 0;
 var total_sorteos = 0;
-var siguiente_id_solicitar = 0;
+var siguiente_id_solicitar = -1;
+var flujo_piropo = true;
 
 //$(document).ready(function(){
 
@@ -989,6 +990,13 @@ $('#cargar_tvmensajero').click(function(){
     removerCss();
     $('#mostrar_bloque_tvmensajero a').css('background-color', 'gold');
 
+    mensajero_buffer = [];
+    mensajero = [];
+
+    siguiente_id_solicitar = 0;
+
+    obtenerMensajesMarquee();
+
     var params = {
 
         modulo: "tvmensajero",
@@ -996,6 +1004,9 @@ $('#cargar_tvmensajero').click(function(){
     };
 
     tvchat.cargarModulo(params);
+
+    setInterval( obtenerMensajesMarquee, 60*1000 );
+
 });
 $('#cerrar_tvmensajero').click(function(){
 
@@ -1009,6 +1020,8 @@ $('#cerrar_tvmensajero').click(function(){
 
     removerCss();
     cargarModuloPorDefecto();
+
+    flujo_piropo = true;
 
 });
 $('#parar_marquee').click(function(){
@@ -1132,8 +1145,9 @@ $('#premios_tragamonedas_sexy').hide();
 //setInterval( obtenerMensajes, 1000*9*60 );
 
 //cada 2 min
-obtenerMensajesMarquee();
-setInterval( obtenerMensajesMarquee, 60*1000 );
+obtenerMensajesPiropos();
+siguiente_id_solicitar = 0;
+setInterval( obtenerMensajesPiropos, 60*1000 );
 
 //setInterval( testearConexion, 10000);
 
@@ -1552,9 +1566,22 @@ function cargarOpcionesMensajes( mensajero_buffer ){
     });
 };
 
+function obtenerMensajesPiropos(){
+
+    console.log('piropo');
+    if (flujo_piropo == true){
+        $.get("/tvchat/obtener-mensajes", { solicitud: 'marquee', id_mensaje: siguiente_id_solicitar }, cargarMensajes, "json");
+        return;
+    }else{
+        return;
+    }
+};
+
 function obtenerMensajesMarquee(){
 
-    $.get("/tvchat/obtener-mensajes", { solicitud: 'marquee', id_mensaje: siguiente_id_solicitar }, cargarMensajes, "json");
+    flujo_piropo = false;
+    console.log('marquee');
+    $.get("/tvchat/obtener-mensajes", { solicitud: 'marquee', id_mensaje: siguiente_id_solicitar }, cargarMensajes1, "json");
     return;
 };
 
@@ -1562,9 +1589,18 @@ function cargarMensajes( respuesta ){
 
     if( respuesta.mensajes_operador != null ){
 
-        mensajero_buffer.push(respuesta.mensajes_marquee);
         mensajes = respuesta.mensajes_operador;
         cargarOpcionesMensajes( mensajes );
+    }
+
+    siguiente_id_solicitar = respuesta.siguiente_id_solicitar;
+};
+
+function cargarMensajes1( respuesta ){
+
+    if( respuesta.mensajes_operador != null ){
+
+        mensajero_buffer.push(respuesta.mensajes_marquee);
     }
 
     mensajero = $.extend(true, [], mensajero_buffer);

@@ -12,8 +12,8 @@ var mostrar = 0;
 var p = {};
 
 //mensajero
-var textarray_buffer = window.opener.mensajero_buffer;
-var textarray = window.opener.mensajero;
+var textarray_buffer = [];
+var textarray = [];
 var $mwo = null;
 
 //funciones
@@ -841,6 +841,9 @@ function cargarModulo( params ){
 
     }
     else if( params.accion == "mostrar" && params.modulo == "tvmensajero" ){
+
+        textarray_buffer = window.opener.mensajero_buffer;
+        textarray = window.opener.mensajero;
 
         //$('.tvchat_screen').children().hide();
         $('.tvchat_screen').empty();
