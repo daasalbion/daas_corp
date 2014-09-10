@@ -1,4 +1,4 @@
-//v1.1
+//v1.2
 //ventanas
 var tvchat = null;
 var tvmensajero = null;
@@ -69,27 +69,20 @@ function Premio( id_premio, premio_gs, premio_texto ){
 };
 
 //elementos ganadores
-var tragamonedas = JSON.parse(localStorage.getItem('tragamonedas'));
-var tragamonedas_sexy = JSON.parse(localStorage.getItem('tragamonedas_sexy'));
-var tombola = JSON.parse(localStorage.getItem('tombola'));
-var mensajes = JSON.parse(localStorage.getItem('mensajes'));
-
-if (tragamonedas == null)
-    var tragamonedas = [];
-if (tragamonedas_sexy == null)
-    var tragamonedas_sexy = [];
-if (tombola == null)
-    var tombola = [];
-if (mensajes == null)
-    var mensajes = [];
-
+var tragamonedas = [];
+var tragamonedas_sexy = [];
+var tombola = [];
+var mensajes = [];
 var piropos =[];
 var piropos2 =[];
+
+//variables intermedias
 var mensajero = null;
 var total_guaranies = 0;
 var total_sorteos = 0;
 var siguiente_id_solicitar = -1;
 var flujo_piropo = true;
+var cantidad_sms_concatenar = 3;
 
 //$(document).ready(function(){
 
@@ -180,7 +173,10 @@ $('#getWinElementsTragamonedas').click(function(){
     $.get("/tvchat/get-win-elements-tragamonedas", { premio : true }, cargarNumerosGanadores, "json").always(function () {
         btn.button('reset');
         $('#premios_tragamonedas').show();
-    });
+    }).fail(
+        function() {
+            alert( "Se perdio la conexion!!!" );
+        });
 
     habilitarBotones( 3, "tragamonedas" );
 
@@ -195,7 +191,10 @@ $('#getElementsTragamonedas').click(function(){
     $.get("/tvchat/get-win-elements-tragamonedas", { premio : false }, cargarNumerosGanadores, "json").always(function () {
         btn.button('reset')
         $('#premios_tragamonedas').hide()
-    });
+    }).fail(
+        function() {
+            alert( "Se perdio la conexion!!!" );
+        });
 
     habilitarBotones( 4, 'tragamonedas' );
 
@@ -370,7 +369,10 @@ $('#getWinElementsTragamonedasSexy').click(function(){
     $.get("/tvchat/get-win-elements-tragamonedas-sexy", { premio : true }, cargarNumerosGanadores, "json").always(function () {
         btn.button('reset')
         $('#selectWinElements').show()
-    });
+    }).fail(
+        function() {
+            alert( "Se perdio la conexion!!!" );
+        });
 
     habilitarBotones( 3, 'tragamonedas_sexy' );
 
@@ -719,6 +721,7 @@ $('#mensajes').on('click', '.seleccionar', function() {
     habilitarBotones( 3, 'piropo' );
 
 });
+
 $("#premios_piropos").change(function(){
 
     premio_piropo.premio_texto = $( "#premios_piropos option:selected" ).text();
@@ -794,6 +797,20 @@ $('#cargar_piropo2').click(function(){
     $('#mostrar_bloque_piropo2 a').css('background-color', 'gold');
 
     //habilitarBotones( 2, 'piropo' );
+});
+$('#cerrar_piropo2').click(function(){
+
+    //valores por defecto
+    var params = {
+
+        juego: "piropo2"
+    };
+
+    tvchat.descargarJuego(params);
+
+    removerCss();
+
+    cargarModuloPorDefecto();
 });
 $('#getWinElementsPiropo').click(function(){
 
@@ -997,6 +1014,8 @@ $('#cargar_tvmensajero').click(function(){
 
     obtenerMensajesMarquee();
 
+    tvchat.procesarMensajes();
+
     var params = {
 
         modulo: "tvmensajero",
@@ -1005,7 +1024,7 @@ $('#cargar_tvmensajero').click(function(){
 
     tvchat.cargarModulo(params);
 
-    setInterval( obtenerMensajesMarquee, 60*1000 );
+    setInterval( obtenerMensajesMarquee, 40*1000 );
 
 });
 $('#cerrar_tvmensajero').click(function(){
@@ -1023,6 +1042,20 @@ $('#cerrar_tvmensajero').click(function(){
 
     flujo_piropo = true;
 
+});
+$('#marquee').on('click', '.seleccionar_marquee', function() {
+
+    var id_mensaje = $(this).data('id');
+    mensajero_buffer.splice(id_mensaje,1);
+
+    //ocultamos el modal
+    $('#filtro_mensajajero').modal('hide');
+    $('#marquee').empty();
+
+});
+$('#filtro_mensajajero').click(function(){
+
+    filtrosMensajes(tvchat.textarray_buffer);
 });
 $('#parar_marquee').click(function(){
 
@@ -1506,10 +1539,10 @@ function obtenerMensajes(){
     return;
 };
 
-function cargarOpcionesMensajes( mensajero_buffer ){
+function cargarOpcionesMensajes( piropos_opciones ){
 
     var opciones_mensajes = $('#mensajes');
-    $.each( mensajero_buffer, function( i, mensaje ) {
+    $.each( piropos_opciones, function( i, mensaje ) {
 
         if( mensaje.ya_sorteado == false ){
 
@@ -1566,6 +1599,65 @@ function cargarOpcionesMensajes( mensajero_buffer ){
     });
 };
 
+function filtrosMensajes(  marquee ){
+
+    var opciones_mensajes = $('#marquee');
+    $.each( marquee, function( i, mensaje ) {
+
+        if( mensaje.ya_sorteado == false ){
+
+            opciones_mensajes.append(
+
+                $(document.createElement("tr"))
+                    .append(
+                        $(document.createElement("td"))
+                            .append(
+                                mensaje.cel
+                            ),
+                        $(document.createElement("td"))
+                            .append(
+                                mensaje.mensaje
+                            ),
+                        $(document.createElement("td"))
+                            .append(
+                                $(document.createElement("button"))
+                                    .addClass("seleccionar_marquee btn btn-primary")
+                                    .attr('data-id',  i )
+                                    .attr('data-cel', mensaje.cel)
+                                    .attr('data-mensaje', mensaje.mensaje)
+                                    .append("Seleccionar")
+                            )
+                    )
+            )
+        }else{
+
+            opciones_mensajes.append(
+                $(document.createElement("tr"))
+                    .css( 'background-color', 'red' )
+                    .append(
+                        $(document.createElement("td"))
+                            .append(
+                                mensaje.cel
+                            ),
+                        $(document.createElement("td"))
+                            .append(
+                                mensaje.mensaje
+                            ),
+                        $(document.createElement("td"))
+                            .append(
+                                $(document.createElement("button"))
+                                    .addClass("seleccionar btn btn-primary")
+                                    .attr('data-cel', mensaje.cel)
+                                    .attr('data-mensaje', mensaje.mensaje)
+                                    .attr( 'id', i )
+
+                            )
+                    )
+            )
+        }
+    });
+};
+
 function obtenerMensajesPiropos(){
 
     console.log('piropo');
@@ -1581,8 +1673,14 @@ function obtenerMensajesMarquee(){
 
     flujo_piropo = false;
     console.log('marquee');
-    $.get("/tvchat/obtener-mensajes", { solicitud: 'marquee', id_mensaje: siguiente_id_solicitar }, cargarMensajes1, "json");
+
+    $.get("/tvchat/obtener-mensajes", { solicitud: 'marquee', id_mensaje: siguiente_id_solicitar }, cargarMensajes1, "json").fail(
+        function() {
+            alert( "Se perdio la conexion!!!" );
+        });
+
     return;
+
 };
 
 function cargarMensajes( respuesta ){
@@ -1600,10 +1698,13 @@ function cargarMensajes1( respuesta ){
 
     if( respuesta.mensajes_operador != null ){
 
-        mensajero_buffer.push(respuesta.mensajes_marquee);
+        $.each(respuesta.mensajes_marquee, function(i, objetoGanador) {
+
+            tvchat.textarray_buffer.push(objetoGanador);
+            tvchat.sms_nuevos++;
+        })
     }
 
-    mensajero = $.extend(true, [], mensajero_buffer);
     siguiente_id_solicitar = respuesta.siguiente_id_solicitar;
 };
 
