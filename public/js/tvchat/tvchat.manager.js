@@ -82,7 +82,7 @@ var total_guaranies = 0;
 var total_sorteos = 0;
 var siguiente_id_solicitar = -1;
 var flujo_piropo = true;
-var cantidad_sms_concatenar = 3;
+var cantidad_sms_concatenar = 6;
 
 //$(document).ready(function(){
 
@@ -1050,11 +1050,12 @@ $('#marquee').on('click', '.seleccionar_marquee', function() {
 
     //ocultamos el modal
     $('#filtro_mensajajero').modal('hide');
-    $('#marquee').empty();
+
 
 });
-$('#filtro_mensajajero').click(function(){
+$('#seleccionar_marquee').click(function(){
 
+    $('#marquee').empty();
     filtrosMensajes(tvchat.textarray_buffer);
 });
 $('#parar_marquee').click(function(){
@@ -1574,7 +1575,6 @@ function cargarOpcionesMensajes( piropos_opciones ){
 
             opciones_mensajes.append(
                 $(document.createElement("tr"))
-                    .css( 'background-color', 'red' )
                     .append(
                         $(document.createElement("td"))
                             .append(
@@ -1586,12 +1586,7 @@ function cargarOpcionesMensajes( piropos_opciones ){
                             ),
                         $(document.createElement("td"))
                             .append(
-                                $(document.createElement("button"))
-                                    .addClass("seleccionar btn btn-primary")
-                                    .attr('data-cel', mensaje.cel)
-                                    .attr('data-mensaje', mensaje.mensaje)
-                                    .attr( 'id', i )
-
+                                'Ya sorteado'
                             )
                     )
             )
@@ -1604,57 +1599,29 @@ function filtrosMensajes(  marquee ){
     var opciones_mensajes = $('#marquee');
     $.each( marquee, function( i, mensaje ) {
 
-        if( mensaje.ya_sorteado == false ){
+        opciones_mensajes.append(
 
-            opciones_mensajes.append(
-
-                $(document.createElement("tr"))
-                    .append(
-                        $(document.createElement("td"))
-                            .append(
-                                mensaje.cel
-                            ),
-                        $(document.createElement("td"))
-                            .append(
-                                mensaje.mensaje
-                            ),
-                        $(document.createElement("td"))
-                            .append(
-                                $(document.createElement("button"))
-                                    .addClass("seleccionar_marquee btn btn-primary")
-                                    .attr('data-id',  i )
-                                    .attr('data-cel', mensaje.cel)
-                                    .attr('data-mensaje', mensaje.mensaje)
-                                    .append("Seleccionar")
-                            )
-                    )
-            )
-        }else{
-
-            opciones_mensajes.append(
-                $(document.createElement("tr"))
-                    .css( 'background-color', 'red' )
-                    .append(
-                        $(document.createElement("td"))
-                            .append(
-                                mensaje.cel
-                            ),
-                        $(document.createElement("td"))
-                            .append(
-                                mensaje.mensaje
-                            ),
-                        $(document.createElement("td"))
-                            .append(
-                                $(document.createElement("button"))
-                                    .addClass("seleccionar btn btn-primary")
-                                    .attr('data-cel', mensaje.cel)
-                                    .attr('data-mensaje', mensaje.mensaje)
-                                    .attr( 'id', i )
-
-                            )
-                    )
-            )
-        }
+            $(document.createElement("tr"))
+                .append(
+                    $(document.createElement("td"))
+                        .append(
+                            mensaje.cel
+                        ),
+                    $(document.createElement("td"))
+                        .append(
+                            mensaje.mensaje
+                        ),
+                    $(document.createElement("td"))
+                        .append(
+                            $(document.createElement("button"))
+                                .addClass("seleccionar_marquee btn btn-primary")
+                                .attr('data-id',  i )
+                                .attr('data-cel', mensaje.cel)
+                                .attr('data-mensaje', mensaje.mensaje)
+                                .append("Seleccionar")
+                        )
+                )
+        )
     });
 };
 

@@ -909,7 +909,7 @@ function cargarModulo( params ){
 
         $('.marquee').marquee({
             //speed in milliseconds of the marquee
-            duration: 20000,
+            duration: 15000,
             //gap in pixels between the tickers
             gap: 50,
             //time in milliseconds before the marquee will start animating
@@ -1021,7 +1021,7 @@ function mostrarMensajesMarquee() {
             .marquee('destroy')
             .bind('finished', mostrarMensajesMarquee)
             .html(texto)
-            .marquee({duration: 20000, duplicated:false, gap:10, delayBeforeStart:0});
+            .marquee({duration: 15000, duplicated:false, gap:5, delayBeforeStart:0});
 
     }else if( textarray_buffer.length == 0 ){
 
@@ -1029,7 +1029,7 @@ function mostrarMensajesMarquee() {
             .marquee('destroy')
             .bind('finished', mostrarMensajesMarquee)
             .html(cadena_x_defecto)
-            .marquee({duration: 25000, duplicated: false, gap: 10, delayBeforeStart: 0});
+            .marquee({duration: 20000, duplicated: false, gap: 5, delayBeforeStart: 0});
 
         textarray_buffer = window.opener.mensajero_buffer;
         textarray = window.opener.mensajero;
