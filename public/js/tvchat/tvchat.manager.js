@@ -82,7 +82,8 @@ var total_guaranies = 0;
 var total_sorteos = 0;
 var siguiente_id_solicitar = -1;
 var flujo_piropo = true;
-var cantidad_sms_concatenar = 3;
+var cantidad_sms_concatenar = 6;
+var intervalo_mensajero = null;
 
 //$(document).ready(function(){
 
@@ -607,7 +608,7 @@ $("#premios_tombola").change(function(){
 });
 $('#jugarTombola').click(function(){
 
-    if( sorteoTombola.cel == "Sin Ganador" ){
+    if( ( sorteoTombola.cel == "Sin Ganador" ) || ( sorteoTombola.premio == null ) ){
 
         var premio_texto = 'Sin Premio';
         var id_premio = 0;
@@ -721,7 +722,11 @@ $('#mensajes').on('click', '.seleccionar', function() {
     habilitarBotones( 3, 'piropo' );
 
 });
-
+$('#WinElementsPiropo').on('click', '.eliminar_piropo', function(){
+    var indice = $(this).data('id');
+    piropos_buffer.splice(indice, 1);
+    refrescarPiroposGanadores();
+});
 $("#premios_piropos").change(function(){
 
     premio_piropo.premio_texto = $( "#premios_piropos option:selected" ).text();
@@ -736,11 +741,13 @@ $("#premios_piropos").change(function(){
 });
 $('#jugarPiropo').click(function(){
 
+    sorteoPiropoMensajes = piropos_buffer[0];
+    piropos_buffer.shift();
+
+    refrescarPiroposGanadores();
+
     sorteoPiropoMensajes.premio = new Premio(4, 50000, '50.000 Gs en Saldo');
     var nuevoGanador = sorteoPiropoMensajes;
-    //borrar elemento sorteado
-    $('#WinElementsPiropo').empty();
-    $('#WinPhoneNumberPiropo').empty();
 
     var params = {
 
@@ -852,8 +859,6 @@ $('#jugarPiropo2').click(function(){
 
     var tragamonedas_historial = $('#jugador_piropo2');
     $('#jugador_piropo2').empty();
-
-
 
     tragamonedas_historial.append(
         $(document.createElement("p"))
@@ -1024,7 +1029,7 @@ $('#cargar_tvmensajero').click(function(){
 
     tvchat.cargarModulo(params);
 
-    setInterval( obtenerMensajesMarquee, 40*1000 );
+    intervalo_mensajero = setInterval( obtenerMensajesMarquee, 30*1000 );
 
 });
 $('#cerrar_tvmensajero').click(function(){
@@ -1050,11 +1055,12 @@ $('#marquee').on('click', '.seleccionar_marquee', function() {
 
     //ocultamos el modal
     $('#filtro_mensajajero').modal('hide');
-    $('#marquee').empty();
+
 
 });
-$('#filtro_mensajajero').click(function(){
+$('#seleccionar_marquee').click(function(){
 
+    $('#marquee').empty();
     filtrosMensajes(tvchat.textarray_buffer);
 });
 $('#parar_marquee').click(function(){
@@ -1071,9 +1077,15 @@ $('#parar_marquee').click(function(){
 //tvhot
 $('#abrir_ventana_tvhot').click(function(){
 
-    //$('#abrir_ventana_tvhot').attr('disabled', 'true');
-    /*tvhot = window.open("/tvchat/tvhot",
-     "_blank", "width=720, height=576, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=auto, fullscreen=yes");*/
+    clearInterval(intervalo_mensajero);
+
+    mensajero_buffer = [];
+    mensajero = [];
+
+    siguiente_id_solicitar = 0;
+
+    obtenerMensajesMarquee();
+
     removerCss();
     $('#mostrar_bloque_tvhot a').css('background-color', 'gold');
 
@@ -1082,6 +1094,8 @@ $('#abrir_ventana_tvhot').click(function(){
         accion: "mostrar",
         modulo: "tvhot"
     }
+
+    setInterval( obtenerMensajesMarquee, 30*1000 );
 
     tvchat.cargarModulo( params );
 });
@@ -1097,6 +1111,42 @@ $('#cerrar_ventana_tvhot').click(function(){
 
     tvchat.cargarModulo( params );
 
+});
+$('#arriba').click(function(){
+
+    tvchat.$('#tvhot_mensajero').css( "top", "-=1" );
+});
+$('#abajo').click(function(){
+
+    tvchat.$('#tvhot_mensajero').css( "top", "+=1" );
+});
+$('#izquierda').click(function(){
+
+    tvchat.$('#tvhot_mensajero').css( "left", "-=1" );
+});
+$('#derecha').click(function(){
+
+    tvchat.$('#tvhot_mensajero').css( "left", "+=1" );
+});
+$('#alto_mas').click(function(){
+
+    tvchat.$('#tvhot_mensajero').css( "height", "+=1" );
+    tvchat.$('.ver').css( "height", "+=1" );
+});
+$('#alto_menos').click(function(){
+
+    tvchat.$('#tvhot_mensajero').css( "height", "-=1" );
+    tvchat.$('.ver').css( "height", "-=1" );
+});
+$('#ancho_mas').click(function(){
+
+    tvchat.$('.ver').css( "width", "+=1" );
+    tvchat.$('#tvhot_mensajero').css( "width", "+=1" );
+});
+$('#ancho_menos').click(function(){
+
+    tvchat.$('.ver').css( "width", "-=1" );
+    tvchat.$('#tvhot_mensajero').css( "width", "-=1" );
 });
 
 //mostrar lineas punteadas para la conductora
@@ -1329,6 +1379,33 @@ function habilitarBotones( nivel, juego ){
     }
 };
 
+function refrescarPiroposGanadores(){
+
+    $('#WinElementsPiropo').empty();
+    $.each( piropos_buffer, function( i, piropo ){
+
+        $('#WinElementsPiropo')
+            .append(
+                $(document.createElement("tr"))
+                    .append(
+                        $(document.createElement("td"))
+                            .append(
+                                $(document.createElement("p"))
+                                    .append( piropo.cel + ': ' + piropo.codigo )
+                                    .addClass("numeros_sorteados")
+                            ),
+                        $(document.createElement("td"))
+                            .append(
+                                $(document.createElement("button"))
+                                    .attr('data-id',  i )
+                                    .append( 'Eliminar' )
+                                    .addClass("btn btn-primary eliminar_piropo")
+                            )
+                    )
+            );
+    });
+}
+
 function cargarNumerosGanadores( respuesta ){
 
     /*"id_sorteo" => $id_sorteo,
@@ -1475,28 +1552,8 @@ function cargarNumerosGanadores( respuesta ){
     }
     else if( respuesta.juego == "piropo" ){
 
-        $('#WinElementsPiropo').empty();
-        $('#WinPhoneNumberPiropo').empty();
-
-        $('#WinElementsPiropo')
-            .append(
-                $(document.createElement("p"))
-            );
-        $('#WinPhoneNumberPiropo')
-            .append(
-                $(document.createElement("p"))
-            );
-
-        $('#WinElementsPiropo p')
-            .append( respuesta.codigo )
-            .addClass("numeros_sorteados");
-
-        $('#WinPhoneNumberPiropo p')
-            .append( respuesta.cel )
-            .addClass("numeros_sorteados");
-
         piropos_buffer.push(respuesta);
-
+        refrescarPiroposGanadores();
     }
     else if( respuesta.juego == "piropo2" ){
 
@@ -1574,7 +1631,6 @@ function cargarOpcionesMensajes( piropos_opciones ){
 
             opciones_mensajes.append(
                 $(document.createElement("tr"))
-                    .css( 'background-color', 'red' )
                     .append(
                         $(document.createElement("td"))
                             .append(
@@ -1586,12 +1642,7 @@ function cargarOpcionesMensajes( piropos_opciones ){
                             ),
                         $(document.createElement("td"))
                             .append(
-                                $(document.createElement("button"))
-                                    .addClass("seleccionar btn btn-primary")
-                                    .attr('data-cel', mensaje.cel)
-                                    .attr('data-mensaje', mensaje.mensaje)
-                                    .attr( 'id', i )
-
+                                'Ya sorteado'
                             )
                     )
             )
@@ -1604,57 +1655,29 @@ function filtrosMensajes(  marquee ){
     var opciones_mensajes = $('#marquee');
     $.each( marquee, function( i, mensaje ) {
 
-        if( mensaje.ya_sorteado == false ){
+        opciones_mensajes.append(
 
-            opciones_mensajes.append(
-
-                $(document.createElement("tr"))
-                    .append(
-                        $(document.createElement("td"))
-                            .append(
-                                mensaje.cel
-                            ),
-                        $(document.createElement("td"))
-                            .append(
-                                mensaje.mensaje
-                            ),
-                        $(document.createElement("td"))
-                            .append(
-                                $(document.createElement("button"))
-                                    .addClass("seleccionar_marquee btn btn-primary")
-                                    .attr('data-id',  i )
-                                    .attr('data-cel', mensaje.cel)
-                                    .attr('data-mensaje', mensaje.mensaje)
-                                    .append("Seleccionar")
-                            )
-                    )
-            )
-        }else{
-
-            opciones_mensajes.append(
-                $(document.createElement("tr"))
-                    .css( 'background-color', 'red' )
-                    .append(
-                        $(document.createElement("td"))
-                            .append(
-                                mensaje.cel
-                            ),
-                        $(document.createElement("td"))
-                            .append(
-                                mensaje.mensaje
-                            ),
-                        $(document.createElement("td"))
-                            .append(
-                                $(document.createElement("button"))
-                                    .addClass("seleccionar btn btn-primary")
-                                    .attr('data-cel', mensaje.cel)
-                                    .attr('data-mensaje', mensaje.mensaje)
-                                    .attr( 'id', i )
-
-                            )
-                    )
-            )
-        }
+            $(document.createElement("tr"))
+                .append(
+                    $(document.createElement("td"))
+                        .append(
+                            mensaje.cel
+                        ),
+                    $(document.createElement("td"))
+                        .append(
+                            mensaje.mensaje
+                        ),
+                    $(document.createElement("td"))
+                        .append(
+                            $(document.createElement("button"))
+                                .addClass("seleccionar_marquee btn btn-primary")
+                                .attr('data-id',  i )
+                                .attr('data-cel', mensaje.cel)
+                                .attr('data-mensaje', mensaje.mensaje)
+                                .append("Seleccionar")
+                        )
+                )
+        )
     });
 };
 
@@ -1791,7 +1814,7 @@ function crearSorteoPiropo( respuesta ){
     sorteoPiropoMensajes.id_sorteo = respuesta.id_sorteo;
 }
 
-$('#mostrar_bloque_tragamonedas').trigger('click');
+$('#mostrar_bloque_piropo1').trigger('click');
 
 //});
 

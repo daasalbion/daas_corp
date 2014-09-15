@@ -635,9 +635,7 @@ function jugarJuego( params ){
         console.log("cel_ganador: " + params["objeto_ganador"].cel);
         console.log("nombre_juego: " + params["objeto_ganador"].juego);
 
-        $('#mensaje_seleccionado h3').empty();
-        $('#mensaje_seleccionado h4').empty();
-        $('#mensaje_seleccionado h5').empty();
+        $('#mensaje_seleccionado').empty();
 
         $('#mensaje_seleccionado')
             .append(
@@ -809,6 +807,11 @@ function cargarModulo( params ){
     else if( params.accion == "mostrar" && params.modulo == "tvhot" ){
 
         //ocultamos y paramos la ventana principal para cargar el tvhot
+        if ($mwo != null)
+            $mwo.marquee('destroy')
+        else
+            $mwo = null;
+
         $('.tvchat_screen').hide();
 
         var contenedor = $('.contenedor');
@@ -828,7 +831,7 @@ function cargarModulo( params ){
 
         $('.marquee_tvhot').marquee({
             //speed in milliseconds of the marquee
-            duration: 20000,
+            duration: 10000,
             //gap in pixels between the tickers
             gap: 0,
             //time in milliseconds before the marquee will start animating
@@ -851,7 +854,6 @@ function cargarModulo( params ){
     }
     else if( params.accion == "mostrar" && params.modulo == "tvmensajero" ){
 
-        //$('.tvchat_screen').children().hide();
         $('.tvchat_screen').empty();
 
         $('.tvchat_screen')
@@ -909,7 +911,7 @@ function cargarModulo( params ){
 
         $('.marquee').marquee({
             //speed in milliseconds of the marquee
-            duration: 20000,
+            duration: 15000,
             //gap in pixels between the tickers
             gap: 50,
             //time in milliseconds before the marquee will start animating
@@ -971,23 +973,14 @@ function mostrarMensajesMarqueeTvhot() {
 
     if( ( textarray != null ) && ( textarray_buffer.length > 0 ) ){
 
-        var length = textarray.length;
-
-        if( length == 0 ){
-
-            var mensajes_nuevos = obtenerMensajesNuevos();
-            textarray = mensajes_nuevos;
-            mostrarMensajesMarqueeTvhot();
-
-            return;
-        }
+        procesarMensajesTvhot();
 
         var texto = textarray.pop();
         $mwo
             .marquee('destroy')
             .bind('finished', mostrarMensajesMarqueeTvhot)
             .html(texto)
-            .marquee({duration: 20000, duplicated:false, gap:10, direction:'up', delayBeforeStart:0});
+            .marquee({duration: 8000, duplicated: false, gap: 10, direction: 'up', delayBeforeStart:0});
 
     }else if( textarray_buffer.length == 0 ){
 
@@ -995,41 +988,7 @@ function mostrarMensajesMarqueeTvhot() {
             .marquee('destroy')
             .bind('finished', mostrarMensajesMarqueeTvhot)
             .html("Envia tu mensaje al 8540 para compartirlo en el Mensajero Afortunado!!!")
-            .marquee({duration: 25000, duplicated: false, gap: 10, direction: 'up', delayBeforeStart: 0});
-
-    }else{
-
-        return;
-    }
-};
-
-function mostrarMensajesMarquee() {
-
-    if( ( textarray != null ) && ( textarray_buffer.length > 0 ) ){
-
-        var length = textarray.length;
-        //mirar
-        if( length == 0 ){
-
-            procesarMensajes();
-            mostrarMensajesMarquee();
-            return;
-        }
-
-        var texto = textarray.pop();
-        $mwo
-            .marquee('destroy')
-            .bind('finished', mostrarMensajesMarquee)
-            .html(texto)
-            .marquee({duration: 20000, duplicated:false, gap:10, delayBeforeStart:0});
-
-    }else if( textarray_buffer.length == 0 ){
-
-        $mwo
-            .marquee('destroy')
-            .bind('finished', mostrarMensajesMarquee)
-            .html(cadena_x_defecto)
-            .marquee({duration: 25000, duplicated: false, gap: 10, delayBeforeStart: 0});
+            .marquee({duration: 10000, duplicated: false, gap: 10, direction: 'up', delayBeforeStart: 0});
 
         textarray_buffer = window.opener.mensajero_buffer;
         textarray = window.opener.mensajero;
@@ -1040,10 +999,96 @@ function mostrarMensajesMarquee() {
     }
 };
 
-function obtenerMensajesNuevos(){
+function procesarMensajesTvhot(){
 
-    textarray = $.extend(true, [], textarray_buffer);
-    return textarray;
+    var objeto;
+    var texto = '';
+
+    if( textarray_buffer.length > 0 ){
+
+        console.log("hay mensajes" + textarray_buffer);
+        //si la cantidad por defecto a concatenar es menor que la longitud, concateno lo especificado
+        if( cantidad_concatenar <= textarray_buffer.length ){
+
+            if( sms_nuevos > 0 ){
+
+                objeto = textarray_buffer[0];
+
+                while( objeto.mostrado > 0  ){
+                    textarray_buffer.shift();
+                    textarray_buffer.push( objeto );
+                    objeto = textarray_buffer[0];
+                }
+
+                cantidad_concatenar = sms_nuevos;
+                sms_nuevos = 0;
+            }
+
+            for ( var i = 0; i < cantidad_concatenar; i++ ) {
+
+                objeto = textarray_buffer[0];
+                objeto.mostrado +=1;
+                textarray_buffer.shift();
+                textarray_buffer.push(objeto);
+
+                if ( i == 0 )
+                    texto += objeto.mensaje;
+                else
+                    texto += '<br/><br/><br/>' + objeto.mensaje;
+            }
+        }else{
+            //sino hace lo que puede nomas
+            for ( var i = 0; i < textarray_buffer.length; i++ ) {
+
+                objeto = textarray_buffer[0];
+                textarray_buffer.shift();
+                textarray_buffer.push(objeto);
+                console.log('mirar ' + objeto.mensaje);
+
+                if ( i == 0 )
+                    texto += objeto.mensaje;
+                else
+                    texto += '<br/><br/><br/>' + objeto.mensaje;
+            }
+
+            texto += '<br/><br/><br/>' + cadena_x_defecto;
+        }
+
+        textarray.push(texto);
+        cantidad_concatenar = window.opener.cantidad_sms_concatenar
+    }
+
+    return;
+};
+
+function mostrarMensajesMarquee() {
+
+    if( ( textarray != null ) && ( textarray_buffer.length > 0 ) ){
+
+        procesarMensajes();
+
+        var texto = textarray.pop();
+        $mwo
+            .marquee('destroy')
+            .bind('finished', mostrarMensajesMarquee)
+            .html(texto)
+            .marquee({duration: 15000, duplicated: false, gap: 5, delayBeforeStart: 0});
+
+    }else if( textarray_buffer.length == 0 ){
+
+        $mwo
+            .marquee('destroy')
+            .bind('finished', mostrarMensajesMarquee)
+            .html(cadena_x_defecto)
+            .marquee({duration: 20000, duplicated: false, gap: 5, delayBeforeStart: 0});
+
+        textarray_buffer = window.opener.mensajero_buffer;
+        textarray = window.opener.mensajero;
+
+    }else{
+
+        return;
+    }
 };
 
 function procesarMensajes(){
@@ -1111,11 +1156,12 @@ function procesarMensajes(){
     }
 
     return;
-}
+};
 
 /*$(window).bind( 'beforeunload', function(){
 
  window.opener.$("#cerrar_ventana_principal").trigger('click');
 
  return 'Esta seguro?';
+
  });*/
