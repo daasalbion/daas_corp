@@ -224,7 +224,7 @@ $('#jugarTragamonedas').click(function(){
 
     tvchat.cargarJuego(params);
 
-    if( sorteoTragamonedas.cel == "Sin Ganador" ){
+    if( ( sorteoTragamonedas.cel == "Sin Ganador" ) || ( sorteoTragamonedas.premio == null ) ){
 
         var premio_texto = 'Sin Premio';
         var id_premio = 0;
@@ -694,6 +694,10 @@ $('#cerrar_piropo').click(function(){
 
     cargarModuloPorDefecto();
 });
+$('#seleccionar_piropo').click(function(){
+    $('#mensajes').empty();
+    cargarOpcionesMensajes(mensajes);
+});
 $('#mensajes').on('click', '.seleccionar', function() {
 
     var mensaje = $(this).data('mensaje');
@@ -711,6 +715,7 @@ $('#mensajes').on('click', '.seleccionar', function() {
     //cel, codigo, premio, juego, id_sorteo
     //seteamos la variable
     sorteoPiropoMensajes = new Sorteo( cel, mensaje, '', 'piropo', '' );
+    sorteoPiropoMensajes.id_mensaje = id_mensaje;
     //luego seteamos id_sorteo
     obtenerSorteoPiropoMensajes( parametros );
 
@@ -781,6 +786,9 @@ $('#jugarPiropo').click(function(){
         id_premio : nuevoGanador.premio.id_premio
 
     };
+
+    console.log('seteo bien la variable '+sorteoPiropoMensajes.id_mensaje);
+    mensajes[sorteoPiropoMensajes.id_mensaje].ya_sorteado = true;
 
     console.log('hago null el sorteo tragamonedas');
     sorteoPiropoMensajes = null;
@@ -1095,7 +1103,7 @@ $('#abrir_ventana_tvhot').click(function(){
         modulo: "tvhot"
     }
 
-    setInterval( obtenerMensajesMarquee, 30*1000 );
+    intervalo_mensajero = setInterval( obtenerMensajesMarquee, 30*1000 );
 
     tvchat.cargarModulo( params );
 });
@@ -1711,7 +1719,7 @@ function cargarMensajes( respuesta ){
     if( respuesta.mensajes_operador != null ){
 
         mensajes = respuesta.mensajes_operador;
-        cargarOpcionesMensajes( mensajes );
+        //cargarOpcionesMensajes( mensajes );
     }
 
     siguiente_id_solicitar = respuesta.siguiente_id_solicitar;
