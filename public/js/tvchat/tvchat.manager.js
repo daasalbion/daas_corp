@@ -72,7 +72,7 @@ function Premio( id_premio, premio_gs, premio_texto ){
 var tragamonedas = [];
 var tragamonedas_sexy = [];
 var tombola = [];
-var mensajes = [];
+var mensajes = {};
 var piropos =[];
 var piropos2 =[];
 
@@ -1718,8 +1718,7 @@ function cargarMensajes( respuesta ){
 
     if( respuesta.mensajes_operador != null ){
 
-        mensajes = respuesta.mensajes_operador;
-        //cargarOpcionesMensajes( mensajes );
+        mensajes = $.extend( mensajes, respuesta.mensajes_operador );
     }
 
     siguiente_id_solicitar = respuesta.siguiente_id_solicitar;
