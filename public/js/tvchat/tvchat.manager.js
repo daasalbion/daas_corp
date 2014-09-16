@@ -1090,6 +1090,8 @@ $('#abrir_ventana_tvhot').click(function(){
     mensajero_buffer = [];
     mensajero = [];
 
+    tvchat.textarray_buffer = [];
+
     siguiente_id_solicitar = 0;
 
     obtenerMensajesMarquee();

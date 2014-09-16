@@ -980,7 +980,7 @@ function mostrarMensajesMarqueeTvhot() {
             .marquee('destroy')
             .bind('finished', mostrarMensajesMarqueeTvhot)
             .html(texto)
-            .marquee({duration: 8000, duplicated: false, gap: 10, direction: 'up', delayBeforeStart:0});
+            .marquee({duration: 12000, duplicated: false, gap: 10, direction: 'up', delayBeforeStart:0});
 
     }else if( textarray_buffer.length == 0 ){
 
@@ -988,7 +988,7 @@ function mostrarMensajesMarqueeTvhot() {
             .marquee('destroy')
             .bind('finished', mostrarMensajesMarqueeTvhot)
             .html("Envia tu mensaje al 8540 para compartirlo en el Mensajero Afortunado!!!")
-            .marquee({duration: 10000, duplicated: false, gap: 10, direction: 'up', delayBeforeStart: 0});
+            .marquee({duration: 12000, duplicated: false, gap: 10, direction: 'up', delayBeforeStart: 0});
 
         textarray_buffer = window.opener.mensajero_buffer;
         textarray = window.opener.mensajero;
