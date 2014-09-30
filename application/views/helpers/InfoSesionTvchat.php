@@ -22,10 +22,10 @@ class Zend_View_Helper_InfoSesionTvchat extends Zend_View_Helper_Abstract {
         $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
         $accesos = $namespace->accesos;
 
-        if(in_array('FULL', $accesos)) {
+        if( array_key_exists( 'admin', $accesos ) ) {
             return true;
         }
 
-        return in_array($controlador, $accesos);
+        return array_key_exists($controlador, $accesos);
     }
 }

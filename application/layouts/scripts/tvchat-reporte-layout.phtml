@@ -45,19 +45,19 @@
         </div>
         <div id="header_menu">
             <ul class="horizontal_list">
-
-                <?php if($this->infoSesionTvchat()->accesoPermitido('resumen-suscriptos')): ?>
-                <li><a id="link_reportes_altas_bajas" href="/tvchat-reportes/reporte/">Resumen</a></li>
+                <?php if($this->infoSesionTvchat()->accesoPermitido('altas_bajas')): ?>
+                    <li><a id="link_reportes_altas_bajas" href="/tvchat-reportes/reporte/">Resumen</a></li>
                 <?php endif; ?>
-                <?php if($this->infoSesionTvchat()->accesoPermitido('pautas')): ?>
-                <li><a id="link_reportes_suscriptos_por_hora" href="/tvchat-reportes/suscriptos-por-hora/">Suscriptos X Hora</a></li>
+                <?php if($this->infoSesionTvchat()->accesoPermitido('altas_bajas')): ?>
+                    <li><a id="link_reportes_suscriptos_por_hora" href="/tvchat-reportes/suscriptos-por-hora/">Suscriptos X Hora</a></li>
                 <?php endif; ?>
-                <?php if($this->infoSesionTvchat()->accesoPermitido('pautas')): ?>
-                <li><a id="link_reportes_altas_bajas_x_hora" href="/tvchat-reportes/reporte-x-hora/">Suscriptos X Hora Min</a></li>
+                <?php if($this->infoSesionTvchat()->accesoPermitido('altas_bajas')): ?>
+                    <li><a id="link_reportes_altas_bajas_x_hora" href="/tvchat-reportes/reporte-x-hora/">Suscriptos X Hora Min</a></li>
                 <?php endif; ?>
-
+                <?php if($this->infoSesionTvchat()->accesoPermitido('cobros')): ?>
+                    <li><a id="link_reportes_cobros" href="/tvchat-reportes/cobros/">Cobros</a></li>
+                <?php endif; ?>
             </ul>
-
         </div>
 	</div>
     <div class="colmask fullpage">

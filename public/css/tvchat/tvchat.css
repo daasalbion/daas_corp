@@ -16,7 +16,7 @@ body, html {
     margin-bottom: 0px;
     margin-top: 0px;
     margin-right: 0px;
-    background-image: url("/img/tvchat/tvchat_tira_fondo.png");
+    /*background-image: url("/img/tvchat/tvchat_tira_fondo.png");*/
 }
 .margenes{
     width: 716px;
@@ -56,12 +56,12 @@ body, html {
 }
 .tvchat{
     width: 800px;
-    height: 33px;
-    background-image: url("/img/tira_fondo_tvchat.jpg");
+    height: 44px;
+    /*background-image: url("/img/tira_fondo_tvchat.jpg");*/
     background-repeat: repeat-x;
     border-top: 3px solid;
     border-bottom: 3px solid;
-    border-color: #ffff00;
+    border-color: #ffffff;
     margin-bottom: 2px;
 }
 #ventana {
@@ -86,12 +86,12 @@ body, html {
 #scroller {
     background-color: #B22222;
     color: #FFFFFF;
-    font-size: 18px;
-    line-height: 33px;
+    font-size: 22px;
+    line-height: 42px;
 }
 .tvchat_logo{
-    background-image: url("/img/tvchat/mensajero_tira_fondo_titulo.png");
-    background-repeat: repeat-x;
+    /*background-image: url("/img/tvchat/mensajero_tira_fondo_titulo.png");
+    background-repeat: repeat-x;*/
     width: 232px;
     height: 33px;
     margin: 0;
@@ -104,8 +104,8 @@ body, html {
     float:left
 }
 .tvchat_logo img{
-    margin-top: 4px;
-    margin-left: 45px;
+    /*margin-top: 4px;
+    margin-left: 45px;*/
 }
 .marquee{
     font-family: arial;
@@ -469,8 +469,8 @@ div.roulette3 {
 }
 .marquee_habilitado{
 
-    background-color: #3D3D3D;
-    height: 522px;
+    background-color: #000000;
+    height: 465px;
 }
 .premio_piropo {
     color: yellow;

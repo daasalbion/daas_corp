@@ -94,7 +94,6 @@ $('#abrir_ventana_principal a').click(function(){
             "_blank", "width=800, height=600, menubar=no, toolbar=no, location=no, directories=no, " +
                 "status=no, scrollbars=auto, fullscreen=yes");
 
-
         $('#abrir_ventana_principal').addClass('disabled');
         $('#cerrar_ventana_principal').removeClass('disabled');
     }
@@ -1080,6 +1079,14 @@ $('#parar_marquee').click(function(){
     }
 
     tvchat.cargarModulo( params );
+});
+$('#mover_arriba').click(function(){
+    console.log("mirar");
+    tvchat.$('.marquee_habilitado').css( "top", "-=1" );
+});
+$('#mover_abajo').click(function(){
+
+    tvchat.$('.marquee_habilitado').css( "top", "+=1" );
 });
 
 //tvhot

@@ -1,0 +1,298 @@
+<?php
+
+$front = Zend_Controller_Front::getInstance();
+$bootstrap = $front->getParam("bootstrap");
+$logger = $bootstrap->getResource('Logger');
+
+?>
+<div id="bloque_mes">
+    Mes Seleccionado:&nbsp;
+    <select id="mes" name="mes">
+        <?php foreach($this->rango_seleccion as $rango): ?>
+        <option value="<?php echo $rango['anho'].'-'.($rango['mes']<10? '0'.$rango['mes'] : $rango['mes']) ?>"<?php echo ($rango['selected'] == 'selected' ? ' selected="selected"' : '') ?>><?php echo $rango['descripcion'] ?></option>
+        <?php endforeach; ?>
+    </select>
+</div>
+
+<div id="bloque_instructivo">
+    <!--<h3>Referencias de Cobros</h3>
+    <p>Precio Público = Gs. 2.000 sin IVA por cada contenido cobrado y entregado</p>
+    <p>25% Enter Movil = Gs. 500</p>
+    <p>75% Otros = Gs. 1.500 (Teléfonica = 70% / Licenciatario 5%)</p>-->
+    <p><span style="width: 30px; background-color: #79eb74; display: block; float: left;">&nbsp;</span>&nbsp;= Día de Envío</p>
+    <p><span style="width: 30px; background-color: #fff835; display: block; float: left;">&nbsp;</span>&nbsp;= Día Actual</p>
+    <p><span style="width: 30px; background-color: #BBCCFF; display: block; float: left;">&nbsp;</span>&nbsp;= Día Domingo</p>
+    <!--<p>Ubicación de Productos de mayor a menor según cantidad de suscriptos</p>-->
+</div>
+
+<?php /*print_r($this->datos);exit;*/?>
+
+<?php foreach($this->numeros as $numero): ?>
+
+    <?php foreach($this->datos['promociones'][$numero] as $alias => $promocion): ?>
+
+        <table id="tabla_numero_<?php echo $numero ?>" class="tabla_reporte">
+            <thead>
+                <tr>
+                    <th class="celda_vacia"></th>
+                    <th colspan="4" class="borde_arriba borde_derecha" style="height: 25px; border-bottom: none;">Mes: <?php echo $this->nombre_mes ?> / Año: <?php echo $this->anho ?></th>
+                    <?php for($i=1; $i<=15; $i++): ?>
+                    <th class="borde_arriba<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?><?php echo ($this->nombres_dias_del_mes[$i]['dia_semana'] == 0 ? ' domingo' : '') ?>"><?php echo $this->nombres_dias_del_mes[$i]['nombre_dia'] ?></th>
+                    <?php endfor; ?>
+                    <th colspan="4" class="borde_arriba borde_derecha" style="height: 25px; border-bottom: none;">Mes: <?php echo $this->nombre_mes ?> / Año: <?php echo $this->anho ?></th>
+                    <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+                    <th class="borde_arriba <?php echo ( $i == $this->cantidad_dias)? 'borde_derecha':''?> <?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?><?php echo ($this->nombres_dias_del_mes[$i]['dia_semana'] == 0 ? ' domingo' : '') ?>"><?php echo $this->nombres_dias_del_mes[$i]['nombre_dia'] ?></th>
+                    <?php endfor; ?>
+                    <th colspan="<?php echo (3 + $this->cantidad_dias) ?>" class="celda_vacia"></th><!-- cantidad dias + 2 columnas -->
+                </tr>
+                <tr>
+                    <th class="fondo_naranja borde_arriba" style="min-width: 50px; width: 50px;"><?php echo $numero ?></th>
+                    <th colspan="4" class="fondo_naranja borde_arriba"><?php echo $alias ?> - Detalles Cobros</th>
+
+                    <?php for($i=1; $i<=15; $i++): ?>
+                        <th class="nro_dia<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>" title="<?php echo $this->nombres_dias_del_mes[$i]['nombre_dia'] ?>"><?php echo $i ?></th>
+                    <?php endfor; ?>
+
+                    <th colspan="4" class="fondo_naranja borde_arriba"><?php echo $numero ?>&nbsp;-&nbsp;<?php echo $alias ?></th>
+
+                    <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+                    <th class="nro_dia<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>" title="<?php echo $this->nombres_dias_del_mes[$i]['nombre_dia'] ?>"><?php echo $i ?></th>
+                    <?php endfor; ?>
+
+                    <th class="fondo_naranja totales borde_arriba">Totales</th>
+                    <th class="fondo_naranja totales borde_arriba">Carrier</th>
+                    <th class="fondo_naranja porcentaje borde_arriba borde_derecha">% Liquidacion</th>
+                </tr>
+
+            </thead>
+            <?php foreach ( $promocion['cobros_x_carrier'] as $id_carrier =>$datos ):?>
+
+                <tr>
+                    <th class="celda_vacia"></th>
+                    <th class="alias" rowspan="3"><?php echo $alias ?></th>
+                    <th class="carrier <?php echo strtolower($id_carrier)?>" rowspan="3"><?php echo $id_carrier ?></th>
+                    <th class="suscriptos" rowspan="3"><?php echo $this->numero($this->datos['promociones'][$numero][$alias]['suscriptos_x_carrier'][$id_carrier]['suscriptos']) ?></th>
+                    <th class="descripcion_cobro">Cobros</th>
+
+                    <?php for($i=1; $i<=15; $i++): ?>
+                        <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero($datos[$i]['total_cobros']) ?>&nbsp;</th>
+                    <?php endfor; ?>
+
+                    <th class="alias" rowspan="3"><?php echo $alias ?></th>
+                    <th class="carrier <?php echo strtolower($id_carrier)?>" rowspan="3"><?php echo $id_carrier ?></th>
+                    <th class="suscriptos" rowspan="3"><?php echo $this->numero($this->datos['promociones'][$numero][$alias]['suscriptos_x_carrier'][$id_carrier]['suscriptos']) ?></th>
+                    <th class="descripcion_cobro">Cobros</th>
+
+                    <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+                        <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero($datos[$i]['total_cobros']) ?>&nbsp;</th>
+                    <?php endfor; ?>
+
+                    <th class="numero celda_total"><?php echo $this->numero($this->datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['cobros']) ?>&nbsp;</th>
+                    <th class="carrier <?php echo strtolower($id_carrier)?>" rowspan="3"><?php echo $id_carrier ?></th>
+                    <th class="carrier <?php echo strtolower($id_carrier)?> borde_derecha" rowspan="3"><?php echo ( $this->datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['enter'] > 0 )? round(($this->datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['enter']/$this->datos['totales_generales']['enter'])*100,2) :0 ?> % <?php echo $alias ?></th>
+                    <th class="celda_vacia"></th>
+                </tr>
+                <tr>
+                    <th class="celda_vacia"></th>
+                    <th class="descripcion_cobro celda_cliente">ENTER</th>
+
+                    <?php for($i=1; $i<=15; $i++): ?>
+                        <th class="numero celda_cliente"><?php echo $this->numero($datos[$i]['total_neto_gs']) ?>&nbsp;</th>
+                    <?php endfor; ?>
+
+                    <th class="descripcion_cobro celda_cliente">ENTER</th>
+
+                    <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+                        <th class="numero celda_cliente"><?php echo $this->numero($datos[$i]['total_neto_gs']) ?>&nbsp;</th>
+                    <?php endfor; ?>
+
+                    <th class="numero celda_cliente celda_total"><?php echo $this->numero($this->datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['enter']) ?>&nbsp;</th>
+
+                    <th class="celda_vacia"></th>
+                </tr>
+
+                <tr>
+                    <th class="celda_vacia"></th>
+                    <th class="descripcion_cobro celda_cliente">OTROS</th>
+
+                    <?php for($i=1; $i<=15; $i++): ?>
+                        <th class="numero celda_cliente"><?php echo $this->numero($datos[$i]['total_bruto_gs']) ?>&nbsp;</th>
+                    <?php endfor; ?>
+
+                    <th class="descripcion_cobro celda_cliente">OTROS</th>
+
+                    <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+                        <th class="numero celda_cliente"><?php echo $this->numero($datos[$i]['total_bruto_gs']) ?>&nbsp;</th>
+                    <?php endfor; ?>
+
+                    <th class="numero celda_cliente celda_total"><?php echo $this->numero($this->datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['otros']) ?>&nbsp;</th>
+                    <th class="celda_vacia"></th>
+                </tr>
+
+            <?php endforeach;?>
+            <!-- totales por alias-->
+
+            <tr class="celda_separador">
+                <td class="celda_vacia"></td>
+                <td colspan="<?php echo (3 + $this->cantidad_dias + 2 + 4) ?>" class="separador borde_derecha">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <th class="celda_vacia"></th>
+                <th rowspan="3" colspan="2">Totales <?php echo $alias ?></th>
+
+                <th rowspan="3"><?php echo $this->numero($promocion['suscriptos_x_carrier']['total']) ?></th>
+                <th class="descripcion_cobro">Cobros</th>
+
+                <?php for($i=1; $i<=15; $i++): ?>
+                    <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero($promocion['totales_x_dia'][$i]['total_cobros_dia']) ?>&nbsp;</th>
+                <?php endfor; ?>
+
+                <th rowspan="3" colspan="2">Totales <?php echo $alias ?></th>
+
+                <th rowspan="3"><?php echo $this->numero($promocion['suscriptos_x_carrier']['total']) ?></th>
+                <th class="descripcion_cobro">Cobros</th>
+
+                <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+                    <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero($promocion['totales_x_dia'][$i]['total_cobros_dia']) ?>&nbsp;</th>
+                <?php endfor; ?>
+
+                <th class="numero borde_derecha celda_total"><?php echo $this->numero($promocion['totales_generales_promocion_mes']['cobros']) ?>&nbsp;</th>
+
+                <th class="celda_vacia"></th>
+            </tr>
+            <tr>
+                <th class="celda_vacia"></th>
+                <th class="descripcion_cobro celda_cliente">ENTER</th>
+
+                <?php for($i=1; $i<=15; $i++): ?>
+                    <th class="numero celda_cliente"><?php echo $this->numero($promocion['totales_x_dia'][$i]['total_neto_gs_dia']) ?>&nbsp;</th>
+                <?php endfor; ?>
+
+                <th class="descripcion_cobro celda_cliente">ENTER</th>
+
+                <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+                    <th class="numero celda_cliente"><?php echo $this->numero($promocion['totales_x_dia'][$i]['total_neto_gs_dia']) ?>&nbsp;</th>
+                <?php endfor; ?>
+
+                <th class="numero celda_cliente borde_derecha celda_total"><?php echo $this->numero($promocion['totales_generales_promocion_mes']['enter']) ?>&nbsp;</th>
+
+                <th class="celda_vacia"></th>
+            </tr>
+            <tr>
+                <th class="celda_vacia"></th>
+                <th class="descripcion_cobro celda_cliente">OTROS</th>
+
+                <?php for($i=1; $i<=15; $i++): ?>
+                    <th class="numero celda_cliente"><?php echo $this->numero($promocion['totales_x_dia'][$i]['total_bruto_gs_dia']) ?>&nbsp;</th>
+                <?php endfor; ?>
+
+                <th class="descripcion_cobro celda_cliente">OTROS</th>
+
+                <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+                    <th class="numero celda_cliente"><?php echo $this->numero($promocion['totales_x_dia'][$i]['total_bruto_gs_dia']) ?>&nbsp;</th>
+                <?php endfor; ?>
+
+                <th class="numero celda_cliente borde_derecha celda_total"><?php echo $this->numero($promocion['totales_generales_promocion_mes']['otros']) ?>&nbsp;</th>
+
+                <th class="celda_vacia"></th>
+            </tr>
+        </table>
+    <?php endforeach; ?>
+<?php endforeach; ?>
+
+
+<table id="tabla_totales_TOTAl" class="tabla_reporte">
+    <thead>
+    <tr>
+        <th class="celda_vacia"></th>
+        <th colspan="4" class="borde_arriba borde_derecha" style="height: 25px; border-bottom: none;">Mes: <?php echo $this->nombre_mes ?> / Año: <?php echo $this->anho ?></th>
+        <?php for($i=1; $i<=15; $i++): ?>
+            <th class="borde_arriba<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?><?php echo ($this->nombres_dias_del_mes[$i]['dia_semana'] == 0 ? ' domingo' : '') ?>"><?php echo $this->nombres_dias_del_mes[$i]['nombre_dia'] ?></th>
+        <?php endfor; ?>
+        <th colspan="4" class="borde_arriba borde_derecha" style="height: 25px; border-bottom: none;">Mes: <?php echo $this->nombre_mes ?> / Año: <?php echo $this->anho ?></th>
+        <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+            <th class="borde_arriba <?php echo ($i == $this->cantidad_dias)? 'borde_derecha' : '' ?> <?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?><?php echo ($this->nombres_dias_del_mes[$i]['dia_semana'] == 0 ? ' domingo' : '') ?>"><?php echo $this->nombres_dias_del_mes[$i]['nombre_dia'] ?></th>
+        <?php endfor; ?>
+        <th colspan="2" class="celda_vacia"></th>
+    </tr>
+    <tr>
+        <th class="fondo_naranja borde_arriba" style="min-width: 50px; width: 50px;">TOTAL</th>
+        <th colspan="4" class="fondo_naranja borde_arriba">Detalles Cobros</th>
+
+        <?php for($i=1; $i<=15; $i++): ?>
+            <th class="nro_dia<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>" title="<?php echo $this->nombres_dias_del_mes[$i]['nombre_dia'] ?>"><?php echo $i ?></th>
+        <?php endfor; ?>
+
+        <th colspan="4" class="fondo_naranja borde_arriba">Detalles Cobros</th>
+
+        <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+            <th class="nro_dia <?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>" title="<?php echo $this->nombres_dias_del_mes[$i]['nombre_dia'] ?>"><?php echo $i ?></th>
+        <?php endfor; ?>
+
+        <th class="fondo_naranja totales borde_arriba">Totales</th>
+        <th class="fondo_naranja totales borde_arriba borde_derecha">Carrier</th>
+    </tr>
+
+    </thead>
+    <tfoot>
+    <tr>
+        <th class="celda_vacia"></th>
+        <th rowspan="3" class="alias">Totales</th>
+        <th rowspan="3" class="carrier">&nbsp;&nbsp;&nbsp;&nbsp;TOTAL</th>
+        <th rowspan="3" class="suscriptos"><?php echo $this->numero($this->datos['totales']['suscriptos']) ?></th>
+        <th class="descripcion_cobro">Cobros</th>
+
+        <?php for($i=1; $i<=15; $i++): ?>
+            <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero($this->datos['totales'][$i]['total_cobros_dia']) ?>&nbsp;</th>
+        <?php endfor; ?>
+
+        <th rowspan="3" class="alias">Totales</th>
+        <th rowspan="3" class="carrier">&nbsp;&nbsp;&nbsp;&nbsp;TOTAL</th>
+        <th rowspan="3" class="suscriptos"><?php echo $this->numero($this->datos['totales']['suscriptos']) ?></th>
+        <th class="descripcion_cobro">Cobros</th>
+
+        <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+            <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero($this->datos['totales'][$i]['total_cobros_dia']) ?>&nbsp;</th>
+        <?php endfor; ?>
+
+        <th class="numero celda_total"><?php echo $this->numero($this->datos['totales_generales']['cobros']) ?>&nbsp;</th>
+        <td rowspan="3" class="carrier tigo borde_derecha">TOTAL</td>
+
+    </tr>
+    <tr>
+        <th class="celda_vacia"></th>
+        <th class="descripcion_cobro celda_cliente">ENTER</th>
+
+        <?php for($i=1; $i<=15; $i++): ?>
+            <th class="numero celda_cliente"><?php echo $this->numero($this->datos['totales'][$i]['total_neto_gs_dia']) ?>&nbsp;</th>
+        <?php endfor; ?>
+
+        <th class="descripcion_cobro celda_cliente">ENTER</th>
+
+        <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+            <th class="numero celda_cliente"><?php echo $this->numero($this->datos['totales'][$i]['total_neto_gs_dia']) ?>&nbsp;</th>
+        <?php endfor; ?>
+
+        <th class="numero celda_cliente celda_total"><?php echo $this->numero($this->datos['totales_generales']['enter']) ?>&nbsp;</th>
+
+    </tr>
+    <tr>
+        <th class="celda_vacia"></th>
+        <th class="descripcion_cobro">OTROS</th>
+
+        <?php for($i=1; $i<=15; $i++): ?>
+            <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero($this->datos['totales'][$i]['total_bruto_gs_dia']) ?>&nbsp;</th>
+        <?php endfor; ?>
+
+        <th class="descripcion_cobro">OTROS</th>
+
+        <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+            <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero($this->datos['totales'][$i]['total_bruto_gs_dia']) ?>&nbsp;</th>
+        <?php endfor; ?>
+
+        <th class="numero celda_total"><?php echo $this->numero($this->datos['totales_generales']['otros']) ?>&nbsp;</th>
+
+    </tr>
+    </tfoot>
+</table>

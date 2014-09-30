@@ -882,14 +882,7 @@ function cargarModulo( params ){
                                         .addClass('tvchat_logo')
                                         .append(
                                             $(document.createElement("img"))
-                                                .attr('src', "/img/tvchat/tvchat_titulo_mensajero.png")
-                                        ),
-                                    $(document.createElement("div"))
-                                        .attr('id', 'tvchat_logo_detalle_derecha')
-                                        .addClass('tvchat_logo_detalle_derecha')
-                                        .append(
-                                            $(document.createElement("img"))
-                                                .attr('src', "/img/tvchat/tvchat_detalle_derecha.png")
+                                                .attr('src', "/img/tvchat/tvchat_titulo_mensajero_tvhot.png")
                                         )
                                 ),
                             $(document.createElement("div"))
