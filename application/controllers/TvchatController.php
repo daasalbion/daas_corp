@@ -252,13 +252,13 @@ class TvchatController extends Zend_Controller_Action{
                 'premio' => 'true'
             );
 
-            //$datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS', $datos );
+            $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS', $datos );
 
-            $datos_obtenidos = array(
-                'id_sorteo' => 1,
+            /*$datos_obtenidos = array(
+                'id_sorteo' => rand(0,99),
                 'codigo' => rand(0, 999999),
                 'cel' => '0982' . rand(0, 999999),
-            );
+            );*/
 
             $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
 
@@ -282,13 +282,13 @@ class TvchatController extends Zend_Controller_Action{
                 'premio' => 'false'
             );
 
-            //$datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS', $datos );
+            $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS', $datos );
 
-            $datos_obtenidos = array(
+            /*$datos_obtenidos = array(
                 'id_sorteo' => 1,
                 'codigo' => rand(0, 999999),
                 'cel' => '0982' . rand(0, 999999),
-            );
+            );*/
 
             $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
 
@@ -344,13 +344,13 @@ class TvchatController extends Zend_Controller_Action{
                 'premio' => 'true'
             );
 
-            //$datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS_SEXY', $datos );
+            $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS_SEXY', $datos );
 
-            $datos_obtenidos = array(
+            /*$datos_obtenidos = array(
                 'id_sorteo' => 1,
                 'codigo' => rand(0, 999999),
                 'cel' => '0982' . rand(0, 999999),
-            );
+            );*/
 
             $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
 
@@ -400,13 +400,13 @@ class TvchatController extends Zend_Controller_Action{
                 'premio' => 'true'
             );
 
-            //$datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TOMBOLA', $datos );
+            $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TOMBOLA', $datos );
 
-            $datos_obtenidos = array(
+            /*$datos_obtenidos = array(
                 'id_sorteo' => 1,
                 'codigo' => rand(0,999999),
                 'cel' => '0982' . rand(0, 999999),
-            );
+            );*/
 
             $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
 
@@ -430,13 +430,13 @@ class TvchatController extends Zend_Controller_Action{
                 'premio' => 'false'
             );
 
-            //$datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS', $datos );
+            $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_TRAGAMONEDAS', $datos );
 
-            $datos_obtenidos = array(
+            /*$datos_obtenidos = array(
                 'id_sorteo' => 1,
                 'codigo' => rand(111111,999999),
                 'cel' => '0982' . rand(0, 999999),
-            );
+            );*/
 
             $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
 
@@ -490,13 +490,13 @@ class TvchatController extends Zend_Controller_Action{
                 'premio' => 'true'
             );
 
-            //$datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_PIROPO2', $datos );
+            $datos_obtenidos = $this->_consulta( 'GET_ELEMENTS_PIROPO2', $datos );
 
-            $datos_obtenidos = array(
-                'id_sorteo' => 1,
+            /*$datos_obtenidos = array(
+                'id_sorteo' => rand(0,99),
                 'codigo' => rand(0, 999999),
                 'cel' => '0982' . rand(0, 999999),
-            );
+            );*/
 
             $this->logger->info( 'datos recibidos [' . print_r( $datos_obtenidos, true ) .']' );
 
@@ -638,6 +638,20 @@ class TvchatController extends Zend_Controller_Action{
 
             return $resultado;
 
+        } else if($accion == 'GET_ID_FOTO_REGALO_CHAT_SEXY') {//recibe nombre de archivo y devuelve id_regalo si existe
+
+            $sql = "select * from promosuscripcion.chat_sexy_fotos_regalos where nombre_archivo = ?;";
+            $rs = $db->fetchAll($sql, array($datos['nombre_archivo']));
+            $resultado = 0;//id_regalo
+            if(!empty($rs)) {
+                foreach($rs as $fila) {
+                    $resultado = $fila['id_foto_regalo'];
+                    break;
+                }
+            }
+
+            return $resultado;
+
         } else if($accion == 'GET_ID_FOTO_REGALO') {//recibe nombre de archivo y devuelve id_regalo si existe
 
             $sql = "select * from promosuscripcion.jugar_fotos_regalos where nombre_archivo = ?;";
@@ -687,7 +701,7 @@ class TvchatController extends Zend_Controller_Action{
         }
         else if( $accion == 'GET_MENSAJES_MARQUEE' ){
 
-            $sql = "select * from promosuscripcion.obtener_mensajes(?,15)";
+            $sql = "select * from promosuscripcion.obtener_mensajes(?,30)";
 
             if($datos['id_mensaje'] == null)
                 $datos['id_mensaje'] = 1;
@@ -698,7 +712,7 @@ class TvchatController extends Zend_Controller_Action{
 
                 foreach( $rs as $fila ){
 
-                    $resultado[$fila['id_mensaje']]['mensaje'] = $fila['mensaje'];
+                    $resultado[$fila['id_mensaje']]['mensaje'] = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $fila['mensaje']);
                     $resultado[$fila['id_mensaje']]['cel'] = $fila['cel'];
                     $resultado[$fila['id_mensaje']]['id_mensaje'] = $fila['id_mensaje'];
                     $resultado[$fila['id_mensaje']]['ya_sorteado'] = $fila['ya_sorteado'];
@@ -1051,6 +1065,81 @@ class TvchatController extends Zend_Controller_Action{
             return '0'.substr($nro_largo, 3);
         }
         return $nro_largo;
+    }
+
+    public function chatcenterAction() {
+
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+
+        $this->logger->info('--->CHATCENTER_ACTION');
+
+        $this->_redirect('http://190.128.183.138:8080/chatcenter_1.0/');
+        return;
+    }
+
+    public function descargarsexyAction() {
+
+        $this->_helper->layout->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+
+        $this->logger->info('--->DESCARGAR_SEXY_ACTION');
+
+        $nombre_archivo = $this->_getParam('id', null);
+        if(is_null($nombre_archivo)) {
+            $this->logger->info('Parametro incorrecto');
+            echo '<h1>No Existe Archivo</h1>';
+            return;
+        }
+
+        if( !empty($nombre_archivo) && strlen($nombre_archivo)>0 ) {
+
+            //Gaby-Fotos-01.jpg
+            $id_foto_regalo = $this->_consulta('GET_ID_FOTO_REGALO_CHAT_SEXY', array('nombre_archivo' => $nombre_archivo));
+
+            if($id_foto_regalo > 0) {
+
+                //el id(nombre archivo) que se recibió existe.
+
+                //ahora se verifica si el usuario puede visualizar
+                $se_puede_descargar = true;// $this->_consulta('ESTA_HABILITADO_FOTO_REGALO', array('cel' => $cel, 'id_promocion' => $id_promocion, 'id_foto_regalo' => $id_foto_regalo));
+
+                if($se_puede_descargar) {
+
+                    $path_archivo_descarga = '/var/www/html/www.entermovil.com.py/data/chat_sexy/fotos/' . $nombre_archivo;
+                    $size_archivo = filesize($path_archivo_descarga);
+                    $this->logger->info( 'size:[' . $size_archivo . ']' );
+                    header('Content-Description: File Transfer');
+                    $content_type = 'image/jpeg';
+                    header('Content-Type: ' . $content_type);
+                    //$nombre_contenido = basename($path_archivo_descarga);
+
+                    header('Content-Disposition: inline; filename='.$nombre_archivo);
+                    header('Content-Transfer-Encoding: binary');
+                    header('Expires: 0');
+                    header('Cache-Control: must-revalidate');
+                    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+                    header('Pragma: public');
+                    header('Content-Length: ' . $size_archivo);
+                    ob_clean();
+                    flush();
+
+                    $bytes_leidos = readfile($path_archivo_descarga);
+                    $this->logger->info( 'bytes_leidos:[' . $bytes_leidos . ']' );
+                    exit;
+
+                } else {
+
+                    echo '<h1>Podras descargar esta foto de regalo en tu proxima renovacion</h1>';
+                    return;
+                }
+
+            } else {
+
+                echo '<h1>Parámetro Incorrecto</h1>';
+                return;
+            }
+        }
     }
 
     public function descargarAction() {

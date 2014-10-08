@@ -157,7 +157,7 @@
             }
 
             //wrap both inner elements into one div
-            $this.wrapInner('<div style="width:100000px" class="js-marquee-wrapper"></div>');
+            $this.wrapInner('<div style="width:1000000px" class="js-marquee-wrapper"></div>');
 
             //Save the reference of the wrapper
             $marqueeWrapper = $this.find('.js-marquee-wrapper');

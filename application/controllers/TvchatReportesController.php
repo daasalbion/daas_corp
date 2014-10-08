@@ -5,11 +5,12 @@ class TvchatReportesController extends Zend_Controller_Action{
     public $logger;
     var $usuarios = array(
 
-        'daas' => array('clave' => 'daas', 'nombre' => 'DAAS'),
-        'david' => array('clave' => 'david', 'nombre' => 'David Villalba'),
-        'ezequiel' => array('clave' => 'ezequiel', 'nombre' => 'Ezequiel Garcia'),
-        'felix' => array('clave' => 'felix', 'nombre' => 'Felix Ovelar'),
-        'diego' => array('clave' => 'diego', 'nombre' => 'Diego Borja')
+        'daas' => array('clave' => 'daas', 'nombre' => 'DAAS', 'rol' => 'admin'),
+        'david' => array('clave' => '952397', 'nombre' => 'David Villalba', 'rol' => 'admin'),
+        'ezequiel' => array('clave' => 'ezequiel', 'nombre' => 'Ezequiel Garcia', 'rol' => 'admin'),
+        'felix' => array('clave' => 'felix', 'nombre' => 'Felix Ovelar', 'rol' => 'admin'),
+        'diego' => array('clave' => 'diego', 'nombre' => 'Diego Borja', 'rol' => 'productor'),
+        'asesor' => array('clave' => '2014', 'nombre' => 'Asesor', 'rol' => 'asesor')
 
     );
     var $meses = array(
@@ -83,9 +84,38 @@ class TvchatReportesController extends Zend_Controller_Action{
                         $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
                         $namespace->usuario = $nick;
                         $namespace->nombre = $this->usuarios[$nick]['nombre'];
-                        $namespace->accesos = array(
-                            'FULL'
-                        );
+
+                        if( $this->usuarios[$nick]['rol'] == 'admin' ){
+
+                            $namespace->accesos = array(
+
+                                'admin' => 'FULL',
+                                'cobros' => '88,89,94,95',
+                                'id_promociones' => '88,89,94,95',
+                                'numeros' => "'6767', '8540'",
+                                'altas_bajas' => array('FULL'),
+                                'cobros_chat' => 'FULL'
+                            );
+
+                        }else if( $this->usuarios[$nick]['rol'] == 'asesor' ){
+
+                            $namespace->accesos = array(
+
+                                'cobros' => '89',
+                                'id_promociones' => '89',
+                                'numeros' => "'6767'",
+                                'altas_bajas' => array('FULL')
+                            );
+
+                        }else if( $this->usuarios[$nick]['rol'] == 'productor' ){
+
+                            $namespace->accesos = array(
+
+                                'id_promociones' => '88,89,94,95',
+                                'numeros' => "'6767', '8540'",
+                                'altas_bajas' => array('FULL')
+                            );
+                        }
 
                         $this->_redirect('/tvchat-reportes/reporte/');
 
@@ -177,7 +207,14 @@ class TvchatReportesController extends Zend_Controller_Action{
             'total_suscriptos' => 0
         );
 
-        foreach($this->numeros as $numero) {
+        $numeros = $this->numeros;
+
+        if( $namespace->accesos['numeros'] == "'6767'" ){
+
+            $numeros = array( '6767' );
+        }
+
+        foreach($numeros as $numero) {
 
             $resultado = $this->_cargarSuscriptosNumero( $numero, $anho, $mes );
             $datos[$numero] = $resultado[$numero];
@@ -191,9 +228,7 @@ class TvchatReportesController extends Zend_Controller_Action{
             $total_general['total'][$i]['BAJA'] = 0;
         }
 
-        $this->logger->info('mirar' . print_r( $datos, true ));
-
-        foreach( $this->numeros as $numero ){
+        foreach( $numeros as $numero ){
 
             foreach( $datos[$numero]['altas_bajas_x_mes']['TOTALES_MES']['datos'] as $dia => $datos_del_mes ){
 
@@ -209,7 +244,7 @@ class TvchatReportesController extends Zend_Controller_Action{
 
         $this->logger->info('mirar 2 -> ' . print_r( $total_general, true ));
 
-        $this->view->numeros = $this->numeros;
+        $this->view->numeros = $numeros;
         $this->view->datos = $datos;
         $this->view->total_general = $total_general;
         $this->view->carriers = $this->carriers;
@@ -224,7 +259,6 @@ class TvchatReportesController extends Zend_Controller_Action{
             $this->_redirect('/tvchat-reportes/login');
         }
 
-        //$this->_helper->_layout->setLayout('tvchat-tvchat-reporte-layout');
         $this->_helper->_layout->setLayout('tvchat-reporte-layout');
 
         $this->view->headLink()->setStylesheet('/css/reportes_base.css', 'screen');
@@ -236,11 +270,20 @@ class TvchatReportesController extends Zend_Controller_Action{
 
         $this->view->headTitle()->append('Resumen Cobros');
 
+
         $this->view->promociones = array(
 
             'TVCHAT' => 88,
             'JUGAR' => 89
         );
+
+        if(  $namespace->accesos['numeros'] == "'6767'" ){
+
+            $this->view->promociones = array(
+
+                'JUGAR' => 89
+            );
+        }
 
         $fecha_seleccionada = $this->_getParam('fecha', null);
 
@@ -371,6 +414,7 @@ class TvchatReportesController extends Zend_Controller_Action{
         $datos = $this->_consulta( 'GET_ALTAS_BAJAS_X_HORA', $parametros );
 
         if( !is_null( $datos ) ){
+
             $datos_mostrar = array();
 
             foreach( $datos as $numero => $aliases ){
@@ -407,8 +451,6 @@ class TvchatReportesController extends Zend_Controller_Action{
 
             $this->view->vacio = false;
             $this->view->datos = $datos_mostrar;
-
-            //print_r($datos_mostrar);exit;
 
         }else{
 
@@ -710,6 +752,13 @@ class TvchatReportesController extends Zend_Controller_Action{
 
     public function suscriptosPorHoraAction() {
 
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
+
+        if( !isset( $namespace->usuario ) ){
+
+            $this->_redirect('/tvchat-reportes/login');
+        }
+
         $this->_helper->_layout->setLayout('tvchat-reporte-layout');
 
         $this->view->headLink()->setStylesheet('/css/reportes_base.css', 'screen');
@@ -793,8 +842,357 @@ class TvchatReportesController extends Zend_Controller_Action{
 
     }
 
-    public function pruebaAction(){
+    public function cobrosAction() {
 
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
+
+        if( !isset( $namespace->usuario ) ){
+
+            $this->_redirect('/tvchat-reportes/login');
+        }
+
+        $this->view->headLink()->setStylesheet('/css/reportes_base.css', 'screen');
+        $this->view->headScript()->appendFile('/js/tvchat_reportes_cobros.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('/css/reportes_cobros.css', 'screen');
+
+        $this->view->headTitle()->append('Cobros');
+
+        $fecha_seleccionada = $this->_getParam('fecha', null);
+
+        if(!is_null($fecha_seleccionada)) {
+            list($anho, $mes) = explode('-', $fecha_seleccionada);
+            $mes = (int)$mes;
+        } else {
+            $anho = date('Y');
+            $mes = date('n');
+        }
+
+        $this->_setupRangoSeleccion($anho, $mes);
+
+        $this->view->nombre_mes = $this->meses[$mes-1];
+
+        $this->view->cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+
+        $this->view->anho = $anho;
+        $this->view->mes = $mes;
+
+        $this->view->dia_hoy = date('j');
+
+        $this->view->dias_semana = $this->dias_semana;
+
+        $this->view->nombres_dias_del_mes = $this->cargarNombresDiasDelMes($anho, $mes);
+
+        $this->view->rango_seleccion = $this->rango_seleccion;
+
+        $resultado = $this->_cargarCobrosPorCarrier($anho,$mes,1);
+
+        //print_r($resultado);exit;
+
+        //definicion de estructuras
+        $datos = array();
+        $totales_x_promocion_x_dia = array();
+        $totales_x_dia = array();
+        //lateral derecha promociones
+        $total_promocion_mes = array(
+            'cobros'=>0,
+            'enter'=>0,
+            'otros'=>0,
+        );
+        //lateral derecha totales por promocion
+        $totales_generales_promocion_mes = array(
+
+            'cobros' => 0,
+            'enter' => 0,
+            'otros' => 0,
+        );
+        $datos['totales_generales'] = array(
+
+            'cobros' => 0,
+            'enter' => 0,
+            'otros' => 0,
+        );
+
+        for($i=1; $i<=$this->view->cantidad_dias; $i++) {
+
+            $totales_x_promocion_x_dia[$i]['total_cobros_dia'] = 0;
+            $totales_x_promocion_x_dia[$i]['total_neto_gs_dia'] = 0;
+            $totales_x_promocion_x_dia[$i]['total_bruto_gs_dia'] = 0;
+            //global
+            $totales_x_dia[$i]['total_cobros_dia'] = 0;
+            $totales_x_dia[$i]['total_neto_gs_dia'] = 0;
+            $totales_x_dia[$i]['total_bruto_gs_dia'] = 0;
+        }
+
+        $totales_x_dia['suscriptos'] = 0;
+
+        $datos['totales'] = $totales_x_dia;
+
+        $numeros = $this->numeros;
+
+        if( $namespace->accesos['numeros'] == "'6767'" ){
+
+            $numeros = array( '6767' );
+        }
+
+        foreach($numeros as $numero) {
+
+            foreach ( $resultado[$numero] as $alias=>$estructura_alias ){
+
+                $datos['promociones'][$numero][$alias]['totales_x_dia'] = $totales_x_promocion_x_dia;
+                $datos['promociones'][$numero][$alias]['suscriptos_x_carrier']['total'] = 0;
+                $datos['promociones'][$numero][$alias]['totales_generales_promocion_mes'] = $totales_generales_promocion_mes;
+
+                foreach( $estructura_alias as $id_carrier=>$estructura_id_carrier ){
+
+                    $datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier] = $total_promocion_mes;
+
+                    for( $i=1; $i<=$this->view->cantidad_dias; $i++ ) {
+
+                        if(!isset($estructura_id_carrier[$i])) {
+
+                            $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i] = array(
+                                'total_cobros' => 0,
+                                'total_bruto_gs' => 0,
+                                'total_bruto_usd' => 0,
+                                'total_neto_gs' => 0,
+                                'total_neto_usd' => 0,
+                            );
+                        }else{
+
+                            $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i] = $estructura_id_carrier[$i];
+                        }
+
+                        //por servicio
+                        $datos['promociones'][$numero][$alias]['totales_x_dia'][$i]['total_cobros_dia'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_cobros'];
+                        $datos['promociones'][$numero][$alias]['totales_x_dia'][$i]['total_neto_gs_dia'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_neto_gs'];
+                        $datos['promociones'][$numero][$alias]['totales_x_dia'][$i]['total_bruto_gs_dia'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_bruto_gs'];
+                        //totales laterales promociones promocion
+                        $datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['cobros'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_cobros'];
+                        $datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['enter'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_neto_gs'];
+                        $datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['otros'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_bruto_gs'];
+
+                        //totales inferior
+                        $datos['totales'][$i]['total_cobros_dia'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_cobros'];
+                        $datos['totales'][$i]['total_neto_gs_dia'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_neto_gs'];
+                        $datos['totales'][$i]['total_bruto_gs_dia'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_bruto_gs'];
+
+                    }
+
+                    //suscriptos por carrier
+                    $datos['promociones'][$numero][$alias]['suscriptos_x_carrier'][$id_carrier]['suscriptos'] = $estructura_id_carrier['suscriptos'];
+                    $datos['promociones'][$numero][$alias]['suscriptos_x_carrier']['total'] += $estructura_id_carrier['suscriptos'];
+                    $datos['totales']['suscriptos'] += $estructura_id_carrier['suscriptos'];
+                }
+
+                //totales laterales promociones total
+                for( $i=1; $i<=$this->view->cantidad_dias; $i++ ) {
+
+                    $datos['promociones'][$numero][$alias]['totales_generales_promocion_mes']['cobros'] += $datos['promociones'][$numero][$alias]['totales_x_dia'][$i]['total_cobros_dia'];
+                    $datos['promociones'][$numero][$alias]['totales_generales_promocion_mes']['enter'] += $datos['promociones'][$numero][$alias]['totales_x_dia'][$i]['total_neto_gs_dia'];
+                    $datos['promociones'][$numero][$alias]['totales_generales_promocion_mes']['otros'] += $datos['promociones'][$numero][$alias]['totales_x_dia'][$i]['total_bruto_gs_dia'];
+                }
+            }
+        }
+
+        //totales inferior derecha
+        foreach( $datos['totales'] as $dia=>$datos_cobros ){
+
+            $datos['totales_generales']['cobros'] += $datos_cobros['total_cobros_dia'];
+            $datos['totales_generales']['enter'] += $datos_cobros['total_neto_gs_dia'];
+            $datos['totales_generales']['otros'] += $datos_cobros['total_bruto_gs_dia'];
+        }
+
+        $this->view->numeros = $numeros;
+        $this->view->datos = $datos;
+        $this->view->carriers = $this->carriers;
+
+    }
+
+    public function cobrosChatAction() {
+
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
+
+        if( !isset( $namespace->usuario ) ){
+
+            $this->_redirect('/tvchat-reportes/login');
+        }
+
+        $this->view->headLink()->setStylesheet('/css/reportes_base.css', 'screen');
+        $this->view->headScript()->appendFile('/js/tvchat_reportes_cobros_chat.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('/css/tvchat_reportes_cobros_chat.css', 'screen');
+
+        $this->view->headTitle()->append('Cobros');
+
+        $fecha_seleccionada = $this->_getParam('fecha', null);
+
+        if(!is_null($fecha_seleccionada)) {
+            list($anho, $mes) = explode('-', $fecha_seleccionada);
+            $mes = (int)$mes;
+        } else {
+            $anho = date('Y');
+            $mes = date('n');
+        }
+
+        $this->_setupRangoSeleccion($anho, $mes);
+
+        $this->view->nombre_mes = $this->meses[$mes-1];
+
+        $this->view->cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+
+        $this->view->anho = $anho;
+        $this->view->mes = $mes;
+
+        $this->view->dia_hoy = date('j');
+
+        $this->view->dias_semana = $this->dias_semana;
+
+        $this->view->nombres_dias_del_mes = $this->cargarNombresDiasDelMes($anho, $mes);
+
+        $this->view->rango_seleccion = $this->rango_seleccion;
+
+        $resultado = $this->_cargarCobrosChatPorCarrier($anho,$mes,1);
+
+        //print_r($resultado);exit;
+
+        //definicion de estructuras
+        $datos = array();
+        $totales_x_promocion_x_dia = array();
+        $totales_x_dia = array();
+        //lateral derecha promociones
+        $total_promocion_mes = array(
+            'cobros'=>0,
+            'enter'=>0,
+            'otros'=>0,
+        );
+        //lateral derecha totales por promocion
+        $totales_generales_promocion_mes = array(
+
+            'cobros' => 0,
+            'enter' => 0,
+            'otros' => 0,
+        );
+        $datos['totales_generales'] = array(
+
+            'cobros' => 0,
+            'enter' => 0,
+            'otros' => 0,
+        );
+
+        for($i=1; $i<=$this->view->cantidad_dias; $i++) {
+
+            $totales_x_promocion_x_dia[$i]['total_cobros_dia'] = 0;
+            $totales_x_promocion_x_dia[$i]['total_neto_gs_dia'] = 0;
+            $totales_x_promocion_x_dia[$i]['total_bruto_gs_dia'] = 0;
+            //global
+            $totales_x_dia[$i]['total_cobros_dia'] = 0;
+            $totales_x_dia[$i]['total_neto_gs_dia'] = 0;
+            $totales_x_dia[$i]['total_bruto_gs_dia'] = 0;
+        }
+
+        $totales_x_dia['suscriptos'] = 0;
+
+        $datos['totales'] = $totales_x_dia;
+
+        $numeros = array( '6767' );
+
+        foreach($numeros as $numero) {
+
+            foreach ( $resultado[$numero] as $alias=>$estructura_alias ){
+
+                $datos['promociones'][$numero][$alias]['totales_x_dia'] = $totales_x_promocion_x_dia;
+                $datos['promociones'][$numero][$alias]['suscriptos_x_carrier']['total'] = 0;
+                $datos['promociones'][$numero][$alias]['totales_generales_promocion_mes'] = $totales_generales_promocion_mes;
+
+                foreach( $estructura_alias as $id_carrier=>$estructura_id_carrier ){
+
+                    $datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier] = $total_promocion_mes;
+
+                    for( $i=1; $i<=$this->view->cantidad_dias; $i++ ) {
+
+                        if(!isset($estructura_id_carrier[$i])) {
+
+                            $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i] = array(
+                                'total_cobros' => 0,
+                                'total_bruto_gs' => 0,
+                                'total_bruto_usd' => 0,
+                                'total_neto_gs' => 0,
+                                'total_neto_usd' => 0,
+                            );
+                        }else{
+
+                            $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i] = $estructura_id_carrier[$i];
+                        }
+
+                        //por servicio
+                        $datos['promociones'][$numero][$alias]['totales_x_dia'][$i]['total_cobros_dia'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_cobros'];
+                        $datos['promociones'][$numero][$alias]['totales_x_dia'][$i]['total_neto_gs_dia'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_neto_gs'];
+                        $datos['promociones'][$numero][$alias]['totales_x_dia'][$i]['total_bruto_gs_dia'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_bruto_gs'];
+                        //totales laterales promociones promocion
+                        $datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['cobros'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_cobros'];
+                        $datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['enter'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_neto_gs'];
+                        $datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['otros'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_bruto_gs'];
+
+                        //totales inferior
+                        $datos['totales'][$i]['total_cobros_dia'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_cobros'];
+                        $datos['totales'][$i]['total_neto_gs_dia'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_neto_gs'];
+                        $datos['totales'][$i]['total_bruto_gs_dia'] += $datos['promociones'][$numero][$alias]['cobros_x_carrier'][$id_carrier][$i]['total_bruto_gs'];
+
+                    }
+
+                    //suscriptos por carrier
+                    $datos['promociones'][$numero][$alias]['suscriptos_x_carrier'][$id_carrier]['suscriptos'] = $estructura_id_carrier['suscriptos'];
+                    $datos['promociones'][$numero][$alias]['suscriptos_x_carrier']['total'] += $estructura_id_carrier['suscriptos'];
+                    $datos['totales']['suscriptos'] += $estructura_id_carrier['suscriptos'];
+                }
+
+                //totales laterales promociones total
+                for( $i=1; $i<=$this->view->cantidad_dias; $i++ ) {
+
+                    $datos['promociones'][$numero][$alias]['totales_generales_promocion_mes']['cobros'] += $datos['promociones'][$numero][$alias]['totales_x_dia'][$i]['total_cobros_dia'];
+                    $datos['promociones'][$numero][$alias]['totales_generales_promocion_mes']['enter'] += $datos['promociones'][$numero][$alias]['totales_x_dia'][$i]['total_neto_gs_dia'];
+                    $datos['promociones'][$numero][$alias]['totales_generales_promocion_mes']['otros'] += $datos['promociones'][$numero][$alias]['totales_x_dia'][$i]['total_bruto_gs_dia'];
+                }
+            }
+        }
+
+        //totales inferior derecha
+        foreach( $datos['totales'] as $dia=>$datos_cobros ){
+
+            $datos['totales_generales']['cobros'] += $datos_cobros['total_cobros_dia'];
+            $datos['totales_generales']['enter'] += $datos_cobros['total_neto_gs_dia'];
+            $datos['totales_generales']['otros'] += $datos_cobros['total_bruto_gs_dia'];
+        }
+
+        $this->view->numeros = $numeros;
+        $this->view->datos = $datos;
+        $this->view->carriers = $this->carriers;
+
+    }
+
+    private function _cargarCobrosPorCarrier( $anho, $mes, $id_pais ){
+
+        $datos = array(
+            'id_pais' => $id_pais,
+            'anho' => $anho,
+            'mes' => $mes,
+        );
+
+        $datos_por_promocion = $this->_consulta('GET_COBROS_POR_PROMOCION', $datos);
+
+        return $datos_por_promocion;
+    }
+
+    private function _cargarCobrosChatPorCarrier( $anho, $mes, $id_pais ){
+
+        $datos = array(
+            'id_pais' => $id_pais,
+            'anho' => $anho,
+            'mes' => $mes,
+        );
+
+        $datos_por_promocion = $this->_consulta('GET_COBROS_CHAT_POR_PROMOCION', $datos);
+
+        return $datos_por_promocion;
     }
 
     private function _consulta( $accion, $datos = null ){
@@ -805,6 +1203,8 @@ class TvchatReportesController extends Zend_Controller_Action{
         $db = Zend_Db::factory(new Zend_Config($options['resources']['db']));
         $db->getConnection();
         $resultado = null;
+
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
 
         if( $accion == 'GET_MENSAJES' ){
 
@@ -849,16 +1249,16 @@ class TvchatReportesController extends Zend_Controller_Action{
                 select *
                 from promosuscripcion.log_suscriptos PL
                 where id_carrier in(1,2) and ts_local::date = ?
-                and id_promocion in(88,89,94,95) and accion = '"."ALTA"."'
+                and id_promocion in(".$namespace->accesos['id_promociones'].") and accion = '"."ALTA"."'
                 union
                 select *
                 from promosuscripcion.log_suscriptos PL
                 where id_carrier in(1,2) and ts_local::date = ?
-                and id_promocion in(88,89,94,95) and accion = '"."BAJA"."'
+                and id_promocion in(".$namespace->accesos['id_promociones'].") and accion = '"."BAJA"."'
             ) T1 join (
                 select IP.numero, IP.id_promocion, IP.alias, IP.id_carrier
                 from info_promociones IP
-                where IP.id_promocion in (88,89,94,95)
+                where IP.id_promocion in (".$namespace->accesos['id_promociones'].")
                 group by 1,2,3,4
             ) T2 on T1.id_carrier = T2.id_carrier and T1.id_promocion = T2.id_promocion
             group by 1,2,3,4,5,6";
@@ -919,6 +1319,126 @@ class TvchatReportesController extends Zend_Controller_Action{
             }else{
 
                 return $resultado;
+            }
+        }
+        else if( $accion == 'GET_COBROS_POR_PROMOCION' ){
+
+            $sql = 'select T5.*, T6.alias from (
+                select T3.*, coalesce(T4.suscriptos,0) as suscriptos from (
+                select T2.numero, T2.fecha, T2.dia_semana, T2.id_carrier, T2.id_promocion, sum(T2.total_cobros)::integer as total_cobros, sum(T2.total_bruto_gs)::integer as total_bruto_gs, sum(T2.total_bruto_usd)::numeric(10,2) as total_bruto_usd,
+                sum(T2.total_neto_gs)::integer as total_neto_gs, sum(T2.total_neto_usd)::numeric(10,2) as total_neto_usd
+                from (
+
+                select T1.*, (T1.total_cobros * T1.costo_gs)::integer as total_bruto_gs, (T1.total_cobros * T1.costo_usd)::numeric(10,2) as total_bruto_usd,
+                (T1.total_cobros * T1.costo_gs * T1.revenue)::integer as total_neto_gs, (T1.total_cobros * T1.costo_usd * T1.revenue)::numeric(10,2) as total_neto_usd
+                from (
+
+                select RM.*, CC.costo_gs, CC.costo_usd, RS.porcentaje_proveedor as revenue
+                from reporte_mensual_cobros_con_id_servicio(?, ?) RM
+                left join codigos_cobro CC on CC.id_servicio = RM.id_servicio and CC.id_carrier = RM.id_carrier and CC.numero = RM.numero
+                left join revenue_share RS on RS.numero = RM.numero and RS.id_carrier = RM.id_carrier
+                where RM.numero in( ' . $namespace->accesos['numeros'] . ' )
+                and RM.id_promocion in( ' . $namespace->accesos['id_promociones'] . ' )
+                and
+                RM.id_carrier in(
+                    select CxP.id_carrier
+                    from paises P
+                    left join carriers_x_paises CxP on CxP.id_pais = P.id_pais
+                    where P.id_pais = ?
+                )
+
+                ) T1 order by 2 asc
+
+                ) T2 group by 1,2,3,4,5 order by 1,2,3,4,5
+
+                ) T3 left join (
+                    select PS.id_promocion,PS.id_carrier, count(*)::integer as suscriptos from promosuscripcion.suscriptos PS group by 1,2 order by 1
+                ) T4 on T3.id_carrier = T4.id_carrier and T3.id_promocion = T4.id_promocion
+
+                ) T5 left join (
+                    select IP.id_promocion, IP.alias from info_promociones IP group by 1,2 order by 1
+                ) T6 on T5.id_promocion = T6.id_promocion order by 6 desc';
+
+            $rs = $db->fetchAll( $sql, array( $datos['anho'], $datos['mes'], $datos['id_pais'] ) );
+
+            if( !empty( $rs ) ){
+
+                $resultado = array();
+                foreach( $rs as $fila ){
+
+                    $dia_del_mes = substr( $fila['fecha'], 8 );
+                    $dia_del_mes = (int)$dia_del_mes;
+                    $fila['total_bruto_gs'] = $fila['total_bruto_gs'] - $fila['total_neto_gs'];
+
+                    $resultado[$fila['numero']][$fila['alias']][$this->carriers[$fila['id_carrier']]][$dia_del_mes] = (array)$fila;
+                    $resultado[$fila['numero']][$fila['alias']][$this->carriers[$fila['id_carrier']]]['suscriptos'] = $fila['suscriptos'];
+                }
+
+                return $resultado;
+
+            }else{
+
+                return null;
+            }
+        }
+        else if( $accion == 'GET_COBROS_CHAT_POR_PROMOCION' ){
+
+            $sql = 'select T5.*, T6.alias from (
+                select T3.*, coalesce(T4.suscriptos,0) as suscriptos from (
+                select T2.numero, T2.fecha, T2.dia_semana, T2.id_carrier, T2.id_promocion, sum(T2.total_cobros)::integer as total_cobros, sum(T2.total_bruto_gs)::integer as total_bruto_gs, sum(T2.total_bruto_usd)::numeric(10,2) as total_bruto_usd,
+                sum(T2.total_neto_gs)::integer as total_neto_gs, sum(T2.total_neto_usd)::numeric(10,2) as total_neto_usd
+                from (
+
+                select T1.*, (T1.total_cobros * T1.costo_gs)::integer as total_bruto_gs, (T1.total_cobros * T1.costo_usd)::numeric(10,2) as total_bruto_usd,
+                (T1.total_cobros * T1.costo_gs * T1.revenue)::integer as total_neto_gs, (T1.total_cobros * T1.costo_usd * T1.revenue)::numeric(10,2) as total_neto_usd
+                from (
+
+                select RM.*, CC.costo_gs, CC.costo_usd, RS.porcentaje_proveedor as revenue
+                from reporte_mensual_cobros_con_id_servicio(?, ?) RM
+                left join codigos_cobro CC on CC.id_servicio = RM.id_servicio and CC.id_carrier = RM.id_carrier and CC.numero = RM.numero
+                left join revenue_share RS on RS.numero = RM.numero and RS.id_carrier = RM.id_carrier
+                where RM.numero in( ' . "'6767'" . ' )
+                and RM.id_promocion in( ' . '94,95' . ' )
+                and
+                RM.id_carrier in(
+                    select CxP.id_carrier
+                    from paises P
+                    left join carriers_x_paises CxP on CxP.id_pais = P.id_pais
+                    where P.id_pais = ?
+                )
+
+                ) T1 order by 2 asc
+
+                ) T2 group by 1,2,3,4,5 order by 1,2,3,4,5
+
+                ) T3 left join (
+                    select PS.id_promocion,PS.id_carrier, count(*)::integer as suscriptos from promosuscripcion.suscriptos PS group by 1,2 order by 1
+                ) T4 on T3.id_carrier = T4.id_carrier and T3.id_promocion = T4.id_promocion
+
+                ) T5 left join (
+                    select IP.id_promocion, IP.alias from info_promociones IP group by 1,2 order by 1
+                ) T6 on T5.id_promocion = T6.id_promocion order by 6 desc';
+
+            $rs = $db->fetchAll( $sql, array( $datos['anho'], $datos['mes'], $datos['id_pais'] ) );
+
+            if( !empty( $rs ) ){
+
+                $resultado = array();
+                foreach( $rs as $fila ){
+
+                    $dia_del_mes = substr( $fila['fecha'], 8 );
+                    $dia_del_mes = (int)$dia_del_mes;
+                    $fila['total_bruto_gs'] = $fila['total_bruto_gs'] - $fila['total_neto_gs'];
+
+                    $resultado[$fila['numero']][$fila['alias']][$this->carriers[$fila['id_carrier']]][$dia_del_mes] = (array)$fila;
+                    $resultado[$fila['numero']][$fila['alias']][$this->carriers[$fila['id_carrier']]]['suscriptos'] = $fila['suscriptos'];
+                }
+
+                return $resultado;
+
+            }else{
+
+                return null;
             }
         }
     }
@@ -1000,6 +1520,8 @@ class TvchatReportesController extends Zend_Controller_Action{
 
     private function _cargarSuscriptosNumero( $numero, $anho, $mes ) {
 
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
+
         $resultado = array();
 
         $bootstrap = $this->getInvokeArg('bootstrap');
@@ -1011,12 +1533,12 @@ class TvchatReportesController extends Zend_Controller_Action{
         $sql = 'select T1.*, count(T2.id_suscripto)::integer as total_suscriptos from (
             select IP.alias, IP.id_promocion, IP.id_carrier
             from info_promociones IP
-            where id_promocion in (88,89,94,95) and numero = ?
+            where id_promocion in ('. $namespace->accesos['id_promociones'] .') and numero = ?
             group by 1,2,3
         ) T1 join (
             select IP.id_promocion, IP.id_carrier, IP.cel, IP.id_suscripto
             from promosuscripcion.suscriptos IP
-            where id_promocion in (88,89,94,95)
+            where id_promocion in ('. $namespace->accesos['id_promociones'] .')
         ) T2 on T1.id_promocion = T2.id_promocion and T1.id_carrier = T2.id_carrier
         group by 1,2,3 order by 1,2 desc';
 
@@ -1113,6 +1635,8 @@ class TvchatReportesController extends Zend_Controller_Action{
 
     private function _cargarPromociones() {
 
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
+
         $servicios = array();
 
         $bootstrap = $this->getInvokeArg('bootstrap');
@@ -1122,8 +1646,8 @@ class TvchatReportesController extends Zend_Controller_Action{
         $db->getConnection();
         $sql = "SELECT numero, id_promocion, promocion, alias
                 FROM info_promociones
-                WHERE numero IN('8540', '6767')
-                and id_promocion in(88,89,94,95)
+                WHERE numero IN( ". $namespace->accesos['numeros'] .")
+                and id_promocion in(". $namespace->accesos['id_promociones'] .")
                 GROUP BY 1,2,3,4
                 ORDER BY 1 desc,2";
 

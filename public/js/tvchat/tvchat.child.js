@@ -12,7 +12,7 @@ var mostrar = 0;
 var p = {};
 var cantidad_concatenar = window.opener.cantidad_sms_concatenar;
 var sms_nuevos = 0;
-var cadena_x_defecto = 'Envia tu mensaje al 8540 para compartirlo en el Mensajero Afortunado!!!';
+var cadena_x_defecto = 'Envia tu mensaje al 8540 para compartirlo en el Mensajero Hot!!!';
 
 //mensajero
 var textarray_buffer = [];
@@ -904,7 +904,7 @@ function cargarModulo( params ){
 
         $('.marquee').marquee({
             //speed in milliseconds of the marquee
-            duration: 15000,
+            duration: 30000,
             //gap in pixels between the tickers
             gap: 50,
             //time in milliseconds before the marquee will start animating

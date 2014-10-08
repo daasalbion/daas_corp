@@ -119,11 +119,12 @@ ul.alert-dropdown {
         position: fixed;
         top: 51px;
         left: 225px;
-        width: 225px;
+        width: 218px;
         margin-left: -225px;
         border: none;
         border-radius: 0;
         overflow-y: auto;
+        overflow-x: hidden;
         background-color: #222;
     }
 
@@ -297,6 +298,9 @@ p {
     height: 51px;
 }
 
+#WinElementsPiropo{
+    font-size: 12px;
+}
 .ocultar{
     display: none;
 }
