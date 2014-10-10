@@ -250,6 +250,102 @@ class TvchatReportesController extends Zend_Controller_Action{
         $this->view->carriers = $this->carriers;
     }
 
+    public function altasBajasChatAction(){
+
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
+        if( !isset( $namespace->usuario ) ){
+
+            $this->_redirect('/tvchat-reportes/login');
+        }
+
+        $this->_helper->_layout->setLayout('tvchat-reporte-layout');
+
+        $this->view->headLink()->setStylesheet('/css/reportes_base.css', 'screen');
+        //$this->view->headScript()->appendFile('/js/tvchat_reportes_suscriptos.js', 'text/javascript');
+        $this->view->headScript()->appendFile('/js/tvchat_reportes_suscriptos_chat.js', 'text/javascript');
+        $this->view->headLink()->appendStylesheet('/css/tvchat_reportes_altas_bajas_chat.css', 'screen');
+        $this->view->headTitle()->append('Altas - Bajas - Chat');
+
+        $fecha_seleccionada = $this->_getParam('fecha', null);
+
+        if(!is_null($fecha_seleccionada)) {
+
+            list($anho, $mes) = explode('-', $fecha_seleccionada);
+            $mes = (int)$mes;
+
+        } else {
+
+            $anho = date('Y');
+            $mes = date('n');
+
+        }
+
+        $this->_setupRangoSeleccion( $anho, $mes );
+
+        $this->view->nombre_mes = $this->meses[$mes-1];
+
+        $this->view->cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+
+        $this->view->anho = $anho;
+
+        $this->view->mes = $mes;
+
+        $this->view->dia_hoy = date('j');
+
+        $this->view->dias_semana = $this->dias_semana;
+
+        $this->view->nombres_dias_del_mes = $this->cargarNombresDiasDelMes( $anho, $mes );
+
+        $this->view->rango_seleccion = $this->rango_seleccion;
+
+        $datos = array();
+
+        $total_general = array(
+            'total_general' => array(
+                'ALTA' => 0,
+                'BAJA' => 0
+            ),
+            'total_suscriptos' => 0
+        );
+
+        $numeros = array( '6767' );
+
+        foreach($numeros as $numero) {
+
+            $resultado = $this->_cargarSuscriptosNumeroChat( $numero, $anho, $mes );
+            $datos[$numero] = $resultado[$numero];
+
+        }
+
+        $cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+        for($i=1; $i<=$cantidad_dias; $i++) {
+
+            $total_general['total'][$i]['ALTA'] = 0;
+            $total_general['total'][$i]['BAJA'] = 0;
+        }
+
+        foreach( $numeros as $numero ){
+
+            foreach( $datos[$numero]['altas_bajas_x_mes']['TOTALES_MES']['datos'] as $dia => $datos_del_mes ){
+
+                    $total_general['total'][$dia]['ALTA'] +=  $datos_del_mes['ALTA'];
+                    $total_general['total'][$dia]['BAJA'] +=  $datos_del_mes['BAJA'];
+
+                    $total_general['total_general']['ALTA'] += $datos_del_mes['ALTA'];
+                    $total_general['total_general']['BAJA'] += $datos_del_mes['BAJA'];
+            }
+
+            $total_general['total_suscriptos'] += $datos[$numero]['total_suscriptos'];
+        }
+
+        $this->logger->info('mirar 2 -> ' . print_r( $total_general, true ));
+
+        $this->view->numeros = $numeros;
+        $this->view->datos = $datos;
+        $this->view->total_general = $total_general;
+        $this->view->carriers = $this->carriers;
+    }
+
     public function reporteXHoraAction() {
 
         $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
@@ -1163,6 +1259,10 @@ class TvchatReportesController extends Zend_Controller_Action{
             $datos['totales_generales']['otros'] += $datos_cobros['total_bruto_gs_dia'];
         }
 
+        //print_r($datos);exit;
+
+        $this->view->suscriptos_a_cobrar = $this->_consulta('GET_SUSCRIPTOS_A_COBRAR_DIA_COBROS');
+        //print_r($this->view->suscriptos_a_cobrar);exit;
         $this->view->numeros = $numeros;
         $this->view->datos = $datos;
         $this->view->carriers = $this->carriers;
@@ -1441,6 +1541,57 @@ class TvchatReportesController extends Zend_Controller_Action{
                 return null;
             }
         }
+        else if( $accion == 'GET_SUSCRIPTOS_A_COBRAR_DIA_COBROS' ){
+
+            $mapeo_promociones = array(
+
+                95 => 'AMOR',
+                94 => 'SEXY'
+            );
+            $mapeo_carriers = array(
+
+                1 => 'PERSONAL',
+                2 => 'TIGO'
+            );
+
+            $sql = "select T4.id_promocion,T4.id_carrier, T4.dia_semana,sum(T4.cantidad)::integer as cantidad from (
+                select T3.id_promocion, T3.id_carrier, T3.dia_cobro, T3.proximo_cobro, extract(dow from T3.proximo_cobro)::integer as dia_semana, count(*)::integer as cantidad from (
+                    select T2.id_promocion, T1.id_carrier, T2.dia_cobro, (T2.dia_cobro + interval '7 day')::date as proximo_cobro from (
+                        select PS.id_promocion, PS.cel, PS.id_carrier
+                        from promosuscripcion.suscriptos PS
+                        where PS.id_promocion in(95,94) order by 2
+                    ) T1 join (
+                        select PMC.id_promocion, PMC.cel, PMC.ts_local::date as dia_cobro
+                        from promosuscripcion.mensajes_cobrados_por_fecha PMC
+                        where PMC.id_promocion in(95,94) order by 3
+                    ) T2 on T1.cel = T2.cel order by 1,2
+                ) T3 group by 1,2,3,4 order by 1,2,3
+            ) T4 group by 1,2,3 order by 3";
+
+            $rs = $db->fetchAll( $sql );
+
+            if( !empty( $rs ) ){
+
+                foreach( $rs as $fila ){
+
+                    $resultado[$mapeo_promociones[$fila['id_promocion']]][$fila['dia_semana']][$mapeo_carriers[$fila['id_carrier']]] = $fila['cantidad'];
+                }
+
+                return $resultado;
+
+            }else{
+
+                for( $i=0; $i<=6; $i++ ){
+
+                    $resultado[$mapeo_promociones[94]][$i][$mapeo_carriers[1]] = 0;
+                    $resultado[$mapeo_promociones[94]][$i][$mapeo_carriers[2]] = 0;
+                    $resultado[$mapeo_promociones[95]][$i][$mapeo_carriers[1]] = 0;
+                    $resultado[$mapeo_promociones[95]][$i][$mapeo_carriers[2]] = 0;
+                }
+
+                return $resultado;
+            }
+        }
     }
 
     private function _setupRangoSeleccion( $anho_seleccionado, $mes_seleccionado ) {
@@ -1566,6 +1717,121 @@ class TvchatReportesController extends Zend_Controller_Action{
         select extract(day from ts_local)::integer as dia_mes, extract(dow from ts_local)::integer as dia_semana, ts_local::date as fecha, id_promocion, id_carrier, accion, count(*) as total
         from promosuscripcion.log_suscriptos
         where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(88,89,94,95) group by 1 order by 1) and accion = \'BAJA\'
+        group by 1,2,3,4,5,6
+        order by 1,2,3,4,5';
+
+        $rs_suscriptos = $db->fetchAll($sql, array($anho, $mes, $numero, $anho, $mes, $numero));
+
+        $altas_bajas_x_mes = array(
+            'TOTALES_MES' => array(
+                'TOTAL_ALTA' => 0,
+                'TOTAL_BAJA' => 0,
+                'datos' => array()
+            )
+        );
+
+        $cantidad_dias = date('t', mktime(0, 0, 0, $mes, 1, $anho));
+        for($i=1; $i<=$cantidad_dias; $i++) {
+            $altas_bajas_x_mes['TOTALES_MES']['datos'][$i] = array(
+                'ALTA' => 0, 'BAJA' => 0
+            );
+        }
+
+        foreach($rs_suscriptos as $fila) {
+
+            if(!isset($altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']])) {
+
+                $altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']] = array(
+                    'TOTAL_ALTA' => 0,
+                    'TOTAL_BAJA' => 0,
+                    'datos' => array()
+                );
+
+                for($i=1; $i<=$cantidad_dias; $i++) {
+
+                    $altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']]['datos'][$i] = array(
+                        'ALTA' => 0, 'BAJA' => 0
+                    );
+                }
+            }
+
+            if(!isset($altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']]['datos'][$fila['dia_mes']])) {
+
+                $altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']]['datos'][$fila['dia_mes']] = array(
+                    'ALTA' => 0, 'BAJA' => 0
+                );
+            }
+
+            $altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']]['datos'][$fila['dia_mes']][$fila['accion']] = $fila['total'];
+
+            $altas_bajas_x_mes[$fila['id_promocion']][$fila['id_carrier']]['TOTAL_'.$fila['accion']] += $fila['total'];
+
+            if(!isset($altas_bajas_x_mes['TOTALES_MES']['datos'][$fila['dia_mes']])) {
+
+                $altas_bajas_x_mes['TOTALES_MES']['datos'][$fila['dia_mes']] = array(
+                    'ALTA' => 0, 'BAJA' => 0
+                );
+            }
+
+            $altas_bajas_x_mes['TOTALES_MES']['datos'][$fila['dia_mes']][$fila['accion']] += $fila['total'];
+            $altas_bajas_x_mes['TOTALES_MES']['TOTAL_'.$fila['accion']] += $fila['total'];
+
+        }
+
+        $resultado[$numero]['altas_bajas_x_mes'] = $altas_bajas_x_mes;
+
+
+        return $resultado;
+    }
+
+    private function _cargarSuscriptosNumeroChat( $numero, $anho, $mes ) {
+
+        $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
+
+        $resultado = array();
+
+        $bootstrap = $this->getInvokeArg('bootstrap');
+        $options = $bootstrap->getOptions();
+
+        $db = Zend_Db::factory(new Zend_Config($options['resources']['db']));
+        $db->getConnection();
+
+        $sql = "select T1.*, count(T2.id_suscripto)::integer as total_suscriptos from (
+            select IP.alias, IP.id_promocion, IP.id_carrier
+            from info_promociones IP
+            where id_promocion in (94,95) and numero = ?
+            group by 1,2,3
+        ) T1 join (
+            select IP.id_promocion, IP.id_carrier, IP.cel, IP.id_suscripto
+            from promosuscripcion.suscriptos IP
+            where id_promocion in (94,95)
+        ) T2 on T1.id_promocion = T2.id_promocion and T1.id_carrier = T2.id_carrier
+        group by 1,2,3 order by 1,2 desc";
+
+        $rs_suscriptos = $db->fetchAll($sql, array($numero));
+        $promociones = array();
+        $suscriptos_x_promo = array();
+        $total_suscriptos = 0;
+        $total_general = array();
+
+        foreach($rs_suscriptos as $fila) {
+
+            $promociones[] = $fila;
+            $total_suscriptos += $fila['total_suscriptos'];
+        }
+
+        $resultado[$numero]['total_suscriptos'] = $total_suscriptos;
+
+        $resultado[$numero]['promociones'] = $promociones;
+
+        $sql = 'select extract(day from ts_local)::integer as dia_mes, extract(dow from ts_local)::integer as dia_semana, ts_local::date as fecha, id_promocion, id_carrier, accion, count(*) as total
+        from  promosuscripcion.log_suscriptos
+        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(94,95) group by 1 order by 1) and accion = \'ALTA\'
+        group by 1,2,3,4,5,6
+        union
+        select extract(day from ts_local)::integer as dia_mes, extract(dow from ts_local)::integer as dia_semana, ts_local::date as fecha, id_promocion, id_carrier, accion, count(*) as total
+        from promosuscripcion.log_suscriptos
+        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(94,95) group by 1 order by 1) and accion = \'BAJA\'
         group by 1,2,3,4,5,6
         order by 1,2,3,4,5';
 

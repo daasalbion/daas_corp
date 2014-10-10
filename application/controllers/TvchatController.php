@@ -124,7 +124,7 @@ class TvchatController extends Zend_Controller_Action{
         if ( ( isset( $_GET['solicitud'] ) ) && ( $_GET['solicitud'] == 'marquee' ) && ( isset( $_GET['id_mensaje'] ) ) ){
 
             $mensajes_nuevos = $this->_consulta( 'GET_MENSAJES_MARQUEE', array( 'id_mensaje' => $_GET['id_mensaje'] ) );
-            $this->logger->info( 'datos a obtenidos ' . print_r( $mensajes_nuevos, true ) );
+
 
             //sino esta vacio concatenamos las cadenas
             if( !is_null( $mensajes_nuevos ) ){
@@ -707,6 +707,15 @@ class TvchatController extends Zend_Controller_Action{
                 $datos['id_mensaje'] = 1;
 
             $rs = $db->fetchAll( $sql, array( $datos['id_mensaje'] ) );
+            //"ï¿½ ï¿½ a A ï¿½ ï¿½ i I o O u U"
+            $patrones = array();
+            $patrones[0] = '/ï¿½/';
+            $patrones[1] = '/hindú/';
+            $patrones[2] = '/murciélago/';
+            $sustituciones = array();
+            $sustituciones[2] = 'galápago';
+            $sustituciones[1] = 'africano';
+            $sustituciones[0] = 'nh';
 
             if( !empty( $rs ) ){
 
@@ -719,7 +728,29 @@ class TvchatController extends Zend_Controller_Action{
 
                 }
 
-                return $resultado;
+                $resultado_sin_duplicados = array();
+                //comienza filtrado de repetidos
+                foreach( $resultado as $id_mensaje => $datos ){
+
+                    $resultado_sin_duplicados[$id_mensaje] = $datos['mensaje'];
+                }
+
+                $resultado_sin_duplicados = array_unique($resultado_sin_duplicados);
+
+                $resultado_final = array();
+                foreach( $resultado_sin_duplicados as $id_mensaje => $mensaje ){
+
+                    $resultado_final[$id_mensaje]['mensaje'] = $mensaje;
+                    $resultado_final[$id_mensaje]['cel'] = $resultado[$id_mensaje]['cel'];
+                    $resultado_final[$id_mensaje]['id_mensaje'] = $resultado[$id_mensaje]['id_mensaje'];
+                    $resultado_final[$id_mensaje]['ya_sorteado'] = $resultado[$id_mensaje]['ya_sorteado'];
+
+                }
+
+                $this->logger->info( 'datos obtenidos ' . print_r( $resultado, true ) );
+                $this->logger->info( 'resultados sin duplicados ' . print_r( $resultado_final, true ) );
+
+                return $resultado_final;
 
             }else{
 
@@ -1256,6 +1287,34 @@ class TvchatController extends Zend_Controller_Action{
                 exit;
             }*/
         }
+    }
+
+    public function fotosAction(){
+
+        $this->_helper->layout->disableLayout();
+
+        $titulo = $this->_getParam('modelo', '-');
+
+        if( isset( $titulo ) ){
+
+            $fotos_disponibles = array(
+
+                '/img/tvchat/fotos/Gaby-Fotos-01.jpg',
+                '/img/tvchat/fotos/Gaby-Fotos-02.jpg',
+                '/img/tvchat/fotos/Gaby-Fotos-03.jpg',
+                '/img/tvchat/fotos/Gaby-Fotos-04.jpg',
+                '/img/tvchat/fotos/Gaby-Fotos-05.jpg'
+            );
+
+            $this->view->disponible = true;
+            $this->view->titulo = $titulo;
+            $this->view->fotos_disponibles = $fotos_disponibles;
+
+        }else{
+
+            $this->view->disponible = false;
+        }
+
     }
 
 }

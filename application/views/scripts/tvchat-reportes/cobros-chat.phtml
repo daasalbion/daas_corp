@@ -69,18 +69,19 @@ $logger = $bootstrap->getResource('Logger');
 
                 <tr>
                     <th class="celda_vacia"></th>
-                    <th class="alias" rowspan="3"><?php echo $alias ?></th>
-                    <th class="carrier <?php echo strtolower($id_carrier)?>" rowspan="3"><?php echo $id_carrier ?></th>
-                    <th class="suscriptos" rowspan="3"><?php echo $this->numero($this->datos['promociones'][$numero][$alias]['suscriptos_x_carrier'][$id_carrier]['suscriptos']) ?></th>
+                    <th class="alias" rowspan="4"><?php echo $alias ?></th>
+                    <th class="carrier <?php echo strtolower($id_carrier)?>" rowspan="4"><?php echo $id_carrier ?></th>
+                    <th class="suscriptos" rowspan="4"><?php echo $this->numero($this->datos['promociones'][$numero][$alias]['suscriptos_x_carrier'][$id_carrier]['suscriptos']) ?></th>
+
                     <th class="descripcion_cobro">Cobros</th>
 
                     <?php for($i=1; $i<=15; $i++): ?>
                         <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero($datos[$i]['total_cobros']) ?>&nbsp;</th>
                     <?php endfor; ?>
 
-                    <th class="alias" rowspan="3"><?php echo $alias ?></th>
-                    <th class="carrier <?php echo strtolower($id_carrier)?>" rowspan="3"><?php echo $id_carrier ?></th>
-                    <th class="suscriptos" rowspan="3"><?php echo $this->numero($this->datos['promociones'][$numero][$alias]['suscriptos_x_carrier'][$id_carrier]['suscriptos']) ?></th>
+                    <th class="alias" rowspan="4"><?php echo $alias ?></th>
+                    <th class="carrier <?php echo strtolower($id_carrier)?>" rowspan="4"><?php echo $id_carrier ?></th>
+                    <th class="suscriptos" rowspan="4"><?php echo $this->numero($this->datos['promociones'][$numero][$alias]['suscriptos_x_carrier'][$id_carrier]['suscriptos']) ?></th>
                     <th class="descripcion_cobro">Cobros</th>
 
                     <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
@@ -88,8 +89,26 @@ $logger = $bootstrap->getResource('Logger');
                     <?php endfor; ?>
 
                     <th class="numero celda_total"><?php echo $this->numero($this->datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['cobros']) ?>&nbsp;</th>
-                    <th class="carrier <?php echo strtolower($id_carrier)?>" rowspan="3"><?php echo $id_carrier ?></th>
-                    <th class="carrier <?php echo strtolower($id_carrier)?> borde_derecha" rowspan="3"><?php echo ( $this->datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['enter'] > 0 )? round(($this->datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['enter']/$this->datos['totales_generales']['enter'])*100,2) :0 ?> % <?php echo $alias ?></th>
+                    <th class="carrier <?php echo strtolower($id_carrier)?>" rowspan="4"><?php echo $id_carrier ?></th>
+                    <th class="carrier <?php echo strtolower($id_carrier)?> borde_derecha" rowspan="4"><?php echo ( $this->datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['enter'] > 0 )? round(($this->datos['promociones'][$numero][$alias]['total_promocion_mes'][$id_carrier]['enter']/$this->datos['totales_generales']['enter'])*100,2) :0 ?> % <?php echo $alias ?></th>
+                    <th class="celda_vacia"></th>
+                </tr>
+                <tr>
+                    <th class="celda_vacia"></th>
+                    <th class="descripcion_cobro celda_cliente">Suscriptos a cobrar</th>
+
+                    <?php for($i=1; $i<=15; $i++): ?>
+                        <th class="numero celda_cliente"><?php echo $this->numero(isset($this->suscriptos_a_cobrar[$alias][$this->nombres_dias_del_mes[$i]['dia_semana']][$id_carrier])? $this->suscriptos_a_cobrar[$alias][$this->nombres_dias_del_mes[$i]['dia_semana']][$id_carrier]:0) ?>&nbsp;</th>
+                    <?php endfor; ?>
+
+                    <th class="descripcion_cobro celda_cliente">Suscriptos a cobrar</th>
+
+                    <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+                        <th class="numero celda_cliente"><?php echo $this->numero(isset($this->suscriptos_a_cobrar[$alias][$this->nombres_dias_del_mes[$i]['dia_semana']][$id_carrier])? $this->suscriptos_a_cobrar[$alias][$this->nombres_dias_del_mes[$i]['dia_semana']][$id_carrier]:0) ?>&nbsp;</th>
+                    <?php endfor; ?>
+
+                    <th class="numero celda_cliente celda_total"><?php echo '' ?>&nbsp;</th>
+
                     <th class="celda_vacia"></th>
                 </tr>
                 <tr>
@@ -110,7 +129,6 @@ $logger = $bootstrap->getResource('Logger');
 
                     <th class="celda_vacia"></th>
                 </tr>
-
                 <tr>
                     <th class="celda_vacia"></th>
                     <th class="descripcion_cobro celda_cliente">OTROS</th>

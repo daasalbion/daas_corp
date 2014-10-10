@@ -1,0 +1,168 @@
+#link_reportes_altas_bajas_chat {
+    color: #000000;
+    text-decoration:underline;
+}
+table, tr, td, th, thead, tfoot, tbody {
+    margin:0;
+    padding: 0;
+    border: none;
+}
+.tabla_reporte {
+    font-family: Arial;
+    font-size: 10px;
+    border-spacing: 0px;
+    /*margin-left: 3%;*/
+    margin-top: 20px;
+}
+
+.tabla_reporte th, .tabla_reporte td {
+    border: 1px solid #333333;
+    border-right: none;
+    border-top: none;
+}
+
+th.borde_arriba, td.borde_arriba {
+    border-top: 1px solid #333333;
+}
+
+th.borde_derecha, td.borde_derecha {
+    border-right: 1px solid #333333;
+}
+
+.fondo_naranja {
+    background-color: #ffd548;
+}
+
+.hora_actual {
+    background-color: #d0eb85;
+}
+
+.dia_actual {
+    background-color: #fff835;
+}
+
+.nro_dia {
+    min-width: 45px;
+    width: 45px;
+    background-color: #ffd548;
+    font-weight: bold;
+    height: 20px;
+}
+
+.totales {
+    min-width: 80px;
+    width: 80px;
+}
+
+.porcentaje {
+    min-width: 60px;
+    width: 60px;
+}
+
+.carrier {
+    min-width: 80px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.tigo {
+    color: #0066bb;
+}
+
+.personal  {
+    color: #9400d3;
+}
+
+.alias {
+    min-width: 70px;
+    width: 70px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.suscriptos {
+    min-width: 50px;
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.descripcion_cobro {
+    min-width: 40px;
+    width: 40px;
+    text-align: right;
+    padding-right: 3px;
+}
+
+.celda_cliente {
+    background-color: #ffdead;
+}
+
+.celda_vacia {
+    empty-cells:hide;
+    border: none;
+}
+
+td.celda_total, th.celda_total {
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.separador {
+    background-color: #000000;
+}
+
+.fila_separador{
+    line-height: 1px;
+    height: 1px;
+}
+
+.fila_separador td {
+    border: 0;
+    height: 1px;
+}
+
+.numero {
+    text-align: right;
+    padding-right: 2px;
+    height: 20px;
+
+}
+
+td.dia_semana {
+    font-weight: bold;
+    font-size:  8px;
+    text-align: right;
+}
+
+td.dia_envio {
+    background-color: #d0eb85;
+}
+
+.numero_porcentaje {
+    text-align: center;
+    font-size:  14px;
+    height: 20px;
+    font-weight: bold;
+}
+
+.monto_gs {
+    text-align: right;
+    padding-right: 2px;
+    height: 20px;
+}
+
+#bloque_mes {
+    margin-top: 20px;
+    /*margin-left: 3%;*/
+    font-weight: bold;
+    font-family: Arial;
+}
+#bloque_mes select {
+    background-color: #ffd548;
+    border: 1px solid #ffd548;
+    
+    width: 150px;
+    font-family: Arial;
+}

@@ -60,6 +60,9 @@
                 <?php if($this->infoSesionTvchat()->accesoPermitido('cobros_chat')): ?>
                     <li><a id="link_reportes_cobros_chat" href="/tvchat-reportes/cobros-chat/">Cobros Chat</a></li>
                 <?php endif; ?>
+                <?php if($this->infoSesionTvchat()->accesoPermitido('cobros_chat')): ?>
+                    <li><a id="link_reportes_altas_bajas_chat" href="/tvchat-reportes/altas-bajas-chat/">Altas Bajas Chat</a></li>
+                <?php endif; ?>
             </ul>
         </div>
 	</div>

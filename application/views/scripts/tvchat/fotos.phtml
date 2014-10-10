@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="description" content="description">
+    <meta name="author" content="FO">
+    <meta name="keyword" content="keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="/js/plugins/jquery-1.7.js"></script>
+    <link href="/css/plugins/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <title>Fotos Tvchat</title>
+</head>
+<body>
+    <div class="container-fluid fill" id="contenedorMensajes">
+        <div class="panel panel-default" id="panelMensajes">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $this->titulo ?></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="message-wrap col-lg-12">
+                        <div class="msg-wrap" id="bloqueMensajes">
+                            <?php foreach ( $this->fotos_disponibles as $i => $foto ): ?>
+                                <p><a href="<?php echo $foto ?>">Gabi <?php echo $i ?></a></p>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
