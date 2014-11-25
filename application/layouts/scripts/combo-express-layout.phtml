@@ -1,0 +1,45 @@
+<?php
+    echo $this->doctype();
+    echo "\n";
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <?php echo $this->headTitle() ?>
+        <?php echo "\n" ?>
+        <?php echo $this->headLink() ?>
+        <?php echo "\n" ?>
+        <?php echo $this->headStyle() ?>
+        <?php echo "\n" ?>
+        <?php echo $this->headScript() ?>
+        <?php echo "\n" ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" media="all" href="/css/combo-express/combo-express.css">
+    </head>
+    <body>
+        <div class="borde_negro"></div>
+        <div class="header contenedor">
+            <div class="logo_combo_express">
+                <a href="/combo-express/"><img src="/img/combo-express/logo_combo_express.png"></a>
+            </div>
+            <div class="botones_contacto">
+                <div id="botonera" class="botonera">
+                    <a href="#"><img src="/img/combo-express/boton_menu_precios.png"></a>
+                    <a href="/combo-express/nuestra-empresa"><img src="/img/combo-express/boton_nuestra_empresa.png"></a>
+                    <a href="#"><img src="/img/combo-express/boton_contactos.png"></a>
+                </div>
+                <div id="telefono" class="telefono">
+                    <img src="/img/combo-express/telefono.png">
+                </div>
+            </div>
+        </div>
+        <div class="fondo_detalle contenedor">
+            <?php echo $this->layout()->content; ?>
+        </div>
+        <div class="footer contenedor">
+            <div class="delivery">
+                <img src="/img/combo-express/delivery.png">
+            </div>
+        </div>
+    </body>
+</html>

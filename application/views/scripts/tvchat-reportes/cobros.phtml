@@ -233,23 +233,22 @@ $logger = $bootstrap->getResource('Logger');
         <th class="fondo_naranja totales borde_arriba">Totales</th>
         <th class="fondo_naranja totales borde_arriba borde_derecha">Carrier</th>
     </tr>
-
     </thead>
     <tfoot>
     <tr>
         <th class="celda_vacia"></th>
-        <th rowspan="3" class="alias">Totales</th>
-        <th rowspan="3" class="carrier">&nbsp;&nbsp;&nbsp;&nbsp;TOTAL</th>
-        <th rowspan="3" class="suscriptos"><?php echo $this->numero($this->datos['totales']['suscriptos']) ?></th>
+        <th rowspan="4" class="alias">Totales</th>
+        <th rowspan="4" class="carrier">&nbsp;&nbsp;&nbsp;&nbsp;TOTAL</th>
+        <th rowspan="4" class="suscriptos"><?php echo $this->numero($this->datos['totales']['suscriptos']) ?></th>
         <th class="descripcion_cobro">Cobros</th>
 
         <?php for($i=1; $i<=15; $i++): ?>
             <th class="numero<?php echo ($this->dia_hoy == $i ? ' dia_actual' : '') ?>"><?php echo $this->numero($this->datos['totales'][$i]['total_cobros_dia']) ?>&nbsp;</th>
         <?php endfor; ?>
 
-        <th rowspan="3" class="alias">Totales</th>
-        <th rowspan="3" class="carrier">&nbsp;&nbsp;&nbsp;&nbsp;TOTAL</th>
-        <th rowspan="3" class="suscriptos"><?php echo $this->numero($this->datos['totales']['suscriptos']) ?></th>
+        <th rowspan="4" class="alias">Totales</th>
+        <th rowspan="4" class="carrier">&nbsp;&nbsp;&nbsp;&nbsp;TOTAL</th>
+        <th rowspan="4" class="suscriptos"><?php echo $this->numero($this->datos['totales']['suscriptos']) ?></th>
         <th class="descripcion_cobro">Cobros</th>
 
         <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
@@ -257,7 +256,24 @@ $logger = $bootstrap->getResource('Logger');
         <?php endfor; ?>
 
         <th class="numero celda_total"><?php echo $this->numero($this->datos['totales_generales']['cobros']) ?>&nbsp;</th>
-        <td rowspan="3" class="carrier tigo borde_derecha">TOTAL</td>
+        <td rowspan="4" class="carrier tigo borde_derecha">TOTAL</td>
+
+    </tr>
+    <tr>
+        <th class="celda_vacia"></th>
+        <th class="descripcion_cobro domingo">Suscriptos a Cobrar</th>
+
+        <?php for($i=1; $i<=15; $i++): ?>
+            <th class="numero domingo"><?php echo $this->numero(isset($this->suscriptos_a_cobrar['por_dia_semana'][$i])? $this->suscriptos_a_cobrar['por_dia_semana'][$i]:0) ?>&nbsp;</th>
+        <?php endfor; ?>
+
+        <th class="descripcion_cobro domingo">Suscriptos a Cobrar</th>
+
+        <?php for($i=16; $i<=$this->cantidad_dias; $i++): ?>
+            <th class="numero domingo"><?php echo $this->numero(isset($this->suscriptos_a_cobrar['por_dia_semana'][$i])? $this->suscriptos_a_cobrar['por_dia_semana'][$i]:0) ?>&nbsp;</th>
+        <?php endfor; ?>
+
+        <th class="numero domingo celda_total"><?php echo $this->numero(isset($this->suscriptos_a_cobrar['total'])? $this->suscriptos_a_cobrar['total']:0) ?>&nbsp;</th>
 
     </tr>
     <tr>

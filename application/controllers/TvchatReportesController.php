@@ -90,8 +90,8 @@ class TvchatReportesController extends Zend_Controller_Action{
                             $namespace->accesos = array(
 
                                 'admin' => 'FULL',
-                                'cobros' => '88,89,94,95',
-                                'id_promociones' => '88,89,94,95',
+                                'cobros' => '88,89,94,95,96',
+                                'id_promociones' => '88,89,94,95,96',
                                 'numeros' => "'6767', '8540'",
                                 'altas_bajas' => array('FULL'),
                                 'cobros_chat' => 'FULL'
@@ -111,7 +111,7 @@ class TvchatReportesController extends Zend_Controller_Action{
 
                             $namespace->accesos = array(
 
-                                'id_promociones' => '88,89,94,95',
+                                'id_promociones' => '88,89,94,95,96',
                                 'numeros' => "'6767', '8540'",
                                 'altas_bajas' => array('FULL')
                             );
@@ -242,12 +242,16 @@ class TvchatReportesController extends Zend_Controller_Action{
             $total_general['total_suscriptos'] += $datos[$numero]['total_suscriptos'];
         }
 
+        $suscriptos_acumulados = $this->_consulta( 'SUSCRIPTOS_ACUMULADOS', array( 'anho' => $anho, 'mes' => $mes ) );
+        //print_r($suscriptos_acumulados);exit;
         $this->logger->info('mirar 2 -> ' . print_r( $total_general, true ));
 
         $this->view->numeros = $numeros;
         $this->view->datos = $datos;
         $this->view->total_general = $total_general;
         $this->view->carriers = $this->carriers;
+        $this->view->suscriptos_acumulados = $suscriptos_acumulados;
+
     }
 
     public function altasBajasChatAction(){
@@ -1098,6 +1102,8 @@ class TvchatReportesController extends Zend_Controller_Action{
             $datos['totales_generales']['otros'] += $datos_cobros['total_bruto_gs_dia'];
         }
 
+        $this->view->suscriptos_a_cobrar = $this->_consulta('GET_SUSCRIPTOS_A_COBRAR_DIA_COBROS', array( 'anho' => $anho, 'mes' => $mes ));
+        //print_r($this->view->suscriptos_a_cobrar);exit;
         $this->view->numeros = $numeros;
         $this->view->datos = $datos;
         $this->view->carriers = $this->carriers;
@@ -1106,6 +1112,7 @@ class TvchatReportesController extends Zend_Controller_Action{
 
     public function cobrosChatAction() {
 
+        
         $namespace = new Zend_Session_Namespace("entermovil-tvchat-reportes");
 
         if( !isset( $namespace->usuario ) ){
@@ -1117,7 +1124,7 @@ class TvchatReportesController extends Zend_Controller_Action{
         $this->view->headScript()->appendFile('/js/tvchat_reportes_cobros_chat.js', 'text/javascript');
         $this->view->headLink()->appendStylesheet('/css/tvchat_reportes_cobros_chat.css', 'screen');
 
-        $this->view->headTitle()->append('Cobros');
+        $this->view->headTitle()->append('Cobros-Chat');
 
         $fecha_seleccionada = $this->_getParam('fecha', null);
 
@@ -1259,9 +1266,9 @@ class TvchatReportesController extends Zend_Controller_Action{
             $datos['totales_generales']['otros'] += $datos_cobros['total_bruto_gs_dia'];
         }
 
-        //print_r($datos);exit;
+        //print_r($datos);
 
-        $this->view->suscriptos_a_cobrar = $this->_consulta('GET_SUSCRIPTOS_A_COBRAR_DIA_COBROS');
+        $this->view->suscriptos_a_cobrar = $this->_consulta('GET_SUSCRIPTOS_A_COBRAR_CHAT_DIA_COBROS', array( 'anho' => $anho, 'mes' => $mes ));
         //print_r($this->view->suscriptos_a_cobrar);exit;
         $this->view->numeros = $numeros;
         $this->view->datos = $datos;
@@ -1498,7 +1505,7 @@ class TvchatReportesController extends Zend_Controller_Action{
                 left join codigos_cobro CC on CC.id_servicio = RM.id_servicio and CC.id_carrier = RM.id_carrier and CC.numero = RM.numero
                 left join revenue_share RS on RS.numero = RM.numero and RS.id_carrier = RM.id_carrier
                 where RM.numero in( ' . "'6767'" . ' )
-                and RM.id_promocion in( ' . '94,95' . ' )
+                and RM.id_promocion in( ' . '94,95,96' . ' )
                 and
                 RM.id_carrier in(
                     select CxP.id_carrier
@@ -1543,38 +1550,77 @@ class TvchatReportesController extends Zend_Controller_Action{
         }
         else if( $accion == 'GET_SUSCRIPTOS_A_COBRAR_DIA_COBROS' ){
 
-            $mapeo_promociones = array(
+            $mes = (strlen($datos['mes']) == 1)? '0'. $datos['mes'] : $datos['mes'];
 
-                95 => 'AMOR',
-                94 => 'SEXY'
-            );
-            $mapeo_carriers = array(
+                $sql = "select extract(day from T3.fecha)::integer as dia, T3.accion, T3.cantidad
+                from (
+                select T1.fecha, T1.accion, coalesce(T2.cantidad, T1.cantidad)::integer as cantidad
+                from (
+                    WITH cobros AS (
+                                            SELECT fecha.*::date, 'COBROS'::varchar as accion, 0 as cantidad
+                                            FROM generate_series('".$datos['anho']."-". $mes."-01'::date,'".$datos['anho']."-". $mes."-01'::date + interval '1 month -1', '1 day') fecha
+                                             ), intentos AS (
+                                            SELECT fecha.*::date, 'INTENTOS'::varchar as accion, 0 as cantidad
+                                            FROM generate_series('".$datos['anho']."-". $mes."-01'::date,'".$datos['anho']."-". $mes."-01'::date + interval '1 month -1', '1 day') fecha
+                                             )
+                                            select *
+                                            from intentos
+                                            union
+                                            SELECT *
+                                            FROM cobros
+                                            --order by 1,2
+                ) T1 left join (
+                    select pedr.fecha, pedr.accion, sum( pedr.cantidad )::integer as cantidad
+                        from promosuscripcion.proceso_envios_del_dia_resumen pedr
+                        where extract(year from fecha)::integer = ? and extract(month from fecha)::integer = ?
+                        and id_promocion in (88,89,94,95,96)
+                        group by 1,2
+                        --order by 1,2
+                        union
+                            select current_date::date as fecha, T3.accion, sum(T3.cantidad)::integer as total
+                                    from (
+                                        select 'INTENTOS'::varchar as accion, id_promocion, sum(T1.total)::integer as cantidad
+                                        from (
+                                        select id_promocion, estado, count(*)::integer as total
+                                        from promosuscripcion.proceso_envios_del_dia
+                                        where ts_local::date = current_date
+                                        and id_carrier in(1,2)
+                                        and id_promocion in(88,89,94,95,96)
+                                        and id_servicio <> ''
+                                        group by 1,2
+                                        order by 1,2
+                                        ) T1 group by 1,2
+                                        --order by 1,2
+                                        union
+                                            select 'COBROS'::varchar as accion, id_promocion, sum(T2.total)::integer as cantidad
+                                            from (
+                                            select id_promocion, estado, count(*)::integer as total
+                                            from promosuscripcion.proceso_envios_del_dia
+                                            where ts_local::date = current_date
+                                            and id_carrier in(1,2)
+                                            and id_promocion in
+                                            (88,89,94,95,96)
+                                            and id_servicio <> ''
+                                            group by 1,2
+                                            order by 1,2
+                                            ) T2 where T2.estado = 3 group by 1,2
+                                            order by 2,1
+                                    ) T3 group by 1,2
+                                    order by 1,2
+                ) T2 on T1.fecha = T2.fecha and T1.accion = T2.accion
+                order by 1,2
+                ) T3 where T3.accion = 'INTENTOS'";
 
-                1 => 'PERSONAL',
-                2 => 'TIGO'
-            );
-
-            $sql = "select T4.id_promocion,T4.id_carrier, T4.dia_semana,sum(T4.cantidad)::integer as cantidad from (
-                select T3.id_promocion, T3.id_carrier, T3.dia_cobro, T3.proximo_cobro, extract(dow from T3.proximo_cobro)::integer as dia_semana, count(*)::integer as cantidad from (
-                    select T2.id_promocion, T1.id_carrier, T2.dia_cobro, (T2.dia_cobro + interval '7 day')::date as proximo_cobro from (
-                        select PS.id_promocion, PS.cel, PS.id_carrier
-                        from promosuscripcion.suscriptos PS
-                        where PS.id_promocion in(95,94) order by 2
-                    ) T1 join (
-                        select PMC.id_promocion, PMC.cel, PMC.ts_local::date as dia_cobro
-                        from promosuscripcion.mensajes_cobrados_por_fecha PMC
-                        where PMC.id_promocion in(95,94) order by 3
-                    ) T2 on T1.cel = T2.cel order by 1,2
-                ) T3 group by 1,2,3,4 order by 1,2,3
-            ) T4 group by 1,2,3 order by 3";
-
-            $rs = $db->fetchAll( $sql );
+            $rs = $db->fetchAll( $sql, array( $datos['anho'], $datos['mes'] ) );
 
             if( !empty( $rs ) ){
 
+                $resultado['total'] = 0;
+
                 foreach( $rs as $fila ){
 
-                    $resultado[$mapeo_promociones[$fila['id_promocion']]][$fila['dia_semana']][$mapeo_carriers[$fila['id_carrier']]] = $fila['cantidad'];
+                    $resultado['por_dia_semana'][$fila['dia']] = $fila['cantidad'];
+                    $resultado['total'] += $fila['cantidad'];
                 }
 
                 return $resultado;
@@ -1583,11 +1629,132 @@ class TvchatReportesController extends Zend_Controller_Action{
 
                 for( $i=0; $i<=6; $i++ ){
 
-                    $resultado[$mapeo_promociones[94]][$i][$mapeo_carriers[1]] = 0;
-                    $resultado[$mapeo_promociones[94]][$i][$mapeo_carriers[2]] = 0;
-                    $resultado[$mapeo_promociones[95]][$i][$mapeo_carriers[1]] = 0;
-                    $resultado[$mapeo_promociones[95]][$i][$mapeo_carriers[2]] = 0;
+                    $resultado[$i] = 0;
                 }
+
+                return $resultado;
+            }
+        }else if( $accion == 'GET_SUSCRIPTOS_A_COBRAR_CHAT_DIA_COBROS' ){
+
+            $mes = (strlen($datos['mes']) == 1)? '0'. $datos['mes'] : $datos['mes'];
+
+            $sql = "select extract(day from T3.fecha)::integer as dia, T3.accion, T3.cantidad
+                from (
+                select T1.fecha, T1.accion, coalesce(T2.cantidad, T1.cantidad)::integer as cantidad
+                from (
+                    WITH cobros AS (
+                                            SELECT fecha.*::date, 'COBROS'::varchar as accion, 0 as cantidad
+                                            FROM generate_series('".$datos['anho']."-". $mes."-01'::date,'".$datos['anho']."-". $mes."-01'::date + interval '1 month -1', '1 day') fecha
+                                             ), intentos AS (
+                                            SELECT fecha.*::date, 'INTENTOS'::varchar as accion, 0 as cantidad
+                                            FROM generate_series('".$datos['anho']."-". $mes."-01'::date,'".$datos['anho']."-". $mes."-01'::date + interval '1 month -1', '1 day') fecha
+                                             )
+                                            select *
+                                            from intentos
+                                            union
+                                            SELECT *
+                                            FROM cobros
+                                            --order by 1,2
+                ) T1 left join (
+                    select pedr.fecha, pedr.accion, sum( pedr.cantidad )::integer as cantidad
+                        from promosuscripcion.proceso_envios_del_dia_resumen pedr
+                        where extract(year from fecha)::integer = ? and extract(month from fecha)::integer = ?
+                        and id_promocion in (88,94,95,96)
+                        group by 1,2
+                        --order by 1,2
+                        union
+                            select current_date::date as fecha, T3.accion, sum(T3.cantidad)::integer as total
+                                    from (
+                                        select 'INTENTOS'::varchar as accion, id_promocion, sum(T1.total)::integer as cantidad
+                                        from (
+                                        select id_promocion, estado, count(*)::integer as total
+                                        from promosuscripcion.proceso_envios_del_dia
+                                        where ts_local::date = current_date
+                                        and id_carrier in(1,2)
+                                        and id_promocion in(88,94,95,96)
+                                        and id_servicio <> ''
+                                        group by 1,2
+                                        order by 1,2
+                                        ) T1 group by 1,2
+                                        --order by 1,2
+                                        union
+                                            select 'COBROS'::varchar as accion, id_promocion, sum(T2.total)::integer as cantidad
+                                            from (
+                                            select id_promocion, estado, count(*)::integer as total
+                                            from promosuscripcion.proceso_envios_del_dia
+                                            where ts_local::date = current_date
+                                            and id_carrier in(1,2)
+                                            and id_promocion in
+                                            (88,94,95,96)
+                                            and id_servicio <> ''
+                                            group by 1,2
+                                            order by 1,2
+                                            ) T2 where T2.estado = 3 group by 1,2
+                                            order by 2,1
+                                    ) T3 group by 1,2
+                                    order by 1,2
+                ) T2 on T1.fecha = T2.fecha and T1.accion = T2.accion
+                order by 1,2
+                ) T3 where T3.accion = 'INTENTOS'";
+
+            $rs = $db->fetchAll( $sql, array( $datos['anho'], $datos['mes'] ) );
+
+            if( !empty( $rs ) ){
+
+                $resultado['total'] = 0;
+
+                foreach( $rs as $fila ){
+
+                    $resultado['por_dia_semana'][$fila['dia']] = $fila['cantidad'];
+                    $resultado['total'] += $fila['cantidad'];
+                }
+
+                return $resultado;
+
+            }else{
+
+                for( $i=0; $i<=6; $i++ ){
+
+                    $resultado[$i] = 0;
+                }
+
+                return $resultado;
+            }
+        }else if( $accion == 'SUSCRIPTOS_ACUMULADOS' ){
+
+            $mes = (strlen($datos['mes']) == 1)? '0'. $datos['mes'] : $datos['mes'];
+
+            $sql = "select T3.dia, coalesce(T4.suscriptos, 0)::integer as suscriptos
+                    from (
+                            SELECT extract(day from fecha)::integer as dia
+                            FROM generate_series( '".$datos['anho']."-". $mes."-01'::date,'".$datos['anho']."-". $mes."-01'::date + interval '1 month -1', '1 day') fecha
+                        ) T3 left join (
+                            select extract( day from T2.fecha)::integer as dia, sum(T2.suscriptos)::integer as suscriptos
+                            from (
+                            select T1.id_promocion, T1.fecha, (T1.altas - T1.bajas)::integer as suscriptos
+                            from reportes_altas_bajas_cobros_x_dia T1
+                            where id_promocion in(88,89,94,95,96) and extract(year from fecha)::integer = ? and extract(month from fecha)::integer = ?
+                            order by 1,2
+                        ) T2 group by 1
+                        order by 1
+                    ) T4 on T3.dia = T4.dia
+                ";
+
+            $rs = $db->fetchAll( $sql, array( $datos['anho'], $datos['mes'] ) );
+
+            if( !empty( $rs ) ){
+
+                $resultado['total'] = 0;
+
+                foreach( $rs as $fila ){
+
+                    $resultado['suscriptos_acumulados'][$fila['dia']] = $fila['suscriptos'];
+                    $resultado['total'] += $fila['suscriptos'];
+                }
+
+                return $resultado;
+
+            }else{
 
                 return $resultado;
             }
@@ -1711,12 +1878,12 @@ class TvchatReportesController extends Zend_Controller_Action{
 
         $sql = 'select extract(day from ts_local)::integer as dia_mes, extract(dow from ts_local)::integer as dia_semana, ts_local::date as fecha, id_promocion, id_carrier, accion, count(*) as total
         from  promosuscripcion.log_suscriptos
-        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(88,89,94,95) group by 1 order by 1) and accion = \'ALTA\'
+        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(88,89,94,95,96) group by 1 order by 1) and accion = \'ALTA\'
         group by 1,2,3,4,5,6
         union
         select extract(day from ts_local)::integer as dia_mes, extract(dow from ts_local)::integer as dia_semana, ts_local::date as fecha, id_promocion, id_carrier, accion, count(*) as total
         from promosuscripcion.log_suscriptos
-        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(88,89,94,95) group by 1 order by 1) and accion = \'BAJA\'
+        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(88,89,94,95,96) group by 1 order by 1) and accion = \'BAJA\'
         group by 1,2,3,4,5,6
         order by 1,2,3,4,5';
 
@@ -1799,12 +1966,12 @@ class TvchatReportesController extends Zend_Controller_Action{
         $sql = "select T1.*, count(T2.id_suscripto)::integer as total_suscriptos from (
             select IP.alias, IP.id_promocion, IP.id_carrier
             from info_promociones IP
-            where id_promocion in (94,95) and numero = ?
+            where id_promocion in (94,95,96) and numero = ?
             group by 1,2,3
         ) T1 join (
             select IP.id_promocion, IP.id_carrier, IP.cel, IP.id_suscripto
             from promosuscripcion.suscriptos IP
-            where id_promocion in (94,95)
+            where id_promocion in (94,95,96)
         ) T2 on T1.id_promocion = T2.id_promocion and T1.id_carrier = T2.id_carrier
         group by 1,2,3 order by 1,2 desc";
 
@@ -1826,12 +1993,12 @@ class TvchatReportesController extends Zend_Controller_Action{
 
         $sql = 'select extract(day from ts_local)::integer as dia_mes, extract(dow from ts_local)::integer as dia_semana, ts_local::date as fecha, id_promocion, id_carrier, accion, count(*) as total
         from  promosuscripcion.log_suscriptos
-        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(94,95) group by 1 order by 1) and accion = \'ALTA\'
+        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(94,95,96) group by 1 order by 1) and accion = \'ALTA\'
         group by 1,2,3,4,5,6
         union
         select extract(day from ts_local)::integer as dia_mes, extract(dow from ts_local)::integer as dia_semana, ts_local::date as fecha, id_promocion, id_carrier, accion, count(*) as total
         from promosuscripcion.log_suscriptos
-        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(94,95) group by 1 order by 1) and accion = \'BAJA\'
+        where id_carrier in(1,2) and extract(year from ts_local)::integer = ? and extract(month from ts_local)::integer = ? and id_promocion in(select id_promocion from info_promociones where numero = ? and id_promocion in(94,95,96) group by 1 order by 1) and accion = \'BAJA\'
         group by 1,2,3,4,5,6
         order by 1,2,3,4,5';
 

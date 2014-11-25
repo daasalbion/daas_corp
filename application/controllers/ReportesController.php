@@ -4865,12 +4865,12 @@ class ReportesController extends Zend_Controller_Action
         $this->view->headTitle()->append('Cobros');
 
         $namespace = new Zend_Session_Namespace("entermovil");
-        if(isset($namespace->numeros)) {
-            $this->numeros = $namespace->numeros;
-            $this->rango_seleccion = array(
-                array('anho' => 2013, 'mes' => 6, 'descripcion' => '2013 - Junio')
-            );
-        }
+
+        $this->rango_seleccion = array(
+            array('anho' => 2013, 'mes' => 6, 'descripcion' => '2013 - Junio')
+        );
+
+        $this->log->info("rango seleccion: " . print_r( $this->rango_seleccion, true ));
 
         $fecha_seleccionada = $this->_getParam('fecha', null);
         if(!is_null($fecha_seleccionada)) {
