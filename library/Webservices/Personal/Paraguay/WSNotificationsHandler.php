@@ -59,6 +59,17 @@ class WSNotificationsHandler
                     $nroSuscripcion = $arrayDatoEvento[2];
                     $palabraClave = $arrayDatoEvento[3];
                     $numeroCorto = $arrayDatoEvento[4];
+
+                    $datos = array(
+                        'telefono' => $telefono,
+                        'fecha_alta' => $fechaAlta,
+                        'nro_suscripcion' => $nroSuscripcion,
+                        'keyword' => $palabraClave,
+                        'numero_corto' => $numeroCorto,
+                    );
+
+                    $guardar = $this->_consulta('alta_baja', $datos);
+                    $logger->info( "Alta telefono $telefono de suscripcion nro $nroSuscripcion");
                     syslog(LOG_INFO, "Alta telefono $telefono de suscripcion nro $nroSuscripcion");
                     break;
                 //Baja de suscripcion
@@ -70,6 +81,16 @@ class WSNotificationsHandler
                     $nroSuscripcion = $arrayDatoEvento[2];
                     $palabraClave = $arrayDatoEvento[3];
                     $numeroCorto = $arrayDatoEvento[4];
+                    $datos = array(
+                        'telefono' => $telefono,
+                        'fecha_alta' => $fechaAlta,
+                        'nro_suscripcion' => $nroSuscripcion,
+                        'keyword' => $palabraClave,
+                        'numero_corto' => $numeroCorto,
+                    );
+
+                    $guardar = $this->_consulta('alta_baja', $datos);
+                    $logger->info( "Baja telefono $telefono de suscripcion nro $nroSuscripcion" );
                     syslog(LOG_INFO, "Baja telefono $telefono de suscripcion nro $nroSuscripcion");
                     break;
                     // Billing
@@ -85,7 +106,24 @@ class WSNotificationsHandler
                     $timeIn = $arrayDatoEvento[6];
                     $timeOut = $arrayDatoEvento[7];
                     $tid = $arrayDatoEvento[8];
+
+                    $datos = array(
+                        'estado' => $estado,
+                        'telefono' => $telefono,
+                        'destino' => $destino,
+                        'nro_aplicacion' => $nroAplicacion,
+                        'aplicacion' => $aplicacion,
+                        'precio' => $precio,
+                        'time_in' => $timeIn,
+                        'time_out' => $timeOut,
+                        'tid' => $tid,
+                    );
+
+                    $guardar = $this->_consulta( 'billing', $datos );
+
+                    $logger->info( "Se cobro $precio al telefono $telefono" );
                     syslog(LOG_INFO, "Se cobro $precio al telefono $telefono");
+
                     break;
                 default:
                     $error = true;
@@ -195,6 +233,46 @@ class WSNotificationsHandler
         }
 
         return $isValid;
+    }
+
+    private function _consulta( $accion, $datos = null ){
+
+        $front = Zend_Controller_Front::getInstance();
+        $bootstrap = $front->getParam("bootstrap");
+        $logger = $bootstrap->getResource('Logger');
+        $options = $bootstrap->getOptions();
+
+        $config = new Zend_Config(array(
+            'database' => array(
+                'adapter' => 'Pdo_Pgsql',
+                'params'  => array(
+                    'host'     => '190.128.183.138',
+                    'username' => 'konectagw',
+                    'password' => 'konectagw2006',
+                    'dbname'   => 'gw'
+                )
+            )
+        ));
+
+        $db = Zend_Db::factory($config->database);
+        $db->getConnection();
+        if( $accion == "alta_baja" ){
+            $logger->info("datos altas bajas: ". print_r($datos, true));
+            try{
+                $db->insert('promosuscripcion.personal_paraguay_altas_bajas', $datos);
+            }catch(Exception $e){
+                $logger->info("error $e");
+            }
+
+        }else{
+            $logger->info("datos billing: ". print_r($datos, true));
+            try{
+                $db->insert('promosuscripcion.personal_paraguay_billing', $datos);
+            }catch(Exception $e){
+                $logger->info("error $e");
+            }
+        }
+        $db->closeConnection();
     }
 
 }

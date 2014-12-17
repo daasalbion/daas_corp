@@ -344,12 +344,12 @@ class WebservicesController extends Zend_Controller_Action
 
         }
     }
-    //http://www.entermovil.com.py.localserver/ws/personal/paraguay/wsdl
+    //http://www.entermovil.com.py/ws/personal/paraguay/NotificarEvento?wsdl
     public function personalParaguayServiciosAction() {
 
         $servicio = $this->_getParam('accion');
         $this->logger->info('Personal-Paraguay-Servicios Servicio:[' . $servicio . ']');
-        $wsdl = 'http://www.entermovil.com.py.localserver/ws/personal/paraguay/'.$servicio.'?wsdl';
+        $wsdl = 'http://www.entermovil.com.py/ws/personal/paraguay/'.$servicio.'?wsdl';
         $this->logger->info('Personal-Paraguay-Servicios WSDL:[' . $wsdl . ']');
 
         include_once APPLICATION_PATH . '/../library/Webservices/Personal/Paraguay/WSNotificationsHandler.php';
@@ -364,6 +364,7 @@ class WebservicesController extends Zend_Controller_Action
 
         } else {
 
+            $this->logger->info('Solicitud WSDL no seteada');
             $server = new Zend_Soap_Server($wsdl);
             $server->setClass('WSNotificationsHandler');
             $server->handle();

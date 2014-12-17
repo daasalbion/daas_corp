@@ -1,0 +1,42 @@
+<div id="bloque_mes">
+    Dia Seleccionado:&nbsp;
+    <input type="text" id="datepicker" value="<?php echo (isset($this->fecha)) ? $this->fecha : date('Y-m-d') ?>" />
+    <input type="button" id="cargar_resumen" value="Cargar">
+
+    <a href="/reporte-integradores/generar-csv-dia/fecha/<?php echo $this->fecha ?>"><input id="generar_csv_resumen" type="button" value="Descargar CSV"></a>
+</div>
+<table id="tabla_numero_6767" class="tabla_reporte">
+    <thead>
+        <tr>
+            <th colspan="10" class="fondo_naranja borde_arriba borde_derecha totales"></th>
+        </tr>
+        <tr>
+            <th class="fondo_naranja borde_arriba totales">Fecha</th>
+            <th class="fondo_naranja borde_arriba totales">Source Address</th>
+            <th class="fondo_naranja borde_arriba totales">Command Status</th>
+            <th class="fondo_naranja borde_arriba borde_derecha totales">Cantidad</th>
+        </tr>
+        </thead>
+    <tbody>
+        <?php foreach( $this->datos as $fila ): ?>
+
+            <tr class="<?php echo $fondo?>">
+                <th class="alias<?php echo $clase_css ?>"><?php echo $fila['fecha'] ?></th>
+                <td class="alias numero<?php echo $clase_css ?>"><?php echo $fila['source_address'] ?></td>
+                <td class="alias numero<?php echo $clase_css ?>"><?php echo $fila['command_status'] ?></td>
+                <td class="alias numero borde_derecha"><?php echo $this->numero( $fila['cantidad'] ) ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th class="celda_vacia"></th>
+            <td class="celda_vacia"></td>
+            <td class="fondo_naranja totales alias">Total</td>
+            <td class="fondo_naranja alias numero borde_derecha"><?php echo $this->numero( $this->total ) ?></td>
+        </tr>
+    </tfoot>
+</table>
+
+
+

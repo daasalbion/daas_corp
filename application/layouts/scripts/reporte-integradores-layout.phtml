@@ -1,0 +1,64 @@
+<?php
+    echo $this->doctype();
+    echo "\n";
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<?php echo $this->headTitle() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headLink() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headStyle() ?>
+	<?php echo "\n" ?>
+	<?php echo $this->headScript() ?>
+	<?php echo "\n" ?>
+
+    <link rel="shortcut icon" href="/favicon.ico"  type="image/x-icon" />
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34516205-1']);
+        _gaq.push(['_setDomainName', 'entermovil.com.py']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+<body>
+
+    <div id="header">
+        <div id="header_main">
+            <div id="header_logo"><a href="/reporte-integradores/reportes" class="invisible_link">ENTERMOVIL.com.py</a></div>
+
+            <div id="user_info">
+                <a id="logout_link" href="/reporte-integradores/logout" title="Salir">Cerrar Sesión</a>
+                <span id="info_usuario"><?php echo $this->infoSesionIntegradores()->usuario() ?></span>
+            </div>
+        </div>
+        <div id="header_menu">
+            <ul class="horizontal_list">
+                <?php if($this->infoSesionIntegradores()->accesoPermitido('altas_bajas')): ?>
+                    <li><a id="link_reportes_altas_bajas" href="/tvchat-reportes/reporte/">Resumen</a></li>
+                <?php endif; ?>
+                <?php if($this->infoSesionIntegradores()->accesoPermitido('altas_bajas')): ?>
+                    <li><a id="link_reportes_suscriptos_por_hora" href="/tvchat-reportes/suscriptos-por-hora/">Suscriptos X Hora</a></li>
+                <?php endif; ?>
+            </ul>
+        </div>
+	</div>
+    <div class="colmask fullpage">
+        <div class="col1">
+            <?php echo $this->layout()->content; ?>
+        </div>
+    </div>
+    
+</body>
+</html>
