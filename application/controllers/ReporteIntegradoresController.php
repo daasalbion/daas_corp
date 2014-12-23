@@ -5,7 +5,6 @@ class ReporteIntegradoresController extends Zend_Controller_Action{
     public $logger;
     var $usuarios = array(
 
-        'daas' => array('clave' => 'daas', 'nombre' => 'DAAS', 'id_carrier' => 0),
         'dotgo' => array('clave' => 'dotgo', 'nombre' => 'Dotgo', 'id_carrier' => 206),
         'pmovil' => array('clave' => 'pmovil', 'nombre' => 'Pmovil', 'id_carrier' => 207)
 
@@ -216,19 +215,11 @@ class ReporteIntegradoresController extends Zend_Controller_Action{
 
         } else {
 
-            $anho = date('Y');
-            $mes = date('n');
-            $dia = date('j');
+            $fecha_seleccionada = date("Y-m-d", mktime(0, 0, 0, date("m"),date("d")-1,date("Y")));
         }
 
         $datos = array();
         $id_carrier = $namespace->id_carrier;
-
-        $this->view->anho = $anho;
-
-        $this->view->mes = $mes;
-
-        $this->view->dia_hoy = date('j');
 
         $numeros = $namespace->numeros;
         $total = 0;
@@ -273,22 +264,48 @@ class ReporteIntegradoresController extends Zend_Controller_Action{
             $mes = date('n');
         }
 
+        $anho_actual = date('Y');
+        $mes_actual = date('n');
+        $dia_actual = date('d');
+
+        $nombres_archivos = array(
+
+            206 => 'DotgoSmsGwTX.log',
+            207 => 'PmovilSmsGwTX.log'
+        );
+
         $datos = array();
         $archivo = null;
         $id_carrier = $namespace->id_carrier;
-        $path  = "C:/Users/USER/ENTERMOVIL/DAAS/PROYECTOS/www.entermovil.desarrollodaas.com.py/public/files/reporte-integradores/$id_carrier/$anho-$mes/";
+        $path  = "/home/entermovil/Web/www.entermovil.com.py/public/files/reporte-integradores/$id_carrier/$anho-$mes/varios";
         $this->logger->info( "archivo : $path" );
 
-        //aun no fue comprimido
-        if( is_dir( $path ) ){
+        if( $mes == $mes_actual ){
+            //generar
+            $archivo = $path . "/" . $nombres_archivos[$id_carrier] .".$anho-$mes-hasta-$dia_actual.tar.gz";
+            $this->logger->info( "archivo :" . basename( $archivo ) );
+            if( !is_file( $archivo ) ){
+                $ruta_directorio = "/home/entermovil/Web/www.entermovil.com.py/public/files/reporte-integradores/$id_carrier/$anho-$mes";
+                $comando = "cd $ruta_directorio; tar -zcvf $archivo dia";
+                $this->logger->info( "ejecutamos el comando : $comando" );
+                $ejecutar = $this->_ejecutar_comando( $comando );
+            }else{
 
-            $archivo = $this->_gzCompressFile( $path );
-            if($archivo){
-
+                $this->logger->info( "ya existe el archivo : " . basename( $archivo ) );
             }
         }else{
 
-            $this->logger->info( "no existe el directorio: $path" );
+            $archivo = $path . "/". $nombres_archivos[$id_carrier] .".$anho-$mes.tar.gz";
+            $this->logger->info( "el archivo solicitado es : $archivo" );
+            if( !is_file( $archivo ) ){
+                $ruta_directorio = "/home/entermovil/Web/www.entermovil.com.py/public/files/reporte-integradores/$id_carrier/$anho-$mes";
+                $comando = "cd $ruta_directorio; tar -zcvf $archivo dia";
+                $this->logger->info( "ejecutamos el comando : $comando" );
+                $ejecutar = $this->_ejecutar_comando( $comando );
+            }else{
+
+                $this->logger->info( "ya existe el archivo : " . basename( $archivo ) );
+            }
         }
 
         // various headers, those with # are mandatory
@@ -341,8 +358,8 @@ class ReporteIntegradoresController extends Zend_Controller_Action{
         $datos = array();
         $archivo = null;
         $id_carrier = $namespace->id_carrier;
-        $path  = "C:/Users/USER/ENTERMOVIL/DAAS/PROYECTOS/www.entermovil.desarrollodaas.com.py/public/files/reporte-integradores/$id_carrier/$anho-$mes/";
-        $nombre_archivo = $nombres_archivos[$id_carrier]. "." . $fecha_seleccionada . ".txt.gz";
+        $path  = "/home/entermovil/Web/www.entermovil.com.py/public/files/reporte-integradores/$id_carrier/$anho-$mes/dia/";
+        $nombre_archivo = $nombres_archivos[$id_carrier]. "." . $fecha_seleccionada . ".csv.gz";
 
         $archivo .= $path . $nombre_archivo;
 
@@ -541,6 +558,19 @@ class ReporteIntegradoresController extends Zend_Controller_Action{
             return false;
         else
             return $dest;
+    }
+
+    private function _ejecutar_comando($comando) {
+        //se aguarda el comando en un buffer interno
+        ob_start();
+        //comando para llamar a una funcion externa, en este caso la linea de comandos
+        passthru($comando);
+        //se asigna a $resultado lo guardado en el buffer interno
+        $resultado = ob_get_contents();
+        //eliminar el buffer interno
+        ob_end_clean();
+
+        return $resultado;
     }
 }
 

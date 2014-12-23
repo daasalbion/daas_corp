@@ -383,6 +383,35 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $router->addRoute('regalo-afortunado', $r);
 
         $r = new Zend_Controller_Router_Route(
+            'regalo-sexy/:id',
+            array(
+                'controller' => 'tvchat',
+                'action' => 'descargarsexy',
+                'accion' => null
+            )
+        );
+        $router->addRoute('regalo-sexy', $r);
+
+        $r = new Zend_Controller_Router_Route(
+            'regalos-sexy',
+            array(
+                'controller' => 'tvchat',
+                'action' => 'fotos'
+            )
+        );
+        $router->addRoute('regalo-sexy-2', $r);
+
+        $r = new Zend_Controller_Router_Route(
+            'chatcenter',
+            array(
+                'controller' => 'tvchat',
+                'action' => 'chatcenter',
+                'accion' => null
+            )
+        );
+        $router->addRoute('chatcenter', $r);
+
+        $r = new Zend_Controller_Router_Route(
             'login',
             array(
                 'controller' => 'auth',

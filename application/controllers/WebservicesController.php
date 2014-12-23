@@ -354,6 +354,8 @@ class WebservicesController extends Zend_Controller_Action
 
         include_once APPLICATION_PATH . '/../library/Webservices/Personal/Paraguay/WSNotificationsHandler.php';
 
+        $this->logger->info("request: [" . print_r( $_REQUEST, true ) . "]" );
+
         if(isset($_GET['wsdl']) || isset($_GET['WSDL'])) {
 
             $this->logger->info('Solicitud WSDL');

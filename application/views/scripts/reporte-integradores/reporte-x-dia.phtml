@@ -1,6 +1,6 @@
 <div id="bloque_mes">
     Dia Seleccionado:&nbsp;
-    <input type="text" id="datepicker" value="<?php echo (isset($this->fecha)) ? $this->fecha : date('Y-m-d') ?>" />
+    <input type="text" id="datepicker" value="<?php echo (isset($this->fecha)) ? $this->fecha : date("Y-m-d", mktime(0, 0, 0, date("m"),date("d")-1,date("Y"))) ?>" />
     <input type="button" id="cargar_resumen" value="Cargar">
 
     <a href="/reporte-integradores/generar-csv-dia/fecha/<?php echo $this->fecha ?>"><input id="generar_csv_resumen" type="button" value="Descargar CSV"></a>

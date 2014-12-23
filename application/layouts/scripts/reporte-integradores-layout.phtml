@@ -46,10 +46,10 @@
         <div id="header_menu">
             <ul class="horizontal_list">
                 <?php if($this->infoSesionIntegradores()->accesoPermitido('altas_bajas')): ?>
-                    <li><a id="link_reportes_altas_bajas" href="/tvchat-reportes/reporte/">Resumen</a></li>
+                    <li><a id="link_reportes_altas_bajas" href="/reporte-integradores/resumen/">Resumen</a></li>
                 <?php endif; ?>
                 <?php if($this->infoSesionIntegradores()->accesoPermitido('altas_bajas')): ?>
-                    <li><a id="link_reportes_suscriptos_por_hora" href="/tvchat-reportes/suscriptos-por-hora/">Suscriptos X Hora</a></li>
+                    <li><a id="link_reportes_suscriptos_por_hora" href="/reporte-integradores/reporte-x-dia/">Reporte por dia</a></li>
                 <?php endif; ?>
             </ul>
         </div>

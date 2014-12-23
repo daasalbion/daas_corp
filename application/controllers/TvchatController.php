@@ -707,15 +707,6 @@ class TvchatController extends Zend_Controller_Action{
                 $datos['id_mensaje'] = 1;
 
             $rs = $db->fetchAll( $sql, array( $datos['id_mensaje'] ) );
-            //"ï¿½ ï¿½ a A ï¿½ ï¿½ i I o O u U"
-            $patrones = array();
-            $patrones[0] = '/ï¿½/';
-            $patrones[1] = '/hindú/';
-            $patrones[2] = '/murciélago/';
-            $sustituciones = array();
-            $sustituciones[2] = 'galápago';
-            $sustituciones[1] = 'africano';
-            $sustituciones[0] = 'nh';
 
             if( !empty( $rs ) ){
 
@@ -1100,6 +1091,11 @@ class TvchatController extends Zend_Controller_Action{
 
     public function chatcenterAction() {
 
+        if($_SERVER['REMOTE_ADDR'] != '190.128.201.42') {
+           $this->_forward('index', 'index');
+           return;
+        }
+
         $this->_helper->layout->disableLayout();
         $this->_helper->viewRenderer->setNoRender(true);
 
@@ -1293,17 +1289,22 @@ class TvchatController extends Zend_Controller_Action{
 
         $this->_helper->layout->disableLayout();
 
-        $titulo = $this->_getParam('modelo', '-');
+        $titulo = 'Regalos SEXY';//$this->_getParam('modelo', '-');
 
         if( isset( $titulo ) ){
 
             $fotos_disponibles = array(
 
-                '/img/tvchat/fotos/Gaby-Fotos-01.jpg',
-                '/img/tvchat/fotos/Gaby-Fotos-02.jpg',
-                '/img/tvchat/fotos/Gaby-Fotos-03.jpg',
-                '/img/tvchat/fotos/Gaby-Fotos-04.jpg',
-                '/img/tvchat/fotos/Gaby-Fotos-05.jpg'
+                '/img/tvchat/fotos/regalos/Regalo-Andrea-01.jpg',
+                '/img/tvchat/fotos/regalos/Regalo-Pamela-01.jpg',
+                '/img/tvchat/fotos/regalos/Regalo-Andrea-02.jpg',
+                '/img/tvchat/fotos/regalos/Regalo-Pamela-02.jpg',
+                '/img/tvchat/fotos/regalos/Regalo-Andrea-03.jpg',
+                '/img/tvchat/fotos/regalos/Regalo-Pamela-03.jpg',
+                '/img/tvchat/fotos/regalos/Regalo-Andrea-04.jpg',
+                '/img/tvchat/fotos/regalos/Regalo-Pamela-04.jpg',
+                '/img/tvchat/fotos/regalos/Regalo-Andrea-05.jpg',
+                '/img/tvchat/fotos/regalos/Regalo-Pamela-05.jpg'
             );
 
             $this->view->disponible = true;
