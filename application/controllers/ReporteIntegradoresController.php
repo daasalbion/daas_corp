@@ -416,7 +416,8 @@ class ReporteIntegradoresController extends Zend_Controller_Action{
             $sql = "select STR.fecha, STR.source_address, STR.command_status, STR.total as cantidad
                     from smpp_tx_resumen STR
                     where extract(year from fecha)::integer = ? and extract(month from fecha)::integer = ?
-                    and id_carrier = ? and STR.source_address like '%@%' and STR.command_status = 0";
+                    and id_carrier = ? and STR.source_address like '%@%' and STR.command_status = 0
+                    order by 1,2";
 
             $rs = $db->fetchAll( $sql, array( $datos['anho'], $datos['mes'], $datos['id_carrier'] ) );
 
@@ -432,7 +433,8 @@ class ReporteIntegradoresController extends Zend_Controller_Action{
 
             $sql = "select STR.fecha, STR.source_address, STR.command_status, STR.total as cantidad
                     from smpp_tx_resumen STR
-                    where id_carrier = ? and fecha = ?";
+                    where id_carrier = ? and fecha = ?
+                    order by 1,2";
 
             $rs = $db->fetchAll( $sql, array( $datos['id_carrier'], $datos['fecha'] ) );
 

@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/img/comportamiento/tira_fondo.png");
+    background-repeat: repeat-x;
+}
+.login{
+    width: 1366px;
+    height: 40px;
+    float: right;
+}
+.logo{
+    width: 335px;
+    height: 60px;
+    background-image: url("/img/comportamiento/logo_comportamiento.png");
+    background-repeat: no-repeat;
+    float: left;
+}
+.contacto{
+    width: 236px;
+    height: 47px;
+    background-image: url("/img/comportamiento/contacto.png");
+    background-repeat: no-repeat;
+    float: right;
+}
+.banner-buscar{
+    width: 860px;
+    height: 175px;
+    background-image: url("/img/comportamiento/banner-buscar.png");
+    background-repeat: no-repeat;
+    text-align: center;
+    margin: auto;
+}
+.contenedor{
+    padding-left:432px ;
+    padding-right:432px ;
+}
+.panel-navegacion{
+    text-align: center;
+}
+.logo_contacto{
+    height: 100px;
+}
